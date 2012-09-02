@@ -12,7 +12,7 @@ unit SOAPClient_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 05.07.2012 20:43:59 from Type Library described below.
+// File generated on 02.09.2012 22:12:58 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\SOAPClient.tlb (1)
