@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" name="ITBase2DVisualizationSOAPFunctionalityservice" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema xmlns="urn:" targetNamespace="urn:">
+      <s:simpleType name="TColor">
+        <s:restriction base="s:int" />
+      </s:simpleType>
+    </s:schema>
+  </types>
+  <message name="GetLayInfo0Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="GetLayInfo0Response">
+    <part name="Lay" type="s:int" />
+    <part name="SubLay" type="s:int" />
+  </message>
+  <message name="GetProps1Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="GetProps1Response">
+    <part name="oflagLoop" type="s:boolean" />
+    <part name="oColor" type="s0:TColor" />
+    <part name="oWidth" type="s:double" />
+    <part name="oflagFill" type="s:boolean" />
+    <part name="oColorFill" type="s0:TColor" />
+  </message>
+  <message name="SetProps2Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="pflagLoop" type="s:boolean" />
+    <part name="pColor" type="s0:TColor" />
+    <part name="pWidth" type="s:double" />
+    <part name="pflagFill" type="s:boolean" />
+    <part name="pColorFill" type="s0:TColor" />
+  </message>
+  <message name="SetProps2Response" />
+  <message name="CreateNode3Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="CreateNodeIndex" type="s:int" />
+    <part name="X" type="s:double" />
+    <part name="Y" type="s:double" />
+  </message>
+  <message name="CreateNode3Response" />
+  <message name="DestroyNode4Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="DestroyNodeIndex" type="s:int" />
+  </message>
+  <message name="DestroyNode4Response" />
+  <message name="SetNode5Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="SetNodeIndex" type="s:int" />
+    <part name="newX" type="s:double" />
+    <part name="newY" type="s:double" />
+  </message>
+  <message name="SetNode5Response" />
+  <message name="GetNodes6Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="GetNodes6Response">
+    <part name="Nodes" type="s:base64Binary" />
+  </message>
+  <message name="SetNodes7Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Nodes" type="s:base64Binary" />
+    <part name="pWidth" type="s:double" />
+  </message>
+  <message name="SetNodes7Response" />
+  <message name="CheckPlace8Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Xbind" type="s:double" />
+    <part name="Ybind" type="s:double" />
+    <part name="pScale" type="s:double" />
+    <part name="Angle" type="s:double" />
+    <part name="dX" type="s:double" />
+    <part name="dY" type="s:double" />
+  </message>
+  <message name="CheckPlace8Response" />
+  <message name="Move9Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="dX" type="s:double" />
+    <part name="dY" type="s:double" />
+    <part name="dZ" type="s:double" />
+  </message>
+  <message name="Move9Response" />
+  <message name="SetPosition10Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="X" type="s:double" />
+    <part name="Y" type="s:double" />
+    <part name="Z" type="s:double" />
+  </message>
+  <message name="SetPosition10Response" />
+  <message name="Transform11Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Xbind" type="s:double" />
+    <part name="Ybind" type="s:double" />
+    <part name="pScale" type="s:double" />
+    <part name="Angle" type="s:double" />
+    <part name="dX" type="s:double" />
+    <part name="dY" type="s:double" />
+  </message>
+  <message name="Transform11Response" />
+  <message name="ChangeScale12Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Xbind" type="s:double" />
+    <part name="Ybind" type="s:double" />
+    <part name="pScale" type="s:double" />
+  </message>
+  <message name="ChangeScale12Response" />
+  <message name="Rotate13Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Xbind" type="s:double" />
+    <part name="Ybind" type="s:double" />
+    <part name="Angle" type="s:double" />
+  </message>
+  <message name="Rotate13Response" />
+  <message name="ChangeLay14Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="NewLayID" type="s:int" />
+  </message>
+  <message name="ChangeLay14Response" />
+  <message name="ChangeOwner15Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="ptrNewOwner" type="s:int" />
+  </message>
+  <message name="ChangeOwner15Response" />
+  <message name="Square16Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="Square16Response">
+    <part name="return" type="s:double" />
+  </message>
+  <message name="Square117Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="ExceptPointPtr" type="s:int" />
+    <part name="ExceptPointValueX" type="s:double" />
+    <part name="ExceptPointValueY" type="s:double" />
+    <part name="NewWidth" type="s:double" />
+    <part name="pScale" type="s:double" />
+  </message>
+  <message name="Square117Response">
+    <part name="return" type="s:double" />
+  </message>
+  <message name="GetInsideObjectsList18Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="GetInsideObjectsList18Response">
+    <part name="List" type="s:base64Binary" />
+  </message>
+  <message name="getIdLay19Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="getIdLay19Response">
+    <part name="return" type="s:int" />
+  </message>
+  <message name="getWidth20Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="getWidth20Response">
+    <part name="return" type="s:double" />
+  </message>
+  <message name="setWidth21Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Value" type="s:double" />
+  </message>
+  <message name="setWidth21Response" />
+  <message name="getflUserSecurity22Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="getflUserSecurity22Response">
+    <part name="return" type="s:boolean" />
+  </message>
+  <message name="setflUserSecurity23Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Value" type="s:boolean" />
+  </message>
+  <message name="setflUserSecurity23Response" />
+  <message name="getflDetailsNoIndex24Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+  </message>
+  <message name="getflDetailsNoIndex24Response">
+    <part name="return" type="s:boolean" />
+  </message>
+  <message name="setflDetailsNoIndex25Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="pidTObj" type="s:int" />
+    <part name="pidObj" type="s:long" />
+    <part name="Value" type="s:boolean" />
+  </message>
+  <message name="setflDetailsNoIndex25Response" />
+  <portType name="ITBase2DVisualizationSOAPFunctionality">
+    <operation name="GetLayInfo">
+      <input message="tns:GetLayInfo0Request" />
+      <output message="tns:GetLayInfo0Response" />
+    </operation>
+    <operation name="GetProps">
+      <input message="tns:GetProps1Request" />
+      <output message="tns:GetProps1Response" />
+    </operation>
+    <operation name="SetProps">
+      <input message="tns:SetProps2Request" />
+      <output message="tns:SetProps2Response" />
+    </operation>
+    <operation name="CreateNode">
+      <input message="tns:CreateNode3Request" />
+      <output message="tns:CreateNode3Response" />
+    </operation>
+    <operation name="DestroyNode">
+      <input message="tns:DestroyNode4Request" />
+      <output message="tns:DestroyNode4Response" />
+    </operation>
+    <operation name="SetNode">
+      <input message="tns:SetNode5Request" />
+      <output message="tns:SetNode5Response" />
+    </operation>
+    <operation name="GetNodes">
+      <input message="tns:GetNodes6Request" />
+      <output message="tns:GetNodes6Response" />
+    </operation>
+    <operation name="SetNodes">
+      <input message="tns:SetNodes7Request" />
+      <output message="tns:SetNodes7Response" />
+    </operation>
+    <operation name="CheckPlace">
+      <input message="tns:CheckPlace8Request" />
+      <output message="tns:CheckPlace8Response" />
+    </operation>
+    <operation name="Move">
+      <input message="tns:Move9Request" />
+      <output message="tns:Move9Response" />
+    </operation>
+    <operation name="SetPosition">
+      <input message="tns:SetPosition10Request" />
+      <output message="tns:SetPosition10Response" />
+    </operation>
+    <operation name="Transform">
+      <input message="tns:Transform11Request" />
+      <output message="tns:Transform11Response" />
+    </operation>
+    <operation name="ChangeScale">
+      <input message="tns:ChangeScale12Request" />
+      <output message="tns:ChangeScale12Response" />
+    </operation>
+    <operation name="Rotate">
+      <input message="tns:Rotate13Request" />
+      <output message="tns:Rotate13Response" />
+    </operation>
+    <operation name="ChangeLay">
+      <input message="tns:ChangeLay14Request" />
+      <output message="tns:ChangeLay14Response" />
+    </operation>
+    <operation name="ChangeOwner">
+      <input message="tns:ChangeOwner15Request" />
+      <output message="tns:ChangeOwner15Response" />
+    </operation>
+    <operation name="Square">
+      <input message="tns:Square16Request" />
+      <output message="tns:Square16Response" />
+    </operation>
+    <operation name="Square1">
+      <input message="tns:Square117Request" />
+      <output message="tns:Square117Response" />
+    </operation>
+    <operation name="GetInsideObjectsList">
+      <input message="tns:GetInsideObjectsList18Request" />
+      <output message="tns:GetInsideObjectsList18Response" />
+    </operation>
+    <operation name="getIdLay">
+      <input message="tns:getIdLay19Request" />
+      <output message="tns:getIdLay19Response" />
+    </operation>
+    <operation name="getWidth">
+      <input message="tns:getWidth20Request" />
+      <output message="tns:getWidth20Response" />
+    </operation>
+    <operation name="setWidth">
+      <input message="tns:setWidth21Request" />
+      <output message="tns:setWidth21Response" />
+    </operation>
+    <operation name="getflUserSecurity">
+      <input message="tns:getflUserSecurity22Request" />
+      <output message="tns:getflUserSecurity22Response" />
+    </operation>
+    <operation name="setflUserSecurity">
+      <input message="tns:setflUserSecurity23Request" />
+      <output message="tns:setflUserSecurity23Response" />
+    </operation>
+    <operation name="getflDetailsNoIndex">
+      <input message="tns:getflDetailsNoIndex24Request" />
+      <output message="tns:getflDetailsNoIndex24Response" />
+    </operation>
+    <operation name="setflDetailsNoIndex">
+      <input message="tns:setflDetailsNoIndex25Request" />
+      <output message="tns:setflDetailsNoIndex25Response" />
+    </operation>
+  </portType>
+  <binding name="ITBase2DVisualizationSOAPFunctionalitybinding" type="tns:ITBase2DVisualizationSOAPFunctionality">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="GetLayInfo">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#GetLayInfo" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetProps">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#GetProps" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SetProps">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#SetProps" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CreateNode">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#CreateNode" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="DestroyNode">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#DestroyNode" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SetNode">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#SetNode" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetNodes">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#GetNodes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SetNodes">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#SetNodes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CheckPlace">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#CheckPlace" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Move">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#Move" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SetPosition">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#SetPosition" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Transform">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#Transform" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ChangeScale">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#ChangeScale" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Rotate">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#Rotate" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ChangeLay">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#ChangeLay" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ChangeOwner">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#ChangeOwner" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Square">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#Square" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Square1">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#Square1" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetInsideObjectsList">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#GetInsideObjectsList" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getIdLay">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#getIdLay" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getWidth">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#getWidth" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="setWidth">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#setWidth" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getflUserSecurity">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#getflUserSecurity" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="setflUserSecurity">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#setflUserSecurity" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getflDetailsNoIndex">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#getflDetailsNoIndex" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="setflDetailsNoIndex">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality#setflDetailsNoIndex" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ITBase2DVisualizationSOAPFunctionality" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ITBase2DVisualizationSOAPFunctionalityservice">
+    <port name="itbase2dvisualizationsoapfunctionalityPort" binding="tns:ITBase2DVisualizationSOAPFunctionalitybinding">
+      <soap:address location="http://127.0.0.1/SpaceSOAPServer.dll/soap/itbase2dvisualizationsoapfunctionality" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<title>Объект гео-мониторирования</title>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" style="margin-top: 0; margin-bottom: 0">
+
+<p align="center" style="margin-top: 5px; margin-bottom: 5px"><b>
+<font face="Tahoma" size="2">Объект гео-мониторирования.</font></b></p>
+<p align="justify" style="margin-top: 5px; margin-bottom: 5px">Данный компонент 
+предназначен для наблюдения за подвижными объектами оборудованными специальными 
+устройства приема информации о местоположении (<span lang="en-us">GPS/GLONASS</span>). 
+Работает совместно с сервером таких устройств - <span lang="en-us">GeoGraph
+</span>сервером. В него включены механизмы оповещения при входе/выходе в 
+определенные области (места на карте), и оповещения при приближении/удалении 
+других объектов назначенных пользователем.</p>
+<p align="center" style="margin-top: 5px; margin-bottom: 5px">
+<img border="0" src="GeoMonitoredObject.GIF" width="926" height="607"></p>
+<p style="margin-top: 5px; margin-bottom: 5px">
+Основные пункты:</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>текущий статус устройства</b>&quot; - показывает текущее состояние связи 
+мобильного устройства с сервером и его статус приема сигналов местоположения (<span lang="en-us">GPS/GLONASS</span>)<span lang="en-us">.
+</span></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>панель свойств устройства</b>&quot; <span lang="en-us">&nbsp;</span>- кнопка, 
+открывающая<span lang="en-us"> </span>панель свойств устройства прикрепленного к 
+объекту<span lang="en-us">.</span> В зависимости от модели устройства эта панель 
+может быть различной.</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+<span lang="en-us">&nbsp;</span>&quot;<b>регистрационная информация объекта в
+<span lang="en-us">GeoGraph </span>сервере</b>&quot; - пункт, показывающий какому
+<span lang="en-us">GeoGraph</span>-серверу принадлежит данный объект и
+<span lang="en-us">е</span>го регистрационный номер<span lang="en-us">. </span></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>собственник</b>&quot; - кнопка, открывающая панель свойств объекта 
+ассоциированного с данным, если он есть<span lang="en-us">. </span></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>области оповещения при входе и выходе</b>&quot; - список объектов карты, например 
+территорий, вход в которые или выход из них приведет к рассылке адресатам 
+оповещений о произошедшем входе/выходе<span lang="en-us">. </span>
+<a href="GeoMonitoredObjectNotificationAreas.htm">Подробнее...</a></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>дистанции оповещения</b>&quot; - список объектов карты, например других мобильных 
+объектов,&nbsp; приближение к которым на определенное расстояние (удаление на 
+расстояние) приведет к рассылке адресатам оповещений о произошедшем событии<span lang="en-us">.
+</span><a href="GeoMonitoredObjectDistanceNotifications.htm">Подробнее...</a></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>адреса для оповещения</b>&quot; - пункт с возможностью редактирования<span lang="en-us">,
+</span>определяющий кому и каким способом отправлять извещения о произошедших
+<span lang="en-us">с</span> объектом событиях<span lang="en-us">.</span> 
+Поддерживаются три формата адресов: <span lang="en-us">E-Mail, SMS, MailBox (</span>внутренняя 
+почта проекта<span lang="en-us">)</span>. Кнопка &quot;Правка&quot; служит для 
+редактирования адресов этих форматов<span lang="en-us">.</span></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>статус тревоги</b>&quot; - пункт, показывающий текущее состояние пользователя 
+устройства<span lang="en-us">.</span> Тревога подразделяется <span lang="en-us">&nbsp;</span>на 
+четыре типа: &quot;Нет тревоги&quot;. &quot;Слабая&quot;, &quot;Сильная&quot;, &quot;Критическая&quot;. Если устройство 
+выставляет тревогу последних трёх типов, то данный объект заносится в список 
+&quot;Нужна помощь&quot;. Посмотреть объекты в этом списке можно через главное меню 
+программы.</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&nbsp;</p>
+<p style="margin-top: 5px; margin-bottom: 5px">
+Контекстное меню панели.</p>
+<p style="margin-top: 5px; margin-bottom: 5px">
+<img border="0" src="GeoMonitoredObjectContextMenu.GIF" width="327" height="189"></p>
+<p style="margin-top: 5px; margin-bottom: 5px">
+Основные пункты:</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+<a name="Регистрация объекта"></a>&quot;<b>Регистрировать объект на сервере</b>&quot; - пункт регистрации объекта в
+<span lang="en-us">GeoGraph </span>сервере<span lang="en-us">. </span>
+Регистрация требуется для того, чтобы вновь созданный объект был известен на 
+сервере, и тогда можно будет использовать мобильное устройство. В этом пункте 
+открывается мастер регистрации, где необходимо будет выбрать сервер, модель 
+объекта, и зарегистрировать его.
+<a href="GeoMonitoredObjectServerRegistration.htm">Подробнее...</a></p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+<a name="Инициализация устройства"></a>&quot;<b>Панель инициализации устройства</b>&quot; <span lang="en-us">&nbsp;</span>- 
+пункт, открывающий панель для инициализации нового устройства в соответствии с 
+данными текущего объекта и текущего пользователя. При инициализации на 
+устройство отправляется СМС с настройками, и его можно уже будет использовать в 
+пути. <a href="GeoMonitoredObjectDeviceInitialization.htm">Подробнее...</a> </p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&quot;<b>Копировать компонент-визуализацию в карман</b>&quot; - пункт, копирующий ссылку 
+на текущий объект в карман, для последующего использования. </p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&nbsp;</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+&nbsp;</p>
+</body>
+
+</html>

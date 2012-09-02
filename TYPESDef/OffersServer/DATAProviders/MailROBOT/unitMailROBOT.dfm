@@ -1,0 +1,181 @@
+object fmMailROBOT: TfmMailROBOT
+  Left = 343
+  Top = 159
+  Width = 354
+  Height = 495
+  BorderStyle = bsSizeToolWin
+  Caption = 'E-Mail ROBOT'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Bevel1: TBevel
+    Left = 0
+    Top = 56
+    Width = 137
+    Height = 9
+    Shape = bsTopLine
+    Style = bsRaised
+  end
+  object Bevel2: TBevel
+    Left = 144
+    Top = 0
+    Width = 9
+    Height = 153
+    Shape = bsLeftLine
+    Style = bsRaised
+  end
+  object Bevel3: TBevel
+    Left = 0
+    Top = 160
+    Width = 345
+    Height = 9
+    Shape = bsTopLine
+    Style = bsRaised
+  end
+  object sbStartROBOT: TSpeedButton
+    Left = 160
+    Top = 112
+    Width = 177
+    Height = 33
+    Caption = 'Start ROBOT'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    OnClick = sbStartROBOTClick
+  end
+  object edMailServer: TLabeledEdit
+    Left = 8
+    Top = 24
+    Width = 121
+    Height = 24
+    BevelInner = bvNone
+    BevelKind = bkSoft
+    BorderStyle = bsNone
+    EditLabel.Width = 109
+    EditLabel.Height = 16
+    EditLabel.Caption = 'E-Mail POP3 server'
+    EditLabel.Font.Charset = DEFAULT_CHARSET
+    EditLabel.Font.Color = clWindowText
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Style = []
+    EditLabel.ParentFont = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    LabelPosition = lpAbove
+    LabelSpacing = 1
+    ParentFont = False
+    TabOrder = 0
+    OnKeyPress = edMailServerKeyPress
+  end
+  object edMailServerUserName: TLabeledEdit
+    Left = 8
+    Top = 80
+    Width = 121
+    Height = 24
+    BevelInner = bvNone
+    BevelKind = bkSoft
+    BorderStyle = bsNone
+    EditLabel.Width = 59
+    EditLabel.Height = 16
+    EditLabel.Caption = 'UserName'
+    EditLabel.Font.Charset = DEFAULT_CHARSET
+    EditLabel.Font.Color = clWindowText
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Style = []
+    EditLabel.ParentFont = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGray
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    LabelPosition = lpAbove
+    LabelSpacing = 1
+    ParentFont = False
+    TabOrder = 1
+    OnKeyPress = edMailServerUserNameKeyPress
+  end
+  object edMailServerUserPassword: TLabeledEdit
+    Left = 8
+    Top = 120
+    Width = 121
+    Height = 24
+    BevelInner = bvNone
+    BevelKind = bkSoft
+    BorderStyle = bsNone
+    EditLabel.Width = 81
+    EditLabel.Height = 16
+    EditLabel.Caption = 'UserPassword'
+    EditLabel.Font.Charset = DEFAULT_CHARSET
+    EditLabel.Font.Color = clWindowText
+    EditLabel.Font.Height = -13
+    EditLabel.Font.Name = 'Tahoma'
+    EditLabel.Font.Style = []
+    EditLabel.ParentFont = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGray
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    LabelPosition = lpAbove
+    LabelSpacing = 1
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 2
+    OnKeyPress = edMailServerUserPasswordKeyPress
+  end
+  object reROBOTLog: TRichEdit
+    Left = 8
+    Top = 176
+    Width = 329
+    Height = 273
+    BevelInner = bvNone
+    BevelKind = bkSoft
+    BorderStyle = bsNone
+    Color = clSilver
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    WordWrap = False
+  end
+  object cbLogCheckPoints: TCheckBox
+    Left = 8
+    Top = 449
+    Width = 329
+    Height = 17
+    Caption = 'Show CheckPoints'
+    TabOrder = 4
+  end
+  object timerROBOTWakeUps: TTimer
+    Enabled = False
+    Interval = 60000
+    OnTimer = timerROBOTWakeUpsTimer
+    Left = 160
+    Top = 8
+  end
+  object POP3Client: TNMPOP3
+    Port = 110
+    ReportLevel = 0
+    Parse = False
+    DeleteOnRead = False
+    OnDecodeStart = POP3ClientDecodeStart
+  end
+end

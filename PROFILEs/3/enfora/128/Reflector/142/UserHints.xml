@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<ROOT xmlns:dt="urn:schemas-microsoft-com:datatypes"><Version>0</Version><SpacePackID>23</SpacePackID><Items><Item0><idTVisualization>2046</idTVisualization><idVisualization>507</idVisualization><VisualizationPtr>23754864</VisualizationPtr><Enabled>0</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>valex_MT3000</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>65535</InfoStringFontColor><Owner><TID>2015</TID><ID>1746</ID><CoTypeID>1111143</CoTypeID><StatusBarData dt:dt="bin.base64">AQAxAAAAADIAAAAAHwAAAAAAAAA=</StatusBarData></Owner></Item0><Item1><idTVisualization>2046</idTVisualization><idVisualization>508</idVisualization><VisualizationPtr>58018012</VisualizationPtr><Enabled>-1</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>MT3000-4401</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>65535</InfoStringFontColor><Owner><TID>2015</TID><ID>1747</ID><CoTypeID>1111143</CoTypeID><StatusBarData dt:dt="bin.base64">AQAzAAAAADQAAAABIAAAAAAAAAA=</StatusBarData></Owner></Item1><Item2><idTVisualization>2046</idTVisualization><idVisualization>503</idVisualization><VisualizationPtr>58017944</VisualizationPtr><Enabled>-1</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>MT3000_Arzamas</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>65535</InfoStringFontColor><Owner><TID>2015</TID><ID>1735</ID><CoTypeID>1111143</CoTypeID><StatusBarData dt:dt="bin.base64">AQArAAAAACwAAAABHAAAAAAAAAA=</StatusBarData></Owner></Item2><Item3><idTVisualization>2046</idTVisualization><idVisualization>510</idVisualization><VisualizationPtr>58012236</VisualizationPtr><Enabled>-1</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>MiniMT</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>65535</InfoStringFontColor><Owner><TID>2015</TID><ID>1791</ID><CoTypeID>1111143</CoTypeID><StatusBarData dt:dt="bin.base64">AQA1AAAAADYAAAAAIQAAAAAAAAA=</StatusBarData></Owner></Item3></Items></ROOT>
