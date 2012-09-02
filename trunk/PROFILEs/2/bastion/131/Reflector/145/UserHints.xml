@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<ROOT xmlns:dt="urn:schemas-microsoft-com:datatypes"><Version>0</Version><Items><Item0><idTVisualization>2046</idTVisualization><idVisualization>545</idVisualization><Enabled>0</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>Bastion#2</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>16711935</InfoStringFontColor></Item0><Item1><idTVisualization>2046</idTVisualization><idVisualization>490</idVisualization><Enabled>0</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>Bastion#1</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>16711935</InfoStringFontColor></Item1><Item2><idTVisualization>2046</idTVisualization><idVisualization>564</idVisualization><Enabled>-1</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>Bastion#3</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>16711935</InfoStringFontColor></Item2><Item3><idTVisualization>2046</idTVisualization><idVisualization>565</idVisualization><Enabled>-1</Enabled><Tracking>0</Tracking><BackgroundColor>536870911</BackgroundColor><AlwaysCheckVisibility>-1</AlwaysCheckVisibility><InfoImage dt:dt="bin.base64">Qk1WAgAAAAAAADYAAAAoAAAACgAAABEAAAABABgAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAA
+////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/////AAD///8AAP8AAP8AAP8AAP8AAP8AAP8A
+AP8AAP////8AAP///////wAA/wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////AAD/AAD/
+AAD/AAD/AAD/AAD/AAD/////AAD///////////8AAP8AAP8AAP8AAP8AAP8AAP////8AAP//
+/////////wAA/wAA/wAA/wAA/wAA/wAA/////wAA////////////////AAD/AAD/AAD/AAD/
+AAD/////AAD///////////////8AAP8AAP8AAP8AAP8AAP////8AAP//////////////////
+/wAA/wAA/wAA/wAA/////wAA////////////////////AAD/AAD/AAD/AAD/////AAD/////
+//////////////////8AAP8AAP8AAP////8AAP///////////////////////wAA/wAA/wAA
+/////wAA////////////////////////////AAD/AAD/////AAD/////////////////////
+//////8AAP8AAP////8AAP///////////////////////////////wAA/////wAA////////
+////////////////////////AAD/////AAD/////////////////////////////////////
+//8AAA==</InfoImage><InfoString>Bastion#4</InfoString><InfoStringFontName>Tahoma</InfoStringFontName><InfoStringFontSize>14</InfoStringFontSize><InfoStringFontColor>16711935</InfoStringFontColor></Item3></Items></ROOT>

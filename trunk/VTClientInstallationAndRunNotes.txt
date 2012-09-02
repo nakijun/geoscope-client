@@ -1,0 +1,3 @@
+Steps:
+  1. Unpack self-extract archive into any folder
+  2. edit and start file "StartIT.bat"

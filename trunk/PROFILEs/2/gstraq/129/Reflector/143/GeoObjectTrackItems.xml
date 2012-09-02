@@ -1,0 +1,752 @@
+<?xml version="1.0"?>
+<ROOT xmlns:dt="urn:schemas-microsoft-com:datatypes"><Version>0</Version><Tracks><ID3><Nodes><N0><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N0><N1><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N1><N2><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N2><N3><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N3><N4><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N4><N5><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N5><N6><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N6><N7><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N7><N8><TimeStamp>40699.4653472222</TimeStamp><Latitude>55.3965250551701</Latitude><Longitude>43.8328939080238</Longitude><Altitude>185.399993896484</Altitude><Speed>28.1133605651855</Speed><Bearing>108.730003356934</Bearing><Precision>1000000000</Precision><X>317519.693099499</X><Y>-201350.442582369</Y></N8><N9><TimeStamp>40718.5427893519</TimeStamp><Latitude>55.4097493588924</Latitude><Longitude>43.8226481080055</Longitude><Altitude>163</Altitude><Speed>20.6683197174072</Speed><Bearing>269.450012207031</Bearing><Precision>19.9799995422363</Precision><X>317609.17565155</X><Y>-201161.7591362</Y></N9><N10><TimeStamp>40718.5428587963</TimeStamp><Latitude>55.4095296263695</Latitude><Longitude>43.822054028511</Longitude><Altitude>160.800003051758</Altitude><Speed>28.613399646759</Speed><Bearing>222.070007324219</Bearing><Precision>19.9199995994568</Precision><X>317603.66399622</X><Y>-201160.210656404</Y></N10><N11><TimeStamp>40718.5429282407</TimeStamp><Latitude>55.4090413451195</Latitude><Longitude>43.821272790432</Longitude><Altitude>160.800003051758</Altitude><Speed>41.5218401412964</Speed><Bearing>220.179992675781</Bearing><Precision>19.9199995994568</Precision><X>317594.253687382</X><Y>-201160.07160306</Y></N11><N12><TimeStamp>40718.5429976852</TimeStamp><Latitude>55.408471673727</Latitude><Longitude>43.8204996585846</Longitude><Altitude>160.600006103516</Altitude><Speed>44.9665612716675</Speed><Bearing>219.979995727539</Bearing><Precision>53.3400020599365</Precision><X>317584.00308466</X><Y>-201160.756795883</Y></N12><N13><TimeStamp>40718.5433449074</TimeStamp><Latitude>55.409171551466</Latitude><Longitude>43.8186767697334</Longitude><Altitude>119.099998474121</Altitude><Speed>14.7789600353241</Speed><Bearing>212.039993286133</Bearing><Precision>10.5599999427795</Precision><X>317581.997569561</X><Y>-201142.924729109</Y></N13><N14><TimeStamp>40718.5434375</TimeStamp><Latitude>55.4089924991131</Latitude><Longitude>43.8183186650276</Longitude><Altitude>107.300003051758</Altitude><Speed>9.96376021194458</Speed><Bearing>230.059997558594</Bearing><Precision>10.5599999427795</Precision><X>317578.169710636</X><Y>-201142.434686184</Y></N14><N15><TimeStamp>40718.5435300926</TimeStamp><Latitude>55.40869140625</Latitude><Longitude>43.8185790777206</Longitude><Altitude>101</Altitude><Speed>27.5577602119446</Speed><Bearing>197.580001831055</Bearing><Precision>13.1400003433228</Precision><X>317576.274476051</X><Y>-201146.896433353</Y></N15><N16><TimeStamp>40718.5436226852</TimeStamp><Latitude>55.4079101681709</Latitude><Longitude>43.818603515625</Longitude><Altitude>96.5</Altitude><Speed>33.9101190109253</Speed><Bearing>177.610000610352</Bearing><Precision>13.3800001144409</Precision><X>317567.928048611</X><Y>-201154.482475042</Y></N16><N17><TimeStamp>40718.5436921296</TimeStamp><Latitude>55.407234698534</Latitude><Longitude>43.8186686038971</Longitude><Altitude>94.8000030517578</Altitude><Speed>36.5029183044434</Speed><Bearing>172.419998168945</Bearing><Precision>13.3800001144409</Precision><X>317560.943065643</X><Y>-201161.310861588</Y></N17><N18><TimeStamp>40718.5439930556</TimeStamp><Latitude>55.4052246212959</Latitude><Longitude>43.819091796875</Longitude><Altitude>104.800003051758</Altitude><Speed>33.2804387283325</Speed><Bearing>184.179992675781</Bearing><Precision>13.1400003433228</Precision><X>317541.36552</X><Y>-201183.037460566</Y></N18><N19><TimeStamp>40718.5441087963</TimeStamp><Latitude>55.4044270813465</Latitude><Longitude>43.8194172978401</Longitude><Altitude>84.3000030517578</Altitude><Speed>37.5400408477783</Speed><Bearing>175.720001220703</Bearing><Precision>13.2000002861023</Precision><X>317534.427654743</X><Y>-201192.623859882</Y></N19><N20><TimeStamp>40718.5448726852</TimeStamp><Latitude>55.4002197384834</Latitude><Longitude>43.8203613162041</Longitude><Altitude>112.099998474121</Altitude><Speed>15.2049200706482</Speed><Bearing>132.660003662109</Bearing><Precision>13.2600002288818</Precision><X>317493.757019997</X><Y>-201238.458428621</Y></N20><N21><TimeStamp>40718.5449652778</TimeStamp><Latitude>55.4002197384834</Latitude><Longitude>43.8208821415901</Longitude><Altitude>114.800003051758</Altitude><Speed>13.5566403179169</Speed><Bearing>78.7799987792969</Bearing><Precision>49.6799983978271</Precision><X>317496.499961376</X><Y>-201241.650600195</Y></N21><N22><TimeStamp>40718.5452893519</TimeStamp><Latitude>55.4000000059605</Latitude><Longitude>43.821988940239</Longitude><Altitude>77</Altitude><Speed>13.8344396114349</Speed><Bearing>172.119995117188</Bearing><Precision>13.2600002288818</Precision><X>317499.945445061</X><Y>-201250.525932312</Y></N22><N23><TimeStamp>40718.5453819444</TimeStamp><Latitude>55.3997558653355</Latitude><Longitude>43.8217855095863</Longitude><Altitude>86.6999969482422</Altitude><Speed>18.3162806358337</Speed><Bearing>195.860000610352</Bearing><Precision>13.2600002288818</Precision><X>317496.225609779</X><Y>-201251.603092194</Y></N23><N24><TimeStamp>40718.546099537</TimeStamp><Latitude>55.3990559875965</Latitude><Longitude>43.8217366337776</Longitude><Altitude>111.199996948242</Altitude><Speed>9.98227975273132</Speed><Bearing>176.600006103516</Bearing><Precision>47.8199987411499</Precision><X>317488.375936985</X><Y>-201257.965708733</Y></N24><N25><TimeStamp>40718.5464467593</TimeStamp><Latitude>55.3997558653355</Latitude><Longitude>43.8215982913971</Longitude><Altitude>112.699996948242</Altitude><Speed>5.88936012363434</Speed><Bearing>191.520004272461</Bearing><Precision>47.2800006866455</Precision><X>317495.239557743</X><Y>-201250.455564737</Y></N25><N26><TimeStamp>40718.5464467593</TimeStamp><Latitude>55.3997558653355</Latitude><Longitude>43.8215982913971</Longitude><Altitude>112.699996948242</Altitude><Speed>5.88936012363434</Speed><Bearing>191.520004272461</Bearing><Precision>1000000000</Precision><X>317495.239557743</X><Y>-201250.455564737</Y></N26><N27><TimeStamp>40718.5481365741</TimeStamp><Latitude>55.3966227173805</Latitude><Longitude>43.8299072384834</Longitude><Altitude>138.399993896484</Altitude><Speed>18.1681207771301</Speed><Bearing>108.519996643066</Bearing><Precision>13.5599999427795</Precision><X>317505.018627167</X><Y>-201331.208058119</Y></N27><N28><TimeStamp>40718.5481828704</TimeStamp><Latitude>55.3968099057674</Latitude><Longitude>43.8304036259651</Longitude><Altitude>169.899993896484</Altitude><Speed>28.8356394348145</Speed><Bearing>98.7900009155273</Bearing><Precision>13.5599999427795</Precision><X>317509.663894653</X><Y>-201332.468173742</Y></N28><N29><TimeStamp>40718.5482523148</TimeStamp><Latitude>55.3968424499035</Latitude><Longitude>43.8312093019485</Longitude><Altitude>164.600006103516</Altitude><Speed>29.7060816955566</Speed><Bearing>91.9899978637695</Bearing><Precision>44.6400003433228</Precision><X>317514.261142254</X><Y>-201337.096203804</Y></N29><N30><TimeStamp>40718.5483449074</TimeStamp><Latitude>55.396948248148</Latitude><Longitude>43.8326334357262</Longitude><Altitude>159.300003051758</Altitude><Speed>44.7813605651856</Speed><Bearing>90.8000030517578</Bearing><Precision>44.5200004577637</Precision><X>317522.911060333</X><Y>-201344.817079306</Y></N30><N31><TimeStamp>40718.5483912037</TimeStamp><Latitude>55.396988928318</Latitude><Longitude>43.8331786990166</Longitude><Altitude>155.699996948242</Altitude><Speed>27.9466802825928</Speed><Bearing>89.6999969482422</Bearing><Precision>44.4599990844727</Precision><X>317526.224799633</X><Y>-201347.771502256</Y></N31><N32><TimeStamp>40718.5488078704</TimeStamp><Latitude>55.396752923727</Latitude><Longitude>43.833463549614</Longitude><Altitude>151.699996948242</Altitude><Speed>3.64844005298615</Speed><Bearing>157.580001831055</Bearing><Precision>10.3800001144409</Precision><X>317525.165654182</X><Y>-201351.764266968</Y></N32><N33><TimeStamp>40718.5491087963</TimeStamp><Latitude>55.3964111208916</Latitude><Longitude>43.834016919136</Longitude><Altitude>163.100006103516</Altitude><Speed>2.01868006181717</Speed><Bearing>57.25</Bearing><Precision>36.2399997711182</Precision><X>317524.373627186</X><Y>-201358.40999651</Y></N33><N34><TimeStamp>40718.5493171296</TimeStamp><Latitude>55.3966796994209</Latitude><Longitude>43.8335937261581</Longitude><Altitude>159.100006103516</Altitude><Speed>3.44472002649307</Speed><Bearing>332.670013427734</Bearing><Precision>36.1800012588501</Precision><X>317525.057226658</X><Y>-201353.259232044</Y></N34><N35><TimeStamp>40718.5493171296</TimeStamp><Latitude>55.3966796994209</Latitude><Longitude>43.8335937261581</Longitude><Altitude>159.100006103516</Altitude><Speed>3.44472002649307</Speed><Bearing>332.670013427734</Bearing><Precision>1000000000</Precision><X>317525.057226658</X><Y>-201353.259232044</Y></N35></Nodes><ObjectModelEvents><N0><TimeStamp>0</TimeStamp><Severity>1</Severity><Message>GET Configuration</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N0><N1><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N1><N2><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N2><N3><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N3><N4><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N4><N5><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N5><N6><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N6><N7><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N7><N8><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N8><N9><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N9><N10><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N10><N11><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N11><N12><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>GET Configuration</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N12><N13><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N13><N14><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N14><N15><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N15><N16><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>GET Configuration</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N16><N17><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N17><N18><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N18><N19><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N19><N20><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N20><N21><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N21><N22><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N22><N23><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N23><N24><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N24><N25><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>GET Configuration</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N25><N26><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N26><N27><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N27><N28><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N28><N29><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N29><N30><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>GET Configuration</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N30><N31><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N31><N32><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39653
+Долгота: 43.83289
+Высота: 185.39999
+Скорость: 28.11336
+Направление: 108.73000
+Точность: 1000000000.00000</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N32><N33><TimeStamp>40718.5427893519</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40975
+Долгота: 43.82265
+Высота: 163.00000
+Скорость: 20.66832
+Направление: 269.45001
+Точность: 19.98000</Info><X>317609.17565155</X><Y>-201161.7591362</Y></N33><N34><TimeStamp>40718.5428587963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40953
+Долгота: 43.82205
+Высота: 160.80000
+Скорость: 28.61340
+Направление: 222.07001
+Точность: 19.92000</Info><X>317603.66399622</X><Y>-201160.210656404</Y></N34><N35><TimeStamp>40718.5429282407</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40904
+Долгота: 43.82127
+Высота: 160.80000
+Скорость: 41.52184
+Направление: 220.17999
+Точность: 19.92000</Info><X>317594.253687382</X><Y>-201160.07160306</Y></N35><N36><TimeStamp>40718.5429976852</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40847
+Долгота: 43.82050
+Высота: 160.60001
+Скорость: 44.96656
+Направление: 219.98000
+Точность: 53.34000</Info><X>317584.00308466</X><Y>-201160.756795883</Y></N36><N37><TimeStamp>40718.5433449074</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40917
+Долгота: 43.81868
+Высота: 119.10000
+Скорость: 14.77896
+Направление: 212.03999
+Точность: 10.56000</Info><X>317581.997569561</X><Y>-201142.924729109</Y></N37><N38><TimeStamp>40718.5434375</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40899
+Долгота: 43.81832
+Высота: 107.30000
+Скорость: 9.96376
+Направление: 230.06000
+Точность: 10.56000</Info><X>317578.169710636</X><Y>-201142.434686184</Y></N38><N39><TimeStamp>40718.5435300926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40869
+Долгота: 43.81858
+Высота: 101.00000
+Скорость: 27.55776
+Направление: 197.58000
+Точность: 13.14000</Info><X>317576.274476051</X><Y>-201146.896433353</Y></N39><N40><TimeStamp>40718.5436226852</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40791
+Долгота: 43.81860
+Высота: 96.50000
+Скорость: 33.91012
+Направление: 177.61000
+Точность: 13.38000</Info><X>317567.928048611</X><Y>-201154.482475042</Y></N40><N41><TimeStamp>40718.5436921296</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40723
+Долгота: 43.81867
+Высота: 94.80000
+Скорость: 36.50292
+Направление: 172.42000
+Точность: 13.38000</Info><X>317560.943065643</X><Y>-201161.310861588</Y></N41><N42><TimeStamp>40718.5439930556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40522
+Долгота: 43.81909
+Высота: 104.80000
+Скорость: 33.28044
+Направление: 184.17999
+Точность: 13.14000</Info><X>317541.36552</X><Y>-201183.037460566</Y></N42><N43><TimeStamp>40718.5441087963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40443
+Долгота: 43.81942
+Высота: 84.30000
+Скорость: 37.54004
+Направление: 175.72000
+Точность: 13.20000</Info><X>317534.427654743</X><Y>-201192.623859882</Y></N43><N44><TimeStamp>40718.5448726852</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40022
+Долгота: 43.82036
+Высота: 112.10000
+Скорость: 15.20492
+Направление: 132.66000
+Точность: 13.26000</Info><X>317493.757019997</X><Y>-201238.458428621</Y></N44><N45><TimeStamp>40718.5449652778</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40022
+Долгота: 43.82088
+Высота: 114.80000
+Скорость: 13.55664
+Направление: 78.78000
+Точность: 49.68000</Info><X>317496.499961376</X><Y>-201241.650600195</Y></N45><N46><TimeStamp>40718.5452893519</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.40000
+Долгота: 43.82199
+Высота: 77.00000
+Скорость: 13.83444
+Направление: 172.12000
+Точность: 13.26000</Info><X>317499.945445061</X><Y>-201250.525932312</Y></N46><N47><TimeStamp>40718.5453819444</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39976
+Долгота: 43.82179
+Высота: 86.70000
+Скорость: 18.31628
+Направление: 195.86000
+Точность: 13.26000</Info><X>317496.225609779</X><Y>-201251.603092194</Y></N47><N48><TimeStamp>40718.546099537</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39906
+Долгота: 43.82174
+Высота: 111.20000
+Скорость: 9.98228
+Направление: 176.60001
+Точность: 47.82000</Info><X>317488.375936985</X><Y>-201257.965708733</Y></N48><N49><TimeStamp>40718.5464467593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39976
+Долгота: 43.82160
+Высота: 112.70000
+Скорость: 5.88936
+Направление: 191.52000
+Точность: 47.28000</Info><X>317495.239557743</X><Y>-201250.455564737</Y></N49><N50><TimeStamp>40718.5464467593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39976
+Долгота: 43.82160
+Высота: 112.70000
+Скорость: 5.88936
+Направление: 191.52000
+Точность: 1000000000.00000</Info><X>317495.239557743</X><Y>-201250.455564737</Y></N50><N51><TimeStamp>40718.5481365741</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39662
+Долгота: 43.82991
+Высота: 138.39999
+Скорость: 18.16812
+Направление: 108.52000
+Точность: 13.56000</Info><X>317505.018627167</X><Y>-201331.208058119</Y></N51><N52><TimeStamp>40718.5481828704</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39681
+Долгота: 43.83040
+Высота: 169.89999
+Скорость: 28.83564
+Направление: 98.79000
+Точность: 13.56000</Info><X>317509.663894653</X><Y>-201332.468173742</Y></N52><N53><TimeStamp>40718.5482523148</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39684
+Долгота: 43.83121
+Высота: 164.60001
+Скорость: 29.70608
+Направление: 91.99000
+Точность: 44.64000</Info><X>317514.261142254</X><Y>-201337.096203804</Y></N53><N54><TimeStamp>40718.5483449074</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39695
+Долгота: 43.83263
+Высота: 159.30000
+Скорость: 44.78136
+Направление: 90.80000
+Точность: 44.52000</Info><X>317522.911060333</X><Y>-201344.817079306</Y></N54><N55><TimeStamp>40718.5483912037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39699
+Долгота: 43.83318
+Высота: 155.70000
+Скорость: 27.94668
+Направление: 89.70000
+Точность: 44.46000</Info><X>317526.224799633</X><Y>-201347.771502256</Y></N55><N56><TimeStamp>40718.5488078704</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39675
+Долгота: 43.83346
+Высота: 151.70000
+Скорость: 3.64844
+Направление: 157.58000
+Точность: 10.38000</Info><X>317525.165654182</X><Y>-201351.764266968</Y></N56><N57><TimeStamp>40718.5491087963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39641
+Долгота: 43.83402
+Высота: 163.10001
+Скорость: 2.01868
+Направление: 57.25000
+Точность: 36.24000</Info><X>317524.373627186</X><Y>-201358.40999651</Y></N57><N58><TimeStamp>40718.5493171296</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39668
+Долгота: 43.83359
+Высота: 159.10001
+Скорость: 3.44472
+Направление: 332.67001
+Точность: 36.18000</Info><X>317525.057226658</X><Y>-201353.259232044</Y></N58><N59><TimeStamp>40718.5493171296</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Широта: 55.39668
+Долгота: 43.83359
+Высота: 159.10001
+Скорость: 3.44472
+Направление: 332.67001
+Точность: 1000000000.00000</Info><X>317525.057226658</X><Y>-201353.259232044</Y></N59></ObjectModelEvents><BusinessModelEvents><N0><TimeStamp>0</TimeStamp><Severity>2</Severity><Message>Устройство рестартовано</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N0><N1><TimeStamp>0</TimeStamp><Severity>1</Severity><Message>Устройство Вкл</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N1><N2><TimeStamp>40699.4653472222</TimeStamp><Severity>3</Severity><Message>Тревога: Критическая </Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N2><N3><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>Тревога: нет </Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N3><N4><TimeStamp>40699.4653472222</TimeStamp><Severity>3</Severity><Message>Тревога: Критическая </Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N4><N5><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>Тревога: нет </Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N5><N6><TimeStamp>40699.4653472222</TimeStamp><Severity>3</Severity><Message>Тревога: Критическая </Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N6><N7><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство Выкл</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N7><N8><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство рестартовано</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N8><N9><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>Устройство Вкл</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N9><N10><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>Тревога: нет </Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N10><N11><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство Выкл</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N11><N12><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство рестартовано</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N12><N13><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>Устройство Вкл</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N13><N14><TimeStamp>40699.4653472222</TimeStamp><Severity>3</Severity><Message>Тревога: Критическая </Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N14><N15><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>Тревога: нет </Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N15><N16><TimeStamp>40699.4653472222</TimeStamp><Severity>3</Severity><Message>Тревога: Критическая </Message><Info>Значение: 3</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N16><N17><TimeStamp>40699.4653472222</TimeStamp><Severity>0</Severity><Message>Тревога: нет </Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N17><N18><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство Выкл</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N18><N19><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство рестартовано</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N19><N20><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>Устройство Вкл</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N20><N21><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство Выкл</Message><Info>Значение: 0</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N21><N22><TimeStamp>40699.4653472222</TimeStamp><Severity>2</Severity><Message>Устройство рестартовано</Message><Info>ЧекпоинтИнтервал: 1800 сек
+ПорогРасстояния: 30 m</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N22><N23><TimeStamp>40699.4653472222</TimeStamp><Severity>1</Severity><Message>Устройство Вкл</Message><Info>Значение: 1</Info><X>317519.693099499</X><Y>-201350.442582369</Y></N23></BusinessModelEvents></ID3><ID2><Nodes><N0><TimeStamp>40711.5440740741</TimeStamp><Latitude>55.3962516666667</Latitude><Longitude>43.8331866666667</Longitude><Altitude>177</Altitude><Speed>0.15</Speed><Bearing>0</Bearing><Precision>5.4</Precision><X>317518.270141602</X><Y>-201354.839773178</Y></N0><N1><TimeStamp>40711.5444212963</TimeStamp><Latitude>55.3964</Latitude><Longitude>43.8329666666667</Longitude><Altitude>154</Altitude><Speed>0.22</Speed><Bearing>334</Bearing><Precision>4.8</Precision><X>317518.720043659</X><Y>-201352.079214811</Y></N1><N2><TimeStamp>40711.5447685185</TimeStamp><Latitude>55.3966816666667</Latitude><Longitude>43.8332666666667</Longitude><Altitude>167</Altitude><Speed>2.18</Speed><Bearing>60</Bearing><Precision>4.8</Precision><X>317523.355543613</X><Y>-201351.236048222</Y></N2></Nodes><ObjectModelEvents><N0><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Значение: 83</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N0><N1><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N1><N2><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 0</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N2><N3><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Значение: 82</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N3><N4><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N4><N5><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Значение: 81</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N5><N6><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 0</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N6><N7><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Значение: 81</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N7><N8><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Значение: 3</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N8><N9><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Значение: 1</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N9><N10><TimeStamp>40711.5440740741</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39625
+Longitude: 43.83319
+Altitude: 177.00000
+Speed: 0.15000
+Bearing: 0.00000
+Precision: 5.40000</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N10><N11><TimeStamp>40711.5440740741</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Значение: 80</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N11><N12><TimeStamp>40711.5444212963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39640
+Longitude: 43.83297
+Altitude: 154.00000
+Speed: 0.22000
+Bearing: 334.00000
+Precision: 4.80000</Info><X>317518.720043659</X><Y>-201352.079214811</Y></N12><N13><TimeStamp>40711.5447685185</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39668
+Longitude: 43.83327
+Altitude: 167.00000
+Speed: 2.18000
+Bearing: 60.00000
+Precision: 4.80000</Info><X>317523.355543613</X><Y>-201351.236048222</Y></N13></ObjectModelEvents><BusinessModelEvents><N0><TimeStamp>0</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Значение: 1</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N0><N1><TimeStamp>0</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Значение: 0</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N1><N2><TimeStamp>0</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Значение: 1</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N2><N3><TimeStamp>0</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Значение: 0</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N3><N4><TimeStamp>0</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Значение: 1</Info><X>317518.270141602</X><Y>-201354.839773178</Y></N4></BusinessModelEvents></ID2><ID1><Nodes><N0><TimeStamp>40710.6833680556</TimeStamp><Latitude>55.3932166666667</Latitude><Longitude>43.8356116666667</Longitude><Altitude>169</Altitude><Speed>0.81</Speed><Bearing>112</Bearing><Precision>11.4</Precision><X>317498.12813282</X><Y>-201398.599315405</Y></N0><N1><TimeStamp>40710.6837037037</TimeStamp><Latitude>55.3930416666667</Latitude><Longitude>43.836195</Longitude><Altitude>177</Altitude><Speed>0.02</Speed><Bearing>0</Bearing><Precision>12</Precision><X>317499.303600311</X><Y>-201403.840837717</Y></N1><N2><TimeStamp>40710.6840625</TimeStamp><Latitude>55.3930866666667</Latitude><Longitude>43.8360366666667</Longitude><Altitude>177</Altitude><Speed>0.13</Speed><Bearing>0</Bearing><Precision>6.6</Precision><X>317498.95742178</X><Y>-201402.441937447</Y></N2><N3><TimeStamp>40710.6844097222</TimeStamp><Latitude>55.3932316666667</Latitude><Longitude>43.8357616666667</Longitude><Altitude>189</Altitude><Speed>0.58</Speed><Bearing>128</Bearing><Precision>6</Precision><X>317499.081130981</X><Y>-201399.375809431</Y></N3><N4><TimeStamp>40710.6847569444</TimeStamp><Latitude>55.3931666666667</Latitude><Longitude>43.8358666666667</Longitude><Altitude>182</Altitude><Speed>0.63</Speed><Bearing>288</Bearing><Precision>12</Precision><X>317498.929380894</X><Y>-201400.638269424</Y></N4><N5><TimeStamp>40710.6850925926</TimeStamp><Latitude>55.3931216666667</Latitude><Longitude>43.8359716666667</Longitude><Altitude>192</Altitude><Speed>0.04</Speed><Bearing>292</Bearing><Precision>7.2</Precision><X>317498.994534016</X><Y>-201401.710265398</Y></N5><N6><TimeStamp>40710.6854398148</TimeStamp><Latitude>55.3932366666667</Latitude><Longitude>43.8357416666667</Longitude><Altitude>176</Altitude><Speed>0.71</Speed><Bearing>316</Bearing><Precision>7.8</Precision><X>317499.029998779</X><Y>-201399.205648661</Y></N6><N7><TimeStamp>40710.6857986111</TimeStamp><Latitude>55.3930916666667</Latitude><Longitude>43.8360366666667</Longitude><Altitude>175</Altitude><Speed>0.83</Speed><Bearing>124</Bearing><Precision>7.2</Precision><X>317499.0116539</X><Y>-201402.394334078</Y></N7><N8><TimeStamp>40710.6861342593</TimeStamp><Latitude>55.3931066666667</Latitude><Longitude>43.8359766666667</Longitude><Altitude>182</Altitude><Speed>0.32</Speed><Bearing>104</Bearing><Precision>17.4</Precision><X>317498.858200073</X><Y>-201401.883754015</Y></N8><N9><TimeStamp>40710.6864814815</TimeStamp><Latitude>55.3931816666667</Latitude><Longitude>43.8358716666667</Longitude><Altitude>183</Altitude><Speed>0.24</Speed><Bearing>150</Bearing><Precision>7.2</Precision><X>317499.118414402</X><Y>-201400.526090384</Y></N9><N10><TimeStamp>40710.6868402778</TimeStamp><Latitude>55.3931216666667</Latitude><Longitude>43.8358416666667</Longitude><Altitude>186</Altitude><Speed>0.27</Speed><Bearing>310</Bearing><Precision>12.6</Precision><X>317498.30958271</X><Y>-201400.913501024</Y></N10><N11><TimeStamp>40710.6871990741</TimeStamp><Latitude>55.3931116666667</Latitude><Longitude>43.8359266666667</Longitude><Altitude>190</Altitude><Speed>0.55</Speed><Bearing>312</Bearing><Precision>7.2</Precision><X>317498.648974895</X><Y>-201401.529677153</Y></N11><N12><TimeStamp>40710.6875462963</TimeStamp><Latitude>55.393265</Latitude><Longitude>43.8357266666667</Longitude><Altitude>177</Altitude><Speed>0.11</Speed><Bearing>312</Bearing><Precision>8.4</Precision><X>317499.258268833</X><Y>-201398.843936205</Y></N12><N13><TimeStamp>40710.6879050926</TimeStamp><Latitude>55.393105</Latitude><Longitude>43.8356116666667</Longitude><Altitude>164</Altitude><Speed>0.6</Speed><Bearing>8</Bearing><Precision>8.4</Precision><X>317496.916996002</X><Y>-201399.662552595</Y></N13><N14><TimeStamp>40710.6882523148</TimeStamp><Latitude>55.39313</Latitude><Longitude>43.8358166666667</Longitude><Altitude>192</Altitude><Speed>0.48</Speed><Bearing>320</Bearing><Precision>12.6</Precision><X>317498.268236637</X><Y>-201400.680916548</Y></N14><N15><TimeStamp>40710.688599537</TimeStamp><Latitude>55.3931166666667</Latitude><Longitude>43.8359916666667</Longitude><Altitude>199</Altitude><Speed>0.26</Speed><Bearing>180</Bearing><Precision>7.2</Precision><X>317499.045673847</X><Y>-201401.880439043</Y></N15><N16><TimeStamp>40710.6889467593</TimeStamp><Latitude>55.3932466666667</Latitude><Longitude>43.8356916666667</Longitude><Altitude>177</Altitude><Speed>0.08</Speed><Bearing>316</Bearing><Precision>12.6</Precision><X>317498.875014305</X><Y>-201398.803979635</Y></N16><N17><TimeStamp>40710.6892824074</TimeStamp><Latitude>55.3931566666667</Latitude><Longitude>43.835725</Longitude><Altitude>178</Altitude><Speed>0.03</Speed><Bearing>290</Bearing><Precision>13.2</Precision><X>317498.074498653</X><Y>-201399.865209818</Y></N17><N18><TimeStamp>40710.6896296296</TimeStamp><Latitude>55.3930766666667</Latitude><Longitude>43.8356866666667</Longitude><Altitude>181</Altitude><Speed>0.12</Speed><Bearing>204</Bearing><Precision>7.2</Precision><X>317497.00483799</X><Y>-201400.391972065</Y></N18><N19><TimeStamp>40710.6899884259</TimeStamp><Latitude>55.39317</Latitude><Longitude>43.83589</Longitude><Altitude>184</Altitude><Speed>0.09</Speed><Bearing>94</Bearing><Precision>13.2</Precision><X>317499.088472843</X><Y>-201400.749538183</Y></N19><N20><TimeStamp>40710.6903356481</TimeStamp><Latitude>55.393035</Latitude><Longitude>43.8359116666667</Longitude><Altitude>198</Altitude><Speed>0.29</Speed><Bearing>0</Bearing><Precision>13.2</Precision><X>317497.738404274</X><Y>-201402.167705059</Y></N20><N21><TimeStamp>40710.6906944444</TimeStamp><Latitude>55.3930516666667</Latitude><Longitude>43.835935</Longitude><Altitude>209</Altitude><Speed>0.27</Speed><Bearing>318</Bearing><Precision>13.2</Precision><X>317498.042099476</X><Y>-201402.152002096</Y></N21><N22><TimeStamp>40710.6910300926</TimeStamp><Latitude>55.3929116666667</Latitude><Longitude>43.8361516666667</Longitude><Altitude>208</Altitude><Speed>0.6</Speed><Bearing>2</Bearing><Precision>6</Precision><X>317497.665265083</X><Y>-201404.812978983</Y></N22><N23><TimeStamp>40710.6913773148</TimeStamp><Latitude>55.3929566666667</Latitude><Longitude>43.8358866666667</Longitude><Altitude>187</Altitude><Speed>0.08</Speed><Bearing>84</Bearing><Precision>7.8</Precision><X>317496.757089615</X><Y>-201402.760350704</Y></N23><N24><TimeStamp>40710.691724537</TimeStamp><Latitude>55.39303</Latitude><Longitude>43.8355066666667</Longitude><Altitude>158</Altitude><Speed>0.16</Speed><Bearing>114</Bearing><Precision>18</Precision><X>317495.55031538</X><Y>-201399.733118057</Y></N24><N25><TimeStamp>40710.6920717593</TimeStamp><Latitude>55.3931466666667</Latitude><Longitude>43.83595</Longitude><Altitude>194</Altitude><Speed>0.12</Speed><Bearing>328</Bearing><Precision>18</Precision><X>317499.151521683</X><Y>-201401.33942771</Y></N25><N26><TimeStamp>40710.6924305556</TimeStamp><Latitude>55.3932266666667</Latitude><Longitude>43.8357366666667</Longitude><Altitude>189</Altitude><Speed>0.3</Speed><Bearing>202</Bearing><Precision>7.8</Precision><X>317498.895178795</X><Y>-201399.270190716</Y></N26><N27><TimeStamp>40710.6927893519</TimeStamp><Latitude>55.3930666666667</Latitude><Longitude>43.8359916666667</Longitude><Altitude>199</Altitude><Speed>0.09</Speed><Bearing>20</Bearing><Precision>16.8</Precision><X>317498.503373623</X><Y>-201402.356513977</Y></N27><N28><TimeStamp>40710.6931365741</TimeStamp><Latitude>55.393025</Latitude><Longitude>43.8359216666667</Longitude><Altitude>193</Altitude><Speed>0.31</Speed><Bearing>0</Bearing><Precision>13.8</Precision><X>317497.682639122</X><Y>-201402.324221134</Y></N28><N29><TimeStamp>40710.6934837963</TimeStamp><Latitude>55.39319</Latitude><Longitude>43.8356816666667</Longitude><Altitude>181</Altitude><Speed>0.48</Speed><Bearing>0</Bearing><Precision>13.8</Precision><X>317498.207711697</X><Y>-201399.282229424</Y></N29><N30><TimeStamp>40710.6938425926</TimeStamp><Latitude>55.3931316666667</Latitude><Longitude>43.835895</Longitude><Altitude>190</Altitude><Speed>0.54</Speed><Bearing>14</Bearing><Precision>8.4</Precision><X>317498.699046612</X><Y>-201401.145160913</Y></N30><N31><TimeStamp>40710.6941898148</TimeStamp><Latitude>55.3930116666667</Latitude><Longitude>43.8361866666667</Longitude><Altitude>200</Altitude><Speed>0.06</Speed><Bearing>0</Bearing><Precision>14.4</Precision><X>317498.934286118</X><Y>-201404.07536006</Y></N31><N32><TimeStamp>40710.694537037</TimeStamp><Latitude>55.3930666666667</Latitude><Longitude>43.8359216666667</Longitude><Altitude>196</Altitude><Speed>0.2</Speed><Bearing>0</Bearing><Precision>13.8</Precision><X>317498.134552956</X><Y>-201401.927486181</Y></N32><N33><TimeStamp>40710.6948958333</TimeStamp><Latitude>55.3931966666667</Latitude><Longitude>43.8359366666667</Longitude><Altitude>201</Altitude><Speed>0.05</Speed><Bearing>0</Bearing><Precision>14.4</Precision><X>317499.623561859</X><Y>-201400.781618118</Y></N33><N34><TimeStamp>40710.6952430556</TimeStamp><Latitude>55.3931966666667</Latitude><Longitude>43.8358066666667</Longitude><Altitude>198</Altitude><Speed>0.09</Speed><Bearing>0</Bearing><Precision>14.4</Precision><X>317498.938609123</X><Y>-201399.984848976</Y></N34><N35><TimeStamp>40710.6956018519</TimeStamp><Latitude>55.3931016666667</Latitude><Longitude>43.8360616666667</Longitude><Altitude>207</Altitude><Speed>0.05</Speed><Bearing>0</Bearing><Precision>14.4</Precision><X>317499.251799107</X><Y>-201402.452277899</Y></N35><N36><TimeStamp>40710.6959606481</TimeStamp><Latitude>55.39319</Latitude><Longitude>43.83585</Longitude><Altitude>192</Altitude><Speed>0.31</Speed><Bearing>0</Bearing><Precision>14.4</Precision><X>317499.094627857</X><Y>-201400.313930035</Y></N36><N37><TimeStamp>40710.6963194444</TimeStamp><Latitude>55.3931366666667</Latitude><Longitude>43.83592</Longitude><Altitude>195</Altitude><Speed>0.1</Speed><Bearing>194</Bearing><Precision>14.4</Precision><X>317498.884993076</X><Y>-201401.250769138</Y></N37><N38><TimeStamp>40710.6966550926</TimeStamp><Latitude>55.39311</Latitude><Longitude>43.835935</Longitude><Altitude>192</Altitude><Speed>0.29</Speed><Bearing>0</Bearing><Precision>7.8</Precision><X>317498.674803734</X><Y>-201401.59661746</Y></N38><N39><TimeStamp>40710.6970138889</TimeStamp><Latitude>55.3932416666667</Latitude><Longitude>43.835825</Longitude><Altitude>187</Altitude><Speed>0.24</Speed><Bearing>0</Bearing><Precision>14.4</Precision><X>317499.523289204</X><Y>-201399.668771744</Y></N39><N40><TimeStamp>40710.6973611111</TimeStamp><Latitude>55.3931116666667</Latitude><Longitude>43.83592</Longitude><Altitude>194</Altitude><Speed>0.06</Speed><Bearing>0</Bearing><Precision>15</Precision><X>317498.613844395</X><Y>-201401.488808393</Y></N40><N41><TimeStamp>40710.6977083333</TimeStamp><Latitude>55.3932716666667</Latitude><Longitude>43.835735</Longitude><Altitude>191</Altitude><Speed>0.11</Speed><Bearing>80</Bearing><Precision>18</Precision><X>317499.374466419</X><Y>-201398.831506014</Y></N41><N42><TimeStamp>40710.6980671296</TimeStamp><Latitude>55.3931016666667</Latitude><Longitude>43.8358116666667</Longitude><Altitude>184</Altitude><Speed>0.19</Speed><Bearing>180</Bearing><Precision>18.6</Precision><X>317497.934597492</X><Y>-201400.920063019</Y></N42><N43><TimeStamp>40710.7005092593</TimeStamp><Latitude>55.3930766666667</Latitude><Longitude>43.83456</Longitude><Altitude>101</Altitude><Speed>1.29</Speed><Bearing>294</Bearing><Precision>18</Precision><X>317491.068701267</X><Y>-201393.486664534</Y></N43><N44><TimeStamp>40710.7008680556</TimeStamp><Latitude>55.3934616666667</Latitude><Longitude>43.8358166666667</Longitude><Altitude>167</Altitude><Speed>4.54</Speed><Bearing>24</Bearing><Precision>42</Precision><X>317501.865530968</X><Y>-201397.523015499</Y></N44><N45><TimeStamp>40710.784537037</TimeStamp><Latitude>55.3932666666667</Latitude><Longitude>43.8354916666667</Longitude><Altitude>159</Altitude><Speed>0.12</Speed><Bearing>318</Bearing><Precision>13.8</Precision><X>317498.038184643</X><Y>-201397.387777805</Y></N45><N46><TimeStamp>40710.7848842593</TimeStamp><Latitude>55.393265</Latitude><Longitude>43.835485</Longitude><Altitude>159</Altitude><Speed>0.13</Speed><Bearing>318</Bearing><Precision>13.8</Precision><X>317497.984982014</X><Y>-201397.362786531</Y></N46><N47><TimeStamp>40710.7852430556</TimeStamp><Latitude>55.393245</Latitude><Longitude>43.835465</Longitude><Altitude>159</Altitude><Speed>0.69</Speed><Bearing>150</Bearing><Precision>10.2</Precision><X>317497.662683487</X><Y>-201397.430633545</Y></N47><N48><TimeStamp>40710.7853009259</TimeStamp><Latitude>55.3932116666667</Latitude><Longitude>43.8355466666667</Longitude><Altitude>160</Altitude><Speed>0.18</Speed><Bearing>136</Bearing><Precision>10.2</Precision><X>317497.731436729</X><Y>-201398.248552322</Y></N48><N49><TimeStamp>40710.7855902778</TimeStamp><Latitude>55.3932266666667</Latitude><Longitude>43.83551</Longitude><Altitude>160</Altitude><Speed>0.6</Speed><Bearing>322</Bearing><Precision>10.2</Precision><X>317497.700936317</X><Y>-201397.880998611</Y></N49><N50><TimeStamp>40710.7859375</TimeStamp><Latitude>55.393115</Latitude><Longitude>43.8355616666667</Longitude><Altitude>110</Altitude><Speed>0.17</Speed><Bearing>296</Bearing><Precision>7.8</Precision><X>317496.762076855</X><Y>-201399.260997772</Y></N50><N51><TimeStamp>40710.7862962963</TimeStamp><Latitude>55.393185</Latitude><Longitude>43.8355616666667</Longitude><Altitude>145</Altitude><Speed>0.24</Speed><Bearing>288</Bearing><Precision>10.2</Precision><X>317497.521259308</X><Y>-201398.594424486</Y></N51><N52><TimeStamp>40710.7866435185</TimeStamp><Latitude>55.3932066666667</Latitude><Longitude>43.8356516666667</Longitude><Altitude>163</Altitude><Speed>0.13</Speed><Bearing>270</Bearing><Precision>6</Precision><X>317498.230434418</X><Y>-201398.939704657</Y></N52><N53><TimeStamp>40710.7870023148</TimeStamp><Latitude>55.393355</Latitude><Longitude>43.8353416666667</Longitude><Altitude>143</Altitude><Speed>0.26</Speed><Bearing>316</Bearing><Precision>12</Precision><X>317498.205948353</X><Y>-201395.627395391</Y></N53><N54><TimeStamp>40710.787349537</TimeStamp><Latitude>55.393315</Latitude><Longitude>43.8354566666667</Longitude><Altitude>146</Altitude><Speed>0.85</Speed><Bearing>302</Bearing><Precision>7.8</Precision><X>317498.378016949</X><Y>-201396.713086605</Y></N54><N55><TimeStamp>40710.7877083333</TimeStamp><Latitude>55.3932716666667</Latitude><Longitude>43.835655</Longitude><Altitude>156</Altitude><Speed>0.2</Speed><Bearing>0</Bearing><Precision>7.8</Precision><X>317498.952998638</X><Y>-201398.341255903</Y></N55><N56><TimeStamp>40710.7880439815</TimeStamp><Latitude>55.393145</Latitude><Longitude>43.8356466666667</Longitude><Altitude>165</Altitude><Speed>0.19</Speed><Bearing>192</Bearing><Precision>10.8</Precision><X>317497.535247803</X><Y>-201399.496210575</Y></N56><N57><TimeStamp>40710.7884027778</TimeStamp><Latitude>55.393195</Latitude><Longitude>43.83584</Longitude><Altitude>179</Altitude><Speed>0.11</Speed><Bearing>292</Bearing><Precision>10.8</Precision><X>317499.096184731</X><Y>-201400.205059528</Y></N57><N58><TimeStamp>40710.78875</TimeStamp><Latitude>55.3932366666667</Latitude><Longitude>43.8356466666667</Longitude><Altitude>165</Altitude><Speed>0.13</Speed><Bearing>174</Bearing><Precision>10.8</Precision><X>317498.529469013</X><Y>-201398.623411894</Y></N58><N59><TimeStamp>40710.7890856481</TimeStamp><Latitude>55.3932466666667</Latitude><Longitude>43.8356366666667</Longitude><Altitude>174</Altitude><Speed>0.19</Speed><Bearing>320</Bearing><Precision>12.6</Precision><X>317498.585229874</X><Y>-201398.466888189</Y></N59><N60><TimeStamp>40710.7894328704</TimeStamp><Latitude>55.3932966666667</Latitude><Longitude>43.8354916666667</Longitude><Altitude>161</Altitude><Speed>0.47</Speed><Bearing>300</Bearing><Precision>10.8</Precision><X>317498.363564014</X><Y>-201397.102131367</Y></N60><N61><TimeStamp>40710.7897916667</TimeStamp><Latitude>55.3933766666667</Latitude><Longitude>43.83532</Longitude><Altitude>151</Altitude><Speed>0.39</Speed><Bearing>294</Bearing><Precision>10.8</Precision><X>317498.326779366</X><Y>-201395.288285732</Y></N61><N62><TimeStamp>40710.7901388889</TimeStamp><Latitude>55.3933916666667</Latitude><Longitude>43.8352016666667</Longitude><Altitude>136</Altitude><Speed>0.13</Speed><Bearing>312</Bearing><Precision>10.8</Precision><X>317497.866012573</X><Y>-201394.420224428</Y></N62><N63><TimeStamp>40710.790474537</TimeStamp><Latitude>55.3933216666667</Latitude><Longitude>43.8354666666667</Longitude><Altitude>148</Altitude><Speed>0.08</Speed><Bearing>0</Bearing><Precision>12.6</Precision><X>317498.503010273</X><Y>-201396.710896969</Y></N63><N64><TimeStamp>40710.7908333333</TimeStamp><Latitude>55.3933466666667</Latitude><Longitude>43.8354116666667</Longitude><Altitude>136</Altitude><Speed>0.08</Speed><Bearing>128</Bearing><Precision>12.6</Precision><X>317498.484390736</X><Y>-201396.135788918</Y></N64><N65><TimeStamp>40710.7911805556</TimeStamp><Latitude>55.393425</Latitude><Longitude>43.83517</Longitude><Altitude>137</Altitude><Speed>0.38</Speed><Bearing>302</Bearing><Precision>10.8</Precision><X>317498.060702801</X><Y>-201393.908756733</Y></N65><N66><TimeStamp>40710.7915393518</TimeStamp><Latitude>55.393365</Latitude><Longitude>43.8352966666667</Longitude><Altitude>157</Altitude><Speed>0.15</Speed><Bearing>22</Bearing><Precision>10.8</Precision><X>317498.077295303</X><Y>-201395.256344557</Y></N66><N67><TimeStamp>40710.7918865741</TimeStamp><Latitude>55.3932516666667</Latitude><Longitude>43.8358966666667</Longitude><Altitude>175</Altitude><Speed>0.6</Speed><Bearing>16</Bearing><Precision>12.6</Precision><X>317500.009367466</X><Y>-201400.012829781</Y></N67><N68><TimeStamp>40710.7922337963</TimeStamp><Latitude>55.393295</Latitude><Longitude>43.83564</Longitude><Altitude>170</Altitude><Speed>0.31</Speed><Bearing>112</Bearing><Precision>10.8</Precision><X>317499.12702322</X><Y>-201398.027123928</Y></N68><N69><TimeStamp>40710.7925694444</TimeStamp><Latitude>55.393255</Latitude><Longitude>43.835825</Longitude><Altitude>161</Altitude><Speed>0.71</Speed><Bearing>308</Bearing><Precision>10.8</Precision><X>317499.667933941</X><Y>-201399.541873455</Y></N69><N70><TimeStamp>40710.7929282407</TimeStamp><Latitude>55.3932266666667</Latitude><Longitude>43.835945</Longitude><Altitude>165</Altitude><Speed>0.05</Speed><Bearing>140</Bearing><Precision>13.2</Precision><X>317499.992892265</X><Y>-201400.547124386</Y></N70><N71><TimeStamp>40710.793275463</TimeStamp><Latitude>55.3932416666667</Latitude><Longitude>43.8358516666667</Longitude><Altitude>165</Altitude><Speed>0.63</Speed><Bearing>320</Bearing><Precision>9</Precision><X>317499.663819313</X><Y>-201399.83225894</Y></N71><N72><TimeStamp>40710.7936111111</TimeStamp><Latitude>55.3932066666667</Latitude><Longitude>43.835885</Longitude><Altitude>174</Altitude><Speed>0.24</Speed><Bearing>124</Bearing><Precision>13.2</Precision><X>317499.459827423</X><Y>-201400.369792938</Y></N72><N73><TimeStamp>40710.7939583333</TimeStamp><Latitude>55.3933716666667</Latitude><Longitude>43.8354866666667</Longitude><Altitude>153</Altitude><Speed>0.8</Speed><Bearing>308</Bearing><Precision>13.2</Precision><X>317499.150684834</X><Y>-201396.357396841</Y></N73><N74><TimeStamp>40710.7943055556</TimeStamp><Latitude>55.3932566666667</Latitude><Longitude>43.83569</Longitude><Altitude>158</Altitude><Speed>0.35</Speed><Bearing>122</Bearing><Precision>11.4</Precision><X>317498.97471571</X><Y>-201398.69859004</Y></N74><N75><TimeStamp>40710.7946643519</TimeStamp><Latitude>55.3931466666667</Latitude><Longitude>43.8359666666667</Longitude><Altitude>176</Altitude><Speed>0.24</Speed><Bearing>308</Bearing><Precision>11.4</Precision><X>317499.239358425</X><Y>-201401.441616297</Y></N75><N76><TimeStamp>40710.7950231481</TimeStamp><Latitude>55.39327</Latitude><Longitude>43.83573</Longitude><Altitude>166</Altitude><Speed>0.56</Speed><Bearing>302</Bearing><Precision>11.4</Precision><X>317499.330075264</X><Y>-201398.816782236</Y></N76><N77><TimeStamp>40710.7953703704</TimeStamp><Latitude>55.3929916666667</Latitude><Longitude>43.8363566666667</Longitude><Altitude>148</Altitude><Speed>0.99</Speed><Bearing>304</Bearing><Precision>13.8</Precision><X>317499.61315155</X><Y>-201405.307837486</Y></N77><N78><TimeStamp>40710.7957291667</TimeStamp><Latitude>55.3932816666667</Latitude><Longitude>43.8355016666667</Longitude><Altitude>165</Altitude><Speed>0.56</Speed><Bearing>0</Bearing><Precision>7.8</Precision><X>317498.253556728</X><Y>-201397.306234598</Y></N78><N79><TimeStamp>40710.796087963</TimeStamp><Latitude>55.3934066666667</Latitude><Longitude>43.83531</Longitude><Altitude>168</Altitude><Speed>0.15</Speed><Bearing>310</Bearing><Precision>11.4</Precision><X>317498.599453926</X><Y>-201394.941318035</Y></N79><N80><TimeStamp>40710.7967824074</TimeStamp><Latitude>55.3933066666667</Latitude><Longitude>43.8356466666667</Longitude><Altitude>151</Altitude><Speed>0.09</Speed><Bearing>116</Bearing><Precision>13.2</Precision><X>317499.288709164</X><Y>-201397.956940651</Y></N80><N81><TimeStamp>40710.7971412037</TimeStamp><Latitude>55.3932166666667</Latitude><Longitude>43.835735</Longitude><Altitude>160</Altitude><Speed>0.03</Speed><Bearing>250</Bearing><Precision>7.8</Precision><X>317498.777971268</X><Y>-201399.355251074</Y></N81><N82><TimeStamp>40710.7974884259</TimeStamp><Latitude>55.3931716666667</Latitude><Longitude>43.836015</Longitude><Altitude>172</Altitude><Speed>0.16</Speed><Bearing>134</Bearing><Precision>7.8</Precision><X>317499.76517725</X><Y>-201401.499824286</Y></N82><N83><TimeStamp>40710.7978356481</TimeStamp><Latitude>55.393255</Latitude><Longitude>43.8358116666667</Longitude><Altitude>158</Altitude><Speed>0.39</Speed><Bearing>104</Bearing><Precision>12</Precision><X>317499.597685814</X><Y>-201399.460159302</Y></N83><N84><TimeStamp>40710.7981712963</TimeStamp><Latitude>55.393245</Latitude><Longitude>43.8357816666667</Longitude><Altitude>174</Altitude><Speed>0.06</Speed><Bearing>0</Bearing><Precision>12</Precision><X>317499.331140041</X><Y>-201399.371469021</Y></N84><N85><TimeStamp>40710.7985300926</TimeStamp><Latitude>55.3931716666667</Latitude><Longitude>43.83607</Longitude><Altitude>165</Altitude><Speed>0.44</Speed><Bearing>136</Bearing><Precision>7.8</Precision><X>317500.054975986</X><Y>-201401.836935759</Y></N85><N86><TimeStamp>40710.7988657407</TimeStamp><Latitude>55.3932466666667</Latitude><Longitude>43.8359866666667</Longitude><Altitude>185</Altitude><Speed>0.72</Speed><Bearing>306</Bearing><Precision>12</Precision><X>317500.429326057</X><Y>-201400.612028837</Y></N86><N87><TimeStamp>40710.799224537</TimeStamp><Latitude>55.393205</Latitude><Longitude>43.836145</Longitude><Altitude>183</Altitude><Speed>0.63</Speed><Bearing>308</Bearing><Precision>7.8</Precision><X>317500.811655998</X><Y>-201401.979191065</Y></N87><N88><TimeStamp>40710.7995833333</TimeStamp><Latitude>55.3932416666667</Latitude><Longitude>43.83574</Longitude><Altitude>183</Altitude><Speed>0.4</Speed><Bearing>0</Bearing><Precision>12</Precision><X>317499.075439453</X><Y>-201399.147811651</Y></N88><N89><TimeStamp>40710.7999305556</TimeStamp><Latitude>55.3932516666667</Latitude><Longitude>43.835795</Longitude><Altitude>188</Altitude><Speed>0.32</Speed><Bearing>288</Bearing><Precision>12</Precision><X>317499.473681927</X><Y>-201399.389683723</Y></N89><N90><TimeStamp>40710.8002893519</TimeStamp><Latitude>55.3932316666667</Latitude><Longitude>43.8358966666667</Longitude><Altitude>195</Altitude><Speed>0.06</Speed><Bearing>284</Bearing><Precision>12</Precision><X>317499.792423248</X><Y>-201400.203217268</Y></N90><N91><TimeStamp>40710.800625</TimeStamp><Latitude>55.3929066666667</Latitude><Longitude>43.8370716666667</Longitude><Altitude>233</Altitude><Speed>0.08</Speed><Bearing>290</Bearing><Precision>7.8</Precision><X>317502.458488464</X><Y>-201410.499244213</Y></N91><N92><TimeStamp>40710.8009837963</TimeStamp><Latitude>55.3931766666667</Latitude><Longitude>43.8361116666667</Longitude><Altitude>194</Altitude><Speed>0.37</Speed><Bearing>302</Bearing><Precision>7.8</Precision><X>317500.328709602</X><Y>-201402.044643641</Y></N92><N93><TimeStamp>40710.8013310185</TimeStamp><Latitude>55.3931616666667</Latitude><Longitude>43.8360716666667</Longitude><Altitude>176</Altitude><Speed>0.18</Speed><Bearing>0</Bearing><Precision>7.8</Precision><X>317499.955284595</X><Y>-201401.942342758</Y></N93><N94><TimeStamp>40710.8016782407</TimeStamp><Latitude>55.39342</Latitude><Longitude>43.835205</Longitude><Altitude>133</Altitude><Speed>0.48</Speed><Bearing>282</Bearing><Precision>12</Precision><X>317498.190885067</X><Y>-201394.170888901</Y></N94><N95><TimeStamp>40710.802037037</TimeStamp><Latitude>55.3935316666667</Latitude><Longitude>43.8348816666667</Longitude><Altitude>132</Altitude><Speed>0.65</Speed><Bearing>304</Bearing><Precision>16.2</Precision><X>317497.69846487</X><Y>-201391.125945091</Y></N95><N96><TimeStamp>40710.8023842593</TimeStamp><Latitude>55.3934766666667</Latitude><Longitude>43.834975</Longitude><Altitude>132</Altitude><Speed>0.72</Speed><Bearing>302</Bearing><Precision>16.2</Precision><X>317497.593678474</X><Y>-201392.221663713</Y></N96><N97><TimeStamp>40710.8027314815</TimeStamp><Latitude>55.393515</Latitude><Longitude>43.8348966666667</Longitude><Altitude>134</Altitude><Speed>0.9</Speed><Bearing>300</Bearing><Precision>9.6</Precision><X>317497.59672451</X><Y>-201391.376565456</Y></N97><N98><TimeStamp>40710.8030787037</TimeStamp><Latitude>55.3932966666667</Latitude><Longitude>43.835575</Longitude><Altitude>146</Altitude><Speed>0.23</Speed><Bearing>280</Bearing><Precision>12</Precision><X>317498.802652836</X><Y>-201397.612917185</Y></N98><N99><TimeStamp>40710.8034259259</TimeStamp><Latitude>55.3934416666667</Latitude><Longitude>43.8351816666667</Longitude><Altitude>128</Altitude><Speed>0.16</Speed><Bearing>258</Bearing><Precision>7.8</Precision><X>317498.302951336</X><Y>-201393.821591854</Y></N99><N100><TimeStamp>40710.8037731481</TimeStamp><Latitude>55.3931616666667</Latitude><Longitude>43.83567</Longitude><Altitude>178</Altitude><Speed>0.25</Speed><Bearing>294</Bearing><Precision>9.6</Precision><X>317497.838940144</X><Y>-201399.480504274</Y></N100><N101><TimeStamp>40710.8041203704</TimeStamp><Latitude>55.3931966666667</Latitude><Longitude>43.83569</Longitude><Altitude>156</Altitude><Speed>0.1</Speed><Bearing>320</Bearing><Precision>7.8</Precision><X>317498.323955536</X><Y>-201399.26988101</Y></N101><N102><TimeStamp>40710.8044560185</TimeStamp><Latitude>55.393135</Latitude><Longitude>43.8359366666667</Longitude><Altitude>168</Altitude><Speed>0.58</Speed><Bearing>266</Bearing><Precision>14.4</Precision><X>317498.954763889</X><Y>-201401.36884594</Y></N102></Nodes><ObjectModelEvents><N0><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 98</Info><X>317498.12813282</X><Y>-201398.599315405</Y></N0><N1><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.12813282</X><Y>-201398.599315405</Y></N1><N2><TimeStamp>0</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.12813282</X><Y>-201398.599315405</Y></N2><N3><TimeStamp>40710.6833680556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39322
+Longitude: 43.83561
+Altitude: 169.00000
+Speed: 0.81000
+Bearing: 112.00000
+Precision: 11.40000</Info><X>317498.12813282</X><Y>-201398.599315405</Y></N3><N4><TimeStamp>40710.6833680556</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.12813282</X><Y>-201398.599315405</Y></N4><N5><TimeStamp>40710.6837037037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39304
+Longitude: 43.83619
+Altitude: 177.00000
+Speed: 0.02000
+Bearing: 0.00000
+Precision: 12.00000</Info><X>317499.303600311</X><Y>-201403.840837717</Y></N5><N6><TimeStamp>40710.6837037037</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.303600311</X><Y>-201403.840837717</Y></N6><N7><TimeStamp>40710.6837037037</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.303600311</X><Y>-201403.840837717</Y></N7><N8><TimeStamp>40710.6840625</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39309
+Longitude: 43.83604
+Altitude: 177.00000
+Speed: 0.13000
+Bearing: 0.00000
+Precision: 6.60000</Info><X>317498.95742178</X><Y>-201402.441937447</Y></N8><N9><TimeStamp>40710.6840625</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 98</Info><X>317498.95742178</X><Y>-201402.441937447</Y></N9><N10><TimeStamp>40710.6840625</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.95742178</X><Y>-201402.441937447</Y></N10><N11><TimeStamp>40710.6844097222</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39323
+Longitude: 43.83576
+Altitude: 189.00000
+Speed: 0.58000
+Bearing: 128.00000
+Precision: 6.00000</Info><X>317499.081130981</X><Y>-201399.375809431</Y></N11><N12><TimeStamp>40710.6844097222</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.081130981</X><Y>-201399.375809431</Y></N12><N13><TimeStamp>40710.6844097222</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.081130981</X><Y>-201399.375809431</Y></N13><N14><TimeStamp>40710.6847569444</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39317
+Longitude: 43.83587
+Altitude: 182.00000
+Speed: 0.63000
+Bearing: 288.00000
+Precision: 12.00000</Info><X>317498.929380894</X><Y>-201400.638269424</Y></N14><N15><TimeStamp>40710.6847569444</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 98</Info><X>317498.929380894</X><Y>-201400.638269424</Y></N15><N16><TimeStamp>40710.6847569444</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.929380894</X><Y>-201400.638269424</Y></N16><N17><TimeStamp>40710.6850925926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39312
+Longitude: 43.83597
+Altitude: 192.00000
+Speed: 0.04000
+Bearing: 292.00000
+Precision: 7.20000</Info><X>317498.994534016</X><Y>-201401.710265398</Y></N17><N18><TimeStamp>40710.6854398148</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39324
+Longitude: 43.83574
+Altitude: 176.00000
+Speed: 0.71000
+Bearing: 316.00000
+Precision: 7.80000</Info><X>317499.029998779</X><Y>-201399.205648661</Y></N18><N19><TimeStamp>40710.6854398148</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.029998779</X><Y>-201399.205648661</Y></N19><N20><TimeStamp>40710.6854398148</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.029998779</X><Y>-201399.205648661</Y></N20><N21><TimeStamp>40710.6857986111</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39309
+Longitude: 43.83604
+Altitude: 175.00000
+Speed: 0.83000
+Bearing: 124.00000
+Precision: 7.20000</Info><X>317499.0116539</X><Y>-201402.394334078</Y></N21><N22><TimeStamp>40710.6857986111</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 98</Info><X>317499.0116539</X><Y>-201402.394334078</Y></N22><N23><TimeStamp>40710.6857986111</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317499.0116539</X><Y>-201402.394334078</Y></N23><N24><TimeStamp>40710.6861342593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39311
+Longitude: 43.83598
+Altitude: 182.00000
+Speed: 0.32000
+Bearing: 104.00000
+Precision: 17.40000</Info><X>317498.858200073</X><Y>-201401.883754015</Y></N24><N25><TimeStamp>40710.6861342593</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.858200073</X><Y>-201401.883754015</Y></N25><N26><TimeStamp>40710.6861342593</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.858200073</X><Y>-201401.883754015</Y></N26><N27><TimeStamp>40710.6864814815</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39318
+Longitude: 43.83587
+Altitude: 183.00000
+Speed: 0.24000
+Bearing: 150.00000
+Precision: 7.20000</Info><X>317499.118414402</X><Y>-201400.526090384</Y></N27><N28><TimeStamp>40710.6864814815</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 98</Info><X>317499.118414402</X><Y>-201400.526090384</Y></N28><N29><TimeStamp>40710.6864814815</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317499.118414402</X><Y>-201400.526090384</Y></N29><N30><TimeStamp>40710.6868402778</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39312
+Longitude: 43.83584
+Altitude: 186.00000
+Speed: 0.27000
+Bearing: 310.00000
+Precision: 12.60000</Info><X>317498.30958271</X><Y>-201400.913501024</Y></N30><N31><TimeStamp>40710.6868402778</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317498.30958271</X><Y>-201400.913501024</Y></N31><N32><TimeStamp>40710.6868402778</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.30958271</X><Y>-201400.913501024</Y></N32><N33><TimeStamp>40710.6868402778</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.30958271</X><Y>-201400.913501024</Y></N33><N34><TimeStamp>40710.6871990741</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39311
+Longitude: 43.83593
+Altitude: 190.00000
+Speed: 0.55000
+Bearing: 312.00000
+Precision: 7.20000</Info><X>317498.648974895</X><Y>-201401.529677153</Y></N34><N35><TimeStamp>40710.6871990741</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317498.648974895</X><Y>-201401.529677153</Y></N35><N36><TimeStamp>40710.6871990741</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.648974895</X><Y>-201401.529677153</Y></N36><N37><TimeStamp>40710.6875462963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39327
+Longitude: 43.83573
+Altitude: 177.00000
+Speed: 0.11000
+Bearing: 312.00000
+Precision: 8.40000</Info><X>317499.258268833</X><Y>-201398.843936205</Y></N37><N38><TimeStamp>40710.6875462963</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.258268833</X><Y>-201398.843936205</Y></N38><N39><TimeStamp>40710.6875462963</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.258268833</X><Y>-201398.843936205</Y></N39><N40><TimeStamp>40710.6879050926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39311
+Longitude: 43.83561
+Altitude: 164.00000
+Speed: 0.60000
+Bearing: 8.00000
+Precision: 8.40000</Info><X>317496.916996002</X><Y>-201399.662552595</Y></N40><N41><TimeStamp>40710.6879050926</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317496.916996002</X><Y>-201399.662552595</Y></N41><N42><TimeStamp>40710.6879050926</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317496.916996002</X><Y>-201399.662552595</Y></N42><N43><TimeStamp>40710.6882523148</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39313
+Longitude: 43.83582
+Altitude: 192.00000
+Speed: 0.48000
+Bearing: 320.00000
+Precision: 12.60000</Info><X>317498.268236637</X><Y>-201400.680916548</Y></N43><N44><TimeStamp>40710.6882523148</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.268236637</X><Y>-201400.680916548</Y></N44><N45><TimeStamp>40710.6882523148</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.268236637</X><Y>-201400.680916548</Y></N45><N46><TimeStamp>40710.688599537</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39312
+Longitude: 43.83599
+Altitude: 199.00000
+Speed: 0.26000
+Bearing: 180.00000
+Precision: 7.20000</Info><X>317499.045673847</X><Y>-201401.880439043</Y></N46><N47><TimeStamp>40710.688599537</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317499.045673847</X><Y>-201401.880439043</Y></N47><N48><TimeStamp>40710.688599537</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317499.045673847</X><Y>-201401.880439043</Y></N48><N49><TimeStamp>40710.6889467593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83569
+Altitude: 177.00000
+Speed: 0.08000
+Bearing: 316.00000
+Precision: 12.60000</Info><X>317498.875014305</X><Y>-201398.803979635</Y></N49><N50><TimeStamp>40710.6889467593</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.875014305</X><Y>-201398.803979635</Y></N50><N51><TimeStamp>40710.6889467593</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.875014305</X><Y>-201398.803979635</Y></N51><N52><TimeStamp>40710.6892824074</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39316
+Longitude: 43.83572
+Altitude: 178.00000
+Speed: 0.03000
+Bearing: 290.00000
+Precision: 13.20000</Info><X>317498.074498653</X><Y>-201399.865209818</Y></N52><N53><TimeStamp>40710.6892824074</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317498.074498653</X><Y>-201399.865209818</Y></N53><N54><TimeStamp>40710.6892824074</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.074498653</X><Y>-201399.865209818</Y></N54><N55><TimeStamp>40710.6896296296</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39308
+Longitude: 43.83569
+Altitude: 181.00000
+Speed: 0.12000
+Bearing: 204.00000
+Precision: 7.20000</Info><X>317497.00483799</X><Y>-201400.391972065</Y></N55><N56><TimeStamp>40710.6896296296</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.00483799</X><Y>-201400.391972065</Y></N56><N57><TimeStamp>40710.6896296296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.00483799</X><Y>-201400.391972065</Y></N57><N58><TimeStamp>40710.6899884259</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39317
+Longitude: 43.83589
+Altitude: 184.00000
+Speed: 0.09000
+Bearing: 94.00000
+Precision: 13.20000</Info><X>317499.088472843</X><Y>-201400.749538183</Y></N58><N59><TimeStamp>40710.6899884259</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317499.088472843</X><Y>-201400.749538183</Y></N59><N60><TimeStamp>40710.6899884259</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317499.088472843</X><Y>-201400.749538183</Y></N60><N61><TimeStamp>40710.6903356481</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39304
+Longitude: 43.83591
+Altitude: 198.00000
+Speed: 0.29000
+Bearing: 0.00000
+Precision: 13.20000</Info><X>317497.738404274</X><Y>-201402.167705059</Y></N61><N62><TimeStamp>40710.6903356481</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.738404274</X><Y>-201402.167705059</Y></N62><N63><TimeStamp>40710.6903356481</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.738404274</X><Y>-201402.167705059</Y></N63><N64><TimeStamp>40710.6906944444</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39305
+Longitude: 43.83594
+Altitude: 209.00000
+Speed: 0.27000
+Bearing: 318.00000
+Precision: 13.20000</Info><X>317498.042099476</X><Y>-201402.152002096</Y></N64><N65><TimeStamp>40710.6906944444</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317498.042099476</X><Y>-201402.152002096</Y></N65><N66><TimeStamp>40710.6906944444</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.042099476</X><Y>-201402.152002096</Y></N66><N67><TimeStamp>40710.6910300926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39291
+Longitude: 43.83615
+Altitude: 208.00000
+Speed: 0.60000
+Bearing: 2.00000
+Precision: 6.00000</Info><X>317497.665265083</X><Y>-201404.812978983</Y></N67><N68><TimeStamp>40710.6910300926</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.665265083</X><Y>-201404.812978983</Y></N68><N69><TimeStamp>40710.6910300926</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.665265083</X><Y>-201404.812978983</Y></N69><N70><TimeStamp>40710.6913773148</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39296
+Longitude: 43.83589
+Altitude: 187.00000
+Speed: 0.08000
+Bearing: 84.00000
+Precision: 7.80000</Info><X>317496.757089615</X><Y>-201402.760350704</Y></N70><N71><TimeStamp>40710.6913773148</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317496.757089615</X><Y>-201402.760350704</Y></N71><N72><TimeStamp>40710.6913773148</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317496.757089615</X><Y>-201402.760350704</Y></N72><N73><TimeStamp>40710.691724537</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39303
+Longitude: 43.83551
+Altitude: 158.00000
+Speed: 0.16000
+Bearing: 114.00000
+Precision: 18.00000</Info><X>317495.55031538</X><Y>-201399.733118057</Y></N73><N74><TimeStamp>40710.691724537</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317495.55031538</X><Y>-201399.733118057</Y></N74><N75><TimeStamp>40710.691724537</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317495.55031538</X><Y>-201399.733118057</Y></N75><N76><TimeStamp>40710.691724537</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317495.55031538</X><Y>-201399.733118057</Y></N76><N77><TimeStamp>40710.6920717593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39315
+Longitude: 43.83595
+Altitude: 194.00000
+Speed: 0.12000
+Bearing: 328.00000
+Precision: 18.00000</Info><X>317499.151521683</X><Y>-201401.33942771</Y></N77><N78><TimeStamp>40710.6920717593</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317499.151521683</X><Y>-201401.33942771</Y></N78><N79><TimeStamp>40710.6920717593</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317499.151521683</X><Y>-201401.33942771</Y></N79><N80><TimeStamp>40710.6924305556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39323
+Longitude: 43.83574
+Altitude: 189.00000
+Speed: 0.30000
+Bearing: 202.00000
+Precision: 7.80000</Info><X>317498.895178795</X><Y>-201399.270190716</Y></N80><N81><TimeStamp>40710.6924305556</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.895178795</X><Y>-201399.270190716</Y></N81><N82><TimeStamp>40710.6924305556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.895178795</X><Y>-201399.270190716</Y></N82><N83><TimeStamp>40710.6927893519</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39307
+Longitude: 43.83599
+Altitude: 199.00000
+Speed: 0.09000
+Bearing: 20.00000
+Precision: 16.80000</Info><X>317498.503373623</X><Y>-201402.356513977</Y></N83><N84><TimeStamp>40710.6927893519</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317498.503373623</X><Y>-201402.356513977</Y></N84><N85><TimeStamp>40710.6927893519</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.503373623</X><Y>-201402.356513977</Y></N85><N86><TimeStamp>40710.6931365741</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39303
+Longitude: 43.83592
+Altitude: 193.00000
+Speed: 0.31000
+Bearing: 0.00000
+Precision: 13.80000</Info><X>317497.682639122</X><Y>-201402.324221134</Y></N86><N87><TimeStamp>40710.6931365741</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.682639122</X><Y>-201402.324221134</Y></N87><N88><TimeStamp>40710.6931365741</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.682639122</X><Y>-201402.324221134</Y></N88><N89><TimeStamp>40710.6934837963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39319
+Longitude: 43.83568
+Altitude: 181.00000
+Speed: 0.48000
+Bearing: 0.00000
+Precision: 13.80000</Info><X>317498.207711697</X><Y>-201399.282229424</Y></N89><N90><TimeStamp>40710.6934837963</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317498.207711697</X><Y>-201399.282229424</Y></N90><N91><TimeStamp>40710.6934837963</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.207711697</X><Y>-201399.282229424</Y></N91><N92><TimeStamp>40710.6938425926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39313
+Longitude: 43.83590
+Altitude: 190.00000
+Speed: 0.54000
+Bearing: 14.00000
+Precision: 8.40000</Info><X>317498.699046612</X><Y>-201401.145160913</Y></N92><N93><TimeStamp>40710.6938425926</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.699046612</X><Y>-201401.145160913</Y></N93><N94><TimeStamp>40710.6938425926</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.699046612</X><Y>-201401.145160913</Y></N94><N95><TimeStamp>40710.6941898148</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39301
+Longitude: 43.83619
+Altitude: 200.00000
+Speed: 0.06000
+Bearing: 0.00000
+Precision: 14.40000</Info><X>317498.934286118</X><Y>-201404.07536006</Y></N95><N96><TimeStamp>40710.6941898148</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317498.934286118</X><Y>-201404.07536006</Y></N96><N97><TimeStamp>40710.6941898148</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.934286118</X><Y>-201404.07536006</Y></N97><N98><TimeStamp>40710.694537037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39307
+Longitude: 43.83592
+Altitude: 196.00000
+Speed: 0.20000
+Bearing: 0.00000
+Precision: 13.80000</Info><X>317498.134552956</X><Y>-201401.927486181</Y></N98><N99><TimeStamp>40710.6948958333</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39320
+Longitude: 43.83594
+Altitude: 201.00000
+Speed: 0.05000
+Bearing: 0.00000
+Precision: 14.40000</Info><X>317499.623561859</X><Y>-201400.781618118</Y></N99><N100><TimeStamp>40710.6948958333</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.623561859</X><Y>-201400.781618118</Y></N100><N101><TimeStamp>40710.6948958333</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.623561859</X><Y>-201400.781618118</Y></N101><N102><TimeStamp>40710.6952430556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39320
+Longitude: 43.83581
+Altitude: 198.00000
+Speed: 0.09000
+Bearing: 0.00000
+Precision: 14.40000</Info><X>317498.938609123</X><Y>-201399.984848976</Y></N102><N103><TimeStamp>40710.6952430556</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317498.938609123</X><Y>-201399.984848976</Y></N103><N104><TimeStamp>40710.6952430556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.938609123</X><Y>-201399.984848976</Y></N104><N105><TimeStamp>40710.6956018519</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39310
+Longitude: 43.83606
+Altitude: 207.00000
+Speed: 0.05000
+Bearing: 0.00000
+Precision: 14.40000</Info><X>317499.251799107</X><Y>-201402.452277899</Y></N105><N106><TimeStamp>40710.6956018519</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.251799107</X><Y>-201402.452277899</Y></N106><N107><TimeStamp>40710.6956018519</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.251799107</X><Y>-201402.452277899</Y></N107><N108><TimeStamp>40710.6959606481</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39319
+Longitude: 43.83585
+Altitude: 192.00000
+Speed: 0.31000
+Bearing: 0.00000
+Precision: 14.40000</Info><X>317499.094627857</X><Y>-201400.313930035</Y></N108><N109><TimeStamp>40710.6959606481</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317499.094627857</X><Y>-201400.313930035</Y></N109><N110><TimeStamp>40710.6959606481</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317499.094627857</X><Y>-201400.313930035</Y></N110><N111><TimeStamp>40710.6963194444</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39314
+Longitude: 43.83592
+Altitude: 195.00000
+Speed: 0.10000
+Bearing: 194.00000
+Precision: 14.40000</Info><X>317498.884993076</X><Y>-201401.250769138</Y></N111><N112><TimeStamp>40710.6963194444</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.884993076</X><Y>-201401.250769138</Y></N112><N113><TimeStamp>40710.6963194444</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.884993076</X><Y>-201401.250769138</Y></N113><N114><TimeStamp>40710.6966550926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39311
+Longitude: 43.83594
+Altitude: 192.00000
+Speed: 0.29000
+Bearing: 0.00000
+Precision: 7.80000</Info><X>317498.674803734</X><Y>-201401.59661746</Y></N114><N115><TimeStamp>40710.6966550926</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317498.674803734</X><Y>-201401.59661746</Y></N115><N116><TimeStamp>40710.6966550926</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.674803734</X><Y>-201401.59661746</Y></N116><N117><TimeStamp>40710.6970138889</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39324
+Longitude: 43.83583
+Altitude: 187.00000
+Speed: 0.24000
+Bearing: 0.00000
+Precision: 14.40000</Info><X>317499.523289204</X><Y>-201399.668771744</Y></N117><N118><TimeStamp>40710.6970138889</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 95</Info><X>317499.523289204</X><Y>-201399.668771744</Y></N118><N119><TimeStamp>40710.6970138889</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.523289204</X><Y>-201399.668771744</Y></N119><N120><TimeStamp>40710.6970138889</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.523289204</X><Y>-201399.668771744</Y></N120><N121><TimeStamp>40710.6973611111</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39311
+Longitude: 43.83592
+Altitude: 194.00000
+Speed: 0.06000
+Bearing: 0.00000
+Precision: 15.00000</Info><X>317498.613844395</X><Y>-201401.488808393</Y></N121><N122><TimeStamp>40710.6973611111</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 95</Info><X>317498.613844395</X><Y>-201401.488808393</Y></N122><N123><TimeStamp>40710.6973611111</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.613844395</X><Y>-201401.488808393</Y></N123><N124><TimeStamp>40710.6977083333</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39327
+Longitude: 43.83574
+Altitude: 191.00000
+Speed: 0.11000
+Bearing: 80.00000
+Precision: 18.00000</Info><X>317499.374466419</X><Y>-201398.831506014</Y></N124><N125><TimeStamp>40710.6977083333</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.374466419</X><Y>-201398.831506014</Y></N125><N126><TimeStamp>40710.6977083333</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317499.374466419</X><Y>-201398.831506014</Y></N126><N127><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39310
+Longitude: 43.83581
+Altitude: 184.00000
+Speed: 0.19000
+Bearing: 180.00000
+Precision: 18.60000</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N127><N128><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 95</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N128><N129><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N129><N130><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N130><N131><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N131><N132><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 95</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N132><N133><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N133><N134><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N134><N135><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N135><N136><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N136><N137><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N137><N138><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N138><N139><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N139><N140><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N140><N141><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N141><N142><TimeStamp>40710.6980671296</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N142><N143><TimeStamp>40710.7005092593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39308
+Longitude: 43.83456
+Altitude: 101.00000
+Speed: 1.29000
+Bearing: 294.00000
+Precision: 18.00000</Info><X>317491.068701267</X><Y>-201393.486664534</Y></N143><N144><TimeStamp>40710.7005092593</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317491.068701267</X><Y>-201393.486664534</Y></N144><N145><TimeStamp>40710.7005092593</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317491.068701267</X><Y>-201393.486664534</Y></N145><N146><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39346
+Longitude: 43.83582
+Altitude: 167.00000
+Speed: 4.54000
+Bearing: 24.00000
+Precision: 42.00000</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N146><N147><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 96</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N147><N148><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N148><N149><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N149><N150><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N150><N151><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N151><N152><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N152><N153><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N153><N154><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N154><N155><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 97</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N155><N156><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N156><N157><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N157><N158><TimeStamp>40710.7008680556</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N158><N159><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39327
+Longitude: 43.83549
+Altitude: 159.00000
+Speed: 0.12000
+Bearing: 318.00000
+Precision: 13.80000</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N159><N160><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 86</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N160><N161><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N161><N162><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39330
+Longitude: 43.83620
+Altitude: 158.00000
+Speed: 0.32000
+Bearing: 124.00000
+Precision: 9.00000</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N162><N163><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 85</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N163><N164><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N164><N165><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39335
+Longitude: 43.83563
+Altitude: 188.00000
+Speed: 0.22000
+Bearing: 274.00000
+Precision: 12.60000</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N165><N166><TimeStamp>40710.784537037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39319
+Longitude: 43.83609
+Altitude: 181.00000
+Speed: 0.54000
+Bearing: 242.00000
+Precision: 13.20000</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N166><N167><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39327
+Longitude: 43.83549
+Altitude: 159.00000
+Speed: 0.13000
+Bearing: 318.00000
+Precision: 13.80000</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N167><N168><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 86</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N168><N169><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83599
+Altitude: 184.00000
+Speed: 0.91000
+Bearing: 88.00000
+Precision: 13.20000</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N169><N170><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 85</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N170><N171><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39328
+Longitude: 43.83590
+Altitude: 184.00000
+Speed: 0.81000
+Bearing: 204.00000
+Precision: 13.20000</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N171><N172><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 86</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N172><N173><TimeStamp>40710.7848842593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39322
+Longitude: 43.83560
+Altitude: 152.00000
+Speed: 0.25000
+Bearing: 96.00000
+Precision: 13.80000</Info><X>317497.984982014</X><Y>-201397.362786531</Y></N173><N174><TimeStamp>40710.7852430556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83547
+Altitude: 159.00000
+Speed: 0.69000
+Bearing: 150.00000
+Precision: 10.20000</Info><X>317497.662683487</X><Y>-201397.430633545</Y></N174><N175><TimeStamp>40710.7852430556</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 85</Info><X>317497.662683487</X><Y>-201397.430633545</Y></N175><N176><TimeStamp>40710.7853009259</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39321
+Longitude: 43.83555
+Altitude: 160.00000
+Speed: 0.18000
+Bearing: 136.00000
+Precision: 10.20000</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N176><N177><TimeStamp>40710.7853009259</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 85</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N177><N178><TimeStamp>40710.7853009259</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 3</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N178><N179><TimeStamp>40710.7853009259</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N179><N180><TimeStamp>40710.7853009259</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 1</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N180><N181><TimeStamp>40710.7855902778</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39323
+Longitude: 43.83551
+Altitude: 160.00000
+Speed: 0.60000
+Bearing: 322.00000
+Precision: 10.20000</Info><X>317497.700936317</X><Y>-201397.880998611</Y></N181><N182><TimeStamp>40710.7859375</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39312
+Longitude: 43.83556
+Altitude: 110.00000
+Speed: 0.17000
+Bearing: 296.00000
+Precision: 7.80000</Info><X>317496.762076855</X><Y>-201399.260997772</Y></N182><N183><TimeStamp>40710.7862962963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39319
+Longitude: 43.83556
+Altitude: 145.00000
+Speed: 0.24000
+Bearing: 288.00000
+Precision: 10.20000</Info><X>317497.521259308</X><Y>-201398.594424486</Y></N183><N184><TimeStamp>40710.7866435185</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39321
+Longitude: 43.83565
+Altitude: 163.00000
+Speed: 0.13000
+Bearing: 270.00000
+Precision: 6.00000</Info><X>317498.230434418</X><Y>-201398.939704657</Y></N184><N185><TimeStamp>40710.7870023148</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39336
+Longitude: 43.83534
+Altitude: 143.00000
+Speed: 0.26000
+Bearing: 316.00000
+Precision: 12.00000</Info><X>317498.205948353</X><Y>-201395.627395391</Y></N185><N186><TimeStamp>40710.787349537</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39332
+Longitude: 43.83546
+Altitude: 146.00000
+Speed: 0.85000
+Bearing: 302.00000
+Precision: 7.80000</Info><X>317498.378016949</X><Y>-201396.713086605</Y></N186><N187><TimeStamp>40710.7877083333</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39327
+Longitude: 43.83566
+Altitude: 156.00000
+Speed: 0.20000
+Bearing: 0.00000
+Precision: 7.80000</Info><X>317498.952998638</X><Y>-201398.341255903</Y></N187><N188><TimeStamp>40710.7880439815</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39315
+Longitude: 43.83565
+Altitude: 165.00000
+Speed: 0.19000
+Bearing: 192.00000
+Precision: 10.80000</Info><X>317497.535247803</X><Y>-201399.496210575</Y></N188><N189><TimeStamp>40710.7884027778</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39320
+Longitude: 43.83584
+Altitude: 179.00000
+Speed: 0.11000
+Bearing: 292.00000
+Precision: 10.80000</Info><X>317499.096184731</X><Y>-201400.205059528</Y></N189><N190><TimeStamp>40710.7884027778</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317499.096184731</X><Y>-201400.205059528</Y></N190><N191><TimeStamp>40710.78875</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39324
+Longitude: 43.83565
+Altitude: 165.00000
+Speed: 0.13000
+Bearing: 174.00000
+Precision: 10.80000</Info><X>317498.529469013</X><Y>-201398.623411894</Y></N191><N192><TimeStamp>40710.78875</TimeStamp><Severity>0</Severity><Message>SET GPIModule/Value</Message><Info>Value: 0</Info><X>317498.529469013</X><Y>-201398.623411894</Y></N192><N193><TimeStamp>40710.7890856481</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83564
+Altitude: 174.00000
+Speed: 0.19000
+Bearing: 320.00000
+Precision: 12.60000</Info><X>317498.585229874</X><Y>-201398.466888189</Y></N193><N194><TimeStamp>40710.7894328704</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39330
+Longitude: 43.83549
+Altitude: 161.00000
+Speed: 0.47000
+Bearing: 300.00000
+Precision: 10.80000</Info><X>317498.363564014</X><Y>-201397.102131367</Y></N194><N195><TimeStamp>40710.7897916667</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39338
+Longitude: 43.83532
+Altitude: 151.00000
+Speed: 0.39000
+Bearing: 294.00000
+Precision: 10.80000</Info><X>317498.326779366</X><Y>-201395.288285732</Y></N195><N196><TimeStamp>40710.7901388889</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39339
+Longitude: 43.83520
+Altitude: 136.00000
+Speed: 0.13000
+Bearing: 312.00000
+Precision: 10.80000</Info><X>317497.866012573</X><Y>-201394.420224428</Y></N196><N197><TimeStamp>40710.790474537</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39332
+Longitude: 43.83547
+Altitude: 148.00000
+Speed: 0.08000
+Bearing: 0.00000
+Precision: 12.60000</Info><X>317498.503010273</X><Y>-201396.710896969</Y></N197><N198><TimeStamp>40710.7908333333</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39335
+Longitude: 43.83541
+Altitude: 136.00000
+Speed: 0.08000
+Bearing: 128.00000
+Precision: 12.60000</Info><X>317498.484390736</X><Y>-201396.135788918</Y></N198><N199><TimeStamp>40710.7911805556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39343
+Longitude: 43.83517
+Altitude: 137.00000
+Speed: 0.38000
+Bearing: 302.00000
+Precision: 10.80000</Info><X>317498.060702801</X><Y>-201393.908756733</Y></N199><N200><TimeStamp>40710.7911805556</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 84</Info><X>317498.060702801</X><Y>-201393.908756733</Y></N200><N201><TimeStamp>40710.7915393518</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39337
+Longitude: 43.83530
+Altitude: 157.00000
+Speed: 0.15000
+Bearing: 22.00000
+Precision: 10.80000</Info><X>317498.077295303</X><Y>-201395.256344557</Y></N201><N202><TimeStamp>40710.7918865741</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83590
+Altitude: 175.00000
+Speed: 0.60000
+Bearing: 16.00000
+Precision: 12.60000</Info><X>317500.009367466</X><Y>-201400.012829781</Y></N202><N203><TimeStamp>40710.7922337963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39330
+Longitude: 43.83564
+Altitude: 170.00000
+Speed: 0.31000
+Bearing: 112.00000
+Precision: 10.80000</Info><X>317499.12702322</X><Y>-201398.027123928</Y></N203><N204><TimeStamp>40710.7925694444</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39326
+Longitude: 43.83583
+Altitude: 161.00000
+Speed: 0.71000
+Bearing: 308.00000
+Precision: 10.80000</Info><X>317499.667933941</X><Y>-201399.541873455</Y></N204><N205><TimeStamp>40710.7929282407</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39323
+Longitude: 43.83595
+Altitude: 165.00000
+Speed: 0.05000
+Bearing: 140.00000
+Precision: 13.20000</Info><X>317499.992892265</X><Y>-201400.547124386</Y></N205><N206><TimeStamp>40710.793275463</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39324
+Longitude: 43.83585
+Altitude: 165.00000
+Speed: 0.63000
+Bearing: 320.00000
+Precision: 9.00000</Info><X>317499.663819313</X><Y>-201399.83225894</Y></N206><N207><TimeStamp>40710.7936111111</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39321
+Longitude: 43.83589
+Altitude: 174.00000
+Speed: 0.24000
+Bearing: 124.00000
+Precision: 13.20000</Info><X>317499.459827423</X><Y>-201400.369792938</Y></N207><N208><TimeStamp>40710.7939583333</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39337
+Longitude: 43.83549
+Altitude: 153.00000
+Speed: 0.80000
+Bearing: 308.00000
+Precision: 13.20000</Info><X>317499.150684834</X><Y>-201396.357396841</Y></N208><N209><TimeStamp>40710.7943055556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39326
+Longitude: 43.83569
+Altitude: 158.00000
+Speed: 0.35000
+Bearing: 122.00000
+Precision: 11.40000</Info><X>317498.97471571</X><Y>-201398.69859004</Y></N209><N210><TimeStamp>40710.7946643519</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39315
+Longitude: 43.83597
+Altitude: 176.00000
+Speed: 0.24000
+Bearing: 308.00000
+Precision: 11.40000</Info><X>317499.239358425</X><Y>-201401.441616297</Y></N210><N211><TimeStamp>40710.7950231481</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39327
+Longitude: 43.83573
+Altitude: 166.00000
+Speed: 0.56000
+Bearing: 302.00000
+Precision: 11.40000</Info><X>317499.330075264</X><Y>-201398.816782236</Y></N211><N212><TimeStamp>40710.7953703704</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39299
+Longitude: 43.83636
+Altitude: 148.00000
+Speed: 0.99000
+Bearing: 304.00000
+Precision: 13.80000</Info><X>317499.61315155</X><Y>-201405.307837486</Y></N212><N213><TimeStamp>40710.7957291667</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39328
+Longitude: 43.83550
+Altitude: 165.00000
+Speed: 0.56000
+Bearing: 0.00000
+Precision: 7.80000</Info><X>317498.253556728</X><Y>-201397.306234598</Y></N213><N214><TimeStamp>40710.796087963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39341
+Longitude: 43.83531
+Altitude: 168.00000
+Speed: 0.15000
+Bearing: 310.00000
+Precision: 11.40000</Info><X>317498.599453926</X><Y>-201394.941318035</Y></N214><N215><TimeStamp>40710.7967824074</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39331
+Longitude: 43.83565
+Altitude: 151.00000
+Speed: 0.09000
+Bearing: 116.00000
+Precision: 13.20000</Info><X>317499.288709164</X><Y>-201397.956940651</Y></N215><N216><TimeStamp>40710.7971412037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39322
+Longitude: 43.83574
+Altitude: 160.00000
+Speed: 0.03000
+Bearing: 250.00000
+Precision: 7.80000</Info><X>317498.777971268</X><Y>-201399.355251074</Y></N216><N217><TimeStamp>40710.7971412037</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 83</Info><X>317498.777971268</X><Y>-201399.355251074</Y></N217><N218><TimeStamp>40710.7974884259</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39317
+Longitude: 43.83602
+Altitude: 172.00000
+Speed: 0.16000
+Bearing: 134.00000
+Precision: 7.80000</Info><X>317499.76517725</X><Y>-201401.499824286</Y></N218><N219><TimeStamp>40710.7978356481</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39326
+Longitude: 43.83581
+Altitude: 158.00000
+Speed: 0.39000
+Bearing: 104.00000
+Precision: 12.00000</Info><X>317499.597685814</X><Y>-201399.460159302</Y></N219><N220><TimeStamp>40710.7981712963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83578
+Altitude: 174.00000
+Speed: 0.06000
+Bearing: 0.00000
+Precision: 12.00000</Info><X>317499.331140041</X><Y>-201399.371469021</Y></N220><N221><TimeStamp>40710.7985300926</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39317
+Longitude: 43.83607
+Altitude: 165.00000
+Speed: 0.44000
+Bearing: 136.00000
+Precision: 7.80000</Info><X>317500.054975986</X><Y>-201401.836935759</Y></N221><N222><TimeStamp>40710.7988657407</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83599
+Altitude: 185.00000
+Speed: 0.72000
+Bearing: 306.00000
+Precision: 12.00000</Info><X>317500.429326057</X><Y>-201400.612028837</Y></N222><N223><TimeStamp>40710.799224537</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39321
+Longitude: 43.83615
+Altitude: 183.00000
+Speed: 0.63000
+Bearing: 308.00000
+Precision: 7.80000</Info><X>317500.811655998</X><Y>-201401.979191065</Y></N223><N224><TimeStamp>40710.7995833333</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39324
+Longitude: 43.83574
+Altitude: 183.00000
+Speed: 0.40000
+Bearing: 0.00000
+Precision: 12.00000</Info><X>317499.075439453</X><Y>-201399.147811651</Y></N224><N225><TimeStamp>40710.7999305556</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39325
+Longitude: 43.83580
+Altitude: 188.00000
+Speed: 0.32000
+Bearing: 288.00000
+Precision: 12.00000</Info><X>317499.473681927</X><Y>-201399.389683723</Y></N225><N226><TimeStamp>40710.8002893519</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39323
+Longitude: 43.83590
+Altitude: 195.00000
+Speed: 0.06000
+Bearing: 284.00000
+Precision: 12.00000</Info><X>317499.792423248</X><Y>-201400.203217268</Y></N226><N227><TimeStamp>40710.800625</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39291
+Longitude: 43.83707
+Altitude: 233.00000
+Speed: 0.08000
+Bearing: 290.00000
+Precision: 7.80000</Info><X>317502.458488464</X><Y>-201410.499244213</Y></N227><N228><TimeStamp>40710.8009837963</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39318
+Longitude: 43.83611
+Altitude: 194.00000
+Speed: 0.37000
+Bearing: 302.00000
+Precision: 7.80000</Info><X>317500.328709602</X><Y>-201402.044643641</Y></N228><N229><TimeStamp>40710.8013310185</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39316
+Longitude: 43.83607
+Altitude: 176.00000
+Speed: 0.18000
+Bearing: 0.00000
+Precision: 7.80000</Info><X>317499.955284595</X><Y>-201401.942342758</Y></N229><N230><TimeStamp>40710.8016782407</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39342
+Longitude: 43.83521
+Altitude: 133.00000
+Speed: 0.48000
+Bearing: 282.00000
+Precision: 12.00000</Info><X>317498.190885067</X><Y>-201394.170888901</Y></N230><N231><TimeStamp>40710.802037037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39353
+Longitude: 43.83488
+Altitude: 132.00000
+Speed: 0.65000
+Bearing: 304.00000
+Precision: 16.20000</Info><X>317497.69846487</X><Y>-201391.125945091</Y></N231><N232><TimeStamp>40710.8023842593</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39348
+Longitude: 43.83498
+Altitude: 132.00000
+Speed: 0.72000
+Bearing: 302.00000
+Precision: 16.20000</Info><X>317497.593678474</X><Y>-201392.221663713</Y></N232><N233><TimeStamp>40710.8027314815</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39352
+Longitude: 43.83490
+Altitude: 134.00000
+Speed: 0.90000
+Bearing: 300.00000
+Precision: 9.60000</Info><X>317497.59672451</X><Y>-201391.376565456</Y></N233><N234><TimeStamp>40710.8030787037</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39330
+Longitude: 43.83558
+Altitude: 146.00000
+Speed: 0.23000
+Bearing: 280.00000
+Precision: 12.00000</Info><X>317498.802652836</X><Y>-201397.612917185</Y></N234><N235><TimeStamp>40710.8030787037</TimeStamp><Severity>0</Severity><Message>SET BatteryModule/Charge</Message><Info>Value: 82</Info><X>317498.802652836</X><Y>-201397.612917185</Y></N235><N236><TimeStamp>40710.8034259259</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39344
+Longitude: 43.83518
+Altitude: 128.00000
+Speed: 0.16000
+Bearing: 258.00000
+Precision: 7.80000</Info><X>317498.302951336</X><Y>-201393.821591854</Y></N236><N237><TimeStamp>40710.8037731481</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39316
+Longitude: 43.83567
+Altitude: 178.00000
+Speed: 0.25000
+Bearing: 294.00000
+Precision: 9.60000</Info><X>317497.838940144</X><Y>-201399.480504274</Y></N237><N238><TimeStamp>40710.8041203704</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39320
+Longitude: 43.83569
+Altitude: 156.00000
+Speed: 0.10000
+Bearing: 320.00000
+Precision: 7.80000</Info><X>317498.323955536</X><Y>-201399.26988101</Y></N238><N239><TimeStamp>40710.8044560185</TimeStamp><Severity>0</Severity><Message>SET GPSModule/GPSFixData</Message><Info>Latitude: 55.39314
+Longitude: 43.83594
+Altitude: 168.00000
+Speed: 0.58000
+Bearing: 266.00000
+Precision: 14.40000</Info><X>317498.954763889</X><Y>-201401.36884594</Y></N239><N240><TimeStamp>40710.8044560185</TimeStamp><Severity>0</Severity><Message>SET ConnectionModule/IsOnline</Message><Info>Value: 0</Info><X>317498.954763889</X><Y>-201401.36884594</Y></N240></ObjectModelEvents><BusinessModelEvents><N0><TimeStamp>0</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.12813282</X><Y>-201398.599315405</Y></N0><N1><TimeStamp>40710.6837037037</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.303600311</X><Y>-201403.840837717</Y></N1><N2><TimeStamp>40710.6840625</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.95742178</X><Y>-201402.441937447</Y></N2><N3><TimeStamp>40710.6844097222</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.081130981</X><Y>-201399.375809431</Y></N3><N4><TimeStamp>40710.6847569444</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.929380894</X><Y>-201400.638269424</Y></N4><N5><TimeStamp>40710.6854398148</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.029998779</X><Y>-201399.205648661</Y></N5><N6><TimeStamp>40710.6857986111</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317499.0116539</X><Y>-201402.394334078</Y></N6><N7><TimeStamp>40710.6861342593</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.858200073</X><Y>-201401.883754015</Y></N7><N8><TimeStamp>40710.6864814815</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317499.118414402</X><Y>-201400.526090384</Y></N8><N9><TimeStamp>40710.6868402778</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.30958271</X><Y>-201400.913501024</Y></N9><N10><TimeStamp>40710.6871990741</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.648974895</X><Y>-201401.529677153</Y></N10><N11><TimeStamp>40710.6875462963</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.258268833</X><Y>-201398.843936205</Y></N11><N12><TimeStamp>40710.6879050926</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317496.916996002</X><Y>-201399.662552595</Y></N12><N13><TimeStamp>40710.6882523148</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.268236637</X><Y>-201400.680916548</Y></N13><N14><TimeStamp>40710.688599537</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317499.045673847</X><Y>-201401.880439043</Y></N14><N15><TimeStamp>40710.6889467593</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.875014305</X><Y>-201398.803979635</Y></N15><N16><TimeStamp>40710.6892824074</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.074498653</X><Y>-201399.865209818</Y></N16><N17><TimeStamp>40710.6896296296</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.00483799</X><Y>-201400.391972065</Y></N17><N18><TimeStamp>40710.6899884259</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317499.088472843</X><Y>-201400.749538183</Y></N18><N19><TimeStamp>40710.6903356481</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.738404274</X><Y>-201402.167705059</Y></N19><N20><TimeStamp>40710.6906944444</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.042099476</X><Y>-201402.152002096</Y></N20><N21><TimeStamp>40710.6910300926</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.665265083</X><Y>-201404.812978983</Y></N21><N22><TimeStamp>40710.6913773148</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317496.757089615</X><Y>-201402.760350704</Y></N22><N23><TimeStamp>40710.691724537</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317495.55031538</X><Y>-201399.733118057</Y></N23><N24><TimeStamp>40710.6920717593</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317499.151521683</X><Y>-201401.33942771</Y></N24><N25><TimeStamp>40710.6924305556</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.895178795</X><Y>-201399.270190716</Y></N25><N26><TimeStamp>40710.6927893519</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.503373623</X><Y>-201402.356513977</Y></N26><N27><TimeStamp>40710.6931365741</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.682639122</X><Y>-201402.324221134</Y></N27><N28><TimeStamp>40710.6934837963</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.207711697</X><Y>-201399.282229424</Y></N28><N29><TimeStamp>40710.6938425926</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.699046612</X><Y>-201401.145160913</Y></N29><N30><TimeStamp>40710.6941898148</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.934286118</X><Y>-201404.07536006</Y></N30><N31><TimeStamp>40710.6948958333</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.623561859</X><Y>-201400.781618118</Y></N31><N32><TimeStamp>40710.6952430556</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.938609123</X><Y>-201399.984848976</Y></N32><N33><TimeStamp>40710.6956018519</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.251799107</X><Y>-201402.452277899</Y></N33><N34><TimeStamp>40710.6959606481</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317499.094627857</X><Y>-201400.313930035</Y></N34><N35><TimeStamp>40710.6963194444</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.884993076</X><Y>-201401.250769138</Y></N35><N36><TimeStamp>40710.6966550926</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.674803734</X><Y>-201401.59661746</Y></N36><N37><TimeStamp>40710.6970138889</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.523289204</X><Y>-201399.668771744</Y></N37><N38><TimeStamp>40710.6973611111</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.613844395</X><Y>-201401.488808393</Y></N38><N39><TimeStamp>40710.6977083333</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317499.374466419</X><Y>-201398.831506014</Y></N39><N40><TimeStamp>40710.6980671296</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N40><N41><TimeStamp>40710.6980671296</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N41><N42><TimeStamp>40710.6980671296</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N42><N43><TimeStamp>40710.6980671296</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N43><N44><TimeStamp>40710.6980671296</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N44><N45><TimeStamp>40710.6980671296</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N45><N46><TimeStamp>40710.6980671296</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317497.934597492</X><Y>-201400.920063019</Y></N46><N47><TimeStamp>40710.7005092593</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317491.068701267</X><Y>-201393.486664534</Y></N47><N48><TimeStamp>40710.7008680556</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N48><N49><TimeStamp>40710.7008680556</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N49><N50><TimeStamp>40710.7008680556</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N50><N51><TimeStamp>40710.7008680556</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N51><N52><TimeStamp>40710.7008680556</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N52><N53><TimeStamp>40710.7008680556</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317501.865530968</X><Y>-201397.523015499</Y></N53><N54><TimeStamp>40710.784537037</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317498.038184643</X><Y>-201397.387777805</Y></N54><N55><TimeStamp>40710.7853009259</TimeStamp><Severity>3</Severity><Message>Alert: Critical</Message><Info>Value: 3</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N55><N56><TimeStamp>40710.7853009259</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N56><N57><TimeStamp>40710.7853009259</TimeStamp><Severity>1</Severity><Message>Device is Online</Message><Info>Value: 1</Info><X>317497.731436729</X><Y>-201398.248552322</Y></N57><N58><TimeStamp>40710.7884027778</TimeStamp><Severity>0</Severity><Message>Alert: None</Message><Info>Value: 0</Info><X>317499.096184731</X><Y>-201400.205059528</Y></N58><N59><TimeStamp>40710.8044560185</TimeStamp><Severity>2</Severity><Message>Device is Offline</Message><Info>Value: 0</Info><X>317498.954763889</X><Y>-201401.36884594</Y></N59></BusinessModelEvents></ID1></Tracks></ROOT>

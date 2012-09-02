@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" name="ISpaceProviderservice" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="GetSpaceWindowBitmap0Request">
+    <part name="pUserName" type="s:string" />
+    <part name="pUserPassword" type="s:string" />
+    <part name="X0" type="s:double" />
+    <part name="Y0" type="s:double" />
+    <part name="X1" type="s:double" />
+    <part name="Y1" type="s:double" />
+    <part name="X2" type="s:double" />
+    <part name="Y2" type="s:double" />
+    <part name="X3" type="s:double" />
+    <part name="Y3" type="s:double" />
+    <part name="HidedLaysArray" type="s:base64Binary" />
+    <part name="VisibleFactor" type="s:int" />
+    <part name="DynamicHintVisibility" type="s:double" />
+    <part name="Width" type="s:int" />
+    <part name="Height" type="s:int" />
+  </message>
+  <message name="GetSpaceWindowBitmap0Response">
+    <part name="BitmapData" type="s:base64Binary" />
+  </message>
+  <portType name="ISpaceProvider">
+    <operation name="GetSpaceWindowBitmap">
+      <input message="tns:GetSpaceWindowBitmap0Request" />
+      <output message="tns:GetSpaceWindowBitmap0Response" />
+    </operation>
+  </portType>
+  <binding name="ISpaceProviderbinding" type="tns:ISpaceProvider">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="GetSpaceWindowBitmap">
+      <soap:operation soapAction="urn:FunctionalitySOAPInterface-ISpaceProvider#GetSpaceWindowBitmap" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ISpaceProvider" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:FunctionalitySOAPInterface-ISpaceProvider" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ISpaceProviderservice">
+    <port name="ispaceproviderPort" binding="tns:ISpaceProviderbinding">
+      <soap:address location="http://127.0.0.1/SpaceSOAPServer.dll/soap/ispaceprovider" />
+    </port>
+  </service>
+</definitions>
