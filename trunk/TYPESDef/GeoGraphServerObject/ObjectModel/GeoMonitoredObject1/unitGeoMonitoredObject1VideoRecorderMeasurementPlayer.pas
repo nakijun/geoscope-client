@@ -182,7 +182,7 @@ while (NOT Terminated) do begin
         if (IsStartPositionSet())
          then begin
           flNewPosition:=true;
-          Break; //. >
+          Break; //. >                                                             
           end;
         end;
       if (flNewPosition) then Break; //. >

@@ -8,7 +8,7 @@ uses
   unitGeoMonitoredObjectModel;
 
 Type
-  TGMOBusinessModel = class(TBusinessModel)
+  TGMOBusinessModel = class(TBusinessModel)                                                         
   public
     class function ObjectTypeID: integer; override;
     class function ObjectTypeName: string; override;
