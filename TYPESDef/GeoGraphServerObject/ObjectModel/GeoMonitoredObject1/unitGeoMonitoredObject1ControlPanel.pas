@@ -920,7 +920,7 @@ Configuration:=TGPSModuleConfiguration.Create(ConfigurationData);
 try
 with TGeoMonitoredObject1GPSModuleConfigurationPanel.Create(Configuration) do
 try
-flApply:=Dialog();
+flApply:=Dialog();                                                                                                       
 finally
 Destroy();
 end;
