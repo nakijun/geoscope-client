@@ -260,6 +260,7 @@ Type
   TGPSModuleConfiguration = class
   public
     Provider_ReadInterval: integer;
+    flIgnoreImpulseModeSleepingOnMovement: boolean;
     MapID: integer;
     MapPOI_Image_ResX: integer;
     MapPOI_Image_ResY: integer;
@@ -1319,6 +1320,7 @@ Constructor TGPSModuleConfiguration.Create(const BA: TByteArray);
 begin
 Inherited Create();
 Provider_ReadInterval:=1000*5; //. milliseconds
+flIgnoreImpulseModeSleepingOnMovement:=true;
 MapID:=0;
 MapPOI_Image_ResX:=640;
 MapPOI_Image_ResY:=480;
@@ -1365,6 +1367,9 @@ if (Version <> 1) then Raise Exception.Create('unknown version'); //. =>
 //.
 Node:=RootNode.selectSingleNode('Provider_ReadInterval');
 Provider_ReadInterval:=Node.nodeTypedValue;
+//.
+Node:=RootNode.selectSingleNode('IgnoreImpulseModeSleepingOnMovement');
+if (Node <> nil) then flIgnoreImpulseModeSleepingOnMovement:=(Node.nodeTypedValue <> 0);
 //.
 Node:=RootNode.selectSingleNode('MapID');
 MapID:=Node.nodeTypedValue;
@@ -1433,6 +1438,10 @@ Root.appendChild(VersionNode);
 //.
 Node:=Doc.createElement('Provider_ReadInterval');
 Node.nodeTypedValue:=Provider_ReadInterval;
+Root.appendChild(Node);
+//.
+Node:=Doc.createElement('IgnoreImpulseModeSleepingOnMovement');
+if (flIgnoreImpulseModeSleepingOnMovement) then Node.nodeTypedValue:=1 else Node.nodeTypedValue:=0;
 Root.appendChild(Node);
 //.
 Node:=Doc.createElement('MapID');
