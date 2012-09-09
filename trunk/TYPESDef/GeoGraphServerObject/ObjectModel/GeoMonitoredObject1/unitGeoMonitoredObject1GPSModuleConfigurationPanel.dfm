@@ -1,8 +1,8 @@
 object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSModuleConfigurationPanel
   Left = 380
-  Top = 149
+  Top = 125
   Width = 334
-  Height = 871
+  Height = 895
   Caption = 'GPS module configuration'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,7 +17,7 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
   TextHeight = 16
   object Panel1: TPanel
     Left = 0
-    Top = 803
+    Top = 827
     Width = 326
     Height = 41
     Align = alBottom
@@ -49,12 +49,12 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
     Left = 0
     Top = 0
     Width = 326
-    Height = 803
+    Height = 827
     Align = alClient
     TabOrder = 1
     DesignSize = (
       326
-      803)
+      827)
     object Label2: TLabel
       Left = 24
       Top = 16
@@ -64,7 +64,7 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
     end
     object Label1: TLabel
       Left = 24
-      Top = 64
+      Top = 88
       Width = 43
       Height = 16
       Caption = 'Map ID'
@@ -79,7 +79,7 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
     end
     object edMapID: TEdit
       Left = 24
-      Top = 80
+      Top = 104
       Width = 274
       Height = 24
       Anchors = [akLeft, akTop, akRight]
@@ -87,7 +87,7 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
     end
     object gbMapPOI: TGroupBox
       Left = 24
-      Top = 112
+      Top = 136
       Width = 274
       Height = 681
       Anchors = [akLeft, akTop, akRight]
@@ -328,6 +328,15 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
           TabOrder = 2
         end
       end
+    end
+    object cbIgnoreImpulseModeSleepingOnMovement: TCheckBox
+      Left = 24
+      Top = 64
+      Width = 273
+      Height = 17
+      Anchors = [akLeft, akTop, akRight]
+      Caption = 'Ignore impulse mode on movement'
+      TabOrder = 3
     end
   end
 end

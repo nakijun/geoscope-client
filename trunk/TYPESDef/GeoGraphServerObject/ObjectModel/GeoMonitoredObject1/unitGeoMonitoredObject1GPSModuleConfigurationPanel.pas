@@ -47,6 +47,7 @@ type
     edMediaFragmentFormat: TEdit;
     Label12: TLabel;
     edMediaFragmentMaxDuration: TEdit;
+    cbIgnoreImpulseModeSleepingOnMovement: TCheckBox;
     procedure btnApplyClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
   private
@@ -87,6 +88,7 @@ end;
 procedure TGeoMonitoredObject1GPSModuleConfigurationPanel.Update();
 begin
 edProviderReadInterval.Text:=IntToStr(Configuration.Provider_ReadInterval);
+cbIgnoreImpulseModeSleepingOnMovement.Checked:=Configuration.flIgnoreImpulseModeSleepingOnMovement;
 edMapID.Text:=IntToStr(Configuration.MapID);
 //.
 cbImageResolution.Text:=IntToStr(Configuration.MapPOI_Image_ResX)+'x'+IntToStr(Configuration.MapPOI_Image_ResY);
@@ -163,6 +165,7 @@ var
   SL: TStringList;
 begin
 Configuration.Provider_ReadInterval:=StrToInt(edProviderReadInterval.Text);
+Configuration.flIgnoreImpulseModeSleepingOnMovement:=cbIgnoreImpulseModeSleepingOnMovement.Checked;
 Configuration.MapID:=StrToInt(edMapID.Text);
 //.
 SplitStrings(cbImageResolution.Text,{out} SL);
