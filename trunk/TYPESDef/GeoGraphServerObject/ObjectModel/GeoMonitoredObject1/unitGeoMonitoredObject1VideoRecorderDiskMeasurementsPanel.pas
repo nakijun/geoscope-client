@@ -195,14 +195,14 @@ DestFolder:=PathTempDATA+'\'+IntToStr(idGeographServerObject);
 TVideoRecorderMeasurement.CopyMeasurement(MeasurementDatabaseFolder,MeasurementID,DestFolder);
 Measurement:=TVideoRecorderMeasurement.Create(DestFolder,MeasurementID);
 case (TVideoRecorderModuleMode(Measurement.Mode)) of
-VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1:       MeasurementVisor:=TfmGeoGraphServerObjectDataServerVideoMeasurementVisor.Create(DestFolder,MeasurementID);
-VIDEORECORDERMODULEMODE_MODE_MPEG4:                     with TfmMeasurementMediaPlayer.Create(Measurement.MeasurementFolder+'\'+MediaMPEG4FileName,Measurement.StartTimestamp) do
+VIDEORECORDERMODULEMODE_H263STREAM1_AMRNBSTREAM1,VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1: MeasurementVisor:=TfmGeoGraphServerObjectDataServerVideoMeasurementVisor.Create(DestFolder,MeasurementID);
+VIDEORECORDERMODULEMODE_MODE_MPEG4: with TfmMeasurementMediaPlayer.Create(Measurement.MeasurementFolder+'\'+MediaMPEG4FileName,Measurement.StartTimestamp) do
   try
   ShowModal();
   finally
   Destroy();
   end;
-VIDEORECORDERMODULEMODE_MODE_3GP:                       with TfmMeasurementMediaPlayer.Create(Measurement.MeasurementFolder+'\'+Media3GPFileName,Measurement.StartTimestamp) do
+VIDEORECORDERMODULEMODE_MODE_3GP: with TfmMeasurementMediaPlayer.Create(Measurement.MeasurementFolder+'\'+Media3GPFileName,Measurement.StartTimestamp) do
   try
   ShowModal();
   finally

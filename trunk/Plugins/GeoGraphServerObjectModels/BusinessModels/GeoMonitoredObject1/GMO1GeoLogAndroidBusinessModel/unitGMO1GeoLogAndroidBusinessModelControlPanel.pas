@@ -286,7 +286,7 @@ with Model.ObjectModel.GetControlPanel() do begin
 Caption:='Object Model';
 W:=ClientWidth;
 H:=ClientHeight;
-BorderStyle:=bsDialog;
+BorderStyle:=bsSizeable;
 FormStyle:=fsStayOnTop;
 ClientWidth:=W;
 ClientHeight:=H;
@@ -535,7 +535,7 @@ DeviceRootComponent.VideoRecorderModule.Mode.Value:=V;
 DeviceRootComponent.VideoRecorderModule.Mode.WriteDeviceCUAC();
 //.
 case TVideoRecorderModuleMode(V.Value) of
-VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1: begin
+VIDEORECORDERMODULEMODE_H263STREAM1_AMRNBSTREAM1,VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1: begin 
   if (NOT DeviceRootComponent.VideoRecorderModule.Audio.BoolValue.Value)
    then begin
     BV.Timestamp:=Now-TimeZoneDelta;

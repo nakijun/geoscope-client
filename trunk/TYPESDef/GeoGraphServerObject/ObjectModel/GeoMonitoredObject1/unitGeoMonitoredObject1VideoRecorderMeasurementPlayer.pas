@@ -6,6 +6,7 @@ uses
   SysUtils,
   Classes,
   SyncObjs,
+  unitGeoMonitoredObject1Model,
   unitVideoRecorderMeasurement;
 
 type
@@ -49,6 +50,7 @@ type
     DatabaseFolder: string;
     MeasurementID: string;
     //.
+    Mode: integer;
     flAudio: boolean;
     flVideo: boolean;
     AudioPort: integer;
@@ -439,6 +441,7 @@ var
   PlayerExecutive: string;
 begin
 try
+Mode:=Measurement.Mode;
 AudioFileName:=Measurement.MeasurementFolder+'\'+AudioFile;
 VideoFileName:=Measurement.MeasurementFolder+'\'+VideoFile;
 flAudio:=FileExists(AudioFileName);
@@ -453,8 +456,10 @@ try
 WriteLn(SDP,'v=0');
 WriteLn(SDP,'s=Unnamed');
 if (flVideo) then WriteLn(SDP,'m=video '+IntToStr(VideoPort)+' RTP/AVP 96');
-WriteLn(SDP,'b=RR:0');
-WriteLn(SDP,'a=rtpmap:96 H264/90000');
+case (TVideoRecorderModuleMode(Mode)) of
+VIDEORECORDERMODULEMODE_H263STREAM1_AMRNBSTREAM1: WriteLn(SDP,'a=rtpmap:96 H263-1998/90000');
+VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1: WriteLn(SDP,'a=rtpmap:96 H264/90000');
+end;
 WriteLn(SDP,'a=fmtp:96 packetization-mode=1;profile-level-id=42000a;sprop-parameter-sets=Z0IACpZUBQHogA==,aM44gA==;');
 if (flAudio OR flVideo) then WriteLn(SDP,'m=audio '+IntToStr(AudioPort)+' RTP/AVP 96');
 WriteLn(SDP,'b=AS:128');
