@@ -1,9 +1,9 @@
 object GeoMonitoredObject1ControlPanel: TGeoMonitoredObject1ControlPanel
-  Left = 557
-  Top = 13
-  BorderStyle = bsNone
-  ClientHeight = 941
-  ClientWidth = 556
+  Left = 447
+  Top = 121
+  Width = 564
+  Height = 734
+  VertScrollBar.Tracking = True
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,9 +16,9 @@ object GeoMonitoredObject1ControlPanel: TGeoMonitoredObject1ControlPanel
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 556
+    Width = 540
     Height = 941
-    Align = alClient
+    Align = alTop
     Color = 13881289
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -29,7 +29,7 @@ object GeoMonitoredObject1ControlPanel: TGeoMonitoredObject1ControlPanel
     PopupMenu = PopupMenu
     TabOrder = 0
     DesignSize = (
-      556
+      540
       941)
     object Label1: TLabel
       Left = 16
@@ -148,7 +148,7 @@ object GeoMonitoredObject1ControlPanel: TGeoMonitoredObject1ControlPanel
       OnClick = sbGeoSpaceClick
     end
     object GroupBox1: TGroupBox
-      Left = 208
+      Left = 192
       Top = 1
       Width = 347
       Height = 939
