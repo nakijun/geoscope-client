@@ -145,10 +145,12 @@ end;
 Constructor TReFormingLays.Create(pReflecting: TReflecting);
 begin
 Reflecting:=pReflecting;
+{$IFNDEF EmbeddedServer}
 GlobalSpaceManager:=GetISpaceManager(Reflecting.Reflector.Space.SOAPServerURL);
 if (GlobalSpaceManager = nil) then Raise Exception.Create('no GlobalSpaceManager'); //. =>
 GlobalSpaceRemoteManager:=GetISpaceRemoteManager(Reflecting.Reflector.Space.SOAPServerURL);
 if (GlobalSpaceRemoteManager = nil) then Raise Exception.Create('no GlobalSpaceRemoteManager'); //. =>
+{$ENDIF}
 evtQueryReForm:=CreateEvent(nil,false,false,nil);
 flReforming:=false;
 Inherited Create(true);
@@ -171,8 +173,10 @@ if (false) ///- (Reflector.State <> rsDestroying)
  else
   Inherited;
 CloseHandle(evtQueryReForm);
+{$IFNDEF EmbeddedServer}
 GlobalSpaceRemoteManager:=nil;
 GlobalSpaceManager:=nil;
+{$ENDIF}
 end;
 
 procedure TReFormingLays.ReForming;
@@ -279,7 +283,11 @@ var
         ptrDetail: TPtr;
         ptrptrOwnerObj: TPtr;
       begin
+      {$IFNDEF EmbeddedServer}
       Structures:=GlobalSpaceManager.ReadObjectsStructures(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword, ObjPointers,PointersCount);
+      {$ELSE}
+      SpaceManager_ReadObjectsStructures(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword, ObjPointers,PointersCount,{out} Structures);
+      {$ENDIF}
       ObjPointersPtr:=@ObjPointers[0];
       StructuresPtr:=@Structures[0];
       Reflecting.Reflector.Space.Lock.Enter;
@@ -528,7 +536,11 @@ var
       Reflecting.Lock.Leave;
       try
       SetLength(ObjPointers,ValidPointersCount*SizeOf(TPtr));
+      {$IFNDEF EmbeddedServer}
       Objects:=GlobalSpaceManager.ReadObjects(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword, ObjPointers,ValidPointersCount);
+      {$ELSE}
+      SpaceManager_ReadObjects(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword, ObjPointers,ValidPointersCount,{out} Objects);
+      {$ENDIF}
       ptrObjectsBuffer:=@Objects[0];
       //. cashing types system for incoming objects
       ptrSrs:=ptrObjectsBuffer;
@@ -677,7 +689,11 @@ InvisibleLayNumbersArray:=TObjectReflectingCfg(ObjectConfiguration).HidedLays.Ge
 SystemTLay2DVisualization.AddInvisibleLaysToNumbersArray(RW_Scale,{ref} InvisibleLayNumbersArray);
 //. getting a objects visible in reflector window ...
 if (NOT Reflector.Space.flOffline)
+{$IFNDEF EmbeddedServer}
  then with RW do BA:=GlobalSpaceRemoteManager.GetVisibleObjects3(Reflector.Space.UserName,Reflector.Space.UserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale)
+{$ELSE}
+ then with RW do SpaceRemoteManager_GetVisibleObjects3(Reflector.Space.UserName,Reflector.Space.UserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale,{out} BA)
+{$ENDIF}
  else with RW do BA:=Reflector.Space.Context_GetVisibleObjects(X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale);
 //.
 if (Length(BA) = 0) then Exit; //. ->
@@ -3320,14 +3336,15 @@ end;
 
 procedure TReflecting.BMP_Init;
 begin
-BMP.Canvas.Lock;
+BMP.Canvas.Lock();
 try
 with Reflector do begin
 BMP.Canvas.Brush.Color:=clEmptySpace;
+BMP.Canvas.Pen.Color:=BMP.Canvas.Brush.Color;
 BMP.Canvas.Rectangle(-1,-1,BMP.Width,BMP.Height);
 if (PrimMap_Exist)
  then begin
-  PrimMap_Image.Canvas.Lock;
+  PrimMap_Image.Canvas.Lock();
   try
   BMP.Canvas.CopyRect(
     Rect(0,0,BMP.Width-1,BMP.Height-1),
@@ -3335,12 +3352,12 @@ if (PrimMap_Exist)
     Rect(PrimMap_PosX,PrimMap_PosY,PrimMap_PosX+BMP.Width-1,PrimMap_PosY+BMP.Height-1)
     );
   finally
-  PrimMap_Image.Canvas.UnLock;
+  PrimMap_Image.Canvas.UnLock();
   end;
   end;
 end;
 finally
-BMP.Canvas.UnLock;
+BMP.Canvas.UnLock();
 end;
 end;
 

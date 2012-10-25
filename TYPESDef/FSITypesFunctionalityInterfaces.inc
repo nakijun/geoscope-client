@@ -2103,6 +2103,8 @@ Type
   ITHREFVisualizationSOAPFunctionality = Interface(IInvokable)
     ['{AB8FC8F8-08CB-4ED8-BE1B-E146DE95B8DC}']
     function GetOwner(const pUserName,pUserPassword: WideString; const pidObj: Int64;  out idTOwner,idOwner: integer): boolean; stdcall;
+    function getName(const pUserName,pUserPassword: WideString; const pidObj: Int64): string; stdcall;
+    function getHint(const pUserName,pUserPassword: WideString; const pidObj: Int64): string; stdcall;
   end;
   //. "get interface" routine
   function GetITHREFVisualizationSOAPFunctionality(const ServerURL: WideString): ITHREFVisualizationSOAPFunctionality;

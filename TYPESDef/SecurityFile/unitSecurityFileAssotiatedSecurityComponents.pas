@@ -38,7 +38,11 @@ type
 
 implementation
 Uses
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface;
+  {$ELSE}
+  SpaceInterfacesImport;
+  {$ENDIF}
 
 {$R *.dfm}
 

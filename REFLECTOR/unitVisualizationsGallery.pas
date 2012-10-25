@@ -64,7 +64,11 @@ type
 
 implementation
 uses
-  FunctionalitySOAPInterface,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   unitCreatingObjects;
 
 {$R *.dfm}
@@ -160,10 +164,13 @@ var
 begin
 Clear;
 //.
-with GetISpaceUserReflector(Space.SOAPServerURL) do
-if (Get_CreatingComponents(Space.UserName,Space.UserPassword,Reflector.id,BA))
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Space.SOAPServerURL).Get_CreatingComponents(Space.UserName,Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_CreatingComponents(Space.UserName,Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   while MemoryStream.Read(CreatingObjectStoredStruc,SizeOf(CreatingObjectStoredStruc)) = SizeOf(CreatingObjectStoredStruc) do begin
@@ -171,9 +178,9 @@ if (Get_CreatingComponents(Space.UserName,Space.UserPassword,Reflector.id,BA))
     try
     with TComponentFunctionality_Create(CreatingObjectStoredStruc.idType,CreatingObjectStoredStruc.idObj) do
     try
-    Check;
+    Check();
     finally
-    Release;
+    Release();
     end;
     ObjFunctionality:=TComponentFunctionality_Create(CreatingObjectStoredStruc.idType,CreatingObjectStoredStruc.idObj);
     with ObjFunctionality do
@@ -194,18 +201,18 @@ if (Get_CreatingComponents(Space.UserName,Space.UserPassword,Reflector.id,BA))
           end
          else
         finally
-        VCL.Destroy;
+        VCL.Destroy();
         end;
       end
     finally
-    Release;
+    Release();
     end
     except
-      Continue;
+      Continue; //. ^
       end;
     end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;

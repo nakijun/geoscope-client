@@ -43,8 +43,8 @@ object fmComponentsPanelsHistory: TfmComponentsPanelsHistory
   object lvHistory: TListView
     Left = 0
     Top = 0
-    Width = 180
-    Height = 137
+    Width = 172
+    Height = 128
     Align = alClient
     Color = clSilver
     Columns = <

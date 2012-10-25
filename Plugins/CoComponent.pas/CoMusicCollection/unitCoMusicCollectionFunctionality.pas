@@ -166,13 +166,13 @@ if TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTVisualiza
     with TItemComponentsList(DetailsList[I]^) do CELLFunctionality:=TCELLVisualizationFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
     with CELLFunctionality do
     try
-    GetInsideObjectsList(idTCoMusicClip, false, IOList);
+    GetInsideObjectsList1(idTCoMusicClip, false, IOList);
     try
     for I:=0 to IOList.Count-1 do List.Add(Pointer(TItemComponentsList(IOList[I]^).idComponent));
     finally
     IOList.Destroy;
     end;
-    GetInsideObjectsList(idTCoMusicClip1, false, IOList);
+    GetInsideObjectsList1(idTCoMusicClip1, false, IOList);
     try
     for I:=0 to IOList.Count-1 do List.Add(Pointer(TItemComponentsList(IOList[I]^).idComponent));
     finally

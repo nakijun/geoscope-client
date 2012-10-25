@@ -507,7 +507,7 @@ Subject:=pSubject;
 SL:=TStringList.Create;
 try
 SL.Text:=pMessage;
-SetBody(SL);
+SetBody1(SL);
 finally
 SL.Destroy;
 end;
@@ -520,7 +520,7 @@ mtRU: PF.PositionName:='показать место события';
 else
   PF.PositionName:='show event position';
 end;
-PF.Save2DPosition1(VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY);
+PF.Save2DPosition(VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY);
 TComponentFunctionality(PF).SetPanelPropsLeftTop(MessageComponentsLeft,MessageComponentsTop);
 TComponentFunctionality(PF).SetPanelPropsWidthHeight(200,20);
 finally
@@ -614,7 +614,7 @@ Subject:=pSubject;
 SL:=TStringList.Create;
 try
 SL.Text:=pMessage;
-SetBody(SL);
+SetBody1(SL);
 finally
 SL.Destroy;
 end;
@@ -627,7 +627,7 @@ mtRU: PF.PositionName:='показать позицию объекта';
 else
   PF.PositionName:='show object position';
 end;
-PF.Save2DPosition1(ObjectVisualizationPositionX,ObjectVisualizationPositionY,ObjectVisualizationPositionX,ObjectVisualizationPositionY,ObjectVisualizationPositionX,ObjectVisualizationPositionY,ObjectVisualizationPositionX,ObjectVisualizationPositionY);
+PF.Save2DPosition(ObjectVisualizationPositionX,ObjectVisualizationPositionY,ObjectVisualizationPositionX,ObjectVisualizationPositionY,ObjectVisualizationPositionX,ObjectVisualizationPositionY,ObjectVisualizationPositionX,ObjectVisualizationPositionY);
 TComponentFunctionality(PF).SetPanelPropsLeftTop(MessageComponentsLeft,MessageComponentsTop);
 TComponentFunctionality(PF).SetPanelPropsWidthHeight(200,20);
 finally
@@ -657,7 +657,7 @@ mtRU: PF.PositionName:='показать координаты';
 else
   PF.PositionName:='show geo object position';
 end;
-PF.Save2DPosition1(VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY);
+PF.Save2DPosition(VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY,VisualizationPositionX,VisualizationPositionY);
 TComponentFunctionality(PF).SetPanelPropsLeftTop(MessageComponentsLeft,MessageComponentsTop+72);
 TComponentFunctionality(PF).SetPanelPropsWidthHeight(200,20);
 finally

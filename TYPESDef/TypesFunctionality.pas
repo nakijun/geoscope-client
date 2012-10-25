@@ -3,7 +3,7 @@
 {                                                       }
 {                 "Virtual Town" project                }
 {                                                       }
-{               Copyright (c) 1998-2011 PAS             }
+{               Copyright (c) 1998-2012 PAS             }
 {                                                       }
 {Authors: Alex Ponomarev <AlxPonom@mail.ru>             }
 {                                                       }
@@ -34,6 +34,9 @@ uses
   GDIPOBJ, GDIPAPI, //. GDI+ support
   PNGImage,
   unitIDsCach,
+  {$IFDEF EmbeddedServer}
+  SpaceInterfacesImport,
+  {$ENDIF}
   FunctionalitySOAPInterface,
   ImgList,
   OpenGL,
@@ -14363,7 +14366,11 @@ for I:=0 to ItemsList.Count-1 do with TItemTGeoCrdSystemCash(ItemsList[I]^) do b
   end;
 //.
 with TypeSystem.Space do
+{$IFNDEF EmbeddedServer}
 with GetISpaceManager(SOAPServerURL) do ReadObjectsByIDs(UserName,UserPassword, IDs,ItemsList.Count, NewObjPointers);
+{$ELSE}
+SpaceManager_ReadObjectsByIDs(UserName,UserPassword, IDs,ItemsList.Count, NewObjPointers);
+{$ENDIF}
 //. cache visualization bodies into the space to process visualizations
 ptrSrs:=@NewObjPointers[0];
 for I:=0 to ItemsList.Count-1 do begin
@@ -17777,14 +17784,22 @@ var
 begin
 MinRequestTime:=MaxInt;
 for I:=0 to TryesCount-1 do begin
-  Cache.Space.GlobalSpaceManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  Cache.Space.GlobalSpaceManagerLock.Enter();
   try
+  {$ENDIF}
   LT:=Now;
-  Cache.Space.GlobalSpaceManager.SpaceSize;
+  {$IFNDEF EmbeddedServer}
+  Cache.Space.GlobalSpaceManager.SpaceSize();
+  {$ELSE}
+  SpaceManager_SpaceSize();
+  {$ENDIF}
   RequestTime:=Round((Now-LT)*24*3600*1000);
+  {$IFNDEF EmbeddedServer}
   finally
-  Cache.Space.GlobalSpaceManagerLock.Leave;
+  Cache.Space.GlobalSpaceManagerLock.Leave();
   end;
+  {$ENDIF}
   if (RequestTime < MinRequestTime)
    then MinRequestTime:=RequestTime;
   end;

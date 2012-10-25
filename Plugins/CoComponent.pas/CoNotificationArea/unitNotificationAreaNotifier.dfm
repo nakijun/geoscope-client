@@ -20,8 +20,8 @@ object fmNotificationAreaNotifier: TfmNotificationAreaNotifier
   object lvNotifierItems: TListView
     Left = 0
     Top = 0
-    Width = 530
-    Height = 484
+    Width = 522
+    Height = 473
     Align = alClient
     Columns = <
       item
@@ -59,8 +59,8 @@ object fmNotificationAreaNotifier: TfmNotificationAreaNotifier
   end
   object Panel1: TPanel
     Left = 0
-    Top = 484
-    Width = 530
+    Top = 473
+    Width = 522
     Height = 72
     Align = alBottom
     TabOrder = 1

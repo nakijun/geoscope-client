@@ -17,7 +17,11 @@ interface
 
 uses
   UnitUpdateableObjects,
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   Windows, SyncObjs,ActiveX, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, ExtDlgs,
   GDIPOBJ, GDIPAPI, //. GDI+ support
   ExtCtrls, StdCtrls, Buttons, Mask, DBCtrls, Db, DBClient, DBTables, Variants, MSXML, ComCtrls,
@@ -172,6 +176,7 @@ const
   fsHints = 8;
   SizeRotateArea = 50;
   KfChgScale = 0.007;
+  TFigureWinRefl_MaxNodeCount = 100000; //. must be greater than TSpaceObj_maxPointsCount 
   TReflector_maxReflLevel = 100;
   TUserDynamicHint_ObjChange_Time = 90{seconds};
   TUserDynamicHint_ObjChange_TimeCounter = 10*TUserDynamicHint_ObjChange_Time;
@@ -1187,9 +1192,9 @@ type
     SelectedPoint_Index: integer;
 
     Count: integer;
-    Nodes: array[0..TSpaceObj_maxPointsCount-1] of TNode;
+    Nodes: array[0..TFigureWinRefl_MaxNodeCount-1] of TNode;
     CountScreenNodes: integer;
-    ScreenNodes: array[0..TSpaceObj_maxPointsCount-1] of TScreenNode;
+    ScreenNodes: array[0..TFigureWinRefl_MaxNodeCount-1] of TScreenNode;
     ScreenWidth: integer;
     Position: integer;
 
@@ -1342,8 +1347,10 @@ type
   TReFormingLays = class(TThread)
   private
     Reflecting: TReflecting;
+    {$IFNDEF EmbeddedServer}
     GlobalSpaceManager: ISpaceManager;
     GlobalSpaceRemoteManager: ISpaceRemoteManager;
+    {$ENDIF}
   public
     evtQueryReForm: THandle;
     flReforming: boolean;
@@ -3291,7 +3298,7 @@ flGeoPanel:=true;
 Style:=rsSpaceViewing;
 Mode:=rmBrowsing;
 //. read default configuration
-FileStream:=TFileStream.Create(tnReflectorConfiguration,fmOpenRead);
+FileStream:=TFileStream.Create(Reflector.Space.WorkLocale+tnReflectorConfiguration,fmOpenRead);
 try
 ReadFromStream(FileStream);
 finally
@@ -3299,15 +3306,19 @@ FileStream.Destroy;
 end;
 //. read remote configuration
 if (NOT Reflector.Space.flOffline)
- then with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do //. read user-defined config
-  if Get_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+ then //. read user-defined config
+  {$IFNDEF EmbeddedServer}
+  if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+  {$ELSE}
+  if (SpaceUserReflector_Get_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+  {$ENDIF}
    then begin
-    MemoryStream:=TMemoryStream.Create;
+    MemoryStream:=TMemoryStream.Create();
     try
     ByteArray_PrepareStream(BA,TStream(MemoryStream));
     ReadFromStream(MemoryStream);
     finally
-    MemoryStream.Destroy;
+    MemoryStream.Destroy();
     end;
     end;
 //. read local configuration
@@ -3428,7 +3439,7 @@ var
 begin
 R:=UpdateByReflector();
 //. write default config
-{///- FileStream:=TFileStream.Create(tnReflectorConfiguration,fmOpenWrite);
+{///- FileStream:=TFileStream.Create(Reflector.Space.WorkLocale+tnReflectorConfiguration,fmOpenWrite);
 try
 WriteIntoStream(FileStream);
 finally
@@ -3443,10 +3454,12 @@ if (NOT Reflector.Space.flOffline)
   MemoryStream:=TMemoryStream.Create;
   try
   WriteIntoStream(MemoryStream);
-  with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
   ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-  Set_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
-  end;
+  {$IFNDEF EmbeddedServer}
+  GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+  {$ELSE}
+  SpaceUserReflector_Set_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+  {$ENDIF}
   finally
   MemoryStream.Destroy;
   end;
@@ -4116,7 +4129,7 @@ end;
 
 procedure TFigureWinRefl.Insert(const Node: TNode);
 begin
-if (Count >= TSpaceObj_maxPointsCount) then Raise Exception.Create('! FigureWinRefl has too many nodes'); //. =>
+if (Count >= Length(Nodes)) then Raise Exception.Create('! FigureWinRefl has too many nodes'); //. =>
 Nodes[Count]:=Node;
 inc(Count);
 end;
@@ -5592,7 +5605,11 @@ InplaceHint_ObjPtr:=nilPtr;
 InplaceHint:=nil;
 //. naming
 if (NOT Space.flOffline)
+{$IFNDEF EmbeddedServer}
  then Caption:=GetISpaceUserReflector(Space.SOAPServerURL).getName(Space.UserName,Space.UserPassword,id)
+{$ELSE}
+ then Caption:=SpaceUserReflector_getName(Space.UserName,Space.UserPassword,id)
+{$ENDIF}
  else Caption:='Offline view';
 //.
 Configuration.Validate();
@@ -14763,18 +14780,20 @@ if (idTOwner <> idTCoComponent)
  else with DynamicHints.Reflector.Space do begin
   Result:=Plugins__CoComponent_TStatusBar_Create(UserName,UserPassword,idOwner,idCoType,DoOnItemStatusBarChange);
   try
-  if ((Stream <> nil) AND Context_flLoaded)
-   then begin
-    if (NOT TAbstractComponentStatusBar(Result).LoadFromStream(Stream))
+  if (Result <> nil)
+   then
+    if ((Stream <> nil) AND Context_flLoaded)
      then begin
+      if (NOT TAbstractComponentStatusBar(Result).LoadFromStream(Stream))
+       then begin
+        TAbstractComponentStatusBar(Result).Update();
+        Items_flChanged:=true;
+        end;
+      end
+     else begin
       TAbstractComponentStatusBar(Result).Update();
       Items_flChanged:=true;
       end;
-    end
-   else begin
-    TAbstractComponentStatusBar(Result).Update();
-    Items_flChanged:=true;
-    end;
   except
     FreeAndNil(Result);
     //.

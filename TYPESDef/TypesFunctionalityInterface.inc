@@ -53,8 +53,8 @@ Type
     procedure GetParams(out oServerType: integer; out oServerURL: string; out oServerData: TByteArray; out oTileProviderID: integer; out oWidth: integer; out oHeight: integer);overload; 
     procedure SetServerType(const Value: integer);
     procedure SetServerURL(const Value: string);
-    procedure SetServerData(const pData: TMemoryStream);overload; 
     procedure SetServerData(const Data: TByteArray);overload; 
+    procedure SetServerData(const pData: TMemoryStream);overload; 
     procedure GenerateFromImage(DATAStream: TByteArray);
     procedure GenerateFromTiles(const TilesFolder: string; const SizePowerOf2: integer);
     procedure RegenerateRegionFromLevel(const idLevel: integer; const XIndexMin,XIndexMax: integer; const YIndexMin,YIndexMax: integer);
@@ -364,12 +364,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
     procedure DATAFile_Clear;
@@ -392,8 +392,8 @@ Type
     function getName: string;override; 
     function getImage: TTypeImage;override; 
     procedure GetInstanceNames(const IDs: array of Int64; const IDs_Offset: integer; const IDs_Size: integer; var Names: TStringList);override; 
-    function GetDATAHash(DATAStream: TMemoryStream): integer;overload; 
     function GetDATAHash(DATAStream: TByteArray): integer;overload; 
+    function GetDATAHash(DATAStream: TMemoryStream): integer;overload; 
     property  Name: string read getName;
   end;
 
@@ -422,10 +422,10 @@ Type
     procedure setTypeID(Value: integer);
     function getName: string;override; 
     procedure setName(Value: string);
-    procedure GetDATA(out DATAStream: TMemoryStream);overload; 
     procedure GetDATA(out DATAStream: TByteArray);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream);overload; 
     procedure SetDATA(DATAStream: TByteArray);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream);overload; 
     function getDATAHash: integer;
     procedure setDATAHash(Value: integer);
     procedure GetParams(out oidMap: integer; out oFormatID: integer; out oKindID: integer; out oTypeID: integer; out oName: string);
@@ -477,14 +477,14 @@ Type
     procedure setFormatID(Value: integer);
     function getName: string;override; 
     procedure setName(Value: string);
-    procedure GetDATA(out DATAStream: TMemoryStream);overload; 
     procedure GetDATA(out DATAStream: TByteArray);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream);overload; 
     procedure SetDATA(DATAStream: TByteArray);overload; 
-    procedure GetObjectPrototypesDATA(out DATAStream: TMemoryStream);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream);overload; 
     procedure GetObjectPrototypesDATA(out DATAStream: TByteArray);overload; 
-    procedure SetObjectPrototypesDATA(DATAStream: TMemoryStream);overload; 
+    procedure GetObjectPrototypesDATA(out DATAStream: TMemoryStream);overload; 
     procedure SetObjectPrototypesDATA(DATAStream: TByteArray);overload; 
+    procedure SetObjectPrototypesDATA(DATAStream: TMemoryStream);overload; 
     function GetObjectPrototype(const KindID: integer; const TypeID: integer; out PrototypeID: integer; out LayID: integer): boolean;
     procedure GetParams(out oGeoSpaceID: integer; out oFormatID: integer; out oName: string);
     procedure SetParams(const pGeoSpaceID: integer; const pFormatID: integer; const pName: string);
@@ -626,12 +626,12 @@ Type
     function ConvertXYToDatumLatLong(const X: double; const Y: double; const pDatumID: integer; out Latitude: double; out Longitude: double): boolean;
     function ConvertLatLongToXY(const Latitude: double; const Longitude: double; out X: double; out Y: double): boolean;
     function ConvertDatumLatLongToXY(const pDatumID: integer; const Latitude: double; const Longitude: double; out X: double; out Y: double): boolean;
-    procedure GetGeoCrdSystemList(out List: TList);overload; 
     procedure GetGeoCrdSystemList(out List: TByteArray);overload; 
-    procedure GetMapFormatMapList(out List: TList);overload; 
+    procedure GetGeoCrdSystemList(out List: TList);overload; 
     procedure GetMapFormatMapList(out List: TByteArray);overload; 
-    procedure GetMapFormatMapObjectsByNameContext(const pFormatID: integer; const pKindID: integer; const pTypeID: integer; const NameContext: string; out List: TList);overload; 
+    procedure GetMapFormatMapList(out List: TList);overload; 
     procedure GetMapFormatMapObjectsByNameContext(const pFormatID: integer; const pKindID: integer; const pTypeID: integer; const NameContext: string; out List: TByteArray);overload; 
+    procedure GetMapFormatMapObjectsByNameContext(const pFormatID: integer; const pKindID: integer; const pTypeID: integer; const NameContext: string; out List: TList);overload; 
     property  Name: string read getName write setName;
     property  DatumID: integer read getDatumID write setDatumID;
     property  ProjectionID: integer read getProjectionID write setProjectionID;
@@ -651,8 +651,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetActiveInstanceList(out List: TList);overload; 
     procedure GetActiveInstanceList(out List: TByteArray);overload; 
+    procedure GetActiveInstanceList(out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -681,10 +681,10 @@ Type
     procedure setSeverity(Value: integer);
     function getDescription: string;
     procedure setDescription(Value: string);
-    procedure GetDATA(out DATAStream: TMemoryStream);overload; 
     procedure GetDATA(out DATAStream: TByteArray);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream);overload; 
     procedure SetDATA(DATAStream: TByteArray);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream);overload; 
     property  Name: string read getName;
     property  UserID: integer read getUserID write setUserID;
     property  TimeStamp: TDateTime read getTimeStamp write setTimeStamp;
@@ -765,8 +765,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetActiveInstanceList(out List: TList);overload; 
     procedure GetActiveInstanceList(out List: TByteArray);overload; 
+    procedure GetActiveInstanceList(out List: TList);overload; 
     function GetInstanceForRegistration: integer;
     property  Name: string read getName;
   end;
@@ -792,8 +792,8 @@ Type
     procedure setInternalAddress(Value: string);
     function getInfo: string;
     procedure setInfo(Value: string);
-    procedure GetData(out DATAStream: TMemoryStream);overload; 
     procedure GetData(out DATAStream: TByteArray);overload; 
+    procedure GetData(out DATAStream: TMemoryStream);overload; 
     function RegisterObject(const ObjectName: string; const VisualizationType: integer; const VisualizationID: integer; const GeoCrdSystemID: integer; const HintID: integer): integer;overload; 
     function RegisterObject(const ObjectName: string; const ObjectType: integer; const ObjectDatumID: integer; const VisualizationType: integer; const VisualizationID: integer; const GeoSpaceID: integer; const GeoCrdSystemID: integer; const HintID: integer): integer;overload; 
     function RegisterObject(const ObjectName: string; const ObjectType: integer; const BusinessType: integer; const ObjectComponentID: integer): integer;overload; 
@@ -836,8 +836,8 @@ Type
     procedure GetInstanceByLatLongLocally(const pLatitude,pLongitude: double; out oGeoSpaceID: integer; out idCrdSys: integer);overload; 
     procedure GetInstanceByXYLocally(const pGeoSpaceID: integer; const pX,pY: double; out idCrdSys: integer);overload; 
     procedure GetInstanceByXYLocally(const pX,pY: double; out oGeoSpaceID: integer; out idCrdSys: integer);overload; 
-    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceList(out List: TByteArray);overload; 
+    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceByLatLong(const pGeoSpaceID: integer; const pLatitude,pLongitude: double; out idCrdSys: integer);
     procedure GetInstanceByXY(const pGeoSpaceID: integer; const pX,pY: double; out idCrdSys: integer);
     property  Name: string read getName;
@@ -865,10 +865,10 @@ Type
     procedure setDatum(Value: string);
     function getProjection: string;
     procedure setProjection(Value: string);
-    procedure GetProjectionDATA(out DATAStream: TMemoryStream);overload; 
     procedure GetProjectionDATA(out DATAStream: TByteArray);overload; 
-    procedure SetProjectionDATA(DATAStream: TMemoryStream);overload; 
+    procedure GetProjectionDATA(out DATAStream: TMemoryStream);overload; 
     procedure SetProjectionDATA(DATAStream: TByteArray);overload; 
+    procedure SetProjectionDATA(DATAStream: TMemoryStream);overload; 
     procedure GetGeodesyPoints(out Points: TByteArray);
     property  GeoSpaceID: integer read getGeoSpaceID write setGeoSpaceID;
     property  Name: string read getName write setName;
@@ -954,18 +954,18 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
-    procedure GetPrivateDATA(out DATAStream: TMemoryStream);overload; 
-    procedure GetPrivateDATA(out DATAStream: TMemoryStream; const MaxSize: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     procedure GetPrivateDATA(out DATAStream: TByteArray);overload; 
     procedure GetPrivateDATA(out DATAStream: TByteArray; const MaxSize: integer);overload; 
-    procedure SetPrivateDATA(DATAStream: TMemoryStream);overload; 
+    procedure GetPrivateDATA(out DATAStream: TMemoryStream);overload; 
+    procedure GetPrivateDATA(out DATAStream: TMemoryStream; const MaxSize: integer);overload; 
     procedure SetPrivateDATA(DATAStream: TByteArray);overload; 
+    procedure SetPrivateDATA(DATAStream: TMemoryStream);overload; 
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
     procedure DATAFile_Clear;
@@ -1077,12 +1077,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetSpace(out DATAStream: TMemoryStream);overload; 
-    procedure GetSpace(out DATAStream: TMemoryStream; const MaxSize: integer);overload; 
     procedure GetSpace(out DATAStream: TByteArray);overload; 
     procedure GetSpace(out DATAStream: TByteArray; const MaxSize: integer);overload; 
-    procedure SetSpace(DATAStream: TMemoryStream);overload; 
+    procedure GetSpace(out DATAStream: TMemoryStream);overload; 
+    procedure GetSpace(out DATAStream: TMemoryStream; const MaxSize: integer);overload; 
     procedure SetSpace(DATAStream: TByteArray);overload; 
+    procedure SetSpace(DATAStream: TMemoryStream);overload; 
     function GetOwnSpaceHINTVisualization(out idHINTVisualization: integer): boolean;
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
@@ -1143,13 +1143,13 @@ Type
     function getidForMessage: integer;
     procedure setidForMessage(Value: integer);
     function LastModified: TDateTime;
-    procedure GetMessage(out Message: TMemoryStream);overload; 
     procedure GetMessage(out Message: TByteArray);overload; 
-    procedure SetMessage(const Message: TMemoryStream);overload; 
+    procedure GetMessage(out Message: TMemoryStream);overload; 
     procedure SetMessage(const Message: TByteArray);overload; 
+    procedure SetMessage(const Message: TMemoryStream);overload; 
     function ReplyMessageCount: integer;
-    procedure GetReplyMessageList(out MessageList: TList);overload; 
     procedure GetReplyMessageList(out MessageList: TByteArray);overload; 
+    procedure GetReplyMessageList(out MessageList: TList);overload; 
     property  Name: string read getName;
     property  idForum: integer read getidForum write setidForum;
     property  idForMessage: integer read getidForMessage write setidForMessage;
@@ -1190,11 +1190,11 @@ Type
     procedure setMessageLifeTime(Value: TDateTime);
     function getHint: string;override; 
     function RootMessageCount: integer;
-    procedure GetRootMessageList(out MessageList: TList);overload; 
     procedure GetRootMessageList(out MessageList: TByteArray);overload; 
+    procedure GetRootMessageList(out MessageList: TList);overload; 
     function MessageCount: integer;
-    procedure GetMessageList(out MessageList: TList);overload; 
     procedure GetMessageList(out MessageList: TByteArray);overload; 
+    procedure GetMessageList(out MessageList: TList);overload; 
     function AddMessage(const pidUser: integer; const pidForMessage: integer): integer;
     procedure DestroyMessage(const pidMessage: integer);
     property  Name: string read getName write setName;
@@ -1287,12 +1287,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out Value: TClientBlobStream);overload; 
-    procedure GetDATA(out Value: TClientBlobStream; const MaxSize: integer);overload; 
     procedure GetDATA(out Value: TByteArray);overload; 
     procedure GetDATA(out Value: TByteArray; const MaxSize: integer);overload; 
-    procedure SetDATA(Value: TMemoryStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream; const MaxSize: integer);overload; 
     procedure SetDATA(Value: TByteArray);overload; 
+    procedure SetDATA(Value: TMemoryStream);overload; 
     property  Name: string read getName;
   end;
 
@@ -1336,12 +1336,12 @@ Type
     function getHint: string;override; 
     function getWidth: integer;
     procedure setWidth(Value: integer);
-    procedure GetDATA(out Value: TClientBlobStream);overload; 
-    procedure GetDATA(out Value: TClientBlobStream; const MaxSize: integer);overload; 
     procedure GetDATA(out Value: TByteArray);overload; 
     procedure GetDATA(out Value: TByteArray; const MaxSize: integer);overload; 
-    procedure SetDATA(Value: TMemoryStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream; const MaxSize: integer);overload; 
     procedure SetDATA(Value: TByteArray);overload; 
+    procedure SetDATA(Value: TMemoryStream);overload; 
     property  Name: string read getName;
     property  Width: integer read getWidth write setWidth;
   end;
@@ -1424,12 +1424,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out Value: TClientBlobStream);overload; 
-    procedure GetDATA(out Value: TClientBlobStream; const MaxSize: integer);overload; 
     procedure GetDATA(out Value: TByteArray);overload; 
     procedure GetDATA(out Value: TByteArray; const MaxSize: integer);overload; 
-    procedure SetDATA(Value: TMemoryStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream; const MaxSize: integer);overload; 
     procedure SetDATA(Value: TByteArray);overload; 
+    procedure SetDATA(Value: TMemoryStream);overload; 
     property  Name: string read getName;
   end;
 
@@ -1691,8 +1691,8 @@ Type
     function getName: string;override; 
     function getHint: string;override; 
     procedure Get2DPosition(out X0,Y0, X1,Y1, X2,Y2, X3,Y3: Double);
-    procedure Save2DPosition(Reflector: TReflector);overload; 
     procedure Save2DPosition(const X0,Y0, X1,Y1, X2,Y2, X3,Y3: Double);overload; 
+    procedure Save2DPosition(Reflector: TReflector);overload; 
     function getPositionName: string;
     procedure setPositionName(Value: string);
     property  Name: string read getName;
@@ -1736,14 +1736,14 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure GetJPEGDATA(out DATAStream: TMemoryStream; const pWidth: integer; const pHeight: integer; const pQuality: integer; const MaxSize: integer);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetJPEGDATA(out DATAStream: TByteArray; const pWidth: integer; const pHeight: integer; const pQuality: integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetJPEGDATA(out DATAStream: TMemoryStream; const pWidth: integer; const pHeight: integer; const pQuality: integer; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     function getWidth: Double;
     procedure setWidth(Value: Double);
     function getHeight: Double;
@@ -1802,11 +1802,11 @@ Type
     function getHint: string;override; 
     procedure GetCoordinates(out X0,Y0, X1,Y1, X2,Y2, X3,Y3: Double);
     procedure Change(const Left_dColumns,Top_dRows,Right_dColumns,Bottom_dRows: integer);
-    function GetFormatNodes(out NodesList: TList; out SizeX,SizeY: integer): boolean;overload; override; 
     function GetFormatNodes(out NodesList: TByteArray; out SizeX,SizeY: integer): boolean;overload; 
+    function GetFormatNodes(out NodesList: TList; out SizeX,SizeY: integer): boolean;overload; override; 
     procedure DoQuad;
-    procedure GetInsideObjectsList(const FindTypeID: integer; const flBuiltInType: boolean;  out List: TComponentsList);overload; 
     procedure GetInsideObjectsList(const FindTypeID: integer; const flBuiltInType: boolean;  out List: TByteArray);overload; 
+    procedure GetInsideObjectsList(const FindTypeID: integer; const flBuiltInType: boolean;  out List: TComponentsList);overload; 
     function getColCount: integer;
     procedure setColCount(Value: integer);
     function getRowCount: integer;
@@ -1907,14 +1907,14 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure GetJPEGDATA(out DATAStream: TMemoryStream; const pWidth: integer; const pHeight: integer; const pQuality: integer; const MaxSize: integer);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetJPEGDATA(out DATAStream: TByteArray; const pWidth: integer; const pHeight: integer; const pQuality: integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetJPEGDATA(out DATAStream: TMemoryStream; const pWidth: integer; const pHeight: integer; const pQuality: integer; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
     procedure DATAFile_Clear;
@@ -1960,14 +1960,14 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
-    procedure GetBMP(out BMP: TBitmap);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     procedure GetBMP(out BMP: TByteArray);overload; 
+    procedure GetBMP(out BMP: TBitmap);overload; 
     procedure SetProportion;
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
@@ -2160,10 +2160,10 @@ Type
     procedure SaveToFile(const FileName: string);
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out Value: TClientBlobStream);overload; 
     procedure GetDATA(out Value: TByteArray);overload; 
-    procedure SetDATA(Value: TMemoryStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream);overload; 
     procedure SetDATA(Value: TByteArray);overload; 
+    procedure SetDATA(Value: TMemoryStream);overload; 
     property  Name: string read getName;
   end;
 
@@ -2369,12 +2369,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
     procedure DATAFile_Clear;
@@ -2419,12 +2419,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     function getBindingPointIndex: integer;
     procedure setBindingPointIndex(Value: integer);
     function getAlign: TMRKVisualizationAlign;
@@ -2478,12 +2478,12 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
-    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer; const MaxSize: integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType);overload; 
+    procedure GetDATA(out DATAStream: TMemoryStream; out DATAType: TComponentFileType; const MaxSize: integer);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     function getWidth: Double;
     procedure setWidth(Value: Double);
     function getHeight: Double;
@@ -2598,12 +2598,12 @@ Type
     function TPanelProps_Create(pflReadOnly: boolean; pidOwnerObjectProp: integer;pOwnerPanelsProps: TAbstractSpaceObjPanelsProps; const pProxyObject: TObjectDescr): TAbstractSpaceObjPanelProps;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TClientBlobStream; out DATAType: TImageDATAType);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TImageDATAType);overload; 
+    procedure GetDATA(out DATAStream: TClientBlobStream; out DATAType: TImageDATAType);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: Integer);overload; 
-    procedure GetBitmapDATA(out BMPDATAStream: TMemoryStream);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TImageDATAType);overload; 
     procedure GetBitmapDATA(out BMPDATAStream: TByteArray);overload; 
+    procedure GetBitmapDATA(out BMPDATAStream: TMemoryStream);overload; 
     property  Name: string read getName;
   end;
 
@@ -2644,10 +2644,10 @@ Type
     function DateCreated: TDateTime;
     function getSubject: string;
     procedure setSubject(Value: string);
-    procedure GetBody(Value: TStringList);overload; 
     procedure GetBody(out Value: TByteArray);overload; 
-    procedure SetBody(Value: TStringList);overload; 
+    procedure GetBody(Value: TStringList);overload; 
     procedure SetBody(Value: TByteArray);overload; 
+    procedure SetBody(Value: TStringList);overload; 
     function getFlRead: boolean;
     procedure setFlRead(Value: boolean);
     function IsEmpty: boolean;
@@ -2692,8 +2692,8 @@ Type
     procedure setName(Value: string);
     function getHint: string;override; 
     function IsUnreadMessageExist: boolean;
-    procedure GetMessagesList(out List: TList);overload; 
     procedure GetMessagesList(out List: TByteArray);overload; 
+    procedure GetMessagesList(out List: TList);overload; 
     function CreateNewMessage: integer;
     procedure SendMessage(const idMessage: integer);
     function getIdUser: integer;
@@ -2779,10 +2779,10 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure SetDATA(DATAStream: TMemoryStream);overload; 
     procedure SetDATA(DATAStream: TByteArray);overload; 
-    procedure LoadFromBitmap(Bitmap: TBitmap);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream);overload; 
     procedure LoadFromBitmap(Bitmap: TByteArray);overload; 
+    procedure LoadFromBitmap(Bitmap: TBitmap);overload; 
     function getDATAFileID: integer;
     procedure setDATAFileID(Value: integer);
     procedure DATAFile_Clear;
@@ -2846,8 +2846,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     procedure GetInstanceListByContext(const Context: WideString; out List: TByteArray);overload; 
+    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -2886,8 +2886,8 @@ Type
     function getName: string;override; 
     function getImage: TTypeImage;override; 
     function GetInstanceByCode(const Code: string;  out idInstance: integer): boolean;
-    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     procedure GetInstanceListByContext(const Context: WideString; out List: TByteArray);overload; 
+    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -2907,8 +2907,8 @@ Type
     function getHint: string;override; 
     function getInfo: string;
     procedure setInfo(Value: string);
-    procedure GetAssotiatedUsers(out Users: TList);overload; 
     procedure GetAssotiatedUsers(out Users: TByteArray);overload; 
+    procedure GetAssotiatedUsers(out Users: TList);overload; 
     procedure GenerateCode;
     function Code: string;
     property  Name: string read getName write setName;
@@ -2929,8 +2929,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     procedure GetInstanceListByContext(const Context: WideString;out List: TByteArray);overload; 
+    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -2950,14 +2950,14 @@ Type
     function getHint: string;override; 
     function getInfo: string;
     procedure setInfo(Value: string);
-    function GetDATA(out Value: TClientBlobStream): boolean;overload; 
     function GetDATA(out Value: TByteArray): boolean;overload; 
-    procedure SetDATA(Value: TMemoryStream);overload; 
+    function GetDATA(out Value: TClientBlobStream): boolean;overload; 
     procedure SetDATA(Value: TByteArray);overload; 
+    procedure SetDATA(Value: TMemoryStream);overload; 
     function AddOperationSecurityKey(const OperationID: integer; const SecurityKeyID: integer): boolean;
     function RemoveOperationSecurityKey(const OperationID: integer; const SecurityKeyID: integer): boolean;
-    procedure GetAssotiatedSecurityComponents(out SecurityComponents: TList);overload; 
     procedure GetAssotiatedSecurityComponents(out SecurityComponents: TByteArray);overload; 
+    procedure GetAssotiatedSecurityComponents(out SecurityComponents: TList);overload; 
     property  Name: string read getName write setName;
     property  Info: string read getInfo write setInfo;
   end;
@@ -3016,12 +3016,12 @@ Type
     function getName: string;override; 
     function getImage: TTypeImage;override; 
     function IsUserExist(const UserName: string; out idUser: integer): boolean;
-    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     procedure GetInstanceListByContext(const Context: WideString; out List: TByteArray);overload; 
-    procedure GetOnlineUsersForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TList);overload; 
+    procedure GetInstanceListByContext(const Context: WideString; out List: TList);overload; 
     procedure GetOnlineUsersForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TByteArray);overload; 
-    procedure GetOnlineExpertsForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TList);overload; 
+    procedure GetOnlineUsersForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TList);overload; 
     procedure GetOnlineExpertsForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TByteArray);overload; 
+    procedure GetOnlineExpertsForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -3040,27 +3040,27 @@ Type
     function GetActiveStateInfo(out ProxySpaceID: integer; out ProxySpaceIP: widestring; out ProxySpaceState: integer): boolean;
     function IsUserOnLine(const MaxDelay: Double): boolean;
     procedure Logout;
-    procedure GetSecurityKeysList(out SecurityKeys: TList);overload; 
     procedure GetSecurityKeysList(out SecurityKeys: TByteArray);overload; 
+    procedure GetSecurityKeysList(out SecurityKeys: TList);overload; 
     function SecurityKeys_IsKeyExist(const idSecurityKey: integer): boolean;
     procedure SecurityKeys_Insert(const idSecurityKey: integer);
     procedure SecurityKeys_Delete(const idSecurityKey: integer);
     procedure SecurityKeys_AddKeyByCode(const Code: WideString);
     procedure SecurityKeys_RemoveKeyByCode(const Code: WideString);
     function SecurityKeys_CreateAndAddNewKey(const pName: WideString; const pInfo: WideString;  out KeyCode: WideString): integer;
-    procedure GetMessageBoards(out List: TList);overload; 
     procedure GetMessageBoards(out List: TByteArray);overload; 
+    procedure GetMessageBoards(out List: TList);overload; 
     function HaveUnreadMessages: boolean;
-    procedure GetMessages(const flUnreadOnly: boolean; out MessageList: TList);overload; 
     procedure GetMessages(const flUnreadOnly: boolean; out MessageList: TByteArray);overload; 
-    procedure IncomingMessages_SendNew(const Message: TMemoryStream; const SenderID: integer);overload; 
+    procedure GetMessages(const flUnreadOnly: boolean; out MessageList: TList);overload; 
     procedure IncomingMessages_SendNew(const Message: TByteArray; const SenderID: integer);overload; 
-    function IncomingMessages_GetUnread(out MessageList: TList): boolean;overload; 
+    procedure IncomingMessages_SendNew(const Message: TMemoryStream; const SenderID: integer);overload; 
     function IncomingMessages_GetUnread(out MessageList: TByteArray): boolean;overload; 
-    procedure IncomingMessages_GetMessagesSince(const TimeStamp: TDateTime; out MessageList: TList);overload; 
+    function IncomingMessages_GetUnread(out MessageList: TList): boolean;overload; 
     procedure IncomingMessages_GetMessagesSince(const TimeStamp: TDateTime; out MessageList: TByteArray);overload; 
-    procedure IncomingMessages_GetMessage(const MessageID: integer; out TimeStamp: TDateTime; out Message: TClientBlobStream; out SenderID: integer);overload; 
+    procedure IncomingMessages_GetMessagesSince(const TimeStamp: TDateTime; out MessageList: TList);overload; 
     procedure IncomingMessages_GetMessage(const MessageID: integer; out TimeStamp: Double; out Message: TByteArray; out SenderID: integer);overload; 
+    procedure IncomingMessages_GetMessage(const MessageID: integer; out TimeStamp: TDateTime; out Message: TClientBlobStream; out SenderID: integer);overload; 
     procedure IncomingMessages_DeleteTo(const TimeStamp: TDateTime);
     function getName: string;override; 
     procedure setName(Value: string);
@@ -3162,8 +3162,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceListMatchingBy(const NameContext: string; out List: TList);overload; 
     procedure GetInstanceListMatchingBy(const NameContext: string; out List: TByteArray);overload; 
+    procedure GetInstanceListMatchingBy(const NameContext: string; out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -3181,12 +3181,12 @@ Type
     function TPanelProps_Create(pflReadOnly: boolean; pidOwnerObjectProp: integer;pOwnerPanelsProps: TAbstractSpaceObjPanelsProps; const pProxyObject: TObjectDescr): TAbstractSpaceObjPanelProps;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDATA(out DATAStream: TClientBlobStream; out DATAType: TTextureDATAType);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TTextureDATAType);overload; 
+    procedure GetDATA(out DATAStream: TClientBlobStream; out DATAType: TTextureDATAType);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: Integer);overload; 
-    procedure GetBitmapDATA(out BMPDATAStream: TMemoryStream);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TTextureDATAType);overload; 
     procedure GetBitmapDATA(out BMPDATAStream: TByteArray);overload; 
+    procedure GetBitmapDATA(out BMPDATAStream: TMemoryStream);overload; 
     procedure setName(Value: string);
     property  Name: string read getName write setName;
   end;
@@ -3232,8 +3232,8 @@ Type
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure LoadFromStream(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     procedure LoadFromStream(DATAStream: TByteArray; const DATAType: integer);overload; 
+    procedure LoadFromStream(DATAStream: TMemoryStream; const DATAType: TComponentFileType);overload; 
     procedure Get__Translate_XY(out vTranslate_X,vTranslate_Y: Double);
     procedure SetPropertiesLocal(const pScale, pTranslate_X,pTranslate_Y,pTranslate_Z, pRotate_AngleX,pRotate_AngleY,pRotate_AngleZ: Double);override; 
     function GetMinMax(const TransforMatrix: TTransforMatrix; out Xmin,Ymin,Zmin, Xmax,Ymax,Zmax: Double): boolean;
@@ -3285,10 +3285,10 @@ Type
     function getHint: string;override; 
     function IsNull: boolean;
     procedure Empty;
-    procedure GetDATA(out Value: TClientBlobStream);overload; 
     procedure GetDATA(out Value: TByteArray);overload; 
-    procedure SetDATA(Value: TMemoryStream);overload; 
+    procedure GetDATA(out Value: TClientBlobStream);overload; 
     procedure SetDATA(Value: TByteArray);overload; 
+    procedure SetDATA(Value: TMemoryStream);overload; 
     function getDATAType: string;
     procedure setDATAType(Value: string);
     property  Name: string read getName;
@@ -3309,8 +3309,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceListByCoType(const idCoType: integer; out InstanceList: TList);overload; 
     procedure GetInstanceListByCoType(const idCoType: integer; out InstanceList: TByteArray);overload; 
+    procedure GetInstanceListByCoType(const idCoType: integer; out InstanceList: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -3329,8 +3329,8 @@ Type
     function getName: string;override; 
     function getHint: string;override; 
     function idCoType: integer;
-    function GetIconImage(out Image: TBitmap): boolean;overload; override; 
     function GetIconImage(out oImage: TByteArray): boolean;overload; 
+    function GetIconImage(out Image: TBitmap): boolean;overload; override; 
     function GetVisualizationComponent(out idTVisualization,idVisualization: integer): boolean;
     property  Name: string read getName;
   end;
@@ -3366,8 +3366,8 @@ Type
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    function GetTypeIconImage(out Image: TBitmap): boolean;overload; 
     function GetTypeIconImage(out oImage: TByteArray): boolean;overload; 
+    function GetTypeIconImage(out Image: TBitmap): boolean;overload; 
     procedure setName(Value: string);
     function getIDCoComponentType: integer;
     property  Name: string read getName write setName;
@@ -3388,8 +3388,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceListByFileType(const FileType: shortstring; out List: TList);overload; 
     procedure GetInstanceListByFileType(const FileType: WideString; out List: TByteArray);overload; 
+    procedure GetInstanceListByFileType(const FileType: shortstring; out List: TList);overload; 
     property  Name: string read getName;
   end;
 
@@ -3406,14 +3406,14 @@ Type
     function TPanelProps_Create(pflReadOnly: boolean; pidOwnerObjectProp: integer;pOwnerPanelsProps: TAbstractSpaceObjPanelsProps; const pProxyObject: TObjectDescr): TAbstractSpaceObjPanelProps;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetDescription(Value: TStringList);overload; 
     procedure GetDescription(out Value: TByteArray);overload; 
-    procedure SetDescription(Value: TStringList);overload; 
+    procedure GetDescription(Value: TStringList);overload; 
     procedure SetDescription(Value: TByteArray);overload; 
-    procedure GetMarkersList(out List: TList);overload; 
+    procedure SetDescription(Value: TStringList);overload; 
     procedure GetMarkersList(out List: TByteArray);overload; 
-    function GetIconImage(out Image: TBitmap): boolean;overload; override; 
+    procedure GetMarkersList(out List: TList);overload; 
     function GetIconImage(out oImage: TByteArray): boolean;overload; 
+    function GetIconImage(out Image: TBitmap): boolean;overload; override; 
     procedure setName(Value: string);
     function getUID: integer;
     function getDateCreated: TDateTime;
@@ -3442,10 +3442,10 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure Points_GetTypeNames(out List: TStringList);overload; 
     procedure Points_GetTypeNames(out List: TByteArray);overload; 
-    procedure Streets_GetTypeNames(out List: TStringList);overload; 
+    procedure Points_GetTypeNames(out List: TStringList);overload; 
     procedure Streets_GetTypeNames(out List: TByteArray);overload; 
+    procedure Streets_GetTypeNames(out List: TStringList);overload; 
     property  Name: string read getName;
   end;
 
@@ -3501,8 +3501,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceList(out List: TByteArray);overload; 
+    procedure GetInstanceList(out List: TList);overload; override; 
     property  Name: string read getName;
   end;
 
@@ -3527,8 +3527,8 @@ Type
     function getRemarks: string;
     procedure setRemarks(Value: string);
     function IsNodesExist: boolean;
-    procedure Nodes_GetList(out List: TRouteNodesList);overload; 
     procedure Nodes_GetList(out List: TByteArray);overload; 
+    procedure Nodes_GetList(out List: TRouteNodesList);overload; 
     function Nodes_IsNodeExist(const idNode: integer): boolean;
     procedure Nodes_ChangeNodeOrder(const idItem: integer; const Order: integer);
     function Nodes__Node_DistanceBefore(const idItem: integer): integer;
@@ -3557,8 +3557,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceList(out List: TByteArray);overload; 
+    procedure GetInstanceList(out List: TList);overload; override; 
     property  Name: string read getName;
   end;
 
@@ -3646,8 +3646,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceList(out List: TByteArray);overload; 
+    procedure GetInstanceList(out List: TList);overload; override; 
     property  Name: string read getName;
   end;
 
@@ -3774,6 +3774,9 @@ Type
     function DoOnOver: boolean;override; 
     function DoOnClick: boolean;override; 
     function GetOwner(out idTOwner,idOwner: integer): boolean;override; 
+    function getName: string;override; 
+    function getHint: string;override; 
+    property  Name: string read getName;
   end;
 
 Type
@@ -3899,8 +3902,8 @@ Type
     function getName: string;override; 
     function getImage: TTypeImage;override; 
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
-    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceList(out List: TByteArray);overload; 
+    procedure GetInstanceList(out List: TList);overload; override; 
     property  Name: string read getName;
   end;
 
@@ -3992,10 +3995,10 @@ Type
     function _GetDataDocument(const DataModel: integer; const DataType: integer; const flWithComponents: boolean; var Document: TByteArray): boolean;override; 
     function getName: string;override; 
     function getHint: string;override; 
-    procedure GetValue(vText: TStringList);overload; 
     procedure GetValue(out vText: TByteArray);overload; 
-    procedure SetValue(NewValue: TStringList);overload; 
+    procedure GetValue(vText: TStringList);overload; 
     procedure SetValue(NewValue: TByteArray);overload; 
+    procedure SetValue(NewValue: TStringList);overload; 
     property  Name: string read getName;
   end;
 
@@ -4037,12 +4040,12 @@ Type
     function getHint: string;override; 
     function GetDATAType: TImageDATAType;
     function GetDATAType1: integer;
-    procedure GetDATA(out DATAStream: TClientBlobStream; out DATAType: TImageDATAType);overload; 
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);overload; 
-    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TImageDATAType);overload; 
+    procedure GetDATA(out DATAStream: TClientBlobStream; out DATAType: TImageDATAType);overload; 
     procedure SetDATA(DATAStream: TByteArray; const DATAType: Integer);overload; 
-    procedure GetBitmapDATA(out BMPDATAStream: TMemoryStream);overload; 
+    procedure SetDATA(DATAStream: TMemoryStream; const DATAType: TImageDATAType);overload; 
     procedure GetBitmapDATA(out BMPDATAStream: TByteArray);overload; 
+    procedure GetBitmapDATA(out BMPDATAStream: TMemoryStream);overload; 
     property  Name: string read getName;
   end;
 
@@ -4265,8 +4268,8 @@ Type
     function getName: string;override; 
     function getImage: TTypeImage;override; 
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
-    procedure GetInstanceList(out List: TList);overload; override; 
     procedure GetInstanceList(out List: TByteArray);overload; 
+    procedure GetInstanceList(out List: TList);overload; override; 
     property  Name: string read getName;
   end;
 
@@ -4695,14 +4698,14 @@ Type
     procedure setContactTLF(Value: integer);
     function getLastUpdated: TDateTime;
     procedure setLastUpdated(Value: TDateTime);
-    procedure LoadDATAFromStream(Stream: TStream);overload; 
     procedure LoadDATAFromStream(Stream: TByteArray);overload; 
+    procedure LoadDATAFromStream(Stream: TStream);overload; 
     function UserID: integer;
     function UID: integer;
     function AddressStr: string;
     function Goods_Insert: integer;
-    procedure Goods_GetList(out List: TList);overload; 
     procedure Goods_GetList(out List: TByteArray);overload; 
+    procedure Goods_GetList(out List: TList);overload; 
     procedure Goods_Remove(const idOfferGoods: integer);
     procedure Goods_Clear;
     property  Name: string read getName write setName;
@@ -4794,8 +4797,8 @@ Type
     function TComponentFunctionality_Create(const idComponent: integer): TComponentFunctionality;override; 
     function getName: string;override; 
     function getImage: TTypeImage;override; 
-    procedure GetInstanceListContainingContext(const Context: string; out List: TStringList);overload; 
     procedure GetInstanceListContainingContext(const Context: string; out List: TByteArray);overload; 
+    procedure GetInstanceListContainingContext(const Context: string; out List: TStringList);overload; 
     function IsInstanceExist(const pName: string; out idGoods: integer): boolean;
     property  Name: string read getName;
   end;
@@ -4856,10 +4859,10 @@ Type
     procedure Item_ChangeListOrder(const id: integer; const Order: integer);
     procedure RemoveItems;
     function IsItemExist(const idTItem,idItem: integer): boolean;
-    procedure GetListItems(out List: TList);overload; 
     procedure GetListItems(out List: TByteArray);overload; 
-    procedure SaveListItems(List: TList);overload; 
+    procedure GetListItems(out List: TList);overload; 
     procedure SaveListItems(const List: TByteArray);overload; 
+    procedure SaveListItems(List: TList);overload; 
     property  Name: string read getName;
   end;
 

@@ -17,13 +17,13 @@ object GeoMonitoredObject1VideoRecorderConfigurationPanel: TGeoMonitoredObject1V
   TextHeight = 16
   object Panel1: TPanel
     Left = 0
-    Top = 652
-    Width = 317
+    Top = 663
+    Width = 325
     Height = 41
     Align = alBottom
     TabOrder = 0
     DesignSize = (
-      317
+      325
       41)
     object btnApply: TBitBtn
       Left = 16
@@ -48,13 +48,13 @@ object GeoMonitoredObject1VideoRecorderConfigurationPanel: TGeoMonitoredObject1V
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 317
-    Height = 652
+    Width = 325
+    Height = 663
     Align = alClient
     TabOrder = 1
     DesignSize = (
-      317
-      652)
+      325
+      663)
     object Label1: TLabel
       Left = 16
       Top = 32
@@ -157,9 +157,9 @@ object GeoMonitoredObject1VideoRecorderConfigurationPanel: TGeoMonitoredObject1V
         object Label4: TLabel
           Left = 16
           Top = 121
-          Width = 75
+          Width = 68
           Height = 16
-          Caption = 'Bitrate (kb/s)'
+          Caption = 'Bitrate (b/s)'
         end
         object cbCameraVideoResolution: TComboBox
           Left = 16

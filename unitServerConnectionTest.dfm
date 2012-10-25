@@ -17,15 +17,15 @@ object fmServerConnectionTest: TfmServerConnectionTest
   Position = poScreenCenter
   OnClose = FormClose
   DesignSize = (
-    296
-    168)
+    288
+    159)
   PixelsPerInch = 96
   TextHeight = 13
   object PaintBox: TPaintBox
     Left = 0
     Top = 0
-    Width = 296
-    Height = 65
+    Width = 288
+    Height = 56
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
@@ -37,8 +37,8 @@ object fmServerConnectionTest: TfmServerConnectionTest
   end
   object Bevel1: TBevel
     Left = 0
-    Top = 148
-    Width = 296
+    Top = 139
+    Width = 288
     Height = 2
     Align = alBottom
     Shape = bsBottomLine
@@ -66,8 +66,8 @@ object fmServerConnectionTest: TfmServerConnectionTest
   end
   object lbLog: TListBox
     Left = 0
-    Top = 65
-    Width = 296
+    Top = 56
+    Width = 288
     Height = 83
     Align = alBottom
     BevelKind = bkSoft
@@ -84,8 +84,8 @@ object fmServerConnectionTest: TfmServerConnectionTest
   end
   object stAnalize: TStaticText
     Left = 0
-    Top = 150
-    Width = 296
+    Top = 141
+    Width = 288
     Height = 18
     Align = alBottom
     Alignment = taCenter

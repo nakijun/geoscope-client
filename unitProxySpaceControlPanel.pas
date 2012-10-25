@@ -6,7 +6,13 @@ uses
   unitEventLog,Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Grids, DBGrids, DBCGrids, StdCtrls, DBCtrls, ExtCtrls, Db, ADODB,
   RXCtrls, Gauges, RXShell, Animate, GIFCtrl, Buttons, ImgList,
-  ComCtrls, Menus, GlobalSpaceDefines, FunctionalitySOAPInterface, unitReleaseUpdater;
+  ComCtrls, Menus, GlobalSpaceDefines,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  unitReleaseUpdater;
 
 const
   ReflectorsMaxAllowed = 10;
@@ -348,7 +354,9 @@ end;
 
 procedure TProxySpaceStructureTester.Check;
 var
+  {$IFNDEF EmbeddedServer}
   _GlobalSpaceManager: ISpaceManager;
+  {$ENDIF}
   _ID,_SpacePackID,_Size,_SpaceLaysID: integer;
 begin
 if (TProxySpace(Space).flOffline OR TProxySpace(Space).flAutomaticUpdateIsDisabled)
@@ -358,8 +366,12 @@ if (TProxySpace(Space).flOffline OR TProxySpace(Space).flAutomaticUpdateIsDisabl
   Exit; //. ->
   end;
 with TProxySpace(Space) do begin
+{$IFNDEF EmbeddedServer}
 _GlobalSpaceManager:=GetISpaceManager(SOAPServerURL);
 GlobalSpaceManager.GetSpaceParams({out} _ID,_SpacePackID,_Size,_SpaceLaysID);
+{$ELSE}
+SpaceManager_GetSpaceParams({out} _ID,_SpacePackID,_Size,_SpaceLaysID);
+{$ENDIF}
 flPackIsChanged:=((SpacePackID <> -1) AND (SpacePackID <> _SpacePackID));
 flLaysAreChanged:=(_SpaceLaysID <> LaysID());
 end;
@@ -400,19 +412,34 @@ var
   BA: TByteArray;
 begin
 with lvReflectors do begin
-Items.Clear;
-Items.BeginUpdate;
+Items.Clear();
+Items.BeginUpdate();
 try
-with GetISpaceUserReflectors(TProxySpace(Space).SOAPServerURL) do begin
-BA:=GetUserReflectors(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, TProxySpace(Space).UserID);
-UserReflectors:=TList.Create;
+{$IFNDEF EmbeddedServer}
+BA:=GetISpaceUserReflectors(TProxySpace(Space).SOAPServerURL).GetUserReflectors(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, TProxySpace(Space).UserID);
+{$ELSE}
+SpaceUserReflectors_GetUserReflectors(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, TProxySpace(Space).UserID,{out} BA);
+{$ENDIF}
+UserReflectors:=TList.Create();
 try
 ByteArray_PrepareList(BA, UserReflectors);
+{$IFNDEF EmbeddedServer}
 for I:=UserReflectors.Count-1 downto 0 do with GetISpaceUserReflector(TProxySpace(Space).SOAPServerURL),lvReflectors.Items.Add do begin
+{$ELSE}
+for I:=UserReflectors.Count-1 downto 0 do with lvReflectors.Items.Add do begin
+{$ENDIF}
   Data:=Pointer(UserReflectors[I]);
+  {$IFNDEF EmbeddedServer}
   Caption:=getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(UserReflectors[I]));
+  {$ELSE}
+  Caption:=SpaceUserReflector_getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(UserReflectors[I]));
+  {$ENDIF}
   SubItems.Add(IntToStr(Integer(UserReflectors[I])));
+  {$IFNDEF EmbeddedServer}
   case TUserReflectorType(ReflectorType(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(UserReflectors[I]))) of
+  {$ELSE}
+  case TUserReflectorType(SpaceUserReflector_ReflectorType(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(UserReflectors[I]))) of
+  {$ENDIF}
   urt2DReflector: begin
     ImageIndex:=0;
     SubItems.Add('2D');
@@ -422,14 +449,17 @@ for I:=UserReflectors.Count-1 downto 0 do with GetISpaceUserReflector(TProxySpac
     SubItems.Add('3D');
     end;
   end;
+  {$IFNDEF EmbeddedServer}
   Checked:=IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(UserReflectors[I]));
+  {$ELSE}
+  Checked:=SpaceUserReflector_IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(UserReflectors[I]));
+  {$ENDIF}
   end;
 finally
-UserReflectors.Destroy;
-end;
+UserReflectors.Destroy();
 end;
 finally
-Items.EndUpdate;
+Items.EndUpdate();
 end;
 end;
 flCheckForReflectorsEnabling:=false;
@@ -441,17 +471,32 @@ var
   NewReflector: TAbstractReflector;
 begin
 //. creating user reflector
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserReflectors(TProxySpace(Space).SOAPServerURL) do idNewReflector:=CreateReflector(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword,TProxySpace(Space).UserID, ReflectorType);
+{$ELSE}
+idNewReflector:=SpaceUserReflectors_CreateReflector(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword,TProxySpace(Space).UserID, ReflectorType);
+{$ENDIF}
 //. create memory reflector object
 NewReflector:=TAbstractReflector(TReflectorsList(TProxySpace(Space).ReflectorsList).CreateReflectorByID(idNewReflector));
 NewReflector.Show;
 //. add reflector to list
 with lvReflectors.Items.Add do begin
 Data:=Pointer(NewReflector.ID);
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserReflector(TProxySpace(Space).SOAPServerURL) do begin
+{$ELSE}
+{$ENDIF}
+{$IFNDEF EmbeddedServer}
 Caption:=getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, NewReflector.ID);
+{$ELSE}
+Caption:=SpaceUserReflector_getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, NewReflector.ID);
+{$ENDIF}
 SubItems.Add(IntToStr(NewReflector.ID));
+{$IFNDEF EmbeddedServer}
 case TUserReflectorType(ReflectorType(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, NewReflector.ID)) of
+{$ELSE}
+case TUserReflectorType(SpaceUserReflector_ReflectorType(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, NewReflector.ID)) of
+{$ENDIF}
 urt2DReflector: begin
   ImageIndex:=0;
   SubItems.Add('2D');
@@ -461,8 +506,14 @@ urtGL3DReflector: begin
   SubItems.Add('3D');
   end;
 end;
+{$IFNDEF EmbeddedServer}
 Checked:=IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, NewReflector.ID);
+{$ELSE}
+Checked:=SpaceUserReflector_IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, NewReflector.ID);
+{$ENDIF}
+{$IFNDEF EmbeddedServer}
 end;
+{$ENDIF}
 end;
 end;
 
@@ -470,14 +521,18 @@ procedure TfmProxySpaceControlPanel.lvReflectors_DestroySelected;
 var
   idDestroyReflector: integer;
 begin
-if lvReflectors.Selected = nil then Exit; //. ->
+if (lvReflectors.Selected = nil) then Exit; //. ->
 idDestroyReflector:=Integer(lvReflectors.Selected.Data);
 //. destroy memory reflector object
 TReflectorsList(TProxySpace(Space).ReflectorsList).TReflector_Destroy(idDestroyReflector);
 //. destroying user reflector
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserReflectors(TProxySpace(Space).SOAPServerURL) do DestroyReflector(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, idDestroyReflector);
+{$ELSE}
+SpaceUserReflectors_DestroyReflector(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, idDestroyReflector);
+{$ENDIF}
 //. remove item from list
-lvReflectors.Selected.Delete;
+lvReflectors.Selected.Delete();
 end;
 
 procedure TfmProxySpaceControlPanel.lvReflectorsEdited(Sender: TObject; Item: TListItem; var S: String);
@@ -496,7 +551,11 @@ procedure TfmProxySpaceControlPanel.lvReflectorsEdited(Sender: TObject; Item: TL
   end;
 
 begin
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserReflector(TProxySpace(Space).SOAPServerURL) do setName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(Item.Data), S);
+{$ELSE}
+SpaceUserReflector_setName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(Item.Data), S);
+{$ENDIF}
 UpdateReflectorCaption(Integer(Item.Data),S);
 end;
 
@@ -511,14 +570,26 @@ var
   NewReflector: TAbstractReflector;
 begin
 //. process about reflectors enabling
+{$IFNDEF EmbeddedServer}
 for I:=0 to lvReflectors.Items.Count-1 do with lvReflectors.Items[I],GetISpaceUserReflector(TProxySpace(Space).SOAPServerURL) do
-  if Checked <> IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(lvReflectors.Items[I].Data))
+{$ELSE}
+for I:=0 to lvReflectors.Items.Count-1 do with lvReflectors.Items[I] do
+{$ENDIF}
+  {$IFNDEF EmbeddedServer}
+  if (Checked <> IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(lvReflectors.Items[I].Data)))
+  {$ELSE}
+  if (Checked <> SpaceUserReflector_IsEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(lvReflectors.Items[I].Data)))
+  {$ENDIF}
    then begin
+    {$IFNDEF EmbeddedServer}
     SetEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(lvReflectors.Items[I].Data), Checked);
-    if Checked
+    {$ELSE}
+    SpaceUserReflector_SetEnabled(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, Integer(lvReflectors.Items[I].Data), Checked);
+    {$ENDIF}
+    if (Checked)
      then begin //. create memory reflector object
       NewReflector:=TAbstractReflector(TReflectorsList(TProxySpace(Space).ReflectorsList).CreateReflectorByID(Integer(Data)));
-      NewReflector.Show;
+      NewReflector.Show();
       end
      else
       TReflectorsList(TProxySpace(Space).ReflectorsList).TReflector_Destroy(Integer(Data));
@@ -568,10 +639,13 @@ end;
 memoLog_Update;
 try
 //. update caption
-if TProxySpace(Space).idUserProxySpace <> 0
- then with GetISpaceUserProxySpace(TProxySpace(Space).SOAPServerURL) do begin
-  Caption:='ProxySpace - '+getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, TProxySpace(Space).idUserProxySpace)+' of user '+TProxySpace(Space).UserName;
-  end
+if (TProxySpace(Space).idUserProxySpace <> 0)
+ then
+  {$IFNDEF EmbeddedServer}
+  Caption:='ProxySpace - '+GetISpaceUserProxySpace(TProxySpace(Space).SOAPServerURL).getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, TProxySpace(Space).idUserProxySpace)+' of user '+TProxySpace(Space).UserName
+  {$ELSE}
+  Caption:='ProxySpace - '+SpaceUserProxySpace_getName(TProxySpace(Space).UserName,TProxySpace(Space).UserPassword, TProxySpace(Space).idUserProxySpace)+' of user '+TProxySpace(Space).UserName
+  {$ENDIF}
  else
   Caption:='ProxySpace - default of user '+TProxySpace(Space).UserName;
 RxTrayIcon.Hint:=Caption+#$0D#$0A+'Click to "UPDATE"';

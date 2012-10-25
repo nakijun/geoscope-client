@@ -60,7 +60,11 @@ type
 
 implementation
 Uses
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface;
+  {$ELSE}
+  SpaceInterfacesImport;
+  {$ENDIF}
 
 {$R *.dfm}
 
@@ -96,7 +100,11 @@ var
   I: integer;
 begin
 try
-with GetISpaceTypesSystemManager(Space.SOAPServerURL) do TextSearch(Space.UserName,Space.UserPassword, Context,flRootOwner, BA);
+{$IFNDEF EmbeddedServer}
+with GetISpaceTypesSystemManager(Space.SOAPServerURL) do TextSearch(Space.UserName,Space.UserPassword, Context,flRootOwner,{out} BA);
+{$ELSE}
+SpaceTypesSystemManager_TextSearch(Space.UserName,Space.UserPassword, Context,flRootOwner,{out} BA);
+{$ENDIF}
 ResultComponents:=TComponentsList.Create;
 try
 for I:=0 to (Length(BA) DIV SizeOf(TItemComponentsList))-1 do with TItemComponentsList(Pointer(Integer(@BA[0])+I*SizeOf(TItemComponentsList))^) do ResultComponents.AddComponent(idTComponent,idComponent,0);

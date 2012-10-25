@@ -29,7 +29,11 @@ type
 implementation
 uses
   unitElectedObjects,
-  FunctionalitySOAPInterface,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   TypesFunctionality;
 
 {$R *.dfm}
@@ -80,25 +84,28 @@ end;
 lvElectedObjectsGallery.LargeImages:=ImageList;
 //.
 with Reflector,lvElectedObjectsGallery do begin
-Clear;
-ImageList.Clear;
+Clear();
+ImageList.Clear();
 ImageList.AddImages(TypesImageList);
-with GetISpaceUserReflector(Space.SOAPServerURL) do
-if (Get_ElectedObjects(Space.UserName,Space.UserPassword,Reflector.id,BA))
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Space.SOAPServerURL).Get_ElectedObjects(Space.UserName,Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ElectedObjects(Space.UserName,Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
-  Items.BeginUpdate;
+  Items.BeginUpdate();
   try
   while MemoryStream.Read(ElectedObjectStoredStruc,SizeOf(TElectedObjectStoredStruc)) = SizeOf(TElectedObjectStoredStruc) do begin
     //. check for object
     try
     with TComponentFunctionality_Create(ElectedObjectStoredStruc.idType,ElectedObjectStoredStruc.idObj) do
     try
-    Check;
+    Check();
     finally
-    Release;
+    Release();
     end;
     except
       Continue; //. ^
@@ -149,10 +156,10 @@ if (Get_ElectedObjects(Space.UserName,Space.UserPassword,Reflector.id,BA))
       end;
     end;
   finally
-  Items.EndUpdate;
+  Items.EndUpdate();
   end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
 end;
 end;

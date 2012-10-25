@@ -5,7 +5,13 @@ interface
 uses
   SysUtils,
   SyncObjs,
-  GlobalSpaceDefines, FunctionalitySOAPInterface, unitProxySpace, Functionality,
+  GlobalSpaceDefines, 
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  unitProxySpace, Functionality,
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ELSE}
@@ -290,15 +296,19 @@ var
 begin
 Clear;
 if (NOT Cfg.Reflecting.Reflector.Space.flOffline)
- then with GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL) do //. read user-defined config
-  if Get_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA)
+ then //. read user-defined config
+  {$IFNDEF EmbeddedServer}
+  if (GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL).Get_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,{out} BA))
+  {$ELSE}
+  if (SpaceUserReflector_Get_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,{out} BA))
+  {$ENDIF}
    then begin
-    MemoryStream:=TMemoryStream.Create;
+    MemoryStream:=TMemoryStream.Create();
     try
     ByteArray_PrepareStream(BA,TStream(MemoryStream));
     ReadFromStream(MemoryStream);
     finally
-    MemoryStream.Destroy;
+    MemoryStream.Destroy();
     end;
     end;
 //. add to list the denied lays
@@ -325,15 +335,17 @@ var
   BA: TByteArray;
 begin
 //. write user defined config
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 WriteIntoStream(MemoryStream);
-with GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL).Set_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA);
+{$ENDIF}
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 end;
 
@@ -490,15 +502,19 @@ var
   BA: TByteArray;
 begin
 if (NOT Reflecting.Reflector.Space.flOffline)
- then with GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL) do //. read user-defined config
-  if Get_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA)
+ then //. read user-defined config
+  {$IFNDEF EmbeddedServer}
+  if (GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL).Get_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,{out} BA))
+  {$ELSE}
+  if (SpaceUserReflector_Get_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,{out} BA))
+  {$ENDIF}
    then begin
-    MemoryStream:=TMemoryStream.Create;
+    MemoryStream:=TMemoryStream.Create();
     try
     ByteArray_PrepareStream(BA,TStream(MemoryStream));
-    if MemoryStream.Size > 0 then ReadFromStream(MemoryStream);
+    if (MemoryStream.Size > 0) then ReadFromStream(MemoryStream);
     finally
-    MemoryStream.Destroy;
+    MemoryStream.Destroy();
     end;
     end;
 end;
@@ -522,15 +538,17 @@ var
   BA: TByteArray;
 begin
 //. write user defined config
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 WriteIntoStream(MemoryStream);
-with GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL).Set_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA);
+{$ENDIF}
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 end;
 

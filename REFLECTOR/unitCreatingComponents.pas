@@ -5,7 +5,13 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus,
   ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines, unitProxySpace,
-  ExtCtrls, FunctionalitySOAPInterface, Functionality,
+  ExtCtrls, 
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  Functionality,
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ELSE}
@@ -236,10 +242,13 @@ var
   ptrNewItem: pointer;
 begin
 List:=TList.Create;
-with GetISpaceUserProxySpace(Space.SOAPServerURL) do
-if Get_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserProxySpace(Space.SOAPServerURL).Get_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,{out} BA))
+{$ELSE}
+if (SpaceUserProxySpace_Get_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   while MemoryStream.Read(CreatingComponentStoredStruc,SizeOf(CreatingComponentStoredStruc)) = SizeOf(CreatingComponentStoredStruc) do begin
@@ -247,12 +256,12 @@ if Get_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpa
     try
     with TComponentFunctionality_Create(CreatingComponentStoredStruc.idType,CreatingComponentStoredStruc.idObj) do
     try
-    Check;
+    Check();
     finally
-    Release;
+    Release();
     end;
     except
-      Continue;
+      Continue; //. ^
       end;
     //.
     GetMem(ptrNewItem,SizeOf(TCreatingComponentStruc));
@@ -265,7 +274,7 @@ if Get_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpa
     try
     if NOT GetIconImage(IconBitmap) then IconBitmap:=nil;
     finally
-    Release;
+    Release();
     end;
     except
       IconBitmap:=nil;
@@ -274,13 +283,13 @@ if Get_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpa
     List.Add(ptrNewItem);
     end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end
  else begin
   AssignFile(F,fnCreatingComponents);Reset(F);
   try
-  while NOT EOF(F) do begin
+  while (NOT EOF(F)) do begin
     GetMem(ptrNewItem,SizeOf(TCreatingComponentStruc));
     Read(F,TCreatingComponentStruc(ptrNewItem^));
     List.Add(ptrNewItem);
@@ -310,10 +319,12 @@ for I:=0 to Items.Count-1 do with Items[I] do begin
   end;
   MemoryStream.Write(CreatingComponentStoredStruc,SizeOf(TCreatingComponentStoredStruc));
   end;
-with GetISpaceUserProxySpace(Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserProxySpace(Space.SOAPServerURL).Set_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+{$ELSE}
+SpaceUserProxySpace_Set_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+{$ENDIF}
 finally
 MemoryStream.Destroy;
 end;
@@ -337,10 +348,12 @@ for I:=0 to Items.Count-1 do begin
   end;
   MemoryStream.Write(CreatingComponentStoredStruc,SizeOf(TCreatingComponentStoredStruc));
   end;
-with GetISpaceUserProxySpace(Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserProxySpace(Space.SOAPServerURL).Set_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+{$ELSE}
+SpaceUserProxySpace_Set_CreatingComponents(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+{$ENDIF}
 finally
 MemoryStream.Destroy;
 end;

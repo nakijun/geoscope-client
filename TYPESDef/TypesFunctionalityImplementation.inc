@@ -11559,6 +11559,16 @@ end;
 Result:=true;
 end;
 
+function THREFVisualizationFunctionality.getName: string;
+begin
+Result:=RemotedFunctionality.getName;
+end;
+
+function THREFVisualizationFunctionality.getHint: string;
+begin
+Result:=RemotedFunctionality.getHint;
+end;
+
 
 {TTTTFVisualizationFunctionality}
 
@@ -25010,8 +25020,10 @@ var
   RW_InvisibleLayNumbersArray: TByteArray;
   WX,WY: TCrd;
   WindowParams: TWindowViewDataParams;
+  {$IFNDEF EmbeddedServer}
   _ServerURL: string;
   SpaceProvider: ISpaceProvider;
+  {$ENDIF}
   _Data: TByteArray;
   _WindowViewData: TWindowViewData;
   BMP: TBitmap;
@@ -27282,7 +27294,9 @@ procedure TTileServerVisualizationFunctionality.Level_GetSegments(const TileProv
     Params: TStringList;
     ServerAddress: string;
     ServerPort: integer;
+    {$IFNDEF EmbeddedServer}
     SpaceProvider: ISpaceProvider;
+    {$ENDIF}
     ResultStream: TMemoryStream;
     SP: integer;
     Connection: TTCPClient;
@@ -27301,8 +27315,12 @@ procedure TTileServerVisualizationFunctionality.Level_GetSegments(const TileProv
   ServerPort:=StrToInt(Params[1]);
   if (ServerPort < 0)
    then begin //. process via SpaceHTTPSOAPServer
+    {$IFNDEF EmbeddedServer}
     SpaceProvider:=GetISpaceProvider(Space.SOAPServerURL);
     SpaceProvider.TileServer_GetTiles(Space.UserName,Space.UserPassword,idObj,StrToInt(Params[2]),StrToInt(Params[3]),Level, XIndexMin,XIndexMax,YIndexMin,YIndexMax, ExceptSegments, {out} Segments);
+    {$ELSE}
+    SpaceProvider_TileServer_GetTiles(Space.UserName,Space.UserPassword,idObj,StrToInt(Params[2]),StrToInt(Params[3]),Level, XIndexMin,XIndexMax,YIndexMin,YIndexMax, ExceptSegments, {out} Segments);
+    {$ENDIF}
     if (Length(Segments) = 0) then Exit; //. ->
     if (TileProvider.Format = 'jpg') then Exit; //. ->
     if (TileProvider.Format = 'png')

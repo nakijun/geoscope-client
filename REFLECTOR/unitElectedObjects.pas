@@ -5,7 +5,11 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus,
   ComCtrls, RXCtrls, StdCtrls, Buttons, unitProxySpace, Functionality, GlobalSpaceDefines,
-  FunctionalitySOAPInterface,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ELSE}
@@ -124,8 +128,11 @@ begin
 Clear;
 ImageList.Clear;
 ImageList.AddImages(TypesImageList);
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-if Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
   MemoryStream:=TMemoryStream.Create;
   try
@@ -291,8 +298,11 @@ var
   MemoryStream: TMemoryStream;
   NewItem: TElectedObjectStoredStruc;
 begin
-with GetISpaceUserReflector(pReflector.Space.SOAPServerURL) do
-if (Get_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,pReflector.id,BA))
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(pReflector.Space.SOAPServerURL).Get_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,pReflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,pReflector.id,{out} BA))
+{$ENDIF}
  then begin
   MemoryStream:=TMemoryStream.Create();
   try
@@ -307,7 +317,11 @@ if (Get_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,p
   MemoryStream.Write(NewItem,SizeOf(NewItem));
   //.
   ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-  Set_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,pReflector.id,BA);
+  {$IFNDEF EmbeddedServer}
+  GetISpaceUserReflector(pReflector.Space.SOAPServerURL).Set_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,pReflector.id,BA);
+  {$ELSE}
+  SpaceUserReflector_Set_ElectedObjects(pReflector.Space.UserName,pReflector.Space.UserPassword,pReflector.id,BA);
+  {$ENDIF}
   finally
   MemoryStream.Destroy();
   end;
@@ -366,25 +380,28 @@ with ListObjects do begin
 Clear;
 ImageList.Clear;
 ImageList.AddImages(TypesImageList);
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-if Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
-  Items.BeginUpdate;
+  Items.BeginUpdate();
   try
   while MemoryStream.Read(ElectedObjectStoredStruc,SizeOf(TElectedObjectStoredStruc)) = SizeOf(TElectedObjectStoredStruc) do begin
     //. check for object
     try
     with TComponentFunctionality_Create(ElectedObjectStoredStruc.idType,ElectedObjectStoredStruc.idObj) do
     try
-    Check;
+    Check();
     finally
-    Release;
+    Release();
     end;
     except
-      Continue;
+      Continue; //. ^
       end;
     //.
     GetMem(ptrNewItem,SizeOf(TElectedObjectStruc));
@@ -394,9 +411,9 @@ if Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Refl
     ObjectName:=ElectedObjectStoredStruc.ObjectName;
     with TComponentFunctionality_Create(idType,idObj) do
     try
-    if NOT GetIconImage(IconBitmap) then IconBitmap:=nil;
+    if (NOT GetIconImage(IconBitmap)) then IconBitmap:=nil;
     finally
-    Release;
+    Release();
     end;
     end;
     //. adding a item
@@ -406,22 +423,22 @@ if Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Refl
     Caption:=ObjectName;
     with TTypeFunctionality_Create(idType) do
     try
-    if IconBitmap = nil
+    if (IconBitmap = nil)
      then
       ImageIndex:=ImageList_Index
      else begin
-      TempBMP:=TBitmap.Create;
+      TempBMP:=TBitmap.Create();
       try
-      MS:=TMemoryStream.Create;
+      MS:=TMemoryStream.Create();
       try
       IconBitmap.SaveToStream(MS); MS.Position:=0;
       TempBMP.LoadFromStream(MS);
       finally
-      MS.Destroy;
+      MS.Destroy();
       end;
       ImageIndex:=ImageList.Add(TempBMP,nil);
       finally
-      TempBMP.Destroy;
+      TempBMP.Destroy();
       end;
       end;
     finally
@@ -432,10 +449,10 @@ if Get_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Refl
       end;
     end;
   finally
-  Items.EndUpdate;
+  Items.EndUpdate();
   end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
 end;
 end;
@@ -586,10 +603,12 @@ with ListObjects do for I:=0 to Items.Count-1 do with Items[I] do begin
   end;
   MemoryStream.Write(ElectedObjectStoredStruc,SizeOf(ElectedObjectStoredStruc));
   end;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_ElectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ENDIF}
 finally
 MemoryStream.Destroy;
 end;

@@ -15,8 +15,8 @@ object fmElectedObjectsGallery: TfmElectedObjectsGallery
   object lvElectedObjectsGallery: TListView
     Left = 0
     Top = 0
-    Width = 346
-    Height = 53
+    Width = 338
+    Height = 42
     Align = alClient
     BevelInner = bvNone
     BevelOuter = bvRaised

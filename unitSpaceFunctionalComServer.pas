@@ -319,7 +319,7 @@ ActualityInterval.BeginTimestamp:=Now-TimeZoneDelta;
 ActualityInterval.EndTimestamp:=MaxDouble;
 Space.User_ReflectSpaceWindowOnBitmap(pUserName,pUserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, _HidedLaysArray, VisibleFactor,DynamicHintVisibility,0{no hint data},nil{VisualizationUserData},ActualityInterval, BMP.Width,BMP.Height, BMP,{out} DynamicHintData);
 //.
-MS:=TMemoryStream.Create;
+MS:=TMemoryStream.Create();
 try
 case BitmapDataType of
 1: begin //. bitmap row format
@@ -359,6 +359,7 @@ case BitmapDataType of
 200: begin //. png
   PNG:=TPNGObject.Create();
   try
+  PNG.TransparentColor:=clEmptySpace;
   PNG.Assign(BMP);
   PNG.CompressionLevel:=9; //. max compression
   //.

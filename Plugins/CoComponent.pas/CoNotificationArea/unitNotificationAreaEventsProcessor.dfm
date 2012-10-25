@@ -18,8 +18,8 @@ object fmNotificationAreaEventsProcessorPanel: TfmNotificationAreaEventsProcesso
   object ListBox: TListBox
     Left = 0
     Top = 193
-    Width = 846
-    Height = 518
+    Width = 838
+    Height = 507
     Align = alClient
     ItemHeight = 13
     TabOrder = 0
@@ -27,14 +27,14 @@ object fmNotificationAreaEventsProcessorPanel: TfmNotificationAreaEventsProcesso
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 846
+    Width = 838
     Height = 193
     Align = alTop
     TabOrder = 1
     object PageControl1: TPageControl
       Left = 1
       Top = 1
-      Width = 844
+      Width = 836
       Height = 191
       ActivePage = TabSheet1
       Align = alClient
@@ -48,7 +48,7 @@ object fmNotificationAreaEventsProcessorPanel: TfmNotificationAreaEventsProcesso
       object TabSheet1: TTabSheet
         Caption = ' Statistics '
         DesignSize = (
-          836
+          828
           160)
         object Label15: TLabel
           Left = 8
@@ -144,12 +144,12 @@ object fmNotificationAreaEventsProcessorPanel: TfmNotificationAreaEventsProcesso
         Caption = ' Configuration'
         ImageIndex = 1
         DesignSize = (
-          836
+          828
           160)
         object PageControl2: TPageControl
           Left = 0
           Top = 0
-          Width = 836
+          Width = 828
           Height = 160
           ActivePage = TabSheet4
           Align = alClient
@@ -163,7 +163,7 @@ object fmNotificationAreaEventsProcessorPanel: TfmNotificationAreaEventsProcesso
             object PageControl3: TPageControl
               Left = 0
               Top = 0
-              Width = 828
+              Width = 820
               Height = 129
               ActivePage = TabSheet5
               Align = alClient

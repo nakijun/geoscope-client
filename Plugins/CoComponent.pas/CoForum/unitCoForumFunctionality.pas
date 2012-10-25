@@ -185,7 +185,7 @@ if TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTDATAFile,
   DATAFileFunctionality:=TDATAFileFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   with DATAFileFunctionality do
   try
-  GetDATA(Stream);
+  GetDATA1(Stream);
   finally
   Release;
   end;
@@ -205,7 +205,7 @@ if TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTDATAFile,
   DATAFileFunctionality:=TDATAFileFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   with DATAFileFunctionality do
   try
-  SetDATA(Stream);
+  SetDATA1(Stream);
   finally
   Release;
   end;

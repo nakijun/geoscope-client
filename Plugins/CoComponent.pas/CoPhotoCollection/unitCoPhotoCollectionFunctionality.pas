@@ -165,7 +165,7 @@ if TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTVisualiza
     with TItemComponentsList(DetailsList[I]^) do CELLFunctionality:=TCELLVisualizationFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
     with CELLFunctionality do
     try
-    GetInsideObjectsList(idTCoPhoto,false, IOList);
+    GetInsideObjectsList1(idTCoPhoto,false, IOList);
     try
     for I:=0 to IOList.Count-1 do List.Add(Pointer(TItemComponentsList(IOList[I]^).idComponent));
     finally

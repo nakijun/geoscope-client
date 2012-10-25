@@ -69,7 +69,7 @@ Uses
 Constructor TMODELServersHistory.Create;
 begin
 Inherited Create;
-FileName:=HistoryFileName;
+FileName:=ExtractFilePath(GetModuleName(HInstance))+HistoryFileName;
 MaxLength:=1000000;
 end;
 

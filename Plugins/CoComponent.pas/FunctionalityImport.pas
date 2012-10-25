@@ -274,6 +274,22 @@ Type
       mucpModel2GeoLogAndroidClient = 5
   );
 
+Type
+  TAbonentKind = (
+    akNormal,   // не спаренный
+    akSparedA,  // спаренный A
+    akSparedB,  // спаренный B
+    akBlockA,   // спаренный через блокиратор A
+    akBlockB);  // спаренный через блокиратор B
+Const
+  TAbonentKindStrings: array[TAbonentKind] of string = (
+    'основной',
+    'спаренный А',
+    'спаренный Б',
+    'блок. А',
+    'блок. Б'
+  );
+
 
   {$I TypesFunctionalityImportInterface.inc}
 
@@ -306,7 +322,6 @@ Type
       procedure GetProperties;
       procedure SetProperties;
     end;
-
 
 Implementation
 Uses

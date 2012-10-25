@@ -127,11 +127,6 @@
 {TTMODELServerFunctionality}
 
 {TMODELServerFunctionality}
-procedure TMODELServerFunctionality.CreateNewUserByDefaultPrototype1(const NewUserName: WideString; const NewUserPassword: WideString; const NewUserFullName: WideString; const NewUserContactInfo: WideString; const Signature: WideString;  out idNewUser: integer);
-begin
-RemotedFunctionality.CreateNewUserByDefaultPrototype1(NewUserName,NewUserPassword,NewUserFullName,NewUserContactInfo,Signature,idNewUser);
-end;
-
 
 {TTCoReferenceFunctionality}
 
@@ -312,6 +307,16 @@ end;
 {TTHREFVisualizationFunctionality}
 
 {THREFVisualizationFunctionality}
+function THREFVisualizationFunctionality.getName: string;
+begin
+Result:=RemotedFunctionality.getName;
+end;
+
+function THREFVisualizationFunctionality.getHint: string;
+begin
+Result:=RemotedFunctionality.getHint;
+end;
+
 
 {TTTTFVisualizationFunctionality}
 

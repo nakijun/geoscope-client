@@ -63,7 +63,11 @@ Uses
   unitEventLog,
   GlobalSpaceDefines,
   unitProxySpace,
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   Functionality,
   TypesFunctionality;
 
@@ -121,15 +125,19 @@ begin
 Clear;
 //. read user history
 with TProxySpace(Space) do 
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserProxySpace(SOAPServerURL) do
-if Get_ComponentsPanelsHistory(UserName,UserPassword,idUserProxySpace,BA)
+if (Get_ComponentsPanelsHistory(UserName,UserPassword,idUserProxySpace,{out} BA))
+{$ELSE}
+if (SpaceUserProxySpace_Get_ComponentsPanelsHistory(UserName,UserPassword,idUserProxySpace,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   ReadFromStream(MemoryStream);
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;
@@ -151,16 +159,19 @@ var
 
 begin
 //. write user history
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 WriteIntoStream(MemoryStream);
-with TProxySpace(Space) do
-with GetISpaceUserProxySpace(SOAPServerURL) do begin
+with TProxySpace(Space) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ComponentsPanelsHistory(UserName,UserPassword,idUserProxySpace,BA);
+{$IFNDEF EmbeddedServer}
+GetISpaceUserProxySpace(SOAPServerURL).Set_ComponentsPanelsHistory(UserName,UserPassword,idUserProxySpace,BA);
+{$ELSE}
+SpaceUserProxySpace_Set_ComponentsPanelsHistory(UserName,UserPassword,idUserProxySpace,BA);
+{$ENDIF}
 end;
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 end;
 

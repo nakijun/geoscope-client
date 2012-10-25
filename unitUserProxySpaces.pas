@@ -4,7 +4,15 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs,
-  GlobalSpaceDefines, FunctionalitySOAPInterface, Functionality, unitProxySpace, Buttons, RXCtrls, ComCtrls, ExtCtrls,
+  GlobalSpaceDefines, 
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  Functionality, 
+  unitProxySpace, 
+  Buttons, RXCtrls, ComCtrls, ExtCtrls,
   StdCtrls, ImgList;
 
 const
@@ -73,8 +81,13 @@ with lvProxySpaces do begin
 Items.Clear;
 Items.BeginUpdate;
 try
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserProxySpaces(Space.SOAPServerURL) do begin
 BA:=GetUserProxySpaces(Space.UserName,Space.UserPassword,Space.UserID);
+{$ELSE}
+begin
+SpaceUserProxySpaces_GetUserProxySpaces(Space.UserName,Space.UserPassword,Space.UserID,{out} BA);
+{$ENDIF}
 UserProxySpaces:=TList.Create;
 try
 ByteArray_PrepareList(BA,UserProxySpaces);
@@ -82,7 +95,11 @@ with UserProxySpaces do
 for I:=0 to Count-1 do with lvProxySpaces.Items.Add do begin
   try
   Data:=Pointer(Integer(List[I]));
+  {$IFNDEF EmbeddedServer}
   with GetISpaceUserProxySpace(Space.SOAPServerURL) do Caption:=getName(Space.UserName,Space.UserPassword,Integer(Data));
+  {$ELSE}
+  Caption:=SpaceUserProxySpace_getName(Space.UserName,Space.UserPassword,Integer(Data));
+  {$ENDIF}
   ImageIndex:=0;
   except
     end;
@@ -102,11 +119,19 @@ var
   idNewProxySpace: integer;
 begin
 //. creating user proxyspace
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserProxySpaces(Space.SOAPServerURL) do idNewProxySpace:=CreateProxySpace(Space.UserName,Space.UserPassword,Space.UserID);
+{$ELSE}
+idNewProxySpace:=SpaceUserProxySpaces_CreateProxySpace(Space.UserName,Space.UserPassword,Space.UserID);
+{$ENDIF}
 //. add proxyspace to the list
 with lvProxySpaces.Items.Add do begin
 Data:=Pointer(idNewProxySpace);
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserProxySpace(Space.SOAPServerURL) do setName(Space.UserName,Space.UserPassword,idNewProxySpace, 'NoName');
+{$ELSE}
+SpaceUserProxySpace_setName(Space.UserName,Space.UserPassword,idNewProxySpace, 'NoName');
+{$ENDIF}
 Caption:='NoName';
 ImageIndex:=0;
 end;
@@ -119,14 +144,22 @@ begin
 if lvProxySpaces.Selected = nil then Exit; //. ->
 idDestroyProxySpace:=Integer(lvProxySpaces.Selected.Data);
 //. destroying user proxyspace
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserProxySpaces(Space.SOAPServerURL) do DestroyProxySpace(Space.UserName,Space.UserPassword, idDestroyProxySpace);
+{$ELSE}
+SpaceUserProxySpaces_DestroyProxySpace(Space.UserName,Space.UserPassword, idDestroyProxySpace);
+{$ENDIF}
 //. remove item from the list
 lvProxySpaces.Selected.Delete;
 end;
 
 procedure TfmUserProxySpaces.lvProxySpacesEdited(Sender: TObject; Item: TListItem; var S: String);
 begin
+{$IFNDEF EmbeddedServer}
 with GetISpaceUserProxySpace(Space.SOAPServerURL) do setName(Space.UserName,Space.UserPassword, Integer(Item.Data), S);
+{$ELSE}
+SpaceUserProxySpace_setName(Space.UserName,Space.UserPassword, Integer(Item.Data), S);
+{$ENDIF}
 //. updating proxyspace control panel
 if Space.ControlPanel <> nil then Space.ControlPanel.Update;
 end;

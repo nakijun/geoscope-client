@@ -29,7 +29,11 @@ Uses
   unitOpenGL3DSpace,
   GlobalSpaceDefines,
   unitIDsCach,
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   unitProxySpace,
   unit3DReflector,
   unitReflector,
@@ -81,8 +85,8 @@ Type
     function QueryFunctionality(RequiredFunctionalityClass: TFunctionalityClass; out F: TFunctionality): boolean; virtual; StdCall;
   end;
 
-  TComponentFunctionality = class;
   TTypeFunctionality = class;
+  TComponentFunctionality = class;
 
   {$I FunctionalityImportInterface.inc}
 
@@ -1869,10 +1873,14 @@ begin
 Clear;                       
 //. read user defined configuration
 if (NOT TypesSystem.Space.flOffline)
- then with GetISpaceUserProxySpace(TypesSystem.Space.SOAPServerURL) do
-  if Get_TypesSystemConfig(TypesSystem.Space.UserName,TypesSystem.Space.UserPassword,TypesSystem.Space.idUserProxySpace,BA)
+ then
+  {$IFNDEF EmbeddedServer}
+  if (GetISpaceUserProxySpace(TypesSystem.Space.SOAPServerURL).Get_TypesSystemConfig(TypesSystem.Space.UserName,TypesSystem.Space.UserPassword,TypesSystem.Space.idUserProxySpace,{out} BA))
+  {$ELSE}
+  if (SpaceUserProxySpace_Get_TypesSystemConfig(TypesSystem.Space.UserName,TypesSystem.Space.UserPassword,TypesSystem.Space.idUserProxySpace,{out} BA))
+  {$ENDIF}
    then begin
-    MemoryStream:=TMemoryStream.Create;
+    MemoryStream:=TMemoryStream.Create();
     try
     ByteArray_PrepareStream(BA,TStream(MemoryStream));
     while MemoryStream.Read(idType,SizeOf(idType)) = SizeOf(idType) do begin
@@ -1885,7 +1893,7 @@ if (NOT TypesSystem.Space.flOffline)
       Add(Pointer(idType))
       end;
     finally
-    MemoryStream.Destroy;
+    MemoryStream.Destroy();
     end;
     end;
 end;
@@ -1897,7 +1905,7 @@ var
   I: integer;
   idType: integer;
 begin
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 for I:=0 to Count-1 do begin
   //. щифрование типа запрещенного объекта
@@ -1910,12 +1918,14 @@ for I:=0 to Count-1 do begin
   end;
   MemoryStream.Write(idType,SizeOf(idType));
   end;
-with GetISpaceUserProxySpace(TypesSystem.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_TypesSystemConfig(TypesSystem.Space.UserName,TypesSystem.Space.UserPassword,TypesSystem.Space.idUserProxySpace,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserProxySpace(TypesSystem.Space.SOAPServerURL).Set_TypesSystemConfig(TypesSystem.Space.UserName,TypesSystem.Space.UserPassword,TypesSystem.Space.idUserProxySpace,{out} BA);
+{$ELSE}
+SpaceUserProxySpace_Set_TypesSystemConfig(TypesSystem.Space.UserName,TypesSystem.Space.UserPassword,TypesSystem.Space.idUserProxySpace,{out} BA);
+{$ENDIF}
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 end;
 
@@ -2574,7 +2584,11 @@ var
 begin
 SetLength(CL,ComponentsList.Count*SizeOf(TItemComponentsList));
 for I:=0 to ComponentsList.Count-1 do TItemComponentsList(Pointer(Integer(@CL[0])+I*SizeOf(TItemComponentsList))^):=TItemComponentsList(ComponentsList[I]^);
-GetISpaceTypesSystemManager(Space.SOAPServerURL).ExportComponents(pUserName,pUserPassword, CL,  BA);
+{$IFNDEF EmbeddedServer}
+GetISpaceTypesSystemManager(Space.SOAPServerURL).ExportComponents(pUserName,pUserPassword, CL,{out} BA);
+{$ELSE}
+SpaceTypesSystemManager_ExportComponents(pUserName,pUserPassword, CL,{out} BA);
+{$ENDIF}
 ByteArray_CreateStream(BA, MS);
 try
 MS.SaveToFile(ExportFileName);
@@ -2589,15 +2603,19 @@ var
   BA,CL: TByteArray;
   I: integer;
 begin
-MS:=TMemoryStream.Create;
+MS:=TMemoryStream.Create();
 try
 MS.LoadFromFile(ImportFileName);
 ByteArray_PrepareFromStream(BA,TStream(MS));
 finally
-MS.Destroy;
+MS.Destroy();
 end;
-GetISpaceTypesSystemManager(Space.SOAPServerURL).ImportComponents(pUserName,pUserPassword, BA,  CL);
-ComponentsList:=TComponentsList.Create;
+{$IFNDEF EmbeddedServer}
+GetISpaceTypesSystemManager(Space.SOAPServerURL).ImportComponents(pUserName,pUserPassword, BA,{out} CL);
+{$ELSE}
+SpaceTypesSystemManager_ImportComponents(pUserName,pUserPassword, BA,{out} CL);
+{$ENDIF}
+ComponentsList:=TComponentsList.Create();
 try
 for I:=0 to (Length(CL) DIV SizeOf(TItemComponentsList))-1 do with TItemComponentsList(Pointer(Integer(@CL[0])+I*SizeOf(TItemComponentsList))^) do ComponentsList.AddComponent(idTComponent,idComponent,0);
 except
@@ -2605,7 +2623,7 @@ except
   Raise; //. =>
   end;
 //. update local TypesSystem and representations
-Space.StayUpToDate;
+Space.StayUpToDate();
 end;
 
 

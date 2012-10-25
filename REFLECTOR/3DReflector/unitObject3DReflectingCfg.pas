@@ -4,7 +4,12 @@ interface
 
 uses
   SysUtils,
-  FunctionalitySOAPInterface, unitProxySpace, Functionality, GlobalSpaceDefines,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  unitProxySpace, Functionality, GlobalSpaceDefines,
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ELSE}
@@ -205,15 +210,18 @@ var
 begin
 Clear;
 //. read user-defined config
-with GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL) do
-if Get_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL).Get_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   ReadFromStream(MemoryStream);
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;
@@ -241,10 +249,12 @@ begin
 MemoryStream:=TMemoryStream.Create;
 try
 WriteIntoStream(MemoryStream);
-with GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Cfg.Reflecting.Reflector.Space.SOAPServerURL).Set_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_ReflectingHidedLays(Cfg.Reflecting.Reflector.Space.UserName,Cfg.Reflecting.Reflector.Space.UserPassword,Cfg.Reflecting.Reflector.id,BA);
+{$ENDIF}
 finally
 MemoryStream.Destroy;
 end;
@@ -341,15 +351,18 @@ var
   BA: TByteArray;
 begin
 //. read user-defined config
-with GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL) do
-if Get_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL).Get_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   ReadFromStream(MemoryStream);
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;
@@ -376,10 +389,12 @@ begin
 MemoryStream:=TMemoryStream.Create;
 try
 WriteIntoStream(MemoryStream);
-with GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflecting.Reflector.Space.SOAPServerURL).Set_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_ReflectingCfg(Reflecting.Reflector.Space.UserName,Reflecting.Reflector.Space.UserPassword,Reflecting.Reflector.id,BA);
+{$ENDIF}
 finally
 MemoryStream.Destroy;
 end;

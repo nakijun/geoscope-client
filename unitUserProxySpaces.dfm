@@ -17,8 +17,8 @@ object fmUserProxySpaces: TfmUserProxySpaces
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 229
-    Width = 269
+    Top = 220
+    Width = 261
     Height = 35
     Align = alBottom
     BevelOuter = bvNone
@@ -53,10 +53,10 @@ object fmUserProxySpaces: TfmUserProxySpaces
     end
   end
   object pnlOperations: TPanel
-    Left = 244
+    Left = 236
     Top = 0
     Width = 25
-    Height = 229
+    Height = 220
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
@@ -92,8 +92,8 @@ object fmUserProxySpaces: TfmUserProxySpaces
   object lvProxySpaces: TListView
     Left = 0
     Top = 0
-    Width = 244
-    Height = 229
+    Width = 236
+    Height = 220
     Align = alClient
     Color = clBtnFace
     Columns = <

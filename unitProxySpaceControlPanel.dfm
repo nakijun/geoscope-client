@@ -21,8 +21,8 @@ object fmProxySpaceControlPanel: TfmProxySpaceControlPanel
   TextHeight = 13
   object Bevel3: TBevel
     Left = 0
-    Top = 563
-    Width = 625
+    Top = 552
+    Width = 617
     Height = 0
     Align = alBottom
     Shape = bsTopLine
@@ -30,8 +30,8 @@ object fmProxySpaceControlPanel: TfmProxySpaceControlPanel
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 625
-    Height = 563
+    Width = 617
+    Height = 552
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

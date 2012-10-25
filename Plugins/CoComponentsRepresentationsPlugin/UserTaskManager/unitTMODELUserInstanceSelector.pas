@@ -101,7 +101,7 @@ try
 lvInstanceList.Items.Clear();
 with TTMODELUserFunctionality(TTypeFunctionality_Create(idTMODELUser)) do
 try
-GetInstanceListByContext(pNameContext,{out} IL);
+GetInstanceListByContext1(pNameContext,{out} IL);
 try
 Cnt:=IL.Count;
 if (Cnt > UserListMaxSize)
@@ -148,7 +148,7 @@ try
 lvInstanceList.Items.Clear();
 with TTMODELUserFunctionality(TTypeFunctionality_Create(idTMODELUser)) do
 try
-GetOnlineUsersForDomains(UserOnLineMaxDelay,pDomains,{out} IL);
+GetOnlineUsersForDomains1(UserOnLineMaxDelay,pDomains,{out} IL);
 try
 Cnt:=IL.Count;
 if (Cnt > UserListMaxSize)
