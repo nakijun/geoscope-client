@@ -14,11 +14,19 @@ Type
   TTTileServerVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTileServerVisualizationSOAPFunctionality: ITTTileServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTileServerVisualizationSOAPFunctionality: ITTTileServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TTileServerVisualizationFunctionality
@@ -26,11 +34,19 @@ Type
   TTileServerVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTileServerVisualizationSOAPFunctionality: ITTileServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTileServerVisualizationSOAPFunctionality: ITTileServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -59,11 +75,19 @@ Type
   TTMeasurementObjectFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMeasurementObjectSOAPFunctionality: ITTMeasurementObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMeasurementObjectSOAPFunctionality: ITTMeasurementObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function CreateNewInstance(const pName: string; const pDomains: string): integer;
     function CreateInstanceByGUID(const pGUID: string; const pName: string; const pDomains: string): integer;
     function CheckCreateInstanceByGUID(const pGUID: string; const pName: string; const pDomains: string): integer;
@@ -78,11 +102,19 @@ Type
   TMeasurementObjectFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMeasurementObjectSOAPFunctionality: ITMeasurementObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMeasurementObjectSOAPFunctionality: ITMeasurementObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -103,11 +135,19 @@ Type
   TTAreaNotificationServerFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTAreaNotificationServerSOAPFunctionality: ITTAreaNotificationServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTAreaNotificationServerSOAPFunctionality: ITTAreaNotificationServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TAreaNotificationServerFunctionality
@@ -115,11 +155,19 @@ Type
   TAreaNotificationServerFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTAreaNotificationServerSOAPFunctionality: ITAreaNotificationServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TAreaNotificationServerSOAPFunctionality: ITAreaNotificationServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -132,11 +180,19 @@ Type
   TTMODELServerVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMODELServerVisualizationSOAPFunctionality: ITTMODELServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMODELServerVisualizationSOAPFunctionality: ITTMODELServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMODELServerVisualizationFunctionality
@@ -144,11 +200,19 @@ Type
   TMODELServerVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMODELServerVisualizationSOAPFunctionality: ITMODELServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMODELServerVisualizationSOAPFunctionality: ITMODELServerVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -161,11 +225,19 @@ Type
   TTDoubleVarFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTDoubleVarSOAPFunctionality: ITTDoubleVarSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTDoubleVarSOAPFunctionality: ITTDoubleVarSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TDoubleVarFunctionality
@@ -173,11 +245,19 @@ Type
   TDoubleVarFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTDoubleVarSOAPFunctionality: ITDoubleVarSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TDoubleVarSOAPFunctionality: ITDoubleVarSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getValue: Double;
@@ -190,11 +270,19 @@ Type
   TTInt32VarFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTInt32VarSOAPFunctionality: ITTInt32VarSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTInt32VarSOAPFunctionality: ITTInt32VarSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TInt32VarFunctionality
@@ -202,11 +290,19 @@ Type
   TInt32VarFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTInt32VarSOAPFunctionality: ITInt32VarSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TInt32VarSOAPFunctionality: ITInt32VarSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getValue: integer;
@@ -219,11 +315,19 @@ Type
   TTURLFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTURLSOAPFunctionality: ITTURLSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTURLSOAPFunctionality: ITTURLSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TURLFunctionality
@@ -231,11 +335,19 @@ Type
   TURLFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTURLSOAPFunctionality: ITURLSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TURLSOAPFunctionality: ITURLSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getURL: string;
@@ -253,11 +365,19 @@ Type
   TTPatternVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTPatternVisualizationSOAPFunctionality: ITTPatternVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTPatternVisualizationSOAPFunctionality: ITTPatternVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TPatternVisualizationFunctionality
@@ -265,11 +385,19 @@ Type
   TPatternVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTPatternVisualizationSOAPFunctionality: ITPatternVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TPatternVisualizationSOAPFunctionality: ITPatternVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -286,11 +414,19 @@ Type
   TTMapFormatObjectFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMapFormatObjectSOAPFunctionality: ITTMapFormatObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMapFormatObjectSOAPFunctionality: ITTMapFormatObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetDATAHash(DATAStream: TByteArray): integer;
   end;
 
@@ -299,11 +435,19 @@ Type
   TMapFormatObjectFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMapFormatObjectSOAPFunctionality: ITMapFormatObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMapFormatObjectSOAPFunctionality: ITMapFormatObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetHintInfo(const InfoType: integer; const InfoFormat: integer; out HintInfo: TByteArray): boolean;
     function getidMap: integer;
     procedure setidMap(Value: integer);
@@ -338,11 +482,19 @@ Type
   TTMapFormatMapFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMapFormatMapSOAPFunctionality: ITTMapFormatMapSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMapFormatMapSOAPFunctionality: ITTMapFormatMapSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListByGeoSpace(const idGeoSpace: integer; out List: TByteArray);
   end;
 
@@ -351,11 +503,19 @@ Type
   TMapFormatMapFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMapFormatMapSOAPFunctionality: ITMapFormatMapSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMapFormatMapSOAPFunctionality: ITMapFormatMapSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getGeoSpaceID: integer;
     procedure setGeoSpaceID(Value: integer);
     function getFormatID: integer;
@@ -401,11 +561,19 @@ Type
   TTSPLVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTSPLVisualizationSOAPFunctionality: ITTSPLVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTSPLVisualizationSOAPFunctionality: ITTSPLVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TSPLVisualizationFunctionality
@@ -413,11 +581,19 @@ Type
   TSPLVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTSPLVisualizationSOAPFunctionality: ITSPLVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TSPLVisualizationSOAPFunctionality: ITSPLVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -430,11 +606,19 @@ Type
   TTBoolVarFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTBoolVarSOAPFunctionality: ITTBoolVarSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTBoolVarSOAPFunctionality: ITTBoolVarSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TBoolVarFunctionality
@@ -442,11 +626,19 @@ Type
   TBoolVarFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTBoolVarSOAPFunctionality: ITBoolVarSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TBoolVarSOAPFunctionality: ITBoolVarSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getValue: boolean;
@@ -459,11 +651,19 @@ Type
   TTGeoSpaceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTGeoSpaceSOAPFunctionality: ITTGeoSpaceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTGeoSpaceSOAPFunctionality: ITTGeoSpaceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TGeoSpaceFunctionality
@@ -471,11 +671,19 @@ Type
   TGeoSpaceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTGeoSpaceSOAPFunctionality: ITGeoSpaceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TGeoSpaceSOAPFunctionality: ITGeoSpaceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -497,11 +705,19 @@ Type
   TTUserAlertFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTUserAlertSOAPFunctionality: ITTUserAlertSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTUserAlertSOAPFunctionality: ITTUserAlertSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetActiveInstanceList(out List: TByteArray);
   end;
 
@@ -510,11 +726,19 @@ Type
   TUserAlertFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTUserAlertSOAPFunctionality: ITUserAlertSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TUserAlertSOAPFunctionality: ITUserAlertSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getUserID: integer;
@@ -547,11 +771,19 @@ Type
   TTGeoGraphServerObjectFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTGeoGraphServerObjectSOAPFunctionality: ITTGeoGraphServerObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTGeoGraphServerObjectSOAPFunctionality: ITTGeoGraphServerObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetInstanceByServerObject(const pGeoGraphServerID: integer; const pObjectID: integer; out idInstance: integer): boolean;
   end;
 
@@ -560,11 +792,19 @@ Type
   TGeoGraphServerObjectFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTGeoGraphServerObjectSOAPFunctionality: ITGeoGraphServerObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TGeoGraphServerObjectSOAPFunctionality: ITGeoGraphServerObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getGeoGraphServerID: integer;
@@ -591,11 +831,19 @@ Type
   TTGeoGraphServerFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTGeoGraphServerSOAPFunctionality: ITTGeoGraphServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTGeoGraphServerSOAPFunctionality: ITTGeoGraphServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetActiveInstanceList(out List: TByteArray);
     function GetInstanceForRegistration: integer;
   end;
@@ -605,11 +853,19 @@ Type
   TGeoGraphServerFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTGeoGraphServerSOAPFunctionality: ITGeoGraphServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TGeoGraphServerSOAPFunctionality: ITGeoGraphServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -659,11 +915,19 @@ Type
   TTGeoCrdSystemFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTGeoCrdSystemSOAPFunctionality: ITTGeoCrdSystemSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTGeoCrdSystemSOAPFunctionality: ITTGeoCrdSystemSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceList(out List: TByteArray);
     procedure GetInstanceByLatLong(const pGeoSpaceID: integer; const pLatitude,pLongitude: double; out idCrdSys: integer);
     procedure GetInstanceByXY(const pGeoSpaceID: integer; const pX,pY: double; out idCrdSys: integer);
@@ -674,11 +938,19 @@ Type
   TGeoCrdSystemFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTGeoCrdSystemSOAPFunctionality: ITGeoCrdSystemSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TGeoCrdSystemSOAPFunctionality: ITGeoCrdSystemSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getGeoSpaceID: integer;
     procedure setGeoSpaceID(Value: integer);
     function getName: string;
@@ -698,11 +970,19 @@ Type
   TTFilterVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTFilterVisualizationSOAPFunctionality: ITTFilterVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTFilterVisualizationSOAPFunctionality: ITTFilterVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TFilterVisualizationFunctionality
@@ -710,11 +990,19 @@ Type
   TFilterVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTFilterVisualizationSOAPFunctionality: ITFilterVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TFilterVisualizationSOAPFunctionality: ITFilterVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -727,11 +1015,19 @@ Type
   TTHINTVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHINTVisualizationSOAPFunctionality: ITTHINTVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHINTVisualizationSOAPFunctionality: ITTHINTVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceParams(const IDs: TByteArray; const MaxInstanceSize: integer; out Params: TByteArray);
     procedure GetInstanceParams1(const IDs: TByteArray; const MaxInstanceSize: integer; out Params: TByteArray);
     procedure GetInstanceOwnerDatasAndParams(const IDs: TByteArray; const DataFlags: TComponentDataFlags; const MaxInstanceSize: integer; out Data: TByteArray; out Params: TByteArray);
@@ -742,11 +1038,19 @@ Type
   THINTVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHINTVisualizationSOAPFunctionality: ITHINTVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THINTVisualizationSOAPFunctionality: ITHINTVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -766,11 +1070,19 @@ Type
   TTDetailedPictureVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTDetailedPictureVisualizationSOAPFunctionality: ITTDetailedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTDetailedPictureVisualizationSOAPFunctionality: ITTDetailedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TDetailedPictureVisualizationFunctionality
@@ -778,11 +1090,19 @@ Type
   TDetailedPictureVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTDetailedPictureVisualizationSOAPFunctionality: ITDetailedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TDetailedPictureVisualizationSOAPFunctionality: ITDetailedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -807,11 +1127,19 @@ Type
   TTCoVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCoVisualizationSOAPFunctionality: ITTCoVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCoVisualizationSOAPFunctionality: ITTCoVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCoVisualizationFunctionality
@@ -819,11 +1147,19 @@ Type
   TCoVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCoVisualizationSOAPFunctionality: ITCoVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCoVisualizationSOAPFunctionality: ITCoVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure ToClone(out idClone: integer);
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
@@ -844,11 +1180,19 @@ Type
   TTForumMessageFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTForumMessageSOAPFunctionality: ITTForumMessageSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTForumMessageSOAPFunctionality: ITTForumMessageSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TForumMessageFunctionality
@@ -856,11 +1200,19 @@ Type
   TForumMessageFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTForumMessageSOAPFunctionality: ITForumMessageSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TForumMessageSOAPFunctionality: ITForumMessageSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getidForum: integer;
@@ -882,11 +1234,19 @@ Type
   TTForumFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTForumSOAPFunctionality: ITTForumSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTForumSOAPFunctionality: ITTForumSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TForumFunctionality
@@ -894,11 +1254,19 @@ Type
   TForumFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTForumSOAPFunctionality: ITForumSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TForumSOAPFunctionality: ITForumSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getMessageLifeTime: TDateTime;
@@ -917,11 +1285,19 @@ Type
   TTCUSTOMVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCUSTOMVisualizationSOAPFunctionality: ITTCUSTOMVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCUSTOMVisualizationSOAPFunctionality: ITTCUSTOMVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCUSTOMVisualizationFunctionality
@@ -929,11 +1305,19 @@ Type
   TCUSTOMVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCUSTOMVisualizationSOAPFunctionality: ITCUSTOMVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCUSTOMVisualizationSOAPFunctionality: ITCUSTOMVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -951,11 +1335,19 @@ Type
   TTOLEVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOLEVisualizationSOAPFunctionality: ITTOLEVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOLEVisualizationSOAPFunctionality: ITTOLEVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOLEVisualizationFunctionality
@@ -963,11 +1355,19 @@ Type
   TOLEVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOLEVisualizationSOAPFunctionality: ITOLEVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOLEVisualizationSOAPFunctionality: ITOLEVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -981,11 +1381,19 @@ Type
   TTHTMLVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHTMLVisualizationSOAPFunctionality: ITTHTMLVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHTMLVisualizationSOAPFunctionality: ITTHTMLVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. THTMLVisualizationFunctionality
@@ -993,11 +1401,19 @@ Type
   THTMLVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHTMLVisualizationSOAPFunctionality: ITHTMLVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THTMLVisualizationSOAPFunctionality: ITHTMLVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1013,11 +1429,19 @@ Type
   TTBZRVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTBZRVisualizationSOAPFunctionality: ITTBZRVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTBZRVisualizationSOAPFunctionality: ITTBZRVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TBZRVisualizationFunctionality
@@ -1025,11 +1449,19 @@ Type
   TBZRVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTBZRVisualizationSOAPFunctionality: ITBZRVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TBZRVisualizationSOAPFunctionality: ITBZRVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1040,11 +1472,19 @@ Type
   TTAGIFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTAGIFVisualizationSOAPFunctionality: ITTAGIFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTAGIFVisualizationSOAPFunctionality: ITTAGIFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TAGIFVisualizationFunctionality
@@ -1052,11 +1492,19 @@ Type
   TAGIFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTAGIFVisualizationSOAPFunctionality: ITAGIFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TAGIFVisualizationSOAPFunctionality: ITAGIFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1070,11 +1518,19 @@ Type
   TTOrientedVIDEOVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOrientedVIDEOVisualizationSOAPFunctionality: ITTOrientedVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOrientedVIDEOVisualizationSOAPFunctionality: ITTOrientedVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOrientedVIDEOVisualizationFunctionality
@@ -1082,11 +1538,19 @@ Type
   TOrientedVIDEOVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOrientedVIDEOVisualizationSOAPFunctionality: ITOrientedVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOrientedVIDEOVisualizationSOAPFunctionality: ITOrientedVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1101,11 +1565,19 @@ Type
   TTVIDEOVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTVIDEOVisualizationSOAPFunctionality: ITTVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTVIDEOVisualizationSOAPFunctionality: ITTVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TVIDEOVisualizationFunctionality
@@ -1113,11 +1585,19 @@ Type
   TVIDEOVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTVIDEOVisualizationSOAPFunctionality: ITVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TVIDEOVisualizationSOAPFunctionality: ITVIDEOVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1132,11 +1612,19 @@ Type
   TTOPPVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOPPVisualizationSOAPFunctionality: ITTOPPVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOPPVisualizationSOAPFunctionality: ITTOPPVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOPPVisualizationFunctionality
@@ -1144,11 +1632,19 @@ Type
   TOPPVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOPPVisualizationSOAPFunctionality: ITOPPVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOPPVisualizationSOAPFunctionality: ITOPPVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1164,11 +1660,19 @@ Type
   TTMODELServerFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMODELServerSOAPFunctionality: ITTMODELServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMODELServerSOAPFunctionality: ITTMODELServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetInstanceByIPAddress(const IPAddress: string;  out id: integer): boolean;
   end;
 
@@ -1177,11 +1681,19 @@ Type
   TMODELServerFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMODELServerSOAPFunctionality: ITMODELServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMODELServerSOAPFunctionality: ITMODELServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -1201,11 +1713,19 @@ Type
   TTCoReferenceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCoReferenceSOAPFunctionality: ITTCoReferenceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCoReferenceSOAPFunctionality: ITTCoReferenceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCoReferenceFunctionality
@@ -1213,11 +1733,19 @@ Type
   TCoReferenceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCoReferenceSOAPFunctionality: ITCoReferenceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCoReferenceSOAPFunctionality: ITCoReferenceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -1230,11 +1758,19 @@ Type
   TTPositionerFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTPositionerSOAPFunctionality: ITTPositionerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTPositionerSOAPFunctionality: ITTPositionerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TPositionerFunctionality
@@ -1242,11 +1778,19 @@ Type
   TPositionerFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTPositionerSOAPFunctionality: ITPositionerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TPositionerSOAPFunctionality: ITPositionerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     procedure Get2DPosition(out X0,Y0, X1,Y1, X2,Y2, X3,Y3: Double);
@@ -1260,11 +1804,19 @@ Type
   TTOrientedWMFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOrientedWMFVisualizationSOAPFunctionality: ITTOrientedWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOrientedWMFVisualizationSOAPFunctionality: ITTOrientedWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOrientedWMFVisualizationFunctionality
@@ -1272,11 +1824,19 @@ Type
   TOrientedWMFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOrientedWMFVisualizationSOAPFunctionality: ITOrientedWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOrientedWMFVisualizationSOAPFunctionality: ITOrientedWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1304,11 +1864,19 @@ Type
   TTCELLVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCELLVisualizationSOAPFunctionality: ITTCELLVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCELLVisualizationSOAPFunctionality: ITTCELLVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCELLVisualizationFunctionality
@@ -1316,11 +1884,19 @@ Type
   TCELLVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCELLVisualizationSOAPFunctionality: ITCELLVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCELLVisualizationSOAPFunctionality: ITCELLVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1345,11 +1921,19 @@ Type
   TTEllipseVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTEllipseVisualizationSOAPFunctionality: ITTEllipseVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTEllipseVisualizationSOAPFunctionality: ITTEllipseVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TEllipseVisualizationFunctionality
@@ -1357,11 +1941,19 @@ Type
   TEllipseVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTEllipseVisualizationSOAPFunctionality: ITEllipseVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TEllipseVisualizationSOAPFunctionality: ITEllipseVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1378,11 +1970,19 @@ Type
   TTWMFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTWMFVisualizationSOAPFunctionality: ITTWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTWMFVisualizationSOAPFunctionality: ITTWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TWMFVisualizationFunctionality
@@ -1390,11 +1990,19 @@ Type
   TWMFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTWMFVisualizationSOAPFunctionality: ITWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TWMFVisualizationSOAPFunctionality: ITWMFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1413,11 +2021,19 @@ Type
   TTPictureVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTPictureVisualizationSOAPFunctionality: ITTPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTPictureVisualizationSOAPFunctionality: ITTPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TPictureVisualizationFunctionality
@@ -1425,11 +2041,19 @@ Type
   TPictureVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTPictureVisualizationSOAPFunctionality: ITPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TPictureVisualizationSOAPFunctionality: ITPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1450,11 +2074,19 @@ Type
   TTRoundVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTRoundVisualizationSOAPFunctionality: ITTRoundVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTRoundVisualizationSOAPFunctionality: ITTRoundVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TRoundVisualizationFunctionality
@@ -1462,11 +2094,19 @@ Type
   TRoundVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTRoundVisualizationSOAPFunctionality: ITRoundVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TRoundVisualizationSOAPFunctionality: ITRoundVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1483,11 +2123,19 @@ Type
   TTGeodesyPointFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTGeodesyPointSOAPFunctionality: ITTGeodesyPointSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTGeodesyPointSOAPFunctionality: ITTGeodesyPointSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function ConvertSpaceCRDToGeoCRD(const X,Y: Double; out Latitude,Longitude: Double): boolean;
     function ConvertGeoCRDToSpaceCRD(const Latitude,Longitude: Double; out X,Y: Double): boolean;
     procedure GetNearestCrdSys(const pLatitude,pLongitude: double; out idCrdSys: integer);
@@ -1501,11 +2149,19 @@ Type
   TGeodesyPointFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTGeodesyPointSOAPFunctionality: ITGeodesyPointSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TGeodesyPointSOAPFunctionality: ITGeodesyPointSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getidCrdSys: integer;
@@ -1528,11 +2184,19 @@ Type
   TTPrivateAreaVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTPrivateAreaVisualizationSOAPFunctionality: ITTPrivateAreaVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTPrivateAreaVisualizationSOAPFunctionality: ITTPrivateAreaVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function CanCreateAsDetail: boolean;
   end;
 
@@ -1541,11 +2205,19 @@ Type
   TPrivateAreaVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTPrivateAreaVisualizationSOAPFunctionality: ITPrivateAreaVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TPrivateAreaVisualizationSOAPFunctionality: ITPrivateAreaVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1558,11 +2230,19 @@ Type
   TTHyperTextFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHyperTextSOAPFunctionality: ITTHyperTextSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHyperTextSOAPFunctionality: ITTHyperTextSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. THyperTextFunctionality
@@ -1570,11 +2250,19 @@ Type
   THyperTextFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHyperTextSOAPFunctionality: ITHyperTextSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THyperTextSOAPFunctionality: ITHyperTextSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     procedure GetDATA(out Value: TByteArray);
@@ -1586,11 +2274,19 @@ Type
   TTComponentsFindServiceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTComponentsFindServiceSOAPFunctionality: ITTComponentsFindServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTComponentsFindServiceSOAPFunctionality: ITTComponentsFindServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TComponentsFindServiceFunctionality
@@ -1598,11 +2294,19 @@ Type
   TComponentsFindServiceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTComponentsFindServiceSOAPFunctionality: ITComponentsFindServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TComponentsFindServiceSOAPFunctionality: ITComponentsFindServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -1612,11 +2316,19 @@ Type
   TTUsersServiceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTUsersServiceSOAPFunctionality: ITTUsersServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTUsersServiceSOAPFunctionality: ITTUsersServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TUsersServiceFunctionality
@@ -1624,11 +2336,19 @@ Type
   TUsersServiceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTUsersServiceSOAPFunctionality: ITUsersServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TUsersServiceSOAPFunctionality: ITUsersServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -1638,11 +2358,19 @@ Type
   TTTransportServiceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTransportServiceSOAPFunctionality: ITTTransportServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTransportServiceSOAPFunctionality: ITTTransportServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TTransportServiceFunctionality
@@ -1650,11 +2378,19 @@ Type
   TTransportServiceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTransportServiceSOAPFunctionality: ITTransportServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTransportServiceSOAPFunctionality: ITTransportServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -1664,11 +2400,19 @@ Type
   TTMarketServiceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMarketServiceSOAPFunctionality: ITTMarketServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMarketServiceSOAPFunctionality: ITTMarketServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMarketServiceFunctionality
@@ -1676,11 +2420,19 @@ Type
   TMarketServiceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMarketServiceSOAPFunctionality: ITMarketServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMarketServiceSOAPFunctionality: ITMarketServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -1690,11 +2442,19 @@ Type
   TTTelecomServiceFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTelecomServiceSOAPFunctionality: ITTTelecomServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTelecomServiceSOAPFunctionality: ITTTelecomServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TTelecomServiceFunctionality
@@ -1702,11 +2462,19 @@ Type
   TTelecomServiceFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTelecomServiceSOAPFunctionality: ITTelecomServiceSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTelecomServiceSOAPFunctionality: ITTelecomServiceSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -1716,11 +2484,19 @@ Type
   TTWNDVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTWNDVisualizationSOAPFunctionality: ITTWNDVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTWNDVisualizationSOAPFunctionality: ITTWNDVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TWNDVisualizationFunctionality
@@ -1728,11 +2504,19 @@ Type
   TWNDVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTWNDVisualizationSOAPFunctionality: ITWNDVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TWNDVisualizationSOAPFunctionality: ITWNDVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1752,11 +2536,19 @@ Type
   TTMRKVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMRKVisualizationSOAPFunctionality: ITTMRKVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMRKVisualizationSOAPFunctionality: ITTMRKVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMRKVisualizationFunctionality
@@ -1764,11 +2556,19 @@ Type
   TMRKVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMRKVisualizationSOAPFunctionality: ITMRKVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMRKVisualizationSOAPFunctionality: ITMRKVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1806,11 +2606,19 @@ Type
   TTOrientedPictureVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOrientedPictureVisualizationSOAPFunctionality: ITTOrientedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOrientedPictureVisualizationSOAPFunctionality: ITTOrientedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOrientedPictureVisualizationFunctionality
@@ -1818,11 +2626,19 @@ Type
   TOrientedPictureVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOrientedPictureVisualizationSOAPFunctionality: ITOrientedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOrientedPictureVisualizationSOAPFunctionality: ITOrientedPictureVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1849,11 +2665,19 @@ Type
   TTOrientedTTFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOrientedTTFVisualizationSOAPFunctionality: ITTOrientedTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOrientedTTFVisualizationSOAPFunctionality: ITTOrientedTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOrientedTTFVisualizationFunctionality
@@ -1861,11 +2685,19 @@ Type
   TOrientedTTFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOrientedTTFVisualizationSOAPFunctionality: ITOrientedTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOrientedTTFVisualizationSOAPFunctionality: ITOrientedTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -1905,11 +2737,19 @@ Type
   TTIconFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTIconSOAPFunctionality: ITTIconSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTIconSOAPFunctionality: ITTIconSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TIconFunctionality
@@ -1917,11 +2757,19 @@ Type
   TIconFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTIconSOAPFunctionality: ITIconSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TIconSOAPFunctionality: ITIconSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);
@@ -1934,11 +2782,19 @@ Type
   TTMessageBoardMessageFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMessageBoardMessageSOAPFunctionality: ITTMessageBoardMessageSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMessageBoardMessageSOAPFunctionality: ITTMessageBoardMessageSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMessageBoardMessageFunctionality
@@ -1946,11 +2802,19 @@ Type
   TMessageBoardMessageFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMessageBoardMessageSOAPFunctionality: ITMessageBoardMessageSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMessageBoardMessageSOAPFunctionality: ITMessageBoardMessageSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getIdMessageBoard: integer;
@@ -1973,11 +2837,19 @@ Type
   TTMessageBoardFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMessageBoardSOAPFunctionality: ITTMessageBoardSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMessageBoardSOAPFunctionality: ITTMessageBoardSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMessageBoardFunctionality
@@ -1985,11 +2857,19 @@ Type
   TMessageBoardFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMessageBoardSOAPFunctionality: ITMessageBoardSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMessageBoardSOAPFunctionality: ITMessageBoardSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -2006,11 +2886,19 @@ Type
   TTHREFFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHREFSOAPFunctionality: ITTHREFSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHREFSOAPFunctionality: ITTHREFSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. THREFFunctionality
@@ -2018,11 +2906,19 @@ Type
   THREFFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHREFSOAPFunctionality: ITHREFSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THREFSOAPFunctionality: ITHREFSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getURL: string;
@@ -2036,11 +2932,19 @@ Type
   TTQDCVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTQDCVisualizationSOAPFunctionality: ITTQDCVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTQDCVisualizationSOAPFunctionality: ITTQDCVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TQDCVisualizationFunctionality
@@ -2048,11 +2952,19 @@ Type
   TQDCVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTQDCVisualizationSOAPFunctionality: ITQDCVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TQDCVisualizationSOAPFunctionality: ITQDCVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2068,11 +2980,19 @@ Type
   TTOffersServerFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOffersServerSOAPFunctionality: ITTOffersServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOffersServerSOAPFunctionality: ITTOffersServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOffersServerFunctionality
@@ -2080,11 +3000,19 @@ Type
   TOffersServerFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOffersServerSOAPFunctionality: ITOffersServerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOffersServerSOAPFunctionality: ITOffersServerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getMailROBOT_Inbox: string;
@@ -2100,11 +3028,19 @@ Type
   TTSecurityComponentOperationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTSecurityComponentOperationSOAPFunctionality: ITTSecurityComponentOperationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTSecurityComponentOperationSOAPFunctionality: ITTSecurityComponentOperationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListByContext(const Context: WideString; out List: TByteArray);
   end;
 
@@ -2113,11 +3049,19 @@ Type
   TSecurityComponentOperationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTSecurityComponentOperationSOAPFunctionality: ITSecurityComponentOperationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TSecurityComponentOperationSOAPFunctionality: ITSecurityComponentOperationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -2130,11 +3074,19 @@ Type
   TTSecurityKeyFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTSecurityKeySOAPFunctionality: ITTSecurityKeySOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTSecurityKeySOAPFunctionality: ITTSecurityKeySOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetInstanceByCode(const Code: string;  out idInstance: integer): boolean;
     procedure GetInstanceListByContext(const Context: WideString; out List: TByteArray);
   end;
@@ -2144,11 +3096,19 @@ Type
   TSecurityKeyFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTSecurityKeySOAPFunctionality: ITSecurityKeySOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TSecurityKeySOAPFunctionality: ITSecurityKeySOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -2164,11 +3124,19 @@ Type
   TTSecurityFileFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTSecurityFileSOAPFunctionality: ITTSecurityFileSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTSecurityFileSOAPFunctionality: ITTSecurityFileSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListByContext(const Context: WideString;out List: TByteArray);
   end;
 
@@ -2177,11 +3145,19 @@ Type
   TSecurityFileFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTSecurityFileSOAPFunctionality: ITSecurityFileSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TSecurityFileSOAPFunctionality: ITSecurityFileSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -2199,11 +3175,19 @@ Type
   TTSecurityComponentFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTSecurityComponentSOAPFunctionality: ITTSecurityComponentSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTSecurityComponentSOAPFunctionality: ITTSecurityComponentSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure DestroyInstance(const idObj: integer);
   end;
 
@@ -2212,11 +3196,19 @@ Type
   TSecurityComponentFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTSecurityComponentSOAPFunctionality: ITSecurityComponentSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TSecurityComponentSOAPFunctionality: ITSecurityComponentSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure ToClone(out idClone: integer);
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
@@ -2278,11 +3270,19 @@ Type
   TTMODELUserFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMODELUserSOAPFunctionality: ITTMODELUserSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMODELUserSOAPFunctionality: ITTMODELUserSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function IsUserExist(const UserName: string; out idUser: integer): boolean;
     procedure GetInstanceListByContext(const Context: WideString; out List: TByteArray);
     procedure GetOnlineUsersForDomains(const pOnlineMaxDelay: Double; const pDomains: string; out List: TByteArray);
@@ -2294,11 +3294,19 @@ Type
   TMODELUserFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMODELUserSOAPFunctionality: ITMODELUserSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMODELUserSOAPFunctionality: ITMODELUserSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getHint: string;
     function GetActiveStateInfo(out ProxySpaceID: integer; out ProxySpaceIP: widestring; out ProxySpaceState: integer): boolean;
     function IsUserOnLine(const MaxDelay: Double): boolean;
@@ -2404,11 +3412,19 @@ Type
   TTTextureFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTextureSOAPFunctionality: ITTTextureSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTextureSOAPFunctionality: ITTTextureSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListMatchingBy(const NameContext: string; out List: TByteArray);
   end;
 
@@ -2417,11 +3433,19 @@ Type
   TTextureFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTextureSOAPFunctionality: ITTextureSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTextureSOAPFunctionality: ITTextureSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     procedure GetDATA(out DATAStream: TByteArray; out DATAType: Integer);
@@ -2435,11 +3459,19 @@ Type
   TTBuffered3DVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTBuffered3DVisualizationSOAPFunctionality: ITTBuffered3DVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTBuffered3DVisualizationSOAPFunctionality: ITTBuffered3DVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TBuffered3DVisualizationFunctionality
@@ -2447,11 +3479,19 @@ Type
   TBuffered3DVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTBuffered3DVisualizationSOAPFunctionality: ITBuffered3DVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TBuffered3DVisualizationSOAPFunctionality: ITBuffered3DVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2470,11 +3510,19 @@ Type
   TTDATAFileFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTDATAFileSOAPFunctionality: ITTDATAFileSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTDATAFileSOAPFunctionality: ITTDATAFileSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TDATAFileFunctionality
@@ -2482,11 +3530,19 @@ Type
   TDATAFileFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTDATAFileSOAPFunctionality: ITDATAFileSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TDATAFileSOAPFunctionality: ITDATAFileSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure Check;
     function getName: string;
     function getHint: string;
@@ -2503,11 +3559,19 @@ Type
   TTCoComponentFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCoComponentSOAPFunctionality: ITTCoComponentSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCoComponentSOAPFunctionality: ITTCoComponentSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListByCoType(const idCoType: integer; out InstanceList: TByteArray);
   end;
 
@@ -2516,11 +3580,19 @@ Type
   TCoComponentFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCoComponentSOAPFunctionality: ITCoComponentSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCoComponentSOAPFunctionality: ITCoComponentSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function idCoType: integer;
@@ -2533,11 +3605,19 @@ Type
   TTCoComponentTypeMarkerFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCoComponentTypeMarkerSOAPFunctionality: ITTCoComponentTypeMarkerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCoComponentTypeMarkerSOAPFunctionality: ITTCoComponentTypeMarkerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCoComponentTypeMarkerFunctionality
@@ -2545,11 +3625,19 @@ Type
   TCoComponentTypeMarkerFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCoComponentTypeMarkerSOAPFunctionality: ITCoComponentTypeMarkerSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCoComponentTypeMarkerSOAPFunctionality: ITCoComponentTypeMarkerSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2563,11 +3651,19 @@ Type
   TTCoComponentTypeFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCoComponentTypeSOAPFunctionality: ITTCoComponentTypeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCoComponentTypeSOAPFunctionality: ITTCoComponentTypeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListByFileType(const FileType: WideString; out List: TByteArray);
   end;
 
@@ -2576,11 +3672,19 @@ Type
   TCoComponentTypeFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCoComponentTypeSOAPFunctionality: ITCoComponentTypeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCoComponentTypeSOAPFunctionality: ITCoComponentTypeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     procedure GetDescription(out Value: TByteArray);
@@ -2601,11 +3705,19 @@ Type
   TTAddressFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTAddressSOAPFunctionality: ITTAddressSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTAddressSOAPFunctionality: ITTAddressSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure Points_GetTypeNames(out List: TByteArray);
     procedure Streets_GetTypeNames(out List: TByteArray);
   end;
@@ -2615,11 +3727,19 @@ Type
   TAddressFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTAddressSOAPFunctionality: ITAddressSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TAddressSOAPFunctionality: ITAddressSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getIdPoint: integer;
@@ -2643,11 +3763,19 @@ Type
   TTTransportRouteFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTransportRouteSOAPFunctionality: ITTTransportRouteSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTransportRouteSOAPFunctionality: ITTTransportRouteSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceList(out List: TByteArray);
   end;
 
@@ -2656,11 +3784,19 @@ Type
   TTransportRouteFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTransportRouteSOAPFunctionality: ITTransportRouteSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTransportRouteSOAPFunctionality: ITTransportRouteSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -2687,11 +3823,19 @@ Type
   TTTransportNodeFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTransportNodeSOAPFunctionality: ITTTransportNodeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTransportNodeSOAPFunctionality: ITTTransportNodeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceList(out List: TByteArray);
   end;
 
@@ -2700,11 +3844,19 @@ Type
   TTransportNodeFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTransportNodeSOAPFunctionality: ITTransportNodeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTransportNodeSOAPFunctionality: ITTransportNodeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -2716,11 +3868,19 @@ Type
   TTOfferGoodsFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOfferGoodsSOAPFunctionality: ITTOfferGoodsSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOfferGoodsSOAPFunctionality: ITTOfferGoodsSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOfferGoodsFunctionality
@@ -2728,11 +3888,19 @@ Type
   TOfferGoodsFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOfferGoodsSOAPFunctionality: ITOfferGoodsSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOfferGoodsSOAPFunctionality: ITOfferGoodsSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2755,11 +3923,19 @@ Type
   TTTLFStationTMTFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTLFStationTMTSOAPFunctionality: ITTTLFStationTMTSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTLFStationTMTSOAPFunctionality: ITTTLFStationTMTSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceList(out List: TByteArray);
   end;
 
@@ -2768,11 +3944,19 @@ Type
   TTLFStationTMTFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTLFStationTMTSOAPFunctionality: ITTLFStationTMTSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTLFStationTMTSOAPFunctionality: ITTLFStationTMTSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function getHostName: string;
@@ -2786,11 +3970,19 @@ Type
   TTNameFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTNameSOAPFunctionality: ITTNameSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTNameSOAPFunctionality: ITTNameSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TNameFunctionality
@@ -2798,11 +3990,19 @@ Type
   TNameFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTNameSOAPFunctionality: ITNameSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TNameSOAPFunctionality: ITNameSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function Value: string;
@@ -2814,11 +4014,19 @@ Type
   TTVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTVisualizationSOAPFunctionality: ITTVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTVisualizationSOAPFunctionality: ITTVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TVisualizationFunctionality
@@ -2826,11 +4034,19 @@ Type
   TVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTVisualizationSOAPFunctionality: ITVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TVisualizationSOAPFunctionality: ITVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2841,11 +4057,19 @@ Type
   TTHREFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHREFVisualizationSOAPFunctionality: ITTHREFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHREFVisualizationSOAPFunctionality: ITTHREFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. THREFVisualizationFunctionality
@@ -2853,12 +4077,22 @@ Type
   THREFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHREFVisualizationSOAPFunctionality: ITHREFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THREFVisualizationSOAPFunctionality: ITHREFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
+    function getName: string;
+    function getHint: string;
   end;
 
 //. TTTTFVisualizationFunctionality
@@ -2866,11 +4100,19 @@ Type
   TTTTFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTTFVisualizationSOAPFunctionality: ITTTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTTFVisualizationSOAPFunctionality: ITTTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TTTFVisualizationFunctionality
@@ -2878,11 +4120,19 @@ Type
   TTTFVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTFVisualizationSOAPFunctionality: ITTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTFVisualizationSOAPFunctionality: ITTTFVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2897,11 +4147,19 @@ Type
   TTObjectFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTObjectSOAPFunctionality: ITTObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTObjectSOAPFunctionality: ITTObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TObjectFunctionality
@@ -2909,11 +4167,19 @@ Type
   TObjectFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTObjectSOAPFunctionality: ITObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TObjectSOAPFunctionality: ITObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -2923,11 +4189,19 @@ Type
   TTLabelFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTLabelSOAPFunctionality: ITTLabelSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTLabelSOAPFunctionality: ITTLabelSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TLabelFunctionality
@@ -2935,11 +4209,19 @@ Type
   TLabelFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTLabelSOAPFunctionality: ITLabelSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TLabelSOAPFunctionality: ITLabelSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -2949,11 +4231,19 @@ Type
   TTStationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTStationSOAPFunctionality: ITTStationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTStationSOAPFunctionality: ITTStationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceList(out List: TByteArray);
   end;
 
@@ -2962,11 +4252,19 @@ Type
   TStationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTStationSOAPFunctionality: ITStationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TStationSOAPFunctionality: ITStationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -2978,11 +4276,19 @@ Type
   TTMainLineFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMainLineSOAPFunctionality: ITTMainLineSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMainLineSOAPFunctionality: ITTMainLineSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMainLineFunctionality
@@ -2990,11 +4296,19 @@ Type
   TMainLineFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMainLineSOAPFunctionality: ITMainLineSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMainLineSOAPFunctionality: ITMainLineSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3006,11 +4320,19 @@ Type
   TTDescriptionFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTDescriptionSOAPFunctionality: ITTDescriptionSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTDescriptionSOAPFunctionality: ITTDescriptionSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TDescriptionFunctionality
@@ -3018,11 +4340,19 @@ Type
   TDescriptionFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTDescriptionSOAPFunctionality: ITDescriptionSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TDescriptionSOAPFunctionality: ITDescriptionSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     procedure GetValue(out vText: TByteArray);
@@ -3034,11 +4364,19 @@ Type
   TTImageFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTImageSOAPFunctionality: ITTImageSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTImageSOAPFunctionality: ITTImageSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TImageFunctionality
@@ -3046,11 +4384,19 @@ Type
   TImageFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTImageSOAPFunctionality: ITImageSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TImageSOAPFunctionality: ITImageSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
     function GetDATAType1: integer;
@@ -3064,11 +4410,19 @@ Type
   TTWellFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTWellSOAPFunctionality: ITTWellSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTWellSOAPFunctionality: ITTWellSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TWellFunctionality
@@ -3076,11 +4430,19 @@ Type
   TWellFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTWellSOAPFunctionality: ITWellSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TWellSOAPFunctionality: ITWellSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3109,11 +4471,19 @@ Type
   TTTLFFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTTLFSOAPFunctionality: ITTTLFSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTTLFSOAPFunctionality: ITTTLFSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetIDInstanceByNumber(out ID: integer; const Number: integer);
   end;
 
@@ -3122,11 +4492,19 @@ Type
   TTLFFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTLFSOAPFunctionality: ITTLFSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTLFSOAPFunctionality: ITTLFSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3162,11 +4540,19 @@ Type
   TTBoxFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTBoxSOAPFunctionality: ITTBoxSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTBoxSOAPFunctionality: ITTBoxSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TBoxFunctionality
@@ -3174,11 +4560,19 @@ Type
   TBoxFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTBoxSOAPFunctionality: ITBoxSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TBoxSOAPFunctionality: ITBoxSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3189,11 +4583,19 @@ Type
   TTCableBoxFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCableBoxSOAPFunctionality: ITTCableBoxSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCableBoxSOAPFunctionality: ITTCableBoxSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCableBoxFunctionality
@@ -3201,11 +4603,19 @@ Type
   TCableBoxFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCableBoxSOAPFunctionality: ITCableBoxSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCableBoxSOAPFunctionality: ITCableBoxSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3215,11 +4625,19 @@ Type
   TTDistrLineFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTDistrLineSOAPFunctionality: ITTDistrLineSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTDistrLineSOAPFunctionality: ITTDistrLineSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TDistrLineFunctionality
@@ -3227,11 +4645,19 @@ Type
   TDistrLineFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTDistrLineSOAPFunctionality: ITDistrLineSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TDistrLineSOAPFunctionality: ITDistrLineSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3242,11 +4668,19 @@ Type
   TTClientFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTClientSOAPFunctionality: ITTClientSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTClientSOAPFunctionality: ITTClientSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceList(out List: TByteArray);
   end;
 
@@ -3255,11 +4689,19 @@ Type
   TClientFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTClientSOAPFunctionality: ITClientSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TClientSOAPFunctionality: ITClientSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetDebet(out Value: Double): boolean;
     function getName: string;
     function getHint: string;
@@ -3270,11 +4712,19 @@ Type
   TTHouseFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHouseSOAPFunctionality: ITTHouseSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHouseSOAPFunctionality: ITTHouseSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. THouseFunctionality
@@ -3282,11 +4732,19 @@ Type
   THouseFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHouseSOAPFunctionality: ITHouseSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THouseSOAPFunctionality: ITHouseSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3297,11 +4755,19 @@ Type
   TTCommNodeFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCommNodeSOAPFunctionality: ITTCommNodeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCommNodeSOAPFunctionality: ITTCommNodeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCommNodeFunctionality
@@ -3309,11 +4775,19 @@ Type
   TCommNodeFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCommNodeSOAPFunctionality: ITCommNodeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCommNodeSOAPFunctionality: ITCommNodeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3323,11 +4797,19 @@ Type
   TTCrossFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCrossSOAPFunctionality: ITTCrossSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCrossSOAPFunctionality: ITTCrossSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCrossFunctionality
@@ -3335,11 +4817,19 @@ Type
   TCrossFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCrossSOAPFunctionality: ITCrossSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCrossSOAPFunctionality: ITCrossSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3349,11 +4839,19 @@ Type
   TTCaseFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCaseSOAPFunctionality: ITTCaseSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCaseSOAPFunctionality: ITTCaseSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCaseFunctionality
@@ -3361,11 +4859,19 @@ Type
   TCaseFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCaseSOAPFunctionality: ITCaseSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCaseSOAPFunctionality: ITCaseSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3375,11 +4881,19 @@ Type
   TTStreetFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTStreetSOAPFunctionality: ITTStreetSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTStreetSOAPFunctionality: ITTStreetSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TStreetFunctionality
@@ -3387,11 +4901,19 @@ Type
   TStreetFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTStreetSOAPFunctionality: ITStreetSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TStreetSOAPFunctionality: ITStreetSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3401,11 +4923,19 @@ Type
   TTOtherObjFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOtherObjSOAPFunctionality: ITTOtherObjSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOtherObjSOAPFunctionality: ITTOtherObjSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TOtherObjFunctionality
@@ -3413,11 +4943,19 @@ Type
   TOtherObjFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOtherObjSOAPFunctionality: ITOtherObjSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOtherObjSOAPFunctionality: ITOtherObjSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3427,11 +4965,19 @@ Type
   TTSpanFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTSpanSOAPFunctionality: ITTSpanSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTSpanSOAPFunctionality: ITTSpanSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TSpanFunctionality
@@ -3439,11 +4985,19 @@ Type
   TSpanFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTSpanSOAPFunctionality: ITSpanSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TSpanSOAPFunctionality: ITSpanSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3453,11 +5007,19 @@ Type
   TTChanelFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTChanelSOAPFunctionality: ITTChanelSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTChanelSOAPFunctionality: ITTChanelSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TChanelFunctionality
@@ -3465,11 +5027,19 @@ Type
   TChanelFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTChanelSOAPFunctionality: ITChanelSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TChanelSOAPFunctionality: ITChanelSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3480,11 +5050,19 @@ Type
   TTHandHoldFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTHandHoldSOAPFunctionality: ITTHandHoldSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTHandHoldSOAPFunctionality: ITTHandHoldSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. THandHoldFunctionality
@@ -3492,11 +5070,19 @@ Type
   THandHoldFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTHandHoldSOAPFunctionality: ITHandHoldSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function THandHoldSOAPFunctionality: ITHandHoldSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3506,11 +5092,19 @@ Type
   TTLineDistFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTLineDistSOAPFunctionality: ITTLineDistSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTLineDistSOAPFunctionality: ITTLineDistSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TLineDistFunctionality
@@ -3518,11 +5112,19 @@ Type
   TLineDistFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTLineDistSOAPFunctionality: ITLineDistSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TLineDistSOAPFunctionality: ITLineDistSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3532,11 +5134,19 @@ Type
   TTMuffFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTMuffSOAPFunctionality: ITTMuffSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTMuffSOAPFunctionality: ITTMuffSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TMuffFunctionality
@@ -3544,11 +5154,19 @@ Type
   TMuffFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTMuffSOAPFunctionality: ITMuffSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TMuffSOAPFunctionality: ITMuffSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     function getHint: string;
   end;
@@ -3558,11 +5176,19 @@ Type
   TTOfferFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTOfferSOAPFunctionality: ITTOfferSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTOfferSOAPFunctionality: ITTOfferSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOfferByHumanID(const HumanID: integer; out idOffer: integer): boolean;
   end;
 
@@ -3571,11 +5197,19 @@ Type
   TOfferFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTOfferSOAPFunctionality: ITOfferSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TOfferSOAPFunctionality: ITOfferSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     procedure setName(Value: string);
@@ -3603,11 +5237,19 @@ Type
   TTDemandFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTDemandSOAPFunctionality: ITTDemandSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTDemandSOAPFunctionality: ITTDemandSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TDemandFunctionality
@@ -3615,11 +5257,19 @@ Type
   TDemandFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTDemandSOAPFunctionality: ITDemandSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TDemandSOAPFunctionality: ITDemandSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3630,11 +5280,19 @@ Type
   TTCommLineFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCommLineSOAPFunctionality: ITTCommLineSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCommLineSOAPFunctionality: ITTCommLineSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCommLineFunctionality
@@ -3642,11 +5300,19 @@ Type
   TCommLineFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCommLineSOAPFunctionality: ITCommLineSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCommLineSOAPFunctionality: ITCommLineSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function SetComponentsUsingObject(const idTUseObj,idUseObj: integer): boolean;
     function getName: string;
     function getHint: string;
@@ -3657,11 +5323,19 @@ Type
   TTGoodsFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTGoodsSOAPFunctionality: ITTGoodsSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTGoodsSOAPFunctionality: ITTGoodsSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetInstanceListContainingContext(const Context: string; out List: TByteArray);
     function IsInstanceExist(const pName: string; out idGoods: integer): boolean;
   end;
@@ -3671,11 +5345,19 @@ Type
   TGoodsFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTGoodsSOAPFunctionality: ITGoodsSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TGoodsSOAPFunctionality: ITGoodsSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(Value: string);
     function getHint: string;
@@ -3699,11 +5381,19 @@ Type
   TTCollectionFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTCollectionSOAPFunctionality: ITTCollectionSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTCollectionSOAPFunctionality: ITTCollectionSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
 //. TCollectionFunctionality
@@ -3711,11 +5401,19 @@ Type
   TCollectionFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTCollectionSOAPFunctionality: ITCollectionSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TCollectionSOAPFunctionality: ITCollectionSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function getName: string;
     procedure setName(const Value: string);
     function getHint: string;

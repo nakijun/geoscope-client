@@ -114,7 +114,7 @@ var
     if Position >= Size then Exit; //. ->
     Read(C,SizeOf(C));
     C:=ANSIUpperCase(C)[1];
-    if C = Context[I]
+    if (C = Context[I])
      then begin
       Inc(I);
       if I > Length(Context)
@@ -124,8 +124,12 @@ var
         end;
       end
      else
-      I:=1;
-  until false;
+      if (I <> 1)
+       then begin
+        Position:=Position-(I-1);
+        I:=1;
+        end;
+  until (false);
   end;
 
   procedure ReturtnToStringBegin;
@@ -770,7 +774,7 @@ repeat
             end;
           if OverloadedCount > 0 then RoutineName:=RoutineName+IntToStr(OverloadedCount);
           RoutineTypeName:=ANSILowerCase(Word);
-          RoutineFullName:=FunctionalityName+'__'+RoutineName;
+          RoutineFullName:=FunctionalityName+'___'+RoutineName;
           SkipBlanks;
           GetRoutineParams(RoutineParams);
           if (Word = 'FUNCTION')
@@ -940,7 +944,7 @@ repeat
             end;
           if OverloadedCount > 0 then RoutineName:=RoutineName+IntToStr(OverloadedCount);
           RoutineTypeName:=ANSILowerCase(Word);
-          RoutineFullName:=FunctionalityName+'__'+RoutineName;
+          RoutineFullName:=FunctionalityName+'___'+RoutineName;
           SkipBlanks;
           GetRoutineParams(RoutineParams);
           if (Word = 'FUNCTION')

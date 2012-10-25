@@ -5,10 +5,13 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs,
+  MSXML,
+  DBClient,
   GlobalSpaceDefines,
   Functionality,
   TypesDefines,
-  TypesFunctionality, StdCtrls, ComCtrls, Menus;
+  TypesFunctionality,
+  StdCtrls, ComCtrls, Menus;
 
 //. transferred from unit SpaceUserBillingServerDefines.pas
 const
@@ -60,7 +63,11 @@ type
 
 implementation
 uses
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface;
+  {$ELSE}
+  SpaceInterfacesImport;
+  {$ENDIF}
 
 {$R *.dfm}
 
@@ -94,7 +101,9 @@ procedure TfmMODELUserBillingAccountPanel.Update();
 const
   BillingDataVersion = 1;
 var
+  {$IFNDEF EmbeddedServer}
   MODELUserSOAPFunctionality: ITMODELUserSOAPFunctionality;
+  {$ENDIF}
   Account: double;
   BT: integer;
   flSuspendedTariff: boolean;
@@ -111,6 +120,7 @@ var
   SS: byte;
   Comment: shortstring;
 begin
+{$IFNDEF EmbeddedServer}
 MODELUserSOAPFunctionality:=GetITMODELUserSOAPFunctionality(ServerURL);
 Account:=MODELUserSOAPFunctionality.Billing_Account(UserName,UserPassword,MODELUserID);
 edAccount.Text:=FormatFloat('0.00',Account);
@@ -122,7 +132,7 @@ if (Account >= 0)
  else begin
   edAccount.Color:=clRed;
   edAccount.Font.Color:=clWhite;
-  end; 
+  end;
 //.
 BT:=MODELUserSOAPFunctionality.getBillingType(UserName,UserPassword,MODELUserID);
 if (BT < 0)
@@ -167,21 +177,31 @@ if (BillingData <> nil)
 finally
 lvTransactions.Items.EndUpdate();
 end;
+{$ELSE}
+Raise Exception.Create('operation unavaiable for embedded server mode'); //. =>
+{$ENDIF}
 end;
 
 procedure TfmMODELUserBillingAccountPanel.cbTariffChange(Sender: TObject);
+{$IFNDEF EmbeddedServer}
 var
   MODELUserSOAPFunctionality: ITMODELUserSOAPFunctionality;
+{$ENDIF}
 begin
+{$IFNDEF EmbeddedServer}
 MODELUserSOAPFunctionality:=GetITMODELUserSOAPFunctionality(ServerURL);
 MODELUserSOAPFunctionality.setBillingType(UserName,UserPassword,MODELUserID, cbTariff.ItemIndex);
+{$ENDIF}
 end;
 
 procedure TfmMODELUserBillingAccountPanel.SuspendResumetariff1Click(Sender: TObject);
 var
+  {$IFNDEF EmbeddedServer}
   MODELUserSOAPFunctionality: ITMODELUserSOAPFunctionality;
+  {$ENDIF}
   BT: integer;
 begin
+{$IFNDEF EmbeddedServer}
 MODELUserSOAPFunctionality:=GetITMODELUserSOAPFunctionality(ServerURL);
 BT:=MODELUserSOAPFunctionality.getBillingType(UserName,UserPassword,MODELUserID);
 if (BT = 0) then Exit; //. ->
@@ -189,6 +209,7 @@ BT:=-BT;
 MODELUserSOAPFunctionality.setBillingType(UserName,UserPassword,MODELUserID, BT);
 //.
 Update();
+{$ENDIF}
 end;
 
 

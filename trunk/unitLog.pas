@@ -191,7 +191,11 @@ Uses
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ENDIF}
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   unitMODELUserBillingAccountPanel;
 
 {$R *.DFM}
@@ -755,18 +759,25 @@ end;
 
 procedure TfmLog.sbTestConnectionClick(Sender: TObject);
 begin
+{$IFNDEF EmbeddedServer}
 with TfmServerConnectionTest.Create(edServerURL.Text) do begin
 AlphaBlend:=false;
 Show;
 end;
+{$ELSE}
+Raise Exception.Create('operation unavailable in embedded server mode'); //. =>
+{$ENDIF}
 end;
 
 procedure TfmLog.sbCheckUserAccountClick(Sender: TObject);
 var
+  {$IFNDEF EmbeddedServer}
   MODELServerSOAPFunctionality: ITMODELServerSOAPFunctionality;
+  {$ENDIF}
   UserID: integer;
   SC: TCursor;
 begin
+{$IFNDEF EmbeddedServer}
 MODELServerSOAPFunctionality:=GetITMODELServerSOAPFunctionality(edServerURL.Text);
 UserID:=MODELServerSOAPFunctionality.GetUserID(edUserName.Text,edUserPassword.Text,0,edUserName.Text,edUserPassword.Text);
 //.
@@ -783,6 +794,9 @@ ShowModal();
 finally
 Destroy();
 end;
+{$ELSE}
+Raise Exception.Create('operation unavailable in embedded server mode'); //. =>
+{$ENDIF}
 end;
 
 procedure TfmLog.sbServerHistoryClick(Sender: TObject);

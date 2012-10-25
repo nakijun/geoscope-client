@@ -19,16 +19,16 @@ object fmCreatingObjects: TfmCreatingObjects
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 444
-    Height = 280
+    Width = 436
+    Height = 269
     Align = alClient
     Style = bsRaised
   end
   object ListObjects: TListView
     Left = 0
     Top = 0
-    Width = 444
-    Height = 280
+    Width = 436
+    Height = 269
     Align = alClient
     Color = clBtnFace
     Columns = <

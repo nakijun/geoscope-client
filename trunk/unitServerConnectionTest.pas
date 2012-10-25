@@ -61,7 +61,12 @@ type
 
 implementation
 Uses
-  ActiveX, FunctionalitySOAPInterface;
+  ActiveX, 
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface;
+  {$ELSE}
+  SpaceInterfacesImport;
+  {$ENDIF}
 
 {$R *.dfm}
 
@@ -113,8 +118,10 @@ end;
 end;
 
 procedure TServerConnectionTesting.Execute;
+{$IFNDEF EmbeddedServer}
 var
   SpaceManager: ISpaceManager;
+{$ENDIF}
 
   procedure TestIt;
   var
@@ -123,7 +130,11 @@ var
   begin
   try
   LT:=Now;
-  SpaceManager.SpaceSize;
+  {$IFNDEF EmbeddedServer}
+  SpaceManager.SpaceSize();
+  {$ELSE}
+  SpaceManager_SpaceSize();
+  {$ENDIF}
   RequestTime:=Round((Now-LT)*24*3600*1000);
   fmTest.LogString:='request time - '+IntToStr(RequestTime)+' ms.';
   except
@@ -148,17 +159,19 @@ var
 begin
 CoInitializeEx(nil, COINIT_MULTITHREADED);
 try
+{$IFNDEF EmbeddedServer}
 SpaceManager:=GetISpaceManager(fmTest.ServerURL);
+{$ENDIF}
 repeat
-  if flActive
+  if (flActive)
    then begin
-    TestIt;
+    TestIt();
     Synchronize(fmTest.DrawTest);
     end;
   Sleep(TestInterval);
-until Terminated;
+until (Terminated);
 finally
-CoUnInitialize;
+CoUnInitialize();
 end;
 end;
 

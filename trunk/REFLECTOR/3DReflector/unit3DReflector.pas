@@ -5,7 +5,11 @@ interface
 
 uses
   UnitUpdateableObjects,
-  FunctionalitySOAPInterface,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   Windows, SyncObjs,ActiveX, Messages, SysUtils, Classes, Graphics, unitOpenGL3DSpace,
   OpenGLEx, Geometry, Types3DS, File3DS, Controls, Forms, Dialogs, ExtDlgs,
   ExtCtrls, StdCtrls, Buttons, Mask, DBCtrls, Db, DBTables, ComCtrls,
@@ -328,7 +332,9 @@ type
   TVisibleObjectsProvider = class (TThread)
   private
     Space: TProxySpace;
+    {$IFNDEF EmbeddedServer}
     RemoteManager: ISpaceRemoteManager;
+    {$ENDIF}
 
     procedure Execute; override;
   public
@@ -1541,18 +1547,22 @@ finally
 FileStream.Destroy;
 end;
 //. read user-defined config
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-if Get_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   ReadFromStream(MemoryStream);
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;
+
 procedure TReflectorConfiguration.Save;
 var
   FileStream: TFileStream;
@@ -1600,10 +1610,12 @@ end;
 MemoryStream:=TMemoryStream.Create;
 try
 WriteIntoStream(MemoryStream);
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_Config(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ENDIF}
 finally
 MemoryStream.Destroy;
 end;
@@ -2320,7 +2332,11 @@ Cameras.ActiveCamera.Move(0,0,20);
 Configuration.Validate;
 
 //. naming
+{$IFNDEF EmbeddedServer}
 Caption:=GetISpaceUserReflector(Space.SOAPServerURL).getName(Space.UserName,Space.UserPassword,id);
+{$ELSE}
+Caption:=SpaceUserReflector_getName(Space.UserName,Space.UserPassword,id);
+{$ENDIF}
 //.
 end;
 

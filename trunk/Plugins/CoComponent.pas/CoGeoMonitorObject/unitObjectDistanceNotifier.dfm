@@ -20,8 +20,8 @@ object fmObjectDistanceNotifier: TfmObjectDistanceNotifier
   object lvNotifierItems: TListView
     Left = 0
     Top = 0
-    Width = 530
-    Height = 480
+    Width = 522
+    Height = 469
     Align = alClient
     Columns = <
       item
@@ -59,8 +59,8 @@ object fmObjectDistanceNotifier: TfmObjectDistanceNotifier
   end
   object Panel1: TPanel
     Left = 0
-    Top = 480
-    Width = 530
+    Top = 469
+    Width = 522
     Height = 72
     Align = alBottom
     TabOrder = 1

@@ -198,7 +198,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idT
   try
   SL:=TStringList.Create;
   try
-  GetValue(SL);
+  GetValue1(SL);
   Result:=SL.Text;
   finally
   SL.Destroy;
@@ -222,7 +222,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idT
   try
   if (Value = '') then Value:=' ';
   SL.Text:=Value;
-  SetValue(SL);
+  SetValue1(SL);
   finally
   SL.Destroy;
   end;

@@ -18,11 +18,21 @@ Uses
   ShellAPI,ComObj,StdVCL,Graphics,DB,DBTables, ActiveX, WinSock, MSXML, SOAPHTTPTrans,
   ZLib, AbUtils, AbArcTyp, AbZipTyp, AbZipPrc, AbUnzPrc,
   DBClient, Variants, Registry, DateUtils, GlobalSpaceDefines, Extctrls, Midas, unitIDsCach,
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   unitConfiguration, unitLog,
   unitProxySpaceControlPanel;
 
 const
+  {$IFDEF EmbeddedServer}
+  //. for FunctionalServer folder:      SpaceEmbeddedServerExecutive = '..\..\..\SpaceEmbeddedServer.dll';
+  //. for SOAPClient folder:            SpaceEmbeddedServerExecutive = '..\SpaceEmbeddedServer.dll';
+  SpaceEmbeddedServerExecutive = '..\..\..\SpaceEmbeddedServer.dll';
+  {$ENDIF}
+  //.
   Localization = 'EN';
   //.
   PathLib = 'Lib';
@@ -239,10 +249,12 @@ Type
     SOAPServerURL: WideString;
     SOAPServerAddress: string;
     flActionsGroupCall: boolean;
+    {$IFNDEF EmbeddedServer}
     GlobalSpaceManager: ISpaceManager;
     GlobalSpaceManagerLock: TCriticalSection;
     GlobalSpaceRemoteManager: ISpaceRemoteManager;
     GlobalSpaceRemoteManagerLock: TCriticalSection;
+    {$ENDIF}
     LocalStorage: TLinearMemory;
     ptrRootObj: TPtr;
     ObjectsContextRegistry: TSpaceObjectsContextRegistry;
@@ -741,8 +753,12 @@ ReflectingObjPortion:=25;
 UpdateInterval:=30;
 //. read user-defined config
 if (NOT Space.flOffline)
- then with GetISpaceUserProxySpace(Space.SOAPServerURL) do
-  if Get_Config(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA)
+ then 
+  {$IFNDEF EmbeddedServer}
+  if (GetISpaceUserProxySpace(Space.SOAPServerURL).Get_Config(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA))
+  {$ELSE}
+  if (SpaceUserProxySpace_Get_Config(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA))
+  {$ENDIF}
    then begin
     MemoryStream:=TMemoryStream.Create;
     try
@@ -783,9 +799,13 @@ MemoryStream:=TMemoryStream.Create;
 try
 WriteIntoStream(MemoryStream);
 if (NOT Space.flOffline)
- then with GetISpaceUserProxySpace(Space.SOAPServerURL) do begin
+ then begin
   ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-  Set_Config(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+  {$IFNDEF EmbeddedServer}
+  GetISpaceUserProxySpace(Space.SOAPServerURL).Set_Config(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+  {$ELSE}
+  SpaceUserProxySpace_Set_Config(Space.UserName,Space.UserPassword,Space.idUserProxySpace,BA);
+  {$ENDIF}
   end;
 finally
 MemoryStream.Destroy;
@@ -1680,6 +1700,14 @@ Inherited;
 end;
 
 
+{$IFDEF EmbeddedServer}
+const
+  EmbeddedServerDLL = SpaceEmbeddedServerExecutive;
+  
+procedure SpaceEmbeddedServer_Initialize(const ApplicationHandle: THandle); stdcall; external EmbeddedServerDLL;
+procedure SpaceEmbeddedServer_Finalize(); stdcall; external EmbeddedServerDLL;
+{$ENDIF}
+
 
 {TProxySpace}
 Constructor TProxySpace.Create(const pSOAPServerURL: string; const pUserName,pUserPassword: string; const UserProxySpaceIndex: integer);
@@ -1828,13 +1856,21 @@ var
     I: integer;
   begin
   if (NOT flOffline)
-   then with GetISpaceUserReflectors(SOAPServerURL) do begin
-    BA:=GetUserReflectors(UserName,UserPassword, UserID);
-    UserReflectors:=TList.Create;
+   then begin
+    {$IFNDEF EmbeddedServer}
+    BA:=GetISpaceUserReflectors(SOAPServerURL).GetUserReflectors(UserName,UserPassword, UserID);
+    {$ELSE}
+    SpaceUserReflectors_GetUserReflectors(UserName,UserPassword, UserID,{out} BA);
+    {$ENDIF}
+    UserReflectors:=TList.Create();
     try
     ByteArray_PrepareList(BA, UserReflectors);
-    for I:=UserReflectors.Count-1 downto 0 do with GetISpaceUserReflector(SOAPServerURL) do begin
-      if IsEnabled(UserName,UserPassword, Integer(UserReflectors[I]))
+    for I:=UserReflectors.Count-1 downto 0 do begin
+      {$IFNDEF EmbeddedServer}
+      if (GetISpaceUserReflector(SOAPServerURL).IsEnabled(UserName,UserPassword, Integer(UserReflectors[I])))
+      {$ELSE}
+      if (SpaceUserReflector_IsEnabled(UserName,UserPassword, Integer(UserReflectors[I])))
+      {$ENDIF}
        then
         try
         TReflectorsList(ReflectorsList).CreateReflectorByID(Integer(UserReflectors[I]));
@@ -1843,7 +1879,7 @@ var
           end;
       end;
     finally
-    UserReflectors.Destroy;
+    UserReflectors.Destroy();
     end;
     end
    else TReflectorsList(ReflectorsList).Add(TReflector.Create(Self,0)); 
@@ -1957,6 +1993,10 @@ Log.OperationStarting('START ...');
 try
 Log.OperationProgress(0);
 //.
+{$IFDEF EmbeddedServer}
+Log.Log_Write('initializing space embedded server ... ');
+SpaceEmbeddedServer_Initialize(Application.Handle);
+{$ENDIF}
 SOAPServerURL:=Log.edServerURL.Text;
 SOAPServerAddress:=SOAPServerURL;
 SetLength(SOAPServerAddress,Pos(ANSIUpperCase('SpaceSOAPServer.dll'),ANSIUpperCase(SOAPServerAddress))-2);
@@ -1980,18 +2020,24 @@ if (ProxySpaceServerType <> pssClient)
 //.
 Log.OperationProgress(10);
 if flDebugging then Log.Log_Write('getting interfaces');
+{$IFNDEF EmbeddedServer}
 GlobalSpaceManagerLock:=TCriticalSection.Create;
 GlobalSpaceManager:=GetISpaceManager(SOAPServerURL);
 if (GlobalSpaceManager = nil) then Raise Exception.Create('! no GlobalSpaceManager.'); //. =>
 GlobalSpaceRemoteManagerLock:=TCriticalSection.Create;
 GlobalSpaceRemoteManager:=GetISpaceRemoteManager(SOAPServerURL);
 if (GlobalSpaceRemoteManager = nil) then Raise Exception.Create('! no GlobalSpaceRemoteManager.'); //. =>
+{$ENDIF}
 Log.OperationProgress(30);
 //. getting server params
 if (NOT flOffline)
  then
   try
+  {$IFNDEF EmbeddedServer}
   GetISpaceReports(SOAPServerURL).AllHistory_GetParams2({out} Context_HistoryID,{out} Context_History_ItemLifeTime,{out} StayUpToDate__ContextV0_ComponentsMaxCount,{out} StayUpToDate__ContextV0_ReflectionsMaxCount,{out} StayUpToDate__ContextV0_VisualizationsMaxCount);
+  {$ELSE}
+  SpaceReports_AllHistory_GetParams2({out} Context_HistoryID,{out} Context_History_ItemLifeTime,{out} StayUpToDate__ContextV0_ComponentsMaxCount,{out} StayUpToDate__ContextV0_ReflectionsMaxCount,{out} StayUpToDate__ContextV0_VisualizationsMaxCount);
+  {$ENDIF}
   except
     flOffline:=true;
     end;
@@ -2006,7 +2052,11 @@ if (flOffline)
   end;
 //. getting space params
 if (NOT flOffline)
+ {$IFNDEF EmbeddedServer}
  then GlobalSpaceManager.GetSpaceParams({out} ID,SpacePackID,Size,SpaceLaysID)
+ {$ELSE}
+ then SpaceManager_GetSpaceParams({out} ID,SpacePackID,Size,SpaceLaysID)
+ {$ENDIF}
  else begin //. set offline mode values
   SpacePackID:=0; 
   Size:=0;
@@ -2015,18 +2065,22 @@ if (NOT flOffline)
 //. user data getting
 if flDebugging then Log.Log_Write('getting user proxyspace');
 if (NOT flOffline)
- then with GetISpaceUserProxySpaces(SOAPServerURL) do begin
-  BA:=GetUserProxySpaces(UserName,UserPassword,UserID);
-  UserProxySpaces:=TList.Create;
+ then begin
+  {$IFNDEF EmbeddedServer}
+  BA:=GetISpaceUserProxySpaces(SOAPServerURL).GetUserProxySpaces(UserName,UserPassword,UserID);
+  {$ELSE}
+  SpaceUserProxySpaces_GetUserProxySpaces(UserName,UserPassword,UserID,{out} BA);
+  {$ENDIF}
+  UserProxySpaces:=TList.Create();
   try
   ByteArray_PrepareList(BA, UserProxySpaces);
-  if UserProxySpaces.Count > 0
+  if (UserProxySpaces.Count > 0)
    then
-    if UserProxySpaces.Count = 1
+    if (UserProxySpaces.Count = 1)
      then
       idUserProxySpace:=Integer(UserProxySpaces[0])
      else
-      if (0 <= UserProxySpaceIndex) AND (UserProxySpaceIndex < UserProxySpaces.Count)
+      if ((0 <= UserProxySpaceIndex) AND (UserProxySpaceIndex < UserProxySpaces.Count))
        then
         idUserProxySpace:=Integer(UserProxySpaces[UserProxySpaceIndex])
        else with TfmUserProxySpaces.Create(Self, UserID) do
@@ -2036,7 +2090,7 @@ if (NOT flOffline)
         Destroy;
         end;
   finally
-  UserProxySpaces.Destroy;
+  UserProxySpaces.Destroy();
   end;
   end;
 //.
@@ -2089,10 +2143,10 @@ ContextItemsMaxCount:=ReadInteger('ProxySpace','CachedObjectsMaxCount',0);
 StayUpToDate_flNoComponentsContext:=(ReadInteger('ProxySpace','NoComponentsContextForUpdateFlag',0) = 1);
 flActionsGroupCall:=(ReadInteger('Other','UseActionsGroupCall',1) = 1);
 finally
-Destroy;
+Destroy();
 end;
 finally
-Destroy;
+Destroy();
 end;
 //. configuration creating
 Log.OperationProgress(40);
@@ -2109,13 +2163,13 @@ ptrRootObj:=0;
 //.
 ObjectsContextRegistry:=TSpaceObjectsContextRegistry.Create(Self);
 //.
-Obj_UpdateLocal__List:=TThreadList.Create;
+Obj_UpdateLocal__List:=TThreadList.Create();
 //.
 StayUpToDate_Monitor:=TfmProxySpaceUpdatesMonitor.Create(Self);
 //.
 Log.OperationProgress(50);
 //.
-InitializeOpenGL;
+InitializeOpenGL();
 //. look for saved context
 with TProxySpaceSavedUserContext.Create(Self) do
 try
@@ -2184,11 +2238,11 @@ flNoContextSaving:=false;
 Log.OperationProgress(70);
 //. representations creating
 ReflectorsList:=TReflectorsList.Create(Self);
-PropsPanels:=TList.Create;
+PropsPanels:=TList.Create();
 //.
 Log.Log_Write('create user windows ...');
 try
-CreateUserReflectors;
+CreateUserReflectors();
 finally
 Log.Log_Write('starting ...');
 end;
@@ -2229,17 +2283,17 @@ if flRegistrationAllowed
 //.
 Log.OperationProgress(100);
 finally
-Log.OperationDone;
+Log.OperationDone();
 end;
 //.
-ProcessOnInitializationEndTasks;
+ProcessOnInitializationEndTasks();
 //. initializing updating
 Context_Updating:=TProxySpaceUpdating.Create(Self);
 //. create incoming messages getting thread
 UserIncomingMessages:=TProxySpaceUserIncomingMessages.Create(Self);
 //. assigning user chat unit and start
 UserIncomingMessages.OnUserChatMessages:=unitUserChat.DoOnUserChatMessages;
-UserIncomingMessages.Resume;
+UserIncomingMessages.Resume();
 //.
 ControlPanel:=TfmProxySpaceControlPanel.Create(Self);
 //.
@@ -2344,8 +2398,10 @@ if (State = psstCreating)
   //.
   LocalStorage.Free();
   //.
+  {$IFNDEF EmbeddedServer}
   GlobalSpaceRemoteManagerLock.Free();
   GlobalSpaceManagerLock.Free();
+  {$ENDIF}
   //.
   SpaceWindowUpdaters.Free();
   //.
@@ -2440,8 +2496,10 @@ Log.OperationProgress(20);
 if (flDebugging) then Log.Log_Write('LocalStorage.Free');
 LocalStorage.Free();
 //.
+{$IFNDEF EmbeddedServer}
 GlobalSpaceRemoteManagerLock.Free();
 GlobalSpaceManagerLock.Free();
+{$ENDIF}
 //.
 SpaceWindowUpdaters.Free();
 //.
@@ -2487,6 +2545,11 @@ if (flDebugging) then Log.Log_Write('TypesFunctionality.Finalize');
 TypesFunctionality.Finalize();
 //.
 ProxySpace:=nil;
+//.
+{$IFDEF EmbeddedServer}
+Log.Log_Write('finalizing space embedded server ... ');
+SpaceEmbeddedServer_Initialize(Application.Handle);
+{$ENDIF}
 //.
 Log.OperationProgress(0);
 //.
@@ -2534,8 +2597,8 @@ procedure TProxySpace.ClearTempData();
   end;
 
 begin
-EmptyFolder(PathDesigner);
-EmptyFolder(PathTempDATA)
+EmptyFolder(WorkLocale+PathDesigner);
+EmptyFolder(WorkLocale+PathTempDATA)
 end;
 
 procedure TProxySpace.setflAutomaticUpdateIsDisabled(Value: boolean);
@@ -2592,12 +2655,16 @@ var
   ptrObj: TPtr;
 begin
 SetLength(ObjPointers,0);
-GlobalSpaceManagerLock.Enter;
+{$IFNDEF EmbeddedServer}
+GlobalSpaceManagerLock.Enter();
 try
 Objects:=GlobalSpaceManager.ReadObjects(UserName,UserPassword, ObjPointers,0);
 finally
-GlobalSpaceManagerLock.Leave;
+GlobalSpaceManagerLock.Leave();
 end;
+{$ELSE}
+SpaceManager_ReadObjects(UserName,UserPassword, ObjPointers,0,{out} Objects);
+{$ENDIF}
 ptrObjectsBuffer:=@Objects[0];
 //. cashing types system
 ptrSrs:=ptrObjectsBuffer;
@@ -2690,12 +2757,16 @@ pssNormal,pssNormalDisconnected: begin
    else Result:=nilPtr;
   end;
 pssRemoted,pssRemotedBrief: begin
-  GlobalSpaceRemoteManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  GlobalSpaceRemoteManagerLock.Enter();
   try
   Result:=GlobalSpaceRemoteManager.Obj_Ptr(idTObj,idObj);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  Result:=SpaceRemoteManager_Obj_Ptr(idTObj,idObj);
+  {$ENDIF}
   end;
 end;
 end;
@@ -2941,12 +3012,16 @@ pssNormal,pssNormalDisconnected: begin
   if (Result = 0) then Raise Exception.Create('Obj_idLay: lay not found'); //. =>
   end;
 pssRemoted,pssRemotedBrief: begin
-  GlobalSpaceRemoteManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  GlobalSpaceRemoteManagerLock.Enter();
   try
-  GlobalSpaceRemoteManager.Obj_GetLayInfo(ptrObj, Result,Lay,SubLay);
+  GlobalSpaceRemoteManager.Obj_GetLayInfo(ptrObj, {out} Result,Lay,SubLay);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  SpaceRemoteManager_Obj_GetLayInfo(ptrObj, {out} Result,Lay,SubLay);
+  {$ENDIF}
   if (Result = 0) then Raise Exception.Create('Obj_idLay: lay not found'); //. =>
   end;
 end;
@@ -2986,12 +3061,16 @@ pssNormal,pssNormalDisconnected: begin
   TreateObj(ptrRootObj, 0);
   end;
 pssRemoted,pssRemotedBrief: begin
-  GlobalSpaceRemoteManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  GlobalSpaceRemoteManagerLock.Enter();
   try
-  GlobalSpaceRemoteManager.Obj_GetLevel(Level,ptrSelf);
+  GlobalSpaceRemoteManager.Obj_GetLevel({out} Level,ptrSelf);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  SpaceRemoteManager_Obj_GetLevel({out} Level,ptrSelf);
+  {$ENDIF}
   end;
 end;
 end;
@@ -3032,7 +3111,6 @@ procedure TProxySpace.Obj_GetLayInfo(const ptrObj: TPtr; var Lay: integer; var S
 
 var
   idLay: integer;
-  GSM: ISpaceRemoteManager;
   FStream: pointer;
 begin
 case Status of
@@ -3042,12 +3120,16 @@ pssNormal,pssNormalDisconnected: begin
   TreateObj(ptrRootObj, 0,0);
   end;
 pssRemoted,pssRemotedBrief: begin
-  GlobalSpaceRemoteManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  GlobalSpaceRemoteManagerLock.Enter();
   try
-  GlobalSpaceRemoteManager.Obj_GetLayInfo(ptrObj, idLay,Lay,SubLay);
+  GlobalSpaceRemoteManager.Obj_GetLayInfo(ptrObj,{out} idLay,Lay,SubLay);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  SpaceRemoteManager_Obj_GetLayInfo(ptrObj,{out} idLay,Lay,SubLay);
+  {$ENDIF}
   if (idLay = 0) then Raise Exception.Create('Obj_idLay: lay not found'); //. =>
   end;
 end;
@@ -3097,12 +3179,16 @@ pssNormal,pssNormalDisconnected: begin
   Result:=Res;
   end;
 pssRemoted,pssRemotedBrief: begin
-  GlobalSpaceRemoteManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  GlobalSpaceRemoteManagerLock.Enter();
   try
   Result:=GlobalSpaceRemoteManager.Obj_Owner(ptrSelf);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  Result:=SpaceRemoteManager_Obj_Owner(ptrSelf);
+  {$ENDIF}
   end;
 end;
 end;
@@ -3516,12 +3602,16 @@ end;
 procedure TProxySpace.Obj_GetRoot(const idTObj,idObj: integer; out idTROOT,idROOT: integer);
 begin
 if (Status <> pssRemoted) then Raise Exception.Create('function not supproted in this status'); //. =>
-GlobalSpaceRemoteManagerLock.Enter;
+{$IFNDEF EmbeddedServer}
+GlobalSpaceRemoteManagerLock.Enter();
 try
-GlobalSpaceRemoteManager.Obj_GetROOT(idTObj,idObj, idTROOT,idROOT);
+GlobalSpaceRemoteManager.Obj_GetROOT(idTObj,idObj,{out} idTROOT,idROOT);
 finally
-GlobalSpaceRemoteManagerLock.Leave;
+GlobalSpaceRemoteManagerLock.Leave();
 end;
+{$ELSE}
+SpaceRemoteManager_Obj_GetROOT(idTObj,idObj,{out} idTROOT,idROOT);
+{$ENDIF}
 end;
 
 function TProxySpace.Obj_GetRootPtr(ptrObj: TPtr): TPtr;
@@ -3984,12 +4074,16 @@ var
        then
         try
         SetLength(ObjPointers,ValidPointersCount*SizeOf(TPtr));
-        GlobalSpaceManagerLock.Enter;
+        {$IFNDEF EmbeddedServer}
+        GlobalSpaceManagerLock.Enter();
         try
         Objects:=GlobalSpaceManager.ReadObjects(UserName,UserPassword, ObjPointers,ValidPointersCount);
         finally
-        GlobalSpaceManagerLock.Leave;
+        GlobalSpaceManagerLock.Leave();
         end;
+        {$ELSE}
+        SpaceManager_ReadObjects(UserName,UserPassword, ObjPointers,ValidPointersCount,{out} Objects);
+        {$ENDIF}
         ptrObjectsBuffer:=@Objects[0];
         //. cashing types system for incoming objects
         ptrSrs:=ptrObjectsBuffer;
@@ -4125,13 +4219,17 @@ var
   //. coordinates transforming
   S_Xmin:=S_XMin*cfTransMeter; S_Ymin:=S_YMin*cfTransMeter; S_Xmax:=S_XMax*cfTransMeter; S_Ymax:=S_YMax*cfTransMeter;
   //.
+  {$IFNDEF EmbeddedServer}
   if (GlobalSpaceRemoteManager = nil) then Raise Exception.Create('GlobalSpaceRemoteManager is nil'); //. =>
-  GlobalSpaceRemoteManagerLock.Enter;
+  GlobalSpaceRemoteManagerLock.Enter();
   try
   BA:=GlobalSpaceRemoteManager.GetVisibleObjects(S_Xmin,S_Ymin,S_Xmax,S_Ymin,S_Xmax,S_Ymax,S_Xmin,S_Ymax, 1,0);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  SpaceRemoteManager_GetVisibleObjects(S_Xmin,S_Ymin,S_Xmax,S_Ymin,S_Xmax,S_Ymax,S_Xmin,S_Ymax, 1,0,{out} BA);
+  {$ENDIF}
   //. moving objects pointers into the new lays structure
   DataPtr:=@BA[0];
   asm
@@ -4305,13 +4403,17 @@ var
   //. coordinates transforming
   S_Xmin:=S_XMin*cfTransMeter; S_Ymin:=S_YMin*cfTransMeter; S_Xmax:=S_XMax*cfTransMeter; S_Ymax:=S_YMax*cfTransMeter;
   //.
+  {$IFNDEF EmbeddedServer}
   if (GlobalSpaceRemoteManager = nil) then Raise Exception.Create('GlobalSpaceRemoteManager is nil'); //. =>
-  GlobalSpaceRemoteManagerLock.Enter;
+  GlobalSpaceRemoteManagerLock.Enter();
   try
   BA:=GlobalSpaceRemoteManager.GetVisibleObjects(S_Xmin,S_Ymin,S_Xmax,S_Ymin,S_Xmax,S_Ymax,S_Xmin,S_Ymax, 1.0,0);
   finally
-  GlobalSpaceRemoteManagerLock.Leave;
+  GlobalSpaceRemoteManagerLock.Leave();
   end;
+  {$ELSE}
+  SpaceRemoteManager_GetVisibleObjects(S_Xmin,S_Ymin,S_Xmax,S_Ymin,S_Xmax,S_Ymax,S_Xmin,S_Ymax, 1.0,0,{out} BA);
+  {$ENDIF}
   //. moving objects pointers into the new lays structure
   DataPtr:=@BA[0];
   asm
@@ -4643,7 +4745,11 @@ procedure TProxySpace.Obj_CheckCachedState(const ptrObj: TPtr; const flRecursive
       ptrDetail: TPtr;
       ptrptrOwnerObj: TPtr;
     begin
+    {$IFNDEF EmbeddedServer}
     Structures:=GetISpaceManager(SOAPServerURL).ReadObjectsStructures(UserName,UserPassword, ObjPointers,PointersCount);
+    {$ELSE}
+    SpaceManager_ReadObjectsStructures(UserName,UserPassword, ObjPointers,PointersCount,{out} Structures);
+    {$ENDIF}
     ObjPointersPtr:=@ObjPointers[0];
     StructuresPtr:=@Structures[0];
     Lock.Enter;
@@ -4763,7 +4869,11 @@ if (ObjectsPointersList <> nil)
     end;
     end;
   //. remote call using pointers array
+  {$IFNDEF EmbeddedServer}
   Objects:=GetISpaceManager(SOAPServerURL).ReadObjects(UserName,UserPassword, ObjPointers,ObjectsPointersList.Count);
+  {$ELSE}
+  SpaceManager_ReadObjects(UserName,UserPassword, ObjPointers,ObjectsPointersList.Count,{out} Objects);
+  {$ENDIF}
   ptrObjectsBuffer:=@Objects[0];
   //. cashing types system for incoming objects
   ptrSrs:=ptrObjectsBuffer;
@@ -4980,7 +5090,11 @@ if (ObjectsPointersList <> nil)
     //.
     end;
   //. remote call using pointers array
+  {$IFNDEF EmbeddedServer}
   Objects:=GetISpaceManager(SOAPServerURL).ReadObjects(UserName,UserPassword, ObjPointers,ObjectsPointersList.Count);
+  {$ELSE}
+  SpaceManager_ReadObjects(UserName,UserPassword, ObjPointers,ObjectsPointersList.Count,{out} Objects);
+  {$ENDIF}
   ptrObjectsBuffer:=@Objects[0];
   //. write objects
   ptrSrs:=ptrObjectsBuffer;
@@ -5105,7 +5219,11 @@ if (ObjectsPointersList <> nil)
     end;
     end;
   //. remote call using pointers array
+  {$IFNDEF EmbeddedServer}
   Objects:=GetISpaceManager(SOAPServerURL).ReadObjects(UserName,UserPassword, ObjPointers,ObjectsPointersList.Count);
+  {$ELSE}
+  SpaceManager_ReadObjects(UserName,UserPassword, ObjPointers,ObjectsPointersList.Count,{out} Objects);
+  {$ENDIF}
   ptrObjectsBuffer:=@Objects[0];
   //. write objects
   ptrSrs:=ptrObjectsBuffer;
@@ -5467,7 +5585,11 @@ Lock.Leave;
 end;
 //. set last update time to server value
 Context_LastUpdatesTimeStamp:=0.0;
+{$IFNDEF EmbeddedServer}
 with GetISpaceReports(SOAPServerURL) do AllHistory_GetHistorySinceUsingContext1(UserName,UserPassword,nil, Double(Context_LastUpdatesTimeStamp), SpaceHistory,ComponentsHistory,ComponentsUpdateHistory,VisualizationsHistory);
+{$ELSE}
+SpaceReports_AllHistory_GetHistorySinceUsingContext1(UserName,UserPassword,nil, Double(Context_LastUpdatesTimeStamp), SpaceHistory,ComponentsHistory,ComponentsUpdateHistory,VisualizationsHistory);
+{$ENDIF}
 finally
 Context_UpdateLock.Leave;
 end;
@@ -5939,7 +6061,11 @@ function TProxySpace.LoadSpaceContext(const ContextFile: string; out flSpacePack
       TID(Pointer(Integer(@IDs[0])+I*SizeOf(ID))^):=ID;
       end;
     //.
+    {$IFNDEF EmbeddedServer}
     with GetISpaceManager(SOAPServerURL) do ReadObjectsByIDs(UserName,UserPassword, IDs,PointersCount, NewObjPointers);
+    {$ELSE}
+    SpaceManager_ReadObjectsByIDs(UserName,UserPassword, IDs,PointersCount, NewObjPointers);
+    {$ENDIF}
     //.
     ptrSrs:=@NewObjPointers[0];
     for I:=0 to PointersCount-1 do begin
@@ -6127,7 +6253,11 @@ function TProxySpace.LoadSpaceContext(const ContextFile: string; out flSpacePack
       TID(Pointer(Integer(@IDs[0])+I*SizeOf(ID))^):=ID;
       end;
     //.
+    {$IFNDEF EmbeddedServer}
     with GetISpaceManager(SOAPServerURL) do ReadObjectsByIDs(UserName,UserPassword, IDs,PointersCount, NewObjPointers);
+    {$ELSE}
+    SpaceManager_ReadObjectsByIDs(UserName,UserPassword, IDs,PointersCount, NewObjPointers);
+    {$ENDIF}
     //.
     ptrSrs:=@NewObjPointers[0];
     for I:=0 to PointersCount-1 do begin
@@ -7385,7 +7515,11 @@ end;
 //.
 _LastUpdatesTimeStamp:=Context_LastUpdatesTimeStamp;
 try
+{$IFNDEF EmbeddedServer}
 with GetISpaceReports(SOAPServerURL) do AllHistory_GetHistorySinceUsingContext1(UserName,UserPassword,Context, Double(Context_LastUpdatesTimeStamp), SpaceHistory,ComponentsHistory,ComponentsUpdateHistory,VisualizationsHistory);
+{$ELSE}
+SpaceReports_AllHistory_GetHistorySinceUsingContext1(UserName,UserPassword,Context, Double(Context_LastUpdatesTimeStamp), SpaceHistory,ComponentsHistory,ComponentsUpdateHistory,VisualizationsHistory);
+{$ENDIF}
 except
   on E: ERemotableException do begin
     if (Pos(AllHistory_GetHistorySinceUsingContext1_HistoryIsTooLongErrorStr,E.FaultCode) > 0)
@@ -7781,7 +7915,11 @@ try
 SendMessage(ControlPanel.Handle, WM_TRAYICONUPDATING, 0,0);
 try
 //. fetching history
+{$IFNDEF EmbeddedServer}
 with GetISpaceReports(SOAPServerURL) do AllHistory_GetHistorySince1(UserName,UserPassword, Double(Context_LastUpdatesTimeStamp), SpaceHistory,ComponentsHistory,VisualizationsHistory);
+{$ELSE}
+SpaceReports_AllHistory_GetHistorySince1(UserName,UserPassword, Double(Context_LastUpdatesTimeStamp), SpaceHistory,ComponentsHistory,VisualizationsHistory);
+{$ENDIF}
 //. update space
 if (Length(SpaceHistory) > 0)
  then begin
@@ -7918,7 +8056,7 @@ Plugins:=nil;
 PluginsDoOnComponentOperationEntries:=nil;
 PluginsDoOnVisualizationOperationEntries:=nil;
 try
-if FindFirst(PluginsFolder+'\*.dll', faAnyFile, sr) = 0
+if (FindFirst(WorkLocale+PluginsFolder+'\*.dll', faAnyFile, sr) = 0)
  then begin
   Log.OperationStarting('Loading User-Plugins ...');
   try
@@ -7927,9 +8065,9 @@ if FindFirst(PluginsFolder+'\*.dll', faAnyFile, sr) = 0
   PluginsDoOnVisualizationOperationEntries:=TThreadList.Create;
   repeat
     try
-    PluginName:=PluginsFolder+'\'+sr.Name;
+    PluginName:=WorkLocale+PluginsFolder+'\'+sr.Name;
     PluginHandle:=LoadLibrary(PChar(PluginName));
-    if PluginHandle <> 0
+    if (PluginHandle <> 0)
      then begin
       SetApplication:=GetProcAddress(PluginHandle, 'SetApplication');
       if (SetApplication <> nil) then TSetApplication(SetApplication)(Application.Handle);
@@ -7945,14 +8083,14 @@ if FindFirst(PluginsFolder+'\*.dll', faAnyFile, sr) = 0
     except
       On E: Exception do EventLog.WriteMajorEvent('PluginInitialization','Error of loading plugin: '+PluginName,E.Message);
       end;
-  until FindNext(sr) <> 0;
+  until (FindNext(sr) <> 0);
   SysUtils.FindClose(sr);
   finally
-  Log.OperationDone;
+  Log.OperationDone();
   end;
   end;
 except
-  Plugins.Destroy;
+  Plugins.Destroy();
   Raise; //. =>
   end;
 end;
@@ -7966,9 +8104,9 @@ var
   SetApplication: pointer;
   Finalize: pointer;
 begin
-if Plugins <> nil
+if (Plugins <> nil)
  then begin
-  with Plugins.LockList do
+  with Plugins.LockList() do
   try
   for I:=0 to Count-1 do begin
     PluginHandle:=THandle(List[I]);
@@ -7979,12 +8117,12 @@ if Plugins <> nil
     FreeLibrary(PluginHandle);
     end;
   finally
-  Plugins.UnLockList;
+  Plugins.UnLockList();
   end;
-  Plugins.Destroy;
+  Plugins.Destroy();
   end;
-if (PluginsDoOnComponentOperationEntries <> nil) then PluginsDoOnComponentOperationEntries.Destroy;
-if (PluginsDoOnVisualizationOperationEntries <> nil) then PluginsDoOnVisualizationOperationEntries.Destroy;
+if (PluginsDoOnComponentOperationEntries <> nil) then PluginsDoOnComponentOperationEntries.Destroy();
+if (PluginsDoOnVisualizationOperationEntries <> nil) then PluginsDoOnVisualizationOperationEntries.Destroy();
 end;
 
 procedure TProxySpace.Plugins_Add(const PluginFileName: string);
@@ -8006,15 +8144,15 @@ var
   SetApplication: pointer;
   UpdateProc: pointer;
 begin
-if ProxySpace.Plugins <> nil
- then with ProxySpace.Plugins.LockList do
+if (ProxySpace.Plugins <> nil)
+ then with ProxySpace.Plugins.LockList() do
   try
   for I:=0 to Count-1 do begin
     PH:=THandle(List[I]);
     if (Plugin_FileName(PH) = PluginFileName) then Raise Exception.Create('such plugin already loaded'); //. =>
     end;
   //.
-  PN:=PluginsFolder+'\'+PluginFileName;
+  PN:=WorkLocale+PluginsFolder+'\'+PluginFileName;
   PH:=LoadLibrary(PChar(PN));
   if (PH <> 0)
    then begin
@@ -8032,7 +8170,7 @@ if ProxySpace.Plugins <> nil
    else
     Raise Exception.Create('error loading plugin - '+PN); //. =>
   finally
-  ProxySpace.Plugins.UnLockList;
+  ProxySpace.Plugins.UnLockList();
   end
  else
   Raise Exception.Create('plugins list not found'); //. =>
@@ -9033,8 +9171,10 @@ var
     RW: TReflectionWindowStrucEx;
     RW_Scale: Extended;
     RW_VisibleFactor: double;
+    {$IFNDEF EmbeddedServer}
     GlobalSpaceManager: ISpaceManager;
     GlobalSpaceRemoteManager: ISpaceRemoteManager;
+    {$ENDIF}
     InvisibleLayNumbersArray: TByteArray;
     I,J: integer;
     BA: TByteArray;
@@ -9120,7 +9260,11 @@ var
           ptrDetail: TPtr;
           ptrptrOwnerObj: TPtr;
         begin
+        {$IFNDEF EmbeddedServer}
         Structures:=GlobalSpaceManager.ReadObjectsStructures(pUserName,pUserPassword, ObjPointers,PointersCount);
+        {$ELSE}
+        SpaceManager_ReadObjectsStructures(pUserName,pUserPassword, ObjPointers,PointersCount,{out} Structures);
+        {$ENDIF}
         ObjPointersPtr:=@ObjPointers[0];
         StructuresPtr:=@Structures[0];
         Lock.Enter;
@@ -9389,7 +9533,11 @@ var
        then 
         try
         SetLength(ObjPointers,ValidPointersCount*SizeOf(TPtr));
+        {$IFNDEF EmbeddedServer}
         Objects:=GlobalSpaceManager.ReadObjects(pUserName,pUserPassword, ObjPointers,ValidPointersCount);
+        {$ELSE}
+        SpaceManager_ReadObjects(pUserName,pUserPassword, ObjPointers,ValidPointersCount,{out} Objects);
+        {$ENDIF}
         ptrObjectsBuffer:=@Objects[0];
         //. cashing types system for incoming objects
         ptrSrs:=ptrObjectsBuffer;
@@ -9528,13 +9676,19 @@ var
   end;
   end;
   //.
+  {$IFNDEF EmbeddedServer}
   GlobalSpaceManager:=GetISpaceManager(SOAPServerURL);
   GlobalSpaceRemoteManager:=GetISpaceRemoteManager(SOAPServerURL);
+  {$ENDIF}
   //. prepare invisible lays
   InvisibleLayNumbersArray:=HidedLaysArray;
   SystemTLay2DVisualization.AddInvisibleLaysToNumbersArray(RW_Scale,{ref} InvisibleLayNumbersArray);
   //. getting a objects visible in reflector window ...
+  {$IFNDEF EmbeddedServer}
   with RW do BA:=GlobalSpaceRemoteManager.GetVisibleObjects3(pUserName,pUserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale);
+  {$ELSE}
+  with RW do SpaceRemoteManager_GetVisibleObjects3(pUserName,pUserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale,{out} BA);
+  {$ENDIF}
   //.
   if (Length(BA) = 0) then Exit; //. ->
   //.
@@ -10013,7 +10167,12 @@ var
   begin
   Bitmap.Canvas.Lock();
   try
+  Bitmap.PixelFormat:=pf24Bit;
+  Bitmap.Transparent:=true;
+  Bitmap.TransparentColor:=clEmptySpace;
+  Bitmap.TransparentMode:=tmFixed;
   Bitmap.Canvas.Brush.Color:=clEmptySpace;
+  Bitmap.Canvas.Pen.Color:=Bitmap.Canvas.Brush.Color;
   Bitmap.Canvas.Rectangle(-1,-1,Bitmap.Width+1,Bitmap.Height+1);
   finally
   Bitmap.Canvas.UnLock();
@@ -10508,8 +10667,10 @@ var
     RW: TReflectionWindowStrucEx;
     RW_Scale: Extended;
     RW_VisibleFactor: double;
+    {$IFNDEF EmbeddedServer}
     GlobalSpaceManager: ISpaceManager;
     GlobalSpaceRemoteManager: ISpaceRemoteManager;
+    {$ENDIF}
     InvisibleLayNumbersArray: TByteArray;
     I,J: integer;
     BA: TByteArray;
@@ -10595,7 +10756,11 @@ var
           ptrDetail: TPtr;
           ptrptrOwnerObj: TPtr;
         begin
+        {$IFNDEF EmbeddedServer}
         Structures:=GlobalSpaceManager.ReadObjectsStructures(pUserName,pUserPassword, ObjPointers,PointersCount);
+        {$ELSE}
+        SpaceManager_ReadObjectsStructures(pUserName,pUserPassword, ObjPointers,PointersCount,{out} Structures);
+        {$ENDIF}
         ObjPointersPtr:=@ObjPointers[0];
         StructuresPtr:=@Structures[0];
         Lock.Enter;
@@ -10864,7 +11029,11 @@ var
        then
         try
         SetLength(ObjPointers,ValidPointersCount*SizeOf(TPtr));
+        {$IFNDEF EmbeddedServer}
         Objects:=GlobalSpaceManager.ReadObjects(pUserName,pUserPassword, ObjPointers,ValidPointersCount);
+        {$ELSE}
+        SpaceManager_ReadObjects(pUserName,pUserPassword, ObjPointers,ValidPointersCount,{out} Objects);
+        {$ENDIF}
         ptrObjectsBuffer:=@Objects[0];
         //. cashing types system for incoming objects
         ptrSrs:=ptrObjectsBuffer;
@@ -11002,13 +11171,19 @@ var
   end;
   end;
   //.
+  {$IFNDEF EmbeddedServer}
   GlobalSpaceManager:=GetISpaceManager(SOAPServerURL);
   GlobalSpaceRemoteManager:=GetISpaceRemoteManager(SOAPServerURL);
+  {$ENDIF}
   //. prepare invisible lays
   InvisibleLayNumbersArray:=HidedLaysArray;
   SystemTLay2DVisualization.AddInvisibleLaysToNumbersArray(RW_Scale,{ref} InvisibleLayNumbersArray);
   //. getting a objects visible in reflector window ...
+  {$IFNDEF EmbeddedServer}
   with RW do BA:=GlobalSpaceRemoteManager.GetVisibleObjects3(pUserName,pUserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale);
+  {$ELSE}
+  with RW do SpaceRemoteManager_GetVisibleObjects3(pUserName,pUserPassword, X0,Y0,X1,Y1,X2,Y2,X3,Y3, InvisibleLayNumbersArray, RW_VisibleFactor,0.3/RW_Scale,{out} BA);
+  {$ENDIF}
   //.
   if (Length(BA) = 0) then Exit; //. ->
   //.
@@ -11918,8 +12093,11 @@ end;
 
 function TReflectorsList.CreateReflectorByID(const pid: integer): TForm;
 begin
-with GetISpaceUserReflector(Space.SOAPServerURL) do
-case TUserReflectorType(ReflectorType(Space.UserName,Space.UserPassword,pid)) of
+{$IFNDEF EmbeddedServer}
+case TUserReflectorType(GetISpaceUserReflector(Space.SOAPServerURL).ReflectorType(Space.UserName,Space.UserPassword,pid)) of
+{$ELSE}
+case TUserReflectorType(SpaceUserReflector_ReflectorType(Space.UserName,Space.UserPassword,pid)) of
+{$ENDIF}
 urt2DReflector: Result:=TReflector.Create(Space,pid);
 urtGL3DReflector: Result:=TGL3DReflector.Create(Space,pid);
 else
@@ -12414,13 +12592,17 @@ while ptrNode <> nil do with TSpacePolygonNode(ptrNode^) do begin
   ptrNode:=ptrNext;
   end;
 //.
+{$IFNDEF EmbeddedServer}
 if (Space.GlobalSpaceRemoteManager = nil) then Raise Exception.Create('could not get SpaceRemoteManager'); //. =>
-Space.GlobalSpaceRemoteManagerLock.Enter;
+Space.GlobalSpaceRemoteManagerLock.Enter();
 try
 Result:=Space.GlobalSpaceRemoteManager.Polygon_HasPointInside(PN, PolygonLay,PolygonSubLay,ExceptObjPtr);
 finally
-Space.GlobalSpaceRemoteManagerLock.Leave;
+Space.GlobalSpaceRemoteManagerLock.Leave();
 end;
+{$ELSE}
+Result:=SpaceRemoteManager_Polygon_HasPointInside(PN, PolygonLay,PolygonSubLay,ExceptObjPtr);
+{$ENDIF}
 end;
 
 function TSpacePolygonTester.IsForbiddenPrivateArea: boolean;
@@ -12448,14 +12630,18 @@ while ptrNode <> nil do with TSpacePolygonNode(ptrNode^) do begin
   ptrNode:=ptrNext;
   end;
 //.
+{$IFNDEF EmbeddedServer}
 if (Space.GlobalSpaceRemoteManager = nil) then Raise Exception.Create('could not get SpaceRemoteManager'); //. =>
-Space.GlobalSpaceRemoteManagerLock.Enter;
+Space.GlobalSpaceRemoteManagerLock.Enter();
 try
-R:=Space.GlobalSpaceRemoteManager.Polygon_IsPrivateAreaVisible(PN, PolygonLay,PolygonSubLay,ExceptObjPtr,  PrivateAreas)
+R:=Space.GlobalSpaceRemoteManager.Polygon_IsPrivateAreaVisible(PN, PolygonLay,PolygonSubLay,ExceptObjPtr,  PrivateAreas);
 finally
-Space.GlobalSpaceRemoteManagerLock.Leave;
+Space.GlobalSpaceRemoteManagerLock.Leave();
 end;
-if R
+{$ELSE}
+R:=SpaceRemoteManager_Polygon_IsPrivateAreaVisible(PN, PolygonLay,PolygonSubLay,ExceptObjPtr,  PrivateAreas);
+{$ENDIF}
+if (R)
  then begin
   PrivateAreasDATAPtr:=@PrivateAreas[0];
   ptrDATA:=PrivateAreasDATAPtr;

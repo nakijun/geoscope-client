@@ -54,6 +54,9 @@ var
 
 implementation
 Uses
+  {$IFDEF EmbeddedServer}
+  SpaceInterfacesImport,
+  {$ENDIF}
   SOAPHTTPTrans;
 
 {$R *.dfm}
@@ -81,12 +84,16 @@ procedure TServerChecking.Execute;
   begin
   try
   //. test for space response
-  Space.GlobalSpaceManagerLock.Enter;
+  {$IFNDEF EmbeddedServer}
+  Space.GlobalSpaceManagerLock.Enter();
   try
-  Space.GlobalSpaceManager.SpacePackID;
+  Space.GlobalSpaceManager.SpacePackID();
   finally
-  Space.GlobalSpaceManagerLock.Leave;
+  Space.GlobalSpaceManagerLock.Leave();
   end;
+  {$ELSE}
+  SpaceManager_SpacePackID();
+  {$ENDIF}
   //. test for sql response
   with TMODELUserFunctionality(TComponentFunctionality_Create(idTMODELUSer,Space.UserID)) do
   try

@@ -4,11 +4,19 @@
   TTypeFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTypeSOAPFunctionality: ITTypeSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTypeSOAPFunctionality: ITTypeSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function CreateInstance: integer;
     function CreateInstanceUsingObject(const idTUseObj,idUseObj: integer): integer;
     procedure DestroyInstance(const idObj: integer);
@@ -22,11 +30,19 @@
   TComponentFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTComponentSOAPFunctionality: ITComponentSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TComponentSOAPFunctionality: ITComponentSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure Check;
     procedure CheckUserOperation(const idOperation: integer);
     function CreationTimestamp: double;
@@ -90,22 +106,38 @@
   TTProxyObjectFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTProxyObjectSOAPFunctionality: ITTProxyObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTProxyObjectSOAPFunctionality: ITTProxyObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
   //. TProxyObjectFunctionality
   TProxyObjectFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTProxyObjectSOAPFunctionality: ITProxyObjectSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TProxyObjectSOAPFunctionality: ITProxyObjectSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetReference(out idTOwner,idOwner: integer): boolean;
     procedure SetReference(const idTOwner,idOwner: integer);
     function getName: string;
@@ -116,11 +148,19 @@
   TTBaseVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTBaseVisualizationSOAPFunctionality: ITTBaseVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTBaseVisualizationSOAPFunctionality: ITTBaseVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetComponentOwnerDatas(const IDs: TByteArray; const DataFlags: TComponentDataFlags; out Data: TByteArray);
     function CanCreateAsDetail: boolean;
   end;
@@ -129,11 +169,19 @@
   TBaseVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTBaseVisualizationSOAPFunctionality: ITBaseVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TBaseVisualizationSOAPFunctionality: ITBaseVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function Ptr: TPtr;
     function IsUnReferenced: boolean;
     procedure Scaling(const pScale: Double);
@@ -155,11 +203,19 @@
   TTBase2DVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTBase2DVisualizationSOAPFunctionality: ITTBase2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTBase2DVisualizationSOAPFunctionality: ITTBase2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function CreateInstanceEx(const ptrOwner: TPtr): integer;
     procedure GetDisproportionObjects(const Factor: double; out ObjectsList: TByteArray);
   end;
@@ -168,11 +224,19 @@
   TBase2DVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTBase2DVisualizationSOAPFunctionality: ITBase2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TBase2DVisualizationSOAPFunctionality: ITBase2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     procedure GetLayInfo(out Lay,SubLay: integer);
     procedure GetProps(out oflagLoop: boolean; out oColor: TColor; out oWidth: Double; out oflagFill: boolean; out oColorFill: TColor);
     procedure SetProps(const pflagLoop: boolean; const pColor: TColor; const pWidth: Double; const pflagFill: boolean; const pColorFill: TColor);
@@ -208,22 +272,38 @@
   TTLay2DVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     TypeFunctionality: TTypeFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTTLay2DVisualizationSOAPFunctionality: ITTLay2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pTypeFunctionality: TTypeFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TTLay2DVisualizationSOAPFunctionality: ITTLay2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
   end;
 
   //. TLay2DVisualizationFunctionality
   TLay2DVisualizationFunctionalityRemoted = class(TFunctionality)
   public
     ComponentFunctionality: TComponentFunctionality;
+    {$IFNDEF EmbeddedServer}
     FTLay2DVisualizationSOAPFunctionality: ITLay2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    FServerFunctionality: TFunctionality;
+    {$ENDIF}
 
     Constructor Create(const pComponentFunctionality: TComponentFunctionality);
     Destructor Destroy; override;
+    {$IFNDEF EmbeddedServer}
     function TLay2DVisualizationSOAPFunctionality: ITLay2DVisualizationSOAPFunctionality;
+    {$ELSE}
+    function ServerFunctionality(): TFunctionality;
+    {$ENDIF}
     function GetOwner(out idTOwner,idOwner: integer): boolean;
     function getName: string;
     procedure setName(Value: string);

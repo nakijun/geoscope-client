@@ -398,7 +398,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTCoCompon
   if (GetVisualizationHintComponent({out} HintID))
    then with THINTVisualizationFunctionality(TComponentFunctionality_Create(idTHINTVisualization,HintID)) do
     try
-    GetPrivateDATA(PrivateDATA);
+    GetPrivateDATA2(PrivateDATA);
     with PrivateDATA do
     try
     DATA:=THintVisualizationDATA.Create(PrivateDATA);
@@ -410,7 +410,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTCoCompon
     //.
     SetProperties();
     Position:=0;
-    SetPrivateDATA(DATA);
+    SetPrivateDATA1(DATA);
     finally
     Destroy;
     end;
@@ -750,7 +750,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idT
  then begin
   DATAFileFunctionality:=TDATAFileFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   try
-  DATAFileFunctionality.GetDATA(TClientBlobStream(DATA));
+  DATAFileFunctionality.GetDATA1(TClientBlobStream(DATA));
   Result:=true;
   finally
   DATAFileFunctionality.Release;
@@ -769,7 +769,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idT
  then begin
   DATAFileFunctionality:=TDATAFileFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   try
-  DATAFileFunctionality.SetDATA(DATA);
+  DATAFileFunctionality.SetDATA1(DATA);
   DATAFileFunctionality.DATAType:='.xml';
   finally
   DATAFileFunctionality.Release;
@@ -790,7 +790,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idT
  then begin
   DATAFileFunctionality:=TDATAFileFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   try
-  DATAFileFunctionality.GetDATA(TClientBlobStream(DATA));
+  DATAFileFunctionality.GetDATA1(TClientBlobStream(DATA));
   Result:=true;
   finally
   DATAFileFunctionality.Release;
@@ -809,7 +809,7 @@ if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idT
  then begin
   DATAFileFunctionality:=TDATAFileFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   try
-  DATAFileFunctionality.SetDATA(DATA);
+  DATAFileFunctionality.SetDATA1(DATA);
   DATAFileFunctionality.DATAType:='.xml';
   finally
   DATAFileFunctionality.Release;
@@ -1277,17 +1277,17 @@ Result:='';
 if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idTDescription, NotificationAddressesTag,{out} idT,DescriptionID))
  then with TDescriptionFunctionality(TComponentFunctionality_Create(idT,DescriptionID)) do
   try
-  SL:=TStringList.Create;
+  SL:=TStringList.Create();
   try
-  GetValue(SL);
+  GetValue1(SL);
   Result:=SL.Text;
   finally
-  SL.Destroy;
+  SL.Destroy();
   end;
   //. remove ending #$0D#$0A
   if (Length(Result) >= 2) then SetLength(Result,Length(Result)-2);
   finally
-  Release;
+  Release();
   end;
 end;
 
@@ -1299,18 +1299,18 @@ begin
 if (TComponentFunctionality(CoComponentFunctionality).QueryComponentWithTag1(idTDescription, NotificationAddressesTag,{out} idT,DescriptionID))
  then with TDescriptionFunctionality(TComponentFunctionality_Create(idT,DescriptionID)) do
   try
-  SL:=TStringList.Create;
+  SL:=TStringList.Create();
   try
   if (Value = '') then Value:=' ';
   SL.Text:=Value;
-  SetValue(SL);
+  SetValue1(SL);
   finally
-  SL.Destroy;
+  SL.Destroy();
   end;
   //. notify update operation
   TComponentFunctionality(CoComponentFunctionality).NotifyOnComponentUpdate();
   finally
-  Release;
+  Release();
   end
  else Raise Exception.Create('no description component is found'); //. =>
 end;

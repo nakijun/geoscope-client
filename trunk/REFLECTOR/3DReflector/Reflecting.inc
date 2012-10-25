@@ -69,8 +69,12 @@ procedure TVisibleObjectsProvider.Execute;
 var
   R: DWord;
 begin
+CoInitializeEx(nil,COINIT_MULTITHREADED);
+try
+{$IFNDEF EmbeddedServer}
 RemoteManager:=GetISpaceRemoteManager(Space.SOAPServerURL);
 if RemoteManager = nil then Raise Exception.Create('! no RemoteManager.');
+{$ENDIF}
 repeat
   R:=WaitForSingleObject(evtVisibleObjectsGet, 100);
   if R = WAIT_OBJECT_0
@@ -78,10 +82,17 @@ repeat
     ResetEvent(evtVisibleObjectsGet);
     if not flCallExtendedFunction
      then
+      {$IFNDEF EmbeddedServer}
       VisibleObjectsGet_Data:=RemoteManager.GetVisibleObjects(VisibleObjectsGet_X0,VisibleObjectsGet_Y0,VisibleObjectsGet_X1,VisibleObjectsGet_Y1,
                                       VisibleObjectsGet_X2,VisibleObjectsGet_Y2,VisibleObjectsGet_X3,VisibleObjectsGet_Y3,
                                       VisibleObjectsGet_Scale,VisibleObjectsGet_MinVisibleSquare,
                                       )
+      {$ELSE}
+      SpaceRemoteManager_GetVisibleObjects(VisibleObjectsGet_X0,VisibleObjectsGet_Y0,VisibleObjectsGet_X1,VisibleObjectsGet_Y1,
+                                      VisibleObjectsGet_X2,VisibleObjectsGet_Y2,VisibleObjectsGet_X3,VisibleObjectsGet_Y3,
+                                      VisibleObjectsGet_Scale,VisibleObjectsGet_MinVisibleSquare,{out} VisibleObjectsGet_Data 
+                                      )
+      {$ENDIF}
      else
       {// - VisibleObjectsGet_Data:=RemoteManager.GetVisibleObjectsEx(VisibleObjectsGet_X0,VisibleObjectsGet_Y0,VisibleObjectsGet_X1,VisibleObjectsGet_Y1,
                                         VisibleObjectsGet_X2,VisibleObjectsGet_Y2,VisibleObjectsGet_X3,VisibleObjectsGet_Y3,
@@ -90,7 +101,12 @@ repeat
     SetEvent(evtVisibleObjectsGot);
     end;
 until Terminated;
+{$IFNDEF EmbeddedServer}
 RemoteManager:=nil;
+{$ENDIF}
+finally
+CoUnInitialize;
+end;
 end;
 
 

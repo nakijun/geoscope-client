@@ -6,7 +6,7 @@ uses
   Graphics;
 
 const
-  MaxNodesCount = 10000;
+  MaxNodesCount = 100000;
 type
   TNode = record
     X,Y: Extended;

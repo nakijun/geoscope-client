@@ -12,7 +12,7 @@ unit SOAPClient_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 02.09.2012 22:12:58 from Type Library described below.
+// File generated on 25.10.2012 18:24:55 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\SOAPClient.tlb (1)
@@ -21,7 +21,7 @@ unit SOAPClient_TLB;
 // Helpfile: 
 // HelpString: SOAPClient Library
 // DepndLst: 
-//   (1) v2.0 stdole, (C:\WINDOWS\system32\stdole2.tlb)
+//   (1) v2.0 stdole, (C:\Windows\system32\stdole2.tlb)
 // ************************************************************************ //
 {$TYPEDADDRESS OFF} // Unit must be compiled without type-checked pointers. 
 {$WARN SYMBOL_PLATFORM OFF}

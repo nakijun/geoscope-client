@@ -3,8 +3,13 @@ unit unitSelectedObjects;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus, FunctionalitySOAPInterface,
-  ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines, unitProxySpace, Functionality, 
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines, unitProxySpace, Functionality,
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ENDIF}
@@ -187,8 +192,12 @@ begin
 with ListObjects do begin
 Clear;
 if (NOT Reflector.Space.flOffline)
- then with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-  if Get_SelectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+ then 
+  {$IFNDEF EmbeddedServer}
+  if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_SelectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+  {$ELSE}
+  if (SpaceUserReflector_Get_SelectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+  {$ENDIF}
    then begin
     MemoryStream:=TMemoryStream.Create;
     try
@@ -340,9 +349,13 @@ with ListObjects do for I:=0 to Items.Count-1 do with TSelectedObjectStruc(Items
     end;
   end;
 if (NOT Reflector.Space.flOffline)
- then with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
+ then begin
   ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-  Set_SelectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+  {$IFNDEF EmbeddedServer}
+  GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_SelectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+  {$ELSE}
+  SpaceUserReflector_Set_SelectedObjects(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+  {$ENDIF}
   end;
 finally
 MemoryStream.Destroy;

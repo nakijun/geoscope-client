@@ -214,7 +214,7 @@ if TComponentFunctionality(CoComponentFunctionality).QueryComponent(idTPictureVi
   VisualizationFunctionality:=TPictureVisualizationFunctionality(TComponentFunctionality_Create(idTComponent,idComponent));
   with VisualizationFunctionality do
   try
-  VisualizationFunctionality.GetBMP(Preview);
+  VisualizationFunctionality.GetBMP1(Preview);
   finally
   Release;
   end;

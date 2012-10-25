@@ -1351,7 +1351,7 @@ var
 begin
 with FunctionalityImport.TTCoComponentFunctionality(TTypeFunctionality_Create(idTCoComponent)) do
 try
-GetInstanceListByCoType(idTCoGeoMonitorObject, CL);
+GetInstanceListByCoType1(idTCoGeoMonitorObject, CL);
 try
 Lock.Enter;
 try

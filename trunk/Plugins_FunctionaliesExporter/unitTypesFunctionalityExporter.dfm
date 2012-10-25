@@ -31,8 +31,8 @@ object fmTypesFunctionalityExporter: TfmTypesFunctionalityExporter
   end
   object PageControl1: TPageControl
     Left = 0
-    Top = 48
-    Width = 991
+    Top = 37
+    Width = 983
     Height = 518
     ActivePage = TabSheet1
     Align = alBottom
@@ -48,7 +48,7 @@ object fmTypesFunctionalityExporter: TfmTypesFunctionalityExporter
       object memoTypesFunctionalityExport: TMemo
         Left = 0
         Top = 0
-        Width = 983
+        Width = 975
         Height = 487
         Align = alClient
         Font.Charset = DEFAULT_CHARSET

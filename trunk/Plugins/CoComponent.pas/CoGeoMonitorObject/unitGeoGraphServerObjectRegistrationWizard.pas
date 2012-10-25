@@ -120,7 +120,7 @@ except
   RegistrationServerID:=0;
   end;
 try
-TTGeoGraphServerFunctionality(TF).GetActiveInstanceList({out} IL);
+TTGeoGraphServerFunctionality(TF).GetActiveInstanceList1({out} IL);
 except
   TTypeFunctionality(TF).GetInstanceList({out} IL);
   end;

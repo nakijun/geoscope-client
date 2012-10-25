@@ -243,7 +243,7 @@ Set the default options for FastMM here.
    if DLLs are statically linked then they will be initialized before the main
    application and then the DLL will in fact share its MM with the main
    application. This option has no effect unless ShareMM is also set.}
-  {.$define ShareMMIfLibrary}
+  {$define ShareMMIfLibrary}
 
 {Define this to attempt to share the MM of the main application or other loaded
  DLLs in the same process that were compiled with ShareMM set. When sharing a

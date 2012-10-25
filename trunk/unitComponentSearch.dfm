@@ -121,8 +121,8 @@ object fmComponentSearch: TfmComponentSearch
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 688
-    Height = 453
+    Width = 680
+    Height = 442
     ActivePage = tsTextSearch
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
@@ -135,8 +135,8 @@ object fmComponentSearch: TfmComponentSearch
     object tsTextSearch: TTabSheet
       Caption = 'Text'
       DesignSize = (
-        680
-        422)
+        672
+        411)
       object Label1: TLabel
         Left = 6
         Top = 2
@@ -191,8 +191,8 @@ object fmComponentSearch: TfmComponentSearch
       end
       object ListObjects: TListView
         Left = 0
-        Top = 28
-        Width = 680
+        Top = 17
+        Width = 672
         Height = 394
         Align = alBottom
         Color = 12895931

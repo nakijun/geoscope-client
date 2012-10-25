@@ -70,7 +70,11 @@ type
 
 implementation
 Uses
+  {$IFNDEF EmbeddedServer}
   FunctionalitySOAPInterface,
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
   unitPolishMapFormatDefines;
 
 {$R *.dfm}

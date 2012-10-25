@@ -197,9 +197,9 @@ object GeoMonitoredObject1GPSModuleConfigurationPanel: TGeoMonitoredObject1GPSMo
           object Label5: TLabel
             Left = 16
             Top = 121
-            Width = 75
+            Width = 68
             Height = 16
-            Caption = 'Bitrate (kb/s)'
+            Caption = 'Bitrate (b/s)'
           end
           object cbMediaFragmentVideoResolution: TComboBox
             Left = 16

@@ -4,7 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus,
-  ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines,FunctionalitySOAPInterface, unitProxySpace, unitReflector, ExtCtrls;
+  ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines,
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  unitProxySpace, unitReflector, ExtCtrls;
 
 const
   fnElectedPlaces = REFLECTORProfile+'\'+'ElectedPlaces';
@@ -114,10 +120,13 @@ var
   newMenuItem: TMenuItem;
 begin
 Clear;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-if Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   while MemoryStream.Read(ElectedPlaceStruc,SizeOf(TElectedPlaceStruc)) = SizeOf(TElectedPlaceStruc) do begin
@@ -133,7 +142,7 @@ if Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Refle
     Items.Add(newMenuItem);
     end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;
@@ -212,13 +221,16 @@ var
 begin
 with ListPlaces do begin
 Clear;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-if Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
-  Items.BeginUpdate;
+  Items.BeginUpdate();
   try
   while MemoryStream.Read(ElectedPlaceStruc,SizeOf(TElectedPlaceStruc)) = SizeOf(TElectedPlaceStruc) do begin
     GetMem(ptrNewItem,SizeOf(TElectedPlaceStruc));
@@ -229,10 +241,10 @@ if Get_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Refle
     end;
     end;
   finally
-  Items.EndUpdate;
+  Items.EndUpdate();
   end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end;
 end;
@@ -324,18 +336,20 @@ var
   I: integer;
 begin
 //. write user defined config
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 with ListPlaces do for I:=0 to Items.Count-1 do with Items[I] do begin
   if Caption <> '' then TElectedPlaceStruc(Data^).PlaceName:=Caption;
   MemoryStream.Write(TElectedPlaceStruc(Data^),SizeOf(TElectedPlaceStruc));
   end;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_ElectedPlaces(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ENDIF}
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 flChanged:=false;
 end;

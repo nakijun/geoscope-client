@@ -988,7 +988,7 @@ var
 begin
 with FunctionalityImport.TTCoComponentFunctionality(TTypeFunctionality_Create(idTCoComponent)) do
 try
-GetInstanceListByCoType(idTCoNotificationArea, CL);
+GetInstanceListByCoType1(idTCoNotificationArea, CL);
 try
 Lock.Enter;
 try

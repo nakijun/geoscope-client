@@ -96,7 +96,7 @@ PackageDLLOutputDir=
 PackageDCPOutputDir=
 SearchPath=DelphiSrs;DelphiSrs\COM;DelphiSrs\Encoding;DelphiSrs\Matrix;DelphiSrs\Matrix\BigFloat;DelphiSrs\Media\VLC;DelphiSrs\Packing;DelphiSrs\Packing\ZLib;DelphiSrs\PNGImage;DelphiSrs\SOAP;DelphiSrs\TCP;DelphiSrs\XML\NativeXML;$(DELPHI)\Lib\Debug;$(DELPHI)\Source\Internet;$(DELPHI)\Source\RTL\Win;$(DELPHI)\Source\SOAP;$(DELPHI)\Source\VCL;$(DELPHI)\RxLib\Units;REFLECTOR;ReleaseInstaller;REFLECTOR\3DReflector;REFLECTOR\3DReflector\Library;$(DELPHI)\Source\Internet;$(DELPHI)\Source\Samples;$(DELPHI)\RxLib\Units;TYPESDef;MODELsDef\Telecom-Model;MODELsDef\Telecom-Model\FromMike;MODELsDef\Telecom-Model\CommNodeCrossOperator;MODELsDef\Transport-Model;MODELsDef\Market-Model;TYPESDef\AbstractType;TYPESDef\Address;TYPESDef\AGIFVisualization;TYPESDef\AreaNotificationServer;TYPESDef\BoolVar;TYPESDef\Box;TYPESDef\Buffered3DVisualization;TYPESDef\BZRVisualization;TYPESDef\CableBox;TYPESDef\Case;TYPESDef\CELLVisualization;TYPESDef\Chanel;TYPESDef\Client;TYPESDef\CoComponent;TYPESDef\CoComponentType;TYPESDef\CoComponentTypeMarker;TYPESDef\CoVisualization;TYPESDef\Collection;TYPESDef\CommLine;TYPESDef\CommNode;TYPESDef\ComponentsFindService;TYPESDef\CoReference;TYPESDef\Cross;TYPESDef\CUSTOMVisualization;TYPESDef\DATAFile;TYPESDef\Demand;TYPESDef\Description;TYPESDef\DetailedPictureVisualization;TYPESDef\DistrLine;TYPESDef\DoubleVar;TYPESDef\EllipseVisualization;TYPESDef\FilterVisualization;TYPESDef\Forum;TYPESDef\ForumMessage;TYPESDef\GeoSpace;TYPESDef\GeoCrdSystem;TYPESDef\GeodesyPoint;TYPESDef\GeoGraphServer;TYPESDef\GeoGraphServerObject;TYPESDef\GeoGraphServerObject\ObjectController;TYPESDef\GeoGraphServerObject\ObjectController\OperationControls;TYPESDef\GeoGraphServerObject\ObjectModel;TYPESDef\GeoGraphServerObject\ObjectModel\GeoMonitoredMedDevice;TYPESDef\GeoGraphServerObject\ObjectModel\GeoMonitoredObject;TYPESDef\GeoGraphServerObject\ObjectModel\GeoMonitoredObject1;TYPESDef\GeoGraphServerObject\ObjectModel\GSTraqObject;TYPESDef\GeoGraphServerObject\ObjectModel\NavixyObject;TYPESDef\GeoGraphServerObject\ObjectModel\EnforaMiniMTObject;TYPESDef\GeoGraphServerObject\ObjectModel\EnforaMT3000Object;TYPESDef\GeoGraphServerObject\ObjectModel\EnforaObject;TYPESDef\Goods;TYPESDef\HandHold;TYPESDef\HINTVisualization;TYPESDef\House;TYPESDef\HREF;TYPESDef\HTMLVisualization;TYPESDef\HyperText;TYPESDef\Icon;TYPESDef\Image;TYPESDef\Int32Var;TYPESDef\Label;TYPESDef\Lay2DVisualization;TYPESDef\LineDist;TYPESDef\MainLine;TYPESDef\MapFormatMap;TYPESDef\MapFormatMap\MapFormats;TYPESDef\MapFormatMap\MapFormats\PolishFormat;TYPESDef\MapFormatMap\MapLoaders;TYPESDef\MapFormatMap\MapLoaders\PFMLoader;TYPESDef\MapFormatObject;TYPESDef\MapFormatObject\MapFormats\PolishFormat;TYPESDef\MarketService;TYPESDef\MeasurementObject;TYPESDef\MessageBoard;TYPESDef\MessageBoardMessage;TYPESDef\MODELServer;TYPESDef\MODELServer\UsageMonitor;TYPESDef\MODELServerVisualization;TYPESDef\MODELUser;TYPESDef\MRKVisualization;TYPESDef\Muff;TYPESDef\Name;TYPESDef\Object;TYPESDef\Offer;TYPESDef\OfferGoods;TYPESDef\OffersServer;TYPESDef\OffersServer\DATAProviders\MailROBOT;TYPESDef\OffersServer\DATAProviders\FormatConvertors;TYPESDef\OffersServer\DATAProviders\FormatConvertors\txt.1;TYPESDef\OffersServer\DATAProviders\FormatConvertors\UnZip;TYPESDef\OLEVisualization;TYPESDef\OPPVisualization;TYPESDef\OrientedPictureVisualization;TYPESDef\OrientedTTFVisualization;TYPESDef\OrientedVIDEOVisualization;TYPESDef\OrientedVIDEOVisualization\DataServer;TYPESDef\OrientedWMFVisualization;TYPESDef\OtherObj;TYPESDef\PatternVisualization;TYPESDef\PictureVisualization;TYPESDef\Positioner;TYPESDef\PrivateAreaVisualization;TYPESDef\ProxyObject;TYPESDef\QDCVisualization;TYPESDef\ReferencedObject;TYPESDef\RoundVisualization;TYPESDef\SecurityComponent;TYPESDef\SecurityComponentOperation;TYPESDef\SecurityFile;TYPESDef\SecurityKey;TYPESDef\Span;TYPESDef\SPLVisualization;TYPESDef\Station;TYPESDef\Street;TYPESDef\TelecomService;TYPESDef\Texture;TYPESDef\TileServerVisualization;TYPESDef\TLF;TYPESDef\TLFStationTMT;TYPESDef\TransportNode;TYPESDef\TransportRoute;TYPESDef\TransportService;TYPESDef\TTFVisualization;TYPESDef\URL;TYPESDef\UserAlert;TYPESDef\UsersService;TYPESDef\VIDEOVisualization;TYPESDef\Visualization;TYPESDef\Well;TYPESDef\WMFVisualization;TYPESDef\WNDVisualization
 Packages=Vcl40;Vclx40;Vcldb40;vcldbx40;VclSmp40;Qrpt40;TeeUI40;teedb40;tee40;Dss40;ibevnt40;Vclmid40;NMFast40;Inetdb40;Inet40;Vcl50;ObjDeb5
-Conditionals=_MemCheck; _SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
+Conditionals=_EmbeddedServer;_MemCheck; _SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
 DebugSourceDirs=C:\Borland\PROJECTS\Model\ServerProxySpace\REFLECTOR\;C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\TYPESDef\SecurityComponent\;C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\TYPESDef\;C:\Borland\PROJECTS\Model\ServerSpace\;C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\TYPESDef\DATAFile\;C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\TYPESDef\GeoSpace\;C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\TYPESDef\SecurityFile\
 UsePackages=0
 [Parameters]
@@ -143,16 +143,18 @@ Item3=C:\Borland\PROJECTS\Model\ServerProxySpace\REFLECTOR\;C:\Borland\PROJECTS\
 Item4=C:\Borland\PROJECTS\Model\ServerProxySpace\REFLECTOR\;C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\TYPESDef\SecurityComponent\
 Item5=C:\Borland\PROJECTS\Model\ServerProxySpace\REFLECTOR\
 [HistoryLists\hlConditionals]
-Count=9
-Item0=_MemCheck; _SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
-Item1=_MemCheck; SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
-Item2=_MemCheck; _SpaceWindowReflectingTesting
-Item3=_MemCheck; SpaceWindowReflectingTesting
-Item4=_MemCheck
-Item5=MemCheck
-Item6=ExternalTypes
-Item7=ExternalTTypes
-Item8=ExternalTypes_
+Count=11
+Item0=_EmbeddedServer;_MemCheck; _SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
+Item1=EmbeddedServer;_MemCheck; _SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
+Item2=_MemCheck; _SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
+Item3=_MemCheck; SpaceWindowReflectingTesting; CLEANUP_SOAP_HEADERS; FIX_ELEM_NODE_NS
+Item4=_MemCheck; _SpaceWindowReflectingTesting
+Item5=_MemCheck; SpaceWindowReflectingTesting
+Item6=_MemCheck
+Item7=MemCheck
+Item8=ExternalTypes
+Item9=ExternalTTypes
+Item10=ExternalTypes_
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;

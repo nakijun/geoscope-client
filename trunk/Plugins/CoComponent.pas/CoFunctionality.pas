@@ -217,7 +217,7 @@ List:=nil;
 try
 with FunctionalityImport.TTCoComponentTypeFunctionality(TTypeFunctionality_Create(idTCoComponentType)) do
 try
-GetInstanceListByFileType(FileType, List);
+GetInstanceListByFileType1(FileType, List);
 finally
 Release;
 end;
@@ -255,7 +255,7 @@ InstanceList:=TList.Create;
 try
 with FunctionalityImport.TCoComponentTypeFunctionality(TComponentFunctionality_Create(idTCoComponentType,idCoType)) do
 try
-GetMarkersList(MarkersList);
+GetMarkersList1(MarkersList);
 try
 for I:=0 to MarkersList.Count-1 do with TComponentFunctionality_Create(idTCoComponentTypeMarker,Integer(MarkersList[I])) do
   try

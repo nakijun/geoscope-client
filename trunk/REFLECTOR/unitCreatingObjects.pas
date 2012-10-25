@@ -4,7 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Menus,
-  ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines, unitProxySpace, FunctionalitySOAPInterface, Functionality, 
+  ComCtrls, RXCtrls, StdCtrls, Buttons, GlobalSpaceDefines, unitProxySpace, 
+  {$IFNDEF EmbeddedServer}
+  FunctionalitySOAPInterface, 
+  {$ELSE}
+  SpaceInterfacesImport,
+  {$ENDIF}
+  Functionality, 
   {$IFDEF ExternalTypes}
   SpaceTypes,
   {$ELSE}
@@ -295,11 +301,14 @@ var
   CreatingObjectStoredStruc: TCreatingObjectStoredStruc;
   ptrNewItem: pointer;
 begin
-List:=TList.Create;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do
-if Get_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA)
+List:=TList.Create();
+{$IFNDEF EmbeddedServer}
+if (GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Get_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ELSE}
+if (SpaceUserReflector_Get_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,{out} BA))
+{$ENDIF}
  then begin
-  MemoryStream:=TMemoryStream.Create;
+  MemoryStream:=TMemoryStream.Create();
   try
   ByteArray_PrepareStream(BA,TStream(MemoryStream));
   while MemoryStream.Read(CreatingObjectStoredStruc,SizeOf(CreatingObjectStoredStruc)) = SizeOf(CreatingObjectStoredStruc) do begin
@@ -307,12 +316,12 @@ if Get_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,
     try
     with TComponentFunctionality_Create(CreatingObjectStoredStruc.idType,CreatingObjectStoredStruc.idObj) do
     try
-    Check;
+    Check();
     finally
-    Release;
+    Release();
     end;
     except
-      Continue;
+      Continue; //. ^
       end;
     //.
     GetMem(ptrNewItem,SizeOf(TCreatingObjectStruc));
@@ -323,9 +332,9 @@ if Get_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,
     try
     with TComponentFunctionality_Create(idType,idObj) do
     try
-    if NOT GetIconImage(IconBitmap) then IconBitmap:=nil;
+    if (NOT GetIconImage(IconBitmap)) then IconBitmap:=nil;
     finally
-    Release;
+    Release();
     end;
     except
       IconBitmap:=nil;
@@ -334,7 +343,7 @@ if Get_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,
     List.Add(ptrNewItem);
     end;
   finally
-  MemoryStream.Destroy;
+  MemoryStream.Destroy();
   end;
   end
  else begin
@@ -360,7 +369,7 @@ var
   CreatingObjectStoredStruc: TCreatingObjectStoredStruc;
 begin
 //. write user defined config
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 for I:=0 to Items.Count-1 do with Items[I] do begin
   if Caption <> '' then TCreatingObjectStruc(Data^).ObjectName:=Caption;
@@ -371,12 +380,14 @@ for I:=0 to Items.Count-1 do with Items[I] do begin
   end;
   MemoryStream.Write(CreatingObjectStoredStruc,SizeOf(TCreatingObjectStoredStruc));
   end;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ENDIF}
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 end;
 
@@ -388,7 +399,7 @@ var
   CreatingObjectStoredStruc: TCreatingObjectStoredStruc;
 begin
 //. write user defined config
-MemoryStream:=TMemoryStream.Create;
+MemoryStream:=TMemoryStream.Create();
 try
 for I:=0 to Items.Count-1 do begin
   with CreatingObjectStoredStruc do begin
@@ -398,12 +409,14 @@ for I:=0 to Items.Count-1 do begin
   end;
   MemoryStream.Write(CreatingObjectStoredStruc,SizeOf(TCreatingObjectStoredStruc));
   end;
-with GetISpaceUserReflector(Reflector.Space.SOAPServerURL) do begin
 ByteArray_PrepareFromStream(BA,TStream(MemoryStream));
-Set_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
-end;
+{$IFNDEF EmbeddedServer}
+GetISpaceUserReflector(Reflector.Space.SOAPServerURL).Set_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ELSE}
+SpaceUserReflector_Set_CreatingComponents(Reflector.Space.UserName,Reflector.Space.UserPassword,Reflector.id,BA);
+{$ENDIF}
 finally
-MemoryStream.Destroy;
+MemoryStream.Destroy();
 end;
 end;
 

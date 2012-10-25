@@ -41,7 +41,7 @@ Type
   end;
 
 
-  TComponentFileType = (cftNone,cftEXE,cftTXT,cft3DS,cftMAX,cftQDC,cftBMP,cftJPEG,cftWMF,cftEMF);
+  TComponentFileType = (cftNone,cftEXE,cftTXT,cft3DS,cftMAX,cftQDC,cftBMP,cftJPEG,cftWMF,cftEMF,cftPNG);
 
 
   TComponentNotifyType = (ontComponentInserted,ontComponentRemoved,ontBecomeComponent,ontBecomeFree,ontVisualizationClick,ontVisualizationDblClick,ontVisualizationComponentIsChanged);
@@ -158,7 +158,7 @@ Type
 
 Const
   
-  ComponentsFilesTypesExtensions: array[TComponentFileType] of string = ('','exe','txt','3ds','max','qdc','bmp','jpeg','wmf','emf');
+  ComponentsFilesTypesExtensions: array[TComponentFileType] of string = ('','exe','txt','3ds','max','qdc','bmp','jpeg','wmf','emf','png');
 
 
 

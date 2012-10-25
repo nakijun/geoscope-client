@@ -82,7 +82,7 @@ Const
   TSpace_MinFreeArea = 100000; //. кб. минимальна€ свободна€ зона
   TSpace_IncreaseDelta = 1000000; //. шаг раст€гивани€ пространства
   
-  TSpaceObj_maxPointsCount = 10000;
+  TSpaceObj_maxPointsCount = 1000000;
   ofsptrFirstPoint = SizeOf(TPtr)+SizeOf(integer)+SizeOf(integer);
   ofsptrListOwnerObj = SizeOf(TSpaceObj)-SizeOf(TPtr);
   SpaceObjSize = SizeOf(TSpaceObj);

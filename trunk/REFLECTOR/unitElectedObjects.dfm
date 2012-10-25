@@ -19,16 +19,16 @@ object fmElectedObjects: TfmElectedObjects
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 378
-    Height = 280
+    Width = 370
+    Height = 269
     Align = alClient
     Style = bsRaised
   end
   object ListObjects: TListView
     Left = 0
     Top = 0
-    Width = 378
-    Height = 280
+    Width = 370
+    Height = 269
     Align = alClient
     Color = clBtnFace
     Columns = <
@@ -56,10 +56,10 @@ object fmElectedObjects: TfmElectedObjects
     OnDragOver = ListObjectsDragOver
   end
   object Panel1: TPanel
-    Left = 378
+    Left = 370
     Top = 0
     Width = 50
-    Height = 280
+    Height = 269
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1

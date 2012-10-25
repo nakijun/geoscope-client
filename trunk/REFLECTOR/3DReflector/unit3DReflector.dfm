@@ -358,7 +358,7 @@ object GL3DReflector: TGL3DReflector
     Left = 0
     Top = 0
     Width = 101
-    Height = 523
+    Height = 514
     Align = alLeft
     AutoSize = True
     BandBorderStyle = bsNone
@@ -2051,7 +2051,7 @@ object GL3DReflector: TGL3DReflector
         ImageIndex = -1
         MinHeight = 85
         Text = 'Other'
-        Width = 162
+        Width = 153
       end>
     EdgeInner = esLowered
     EdgeOuter = esRaised
@@ -2621,7 +2621,7 @@ object GL3DReflector: TGL3DReflector
       Height = 0
       Align = alClient
       ButtonHeight = 52
-      ButtonWidth = 66
+      ButtonWidth = 65
       Caption = 'ToolBar'
       Customizable = True
       EdgeBorders = []
@@ -2665,7 +2665,7 @@ object GL3DReflector: TGL3DReflector
       Height = 104
       Align = alClient
       ButtonHeight = 52
-      ButtonWidth = 72
+      ButtonWidth = 71
       Caption = 'ToolBar4'
       EdgeBorders = []
       Flat = True
@@ -2742,7 +2742,7 @@ object GL3DReflector: TGL3DReflector
       Height = 107
       Align = alClient
       ButtonHeight = 52
-      ButtonWidth = 61
+      ButtonWidth = 60
       Caption = 'ToolBar4'
       Customizable = True
       EdgeBorders = []
@@ -2782,11 +2782,11 @@ object GL3DReflector: TGL3DReflector
       Left = 6
       Top = 366
       Width = 85
-      Height = 153
+      Height = 144
       Align = alClient
       AutoSize = True
       ButtonHeight = 52
-      ButtonWidth = 82
+      ButtonWidth = 81
       Caption = 'ToolBar4'
       EdgeBorders = []
       Flat = True
@@ -2812,7 +2812,7 @@ object GL3DReflector: TGL3DReflector
       Height = 107
       Align = alClient
       ButtonHeight = 52
-      ButtonWidth = 93
+      ButtonWidth = 92
       Caption = 'ToolBar4'
       EdgeBorders = []
       Flat = True
