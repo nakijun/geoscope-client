@@ -13,10 +13,12 @@ type
     btnGetDeviceState: TBitBtn;
     btnRestartDeviceProcess: TBitBtn;
     btnRestartDevice: TBitBtn;
+    btnLANConnectionRepeater: TBitBtn;
     procedure btnGetDeviceLogClick(Sender: TObject);
     procedure btnGetDeviceStateClick(Sender: TObject);
     procedure btnRestartDeviceClick(Sender: TObject);
     procedure btnRestartDeviceProcessClick(Sender: TObject);
+    procedure btnLANConnectionRepeaterClick(Sender: TObject);
   private
     { Private declarations }
     Model: TGeoMonitoredObject1Model;
@@ -40,7 +42,8 @@ uses
   AbZipPrc,
   AbUnzPrc,
   GlobalSpaceDefines,
-  unitObjectModel;
+  unitObjectModel,
+  unitGeoMonitoredObject1LANConnectionRepeaterPanel;
 
 {$R *.dfm}
 
@@ -205,6 +208,16 @@ procedure TGeoMonitoredObject1ControlModulePanel.btnRestartDeviceProcessClick(Se
 begin
 if (MessageDlg('Do you want to restart device process ?', mtConfirmation, [mbYes,mbNo], 0) <> mrYes) then Exit; //. ->
 Model.ControlModule_RestartDeviceProcess();
+end;
+
+procedure TGeoMonitoredObject1ControlModulePanel.btnLANConnectionRepeaterClick(Sender: TObject);
+begin
+with TfmGeoMonitoredObject1LANConnectionRepeaterPanel.Create(Model) do
+try
+ShowModal();
+finally
+Destroy();
+end;
 end;
 
 
