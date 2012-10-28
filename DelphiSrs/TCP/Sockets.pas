@@ -45,6 +45,8 @@ type
 
 Const
   CRLF = #13#10;
+  //. socket error codes
+  WSAETIMEDOUT = 10060;
 
 type
 
@@ -87,7 +89,6 @@ type
     procedure DoHandleError; dynamic;
     procedure DoReceive(Buf: pchar; var DataLen: Integer); virtual;
     procedure DoSend(Buf: pchar; var DataLen: Integer); virtual;
-    function ErrorCheck(rc: Integer): Integer; virtual;
     procedure Loaded; override;
     procedure SetBytesReceived(Value: Cardinal);
     procedure SetBytesSent(Value: Cardinal);
@@ -97,6 +98,7 @@ type
     destructor Destroy; override;
     procedure Open; virtual;
     procedure Close; virtual;
+    function ErrorCheck(rc: Integer): Integer; virtual;
     function MapDomain(sd: TSocketDomain): Integer;
     function MapSockType(st: TSocketType): Integer;
     function PeekBuf(var Buf; BufSize: Integer): Integer;
@@ -115,6 +117,7 @@ type
     property Domain: TSocketDomain read FDomain write SetDomain default pfUnspec;
     property Handle: TSocket read FSocket;
     property Protocol: TSocketProtocol read FProtocol write SetProtocol;
+    property ThisSocket: TSocket read FSocket;
     property SockType: TSocketType read FSockType write SetSockType default stStream;
     property OnCreateHandle: TSocketNotifyEvent read FOnCreateHandle write FOnCreateHandle;
     property OnDestroyHandle: TSocketNotifyEvent read FOnDestroyHandle write FOnDestroyHandle;
@@ -203,6 +206,7 @@ type
     function Connect: Boolean; overload;
     function Connect(const ReadTimeout,WriteTimeout: integer): Boolean; overload;
     procedure Disconnect;
+    procedure SetTimeouts(const ReadTimeout,WriteTimeout: integer);
     function GetThreadObject: TClientSocketThread;
 
     property Connected: Boolean read FConnected;
@@ -1046,6 +1050,21 @@ end;
 procedure TCustomIpClient.Disconnect;
 begin
   Close;
+end;
+
+procedure TCustomIpClient.SetTimeouts(const ReadTimeout,WriteTimeout: integer);
+var
+  Opt: integer;
+  _Timeout:TTimeVal;
+begin
+//. PAV modified
+Opt:=1;
+ErrorCheck(WinSock.setsockopt(FSocket, IPPROTO_TCP,TCP_NODELAY,PChar(@Opt),sizeof(Opt)));
+_Timeout.tv_usec:=0;
+_Timeout.tv_sec:=ReadTimeout;
+ErrorCheck(WinSock.setsockopt(FSocket, SOL_SOCKET, SO_RCVTIMEO, @_Timeout, sizeof(TTimeval)));
+_Timeout.tv_sec:=WriteTimeout;
+ErrorCheck(WinSock.setsockopt(FSocket, SOL_SOCKET, SO_SNDTIMEO, @_Timeout, sizeof(TTimeval)));
 end;
 
 function TCustomIpClient.GetThreadObject: TClientSocketThread;

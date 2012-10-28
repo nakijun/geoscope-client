@@ -745,7 +745,6 @@ end;
 
 procedure TfmLog.sbExitClick(Sender: TObject);
 begin
-//.
 Space.Free; //. уничтожаем пространство
 //. halt
 IsConsole:=true;

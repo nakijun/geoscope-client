@@ -567,6 +567,8 @@ Type
     function  ControlModule_GetDeviceLogData(): TByteArray;
     procedure ControlModule_RestartDevice();
     procedure ControlModule_RestartDeviceProcess();
+    procedure ControlModule_StartLANConnection(const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+    procedure ControlModule_StopLANConnection(const ConnectionID: integer);
   end;
 
 const
@@ -2932,6 +2934,60 @@ try
 TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Timestamp:=Now-TimeZoneDelta;
 TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Value:=nil;
 TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.WriteDeviceByAddressDataCUAC(AddressData);
+finally
+Lock.Leave();
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.ControlModule_StartLANConnection(const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+const
+  ConnectionTimeout = 1000*30; //. seconds
+var
+  Params: String;
+  AddressData: TByteArray;
+begin
+Params:='101,'+Address+','+IntToStr(Port)+','+ServerAddress+','+IntToStr(ServerPort)+','+IntToStr(ConnectionID)+','+IntToStr(ConnectionTimeout);
+SetLength(AddressData,Length(Params));
+Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
+Lock.Enter();
+try
+try
+TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(AddressData);
+except
+  on E: OperationException do
+    case E.Code of
+    -1000003: Raise Exception.Create('connection timeout is expired'); //. =>
+    -1000004: Raise Exception.Create('connection is not found, CID: '+IntToStr(ConnectionID)); //. =>
+    else
+      Raise; //. +>
+    end;
+  else
+    Raise; //. =>
+  end;
+finally
+Lock.Leave();
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.ControlModule_StopLANConnection(const ConnectionID: integer);
+var
+  Params: String;
+  AddressData: TByteArray;
+begin
+Params:='102,'+IntToStr(ConnectionID);
+SetLength(AddressData,Length(Params));
+Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
+Lock.Enter();
+try
+try
+TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(AddressData);
+except
+  on E: OperationException do
+    Raise; //. +>
+  else
+    Raise; //. =>
+  end;
+if (Length(TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Value) <> 0) then Raise Exception.Create('unknown response'); //. =>
 finally
 Lock.Leave();
 end;
