@@ -944,7 +944,7 @@ procedure TObjectDistanceNotifier.DoOnVisualizationOperation(const ptrObj: TPtr;
     end;
     if (NOT ((_GeoGraphServerID <> 0) AND (_ObjectID <> 0))) then Exit; //. ->
     if (_ObjectType = 0) then Exit; //. ->
-    ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+    ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
     Result:=TObjectModel.GetModel(_ObjectType,ServerObjectController,true);
     finally
     Release;

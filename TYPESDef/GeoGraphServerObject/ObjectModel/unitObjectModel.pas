@@ -274,6 +274,8 @@ Type
     function  ObjectVisualization: TObjectDescriptor; virtual;
     function  ObjectDatumID: integer; virtual;
     procedure Object_GetLocationFix(out TimeStamp: double; out DatumID: integer; out Latitude: double; out Longitude: double; out Altitude: double; out Speed: double; out Bearing: double; out Precision: double); virtual;
+    procedure GetData(const DataType: Integer; out Data: TByteArray); virtual; abstract;
+    procedure SetData(const DataType: Integer; const Data: TByteArray); virtual; abstract;
     function CreateTrackEvent(const ComponentElement: TComponentElement; const Address: TAddress; const AddressIndex: integer; const flSetCommand: boolean): pointer; virtual;
     function            Log_CreateTrackByDay(const DayDate: TDateTime; const pTrackName: string; const pTrackColor: TColor; const TrackCoComponentID: integer; const CreateObjectModelTrackEventFunc: TCreateObjectModelTrackEventFunc; const CreateBusinessModelTrackEventFunc: TCreateBusinessModelTrackEventFunc): pointer;
     function            Log_CreateTrackByDays(const DayDate: TDateTime; const DaysCount: integer; const pTrackName: string; const pTrackColor: TColor; const TrackCoComponentID: integer; const CreateObjectModelTrackEventFunc: TCreateObjectModelTrackEventFunc; const CreateBusinessModelTrackEventFunc: TCreateBusinessModelTrackEventFunc): pointer;

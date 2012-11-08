@@ -1,32 +1,38 @@
-unit unitGeoMonitoredObject1LANConnectionRepeaterPanel;
+unit unitGeoMonitoredObject1LANUDPConnectionRepeaterPanel;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Dialogs,
   unitGeoMonitoredObject1Model,
-  unitGeoMonitoredObject1LANConnectionRepeater, StdCtrls, Buttons, ExtCtrls;
+  unitGeoMonitoredObject1LANUDPConnectionRepeater, StdCtrls, Buttons, ExtCtrls;
 
 type
-  TfmGeoMonitoredObject1LANConnectionRepeaterPanel = class(TForm)
-    gbLANEndpoint: TGroupBox;
+  TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel = class(TForm)
+    gbLANUDPEndpoint: TGroupBox;
     gbLocalPort: TGroupBox;
     gbStatus: TGroupBox;
     btnStartStop: TBitBtn;
     lbStatus: TLabel;
-    edLocalPort: TEdit;
+    edLocalReceivingPort: TEdit;
     Label3: TLabel;
     Updater: TTimer;
     Label1: TLabel;
     edAddress: TEdit;
     Label2: TLabel;
-    edPort: TEdit;
+    edTransmittingPort: TEdit;
+    Label4: TLabel;
+    edReceivingPort: TEdit;
+    Label5: TLabel;
+    edLocalTransmittingPort: TEdit;
+    Label6: TLabel;
+    edPacketSize: TEdit;
     procedure btnStartStopClick(Sender: TObject);
     procedure UpdaterTimer(Sender: TObject);
   private
     { Private declarations }
     Model: TGeoMonitoredObject1Model;
-    Repeater: TGeographProxyServerLANConnectionRepeater;
+    Repeater: TGeographProxyServerLANUDPConnectionRepeater;
 
     procedure UpdateStatus();
   public
@@ -52,7 +58,7 @@ uses
 
 
 
-Constructor TfmGeoMonitoredObject1LANConnectionRepeaterPanel.Create(const pModel: TGeoMonitoredObject1Model);
+Constructor TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.Create(const pModel: TGeoMonitoredObject1Model);
 begin
 Inherited Create(nil);
 Model:=pModel;
@@ -60,26 +66,32 @@ Repeater:=nil;
 UpdateStatus();
 end;
 
-Destructor TfmGeoMonitoredObject1LANConnectionRepeaterPanel.Destroy();
+Destructor TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.Destroy();
 begin
 Stop();
 Inherited;
 end;
 
-procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.Start();
+procedure TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.Start();
 const
   DefaultServerPort = 2010;
 var
+  PacketSize: integer;
+  ReceivingPort: integer;
   Address: string;
-  Port: integer;
-  LocalPort: integer; 
+  TransmittingPort: integer;
+  LocalReceivingPort: integer;
+  LocalTransmittingPort: integer;
   ServerAddress: string;
   Idx: integer;
   UserName,UserPassword: WideString;
 begin
+PacketSize:=StrToInt(edPacketSize.Text);
+ReceivingPort:=StrToInt(edReceivingPort.Text);
 Address:=edAddress.Text;
-Port:=StrToInt(edPort.Text);
-LocalPort:=StrToInt(edLocalPort.Text);
+TransmittingPort:=StrToInt(edTransmittingPort.Text);
+LocalReceivingPort:=StrToInt(edLocalReceivingPort.Text);
+LocalTransmittingPort:=StrToInt(edLocalTransmittingPort.Text);
 {$IFNDEF Plugin}
 ServerAddress:=ProxySpace.SOAPServerURL;
 UserName:=ProxySpace.UserName;
@@ -94,37 +106,37 @@ Idx:=Pos('http://',ServerAddress);
 if (Idx = 1) then ServerAddress:=Copy(ServerAddress,8,Length(ServerAddress)-7);
 //.
 FreeAndNil(Repeater);
-Repeater:=TGeographProxyServerLANConnectionRepeater.Create(lcmctPacketted, Address,Port, LocalPort, ServerAddress,DefaultServerPort, UserName,UserPassword, Model.ObjectController.idGeoGraphServerObject, Model.ControlModule_StartLANConnection,Model.ControlModule_StopLANConnection);
+Repeater:=TGeographProxyServerLANUDPConnectionRepeater.Create(lcmctPacketted, ReceivingPort,PacketSize, Address,TransmittingPort,PacketSize, LocalReceivingPort,PacketSize, LocalTransmittingPort,PacketSize, ServerAddress,DefaultServerPort, UserName,UserPassword, Model.ObjectController.idGeoGraphServerObject, Model.ControlModule_StartLANUDPConnection,Model.ControlModule_StopLANUDPConnection);
 //.
-gbLANEndpoint.Enabled:=false;
+gbLANUDPEndpoint.Enabled:=false;
 gbLocalPort.Enabled:=false;
 btnStartStop.Caption:='Stop';
 UpdateStatus();
 Updater.Enabled:=true;
 end;
 
-procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.Stop();
+procedure TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.Stop();
 begin
 FreeAndNil(Repeater);
 //.
 Updater.Enabled:=false;
-gbLANEndpoint.Enabled:=true;
+gbLANUDPEndpoint.Enabled:=true;
 gbLocalPort.Enabled:=true;
 btnStartStop.Caption:='Start';
 UpdateStatus();
 end;
 
-function  TfmGeoMonitoredObject1LANConnectionRepeaterPanel.IsStarted(): boolean;
+function  TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.IsStarted(): boolean;
 begin
 Result:=(Repeater <> nil);
 end;
 
-procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.UpdateStatus();
+procedure TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.UpdateStatus();
 begin
 if (IsStarted())
  then begin
   lbStatus.Font.Color:=clGreen;
-  lbStatus.Caption:='Online, connections: '+IntToStr(Repeater.GetConnectionsCount());
+  lbStatus.Caption:='Online';
   end
  else begin
   lbStatus.Font.Color:=clRed;
@@ -132,12 +144,12 @@ if (IsStarted())
   end;
 end;
 
-procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.UpdaterTimer(Sender: TObject);
+procedure TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.UpdaterTimer(Sender: TObject);
 begin
 UpdateStatus();
 end;
 
-procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.btnStartStopClick(Sender: TObject);
+procedure TfmGeoMonitoredObject1LANUDPConnectionRepeaterPanel.btnStartStopClick(Sender: TObject);
 begin
 if (IsStarted()) then Stop() else Start();
 end;

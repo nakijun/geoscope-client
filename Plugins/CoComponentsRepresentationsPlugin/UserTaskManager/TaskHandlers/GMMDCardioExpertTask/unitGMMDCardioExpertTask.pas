@@ -252,7 +252,7 @@ LoadTaskData(fmUserTaskManager.idUser,Task.id,{out} TaskData,{out} TaskParams);
 if (TaskParams.ObjectType <> GeoMonitoredMedDeviceModelID) then Raise Exception.Create('object model is not a GeoMonitoredMedDeviceModel'); //. =>
 if (TaskParams.BusinessModel <> TGMMDCardiographBusinessModel.ID) then Raise Exception.Create('business model is not a GMMDCardiographBusinessModel'); //. =>
 //.
-ServerObjectController:=TGEOGraphServerObjectController.Create(TaskParams.GeographServerObjectID,TaskParams.ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(TaskParams.GeographServerObjectID,TaskParams.ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 //.
 ObjectBusinessModel.Free();
 ObjectModel.Free();
@@ -404,7 +404,7 @@ var
 begin
 LoadTaskData(idUser,idTask,{out} TaskData,{out} TaskParams);
 //. set task status in GeographServer 
-ServerObjectController:=TGEOGraphServerObjectController.Create(TaskParams.GeographServerObjectID,TaskParams.ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(TaskParams.GeographServerObjectID,TaskParams.ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=(TObjectModel.GetModel(TaskParams.ObjectType,ServerObjectController,true) as TGeoMonitoredMedDeviceModel);
 try
 DeviceRootComponent:=TGeoMonitoredMedDeviceDeviceComponent(ObjectModel.ObjectDeviceSchema.RootComponent);
@@ -897,7 +897,7 @@ if (Terminated) then Exit; //. ->
 //.
 Synchronize(DoOnStart);
 //.
-ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=(TObjectModel.GetModel(ObjectType,ServerObjectController,true) as TGeoMonitoredMedDeviceModel);
 try
 DeviceRootComponent:=TGeoMonitoredMedDeviceDeviceComponent(ObjectModel.ObjectDeviceSchema.RootComponent);
@@ -1040,7 +1040,7 @@ var
   DeviceRootComponent: TGeoMonitoredMedDeviceDeviceComponent;
   OMIDBA: TByteArray;
 begin
-ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=(TObjectModel.GetModel(ObjectType,ServerObjectController,true) as TGeoMonitoredMedDeviceModel);
 try
 DeviceRootComponent:=TGeoMonitoredMedDeviceDeviceComponent(ObjectModel.ObjectDeviceSchema.RootComponent);
@@ -1100,7 +1100,7 @@ var
   DeviceRootComponent: TGeoMonitoredMedDeviceDeviceComponent;
   OMIDBA: TByteArray;
 begin
-ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=(TObjectModel.GetModel(ObjectType,ServerObjectController,true) as TGeoMonitoredMedDeviceModel);
 try
 DeviceRootComponent:=TGeoMonitoredMedDeviceDeviceComponent(ObjectModel.ObjectDeviceSchema.RootComponent);
@@ -1159,7 +1159,7 @@ var
   DeviceRootComponent: TGeoMonitoredMedDeviceDeviceComponent;
   OMIDBA: TByteArray;
 begin
-ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=(TObjectModel.GetModel(ObjectType,ServerObjectController,true) as TGeoMonitoredMedDeviceModel);
 try
 DeviceRootComponent:=TGeoMonitoredMedDeviceDeviceComponent(ObjectModel.ObjectDeviceSchema.RootComponent);
@@ -1216,7 +1216,7 @@ var
   DeviceRootComponent: TGeoMonitoredMedDeviceDeviceComponent;
   OMIDBA: TByteArray;
 begin
-ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(GeographServerObjectID,ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=(TObjectModel.GetModel(ObjectType,ServerObjectController,true) as TGeoMonitoredMedDeviceModel);
 try
 DeviceRootComponent:=TGeoMonitoredMedDeviceDeviceComponent(ObjectModel.ObjectDeviceSchema.RootComponent);

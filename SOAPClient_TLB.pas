@@ -12,7 +12,7 @@ unit SOAPClient_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 25.10.2012 18:24:55 from Type Library described below.
+// File generated on 04.11.2012 10:49:55 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\SOAPClient.tlb (1)
@@ -228,6 +228,8 @@ type
     procedure GetData(const pUserName: WideString; const pUserPassword: WideString; 
                       idCoComponent: Integer; idCoType: Integer; DataType: Integer; 
                       out Data: PSafeArray); safecall;
+    procedure SetData(const pUserName: WideString; const pUserPassword: WideString; 
+                      idCoComponent: Integer; idCoType: Integer; DataType: Integer; Data: PSafeArray); safecall;
   end;
 
 // *********************************************************************//

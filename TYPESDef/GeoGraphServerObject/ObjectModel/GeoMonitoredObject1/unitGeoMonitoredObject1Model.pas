@@ -523,6 +523,10 @@ Type
     Constructor Create(const pObjectModel: TObjectModel);
   end;
 
+  TLANConnectionModuleConnectionType = (
+    lcmctNormal         = 0,
+    lcmctPacketted      = 1
+  );
 
   //. MODEL
   TGeoMonitoredObject1Model = class(TObjectModel)
@@ -567,8 +571,10 @@ Type
     function  ControlModule_GetDeviceLogData(): TByteArray;
     procedure ControlModule_RestartDevice();
     procedure ControlModule_RestartDeviceProcess();
-    procedure ControlModule_StartLANConnection(const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+    procedure ControlModule_StartLANConnection(const ConnectionType: TLANConnectionModuleConnectionType; const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
     procedure ControlModule_StopLANConnection(const ConnectionID: integer);
+    procedure ControlModule_StartLANUDPConnection(const ConnectionType: TLANConnectionModuleConnectionType; const ReceivingPort: integer; const ReceivingPacketSize: integer; const Address: string; const TransmittingPort: integer; const TransmittingPacketSize: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+    procedure ControlModule_StopLANUDPConnection(const ConnectionID: integer);
   end;
 
 const
@@ -2939,14 +2945,14 @@ Lock.Leave();
 end;
 end;
 
-procedure TGeoMonitoredObject1Model.ControlModule_StartLANConnection(const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+procedure TGeoMonitoredObject1Model.ControlModule_StartLANConnection(const ConnectionType: TLANConnectionModuleConnectionType; const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
 const
   ConnectionTimeout = 1000*30; //. seconds
 var
   Params: String;
   AddressData: TByteArray;
 begin
-Params:='101,'+Address+','+IntToStr(Port)+','+ServerAddress+','+IntToStr(ServerPort)+','+IntToStr(ConnectionID)+','+IntToStr(ConnectionTimeout);
+Params:='101,'+IntToStr(Integer(ConnectionType))+','+Address+','+IntToStr(Port)+','+ServerAddress+','+IntToStr(ServerPort)+','+IntToStr(ConnectionID)+','+IntToStr(ConnectionTimeout);
 SetLength(AddressData,Length(Params));
 Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
 Lock.Enter();
@@ -2958,6 +2964,7 @@ except
     case E.Code of
     -1000003: Raise Exception.Create('connection timeout is expired'); //. =>
     -1000004: Raise Exception.Create('connection is not found, CID: '+IntToStr(ConnectionID)); //. =>
+    -1000005: Raise Exception.Create('connection source is unavailable'); //. =>
     else
       Raise; //. +>
     end;
@@ -2975,6 +2982,61 @@ var
   AddressData: TByteArray;
 begin
 Params:='102,'+IntToStr(ConnectionID);
+SetLength(AddressData,Length(Params));
+Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
+Lock.Enter();
+try
+try
+TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(AddressData);
+except
+  on E: OperationException do
+    Raise; //. +>
+  else
+    Raise; //. =>
+  end;
+if (Length(TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Value) <> 0) then Raise Exception.Create('unknown response'); //. =>
+finally
+Lock.Leave();
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.ControlModule_StartLANUDPConnection(const ConnectionType: TLANConnectionModuleConnectionType; const ReceivingPort: integer; const ReceivingPacketSize: integer; const Address: string; const TransmittingPort: integer; const TransmittingPacketSize: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+const
+  ConnectionTimeout = 1000*30; //. seconds
+var
+  Params: String;
+  AddressData: TByteArray;
+begin
+Params:='104,'+IntToStr(Integer(ConnectionType))+','+IntToStr(ReceivingPort)+','+IntToStr(ReceivingPacketSize)+','+Address+','+IntToStr(TransmittingPort)+','+IntToStr(TransmittingPacketSize)+','+ServerAddress+','+IntToStr(ServerPort)+','+IntToStr(ConnectionID)+','+IntToStr(ConnectionTimeout);
+SetLength(AddressData,Length(Params));
+Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
+Lock.Enter();
+try
+try
+TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(AddressData);
+except
+  on E: OperationException do
+    case E.Code of
+    -1000003: Raise Exception.Create('connection timeout is expired'); //. =>
+    -1000004: Raise Exception.Create('connection is not found, CID: '+IntToStr(ConnectionID)); //. =>
+    -1000005: Raise Exception.Create('connection source is unavailable'); //. =>
+    else
+      Raise; //. +>
+    end;
+  else
+    Raise; //. =>
+  end;
+finally
+Lock.Leave();
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.ControlModule_StopLANUDPConnection(const ConnectionID: integer);
+var
+  Params: String;
+  AddressData: TByteArray;
+begin
+Params:='105,'+IntToStr(ConnectionID);
 SetLength(AddressData,Length(Params));
 Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
 Lock.Enter();

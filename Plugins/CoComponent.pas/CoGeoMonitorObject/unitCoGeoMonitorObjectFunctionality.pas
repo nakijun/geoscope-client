@@ -77,6 +77,7 @@ Type
     Constructor Create(const pidCoComponent: integer); override;
     Destructor Destroy; override;
     procedure GetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; out Data: GlobalSpaceDefines.TByteArray); override;
+    procedure SetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; const Data: GlobalSpaceDefines.TByteArray); override;
     function TPropsPanel_Create: TForm; override;
     function getName: string;
     procedure setName(Value: string);
@@ -89,7 +90,7 @@ Type
     function GetLocationIsAvailableFlagComponent(const OnlineFlagBoolVarID: integer; out BoolVarID: integer): boolean;
     function GetUserAlertComponent(out UserAlertID: integer): boolean;
     function GetObjectModel(const pUserName: WideString; const pUserPassword: WideString): TObjectModel;
-    function GetBusinessModel(const pUserName: WideString; const pUserPassword: WideString): TBusinessModel; {! free Result.ObjectModel after use also}
+    function GetBusinessModel(const pUserName: WideString; const pUserPassword: WideString; out ObjectModel: TObjectModel): TBusinessModel; {! free Result.ObjectModel after use also}
     function IsOnline(): boolean;
     function LocationIsAvailable(): boolean;
     procedure GetLocationFix(const pUserName: WideString; const pUserPassword: WideString; out TimeStamp: double; out DatumID: integer; out Latitude: double; out Longitude: double; Altitude: double; out Speed: double; out Bearing: double; out Precision: double);
@@ -294,6 +295,10 @@ begin
 Inherited;
 end;
 
+Const
+  ObjectModelDataTypeBase = 1000000;
+  ObjectModelDataTypeRange = 1000;
+
 procedure TCoGeoMonitorObjectFunctionality.GetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
 var
   Idx: integer;
@@ -304,64 +309,140 @@ var
   ObjectModelID,BusinessModelID: integer;
   ObjectSchemaData,ObjectDeviceSchemaData: GlobalSpaceDefines.TByteArray;
   ObjectSchemaDataSize,ObjectDeviceSchemaDataSize: integer;
+  ObjectModel: TObjectModel;
   BusinessModel: TBusinessModel;
+  DT: integer;
+  DataTypeObjectID: integer;
+  ObjectDataType: integer;
+  _DataSize: integer;
+  _Data: GlobalSpaceDefines.TByteArray;
 begin
 Data:=nil;
 //.
 TComponentFunctionality(CoComponentFunctionality).SetUser(pUserName,pUserPassword);
-case (DataType) of
-0: begin
-  SetLength(Data,1{SizeOf(Online flag)}+1{SizeOf(LocationIsAvailable flag)}+4{SizeOf(UserAlert value)}+8{SizeOf(UserAlert timestamp)});
-  //. Online flag
-  if (IsOnline()) then V:=1 else V:=0;
-  Data[0]:=V;
-  //. LocationIsAvailable flag
-  if (LocationIsAvailable()) then V:=1 else V:=0;
-  Data[1]:=V;
-  //. UserAlert status
-  GetUserAlertStatus({out} AlertID,Severity,TimeStamp);
-  Integer(Pointer(@Data[2])^):=Severity;
-  Double(Pointer(@Data[6])^):=Double(TimeStamp);
+if (DataType < ObjectModelDataTypeBase)
+ then begin //. Object data
+  case (DataType) of
+  0: begin
+    SetLength(Data,1{SizeOf(Online flag)}+1{SizeOf(LocationIsAvailable flag)}+4{SizeOf(UserAlert value)}+8{SizeOf(UserAlert timestamp)});
+    //. Online flag
+    if (IsOnline()) then V:=1 else V:=0;
+    Data[0]:=V;
+    //. LocationIsAvailable flag
+    if (LocationIsAvailable()) then V:=1 else V:=0;
+    Data[1]:=V;
+    //. UserAlert status
+    GetUserAlertStatus({out} AlertID,Severity,TimeStamp);
+    Integer(Pointer(@Data[2])^):=Severity;
+    Double(Pointer(@Data[6])^):=Double(TimeStamp);
+    end;
   end;
-1000000: begin //. Object-Model data
-  ObjectModelID:=0;
-  BusinessModelID:=0;
-  ObjectSchemaData:=nil;
-  ObjectDeviceSchemaData:=nil;
-  //.
-  BusinessModel:=GetBusinessModel(pUserName,pUserPassword);
-  if (BusinessModel <> nil)
-   then
-    try
-    ObjectModelID:=BusinessModel.ObjectTypeID();
-    BusinessModelID:=BusinessModel.ID();
-    ObjectSchemaData:=BusinessModel.ObjectModel.ObjectSchema.RootComponent.ToByteArray();
-    ObjectDeviceSchemaData:=BusinessModel.ObjectModel.ObjectDeviceSchema.RootComponent.ToByteArray();
-    finally
-    BusinessModel.ObjectModel.Destroy();
-    BusinessModel.Destroy();
+  end
+ else begin //. Object-Model data
+  DT:=DataType-ObjectModelDataTypeBase;
+  DataTypeObjectID:=(DT DIV ObjectModelDataTypeRange);
+  ObjectDataType:=(DT MOD ObjectModelDataTypeRange);
+  if (DataTypeObjectID = 0)
+   then begin //. abstract Object-Model data
+    case (ObjectDataType) of
+    0: begin
+      ObjectModelID:=0;
+      BusinessModelID:=0;
+      ObjectSchemaData:=nil;
+      ObjectDeviceSchemaData:=nil;
+      //.
+      BusinessModel:=GetBusinessModel(pUserName,pUserPassword,{out} ObjectModel);
+      if (BusinessModel <> nil)
+       then
+        try
+        ObjectModelID:=BusinessModel.ObjectTypeID();
+        BusinessModelID:=BusinessModel.ID();
+        ObjectSchemaData:=ObjectModel.ObjectSchema.RootComponent.ToByteArray();
+        ObjectDeviceSchemaData:=ObjectModel.ObjectDeviceSchema.RootComponent.ToByteArray();
+        finally
+        BusinessModel.Destroy();
+        ObjectModel.Destroy();
+        end;
+      //.
+      ObjectSchemaDataSize:=Length(ObjectSchemaData);
+      ObjectDeviceSchemaDataSize:=Length(ObjectDeviceSchemaData);
+      SetLength(Data,4{SizeOf(ObjectModelID)}+4{SizeOf(BusinessModelID)}+4{SizeOf(ObjectSchemaDataSize)}+ObjectSchemaDataSize+4{SizeOf(ObjectDeviceSchemaDataSize)}+ObjectDeviceSchemaDataSize);
+      Idx:=0;
+      Integer(Pointer(@Data[Idx])^):=ObjectModelID; Inc(Idx,SizeOf(ObjectModelID));
+      Integer(Pointer(@Data[Idx])^):=BusinessModelID; Inc(Idx,SizeOf(BusinessModelID));
+      Integer(Pointer(@Data[Idx])^):=ObjectSchemaDataSize; Inc(Idx,SizeOf(ObjectSchemaDataSize));
+      if (ObjectSchemaDataSize > 0)
+       then begin
+        Move(Pointer(@ObjectSchemaData[0])^,Pointer(@Data[Idx])^,ObjectSchemaDataSize);
+        Inc(Idx,ObjectSchemaDataSize);
+        end;
+      Integer(Pointer(@Data[Idx])^):=ObjectDeviceSchemaDataSize; Inc(Idx,SizeOf(ObjectDeviceSchemaDataSize));
+      if (ObjectDeviceSchemaDataSize > 0)
+       then begin
+        Move(Pointer(@ObjectDeviceSchemaData[0])^,Pointer(@Data[Idx])^,ObjectDeviceSchemaDataSize);
+        Inc(Idx,ObjectDeviceSchemaDataSize);
+        end;
+      end;
     end;
-  //.
-  ObjectSchemaDataSize:=Length(ObjectSchemaData);
-  ObjectDeviceSchemaDataSize:=Length(ObjectDeviceSchemaData);
-  SetLength(Data,4{SizeOf(ObjectModelID)}+4{SizeOf(BusinessModelID)}+4{SizeOf(ObjectSchemaDataSize)}+ObjectSchemaDataSize+4{SizeOf(ObjectDeviceSchemaDataSize)}+ObjectDeviceSchemaDataSize);
-  Idx:=0;
-  Integer(Pointer(@Data[Idx])^):=ObjectModelID; Inc(Idx,SizeOf(ObjectModelID));
-  Integer(Pointer(@Data[Idx])^):=BusinessModelID; Inc(Idx,SizeOf(BusinessModelID));
-  Integer(Pointer(@Data[Idx])^):=ObjectSchemaDataSize; Inc(Idx,SizeOf(ObjectSchemaDataSize));
-  if (ObjectSchemaDataSize > 0)
-   then begin
-    Move(Pointer(@ObjectSchemaData[0])^,Pointer(@Data[Idx])^,ObjectSchemaDataSize);
-    Inc(Idx,ObjectSchemaDataSize);
-    end;
-  Integer(Pointer(@Data[Idx])^):=ObjectDeviceSchemaDataSize; Inc(Idx,SizeOf(ObjectDeviceSchemaDataSize));
-  if (ObjectDeviceSchemaDataSize > 0)
-   then begin
-    Move(Pointer(@ObjectDeviceSchemaData[0])^,Pointer(@Data[Idx])^,ObjectDeviceSchemaDataSize);
-    Inc(Idx,ObjectDeviceSchemaDataSize);
+    end
+   else begin
+    BusinessModel:=GetBusinessModel(pUserName,pUserPassword,{out} ObjectModel);
+    if (BusinessModel <> nil)
+     then
+      try
+      ObjectModel.GetData(ObjectDataType,{out} _Data);
+      _DataSize:=Length(_Data);
+      SetLength(Data,SizeOf(_DataSize)+_DataSize);
+      Idx:=0;
+      Integer(Pointer(@Data[Idx])^):=_DataSize; Inc(Idx,SizeOf(_DataSize));
+      if (_DataSize > 0)
+       then begin
+        Move(Pointer(@_Data[0])^,Pointer(@Data[Idx])^,_DataSize);
+        Inc(Idx,_DataSize);
+        end;
+      finally
+      BusinessModel.Destroy();
+      ObjectModel.Destroy();
+      end;
     end;
   end;
 end;
+
+procedure TCoGeoMonitorObjectFunctionality.SetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; const Data: GlobalSpaceDefines.TByteArray);
+var
+  ObjectModel: TObjectModel;
+  BusinessModel: TBusinessModel;
+  DT: integer;
+  DataTypeObjectID: integer;
+  ObjectDataType: integer;
+begin
+TComponentFunctionality(CoComponentFunctionality).SetUser(pUserName,pUserPassword);
+if (DataType < ObjectModelDataTypeBase)
+ then begin //. Object data
+  end
+ else begin //. Object-Model data
+  DT:=DataType-ObjectModelDataTypeBase;
+  DataTypeObjectID:=(DT DIV ObjectModelDataTypeRange);
+  ObjectDataType:=(DT MOD ObjectModelDataTypeRange);
+  if (DataTypeObjectID = 0)
+   then begin //. abstract Object-Model data
+    (*case (ObjectDataType) of
+    0: begin
+      end;
+    end;*)
+    end
+   else begin
+    BusinessModel:=GetBusinessModel(pUserName,pUserPassword,{out} ObjectModel);
+    if (BusinessModel <> nil)
+     then
+      try
+      ObjectModel.SetData(ObjectDataType,Data);
+      finally
+      BusinessModel.Destroy();
+      ObjectModel.Destroy();
+      end;
+    end;
+  end;
 end;
 
 function TCoGeoMonitorObjectFunctionality.TPropsPanel_Create: TForm;
@@ -596,11 +677,11 @@ UserID:=MSF.GetUserID(TComponentFunctionality(MSF).UserName(),TComponentFunction
 finally
 MSF.Release();
 end;
-ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,UserID,TComponentFunctionality(CoComponentFunctionality).UserPassword(),'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,UserID,TComponentFunctionality(CoComponentFunctionality).UserName(),TComponentFunctionality(CoComponentFunctionality).UserPassword(),'',0,false);
 Result:=TObjectModel.GetModel(_ObjectType,ServerObjectController,true);
 end;
 
-function TCoGeoMonitorObjectFunctionality.GetBusinessModel(const pUserName: WideString; const pUserPassword: WideString): TBusinessModel;
+function TCoGeoMonitorObjectFunctionality.GetBusinessModel(const pUserName: WideString; const pUserPassword: WideString; out ObjectModel: TObjectModel): TBusinessModel;
 var
   idGeoGraphServerObject: integer;
   GSOF: TGeoGraphServerObjectFunctionality;
@@ -611,7 +692,6 @@ var
   MSF: TMODELServerFunctionality;
   UserID: integer;
   ServerObjectController: TGEOGraphServerObjectController;
-  ObjectModel: TObjectModel;
 begin
 Result:=nil;
 TComponentFunctionality(CoComponentFunctionality).SetUser(pUserName,pUserPassword);
@@ -637,11 +717,15 @@ UserID:=MSF.GetUserID(TComponentFunctionality(MSF).UserName(),TComponentFunction
 finally
 MSF.Release();
 end;
-ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,UserID,TComponentFunctionality(CoComponentFunctionality).UserPassword(),'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,UserID,TComponentFunctionality(CoComponentFunctionality).UserName(),TComponentFunctionality(CoComponentFunctionality).UserPassword(),'',0,false);
 ObjectModel:=TObjectModel.GetModel(_ObjectType,ServerObjectController,true);
 if (ObjectModel = nil) then Exit; //. ->
 Result:=TBusinessModel.GetModel(ObjectModel,_BusinessModel);
-if (Result = nil) then ObjectModel.Destroy();
+if (Result = nil)
+ then begin
+  ObjectModel.Destroy();
+  ObjectModel:=nil;
+  end;
 end;
 
 function TCoGeoMonitorObjectFunctionality.IsOnline(): boolean;
@@ -1393,7 +1477,7 @@ UserID:=MSF.GetUserID(TComponentFunctionality(MSF).UserName(),TComponentFunction
 finally
 MSF.Release();
 end;
-ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,UserID,TComponentFunctionality(CoComponentFunctionality).UserPassword(),'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,UserID,TComponentFunctionality(CoComponentFunctionality).UserName(),TComponentFunctionality(CoComponentFunctionality).UserPassword(),'',0,false);
 //.
 ObjectModel:=TObjectModel.GetModel(_ObjectType,ServerObjectController,true);
 if (ObjectModel = nil) then Exit; //. ->
@@ -1550,6 +1634,7 @@ end;
 function TCoGeoMonitorObjectFunctionality.GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; const InfoType: integer; const InfoFormat: integer; out Info: GlobalSpaceDefines.TByteArray): boolean;
 var
   flProcessed: boolean;
+  ObjectModel: TObjectModel;
   BusinessModel: TBusinessModel;
   flOnline,flLocationIsAvailable: boolean;
   TimeStamp: double;
@@ -1570,14 +1655,14 @@ Result:=false;
 //.
 case InfoType of
 1: begin //. simple state+location
-  BusinessModel:=GetBusinessModel(pUserName,pUserPassword);
+  BusinessModel:=GetBusinessModel(pUserName,pUserPassword,{out} ObjectModel);
   if (BusinessModel <> nil)
    then
     try
     Result:=BusinessModel.Object_GetHintInfo(InfoType,InfoFormat,{out} Info);
     finally
-    BusinessModel.ObjectModel.Destroy();
     BusinessModel.Destroy();
+    ObjectModel.Destroy();
     end;
   //.
   if (NOT Result)

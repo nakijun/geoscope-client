@@ -674,7 +674,7 @@ Release();
 end;
 if (NOT ((_GeoGraphServerID <> 0) AND (_ObjectID <> 0))) then Exit; //. ->
 if ((_ObjectType = 0) OR (_BusinessModel = 0)) then Exit; //. ->
-ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 ObjectModel:=TObjectModel.GetModel(_ObjectType,ServerObjectController,true);
 if (ObjectModel = nil) then Raise Exception.Create('there is no object model'); //. =>
 try
@@ -735,7 +735,7 @@ for I:=0 to DomainItemList.Count-1 do with TCoGeoMonitorObjectTreeListItem(Domai
   end;
   if (NOT ((_GeoGraphServerID <> 0) AND (_ObjectID <> 0))) then Raise Exception.Create('invalid object: '+ObjectName); // =>
   if ((_ObjectType = 0) OR (_BusinessModel = 0)) then Raise Exception.Create('invalid object: '+ObjectName+', there are no models defined'); // =>
-  ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+  ServerObjectController:=TGEOGraphServerObjectController.Create(idGeoGraphServerObject,_ObjectID,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
   ObjectModel:=TObjectModel.GetModel(_ObjectType,ServerObjectController,true);
   if (ObjectModel = nil) then Raise Exception.Create('invalid object: '+ObjectName+', '+'there is no object model'); //. =>
   try

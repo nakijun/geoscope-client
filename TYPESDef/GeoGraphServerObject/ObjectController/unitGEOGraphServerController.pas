@@ -196,6 +196,7 @@ Type
     ServerSocket: TTcpClient;
     {$ENDIF}
     UserID: integer;
+    UserName: string;
     UserPassword: string;
     NextOperationSession: smallint;
 
@@ -232,7 +233,7 @@ Type
     flKeepConnection: boolean;                                  
     flConnected: boolean;                                             
                                                    
-    Constructor Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean = false);
+    Constructor Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserName: string; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean = false);
     Destructor Destroy; override;
     {$IFNDEF Plugin}
     procedure Connect;
@@ -316,7 +317,7 @@ end;
 
 
 {TGEOGraphServerObjectController}
-Constructor TGEOGraphServerObjectController.Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean);
+Constructor TGEOGraphServerObjectController.Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserName: string; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean);
 begin
 Inherited Create();
 ServerAddress:=pServerAddress;
@@ -336,6 +337,7 @@ flKeepConnection:=pflKeepConnection;
 flConnected:=false;
 //.
 UserID:=pUserID;
+UserName:=pUserName;
 UserPassword:=pUserPassword;
 NextOperationSession:=1;
 end;
@@ -597,6 +599,8 @@ if (NOT flUserDirectConnection)
  then begin //. execute via TGeographServerObject gate
   SOF:=TGeoGraphServerObjectFunctionality(TComponentFunctionality_Create(idTGeoGraphServerObject,idGeoGraphServerObject));
   try
+  TComponentFunctionality(SOF).SetUser(UserName,UserPassword);
+  //.
   InDataSize:=DataSize-MessageProtocolSize{skip message protocol}+4;
   SetLength(InData,InDataSize);
   Idx:=0;

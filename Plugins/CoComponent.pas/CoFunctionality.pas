@@ -77,6 +77,7 @@ Type
     function IsWellformed: boolean; virtual;
     procedure CheckWellformedness;
     procedure GetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; out Data: TByteArray); virtual; abstract;
+    procedure SetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; const Data: TByteArray); virtual; abstract;
     function GetInfo(const pUserName: WideString; const pUserPassword: WideString; const InfoType: integer; const InfoFormat: integer; out Info: TByteArray): boolean; virtual;
     function GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; const InfoType: integer; const InfoFormat: integer; out Info: TByteArray): boolean; virtual;
     function TStatusBar_Create(const pUpdateNotificationProc: TComponentStatusBarUpdateNotificationProc): TAbstractComponentStatusBar; virtual;

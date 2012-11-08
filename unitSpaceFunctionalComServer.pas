@@ -55,6 +55,8 @@ type
     //. ICoComponent
     procedure CoComponent_GetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; out Data: PSafeArray); safecall;
       procedure ICoComponent.GetData = CoComponent_GetData;
+    procedure CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; Data: PSafeArray); safecall;
+      procedure ICoComponent.SetData = CoComponent_SetData;
     procedure CoComponent_CheckCoType(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer);
     //. ICoGeoMonitorObjectFunctionality
     procedure CoGeoMonitorObjectFunctionality_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; GeoSpaceID: integer; BeginTime: Double; EndTime: Double; DataType: Integer; out Data: PSafeArray); safecall;
@@ -1293,6 +1295,30 @@ if (Length(_Data) > 0)
   end;
   end
  else Data:=nil;
+end;
+
+procedure TcoSpaceFunctionalServer.CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; Data: PSafeArray); safecall;
+var
+  _Data: TByteArray;
+  DATAPtr: pointer;
+  Space: TProxySpace;
+begin
+//. set thread locale for ANSIString and WideString conversions
+SetThreadLocale(ProcessLocaleID);
+if (unitProxySpace.ProxySpace = nil) then Raise Exception.Create('ProxySpace is not initialized'); //. =>
+//.
+CoComponent_CheckCoType(pUserName,pUserPassword,idCoComponent,pidCoType);
+//.
+if (Data <> nil)
+ then begin
+  SetLength(_Data,Data.rgsabound[0].cElements);
+  SafeArrayAccessData(Data,DATAPtr);
+  CopyMem(DATAPtr,@_Data[0],Length(_Data));
+  SafeArrayUnAccessData(Data);
+  end
+ else _Data:=nil;
+Space:=unitProxySpace.ProxySpace;
+Space.Plugins__CoComponent_SetData(pUserName,pUserPassword, idCoComponent, pidCoType, DataType, _Data);
 end;
 
 procedure TcoSpaceFunctionalServer.CoGeoMonitorObjectFunctionality_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; GeoSpaceID: integer; BeginTime: Double; EndTime: Double; DataType: Integer; out Data: PSafeArray); safecall;
