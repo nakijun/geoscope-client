@@ -1269,7 +1269,7 @@ var
 begin
 if (NOT FileExists(ObjectLogFileName)) then Raise Exception.Create('Object log file is not found'); //. =>
 //.
-ServerObjectController:=TGEOGraphServerObjectController.Create(5,64,Convertor.Reflector.Space.UserID,Convertor.Reflector.Space.UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(5,64,Convertor.Reflector.Space.UserID,Convertor.Reflector.Space.UserName,Convertor.Reflector.Space.UserPassword,'',0,false);
 try
 ObjectModel:=TObjectModel.GetModel(1{///////ObjectType},ServerObjectController);
 try

@@ -397,7 +397,8 @@ Type
     function  Plugins_CanCreateCoComponentByFile(const FileName: WideString; out idCoPrototype: integer): boolean;
     function  Plugins__CoComponent_LoadByFile(const idCoComponent: integer; const FileName: WideString): boolean;
     procedure Plugins__CoComponent_GetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
-    function  Plugins__CoComponent_GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const InfoType: Integer; const InfoFormat: Integer; out Info: GlobalSpaceDefines.TByteArray): boolean; 
+    procedure Plugins__CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; const Data: GlobalSpaceDefines.TByteArray);
+    function  Plugins__CoComponent_GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const InfoType: Integer; const InfoFormat: Integer; out Info: GlobalSpaceDefines.TByteArray): boolean;
     function  Plugins__CoComponent_TStatusBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TProcedureOfObject): TObject; 
     procedure Plugins__CoGeoMonitorObject_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
     function  Plugins__CoGeoMonitorObjects_GetTreePanel(): TForm;
@@ -8391,6 +8392,32 @@ if (Plugins <> nil)
     if (Routine <> nil)
      then begin
       TCoComponent_GetData(Routine)(pUserName,pUserPassword, idCoComponent, pidCoType, DataType, {out} Data);
+      Exit; //. ->
+      end;
+    end;
+  finally
+  Plugins.UnLockList();
+  end;
+end;
+
+procedure TProxySpace.Plugins__CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; const Data: GlobalSpaceDefines.TByteArray);
+type
+  TCoComponent_SetData = procedure (const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; const Data: GlobalSpaceDefines.TByteArray); stdcall;
+var
+  I: integer;
+  PluginHandle: THandle;
+  Routine: pointer;
+begin
+if (Plugins <> nil)
+ then
+  with Plugins.LockList() do
+  try
+  for I:=0 to Count-1 do begin
+    PluginHandle:=THandle(List[I]);
+    Routine:=GetProcAddress(PluginHandle, PChar('CoComponent_SetData'));
+    if (Routine <> nil)
+     then begin
+      TCoComponent_SetData(Routine)(pUserName,pUserPassword, idCoComponent, pidCoType, DataType, Data);
       Exit; //. ->
       end;
     end;

@@ -354,7 +354,7 @@ BusinessModelID:=BusinessModelClass.ID;
 //. wait for GeoGraphServer updates own list of objects (config params TimeToUpdateConfiguration for GeoGraphServer)
 Sleep(10000{must be more than TimeToUpdateConfiguration});
 //. setup model properties
-ServerObjectController:=TGEOGraphServerObjectController.Create(pidGeoGraphServerObject,Result,ProxySpace_UserID,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(pidGeoGraphServerObject,Result,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
 try
 ObjectModel:=TObjectModel.GetModel(BusinessModelClass.ObjectTypeID,ServerObjectController);
 try

@@ -230,7 +230,7 @@ Release;
 end;
 FreeAndNil(ObjectModel);
 FreeAndNil(ServerObjectController);
-ServerObjectController:=TGEOGraphServerObjectController.Create(ObjFunctionality.idObj,_ObjectID,ObjFunctionality.Space.UserID,ObjFunctionality.Space.UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(ObjFunctionality.idObj,_ObjectID,ObjFunctionality.Space.UserID,ObjFunctionality.Space.UserName,ObjFunctionality.Space.UserPassword,'',0,false);
 ObjectModel:=TObjectModel.GetModel(ObjectType,ServerObjectController);
 if (ObjectModel <> nil)
  then begin

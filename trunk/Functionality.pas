@@ -155,7 +155,7 @@ Type
     Constructor Create; overload; virtual; abstract;
     Constructor CreateNew(pTypesSystem: TTypesSystem; const pidType: integer; const pTableName: string; const pTypeFunctionalityClass: TTypeFunctionalityClass); overload;
     Constructor CreateNew(const pidType: integer; const pTableName: string; const pTypeFunctionalityClass: TTypeFunctionalityClass); overload;
-    Destructor Destroy; override;
+    Destructor Destroy(); override;
     procedure Initialize; virtual;
     procedure DoOnComponentOperationLocal(const pidTObj,pidObj: integer; const Operation: TComponentOperation); virtual;
     procedure DoOnComponentPartialUpdateLocal(const pidTObj,pidObj: integer; const Data: TByteArray); virtual;
@@ -1414,7 +1414,7 @@ var
 begin
 TypesSystem.IDsCach[idType]:=nil;
 TypesSystem.Remove(Self);
-CachingList.Free;
+CachingList.Free();
 if (PresentUpdaters <> nil)
  then
   try
@@ -1425,10 +1425,10 @@ if (PresentUpdaters <> nil)
   PresentUpdaters.UnlockList();
   end;
   finally
-  PresentUpdaters.Destroy;
+  PresentUpdaters.Destroy();
   end;
-Items.Free;
-Lock.Free;
+Items.Free();
+Lock.Free();
 //.
 Inherited;
 end;
@@ -1466,15 +1466,12 @@ if (pidTObj = idType)
           end;
         end;
   //. Обновляем представления данного типа
-  _PresentUpdaters:=TList.Create; //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
+  _PresentUpdaters:=TList.Create(); //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
   try
-  with PresentUpdaters.LockList do
+  with PresentUpdaters.LockList() do
   try
   _PresentUpdaters.Capacity:=Count;
   for I:=0 to Count-1 do _PresentUpdaters.Add(List[I]);
-  finally
-  PresentUpdaters.UnLockList;
-  end;
   for I:=0 to _PresentUpdaters.Count-1 do
     if (TObject(_PresentUpdaters[I]) is TComponentPresentUpdater)
      then with TComponentPresentUpdater(_PresentUpdaters[I]) do begin
@@ -1482,8 +1479,8 @@ if (pidTObj = idType)
        then
         try
         case Operation of
-        opUpdate: Update;
-        opDestroy: Off;
+        opUpdate: Update();
+        opDestroy: Off();
         end;
         except
           on E: Exception do begin
@@ -1506,7 +1503,10 @@ if (pidTObj = idType)
               end;
             end;
   finally
-  _PresentUpdaters.Destroy;
+  PresentUpdaters.UnLockList();
+  end;
+  finally
+  _PresentUpdaters.Destroy();
   end;
   end;
 end;
@@ -1532,15 +1532,12 @@ if (pidTObj = idType)
           end;
         end;
   //. Обновляем представления данного типа
-  _PresentUpdaters:=TList.Create; //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
+  _PresentUpdaters:=TList.Create(); //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
   try
-  with PresentUpdaters.LockList do
+  with PresentUpdaters.LockList() do
   try
   _PresentUpdaters.Capacity:=Count;
   for I:=0 to Count-1 do _PresentUpdaters.Add(List[I]);
-  finally
-  PresentUpdaters.UnLockList;
-  end;
   for I:=0 to _PresentUpdaters.Count-1 do
     if (TObject(_PresentUpdaters[I]) is TComponentPresentUpdater)
      then with TComponentPresentUpdater(_PresentUpdaters[I]) do begin
@@ -1568,8 +1565,12 @@ if (pidTObj = idType)
               EventLog.WriteMajorEvent('TypeRepresentationUpdating',ExceptionMessage,E.Message);
               end;
             end;
+  for I:=0 to Count-1 do _PresentUpdaters.Add(List[I]);
   finally
-  _PresentUpdaters.Destroy;
+  PresentUpdaters.UnLockList();
+  end;
+  finally
+  _PresentUpdaters.Destroy();
   end;
   end;
 end;
@@ -2217,15 +2218,12 @@ for I:=0 to Count-1 do
 //.
 StrobingVisualizations.DoOnComponentOperationLocal(idTObj,idObj, Operation);
 //. Обновляем представления системы типов
-_PresentUpdaters:=TList.Create; //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
+_PresentUpdaters:=TList.Create(); //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
 try
-with PresentUpdaters.LockList do
+with PresentUpdaters.LockList() do
 try
 _PresentUpdaters.Capacity:=Count;
 for I:=0 to Count-1 do _PresentUpdaters.Add(List[I]);
-finally
-PresentUpdaters.UnLockList;
-end;
 for I:=0 to _PresentUpdaters.Count-1 do
   if (TTypesSystemPresentUpdater(_PresentUpdaters[I]).Enabled)
    then
@@ -2237,8 +2235,12 @@ for I:=0 to _PresentUpdaters.Count-1 do
         EventLog.WriteMajorEvent('TypesSystemRepresentationUpdating',ExceptionMessage,E.Message);
         end;
       end;
+for I:=0 to Count-1 do _PresentUpdaters.Add(List[I]);
 finally
-_PresentUpdaters.Destroy;
+PresentUpdaters.UnLockList();
+end;
+finally
+_PresentUpdaters.Destroy();
 end;
 //. обновляем пользовательские плугины
 Space.Plugins_DoOnComponentOperation(idTObj,idObj, Operation);
@@ -2267,15 +2269,12 @@ if (TS <> nil)
 for I:=0 to Count-1 do
   if TTypeSystem(List[I]).idType <> idTObj then TTypeSystem(List[I]).DoOnComponentPartialUpdateLocal(idTObj,idObj,Data);
 //. Обновляем представления системы типов
-_PresentUpdaters:=TList.Create; //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
+_PresentUpdaters:=TList.Create(); //. временно создаем для того, чтобы предупредить ошибку индекса, когда один или несколько обновителей выйдет из списка
 try
-with PresentUpdaters.LockList do
+with PresentUpdaters.LockList() do
 try
 _PresentUpdaters.Capacity:=Count;
 for I:=0 to Count-1 do _PresentUpdaters.Add(List[I]);
-finally
-PresentUpdaters.UnLockList;
-end;
 for I:=0 to _PresentUpdaters.Count-1 do
   if (TTypesSystemPresentUpdater(_PresentUpdaters[I]).Enabled)
    then
@@ -2288,7 +2287,10 @@ for I:=0 to _PresentUpdaters.Count-1 do
         end;
       end;
 finally
-_PresentUpdaters.Destroy;
+PresentUpdaters.UnLockList();
+end;
+finally
+_PresentUpdaters.Destroy();
 end;
 //. обновляем пользовательские плугины
 ///+++ to-do Space.Plugins_DoOnComponentOperation(idTObj,idObj, Operation);
@@ -2455,9 +2457,9 @@ var
   flTTypeSystemPresentUpdaterFound: boolean;
   CachedComponentsIDs: TIDArray;
 begin
-Components:=TComponentsList.Create;
+Components:=TComponentsList.Create();
 try
-L:=PresentUpdaters.LockList;
+L:=PresentUpdaters.LockList();
 try
 if (L.Count > 0)
  then begin
@@ -2465,14 +2467,14 @@ if (L.Count > 0)
   Exit; //. ->
   end;
 finally
-PresentUpdaters.UnlockList;
+PresentUpdaters.UnlockList();
 end;
 for I:=0 to Count-1 do with TTypeSystem(List[I]) do begin
-  Lock.Enter;
+  Lock.Enter();
   try
   if (Enabled)
    then begin
-    L:=PresentUpdaters.LockList;
+    L:=PresentUpdaters.LockList();
     try
     flTTypeSystemPresentUpdaterFound:=false;
     for J:=0 to L.Count-1 do
@@ -2488,7 +2490,7 @@ for I:=0 to Count-1 do with TTypeSystem(List[I]) do begin
         if (TObject(L[J]) is TComponentPresentUpdater)
          then with TComponentPresentUpdater(L[J]) do Components.AddComponent(idType,idObj,0);
     finally
-    PresentUpdaters.UnLockList;
+    PresentUpdaters.UnLockList();
     end;
     //.
     if (NOT TypeFunctionalityClass.InheritsFrom(TTBaseVisualizationFunctionality))
@@ -2498,7 +2500,7 @@ for I:=0 to Count-1 do with TTypeSystem(List[I]) do begin
       end;
     end;
   finally
-  Lock.Leave;
+  Lock.Leave();
   end;
   end;
 except
