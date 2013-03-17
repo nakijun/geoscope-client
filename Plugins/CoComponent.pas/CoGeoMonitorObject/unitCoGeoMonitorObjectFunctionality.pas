@@ -1,8 +1,9 @@
 unit unitCoGeoMonitorObjectFunctionality;
 Interface
 Uses
+  SysUtils,
   Windows,
-  Classes, Dialogs,
+  Classes,
   Forms,
   Graphics,
   GlobalSpaceDefines,
@@ -69,7 +70,7 @@ Type
   TTCoGeoMonitorObjectFunctionality = class(TFunctionality)
   public
     Constructor Create();
-    procedure DestroyInstance(const idCoComponent: integer);
+    procedure DestroyInstance(const pUserName: WideString; const pUserPassword: WideString; const idCoComponent: integer);
   end;
 
   TCoGeoMonitorObjectFunctionality = class(TCoComponentFunctionality)
@@ -118,6 +119,7 @@ Type
     procedure setNotificationAddresses(Value: string);
     procedure GetTrackData(const pUserName: WideString; const pUserPassword: WideString; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray); 
     function GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; const InfoType: integer; const InfoFormat: integer; out Info: GlobalSpaceDefines.TByteArray): boolean; override;
+    function TIconBar_Create(const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc): TAbstractComponentIconBar; override;
     function TStatusBar_Create(const pUpdateNotificationProc: TComponentStatusBarUpdateNotificationProc): TAbstractComponentStatusBar; override;
     property Name: string read getName write setName;
     property NotificationAddresses: string read getNotificationAddresses write setNotificationAddresses;
@@ -162,6 +164,41 @@ Const
   );
 
 Type
+  TCoGeoMonitorObjectIconBar = class(TAbstractComponentIconBar)
+  private
+    procedure Validate();
+    procedure OnlineFlagComponentUpdate();
+    procedure LocationIsAvailableFlagComponentUpdate();
+    procedure UserAlertComponentUpdate();
+  public
+    ObjectModelID: integer;
+    BusinessModelID: integer;
+    OnlineFlagComponentID: integer;
+    OnlineFlag: boolean;
+    OnlineFlagComponentUpdater: TComponentPresentUpdater;
+    //.
+    LocationIsAvailableFlagComponentID: integer;
+    LocationIsAvailableFlag: boolean;
+    LocationIsAvailableFlagComponentUpdater: TComponentPresentUpdater;
+    //.
+    UserAlertComponentID: integer;
+    UserAlertSeverity: integer;
+    UserAlertFlag: boolean;
+    UserAlertComponentUpdater: TComponentPresentUpdater;
+    //.
+    IconSet: TBitmap;
+    IconSet_flFree: boolean;
+
+    Destructor Destroy(); override;
+    procedure Update(); override;
+    function IsNull(): boolean; override; 
+    procedure SaveToStream(const Stream: TMemoryStream); override;
+    function  LoadFromStream(const Stream: TMemoryStream): boolean; override;
+    function Status_IsOnline(): boolean; override;
+    function Status_LocationIsAvailable(): boolean; override;
+    procedure DrawOnCanvas(const Canvas: TCanvas; const Rect: TRect; const Version: integer); override;
+  end;
+
   TCoGeoMonitorObjectStatusBar = class(TAbstractComponentStatusBar)
   private
     procedure ValidateUpdaters();
@@ -193,6 +230,36 @@ Type
 
   function ConstructCoGeoMonitorObject(const BusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer): integer;
 
+type
+  TCoGeoMonitorObjectConstructor = class(TThread)
+  private
+    UserID: integer;
+    UserName: WideString;
+    UserPassword: WideString;
+    BusinessModelClass: TBusinessModelClass;
+    Name: string;
+    GeoSpaceID: integer;
+    SecurityIndex: integer;
+    //.
+    ThreadException: Exception;
+    ComponentID: integer;
+    GeographServerAddress: string;
+    ObjectID: integer;
+    //.
+    BusinessModelConstructorPanel: TBusinessModelConstructorPanel;
+
+    procedure CreateConstructorPanel();
+    procedure FreeConstructorPanel();
+  public
+    Constructor Create(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pBusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer);
+    Destructor Destroy(); override;
+    procedure Execute(); override;
+    procedure Synchronize(Method: TThreadMethod); reintroduce;
+    procedure Construct(out oComponentID: integer; out oGeographServerAddress: string; out oObjectID: integer);
+  end;
+
+  procedure CoGeoMonitorObjects_Constructor_Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pBusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer; out oComponentID: integer; out oGeographServerAddress: string; out oGeographServerObjectID: integer);
+
   procedure Initialize; stdcall;
   procedure Finalize; stdcall;
 
@@ -202,7 +269,6 @@ var
 
 Implementation
 Uses
-  SysUtils,
   ActiveX,
   MSXML,
   DBClient,
@@ -237,8 +303,9 @@ begin
 Inherited Create();
 end;
 
-procedure TTCoGeoMonitorObjectFunctionality.DestroyInstance(const idCoComponent: integer);
+procedure TTCoGeoMonitorObjectFunctionality.DestroyInstance(const pUserName: WideString; const pUserPassword: WideString; const idCoComponent: integer);
 var
+  CF: TComponentFunctionality;
   idGeoGraphServerObject: integer;
   _GeoGraphServerID: integer;
   _ObjectID: integer;
@@ -250,32 +317,44 @@ _ObjectID:=0;
 try
 with TCoGeoMonitorObjectFunctionality.Create(idCoComponent) do
 try
+SetUser(pUserName,pUserPassword);
+//.
 if (GetGeoGraphServerObject(idGeoGraphServerObject))
- then with TGeoGraphServerObjectFunctionality(TComponentFunctionality_Create(idTGeoGraphServerObject,idGeoGraphServerObject)) do
+ then begin
+  CF:=TComponentFunctionality_Create(idTGeoGraphServerObject,idGeoGraphServerObject); 
   try
-  GetParams(_GeoGraphServerID,_ObjectID,_ObjectType,_BusinessModel);
+  CF.SetUser(pUserName,pUserPassword);
+  //.
+  TGeoGraphServerObjectFunctionality(CF).GetParams(_GeoGraphServerID,_ObjectID,_ObjectType,_BusinessModel);
   finally
-  Release;
+  CF.Release();
+  end;
   end;
 finally
 Release;
 end;
 //. unregister GeographServer object
 if ((_GeoGraphServerID <> 0) AND (_ObjectID <> 0))
- then with TGeoGraphServerFunctionality(TComponentFunctionality_Create(idTGeoGraphServer,_GeoGraphServerID)) do
+ then begin
+  CF:=TComponentFunctionality_Create(idTGeoGraphServer,_GeoGraphServerID);
   try
   try
-  UnRegisterObject(_ObjectID);
+  CF.SetUser(pUserName,pUserPassword);
+  //.
+  TGeoGraphServerFunctionality(CF).UnRegisterObject(_ObjectID);
   except
     //. catch exceptions if object is not registered
     end;
   finally
-  Release();
+  CF.Release();
+  end;
   end;
 finally
 //. destroy this instance
 with TTypeFunctionality_Create(idTCoComponent) do
 try
+SetUser(pUserName,pUserPassword);
+//.
 DestroyInstance(idCoComponent);
 finally
 Release();
@@ -1695,6 +1774,11 @@ case InfoType of
 end;
 end;
 
+function TCoGeoMonitorObjectFunctionality.TIconBar_Create(const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc): TAbstractComponentIconBar;
+begin
+Result:=TCoGeoMonitorObjectIconBar.Create(idTCoComponent,idCoComponent,pUpdateNotificationProc);
+end;
+
 function TCoGeoMonitorObjectFunctionality.TStatusBar_Create(const pUpdateNotificationProc: TComponentStatusBarUpdateNotificationProc): TAbstractComponentStatusBar;
 begin
 Result:=TCoGeoMonitorObjectStatusBar.Create(idTCoComponent,idCoComponent,pUpdateNotificationProc);
@@ -1810,6 +1894,270 @@ Root.appendChild(ServerNode);
 Self.Size:=0;
 OLEStream:=TStreamAdapter.Create(Self);
 Doc.Save(OLEStream);
+end;
+
+
+{TCoGeoMonitorObjectIconBar}
+Destructor TCoGeoMonitorObjectIconBar.Destroy();
+begin
+if (IconSet_flFree) then FreeAndNil(IconSet) else IconSet:=nil;
+UserAlertComponentUpdater.Free();
+LocationIsAvailableFlagComponentUpdater.Free();
+OnlineFlagComponentUpdater.Free();
+Inherited;
+end;
+
+procedure TCoGeoMonitorObjectIconBar.Update();
+var
+  idGeoGraphServerObject: integer;
+  GSOF: TGeoGraphServerObjectFunctionality;
+  _GeoGraphServerID: integer;
+  _ObjectID: integer;
+  LastUpdateNotificationProc: TComponentIconBarUpdateNotificationProc;
+begin
+with TCoGeoMonitorObjectFunctionality.Create(idComponent) do
+try
+if (NOT GetGeoGraphServerObject(idGeoGraphServerObject)) then Raise Exception.Create('could not get GeoGraphServerObject-component'); //. =>
+GSOF:=TGeoGraphServerObjectFunctionality(TComponentFunctionality_Create(idTGeoGraphServerObject,idGeoGraphServerObject));
+try
+TComponentFunctionality(GSOF).SetUser(TComponentFunctionality(CoComponentFunctionality).UserName,TComponentFunctionality(CoComponentFunctionality).UserPassword);
+//.
+GSOF.GetParams({out} _GeoGraphServerID,_ObjectID,ObjectModelID,BusinessModelID);
+finally
+GSOF.Release();
+end;
+//.
+if (GetOnlineFlagComponent({out} OnlineFlagComponentID))
+ then begin
+  if (NOT GetLocationIsAvailableFlagComponent(OnlineFlagComponentID,{out} LocationIsAvailableFlagComponentID))
+   then LocationIsAvailableFlagComponentID:=0;
+  end
+ else begin                                                    
+  OnlineFlagComponentID:=0;
+  LocationIsAvailableFlagComponentID:=0;
+  end;
+if (NOT GetUserAlertComponent({out} UserAlertComponentID))
+ then UserAlertComponentID:=0;
+//.
+LastUpdateNotificationProc:=UpdateNotificationProc;
+try
+UpdateNotificationProc:=nil;
+//.
+OnlineFlagComponentUpdate();
+LocationIsAvailableFlagComponentUpdate();
+UserAlertComponentUpdate();
+finally
+UpdateNotificationProc:=LastUpdateNotificationProc;
+end;
+finally
+Release();
+end;
+//.
+Validate();
+end;
+
+function TCoGeoMonitorObjectIconBar.IsNull(): boolean;
+begin
+Result:=(IconSet = nil);
+end;
+
+procedure TCoGeoMonitorObjectIconBar.SaveToStream(const Stream: TMemoryStream);
+var
+  Version: word;
+begin
+Version:=1;
+//.
+Stream.Write(Version,SizeOf(Version));
+//.
+Stream.Write(ObjectModelID,SizeOf(ObjectModelID));
+Stream.Write(BusinessModelID,SizeOf(BusinessModelID));
+Stream.Write(OnlineFlagComponentID,SizeOf(OnlineFlagComponentID));
+Stream.Write(OnlineFlag,SizeOf(OnlineFlag));
+Stream.Write(LocationIsAvailableFlagComponentID,SizeOf(LocationIsAvailableFlagComponentID));
+Stream.Write(LocationIsAvailableFlag,SizeOf(LocationIsAvailableFlag));
+Stream.Write(UserAlertComponentID,SizeOf(UserAlertComponentID));
+Stream.Write(UserAlertSeverity,SizeOf(UserAlertSeverity));
+end;
+
+function TCoGeoMonitorObjectIconBar.LoadFromStream(const Stream: TMemoryStream): boolean;
+var
+  Version: word;
+begin
+Result:=false;
+//.
+Stream.Read(Version,SizeOf(Version));
+//.
+if (Version <> 1) then Exit; //. ->
+//.
+Stream.Read(ObjectModelID,SizeOf(ObjectModelID));
+Stream.Read(BusinessModelID,SizeOf(BusinessModelID));
+Stream.Read(OnlineFlagComponentID,SizeOf(OnlineFlagComponentID));
+Stream.Read(OnlineFlag,SizeOf(OnlineFlag));
+Stream.Read(LocationIsAvailableFlagComponentID,SizeOf(LocationIsAvailableFlagComponentID));
+Stream.Read(LocationIsAvailableFlag,SizeOf(LocationIsAvailableFlag));
+Stream.Read(UserAlertComponentID,SizeOf(UserAlertComponentID));
+Stream.Read(UserAlertSeverity,SizeOf(UserAlertSeverity));
+//.
+Validate();
+//.
+Result:=true;
+end;
+
+function TCoGeoMonitorObjectIconBar.Status_IsOnline(): boolean;
+begin
+Result:=((OnlineFlagComponentID <> 0) AND OnlineFlag);
+end;
+
+function TCoGeoMonitorObjectIconBar.Status_LocationIsAvailable(): boolean;
+begin
+Result:=((LocationIsAvailableFlagComponentID <> 0) AND LocationIsAvailableFlag);
+end;
+
+procedure TCoGeoMonitorObjectIconBar.DrawOnCanvas(const Canvas: TCanvas; const Rect: TRect; const Version: integer);
+var
+  IconIndex: integer;
+  IconSize: integer;
+  IconCount: integer;
+  SrcRect: TRect;
+begin
+case Version of
+0: begin //. status icons
+  if (IconSet <> nil)
+   then begin
+    IconIndex:=-1;
+    if (OnlineFlagComponentID <> 0)
+     then
+      if (OnlineFlag)
+       then IconIndex:=0 //. online
+       else IconIndex:=1 //. offline
+     else IconIndex:=4; //. missed component
+    if (LocationIsAvailableFlagComponentID <> 0)
+     then begin
+      if (OnlineFlag AND (NOT LocationIsAvailableFlag))
+       then IconIndex:=2; //. online: no fix
+      end
+     else IconIndex:=4; //. missed component
+    //.
+    IconSize:=IconSet.Height;
+    IconCount:=(IconSet.Width DIV IconSize);
+    if ((0 <= IconIndex) AND (IconIndex < IconCount))
+     then begin
+      SrcRect.Left:=IconIndex*IconSize;
+      SrcRect.Top:=0;
+      SrcRect.Right:=SrcRect.Left+IconSize;
+      SrcRect.Bottom:=IconSize;
+      //.
+      IconSet.Canvas.Lock();
+      try
+      Canvas.CopyRect(Rect, IconSet.Canvas,SrcRect);
+      finally
+      IconSet.Canvas.Unlock();
+      end;
+      end
+     else begin
+      Canvas.Brush.Color:=clBlack;
+      Canvas.Rectangle(Rect.Left,Rect.Top,Rect.Right,Rect.Bottom);
+      end;
+    end
+   else begin
+    Canvas.Brush.Color:=clWhite;
+    Canvas.Rectangle(Rect.Left,Rect.Top,Rect.Right,Rect.Bottom);
+    end;
+  end;
+end;
+end;
+
+procedure TCoGeoMonitorObjectIconBar.Validate();
+var
+  BusinessModelClass: TBusinessModelClass;
+begin
+if (IconSet_flFree) then FreeAndNil(IconSet) else IconSet:=nil;
+BusinessModelClass:=TBusinessModel.GetModelClass(ObjectModelID,BusinessModelID);
+if (BusinessModelClass <> nil)
+ then BusinessModelClass.GetIconSet(1{Version}, {out} IconSet,{out} IconSet_flFree);
+//.
+if (OnlineFlagComponentID <> 0)
+ then begin
+  FreeAndNil(OnlineFlagComponentUpdater);
+  OnlineFlagComponentUpdater:=TComponentPresentUpdater_Create(idTBoolVar,OnlineFlagComponentID, OnlineFlagComponentUpdate,nil);
+  end;
+if (LocationIsAvailableFlagComponentID <> 0)
+ then begin
+  FreeAndNil(LocationIsAvailableFlagComponentUpdater);
+  LocationIsAvailableFlagComponentUpdater:=TComponentPresentUpdater_Create(idTBoolVar,LocationIsAvailableFlagComponentID, LocationIsAvailableFlagComponentUpdate,nil);
+  end;
+if (UserAlertComponentID <> 0)
+ then begin
+  FreeAndNil(UserAlertComponentUpdater);
+  UserAlertComponentUpdater:=TComponentPresentUpdater_Create(idTUserAlert,UserAlertComponentID, UserAlertComponentUpdate,nil);
+  end;
+end;
+
+procedure TCoGeoMonitorObjectIconBar.OnlineFlagComponentUpdate();
+var
+  BVF: TBoolVarFunctionality;
+begin
+if (OnlineFlagComponentID = 0) then Exit; //. ->
+with TCoGeoMonitorObjectFunctionality.Create(idComponent) do
+try
+BVF:=TBoolVarFunctionality(TComponentFunctionality_Create(idTBoolVar,OnlineFlagComponentID));
+try
+TComponentFunctionality(BVF).SetUser(TComponentFunctionality(CoComponentFunctionality).UserName,TComponentFunctionality(CoComponentFunctionality).UserPassword);
+//.
+OnlineFlag:=BVF.Value;
+finally
+BVF.Release();
+end;
+finally
+Release();
+end;
+//.
+if (Assigned(UpdateNotificationProc)) then UpdateNotificationProc();
+end;
+
+procedure TCoGeoMonitorObjectIconBar.LocationIsAvailableFlagComponentUpdate();
+var
+  BVF: TBoolVarFunctionality;
+begin
+if (LocationIsAvailableFlagComponentID = 0) then Exit; //. ->
+with TCoGeoMonitorObjectFunctionality.Create(idComponent) do
+try
+BVF:=TBoolVarFunctionality(TComponentFunctionality_Create(idTBoolVar,LocationIsAvailableFlagComponentID));
+try
+TComponentFunctionality(BVF).SetUser(TComponentFunctionality(CoComponentFunctionality).UserName,TComponentFunctionality(CoComponentFunctionality).UserPassword);
+//.
+LocationIsAvailableFlag:=BVF.Value;
+finally
+BVF.Release();
+end;
+finally
+Release();
+end;
+//.
+if (Assigned(UpdateNotificationProc)) then UpdateNotificationProc();
+end;
+
+procedure TCoGeoMonitorObjectIconBar.UserAlertComponentUpdate();
+var
+  UAF: TUserAlertFunctionality;
+begin
+if (UserAlertComponentID = 0) then Exit; //. ->
+with TCoGeoMonitorObjectFunctionality.Create(idComponent) do
+try
+UAF:=TUserAlertFunctionality(TComponentFunctionality_Create(idTUserAlert,UserAlertComponentID));
+try
+TComponentFunctionality(UAF).SetUser(TComponentFunctionality(CoComponentFunctionality).UserName,TComponentFunctionality(CoComponentFunctionality).UserPassword);
+//.
+UserAlertSeverity:=UAF.Severity;
+UserAlertFlag:=(TUserAlertSeverity(UserAlertSeverity) in [uasMajor,uasCritical]);
+finally
+UAF.Release();
+end;
+finally
+Release();
+end;
+//.
+if (Assigned(UpdateNotificationProc)) then UpdateNotificationProc();
 end;
 
 
@@ -2037,9 +2385,10 @@ if (Assigned(UpdateNotificationProc)) then UpdateNotificationProc();
 end;
 
 
-function ConstructCoGeoMonitorObject(const BusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer): integer;
 const
-  PrototypeID = 1865;
+  CoGeoMonitorObjectPrototypeID = 1865;
+
+function DoConstructCoGeoMonitorObject(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const BusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer; out ObjectID: integer): integer;
 var
   BusinessModelConstructorPanel: TBusinessModelConstructorPanel;
   TF: TTypeFunctionality;
@@ -2050,20 +2399,24 @@ var
   UserAlertID: integer;
   OnlineFlagID: integer;
   LocationIsAvailableFlagID: integer;
-  ObjectID: integer;
 begin
 Result:=0;
+ObjectID:=0;
 try
 //. clone object
-with TCoGeoMonitorObjectFunctionality.Create(PrototypeID) do
+with TCoGeoMonitorObjectFunctionality.Create(CoGeoMonitorObjectPrototypeID) do
 try
-TComponentFunctionality(CoComponentFunctionality).ToClone({out} Result);
+SetUser(pUserName,pUserPassword);
+//.
+ComponentFunctionality().ToClone({out} Result);
 finally
 Release();
 end;
 //. set props of new object
 with TCoGeoMonitorObjectFunctionality.Create(Result) do
 try
+SetUser(pUserName,pUserPassword);
+//.
 Name:=pName;
 finally
 Release();
@@ -2071,6 +2424,8 @@ end;
 //. get data for registration
 with TCoGeoMonitorObjectFunctionality.Create(Result) do
 try
+SetUser(pUserName,pUserPassword);
+//.
 if (NOT GetGeoGraphServerObject(idGeoGraphServerObject)) then Raise Exception.Create('could not get GeoGraphServerObject-component'); //. =>
 GetVisualizationComponent(VisualizationType,VisualizationID);
 if (NOT GetUserAlertComponent(UserAlertID)) then UserAlertID:=0;
@@ -2089,6 +2444,8 @@ end;
 TF:=TTypeFunctionality_Create(idTGeoGraphServer);
 try
 try
+TF.SetUser(pUserName,pUserPassword);
+//.
 RegistrationServerID:=TTGeoGraphServerFunctionality(TF).GetInstanceForRegistration();
 except
   RegistrationServerID:=0;
@@ -2109,13 +2466,205 @@ except
   if (Result <> 0)
    then with TTCoGeoMonitorObjectFunctionality.Create() do
     try
-    DestroyInstance(Result);
+    DestroyInstance(ProxySpace_UserName,ProxySpace_UserPassword, Result);
     finally
     Release();
     end;
   Raise; //. =>
   end;
 end;
+
+function ConstructCoGeoMonitorObject(const BusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer): integer;
+var
+  ObjectID: integer;
+begin
+Result:=DoConstructCoGeoMonitorObject(ProxySpace_UserID(),ProxySpace_UserName(),ProxySpace_UserPassword(), BusinessModelClass,pName,pGeoSpaceID,{out} ObjectID);
+end;
+
+
+{TCoGeoMonitorObjectConstructor}
+Constructor TCoGeoMonitorObjectConstructor.Create(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pBusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer);
+begin
+UserID:=pUserID;
+UserName:=pUserName;
+UserPassword:=pUserPassword;
+BusinessModelClass:=pBusinessModelClass;
+Name:=pName;
+GeoSpaceID:=pGeoSpaceID;
+SecurityIndex:=pSecurityIndex;
+//.
+ThreadException:=nil;
+ComponentID:=0;
+ObjectID:=0;
+//.
+BusinessModelConstructorPanel:=nil;
+//.
+Inherited Create(true);
+end;
+
+Destructor TCoGeoMonitorObjectConstructor.Destroy();
+begin
+Inherited;
+end;
+
+procedure TCoGeoMonitorObjectConstructor.Execute();
+var
+  idSecurityFile: integer;
+  CF: TComponentFunctionality;
+  TF: TTypeFunctionality;
+  RegistrationServerID: integer;
+  idGeoGraphServerObject: integer;
+  VisualizationType: integer;
+  VisualizationID: integer;
+  UserAlertID: integer;
+  OnlineFlagID: integer;
+  LocationIsAvailableFlagID: integer;
+begin //. same as for DoConstructCoGeoMonitorObject()
+try
+ComponentID:=0;
+ObjectID:=0;
+try
+//. clone object
+with TCoGeoMonitorObjectFunctionality.Create(CoGeoMonitorObjectPrototypeID) do
+try
+SetUser(Self.UserName,Self.UserPassword);
+//.
+ComponentFunctionality().ToClone({out} ComponentID);
+finally
+Release();
+end;
+//. set props of new object
+with TCoGeoMonitorObjectFunctionality.Create(ComponentID) do
+try
+SetUser(Self.UserName,Self.UserPassword);
+//.
+Name:=Self.Name;
+//.
+idSecurityFile:=0; //. default access
+case (SecurityIndex) of
+1: begin //. private access
+  CF:=TComponentFunctionality_Create(idTMODELUser,Self.UserID);
+  try
+  SetUser(Self.UserName,Self.UserPassword);
+  //.
+  idSecurityFile:=TMODELUserFunctionality(CF).idSecurityFileForPrivate;
+  finally
+  CF.Release();
+  end;
+  end;
+end;
+if (idSecurityFile <> 0)
+ then ComponentFunctionality().ChangeSecurity(idSecurityFile);
+finally
+Release();
+end;
+//. get data for registration
+with TCoGeoMonitorObjectFunctionality.Create(ComponentID) do
+try
+SetUser(Self.UserName,Self.UserPassword);
+//.
+if (NOT GetGeoGraphServerObject(idGeoGraphServerObject)) then Raise Exception.Create('could not get GeoGraphServerObject-component'); //. =>
+GetVisualizationComponent(VisualizationType,VisualizationID);
+if (NOT GetUserAlertComponent(UserAlertID)) then UserAlertID:=0;
+if (GetOnlineFlagComponent(OnlineFlagID))
+ then begin
+  if (NOT GetLocationIsAvailableFlagComponent(OnlineFlagID, LocationIsAvailableFlagID)) then LocationIsAvailableFlagID:=0;
+  end
+ else begin
+  OnlineFlagID:=0;
+  LocationIsAvailableFlagID:=0;
+  end;
+finally
+Release();
+end;
+//. get appropriate GeographServer instance for registration
+TF:=TTypeFunctionality_Create(idTGeoGraphServer);
+try
+try
+TF.SetUser(Self.UserName,Self.UserPassword);
+//.
+RegistrationServerID:=TTGeoGraphServerFunctionality(TF).GetInstanceForRegistration();
+except
+  RegistrationServerID:=0;
+  end;
+finally
+TF.Release();
+end;
+//. construct and register as GeopraphServerObject
+Synchronize(CreateConstructorPanel);
+try
+BusinessModelConstructorPanel.Preset1(GeoSpaceID,VisualizationType,VisualizationID,0,UserAlertID,OnlineFlagID,LocationIsAvailableFlagID);
+//. registering
+ObjectID:=BusinessModelConstructorPanel.Construct(Self.UserID,Self.UserName,Self.UserPassword, RegistrationServerID,idGeoGraphServerObject);
+finally
+Synchronize(FreeConstructorPanel);
+end;
+//. get Geograph server address
+CF:=TComponentFunctionality_Create(idTGeoGraphServer,RegistrationServerID);
+try
+CF.SetUser(Self.UserName,Self.UserPassword);
+//.
+GeographServerAddress:=TGeoGraphServerFunctionality(CF).Address;
+finally
+CF.Release();
+end;
+except
+  if (ComponentID <> 0)
+   then with TTCoGeoMonitorObjectFunctionality.Create() do
+    try
+    DestroyInstance(Self.UserName,Self.UserPassword, ComponentID);
+    ComponentID:=0;
+    finally
+    Release();
+    end;
+  Raise; //. =>
+  end;
+except
+  on E: Exception do begin
+    ThreadException:=Exception.Create(E.Message);
+    end;
+  end;
+end;
+
+procedure TCoGeoMonitorObjectConstructor.Synchronize(Method: TThreadMethod);
+begin
+SynchronizeMethodWithMainThread(Self,Method);
+end;
+
+procedure TCoGeoMonitorObjectConstructor.CreateConstructorPanel();
+begin
+BusinessModelConstructorPanel:=BusinessModelClass.CreateConstructorPanel(ComponentID);
+end;
+
+procedure TCoGeoMonitorObjectConstructor.FreeConstructorPanel();
+begin
+FreeAndNil(BusinessModelConstructorPanel);
+end;
+
+procedure TCoGeoMonitorObjectConstructor.Construct(out oComponentID: integer; out oGeographServerAddress: string; out oObjectID: integer);
+begin
+if (GetCurrentThreadID() = MainThreadID) then Raise Exception.Create('wrong thread context'); //. =>
+//. start operation
+Resume();
+//. wait for operation completion
+WaitForSingleObject(Handle, INFINITE);
+//.
+if (ThreadException <> nil) then Raise ThreadException; //. =>
+oComponentID:=ComponentID;
+oGeographServerAddress:=GeographServerAddress;
+oObjectID:=ObjectID;
+end;
+
+procedure CoGeoMonitorObjects_Constructor_Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pBusinessModelClass: TBusinessModelClass; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer; out oComponentID: integer; out oGeographServerAddress: string; out oGeographServerObjectID: integer);
+begin
+with TCoGeoMonitorObjectConstructor.Create(pUserID,pUserName,pUserPassword, pBusinessModelClass,pName,pGeoSpaceID,pSecurityIndex) do
+try
+Construct({out} oComponentID, {out} oGeographServerAddress,{out} oGeographServerObjectID);
+finally
+Destroy();
+end;
+end;
+
 
 procedure Initialize;
 begin

@@ -10,6 +10,7 @@ uses
   Graphics,
   FunctionalityImport,
   CoFunctionality,
+  unitBusinessModel,
   unitUserTaskManager,
   unitCoComponentRepresentations,
   unitCoMusicClipFunctionality,
@@ -34,6 +35,7 @@ uses
   unitNotificationAreaEventsProcessor,
   unitObjectDistanceNotifier,
   unitCoGeoMonitorObjectTreePanel,
+  unitGMO1GeoLogAndroidBusinessModel,
   unitProgramStartPanel;
 
 Type
@@ -162,11 +164,31 @@ Release();
 end;
 end;
 
+procedure CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; DataType: Integer; const Data: GlobalSpaceDefines.TByteArray); stdcall;
+begin
+with CoComponentTypesSystem.TCoComponentFunctionality_Create(idCoType,idCoComponent) do
+try
+SetTypedData(pUserName,pUserPassword, DataType, Data);
+finally
+Release();
+end;
+end;
+
 function CoComponent_GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const InfoType: Integer; const InfoFormat: Integer; out Info: GlobalSpaceDefines.TByteArray): boolean; stdcall;
 begin
 with CoComponentTypesSystem.TCoComponentFunctionality_Create(idCoType,idCoComponent) do
 try
 Result:=GetHintInfo(pUserName,pUserPassword, InfoType,InfoFormat,{out} Info);
+finally
+Release();
+end;
+end;
+
+function CoComponent_TIconBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc): TAbstractComponentIconBar; stdcall;
+begin
+with CoComponentTypesSystem.TCoComponentFunctionality_Create(idCoType,idCoComponent) do
+try
+Result:=TIconBar_Create(pUpdateNotificationProc);
 finally
 Release();
 end;
@@ -182,6 +204,19 @@ Release();
 end;
 end;
 
+procedure CoGeoMonitorObjects_Constructor_Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: string; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer; out oComponentID: integer; out oGeographServerAddress: string; out oGeographServerObjectID: integer); stdcall;
+var
+  BusinessModelClass: TBusinessModelClass;
+begin
+if (pObjectBusinessModel = '101.2') then BusinessModelClass:=TGMO1GeoLogAndroidBusinessModel else Raise Exception.Create('unknown object-business-model of creating object'); //. =>
+unitCoGeoMonitorObjectFunctionality.CoGeoMonitorObjects_Constructor_Construct(pUserID,pUserName,pUserPassword, BusinessModelClass,pName,pGeoSpaceID,pSecurityIndex, {out} oComponentID,{out} oGeographServerAddress,{out} oGeographServerObjectID);
+end;
+
+function CoGeoMonitorObjects_GetTreePanel(): TForm; stdcall;
+begin
+Result:=unitCoGeoMonitorObjectTreePanel.GetTreePanel();
+end;
+
 procedure CoGeoMonitorObject_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray); stdcall;
 begin
 with TCoGeoMonitorObjectFunctionality.Create(idCoGeoMonitorObject) do
@@ -190,11 +225,6 @@ GetTrackData(pUserName,pUserPassword, GeoSpaceID, BeginTime,EndTime, DataType,{o
 finally
 Release();
 end;
-end;
-
-function CoGeoMonitorObjects_GetTreePanel(): TForm; stdcall;
-begin
-Result:=unitCoGeoMonitorObjectTreePanel.GetTreePanel();
 end;
 
 function GetStartPanel(const flAutoStartCheck: boolean): TForm; stdcall;
@@ -253,12 +283,17 @@ Exports
   //.
   CoComponent__TPanelProps_Create,
   CoComponent_GetData,
+  CoComponent_SetData,
   CoComponent_GetHintInfo,
+  CoComponent_TIconBar_Create,
   CoComponent_TStatusBar_Create,
   //.
   CoForum_ReflectV0,
-  CoGeoMonitorObject_GetTrackData,
+  //.
+  CoGeoMonitorObjects_Constructor_Construct,
   CoGeoMonitorObjects_GetTreePanel,
+  CoGeoMonitorObject_GetTrackData,
+  //.
   GetStartPanel,
   //.
   ShowUserTaskManager;

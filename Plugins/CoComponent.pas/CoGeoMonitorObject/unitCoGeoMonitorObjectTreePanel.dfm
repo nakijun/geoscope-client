@@ -18,8 +18,8 @@ object fmCoGeoMonitorObjectTreePanel: TfmCoGeoMonitorObjectTreePanel
   object tvObjects: TTreeView
     Left = 0
     Top = 0
-    Width = 314
-    Height = 643
+    Width = 306
+    Height = 632
     Align = alClient
     BorderStyle = bsNone
     Font.Charset = DEFAULT_CHARSET

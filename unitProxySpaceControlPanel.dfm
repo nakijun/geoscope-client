@@ -3144,6 +3144,11 @@ object fmProxySpaceControlPanel: TfmProxySpaceControlPanel
       ImageIndex = 5
       OnClick = Search1Click
     end
+    object Showobject1: TMenuItem
+      Caption = 'Show object'
+      ImageIndex = 6
+      OnClick = Showobject1Click
+    end
     object showcomponent1: TMenuItem
       Caption = 'Show component'
       ImageIndex = 6

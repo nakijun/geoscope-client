@@ -3,6 +3,7 @@
 {TTypeFunctionality}
   TTypeFunctionality___UserName,
   TTypeFunctionality___UserPassword,
+  TTypeFunctionality___SetUser,
   TTypeFunctionality____CreateInstance,
   TTypeFunctionality___CreateInstance,
   TTypeFunctionality___CreateInstanceUsingObject,

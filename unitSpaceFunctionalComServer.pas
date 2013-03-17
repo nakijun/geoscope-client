@@ -8,7 +8,7 @@ uses
   ComObj, ActiveX, SOAPClient_TLB, StdVcl;
 
 type
-  TcoSpaceFunctionalServer = class(TAutoObject, IcoSpaceFunctionalServer,ISpaceProvider,IGeoSpaceFunctionality,IGeoCrdSystemFunctionality,IMapFormatObjectFunctionality, ICoComponent,ICoGeoMonitorObjectFunctionality)
+  TcoSpaceFunctionalServer = class(TAutoObject, IcoSpaceFunctionalServer,ISpaceProvider,IGeoSpaceFunctionality,IGeoCrdSystemFunctionality,IMapFormatObjectFunctionality, ICoComponent,ITCoGeoMonitorObjectFunctionality,ICoGeoMonitorObjectFunctionality)
   private
     function __GeoSpaceConverter_ConvertXYToLatLong(const pUserName: WideString; const pUserPassword: WideString; GeoSpaceID: Integer; X: double; Y: double; out DatumID: integer; out Latitude: Extended; out Longitude: Extended): WordBool;
     function __GeoCrdSystemConverter_ConvertXYToLatLong(const pUserName: WideString; const pUserPassword: WideString; GeoCrdSystemID: Integer; X: Double; Y: Double; out DatumID: integer; out Latitude: Extended; out Longitude: Extended): WordBool; safecall;
@@ -58,6 +58,9 @@ type
     procedure CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; Data: PSafeArray); safecall;
       procedure ICoComponent.SetData = CoComponent_SetData;
     procedure CoComponent_CheckCoType(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer);
+    //. ITCoGeoMonitorObjectFunctionality
+    procedure TCoGeoMonitorObjectFunctionality_Construct(pUserID: Integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: WideString; const pName: WideString; pGeoSpaceID: Integer; pSecurityIndex: Integer;  out oComponentID: Integer; out oGeographServerAddress: WideString; out oGeographServerObjectID: Integer); safecall;
+      procedure ITCoGeoMonitorObjectFunctionality.Construct = TCoGeoMonitorObjectFunctionality_Construct;
     //. ICoGeoMonitorObjectFunctionality
     procedure CoGeoMonitorObjectFunctionality_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; GeoSpaceID: integer; BeginTime: Double; EndTime: Double; DataType: Integer; out Data: PSafeArray); safecall;
       procedure ICoGeoMonitorObjectFunctionality.GetTrackData = CoGeoMonitorObjectFunctionality_GetTrackData;
@@ -1319,6 +1322,20 @@ if (Data <> nil)
  else _Data:=nil;
 Space:=unitProxySpace.ProxySpace;
 Space.Plugins__CoComponent_SetData(pUserName,pUserPassword, idCoComponent, pidCoType, DataType, _Data);
+end;
+
+procedure TcoSpaceFunctionalServer.TCoGeoMonitorObjectFunctionality_Construct(pUserID: Integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: WideString; const pName: WideString; pGeoSpaceID: Integer; pSecurityIndex: Integer;  out oComponentID: Integer; out oGeographServerAddress: WideString; out oGeographServerObjectID: Integer); safecall;
+var
+  Space: TProxySpace;
+  _GeographServerAddress: string;
+begin
+//. set thread locale for ANSIString and WideString conversions
+SetThreadLocale(ProcessLocaleID);
+if (unitProxySpace.ProxySpace = nil) then Raise Exception.Create('ProxySpace is not initialized'); //. =>
+//.
+Space:=unitProxySpace.ProxySpace;
+Space.Plugins__CoGeoMonitorObjects_Constructor_Construct(pUserID,pUserName,pUserPassword, pObjectBusinessModel,pName,pGeoSpaceID,pSecurityIndex, {out} oComponentID,{out} _GeographServerAddress,{out} oGeographServerObjectID);
+oGeographServerAddress:=_GeographServerAddress;
 end;
 
 procedure TcoSpaceFunctionalServer.CoGeoMonitorObjectFunctionality_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; GeoSpaceID: integer; BeginTime: Double; EndTime: Double; DataType: Integer; out Data: PSafeArray); safecall;

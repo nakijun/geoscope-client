@@ -19,13 +19,13 @@ object CoGeoMonitorObjectPanelProps: TCoGeoMonitorObjectPanelProps
     Left = 0
     Top = 0
     Width = 300
-    Height = 631
+    Height = 620
     Align = alLeft
     BevelOuter = bvLowered
     TabOrder = 0
     DesignSize = (
       300
-      631)
+      620)
     object bvlHeader: TBevel
       Left = 8
       Top = 8
@@ -571,8 +571,8 @@ object CoGeoMonitorObjectPanelProps: TCoGeoMonitorObjectPanelProps
   object pnlObjectBusinessModel: TPanel
     Left = 300
     Top = 0
-    Width = 413
-    Height = 631
+    Width = 405
+    Height = 620
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

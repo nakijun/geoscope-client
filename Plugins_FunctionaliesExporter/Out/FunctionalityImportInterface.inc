@@ -11,6 +11,7 @@ Type
   public
     function UserName: WideString;
     function UserPassword: WideString;
+    procedure SetUser(const pUserName: WideString; const pUserPassword: WideString);
     function _CreateInstance: integer;
     function CreateInstance: integer;
     function CreateInstanceUsingObject(const idTUseObj,idUseObj: integer): integer;

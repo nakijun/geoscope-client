@@ -250,6 +250,8 @@ Type
   TCreateObjectModelTrackEventFunc = function (const ComponentElement: TComponentElement; const Address: TAddress; const AddressIndex: integer; const flSetCommand: boolean): pointer of object;
   TCreateBusinessModelTrackEventFunc = function (const ComponentElement: TComponentElement; const Address: TAddress; const AddressIndex: integer; const flSetCommand: boolean): pointer of object;
 
+  TObjectModelClass = class of TObjectModel;
+
   TObjectModel = class(TInterfacedObject)
   public
     Lock: TCriticalSection;
@@ -260,12 +262,13 @@ Type
     flComponentUserAccessControl: boolean;
     ControlPanel: TObjectModelControlPanel;
 
+    class function GetModelClass(const pModelID: integer): TObjectModelClass;
     class function GetModel(const pModelID: integer; const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean = false): TObjectModel;
 
     class function ID: integer; virtual; abstract;
     class function Name: string; virtual; abstract;
 
-    Constructor Create(const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean);
+    Constructor Create(const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean); virtual;
     Destructor Destroy; override;
     function  Object_GetInfo(const InfoType: integer; const InfoFormat: integer; out Info: TByteArray): boolean; virtual;
     function  Object_GetHintInfo(const InfoType: integer; const InfoFormat: integer; out Info: TByteArray): boolean; virtual;
@@ -1690,23 +1693,34 @@ end;
                                         
 
 {TObjectModel}              
-class function TObjectModel.GetModel(const pModelID: integer; const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean = false): TObjectModel;
+class function TObjectModel.GetModelClass(const pModelID: integer): TObjectModelClass;
 begin
 case pModelID of
-GeoMonitoredObjectModelID:      Result:=TGeoMonitoredObjectModel.Create(pObjectController,flFreeController);
-GeoMonitoredObject1ModelID:     Result:=TGeoMonitoredObject1Model.Create(pObjectController,flFreeController);
-EnforaObjectModelID:            Result:=TEnforaObjectModel.Create(pObjectController,flFreeController);
-EnforaMT3000ObjectModelID:      Result:=TEnforaMT3000ObjectModel.Create(pObjectController,flFreeController);
-EnforaMiniMTObjectModelID:      Result:=TEnforaMiniMTObjectModel.Create(pObjectController,flFreeController);
-NavixyObjectModelID:            Result:=TNavixyObjectModel.Create(pObjectController,flFreeController);
-GeoMonitoredMedDeviceModelID:   Result:=TGeoMonitoredMedDeviceModel.Create(pObjectController,flFreeController);
-GSTraqObjectModelID:            Result:=TGSTraqObjectModel.Create(pObjectController,flFreeController);
-else begin
+GeoMonitoredObjectModelID:      Result:=TGeoMonitoredObjectModel;
+GeoMonitoredObject1ModelID:     Result:=TGeoMonitoredObject1Model;
+EnforaObjectModelID:            Result:=TEnforaObjectModel;
+EnforaMT3000ObjectModelID:      Result:=TEnforaMT3000ObjectModel;
+EnforaMiniMTObjectModelID:      Result:=TEnforaMiniMTObjectModel;
+NavixyObjectModelID:            Result:=TNavixyObjectModel;
+GeoMonitoredMedDeviceModelID:   Result:=TGeoMonitoredMedDeviceModel;
+GSTraqObjectModelID:            Result:=TGSTraqObjectModel;
+else
+  Result:=nil;
+end;
+end;
+
+class function TObjectModel.GetModel(const pModelID: integer; const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean = false): TObjectModel;
+var
+  ModelClass: TObjectModelClass;
+begin
+ModelClass:=GetModelClass(pModelID);
+if (ModelClass = nil)
+ then begin
   Result:=nil;
   if (flFreeController) then pObjectController.Free();
-  end;
+  end
+ else Result:=ModelClass.Create(pObjectController,flFreeController); 
 end;
-end;                                           
 
 Constructor TObjectModel.Create(const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean);
 begin

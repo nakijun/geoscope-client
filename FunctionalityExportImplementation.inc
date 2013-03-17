@@ -11,6 +11,11 @@ begin
 Result:=TTypeFunctionality(_Functionality_).UserPassword;
 end;
 
+procedure TTypeFunctionality___SetUser(_Functionality_: TFunctionality;   const pUserName: WideString; const pUserPassword: WideString); stdcall;
+begin
+TTypeFunctionality(_Functionality_).SetUser(pUserName,pUserPassword);
+end;
+
 function TTypeFunctionality____CreateInstance(_Functionality_: TFunctionality): integer; stdcall;
 begin
 Result:=TTypeFunctionality(_Functionality_)._CreateInstance;

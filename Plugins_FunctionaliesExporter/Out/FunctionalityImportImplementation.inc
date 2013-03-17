@@ -13,6 +13,12 @@ begin
 Result:=TTypeFunctionality___UserPassword(Self);
 end;
 
+procedure TTypeFunctionality___SetUser(_Functionality_: TFunctionality;   const pUserName: WideString; const pUserPassword: WideString); stdcall; external FunctionalityDLL;
+procedure TTypeFunctionality.SetUser(const pUserName: WideString; const pUserPassword: WideString);
+begin
+TTypeFunctionality___SetUser(Self,   pUserName,pUserPassword);
+end;
+
 function TTypeFunctionality____CreateInstance(_Functionality_: TFunctionality): integer; stdcall; external FunctionalityDLL;
 function TTypeFunctionality._CreateInstance: integer;
 begin

@@ -19,7 +19,7 @@ ModuleType=SourceModule
 FormState=0
 FormOnTop=0
 
-[C:\Borland\PROJECTS\Model\ServerProxySpace\TYPESDef\ProjectGroup1.bpg]
+[C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\ProjectGroup1.bpg]
 FormState=0
 FormOnTop=0
 
@@ -50,8 +50,8 @@ BottomPanelData=00000400010000000B0000004D65737361676556696577BE0500000000000002
 
 [View0]
 Module=C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\Plugins_FunctionaliesExporter\TypesFunctionalityExporter.dpr
-CursorX=1
-CursorY=1
+CursorX=139
+CursorY=8
 TopLine=1
 LeftCol=1
 

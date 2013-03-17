@@ -15,12 +15,14 @@ type
     btnRestartDevice: TBitBtn;
     btnLANConnectionRepeater: TBitBtn;
     btnLANUDPConnectionRepeater: TBitBtn;
+    btnLANRTSPServerClient: TBitBtn;
     procedure btnGetDeviceLogClick(Sender: TObject);
     procedure btnGetDeviceStateClick(Sender: TObject);
     procedure btnRestartDeviceClick(Sender: TObject);
     procedure btnRestartDeviceProcessClick(Sender: TObject);
     procedure btnLANConnectionRepeaterClick(Sender: TObject);
     procedure btnLANUDPConnectionRepeaterClick(Sender: TObject);
+    procedure btnLANRTSPServerClientClick(Sender: TObject);
   private
     { Private declarations }
     Model: TGeoMonitoredObject1Model;
@@ -49,7 +51,8 @@ uses
   GlobalSpaceDefines,
   unitObjectModel,
   unitGeoMonitoredObject1LANConnectionRepeaterPanel,
-  unitGeoMonitoredObject1LANUDPConnectionRepeaterPanel;
+  unitGeoMonitoredObject1LANUDPConnectionRepeaterPanel,
+  unitGeoMonitoredObject1LANRTSPServerClientPanel;
 
 {$R *.dfm}
 
@@ -249,5 +252,14 @@ LANUDPConnectionRepeaterPanels.Add(LANUDPConnectionRepeaterPanel);
 LANUDPConnectionRepeaterPanel.Show();
 end;
 
+procedure TGeoMonitoredObject1ControlModulePanel.btnLANRTSPServerClientClick(Sender: TObject);
+begin
+with TGeoMonitoredObject1LANRTSPServerClientPanel.Create(Model) do
+try
+ShowModal();
+finally
+Destroy();
+end;
+end;
 
 end.

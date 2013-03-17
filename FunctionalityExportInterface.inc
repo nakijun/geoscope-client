@@ -5,6 +5,8 @@ function TTypeFunctionality___UserName(_Functionality_: TFunctionality): WideStr
 
 function TTypeFunctionality___UserPassword(_Functionality_: TFunctionality): WideString; stdcall;
 
+procedure TTypeFunctionality___SetUser(_Functionality_: TFunctionality;   const pUserName: WideString; const pUserPassword: WideString); stdcall;
+
 function TTypeFunctionality____CreateInstance(_Functionality_: TFunctionality): integer; stdcall;
 
 function TTypeFunctionality___CreateInstance(_Functionality_: TFunctionality): integer; stdcall;

@@ -12,7 +12,7 @@ unit SOAPClient_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 04.11.2012 10:49:55 from Type Library described below.
+// File generated on 29.12.2012 14:05:09 from Type Library described below.
 
 // ************************************************************************  //
 // Type Lib: C:\Borland\PROJECTS\Model\ServerProxySpace\SOAPClient\SOAPClient.tlb (1)
@@ -56,6 +56,7 @@ const
   IID_ICoGeoMonitorObjectFunctionality: TGUID = '{C0C32249-C84F-4C96-A237-65DBEA23EB87}';
   IID_IcoAreaNotificationServer: TGUID = '{8FFFDC2D-98B6-467F-B5DD-4E097F736853}';
   CLASS_coSpaceAreaNotificationServer: TGUID = '{3FBB876B-632F-4CA0-941B-84B2B4C496B7}';
+  IID_ITCoGeoMonitorObjectFunctionality: TGUID = '{A66FE97B-0AD3-46D4-91F4-CBC0C65CBD00}';
 type
 
 // *********************************************************************//
@@ -69,7 +70,7 @@ type
   ICoComponent = interface;
   ICoGeoMonitorObjectFunctionality = interface;
   IcoAreaNotificationServer = interface;
-  IcoAreaNotificationServerDisp = dispinterface;
+  ITCoGeoMonitorObjectFunctionality = interface;
 
 // *********************************************************************//
 // Declaration of CoClasses defined in Type Library                       
@@ -246,7 +247,7 @@ type
 
 // *********************************************************************//
 // Interface: IcoAreaNotificationServer
-// Flags:     (320) Dual OleAutomation
+// Flags:     (256) OleAutomation
 // GUID:      {8FFFDC2D-98B6-467F-B5DD-4E097F736853}
 // *********************************************************************//
   IcoAreaNotificationServer = interface(IUnknown)
@@ -258,16 +259,17 @@ type
   end;
 
 // *********************************************************************//
-// DispIntf:  IcoAreaNotificationServerDisp
-// Flags:     (320) Dual OleAutomation
-// GUID:      {8FFFDC2D-98B6-467F-B5DD-4E097F736853}
+// Interface: ITCoGeoMonitorObjectFunctionality
+// Flags:     (256) OleAutomation
+// GUID:      {A66FE97B-0AD3-46D4-91F4-CBC0C65CBD00}
 // *********************************************************************//
-  IcoAreaNotificationServerDisp = dispinterface
-    ['{8FFFDC2D-98B6-467F-B5DD-4E097F736853}']
-    procedure Initialize; dispid 201;
-    procedure Finalize; dispid 202;
-    procedure UI_ShowEventsProcessorPanel; dispid 203;
-    function Check(Code: Integer): Integer; dispid 204;
+  ITCoGeoMonitorObjectFunctionality = interface(IUnknown)
+    ['{A66FE97B-0AD3-46D4-91F4-CBC0C65CBD00}']
+    procedure Construct(pUserID: Integer; const pUserName: WideString; 
+                        const pUserPassword: WideString; const pObjectBusinessModel: WideString; 
+                        const pName: WideString; pGeoSpaceID: Integer; pSecurityIndex: Integer; 
+                        out oComponentID: Integer; out oGeographServerAddress: WideString; 
+                        out oGeographServerObjectID: Integer); safecall;
   end;
 
 // *********************************************************************//

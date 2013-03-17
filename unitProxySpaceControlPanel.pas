@@ -133,6 +133,7 @@ type
     Measurementobjects1: TMenuItem;
     Showstartpanel1: TMenuItem;
     N11: TMenuItem;
+    Showobject1: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure bbUpdateClick(Sender: TObject);
     procedure sbCreateReflectorClick(Sender: TObject);
@@ -189,6 +190,7 @@ type
     procedure UserTaskManager1Click(Sender: TObject);
     procedure Measurementobjects1Click(Sender: TObject);
     procedure Showstartpanel1Click(Sender: TObject);
+    procedure Showobject1Click(Sender: TObject);
   private
     { Private declarations }
     Space: TObject;
@@ -235,6 +237,7 @@ Uses
   unitServerChecker,
   unitComponentSearch,
   unitComponentInputForm,
+  unitCoComponentInputForm,
   unitSelectiveContextLogout,
   unitSpaceContextLoader,
   unitActiveUserAlertsMonitor,
@@ -1122,14 +1125,14 @@ var
   idTComponent,idComponent: integer;
   CoComponentPanelProps: TForm;
 begin
-with TfmComponentInput.Create do
+with TfmComponentInput.Create() do
 try
 if InputID(idTComponent,idComponent)
  then with TComponentFunctionality_Create(idTComponent,idComponent) do
   try
-  Check;
+  Check();
   CoComponentPanelProps:=nil;
-  if idTObj <> idTCoComponent
+  if (idTObj <> idTCoComponent)
    then CoComponentPanelProps:=TAbstractSpaceObjPanelProps(TPanelProps_Create(false, 0,nil,nilObject))
    else begin
     Space.Log.OperationStarting('loading ..........');
@@ -1140,21 +1143,60 @@ if InputID(idTComponent,idComponent)
       FreeAndNil(CoComponentPanelProps);
       end;
     finally
-    Space.Log.OperationDone;
+    Space.Log.OperationDone();
     end;
-    if CoComponentPanelProps = nil then CoComponentPanelProps:=TAbstractSpaceObjPanelProps(TPanelProps_Create(false, 0,nil,nilObject));
+    if (CoComponentPanelProps = nil) then CoComponentPanelProps:=TAbstractSpaceObjPanelProps(TPanelProps_Create(false, 0,nil,nilObject));
     end;
-  if CoComponentPanelProps <> nil
+  if (CoComponentPanelProps <> nil)
    then with CoComponentPanelProps do begin
     Left:=Round((Screen.Width-Width)/2);
     Top:=Screen.Height-Height-20;
-    Show;
+    Show();
     end
   finally
-  Release;
+  Release();
   end;
 finally
-Destroy;
+Destroy();
+end;
+end;
+
+procedure TfmProxySpaceControlPanel.Showobject1Click(Sender: TObject);
+var
+  idCoComponent: integer;
+  CoComponentPanelProps: TForm;
+begin
+with TfmCoComponentInput.Create() do
+try
+if InputID({out} idCoComponent)
+ then with TComponentFunctionality_Create(idTCoComponent,idCoComponent) do
+  try
+  Check();
+  CoComponentPanelProps:=nil;
+  //.
+  Space.Log.OperationStarting('loading ..........');
+  try
+  try
+  CoComponentPanelProps:=Space.Plugins___CoComponent__TPanelProps_Create(TypesFunctionality.CoComponentFunctionality_idCoType(idObj),idObj);
+  except
+    FreeAndNil(CoComponentPanelProps);
+    end;
+  finally
+  Space.Log.OperationDone();
+  end;
+  if (CoComponentPanelProps = nil) then CoComponentPanelProps:=TAbstractSpaceObjPanelProps(TPanelProps_Create(false, 0,nil,nilObject));
+  //.
+  if (CoComponentPanelProps <> nil)
+   then with CoComponentPanelProps do begin
+    Left:=Round((Screen.Width-Width)/2);
+    Top:=Screen.Height-Height-20;
+    Show();
+    end
+  finally
+  Release();
+  end;
+finally
+Destroy();
 end;
 end;
 

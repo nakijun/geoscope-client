@@ -410,7 +410,7 @@ procedure TCoGeoMonitorObjectPanelProps.DestroyComponent();
 begin
 with TTCoGeoMonitorObjectFunctionality.Create() do
 try
-DestroyInstance(idCoComponent);
+DestroyInstance(ProxySpace_UserName,ProxySpace_UserPassword, idCoComponent);
 finally
 Release();
 end;
