@@ -399,9 +399,11 @@ Type
     procedure Plugins__CoComponent_GetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
     procedure Plugins__CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; const Data: GlobalSpaceDefines.TByteArray);
     function  Plugins__CoComponent_GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const InfoType: Integer; const InfoFormat: Integer; out Info: GlobalSpaceDefines.TByteArray): boolean;
-    function  Plugins__CoComponent_TStatusBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TProcedureOfObject): TObject; 
-    procedure Plugins__CoGeoMonitorObject_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
+    function  Plugins__CoComponent_TIconBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TProcedureOfObject): TObject; 
+    function  Plugins__CoComponent_TStatusBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TProcedureOfObject): TObject;
+    procedure Plugins__CoGeoMonitorObjects_Constructor_Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: string; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer; out oComponentID: integer; out oGeographServerAddress: string; out oGeographServerObjectID: integer);
     function  Plugins__CoGeoMonitorObjects_GetTreePanel(): TForm;
+    procedure Plugins__CoGeoMonitorObject_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
     function  Plugins__GetStartPanel(const flAutoStartCheck: boolean): TForm;
     function  Plugins__GetCreateCompletionObjectForCoComponentType(const pidCoType: integer): TObject;
     procedure Plugins__ShowUserTaskManager();
@@ -8453,6 +8455,33 @@ if (Plugins <> nil)
   end;
 end;
 
+function  TProxySpace.Plugins__CoComponent_TIconBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TProcedureOfObject): TObject;
+type
+  TCoComponent_TIconBar_Create = function (const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TComponenTIconBarUpdateNotificationProc): TAbstractComponenTIconBar; stdcall;
+var
+  I: integer;
+  PluginHandle: THandle;
+  Routine: pointer;
+begin
+Result:=nil;
+if (Plugins <> nil)
+ then
+  with Plugins.LockList() do
+  try
+  for I:=0 to Count-1 do begin
+    PluginHandle:=THandle(List[I]);
+    Routine:=GetProcAddress(PluginHandle, PChar('CoComponent_TIconBar_Create'));
+    if (Routine <> nil)
+     then begin
+      Result:=TCoComponent_TIconBar_Create(Routine)(pUserName,pUserPassword, idCoComponent, idCoType, TComponenTIconBarUpdateNotificationProc(pUpdateNotificationProc));
+      Exit; //. ->
+      end;
+    end;
+  finally
+  Plugins.UnLockList();
+  end;
+end;
+
 function  TProxySpace.Plugins__CoComponent_TStatusBar_Create(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TProcedureOfObject): TObject;
 type
   TCoComponent_TStatusBar_Create = function (const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; idCoType: Integer; const pUpdateNotificationProc: TComponentStatusBarUpdateNotificationProc): TAbstractComponentStatusBar; stdcall;
@@ -8480,9 +8509,9 @@ if (Plugins <> nil)
   end;
 end;
 
-procedure TProxySpace.Plugins__CoGeoMonitorObject_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
+procedure TProxySpace.Plugins__CoGeoMonitorObjects_Constructor_Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: string; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer; out oComponentID: integer; out oGeographServerAddress: string; out oGeographServerObjectID: integer);
 type
-  TCoGeoMonitorObject_GetTrackData = procedure (const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray); stdcall;
+  TCoGeoMonitorObjects_Constructor_Construct = procedure (const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: string; const pName: string; const pGeoSpaceID: integer; const pSecurityIndex: integer; out oComponentID: integer; out oGeographServerAddress: string; out oGeographServerObjectID: integer); stdcall;
 var
   I: integer;
   PluginHandle: THandle;
@@ -8494,19 +8523,20 @@ if (Plugins <> nil)
   try
   for I:=0 to Count-1 do begin
     PluginHandle:=THandle(List[I]);
-    Routine:=GetProcAddress(PluginHandle, PChar('CoGeoMonitorObject_GetTrackData'));
+    Routine:=GetProcAddress(PluginHandle, PChar('CoGeoMonitorObjects_Constructor_Construct'));
     if (Routine <> nil)
      then begin
-      TCoGeoMonitorObject_GetTrackData(Routine)(pUserName,pUserPassword, idCoGeoMonitorObject, GeoSpaceID, BeginTime,EndTime, DataType,{out} Data);
+      TCoGeoMonitorObjects_Constructor_Construct(Routine)(pUserID,pUserName,pUserPassword, pObjectBusinessModel,pName,pGeoSpaceID,pSecurityIndex, {out} oComponentID,{out} oGeographServerAddress,{out} oGeographServerObjectID);
       Exit; //. ->
       end;
     end;
   finally
   Plugins.UnLockList();
   end;
+Raise Exception.Create('routine CoGeoMonitorObjects_Constructor_Construct() is not found in plugins'); //. =>
 end;
 
-function TProxySpace.Plugins__CoGeoMonitorObjects_GetTreePanel(): TForm; 
+function TProxySpace.Plugins__CoGeoMonitorObjects_GetTreePanel(): TForm;
 type
   TCoGeoMonitorObjects_GetTreePanel = function (): TForm; stdcall;
 var
@@ -8525,6 +8555,32 @@ if (Plugins <> nil)
     if (Routine <> nil)
      then begin
       Result:=TCoGeoMonitorObjects_GetTreePanel(Routine)();
+      Exit; //. ->
+      end;
+    end;
+  finally
+  Plugins.UnLockList();
+  end;
+end;
+
+procedure TProxySpace.Plugins__CoGeoMonitorObject_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray);
+type
+  TCoGeoMonitorObject_GetTrackData = procedure (const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; const GeoSpaceID: integer; const BeginTime: double; const EndTime: double; DataType: Integer; out Data: GlobalSpaceDefines.TByteArray); stdcall;
+var
+  I: integer;
+  PluginHandle: THandle;
+  Routine: pointer;
+begin
+if (Plugins <> nil)
+ then
+  with Plugins.LockList() do
+  try
+  for I:=0 to Count-1 do begin
+    PluginHandle:=THandle(List[I]);
+    Routine:=GetProcAddress(PluginHandle, PChar('CoGeoMonitorObject_GetTrackData'));
+    if (Routine <> nil)
+     then begin
+      TCoGeoMonitorObject_GetTrackData(Routine)(pUserName,pUserPassword, idCoGeoMonitorObject, GeoSpaceID, BeginTime,EndTime, DataType,{out} Data);
       Exit; //. ->
       end;
     end;

@@ -139,6 +139,26 @@ Type
   public
   end;
 
+  TComponentIconBarUpdateNotificationProc = procedure of object;
+
+  TAbstractComponentIconBar = class
+  public
+    idTComponent: integer;
+    idComponent: integer;
+    //.
+    UpdateNotificationProc: TComponentIconBarUpdateNotificationProc;
+
+    Constructor Create(const pidTComponent,pidComponent: integer; const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc);
+    procedure Update(); virtual; abstract;
+    function IsNull(): boolean; virtual; 
+    procedure SaveToStream(const Stream: TMemoryStream); virtual; abstract;
+    function  LoadFromStream(const Stream: TMemoryStream): boolean; virtual; abstract;
+    function Status_IsOnline(): boolean; virtual; abstract;
+    function Status_LocationIsAvailable(): boolean; virtual; abstract;
+    procedure DrawOnCanvas(const Canvas: TCanvas; const Rect: TRect; const Version: integer); virtual; abstract;
+    procedure GetBitmapStream(const pWidth,pHeight: integer; const Version: integer; out BitmapStream: TMemoryStream); virtual;
+  end;
+
   TComponentStatusBarUpdateNotificationProc = procedure of object;
 
   TAbstractComponentStatusBar = class
@@ -555,6 +575,49 @@ end;
 procedure TAbstractSpaceObjPanelProps.Show;
 begin
 Inherited Show;
+end;
+
+
+{TAbstractComponentIconBar}
+Constructor TAbstractComponentIconBar.Create(const pidTComponent,pidComponent: integer; const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc);
+begin
+Inherited Create();
+idTComponent:=pidTComponent;
+idComponent:=pidComponent;
+UpdateNotificationProc:=pUpdateNotificationProc;
+end;
+
+function TAbstractComponentIconBar.IsNull(): boolean;
+begin
+Result:=false;
+end;
+
+procedure TAbstractComponentIconBar.GetBitmapStream(const pWidth,pHeight: integer; const Version: integer; out BitmapStream: TMemoryStream);
+begin
+BitmapStream:=TMemoryStream.Create();
+try
+with TBitmap.Create() do
+try
+Canvas.Lock();
+try
+Width:=pWidth;
+Height:=pHeight;
+//.
+DrawOnCanvas(Canvas, Classes.Rect(0,0,pWidth,pHeight), Version);
+finally
+Canvas.Unlock();
+end;
+//.
+SaveToStream(BitmapStream);
+BitmapStream.Position:=0;
+finally
+Destroy();
+end;
+except
+  FreeAndNil(BitmapStream);
+  //.
+  Raise; //. =>
+  end;
 end;
 
 

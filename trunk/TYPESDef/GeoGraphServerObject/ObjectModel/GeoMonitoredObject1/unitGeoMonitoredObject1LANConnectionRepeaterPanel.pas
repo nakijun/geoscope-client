@@ -94,7 +94,7 @@ Idx:=Pos('http://',ServerAddress);
 if (Idx = 1) then ServerAddress:=Copy(ServerAddress,8,Length(ServerAddress)-7);
 //.
 FreeAndNil(Repeater);
-Repeater:=TGeographProxyServerLANConnectionRepeater.Create(lcmctPacketted, Address,Port, LocalPort, ServerAddress,DefaultServerPort, UserName,UserPassword, Model.ObjectController.idGeoGraphServerObject, Model.ControlModule_StartLANConnection,Model.ControlModule_StopLANConnection);
+Repeater:=TGeographProxyServerLANConnectionRepeater.Create(lcmctNormal, Address,Port, LocalPort, ServerAddress,DefaultServerPort, UserName,UserPassword, Model.ObjectController.idGeoGraphServerObject, Model.ControlModule_StartLANConnection,Model.ControlModule_StopLANConnection);
 //.
 gbLANEndpoint.Enabled:=false;
 gbLocalPort.Enabled:=false;
@@ -123,6 +123,7 @@ procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.UpdateStatus();
 begin
 if (IsStarted())
  then begin
+  edPort.Text:=IntToStr(Repeater.GetPort());
   lbStatus.Font.Color:=clGreen;
   lbStatus.Caption:='Online, connections: '+IntToStr(Repeater.GetConnectionsCount());
   end

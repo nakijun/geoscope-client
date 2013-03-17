@@ -568,7 +568,7 @@ if (Repeater.LocalReceivingPort > 0)
       end;
   lcmctPacketted:
     while (NOT Terminated) do begin
-      ActualSize:=ServerSocket.ReceiveBuf(Pointer(@TransferBuffer[0])^,SizeOf(PacketSize));
+      ActualSize:=ServerSocket_ReceiveBuf1(Pointer(@TransferBuffer[0])^,SizeOf(PacketSize));
       if (ActualSize > 0)
        then begin
         if (ActualSize <> SizeOf(PacketSize)) then Raise Exception.Create('wrong PacketSize data'); //. =>
@@ -586,23 +586,26 @@ if (Repeater.LocalReceivingPort > 0)
             Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
           end;
           end;
-      ActualSize:=ServerSocket_ReceiveBuf1(Pointer(@TransferBuffer[0])^,PacketSize);
-      if (ActualSize > 0)
+      if (PacketSize > 0)
        then begin
-        if (ActualSize <> PacketSize) then Raise Exception.Create('wrong Packet data'); //. =>
-        SendTo(ReceiverSocket, Pointer(@TransferBuffer[0])^,ActualSize, 0, ReceiverSocketAddress,SizeOf(ReceiverSocketAddress));
-        end
-       else
-        if (ActualSize = 0)
-         then Break //. > connection is closed
-         else begin
-          SE:=WSAGetLastError();
-          case SE of
-          WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading server socket data, '+SysErrorMessage(SE)); //. =>
-          else
-            Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
-          end;
-          end;
+        ActualSize:=ServerSocket_ReceiveBuf1(Pointer(@TransferBuffer[0])^,PacketSize);
+        if (ActualSize > 0)
+         then begin
+          if (ActualSize <> PacketSize) then Raise Exception.Create('wrong Packet data'); //. =>
+          SendTo(ReceiverSocket, Pointer(@TransferBuffer[0])^,PacketSize, 0, ReceiverSocketAddress,SizeOf(ReceiverSocketAddress));
+          end
+         else
+          if (ActualSize = 0)
+           then Break //. > connection is closed
+           else begin
+            SE:=WSAGetLastError();
+            case SE of
+            WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+            else
+              Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+            end;
+            end;
+        end;
       end;
   end;
   finally
@@ -647,20 +650,20 @@ if (ConnectionType <> lcmctPacketted) then Raise Exception.Create('unsupported C
 //.
 ReceivingPort:=pReceivingPort;
 ReceivingPacketSize:=pReceivingPacketSize;
-if (ReceivingPacketSize < MinBufferSize) then Raise Exception.Create('packet size is too short'); //. =>
+if ((ReceivingPort <> 0) AND (ReceivingPacketSize < MinBufferSize)) then Raise Exception.Create('packet size is too short'); //. =>
 //.
 Address:=pAddress;
 TransmittingPort:=pTransmittingPort;
 TransmittingPacketSize:=pTransmittingPacketSize;
-if (TransmittingPacketSize < MinBufferSize) then Raise Exception.Create('packet size is too short'); //. =>
+if ((TransmittingPort <> 0) AND (TransmittingPacketSize < MinBufferSize)) then Raise Exception.Create('packet size is too short'); //. =>
 //.
 LocalReceivingPort:=pLocalReceivingPort;
 LocalReceivingPacketSize:=pLocalReceivingPacketSize;
-if (LocalReceivingPacketSize < MinBufferSize) then Raise Exception.Create('packet size is too short'); //. =>
+if ((LocalReceivingPort <> 0) AND (LocalReceivingPacketSize < MinBufferSize)) then Raise Exception.Create('packet size is too short'); //. =>
 //.
 LocalTransmittingPort:=pLocalTransmittingPort;
 LocalTransmittingPacketSize:=pLocalTransmittingPacketSize;
-if (LocalTransmittingPacketSize < MinBufferSize) then Raise Exception.Create('packet size is too short'); //. =>
+if ((LocalTransmittingPort <> 0) AND (LocalTransmittingPacketSize < MinBufferSize)) then Raise Exception.Create('packet size is too short'); //. =>
 //.
 ServerAddress:=pServerAddress;
 ServerPort:=pServerPort;

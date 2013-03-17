@@ -32,6 +32,8 @@ const
   SERVICE_TILESERVER_COMMAND_GETTILES_V3 = 9;
   SERVICE_TILESERVER_COMMAND_GETTILES_V4 = 10;
   SERVICE_TILESERVER_COMMAND_SETTILES = 12;
+  SERVICE_TILESERVER_COMMAND_RESETTILES = 13;
+  SERVICE_TILESERVER_COMMAND_RESETTILES_V1 = 14;
   //.
   MESSAGE_DISCONNECT = 0;
   //. error messages
@@ -117,7 +119,9 @@ type
     function  TileServer_GetTilesV4_Begin(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; Xmn,Xmx,Ymn,Ymx: Int64; const HistoryTime: double; const ExceptSegments: TByteArray; out SegmentsCount: integer): TTcpClient;
     procedure TileServer_GetTilesV4_Read(const Connection: TTcpClient; out SegmentX,SegmentY: Int64; out Timestamp: double; const SegmentStream: TMemoryStream);
     procedure TileServer_GetTilesV4_End(var Connection: TTcpClient);
-    procedure TileServer_SetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray);
+    procedure TileServer_SetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray; out Timestamp: double);
+    procedure TileServer_ReSetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray; out Timestamp: double);
+    procedure TileServer_ReSetTilesV1(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const ReSetInterval: double; const Segments: TByteArray; out Timestamp: double);
   end;
 
 
@@ -1296,7 +1300,7 @@ begin
 Disconnect({ref} Connection);
 end;
 
-procedure TSpaceDataServerClient.TileServer_SetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray);
+procedure TSpaceDataServerClient.TileServer_SetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray; out Timestamp: double);
 var
   Connection: TTcpClient;
   Params: array[0..23] of byte;
@@ -1327,8 +1331,92 @@ if (Descriptor > 0)
   end;
 //.
 ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
-if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of writing response'); //. =>
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading response descriptor'); //. =>
 CheckMessage(Descriptor);
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Timestamp,SizeOf(Timestamp));
+if (ActualSize <> SizeOf(Timestamp)) then Raise Exception.Create('error of reading Timestamp'); //. =>
+finally
+Disconnect({ref} Connection);
+end;
+end;
+
+procedure TSpaceDataServerClient.TileServer_ReSetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray; out Timestamp: double);
+var
+  Connection: TTcpClient;
+  Params: array[0..23] of byte;
+  Descriptor: integer;
+  ActualSize: integer;
+begin
+Connection:=Connect(SERVICE_TILESERVER,SERVICE_TILESERVER_COMMAND_RESETTILES);
+try
+ActualSize:=Connection.SendBuf(idTileServerVisualization,SizeOf(idTileServerVisualization));
+if (ActualSize <> SizeOf(idTileServerVisualization)) then Raise Exception.Create('could not send idTileServerVisualization'); //. =>
+//. check login
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('access is denied'); //. =>
+CheckMessage(Descriptor);
+//. send params
+DWord(Pointer(@Params[0])^):=ProviderID;
+DWord(Pointer(@Params[4])^):=CompilationID;
+DWord(Pointer(@Params[8])^):=Level;
+Int64(Pointer(@Params[12])^):=SecurityFileID;
+Descriptor:=Length(Segments);
+DWord(Pointer(@Params[20])^):=Descriptor;
+ActualSize:=Connection.SendBuf(Pointer(@Params[0])^,Length(Params));
+if (ActualSize <> Length(Params)) then Raise Exception.Create('could not send Params'); //. =>
+if (Descriptor > 0)
+ then begin
+  ActualSize:=Connection.SendBuf(Pointer(@Segments[0])^,Descriptor);
+  if (ActualSize <> Descriptor) then Raise Exception.Create('could not send Segments'); //. =>
+  end;
+//.
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading response descriptor'); //. =>
+CheckMessage(Descriptor);
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Timestamp,SizeOf(Timestamp));
+if (ActualSize <> SizeOf(Timestamp)) then Raise Exception.Create('error of reading Timestamp'); //. =>
+finally
+Disconnect({ref} Connection);
+end;
+end;
+
+
+procedure TSpaceDataServerClient.TileServer_ReSetTilesV1(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const ReSetInterval: double; const Segments: TByteArray; out Timestamp: double);
+var
+  Connection: TTcpClient;
+  Params: array[0..31] of byte;
+  Descriptor: integer;
+  ActualSize: integer;
+begin
+Connection:=Connect(SERVICE_TILESERVER,SERVICE_TILESERVER_COMMAND_RESETTILES);
+try
+ActualSize:=Connection.SendBuf(idTileServerVisualization,SizeOf(idTileServerVisualization));
+if (ActualSize <> SizeOf(idTileServerVisualization)) then Raise Exception.Create('could not send idTileServerVisualization'); //. =>
+//. check login
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('access is denied'); //. =>
+CheckMessage(Descriptor);
+//. send params
+DWord(Pointer(@Params[0])^):=ProviderID;
+DWord(Pointer(@Params[4])^):=CompilationID;
+DWord(Pointer(@Params[8])^):=Level;
+Int64(Pointer(@Params[12])^):=SecurityFileID;
+Double(Pointer(@Params[20])^):=ReSetInterval;
+Descriptor:=Length(Segments);
+DWord(Pointer(@Params[28])^):=Descriptor;
+ActualSize:=Connection.SendBuf(Pointer(@Params[0])^,Length(Params));
+if (ActualSize <> Length(Params)) then Raise Exception.Create('could not send Params'); //. =>
+if (Descriptor > 0)
+ then begin
+  ActualSize:=Connection.SendBuf(Pointer(@Segments[0])^,Descriptor);
+  if (ActualSize <> Descriptor) then Raise Exception.Create('could not send Segments'); //. =>
+  end;
+//.
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading response descriptor'); //. =>
+CheckMessage(Descriptor);
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Timestamp,SizeOf(Timestamp));
+if (ActualSize <> SizeOf(Timestamp)) then Raise Exception.Create('error of reading Timestamp'); //. =>
 finally
 Disconnect({ref} Connection);
 end;

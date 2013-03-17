@@ -20,6 +20,7 @@ Const
 Type
   TBusinessModelConstructorPanel = class;
   TBusinessModelControlPanel = class;
+  TBusinessModelCustomControlPanel = class(TForm);
   TBusinessModelDeviceInitializerPanel = class;
 
   TBusinessModelClass = class of TBusinessModel;
@@ -35,10 +36,14 @@ Type
     class function Name: string; virtual; abstract;
     class function ObjectTypeID: integer; virtual; abstract;
     class function ObjectTypeName: string; virtual; abstract;
-    class function GetModelClass(const pModelID: integer): TBusinessModelClass; virtual; abstract;
+    class function GetModelBaseClass(const pObjectModelID: integer): TBusinessModelClass;
+    class function GetModelClass(const pObjectModelID: integer; const pModelID: integer): TBusinessModelClass; overload;
+    class function GetModelClass(const pModelID: integer): TBusinessModelClass; overload; virtual; abstract;
     class function GetModel(const pObjectModel: TObjectModel; const pModelID: integer): TBusinessModel; virtual;
     class procedure GetModels(out SL: TStringList); virtual; abstract;
     class function CreateConstructorPanel(const pidGeoGraphServerObject: integer): TBusinessModelConstructorPanel; virtual; abstract;
+    class function CreateCustomControlPanel(const idCoComponent: integer): TBusinessModelCustomControlPanel; virtual;
+    class procedure GetIconSet(const Version: integer; out Icon: TBitmap; out Icon_flFree: boolean); virtual;
 
     Constructor Create(const pObjectModel: TObjectModel);
     Destructor Destroy; override;
@@ -76,7 +81,8 @@ Type
     procedure Preset(const idTVisualization,idVisualization: integer; const idHint: integer; const idUserAlert: integer; const idOnlineFlag: integer; const idLocationIsAvailableFlag: integer); virtual; abstract;
     procedure Preset1(const idGeoSpace: integer; const idTVisualization,idVisualization: integer; const idHint: integer; const idUserAlert: integer; const idOnlineFlag: integer; const idLocationIsAvailableFlag: integer); virtual; abstract;
     procedure ValidateValues(); virtual; abstract;
-    function Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; virtual; abstract;
+    function Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; overload; virtual; abstract;
+    function Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; overload;
   end;
 
   TBusinessModelDeviceInitializerPanel = class(TForm);
@@ -97,25 +103,56 @@ uses
 
 
 {TBusinessModel}
-class function TBusinessModel.GetModel(const pObjectModel: TObjectModel; const pModelID: integer): TBusinessModel;
+class function TBusinessModel.GetModelBaseClass(const pObjectModelID: integer): TBusinessModelClass;
 begin
-if (pObjectModel.ID = TGMOBusinessModel.ObjectTypeID)
- then Result:=TGMOBusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TGMO1BusinessModel.ObjectTypeID)
- then Result:=TGMO1BusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TEnforaObjectBusinessModel.ObjectTypeID)
- then Result:=TEnforaObjectBusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TEnforaMT3000ObjectBusinessModel.ObjectTypeID)
- then Result:=TEnforaMT3000ObjectBusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TEnforaMiniMTObjectBusinessModel.ObjectTypeID)
- then Result:=TEnforaMiniMTObjectBusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TNavixyObjectBusinessModel.ObjectTypeID)
- then Result:=TNavixyObjectBusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TGMMDBusinessModel.ObjectTypeID)
- then Result:=TGMMDBusinessModel.GetModel(pObjectModel,pModelID) else
-if (pObjectModel.ID = TGSTraqObjectBusinessModel.ObjectTypeID)
- then Result:=TGSTraqObjectBusinessModel.GetModel(pObjectModel,pModelID) 
+if (pObjectModelID = TGMOBusinessModel.ObjectTypeID)
+ then Result:=TGMOBusinessModel else
+if (pObjectModelID = TGMO1BusinessModel.ObjectTypeID)
+ then Result:=TGMO1BusinessModel else
+if (pObjectModelID = TEnforaObjectBusinessModel.ObjectTypeID)
+ then Result:=TEnforaObjectBusinessModel else
+if (pObjectModelID = TEnforaMT3000ObjectBusinessModel.ObjectTypeID)
+ then Result:=TEnforaMT3000ObjectBusinessModel else
+if (pObjectModelID = TEnforaMiniMTObjectBusinessModel.ObjectTypeID)
+ then Result:=TEnforaMiniMTObjectBusinessModel else
+if (pObjectModelID = TNavixyObjectBusinessModel.ObjectTypeID)
+ then Result:=TNavixyObjectBusinessModel else
+if (pObjectModelID = TGMMDBusinessModel.ObjectTypeID)
+ then Result:=TGMMDBusinessModel else
+if (pObjectModelID = TGSTraqObjectBusinessModel.ObjectTypeID)
+ then Result:=TGSTraqObjectBusinessModel
  else Result:=nil;
+end;
+
+class function TBusinessModel.GetModelClass(const pObjectModelID: integer; const pModelID: integer): TBusinessModelClass; 
+var
+  ModelBaseClass: TBusinessModelClass;
+begin
+ModelBaseClass:=GetModelBaseClass(pObjectModelID);
+if (ModelBaseClass = nil)
+ then Result:=nil
+ else Result:=ModelBaseClass.GetModelClass(pModelID);
+end;
+
+class function TBusinessModel.GetModel(const pObjectModel: TObjectModel; const pModelID: integer): TBusinessModel;
+var
+  ModelBaseClass: TBusinessModelClass;
+begin
+ModelBaseClass:=GetModelBaseClass(pObjectModel.ID);
+if (ModelBaseClass = nil)
+ then Result:=nil
+ else Result:=ModelBaseClass.GetModel(pObjectModel,pModelID);
+end;
+
+class function TBusinessModel.CreateCustomControlPanel(const idCoComponent: integer): TBusinessModelCustomControlPanel; 
+begin
+Result:=nil;
+end;
+
+class procedure TBusinessModel.GetIconSet(const Version: integer; out Icon: TBitmap; out Icon_flFree: boolean);
+begin
+Icon:=nil;
+Icon_flFree:=false;
 end;
 
 Constructor TBusinessModel.Create(const pObjectModel: TObjectModel);
@@ -271,6 +308,11 @@ Constructor TBusinessModelConstructorPanel.Create(const pBusinessModelClass: TBu
 begin
 Inherited Create(nil);
 BusinessModelClass:=pBusinessModelClass;
+end;
+
+function TBusinessModelConstructorPanel.Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer;
+begin
+Result:=Construct(ProxySpace_UserID(),ProxySpace_UserName(),ProxySpace_UserPassword(), pidGeographServer,pidGeoGraphServerObject);
 end;
 
 

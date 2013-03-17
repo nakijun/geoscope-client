@@ -5,6 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Sockets, Graphics, Controls, Forms,
   Dialogs,
+  GlobalSpaceDefines,
   unitGeoMonitoredObject1Model;
 
 const
@@ -28,6 +29,8 @@ const
 type
   TDoStartLANConnection = procedure (const ConnectionType: TLANConnectionModuleConnectionType; const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer) of object;
   TDoStopLANConnection = procedure (const ConnectionID: integer) of object;
+
+  TDoOnBytesTransmite = procedure (const Bytes: TByteArray; const Size: integer) of object;
 
   TGeographProxyServerLANConnectionRepeater = class;
   
@@ -75,6 +78,8 @@ type
     Address: string;
     Port: integer;
     //.
+    LocalPort: integer;
+    //.
     RepeaterServer: TTcpServer;
     //.
     ServerAddress: string;
@@ -86,11 +91,15 @@ type
     DoStartLANConnection: TDoStartLANConnection;
     DoStopLANConnection: TDoStopLANConnection;
     //.
+    OnSourceBytesTransmite: TDoOnBytesTransmite;
+    OnDestinationBytesTransmite: TDoOnBytesTransmite;
+    //.
     ConnectionsCount: integer;
 
     procedure DoOnServerAccept(sender: TObject; ClientSocket: TCustomIpClient);
   public
-    Constructor Create(const pConnectionType: TLANConnectionModuleConnectionType; const pAddress: string; const pPort: integer; const pLocalPort: integer; const pServerAddress: string; const pServerPort: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServerObject: Int64; const pDoStartLANConnection: TDoStartLANConnection; const pDoStopLANConnection: TDoStopLANConnection);
+
+    Constructor Create(const pConnectionType: TLANConnectionModuleConnectionType; const pAddress: string; const pPort: integer; const pLocalPort: integer; const pServerAddress: string; const pServerPort: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServerObject: Int64; const pDoStartLANConnection: TDoStartLANConnection; const pDoStopLANConnection: TDoStopLANConnection; const pOnSourceBytesTransmite: TDoOnBytesTransmite = nil; const pOnDestinationBytesTransmite: TDoOnBytesTransmite = nil);
     Destructor Destroy(); override;
     function GetPort(): integer;
     function GetConnectionsCount(): integer;
@@ -487,6 +496,7 @@ end;
 
 procedure TGeographProxyServerLANConnectionClient.Disconnect();
 begin
+//. not needed: connection is dropped automatically if (ConnectionID > 0) then Repeater.DoStopLANConnection(ConnectionID);
 if (ConnectionID > 0) then Repeater.DoStopLANConnection(ConnectionID);
 ServerSocket.Close();
 ConnectionID:=0;
@@ -497,7 +507,7 @@ procedure TGeographProxyServerLANConnectionClient.Execute();
 const
   TransferBufferSize = 1024*1024;
 var
-  TransferBuffer: array of byte;
+  TransferBuffer: TByteArray;
   ActualSize: integer;
   PacketSize: integer;
   SE: integer;
@@ -511,6 +521,8 @@ lcmctNormal:
     ActualSize:=ServerSocket.ReceiveBuf(Pointer(@TransferBuffer[0])^,TransferBufferSize);
     if (ActualSize > 0)
      then begin
+      if (Assigned(Repeater.OnSourceBytesTransmite)) then Repeater.OnSourceBytesTransmite(TransferBuffer,ActualSize);
+      //.
       if (DestinationSocket.SendBuf(Pointer(@TransferBuffer[0])^,ActualSize) <> ActualSize) then Raise Exception.Create('error of writing destination socket data, '+SysErrorMessage(WSAGetLastError())); //. =>
       end
      else
@@ -527,7 +539,7 @@ lcmctNormal:
     end;
 lcmctPacketted:
   while (NOT Terminated) do begin
-    ActualSize:=ServerSocket.ReceiveBuf(Pointer(@TransferBuffer[0])^,SizeOf(PacketSize));
+    ActualSize:=ServerSocket_ReceiveBuf1(Pointer(@TransferBuffer[0])^,SizeOf(PacketSize));
     if (ActualSize > 0)
      then begin
       if (ActualSize <> SizeOf(PacketSize)) then Raise Exception.Create('wrong PacketSize data'); //. =>
@@ -545,24 +557,32 @@ lcmctPacketted:
           Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
         end;
         end;
-    ActualSize:=ServerSocket_ReceiveBuf1(Pointer(@TransferBuffer[0])^,PacketSize);
-    if (ActualSize > 0)
+    if (PacketSize > 0)
      then begin
-      if (ActualSize <> PacketSize) then Raise Exception.Create('wrong Packet data'); //. =>
-      if (DestinationSocket.SendBuf(ActualSize,SizeOf(ActualSize)) <> SizeOf(ActualSize)) then Raise Exception.Create('error of writing destination socket packet descriptor, '+SysErrorMessage(WSAGetLastError())); //. =>
-      if (DestinationSocket.SendBuf(Pointer(@TransferBuffer[0])^,ActualSize) <> ActualSize) then Raise Exception.Create('error of writing destination socket data, '+SysErrorMessage(WSAGetLastError())); //. =>
+      ActualSize:=ServerSocket_ReceiveBuf1(Pointer(@TransferBuffer[0])^,PacketSize);
+      if (ActualSize > 0)
+       then begin
+        if (ActualSize <> PacketSize) then Raise Exception.Create('wrong Packet data'); //. =>
+        //.
+        if (Assigned(Repeater.OnSourceBytesTransmite)) then Repeater.OnSourceBytesTransmite(TransferBuffer,PacketSize);
+        //.
+        if (DestinationSocket.SendBuf(PacketSize,SizeOf(PacketSize)) <> SizeOf(PacketSize)) then Raise Exception.Create('error of writing destination socket packet descriptor, '+SysErrorMessage(WSAGetLastError())); //. =>
+        if (DestinationSocket.SendBuf(Pointer(@TransferBuffer[0])^,PacketSize) <> PacketSize) then Raise Exception.Create('error of writing destination socket data, '+SysErrorMessage(WSAGetLastError())); //. =>
+        end
+       else
+        if (ActualSize = 0)
+         then Break //. > connection is closed
+         else begin
+          SE:=WSAGetLastError();
+          case SE of
+          WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+          else
+            Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+          end;
+          end;
       end
      else
-      if (ActualSize = 0)
-       then Break //. > connection is closed
-       else begin
-        SE:=WSAGetLastError();
-        case SE of
-        WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading server socket data, '+SysErrorMessage(SE)); //. =>
-        else
-          Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
-        end;
-        end;
+      if (DestinationSocket.SendBuf(PacketSize,SizeOf(PacketSize)) <> SizeOf(PacketSize)) then Raise Exception.Create('error of writing destination socket packet descriptor, '+SysErrorMessage(WSAGetLastError())); //. =>
     end;
 end;
 finally
@@ -592,7 +612,9 @@ end;
 
 
 {TGeographProxyServerLANConnectionRepeater}
-Constructor TGeographProxyServerLANConnectionRepeater.Create(const pConnectionType: TLANConnectionModuleConnectionType; const pAddress: string; const pPort: integer; const pLocalPort: integer; const pServerAddress: string; const pServerPort: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServerObject: Int64; const pDoStartLANConnection: TDoStartLANConnection; const pDoStopLANConnection: TDoStopLANConnection);
+Constructor TGeographProxyServerLANConnectionRepeater.Create(const pConnectionType: TLANConnectionModuleConnectionType; const pAddress: string; const pPort: integer; const pLocalPort: integer; const pServerAddress: string; const pServerPort: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServerObject: Int64; const pDoStartLANConnection: TDoStartLANConnection; const pDoStopLANConnection: TDoStopLANConnection; const pOnSourceBytesTransmite: TDoOnBytesTransmite = nil; const pOnDestinationBytesTransmite: TDoOnBytesTransmite = nil);
+const
+  MaxListeningPort = 65535;
 begin
 Inherited Create();
 //.
@@ -600,6 +622,8 @@ ConnectionType:=pConnectionType;
 //.
 Address:=pAddress;
 Port:=pPort;
+//.
+LocalPort:=pLocalPort;
 //.
 ServerAddress:=pServerAddress;
 ServerPort:=pServerPort;
@@ -610,20 +634,33 @@ idGeographServerObject:=pidGeographServerObject;
 DoStartLANConnection:=pDoStartLANConnection;
 DoStopLANConnection:=pDoStopLANConnection;
 //.
+OnSourceBytesTransmite:=pOnSourceBytesTransmite;
+OnDestinationBytesTransmite:=pOnDestinationBytesTransmite;
+//.
 ConnectionsCount:=0;
 //.
 RepeaterServer:=TTcpServer.Create(nil);
 with RepeaterServer do begin
-LocalHost:='127.0.0.1';
-LocalPort:=IntToStr(pLocalPort);
 BlockMode:=bmThreadBlocking;
 OnAccept:=DoOnServerAccept;
-try
-Active:=true;
-except
-  on E: Exception do Raise EPortBindingException.Create(''); //. =>
-  end;
+LocalHost:='127.0.0.1';
 end;
+repeat
+  try
+  try
+  RepeaterServer.LocalPort:=IntToStr(LocalPort);
+  RepeaterServer.Active:=true;
+  Break; //. >
+  except
+    on E: Exception do Raise EPortBindingException.Create(''); //. =>
+    end;
+  except
+    on E: EPortBindingException do begin
+      Inc(LocalPort);
+      if (LocalPort > MaxListeningPort) then Raise; //. =>
+      end;
+    end;
+until (false);
 end;
 
 Destructor TGeographProxyServerLANConnectionRepeater.Destroy();
@@ -672,7 +709,7 @@ const
 
 var
   LANConnectionClient: TGeographProxyServerLANConnectionClient;
-  TransferBuffer: array of byte;
+  TransferBuffer: TByteArray;
   ActualSize: integer;
   PacketSize: integer;
   SE: integer;
@@ -690,6 +727,8 @@ lcmctNormal:
     ActualSize:=ClientSocket.ReceiveBuf(Pointer(@TransferBuffer[0])^,TransferBufferSize);
     if (ActualSize > 0)
      then begin
+      if (Assigned(OnDestinationBytesTransmite)) then OnDestinationBytesTransmite(TransferBuffer,ActualSize);
+      //.
       if (LANConnectionClient.ServerSocket.SendBuf(Pointer(@TransferBuffer[0])^,ActualSize) <> ActualSize) then Raise Exception.Create('error of writing server socket data, '+SysErrorMessage(WSAGetLastError())); //. =>
       end
      else
@@ -706,7 +745,7 @@ lcmctNormal:
     end;
 lcmctPacketted:
   while (ClientSocket.Active AND LANConnectionClient.flRunning) do begin
-    ActualSize:=ClientSocket.ReceiveBuf(Pointer(@TransferBuffer[0])^,SizeOf(PacketSize));
+    ActualSize:=ClientSocket_ReceiveBuf(Pointer(@TransferBuffer[0])^,SizeOf(PacketSize));
     if (ActualSize > 0)
      then begin
       if (ActualSize <> SizeOf(PacketSize)) then Raise Exception.Create('wrong PacketSize data'); //. =>
@@ -724,24 +763,32 @@ lcmctPacketted:
           Raise Exception.Create('unexpected timeout error of reading Repeater socket packet descriptor, '+SysErrorMessage(SE)); //. =>
         end;
         end;
-    ActualSize:=ClientSocket_ReceiveBuf(Pointer(@TransferBuffer[0])^,PacketSize);
-    if (ActualSize > 0)
+    if (PacketSize > 0)
      then begin
-      if (ActualSize <> PacketSize) then Raise Exception.Create('wrong Packet data'); //. =>
-      if (LANConnectionClient.ServerSocket.SendBuf(ActualSize,SizeOf(ActualSize)) <> SizeOf(ActualSize)) then Raise Exception.Create('error of writing server socket packet descriptor, '+SysErrorMessage(WSAGetLastError())); //. =>
-      if (LANConnectionClient.ServerSocket.SendBuf(Pointer(@TransferBuffer[0])^,ActualSize) <> ActualSize) then Raise Exception.Create('error of writing server socket data, '+SysErrorMessage(WSAGetLastError())); //. =>
+      ActualSize:=ClientSocket_ReceiveBuf(Pointer(@TransferBuffer[0])^,PacketSize);
+      if (ActualSize > 0)
+       then begin
+        if (ActualSize <> PacketSize) then Raise Exception.Create('wrong Packet data'); //. =>
+        //.
+        if (Assigned(OnDestinationBytesTransmite)) then OnDestinationBytesTransmite(TransferBuffer,PacketSize);
+        //.
+        if (LANConnectionClient.ServerSocket.SendBuf(PacketSize,SizeOf(PacketSize)) <> SizeOf(PacketSize)) then Raise Exception.Create('error of writing server socket packet descriptor, '+SysErrorMessage(WSAGetLastError())); //. =>
+        if (LANConnectionClient.ServerSocket.SendBuf(Pointer(@TransferBuffer[0])^,PacketSize) <> PacketSize) then Raise Exception.Create('error of writing server socket data, '+SysErrorMessage(WSAGetLastError())); //. =>
+        end
+       else
+        if (ActualSize = 0)
+         then Break //. > connection is closed
+         else begin
+          SE:=WSAGetLastError();
+          case SE of
+          WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading Repeater socket data, '+SysErrorMessage(SE)); //. =>
+          else
+            Raise Exception.Create('unexpected error of reading Repeater socket data, '+SysErrorMessage(SE)); //. =>
+          end;
+          end;
       end
      else
-      if (ActualSize = 0)
-       then Break //. > connection is closed
-       else begin
-        SE:=WSAGetLastError();
-        case SE of
-        WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading Repeater socket data, '+SysErrorMessage(SE)); //. =>
-        else
-          Raise Exception.Create('unexpected error of reading Repeater socket data, '+SysErrorMessage(SE)); //. =>
-        end;
-        end;
+       if (LANConnectionClient.ServerSocket.SendBuf(PacketSize,SizeOf(PacketSize)) <> SizeOf(PacketSize)) then Raise Exception.Create('error of writing server socket packet descriptor, '+SysErrorMessage(WSAGetLastError())); //. =>
     end;
 end;
 finally

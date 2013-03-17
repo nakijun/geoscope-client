@@ -1477,6 +1477,7 @@ V.Value:=cbVideoRecorderModuleVideo.Checked;
 DeviceRootComponent.VideoRecorderModule.Video.BoolValue:=V;
 //.
 DeviceRootComponent.VideoRecorderModule.Video.WriteDeviceCUAC();
+DeviceRootComponent.VideoRecorderModule.Video.WriteCUAC();
 finally
 Model.Lock.Leave();
 end;

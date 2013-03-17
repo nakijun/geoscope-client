@@ -345,7 +345,7 @@ Type
     class function ID: integer; override;
     class function Name: string; override;
 
-    Constructor Create(const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean);
+    Constructor Create(const pObjectController: TGEOGraphServerObjectController; const flFreeController: boolean); override;
     function GetControlPanel(): TObjectModelControlPanel; override;
     function IsObjectOnline: boolean; override;
     function ObjectVisualization: TObjectDescriptor; override;

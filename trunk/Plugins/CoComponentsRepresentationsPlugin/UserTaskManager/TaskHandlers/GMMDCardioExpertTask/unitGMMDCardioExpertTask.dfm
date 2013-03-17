@@ -19,7 +19,7 @@ object fmGMMDCardioExpertTask: TfmGMMDCardioExpertTask
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 1033
+    Width = 1025
     Height = 81
     Align = alTop
     Caption = ' Task '
@@ -31,7 +31,7 @@ object fmGMMDCardioExpertTask: TfmGMMDCardioExpertTask
     ParentFont = False
     TabOrder = 0
     DesignSize = (
-      1033
+      1025
       81)
     object gbStatus: TGroupBox
       Left = 465
@@ -120,21 +120,21 @@ object fmGMMDCardioExpertTask: TfmGMMDCardioExpertTask
   object pnlMeasurement: TPanel
     Left = 0
     Top = 81
-    Width = 1033
-    Height = 183
+    Width = 1025
+    Height = 172
     Align = alClient
     Caption = 'pnlMeasurement'
     TabOrder = 1
   end
   object pnlResult: TPanel
     Left = 0
-    Top = 264
-    Width = 1033
+    Top = 253
+    Width = 1025
     Height = 53
     Align = alBottom
     TabOrder = 2
     DesignSize = (
-      1033
+      1025
       53)
     object btnCloseConsultation: TBitBtn
       Left = 825

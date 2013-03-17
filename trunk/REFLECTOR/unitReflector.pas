@@ -375,6 +375,8 @@ type
 
     function CreateItem: pointer;
     procedure DestroyItem(var ptrDestroyItem: pointer);
+    function CreateOwnerIconBar(const idTOwner,idOwner: integer; const idCoType: integer; const Stream: TMemoryStream): TObject;
+    procedure DoOnItemIconBarChange();
     function CreateOwnerStatusBar(const idTOwner,idOwner: integer; const idCoType: integer; const Stream: TMemoryStream): TObject;
     procedure DoOnItemStatusBarChange();
     procedure DoOnItemChangeStatusChange();
@@ -14770,6 +14772,43 @@ SetLength(InfoStringFontName,0);
 FreeAndNil(OwnerStatusBar);
 end;
 FreeMem(ptrDestroyItem,SizeOf(TUserDynamicHint));
+end;
+
+function TUserDynamicHints.CreateOwnerIconBar(const idTOwner,idOwner: integer; const idCoType: integer; const Stream: TMemoryStream): TObject;
+begin
+if (idTOwner <> idTCoComponent)
+ then begin
+  end
+ else with DynamicHints.Reflector.Space do begin
+  Result:=Plugins__CoComponent_TIconBar_Create(UserName,UserPassword,idOwner,idCoType,DoOnItemIconBarChange);
+  try
+  if (Result <> nil)
+   then
+    if ((Stream <> nil) AND Context_flLoaded)
+     then begin
+      if (NOT TAbstractComponentIconBar(Result).LoadFromStream(Stream))
+       then begin
+        TAbstractComponentIconBar(Result).Update();
+        Items_flChanged:=true;
+        end;
+      end
+     else begin
+      TAbstractComponentIconBar(Result).Update();
+      Items_flChanged:=true;
+      end;
+  except
+    FreeAndNil(Result);
+    //.
+    Raise; //. =>
+    end;
+  end;
+end;
+
+procedure TUserDynamicHints.DoOnItemIconBarChange();
+begin
+Items_flChanged:=true;
+//.
+DynamicHints.Reflector.Reflecting.ReFresh();
 end;
 
 function TUserDynamicHints.CreateOwnerStatusBar(const idTOwner,idOwner: integer; const idCoType: integer; const Stream: TMemoryStream): TObject;

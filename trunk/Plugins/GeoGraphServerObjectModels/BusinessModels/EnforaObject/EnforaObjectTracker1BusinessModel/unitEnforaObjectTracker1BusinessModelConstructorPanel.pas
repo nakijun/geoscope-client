@@ -91,7 +91,7 @@ type
     procedure Preset(const idTVisualization,idVisualization: integer; const idHint: integer; const idUserAlert: integer; const idOnlineFlag: integer; const idLocationIsAvailableFlag: integer); override;
     procedure Preset1(const idGeoSpace: integer; const idTVisualization,idVisualization: integer; const idHint: integer; const idUserAlert: integer; const idOnlineFlag: integer; const idLocationIsAvailableFlag: integer); override;
     procedure ValidateValues(); override;
-    function Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; override;
+    function Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; override;
   end;
 
 implementation
@@ -301,7 +301,7 @@ except
   end;
 end;
 
-function TTEnforaObjectTracker1BusinessModelConstructorPanel.Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer;
+function TTEnforaObjectTracker1BusinessModelConstructorPanel.Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer;
 var
   _GeoGraphServerID: integer;
   _ObjectID: integer;

@@ -73,6 +73,8 @@ Type
     Constructor Create(const pidCoComponent: integer); virtual;
     Destructor Destroy; override;
     procedure UpdateDATA; override;
+    procedure SetUser(const pUserName: WideString; const pUserPassword: WideString);
+    function ComponentFunctionality(): TComponentFunctionality;
     function idCoType: integer;
     function IsWellformed: boolean; virtual;
     procedure CheckWellformedness;
@@ -80,6 +82,7 @@ Type
     procedure SetTypedData(const pUserName: WideString; const pUserPassword: WideString; const DataType: Integer; const Data: TByteArray); virtual; abstract;
     function GetInfo(const pUserName: WideString; const pUserPassword: WideString; const InfoType: integer; const InfoFormat: integer; out Info: TByteArray): boolean; virtual;
     function GetHintInfo(const pUserName: WideString; const pUserPassword: WideString; const InfoType: integer; const InfoFormat: integer; out Info: TByteArray): boolean; virtual;
+    function TIconBar_Create(const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc): TAbstractComponentIconBar; virtual;
     function TStatusBar_Create(const pUpdateNotificationProc: TComponentStatusBarUpdateNotificationProc): TAbstractComponentStatusBar; virtual;
     function Clone: integer;
     function TPropsPanel_Create: TForm; virtual; abstract;
@@ -306,6 +309,16 @@ procedure TCoComponentFunctionality.UpdateDATA;
 begin
 end;
 
+procedure TCoComponentFunctionality.SetUser(const pUserName: WideString; const pUserPassword: WideString);
+begin
+TComponentFunctionality(CoComponentFunctionality).SetUser(pUserName,pUserPassword);
+end;
+
+function TCoComponentFunctionality.ComponentFunctionality(): TComponentFunctionality;
+begin
+Result:=TComponentFunctionality(CoComponentFunctionality);
+end;
+
 function TCoComponentFunctionality.idCoType: integer;
 begin
 Result:=CoComponentFunctionality.idCoType
@@ -331,6 +344,11 @@ function TCoComponentFunctionality.GetHintInfo(const pUserName: WideString; cons
 begin
 Info:=nil;
 Result:=false;
+end;
+
+function TCoComponentFunctionality.TIconBar_Create(const pUpdateNotificationProc: TComponentIconBarUpdateNotificationProc): TAbstractComponentIconBar;
+begin
+Result:=nil;
 end;
 
 function TCoComponentFunctionality.TStatusBar_Create(const pUpdateNotificationProc: TComponentStatusBarUpdateNotificationProc): TAbstractComponentStatusBar;

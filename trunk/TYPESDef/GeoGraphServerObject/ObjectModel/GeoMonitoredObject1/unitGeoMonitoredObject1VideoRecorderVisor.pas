@@ -150,8 +150,8 @@ procedure TGeographProxyServerVideoClient.Execute();
 const
   SynchronizeTimeout = 100;
   //.
-  CheckPointInterval = (1.0/(24*3600))*60; //. seconds
-  ServerReadWriteTimeout = 1000*60; //. Seconds
+  CheckPointInterval = (1.0/(24*3600))*3600; //. seconds
+  ServerReadWriteTimeout = 1000*10; //. Seconds
 
 var
   ServerSocket: TTcpClient;
@@ -165,6 +165,23 @@ var
   repeat
     ActualSize:=ServerSocket.ReceiveBuf(Pointer(DWord(@Buf)+SumActualSize)^,(BufSize-SumActualSize));
     if (ActualSize <= 0) then Raise Exception.Create('error of reading socket data'); //. =>
+    Inc(SumActualSize,ActualSize);
+  until (SumActualSize = BufSize);
+  Result:=SumActualSize;
+  end;
+
+  function ServerSocket_ReceiveBuf1(var Buf; BufSize: Integer): Integer;
+  var
+    ActualSize,SumActualSize: integer;
+  begin
+  SumActualSize:=0;
+  repeat
+    ActualSize:=ServerSocket.ReceiveBuf(Pointer(DWord(@Buf)+SumActualSize)^,(BufSize-SumActualSize));
+    if (ActualSize <= 0)
+     then begin
+      Result:=ActualSize;
+      Exit; //. ->
+      end;
     Inc(SumActualSize,ActualSize);
   until (SumActualSize = BufSize);
   Result:=SumActualSize;
@@ -493,6 +510,11 @@ var
   LastChekpointTime: TDateTime;
   PacketStream: TMemoryStream;
   ActualSize: integer;
+  SE: integer;
+  {$IFDEF DEBUG}
+  Log: TextFile;
+  LastTimestamp,Timestamp,Delta: TDateTime;
+  {$ENDIF}
 begin
 try
 ErrorCode:=WSAStartup($0202,WSAData);
@@ -519,26 +541,63 @@ try
 SetEvent(ReadyToStartEvent);
 //. wait for synchronization
 if (SynchronizeEvent <> 0)
- then 
+ then
   while (WaitForSingleObject(SynchronizeEvent, SynchronizeTimeout) = WAIT_TIMEOUT) do
     if (Terminated) then Exit; //. ->
 //.
+{$IFDEF DEBUG}
+AssignFile(Log,'Log\VideoRecorderVisorPacketInterval.log');
+ReWrite(Log);
+try
+LastTimestamp:=Now;
+{$ENDIF}
 LastChekpointTime:=Now;
 while (NOT Terminated) do begin
-  if (ServerSocket.WaitForData(100))
-   then begin //. retransmission ...
-    ActualSize:=ServerSocket_ReceiveBuf(Descriptor,SizeOf(Descriptor));
+  ActualSize:=ServerSocket_ReceiveBuf1(Descriptor,SizeOf(Descriptor));
+  if (ActualSize > 0)
+   then begin
     if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading packet descriptor'); //. =>
-    if (Descriptor > 0)
+    end
+   else
+    if (ActualSize = 0)
+     then Break //. > connection is closed
+     else begin
+      SE:=WSAGetLastError();
+      case SE of
+      WSAETIMEDOUT: Continue; //. ^
+      else
+        Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+      end;
+      end;
+  if (Descriptor > 0)
+   then begin
+    if (Descriptor > PacketStream.Size) then PacketStream.Size:=Descriptor;
+    ActualSize:=ServerSocket_ReceiveBuf1(PacketStream.Memory^,Descriptor);
+    if (ActualSize > 0)
      then begin
-      if (Descriptor > PacketStream.Size) then PacketStream.Size:=Descriptor;
-      ActualSize:=ServerSocket_ReceiveBuf(PacketStream.Memory^,Descriptor);
       if (ActualSize <> Descriptor) then Raise Exception.Create('error of reading packet'); //. =>
       //.
       SendTo(ReceiverSocket, PacketStream.Memory^,Descriptor, 0, ReceiverSocketAddress,SizeOf(ReceiverSocketAddress));
-      end;
-    end
-   else Sleep(10);
+      {$IFDEF DEBUG}
+      Timestamp:=Now;
+      Delta:=Timestamp-LastTimestamp;
+      WriteLn(Log,IntToStr(Descriptor)+':  '+IntToStr(Trunc(Delta*24.0*3600.0*1000.0)));
+      //.
+      LastTimestamp:=Now;
+      {$ENDIF}
+      end
+     else
+      if (ActualSize = 0)
+       then Break //. > connection is closed
+       else begin
+        SE:=WSAGetLastError();
+        case SE of
+        WSAETIMEDOUT: Raise Exception.Create('unexpected timeout error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+        else
+          Raise Exception.Create('unexpected error of reading server socket data, '+SysErrorMessage(SE)); //. =>
+        end;
+        end;
+    end;
   if ((Now-LastChekpointTime) >= CheckPointInterval)
    then begin
     Descriptor:=MESSAGE_CHECKPOINT;
@@ -547,6 +606,11 @@ while (NOT Terminated) do begin
     LastChekpointTime:=Now;
     end;
   end;
+{$IFDEF DEBUG}
+finally
+CloseFile(Log);
+end;
+{$ENDIF}
 finally
 Disconnect();
 end;
@@ -756,7 +820,7 @@ CreateServerClients();
 try
 PlayerExecutive:=GetExeByExtension('.sdp');
 if (PlayerExecutive = '') then Raise Exception.Create('there is no installed video player'#$0D#$0A'please install VLC Player'); //. =>
-ShellExecAndWait(PlayerExecutive,'"'+SDPFN+'"');
+ShellExecAndWait(PlayerExecutive,'"'+SDPFN+'" --file-caching=2000 --network-caching=2000 --udp-caching=2000');
 finally
 FreeServerClients();
 end;

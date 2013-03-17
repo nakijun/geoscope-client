@@ -88,7 +88,7 @@ type
     procedure Preset(const idTVisualization,idVisualization: integer; const idHint: integer; const idUserAlert: integer; const idOnlineFlag: integer; const idLocationIsAvailableFlag: integer); override;
     procedure Preset1(const idGeoSpace: integer; const idTVisualization,idVisualization: integer; const idHint: integer; const idUserAlert: integer; const idOnlineFlag: integer; const idLocationIsAvailableFlag: integer); override;
     procedure ValidateValues(); override;
-    function Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; override;
+    function Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer; override;
   end;
 
 implementation
@@ -291,8 +291,9 @@ except
   end;
 end;
 
-function TTGMO1GeoLogAndroidBusinessModelConstructorPanel.Construct(const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer;
+function TTGMO1GeoLogAndroidBusinessModelConstructorPanel.Construct(const pUserID: integer; const pUserName: WideString; const pUserPassword: WideString; const pidGeographServer: integer; const pidGeoGraphServerObject: integer): integer;
 var
+  GSCF,GSOCF: TComponentFunctionality;
   _GeoGraphServerID: integer;
   _ObjectID: integer;
   _BusinessModelID: integer;
@@ -305,27 +306,29 @@ Result:=0;
 //.
 ValidateValues();
 //.
-with TGeoGraphServerFunctionality(TComponentFunctionality_Create(idTGeoGraphServer,pidGeoGraphServer)) do
+GSCF:=TComponentFunctionality_Create(idTGeoGraphServer,pidGeoGraphServer);
 try
+GSCF.SetUser(pUserName,pUserPassword);
 try
-with TGeoGraphServerObjectFunctionality(TComponentFunctionality_Create(idTGeoGraphServerObject,pidGeoGraphServerObject)) do
+GSOCF:=TComponentFunctionality_Create(idTGeoGraphServerObject,pidGeoGraphServerObject);
 try
+GSOCF.SetUser(pUserName,pUserPassword);
 //. store old values
-_GeoGraphServerID:=GeoGraphServerID;
-_ObjectID:=ObjectID;
-_BusinessModelID:=BusinessModelID;
+_GeoGraphServerID:=TGeoGraphServerObjectFunctionality(GSOCF).GeoGraphServerID;
+_ObjectID:=TGeoGraphServerObjectFunctionality(GSOCF).ObjectID;
+_BusinessModelID:=TGeoGraphServerObjectFunctionality(GSOCF).BusinessModelID;
 //. set GeoGraphServer to the GeoGraphServerObject component (it checks write user access)
-GeoGraphServerID:=pidGeoGraphServer;
-//. Register new object 
-Result:=RegisterObject2('Obj'+FormatDateTime('DDMMYYHHNNSS',Now),BusinessModelClass.ObjectTypeID,BusinessModelClass.ID,pidGeoGraphServerObject{ComponentID});
+TGeoGraphServerObjectFunctionality(GSOCF).GeoGraphServerID:=pidGeoGraphServer;
+//. Register new object
+Result:=TGeoGraphServerFunctionality(GSCF).RegisterObject2('Obj'+FormatDateTime('DDMMYYHHNNSS',Now),BusinessModelClass.ObjectTypeID,BusinessModelClass.ID,pidGeoGraphServerObject{ComponentID});
 //. set Object to the GeoGraphServerObject component
-ObjectID:=Result; //. attach Self to the GeoGraphServer
+TGeoGraphServerObjectFunctionality(GSOCF).ObjectID:=Result; //. attach Self to the GeoGraphServer
 //. set Business model of constructed object to the GeoGraphServerObject component
-BusinessModelID:=BusinessModelClass.ID;
+TGeoGraphServerObjectFunctionality(GSOCF).BusinessModelID:=BusinessModelClass.ID;
 //. wait for GeoGraphServer updates own list of objects (config params TimeToUpdateConfiguration for GeoGraphServer)
 Sleep(10000{must be more than TimeToUpdateConfiguration});
 //. setup model properties
-ServerObjectController:=TGEOGraphServerObjectController.Create(pidGeoGraphServerObject,Result,ProxySpace_UserID,ProxySpace_UserName,ProxySpace_UserPassword,'',0,false);
+ServerObjectController:=TGEOGraphServerObjectController.Create(pidGeoGraphServerObject,Result,pUserID,pUserName,pUserPassword,'',0,false);
 try
 ObjectModel:=TObjectModel.GetModel(BusinessModelClass.ObjectTypeID,ServerObjectController);
 try
@@ -354,7 +357,7 @@ ObjectBusinessModel.UserAlertID:=idUserAlert;
 ObjectBusinessModel.OnlineFlagID:=idOnlineFlag;
 ObjectBusinessModel.LocationIsAvailableFlagID:=idLocationIsAvailableFlag;
 finally
-ObjectBusinessModel.Destroy;
+ObjectBusinessModel.Destroy();
 end;
 finally
 ObjectModel.Destroy();
@@ -363,32 +366,37 @@ finally
 ServerObjectController.Destroy();
 end;
 finally
-Release;
+GSOCF.Release();
 end;
 except
   //. restore old params
-  with TGeoGraphServerObjectFunctionality(TComponentFunctionality_Create(idTGeoGraphServerObject,pidGeoGraphServerObject)) do
+  GSOCF:=TComponentFunctionality_Create(idTGeoGraphServerObject,pidGeoGraphServerObject);
   try
-  GeoGraphServerID:=_GeoGraphServerID;
-  ObjectID:=_ObjectID;
-  BusinessModelID:=_BusinessModelID;
+  GSOCF.SetUser(pUserName,pUserPassword);
+  //.
+  TGeoGraphServerObjectFunctionality(GSOCF).GeoGraphServerID:=_GeoGraphServerID;
+  TGeoGraphServerObjectFunctionality(GSOCF).ObjectID:=_ObjectID;
+  TGeoGraphServerObjectFunctionality(GSOCF).BusinessModelID:=_BusinessModelID;
   finally
-  Release;
+  GSOCF.Release();
   end;
   //.
-  if (Result <> 0) then UnRegisterObject(Result);
+  if (Result <> 0) then TGeoGraphServerFunctionality(GSCF).UnRegisterObject(Result);
   Raise; //. =>
   end;
 finally
-Release;
+GSCF.Release();
 end;
 //. unregister last object if exists
 if ((_GeoGraphServerID <> 0) AND (_ObjectID <> 0))
- then with TGeoGraphServerFunctionality(TComponentFunctionality_Create(idTGeoGraphServer,_GeoGraphServerID)) do
+ then begin
+  GSCF:=TComponentFunctionality_Create(idTGeoGraphServer,_GeoGraphServerID);
   try
-  UnRegisterObject(_ObjectID);
+  GSCF.SetUser(pUserName,pUserPassword);
+  TGeoGraphServerFunctionality(GSCF).UnRegisterObject(_ObjectID);
   finally
-  Release;
+  GSCF.Release();
+  end;
   end;
 end;
 
