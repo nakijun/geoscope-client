@@ -171,6 +171,8 @@ end;
 
 Destructor TGeographProxyServerLANUDPConnectionClient.Destroy();
 begin
+TerminateAndWaitForThread(Self);
+//.
 Inherited;
 if (ServerSocket <> nil)
  then begin

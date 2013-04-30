@@ -131,6 +131,7 @@ uses
   FunctionalityImport,
   unitGEOGraphServerController,
   unitGeoMonitoredObject1VideoRecorderVisor,
+  unitGeoMonitoredObject1VideoRecorderMediaFRAMEServerVisor,
   unitGeoMonitoredObject1VideoRecorderMeasurementsControlPanel,
   unitGeoMonitoredObject1VideoRecorderMeasurementsPanel,
   unitGeoMonitoredObject1VideoRecorderDataServerMeasurementsPanel,
@@ -453,7 +454,15 @@ Idx:=Pos('http://',ServerAddress);
 if (Idx = 1) then ServerAddress:=Copy(ServerAddress,8,Length(ServerAddress)-7);
 //.
 FreeAndNil(VideoPlayer);
-VideoPlayer:=TGeographServerObjectVideoPlayer.Create(ServerAddress,0,{default server port} UserName,UserPassword, Model.GeoMonitoredObject1Model);
+case TVideoRecorderModuleMode(DeviceRootComponent.VideoRecorderModule.Mode.Value.Value) of
+VIDEORECORDERMODULEMODE_FRAMESTREAM: begin
+  VideoPlayer:=TfmGeoMonitoredObject1VideoRecorderMediaFRAMEServerVisor.Create(ServerAddress,0,{default server port} UserName,UserPassword, Model.GeoMonitoredObject1Model);
+  TfmGeoMonitoredObject1VideoRecorderMediaFRAMEServerVisor(VideoPlayer).Show();
+  TfmGeoMonitoredObject1VideoRecorderMediaFRAMEServerVisor(VideoPlayer).Start();
+  end;
+else
+  VideoPlayer:=TGeographServerObjectVideoPlayer.Create(ServerAddress,0,{default server port} UserName,UserPassword, Model.GeoMonitoredObject1Model);
+end;
 end;
 
 procedure TGMO1GeoLogAndroidBusinessModelControlPanel.VideoPlayer_Stop();
@@ -756,9 +765,14 @@ except
   Raise; //. =>
   end;
 //.
-if (flRecording AND flTransmitting)
- then VideoPlayer_Restart()
- else VideoPlayer_Stop();
+case TVideoRecorderModuleMode(DeviceRootComponent.VideoRecorderModule.Mode.Value.Value) of
+VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1,
+VIDEORECORDERMODULEMODE_H263STREAM1_AMRNBSTREAM1: begin
+  if (flRecording AND flTransmitting)
+   then VideoPlayer_Restart()
+   else VideoPlayer_Stop();
+  end;
+end;
 end;
 
 procedure TGMO1GeoLogAndroidBusinessModelControlPanel.cbVideoRecorderModuleTransmittingClick(Sender: TObject);
@@ -831,7 +845,7 @@ end;
 finally
 Screen.Cursor:=SC;
 end;
-if (VideoPlayer <> nil) then VideoPlayer_Restart();
+if ((VideoPlayer <> nil) AND TForm(VideoPlayer).Visible) then VideoPlayer_Restart();
 end;
 
 procedure TGMO1GeoLogAndroidBusinessModelControlPanel.cbVideoRecorderModuleVideoClick(Sender: TObject);
@@ -856,7 +870,7 @@ end;
 finally
 Screen.Cursor:=SC;
 end;
-if (VideoPlayer <> nil) then VideoPlayer_Restart();
+if ((VideoPlayer <> nil) AND TForm(VideoPlayer).Visible) then VideoPlayer_Restart();
 end;
 
 procedure TGMO1GeoLogAndroidBusinessModelControlPanel.btnVideoRecorderModulePlayerClick(Sender: TObject);

@@ -383,7 +383,8 @@ Type
     VIDEORECORDERMODULEMODE_H264STREAM1_AMRNBSTREAM1    = 1, 
     VIDEORECORDERMODULEMODE_MODE_MPEG4                  = 2,
     VIDEORECORDERMODULEMODE_MODE_3GP                    = 3,
-    VIDEORECORDERMODULEMODE_H263STREAM1_AMRNBSTREAM1    = 4
+    VIDEORECORDERMODULEMODE_H263STREAM1_AMRNBSTREAM1    = 4,
+    VIDEORECORDERMODULEMODE_FRAMESTREAM                 = 5
   );
 
   TVideoRecorderModule = class(TSchemaComponent)
@@ -578,7 +579,7 @@ Type
   end;
 
 const
-  VideoRecorderModuleModeStrings: array[TVideoRecorderModuleMode] of string = ('?','H264 media stream','MPEG4 registrator','3GP registrator','H263 media stream');
+  VideoRecorderModuleModeStrings: array[TVideoRecorderModuleMode] of string = ('?','H264 media stream','MPEG4 registrator','3GP registrator','H263 media stream','FRAME media stream');
 
 Implementation
 uses

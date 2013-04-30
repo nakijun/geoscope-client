@@ -73,6 +73,29 @@ begin
 Classes.TThread.Synchronize(CallingThread,Method);
 end;
 
+procedure WaitForThread(const pThread: TThread); stdcall;
+begin
+with pThread do begin
+if (ThreadID <> 0)
+ then begin
+  if (Suspended) then Resume();   
+  WaitFor();
+  end;
+end;
+end;
+
+procedure TerminateAndWaitForThread(const pThread: TThread); stdcall;
+begin
+with pThread do begin
+if (ThreadID <> 0)
+ then begin
+  Terminate();
+  if (Suspended) then Resume();
+  WaitFor();
+  end;
+end;
+end;
+
 
 procedure ProxySpace__Plugins_Add(const PluginFileName: string); stdcall;
 begin
@@ -513,6 +536,8 @@ end;
 Exports
     //. system routines
     SynchronizeMethodWithMainThread,
+    WaitForThread,
+    TerminateAndWaitForThread,
     //. ProxySpace EventLog
     ProxySpace__Log_OperationProgress,
     ProxySpace__Log_OperationDone,
