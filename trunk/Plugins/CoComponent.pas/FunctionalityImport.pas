@@ -191,6 +191,8 @@ Type
 
   //. system routines
   procedure SynchronizeMethodWithMainThread(const CallingThread: TThread; Method: TThreadMethod); stdcall;
+  procedure WaitForThread(const pThread: TThread); stdcall;
+  procedure TerminateAndWaitForThread(const pThread: TThread); stdcall;
   //.
   procedure ProxySpace__Plugins_Add(const PluginFileName: string); stdcall;
   procedure ProxySpace__Plugins_Remove(const PluginHandle: THandle); stdcall;
@@ -352,6 +354,8 @@ Uses
 
 //. system routines
 procedure SynchronizeMethodWithMainThread(const CallingThread: TThread; Method: TThreadMethod); stdcall; external TypesDll;
+procedure WaitForThread(const pThread: TThread); stdcall; external TypesDll;
+procedure TerminateAndWaitForThread(const pThread: TThread); stdcall; external TypesDll;
 //.
 procedure ProxySpace__Plugins_Add(const PluginFileName: string); stdcall; external TypesDll;
 procedure ProxySpace__Plugins_Remove(const PluginHandle: THandle); stdcall; external TypesDll;

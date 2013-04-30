@@ -123,7 +123,7 @@ procedure TfmGeoMonitoredObject1LANConnectionRepeaterPanel.UpdateStatus();
 begin
 if (IsStarted())
  then begin
-  edPort.Text:=IntToStr(Repeater.GetPort());
+  edLocalPort.Text:=IntToStr(Repeater.GetPort());
   lbStatus.Font.Color:=clGreen;
   lbStatus.Caption:='Online, connections: '+IntToStr(Repeater.GetConnectionsCount());
   end

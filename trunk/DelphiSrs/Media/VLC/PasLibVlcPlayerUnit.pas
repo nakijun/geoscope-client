@@ -388,7 +388,7 @@ type
 
     procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer); override;
 
-    procedure Play(mrl: WideString; timeout: Cardinal = 10000);
+    procedure Play(mrl: WideString; timeout: Cardinal = 10000; const CachingInterval: integer = 500);
     procedure PlayContinue();
     
     procedure Pause();
@@ -1359,7 +1359,7 @@ end;
  *              rtp: rstp://host/movie
  *)
 
-procedure TPasLibVlcPlayer.Play(mrl: WideString; timeout: Cardinal = 10000);
+procedure TPasLibVlcPlayer.Play(mrl: WideString; timeout: Cardinal = 10000; const CachingInterval: integer = 500);
 var
   media : TPasLibVlcMedia;
 begin
@@ -1381,7 +1381,9 @@ begin
   media.SetTitleShow(SELF.FTitleShow);
   media.SetVideoOnTop(SELF.FVideoOnTop);
   media.SetUseOverlay(SELF.FUseOverlay);
-  media.AddOption('http-caching=1200');
+  media.AddOption('http-caching='+IntToStr(CachingInterval));
+  media.AddOption('network-caching='+IntToStr(CachingInterval));
+  media.AddOption('udp-caching='+IntToStr(CachingInterval));
   media.SetDeinterlaceFilter(FDeinterlaceFilter);
   media.SetDeinterlaceFilterMode(FDeinterlaceMode);
 
