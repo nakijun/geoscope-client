@@ -10,6 +10,8 @@ Const
   VideoFileName = 'Video.rtp';
   MediaMPEG4FileName = 'Data.mp4';
   Media3GPFileName = 'Data.3gp';
+  AudioAACADTSFileName = 'Audio.aac';
+  VideoH264FileName = 'Video.h264';
   //.
   MeasurementFragmentsFolderName = 'Fragments';
 

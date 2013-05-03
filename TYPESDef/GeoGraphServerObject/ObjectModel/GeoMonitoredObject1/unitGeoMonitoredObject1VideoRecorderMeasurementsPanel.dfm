@@ -18,8 +18,8 @@ object GeoMonitoredObject1VideoRecorderMeasurementsPanel: TGeoMonitoredObject1Vi
   object lvMeasurements: TListView
     Left = 0
     Top = 0
-    Width = 587
-    Height = 448
+    Width = 579
+    Height = 437
     Align = alClient
     Columns = <
       item
