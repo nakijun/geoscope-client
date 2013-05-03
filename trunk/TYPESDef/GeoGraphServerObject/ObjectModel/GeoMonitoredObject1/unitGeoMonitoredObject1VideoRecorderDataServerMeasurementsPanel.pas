@@ -105,7 +105,8 @@ uses
   unitObjectModel,
   unitGeoMonitoredObject1VideoRecorderDataServerMeasurementVisor,
   unitVideoRecorderMeasurement,
-  unitMeasurementMediaPlayer;
+  unitMeasurementMediaPlayer,
+  unitMeasurementAudioVideoPlayer;
 
 {$R *.dfm}
 
@@ -805,6 +806,12 @@ VIDEORECORDERMODULEMODE_MODE_MPEG4: with TfmMeasurementMediaPlayer.Create(Measur
   Destroy();
   end;
 VIDEORECORDERMODULEMODE_MODE_3GP: with TfmMeasurementMediaPlayer.Create(Measurement.MeasurementFolder+'\'+Media3GPFileName,Measurement.StartTimestamp) do
+  try
+  ShowModal();
+  finally
+  Destroy();
+  end;
+VIDEORECORDERMODULEMODE_FRAMESTREAM: with TfmMeasurementAudioVideoPlayer.Create(Measurement.MeasurementFolder+'\'+AudioAACADTSFileName,Measurement.MeasurementFolder+'\'+VideoH264FileName,Measurement.StartTimestamp,Measurement.FinishTimestamp) do
   try
   ShowModal();
   finally

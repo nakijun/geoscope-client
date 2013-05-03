@@ -63,6 +63,8 @@ type
 
     Constructor Create(const pCurrentTime: TDateTime; const pTimeResolution: TDateTime; const pTimeIntervalBegin,pTimeIntervalEnd: TDateTime; const pTimeMarks: TMeasurementTimeIntervalSliderTimeMarks = nil; const pTimeMarkIntervals: TMeasurementTimeIntervalSliderTimeMarkIntervals = nil);
     Destructor Destroy(); override;
+    procedure SetInterval(const pTimeIntervalBegin,pTimeIntervalEnd: TDateTime);
+    procedure SetParams(const pTimeResolution: TDateTime; const pTimeIntervalBegin,pTimeIntervalEnd: TDateTime);
     procedure SetControlMode(const pControlMode: TMeasurementTimeIntervalSliderControlMode);
     procedure Paint(); override;
     procedure Move(const dX: integer);
@@ -85,12 +87,17 @@ Constructor TMeasurementTimeIntervalSlider.Create(const pCurrentTime: TDateTime;
 begin
 Inherited Create(nil);
 CurrentTime:=pCurrentTime;
+//.
 TimeResolution:=pTimeResolution;
+//.
 TimeIntervalBegin:=pTimeIntervalBegin;
 TimeIntervalEnd:=pTimeIntervalEnd;
+//.
 TimeMarks:=pTimeMarks;
 TimeMarkIntervals:=pTimeMarkIntervals;
+//.
 ControlMode:=scmNavigatingAndSelecting;
+//.
 SelectedInterval.Duration:=0.0;
 //.
 Mouse_LastDownTime:=0.0;
@@ -110,6 +117,24 @@ Destructor TMeasurementTimeIntervalSlider.Destroy();
 begin
 BMP.Free();
 Inherited;
+end;
+
+procedure TMeasurementTimeIntervalSlider.SetInterval(const pTimeIntervalBegin,pTimeIntervalEnd: TDateTime);
+begin
+TimeIntervalBegin:=pTimeIntervalBegin;
+TimeIntervalEnd:=pTimeIntervalEnd;
+//.
+Paint();
+end;
+
+procedure TMeasurementTimeIntervalSlider.SetParams(const pTimeResolution: TDateTime; const pTimeIntervalBegin,pTimeIntervalEnd: TDateTime);
+begin
+TimeResolution:=pTimeResolution;
+//.
+TimeIntervalBegin:=pTimeIntervalBegin;
+TimeIntervalEnd:=pTimeIntervalEnd;
+//.
+Paint();
 end;
 
 procedure TMeasurementTimeIntervalSlider.SetControlMode(const pControlMode: TMeasurementTimeIntervalSliderControlMode);

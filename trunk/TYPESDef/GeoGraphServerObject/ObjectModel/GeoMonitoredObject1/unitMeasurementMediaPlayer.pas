@@ -77,6 +77,7 @@ Destructor TfmMeasurementMediaPlayer.Destroy();
 begin
 if (Player <> nil)
  then begin
+  Player.Pause();
   Player.Destroy();
   end;
 //.
@@ -101,23 +102,23 @@ var
 begin
 TimeIntervalBegin:=StartTimestamp+TimeZoneDelta;
 if (FinishTimestamp <> 0.0)
- then begin
-   TimeIntervalEnd:=FinishTimestamp+TimeZoneDelta;
-   CurrentTime:=TimeIntervalBegin;
-   end
- else begin
-  TimeIntervalEnd:=Now;
-  CurrentTime:=TimeIntervalEnd;
-  end;
+ then TimeIntervalEnd:=FinishTimestamp+TimeZoneDelta
+ else TimeIntervalEnd:=Now;
 TimeResolution:=(TimeIntervalEnd-TimeIntervalBegin){Days delta}/(Width/2.1);
 //.
-FreeAndNil(Slider);
-Slider:=TMeasurementTimeIntervalSlider.Create(CurrentTime,TimeResolution,TimeIntervalBegin,TimeIntervalEnd);
-Slider.SetControlMode(scmNavigating);
-Slider.OnTimeSelected:=Slider_DoOnTimeSelected;
-Slider.OnIntervalSelected:=Slider_DoOnIntervalSelected;
-Slider.Align:=alClient;
-Slider.Parent:=pnlControl;
+if (Slider = nil)
+ then begin
+  if (FinishTimestamp <> 0.0)
+   then CurrentTime:=TimeIntervalBegin
+   else CurrentTime:=TimeIntervalEnd;
+  Slider:=TMeasurementTimeIntervalSlider.Create(CurrentTime,TimeResolution,TimeIntervalBegin,TimeIntervalEnd);
+  Slider.SetControlMode(scmNavigating);
+  Slider.OnTimeSelected:=Slider_DoOnTimeSelected;
+  Slider.OnIntervalSelected:=Slider_DoOnIntervalSelected;
+  Slider.Align:=alClient;
+  Slider.Parent:=pnlControl;
+  end
+ else Slider.SetParams(TimeResolution,TimeIntervalBegin,TimeIntervalEnd);
 end;
 
 procedure TfmMeasurementMediaPlayer.SetCurrentTimestamp();
@@ -144,7 +145,7 @@ PostMessage(Handle, WM_START, 0,0);
 end;
 
 procedure TfmMeasurementMediaPlayer.Player_DoOnTimeChanged(Sender : TObject; time: Int64);
-begin
+begin 
 if ((Slider = nil) OR Slider.flTimeSelecting OR Slider.flIntervalSelecting) then Exit; //. ->
 CurrentTimestamp:=Slider.TimeIntervalBegin+time/(1000.0*3600.0*24.0);
 SendMessage(Handle, WM_CURRENTTIMESTAMP, 0,0);
