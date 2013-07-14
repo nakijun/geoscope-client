@@ -542,6 +542,8 @@ Type
     function ObjectGeoSpaceID: integer; override;
     function ObjectDatumID: integer; override;
     procedure Object_GetLocationFix(out TimeStamp: double; out DatumID: integer; out Latitude: double; out Longitude: double; out Altitude: double; out Speed: double; out Bearing: double; out Precision: double); override;
+    procedure GetData(const DataType: Integer; out Data: TByteArray); override;
+    procedure SetData(const DataType: Integer; const Data: TByteArray); override;
     function DeviceConnectorServiceProviderNumber: double;
     procedure GetDayLogGeoData(const DayDate: TDateTime; out GeoDataStream: TMemoryStream);
     //. Connection Module
@@ -572,6 +574,8 @@ Type
     function  ControlModule_GetDeviceLogData(): TByteArray;
     procedure ControlModule_RestartDevice();
     procedure ControlModule_RestartDeviceProcess();
+    procedure ControlModule_StartDeviceConnection(const CUAL: ANSIString; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+    procedure ControlModule_StopDeviceConnection(const ConnectionID: integer);
     procedure ControlModule_StartLANConnection(const ConnectionType: TLANConnectionModuleConnectionType; const Address: string; const Port: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
     procedure ControlModule_StopLANConnection(const ConnectionID: integer);
     procedure ControlModule_StartLANUDPConnection(const ConnectionType: TLANConnectionModuleConnectionType; const ReceivingPort: integer; const ReceivingPacketSize: integer; const Address: string; const TransmittingPort: integer; const TransmittingPacketSize: integer; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
@@ -2369,6 +2373,204 @@ Lock.Leave;
 end;
 end;
 
+procedure TGeoMonitoredObject1Model.GetData(const DataType: Integer; out Data: TByteArray);
+{Next case ID: 2}
+var
+  DeviceRootComponent: TGeoMonitoredObject1DeviceComponent;
+  ASV: ANSIString;
+begin
+Data:=nil;
+DeviceRootComponent:=TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent);
+case DataType of
+1: begin //. VideoRecorderModule.MeasurementsListValue.ReadDeviceCUAC();
+  Lock.Enter();
+  try
+  try
+  DeviceRootComponent.VideoRecorderModule.MeasurementsListValue.ReadDeviceCUAC();
+  ASV:=DeviceRootComponent.VideoRecorderModule.MeasurementsListValue.Value.Value;
+  SetLength(Data,Length(ASV));
+  if (Length(Data) > 0) then Move(Pointer(@ASV[1])^,Pointer(@Data[0])^,Length(Data));
+  except
+    on E: OperationException do Raise Exception.Create('error, RC: '+IntToStr(E.Code)); //. =>
+    else
+      Raise; //. =>
+    end;
+  finally
+  Lock.Leave();
+  end;
+  end;
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.SetData(const DataType: Integer; const Data: TByteArray);
+{Next case ID: 10}
+var
+  DeviceRootComponent: TGeoMonitoredObject1DeviceComponent;
+  VRMode: word;
+  TUInt16V: TComponentTimestampedUInt16Data;
+  BV: boolean;
+  TBV,LTBV: TComponentTimestampedBooleanData;
+begin
+DeviceRootComponent:=TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent);
+case DataType of
+1: begin //. ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(Data)
+  if (Length(Data) = 0) then Raise Exception.Create('invalid Data'); //. =>
+  Lock.Enter();
+  try
+  try
+  DeviceRootComponent.ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(Data);
+  except
+    on E: OperationException do Raise Exception.Create('error, RC: '+IntToStr(E.Code)); //. =>
+    else
+      Raise; //. =>
+    end;
+  finally
+  Lock.Leave();
+  end;
+  end;
+2: begin //. ControlModule.ControlDataValue.WriteDeviceByAddressDataCUAC(Data)
+  if (Length(Data) = 0) then Raise Exception.Create('invalid Data'); //. =>
+  //. to-do: split "Data" into Value and AddressData and WriteDeviceByAddressDataCUAC(AddressData)
+  end;
+3: begin //. set VideoRecorderModule.Mode
+  if (Length(Data) <> SizeOf(VRMode)) then Raise Exception.Create('invalid Data'); //. =>
+  VRMode:=Word(Pointer(@Data[0])^);
+  Lock.Enter();
+  try
+  TUInt16V.Timestamp:=Now-TimeZoneDelta;
+  TUInt16V.Value:=VRMode;
+  DeviceRootComponent.VideoRecorderModule.Mode.Value:=TUInt16V;
+  //.
+  DeviceRootComponent.VideoRecorderModule.Mode.WriteDeviceCUAC();
+  finally
+  Lock.Leave();
+  end;
+  end;
+4: begin //. set VideoRecorderModule.Audio
+  if (Length(Data) <> 1) then Raise Exception.Create('invalid Data'); //. =>
+  BV:=(Data[0] <> 0);
+  Lock.Enter();
+  try
+  TBV.Timestamp:=Now-TimeZoneDelta;
+  TBV.Value:=BV;
+  DeviceRootComponent.VideoRecorderModule.Audio.BoolValue:=TBV;
+  //.
+  DeviceRootComponent.VideoRecorderModule.Audio.WriteDeviceCUAC();
+  finally
+  Lock.Leave();
+  end;
+  end;
+5: begin //. set VideoRecorderModule.Video
+  if (Length(Data) <> 1) then Raise Exception.Create('invalid Data'); //. =>
+  BV:=(Data[0] <> 0);
+  Lock.Enter();
+  try
+  TBV.Timestamp:=Now-TimeZoneDelta;
+  TBV.Value:=BV;
+  DeviceRootComponent.VideoRecorderModule.Video.BoolValue:=TBV;
+  //.
+  DeviceRootComponent.VideoRecorderModule.Video.WriteDeviceCUAC();
+  finally
+  Lock.Leave();
+  end;
+  end;
+6: begin //. set VideoRecorderModule.Transmitting
+  if (Length(Data) <> 1) then Raise Exception.Create('invalid Data'); //. =>
+  BV:=(Data[0] <> 0);
+  Lock.Enter();
+  try
+  TBV.Timestamp:=Now-TimeZoneDelta;
+  TBV.Value:=BV;
+  DeviceRootComponent.VideoRecorderModule.Transmitting.BoolValue:=TBV;
+  //.
+  DeviceRootComponent.VideoRecorderModule.Transmitting.WriteDeviceCUAC();
+  finally
+  Lock.Leave();
+  end;
+  end;
+7: begin //. set VideoRecorderModule.Saving
+  if (Length(Data) <> 1) then Raise Exception.Create('invalid Data'); //. =>
+  BV:=(Data[0] <> 0);
+  Lock.Enter();
+  try
+  TBV.Timestamp:=Now-TimeZoneDelta;
+  TBV.Value:=BV;
+  DeviceRootComponent.VideoRecorderModule.Saving.BoolValue:=TBV;
+  //.
+  DeviceRootComponent.VideoRecorderModule.Saving.WriteDeviceCUAC();
+  finally
+  Lock.Leave();
+  end;
+  end;
+8: begin //. set VideoRecorderModule.Recording
+  if (Length(Data) <> 1) then Raise Exception.Create('invalid Data'); //. =>
+  BV:=(Data[0] <> 0);
+  Lock.Enter();
+  try
+  TBV.Timestamp:=Now-TimeZoneDelta;
+  TBV.Value:=BV;
+  //.
+  if (BV)
+   then begin
+    if (NOT DeviceRootComponent.VideoRecorderModule.Active.BoolValue.Value)
+     then begin
+      LTBV:=DeviceRootComponent.VideoRecorderModule.Active.BoolValue;
+      try
+      DeviceRootComponent.VideoRecorderModule.Active.BoolValue:=TBV;
+      try
+      DeviceRootComponent.VideoRecorderModule.Active.WriteDeviceCUAC();
+      except
+        on E: OperationException do
+          case E.Code of
+          -1000001: Raise Exception.Create('Video recorder is disabled'); //. =>
+          else
+            Raise; //. =>
+          end;
+        else
+          Raise; //. =>
+        end;
+      except
+        DeviceRootComponent.VideoRecorderModule.Active.BoolValue:=LTBV;
+        Raise; //. =>
+        end;
+      end;
+    end;
+  //.
+  DeviceRootComponent.VideoRecorderModule.Recording.BoolValue:=TBV;
+  DeviceRootComponent.VideoRecorderModule.Recording.WriteDeviceCUAC();
+  //.
+  if (NOT BV)
+   then begin
+    if (DeviceRootComponent.VideoRecorderModule.Active.BoolValue.Value)
+     then begin
+      DeviceRootComponent.VideoRecorderModule.Active.BoolValue:=TBV;
+      DeviceRootComponent.VideoRecorderModule.Active.WriteDeviceCUAC();
+      end;
+    end;
+  finally
+  Lock.Leave();
+  end;
+  end;
+9: begin //. VideoRecorderModule.MeasurementDataValue.WriteDeviceByAddressDataCUAC(Data)
+  if (Length(Data) = 0) then Raise Exception.Create('invalid Data'); //. =>
+  Lock.Enter();
+  try
+  DeviceRootComponent.VideoRecorderModule.MeasurementDataValue.Value.Timestamp:=Now-TimeZoneDelta;
+  DeviceRootComponent.VideoRecorderModule.MeasurementDataValue.Value.Value:=nil;
+  try
+  DeviceRootComponent.VideoRecorderModule.MeasurementDataValue.WriteDeviceByAddressDataCUAC(Data);
+  except
+    on E: OperationException do Raise Exception.Create('error, RC: '+IntToStr(E.Code)); //. =>
+    else
+      Raise; //. =>
+    end;
+  finally
+  Lock.Leave();
+  end;
+  end;
+end;
+end;
+
 function TGeoMonitoredObject1Model.DeviceConnectorServiceProviderNumber: double;
 begin
 Lock.Enter;
@@ -2941,6 +3143,62 @@ try
 TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Timestamp:=Now-TimeZoneDelta;
 TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Value:=nil;
 TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.WriteDeviceByAddressDataCUAC(AddressData);
+finally
+Lock.Leave();
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.ControlModule_StartDeviceConnection(const CUAL: ANSIString; const ServerAddress: string; const ServerPort: integer; const ConnectionID: integer);
+const
+  ConnectionTimeout = 1000*30; //. seconds
+var
+  Params: String;
+  AddressData: TByteArray;
+begin
+Params:='107,'+'0,'{Version}+CUAL+','+ServerAddress+','+IntToStr(ServerPort)+','+IntToStr(ConnectionID)+','+IntToStr(ConnectionTimeout);
+SetLength(AddressData,Length(Params));
+Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
+Lock.Enter();
+try
+try
+TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(AddressData);
+except
+  on E: OperationException do
+    case E.Code of
+    -3003:      Raise Exception.Create('operation user access is denied'); //. =>
+    -1000003:   Raise Exception.Create('connection timeout is expired'); //. =>
+    -1000004:   Raise Exception.Create('connection is not found, CID: '+IntToStr(ConnectionID)); //. =>
+    -1000005:   Raise Exception.Create('connection source is unavailable'); //. =>
+    else
+      Raise; //. +>
+    end;
+  else
+    Raise; //. =>
+  end;
+finally
+Lock.Leave();
+end;
+end;
+
+procedure TGeoMonitoredObject1Model.ControlModule_StopDeviceConnection(const ConnectionID: integer);
+var
+  Params: String;
+  AddressData: TByteArray;
+begin
+Params:='108,'+IntToStr(ConnectionID);
+SetLength(AddressData,Length(Params));
+Move(Pointer(@Params[1])^,Pointer(@AddressData[0])^,Length(Params));
+Lock.Enter();
+try
+try
+TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.ReadDeviceByAddressDataCUAC(AddressData);
+except
+  on E: OperationException do
+    Raise; //. +>
+  else
+    Raise; //. =>
+  end;
+if (Length(TGeoMonitoredObject1DeviceComponent(ObjectDeviceSchema.RootComponent).ControlModule.ControlDataValue.Value.Value) <> 0) then Raise Exception.Create('unknown response'); //. =>
 finally
 Lock.Leave();
 end;

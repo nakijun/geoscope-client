@@ -16,6 +16,7 @@ type
     btnLANConnectionRepeater: TBitBtn;
     btnLANUDPConnectionRepeater: TBitBtn;
     btnLANRTSPServerClient: TBitBtn;
+    btnDeviceConnectionRepeater: TBitBtn;
     procedure btnGetDeviceLogClick(Sender: TObject);
     procedure btnGetDeviceStateClick(Sender: TObject);
     procedure btnRestartDeviceClick(Sender: TObject);
@@ -23,12 +24,14 @@ type
     procedure btnLANConnectionRepeaterClick(Sender: TObject);
     procedure btnLANUDPConnectionRepeaterClick(Sender: TObject);
     procedure btnLANRTSPServerClientClick(Sender: TObject);
+    procedure btnDeviceConnectionRepeaterClick(Sender: TObject);
   private
     { Private declarations }
     Model: TGeoMonitoredObject1Model;
 
     procedure SaveDeviceLogToFile(const OutputDirectory: string);
   public
+    DeviceConnectionRepeaterPanels: TList;
     LANConnectionRepeaterPanels: TList;
     LANUDPConnectionRepeaterPanels: TList;
 
@@ -50,6 +53,7 @@ uses
   AbUnzPrc,
   GlobalSpaceDefines,
   unitObjectModel,
+  unitGeoMonitoredObject1DeviceConnectionRepeaterPanel,
   unitGeoMonitoredObject1LANConnectionRepeaterPanel,
   unitGeoMonitoredObject1LANUDPConnectionRepeaterPanel,
   unitGeoMonitoredObject1LANRTSPServerClientPanel;
@@ -119,6 +123,7 @@ begin
 Inherited Create(nil);
 Model:=pModel;
 //.
+DeviceConnectionRepeaterPanels:=TList.Create();
 LANConnectionRepeaterPanels:=TList.Create();
 LANUDPConnectionRepeaterPanels:=TList.Create();
 //.
@@ -138,6 +143,11 @@ if (LANConnectionRepeaterPanels <> nil)
  then begin
   for I:=0 to LANConnectionRepeaterPanels.Count-1 do TObject(LANConnectionRepeaterPanels[I]).Destroy();
   LANConnectionRepeaterPanels.Destroy();
+  end;
+if (DeviceConnectionRepeaterPanels <> nil)
+ then begin
+  for I:=0 to DeviceConnectionRepeaterPanels.Count-1 do TObject(DeviceConnectionRepeaterPanels[I]).Destroy();
+  DeviceConnectionRepeaterPanels.Destroy();
   end;
 Inherited;
 end;
@@ -234,6 +244,15 @@ if (MessageDlg('Do you want to restart device process ?', mtConfirmation, [mbYes
 Model.ControlModule_RestartDeviceProcess();
 end;
 
+procedure TGeoMonitoredObject1ControlModulePanel.btnDeviceConnectionRepeaterClick(Sender: TObject);
+var
+  DeviceConnectionRepeaterPanel: TfmGeoMonitoredObject1DeviceConnectionRepeaterPanel;
+begin
+DeviceConnectionRepeaterPanel:=TfmGeoMonitoredObject1DeviceConnectionRepeaterPanel.Create(Model);
+DeviceConnectionRepeaterPanels.Add(DeviceConnectionRepeaterPanel);
+DeviceConnectionRepeaterPanel.Show();
+end;
+
 procedure TGeoMonitoredObject1ControlModulePanel.btnLANConnectionRepeaterClick(Sender: TObject);
 var
   LANConnectionRepeaterPanel: TfmGeoMonitoredObject1LANConnectionRepeaterPanel;
@@ -261,5 +280,6 @@ finally
 Destroy();
 end;
 end;
+
 
 end.

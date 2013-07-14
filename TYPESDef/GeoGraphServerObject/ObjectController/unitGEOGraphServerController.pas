@@ -4,13 +4,12 @@ interface
                                                                              
 Uses                                                                     
   Windows,                                                                
-  Messages,                               
-  SysUtils,                                               
-  Variants,                                     
+  Messages,
+  SysUtils,
+  Variants,
   Classes,                                                         
-  {$IFNDEF Plugin}                                        
-  Sockets,                                                     
-  {$ENDIF}                                  
+  Sockets,
+  ZLibEx,
   GlobalSpaceDefines;
 
 
@@ -24,7 +23,8 @@ Type
   TPackingMethod = (
     pmNone = 0,
     pmZIP = 1,
-    pmRAR = 2
+    pmRAR = 2,
+    pmZLIBZIP = 11
   );
 
   TEncryptionMethod = (
@@ -191,19 +191,12 @@ Type
   {GEOGraphServerController}
   TGEOGraphServerObjectController = class
   private
-    flUserDirectConnection: boolean;
-    {$IFNDEF Plugin}
+    ServerAddress: string;
     ServerSocket: TTcpClient;
-    {$ENDIF}
-    UserID: integer;
-    UserName: string;
-    UserPassword: string;
     NextOperationSession: smallint;
 
-    {$IFNDEF Plugin}
     procedure Connection_WriteData(var Data; const DataSize: integer);
     procedure Connection_ReadData(var Data; const DataSize: integer);
-    {$ENDIF}
     //.
     function GetOperationSession: smallint;
     //.
@@ -224,21 +217,23 @@ Type
     procedure DecodeMessage(const pUserID: integer; const UserPassword: string; const pSession: smallint; var Message: TByteArray; var Origin: integer);
     //.
     procedure Operation_Start;
-    procedure Operation_Finish;                      
+    procedure Operation_Finish;
     procedure Operation_Execute(const OperationSession: smallint; const MessageEncryption: byte; const MessagePacking: byte; var Data: TByteArray; var Origin: integer; var DataSize: integer);
   public
-    ServerAddress: string;                                                      
-    idGeoGraphServerObject: integer;                     
-    ObjectID: integer;                                                     
-    flKeepConnection: boolean;                                  
-    flConnected: boolean;                                             
+    UserID: integer;
+    UserName: string;
+    UserPassword: string;
+    idGeoGraphServerObject: integer;
+    ObjectID: integer;
+    flUserDirectConnection: boolean;
+    flKeepConnection: boolean;
+    flConnected: boolean;
                                                    
-    Constructor Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserName: string; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean = false);
+    Constructor Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserName: string; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean = false; const pflUserDirectConnection: boolean = false);
     Destructor Destroy; override;
-    {$IFNDEF Plugin}
+
     procedure Connect;
     procedure Disconnect;
-    {$ENDIF}
     //. Object Operations
     function ObjectOperation_SetComponentDataCommand(const Address: TByteArray; const Value: TByteArray): integer;
     function ObjectOperation_SetComponentDataCommand2(const Address: TByteArray; const Value: TByteArray): integer; //. with component specific user access(write) check
@@ -317,24 +312,26 @@ end;
 
 
 {TGEOGraphServerObjectController}
-Constructor TGEOGraphServerObjectController.Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserName: string; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean);
+Constructor TGEOGraphServerObjectController.Create(const pidGeoGraphServerObject: integer; const pObjectID: integer; const pUserID: integer; const pUserName: string; const pUserPassword: string; const pServerAddress: string; const pServerPort: integer; const pflKeepConnection: boolean = false; const pflUserDirectConnection: boolean = false);
 begin
 Inherited Create();
 ServerAddress:=pServerAddress;
 idGeoGraphServerObject:=pidGeoGraphServerObject;
 ObjectID:=pObjectID;
-//.
-flUserDirectConnection:=false;
-//.
-{$IFNDEF Plugin}
-ServerSocket:=TTcpClient.Create(nil);
-with ServerSocket do begin
-RemoteHost:=pServerAddress;
-RemotePort:=IntToStr(pServerPort);
-end;
-{$ENDIF}
 flKeepConnection:=pflKeepConnection;
+flUserDirectConnection:=pflUserDirectConnection;
+//.
 flConnected:=false;
+//.
+if (flUserDirectConnection)
+ then begin
+  ServerSocket:=TTcpClient.Create(nil);
+  with ServerSocket do begin
+  RemoteHost:=pServerAddress;
+  RemotePort:=IntToStr(pServerPort);
+  end;
+  end
+ else ServerSocket:=nil; 
 //.
 UserID:=pUserID;
 UserName:=pUserName;
@@ -344,14 +341,11 @@ end;
 
 Destructor TGEOGraphServerObjectController.Destroy;
 begin
-{$IFNDEF Plugin}
 if (flUserDirectConnection AND flConnected) then Disconnect();
 ServerSocket.Free;
-{$ENDIF}
 Inherited;
 end;
 
-{$IFNDEF Plugin}
 procedure TGEOGraphServerObjectController.Connection_WriteData(var Data; const DataSize: integer);
 var
   ActualSize: integer;
@@ -372,7 +366,6 @@ while (SummarySize < DataSize) do begin
   Inc(SummarySize,ActualSize);
   end;
 end;
-{$ENDIF}
 
 function TGEOGraphServerObjectController.GetOperationSession: smallint;
 begin
@@ -410,12 +403,22 @@ end;
 procedure TGEOGraphServerObjectController.DecryptMessage(const UserPassword: string;  var Message: TByteArray; var Origin: integer);
 var
   Encryption: byte;
+  UserPasswordIdx: integer;
+  I: integer;
 begin
 //. get Encryption method
 Encryption:=Message[Origin]; Inc(Origin);
 //. decrypting message
 case TEncryptionMethod(Encryption) of
 emNone: ; //. do nothing
+emSimpleByPassword: begin
+  UserPasswordIdx:=1;
+  for I:=Origin to Length(Message)-1 do begin
+    Message[I]:=Message[I]-Ord(UserPassword[UserPasswordIdx]);
+    Inc(UserPasswordIdx);
+    if (UserPasswordIdx > Length(UserPassword)) then UserPasswordIdx:=1;
+    end;
+  end;
 else
   Raise OperationException.Create(Integer(errMessageEncryptionIsUnknown)); //. =>
 end;
@@ -424,12 +427,44 @@ end;
 procedure TGEOGraphServerObjectController.UnPackMessage(var Message: TByteArray; var Origin: integer);
 var
   Packing: byte;
+  SS: TMemoryStream;
+  ZS: TZDecompressionStream;
+  RS: TMemoryStream;
+  Buffer: array[0..8191] of byte;
+  Sz: longint;
 begin
 //. get Packing method
 Packing:=Message[Origin]; Inc(Origin);
 //. un-packing message
 case TPackingMethod(Packing) of
 pmNone: ;//. do nothing
+pmZLIBZIP: begin
+  RS:=TMemoryStream.Create();
+  try
+  SS:=TMemoryStream.Create();
+  try
+  SS.Write(Pointer(@Message[Origin])^,Length(Message)-Origin);
+  SS.Position:=0;
+  //.
+  ZS:=TZDecompressionStream.Create(SS);
+  with ZS do
+  try
+  repeat
+    Sz:=ZS.Read(Buffer,Length(Buffer));
+    if (Sz > 0) then RS.Write(Buffer,Sz) else break; //. >
+  until (false);
+  finally
+  Destroy();
+  end;
+  finally
+  SS.Destroy();
+  end;
+  SetLength(Message,Origin+RS.Size);
+  Move(RS.Memory^,Pointer(@Message[Origin])^,RS.Size);
+  finally
+  RS.Destroy();
+  end;
+  end;
 else
   Raise OperationException.Create(Integer(errMessagePackingIsUnknown)); //. =>
 end;
@@ -542,7 +577,6 @@ Session:=GetMessageSession(Message);
 if (Session <> pSession) then Raise OperationException.Create(Integer(errUnknown),'session is changed during connection with ID: '+IntToStr(UserID)); //. =>
 end;
 
-{$IFNDEF Plugin}
 procedure TGEOGraphServerObjectController.Connect;
 begin
 if (NOT ServerSocket.Connect()) then Raise Exception.Create('could not connect to the server ('+ServerSocket.RemoteHost+':'+ServerSocket.RemotePort+')'); //. =>
@@ -563,27 +597,21 @@ except
 ServerSocket.Disconnect();
 flConnected:=false;
 end;
-{$ENDIF}
-
 
 procedure TGEOGraphServerObjectController.Operation_Start;
 begin
-{$IFNDEF Plugin}
 if (flUserDirectConnection)
  then begin
   if (NOT flConnected) then Connect();
   end;
-{$ENDIF}
 end;
 
 procedure TGEOGraphServerObjectController.Operation_Finish;
 begin
-{$IFNDEF Plugin}
 if (flUserDirectConnection)
  then begin
   if (NOT flKeepConnection) then Disconnect();
   end;
-{$ENDIF}
 end;
 
 procedure TGEOGraphServerObjectController.Operation_Execute(const OperationSession: smallint; const MessageEncryption: byte; const MessagePacking: byte; var Data: TByteArray; var Origin: integer; var DataSize: integer);
@@ -618,7 +646,6 @@ if (NOT flUserDirectConnection)
   end;
   end
  else begin //. execute direct via socket
-  {$IFNDEF Plugin}
   //. encode message
   EncodeMessage(OperationSession,MessagePacking,UserID,UserPassword,MessageEncryption,Data);
   DataSize:=Length(Data);
@@ -635,7 +662,6 @@ if (NOT flUserDirectConnection)
   DecodeMessage(UserID,UserPassword,OperationSession, Data,Origin);
   //.
   DataSize:=Length(Data)-(2{SizeOf(Session)}+4{SizeOf(CRC)});
-  {$ENDIF}
   end;
 end;
 
