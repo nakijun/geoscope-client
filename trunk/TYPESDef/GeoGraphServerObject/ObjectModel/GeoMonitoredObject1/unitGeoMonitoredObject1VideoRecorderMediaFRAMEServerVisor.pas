@@ -417,7 +417,7 @@ const
   AudioFrameServer_Initialization_Code_UnknownServiceError      = -2;
   AudioFrameServer_Initialization_Code_ServiceIsNotActiveError 	= -3;
 
-  ReadWriteTimeout = 100;
+  ReadWriteTimeout = 1000;
 
   function ServerSocket_ReceiveBuf(const ServerSocket: TTCPClient; var Buf; BufSize: Integer): Integer;
   var
@@ -637,7 +637,7 @@ const
   AudioFrameServer_Initialization_Code_UnknownServiceError      = -2;
   AudioFrameServer_Initialization_Code_ServiceIsNotActiveError 	= -3;
 
-  ReadWriteTimeout = 100;
+  ReadWriteTimeout = 1000;
 
   function ServerSocket_ReceiveBuf(const ServerSocket: TTCPClient; var Buf; BufSize: Integer): Integer;
   var
@@ -874,7 +874,7 @@ const
   AudioFrameServer_Initialization_Code_UnknownServiceError      = -2;
   AudioFrameServer_Initialization_Code_ServiceIsNotActiveError 	= -3;
 
-  ReadWriteTimeout = 100;
+  ReadWriteTimeout = 1000;
 
   PACKET_TYPE_RTP       = 0;
   PACKET_TYPE_RTCP 	= 1;
@@ -1131,7 +1131,7 @@ const
   VideoFrameServer_Initialization_Code_UnknownServiceError      = -2;
   VideoFrameServer_Initialization_Code_ServiceIsNotActiveError 	= -3;
 
-  ReadWriteTimeout = 100;
+  ReadWriteTimeout = 1000;
 
   function ServerSocket_ReceiveBuf(const ServerSocket: TTCPClient; var Buf; BufSize: Integer): Integer;
   var
@@ -1341,7 +1341,7 @@ const
   VideoFrameServer_Initialization_Code_UnknownServiceError      = -2;
   VideoFrameServer_Initialization_Code_ServiceIsNotActiveError 	= -3;
 
-  ReadWriteTimeout = 100;
+  ReadWriteTimeout = 1000;
 
   function ServerSocket_ReceiveBuf(const ServerSocket: TTCPClient; var Buf; BufSize: Integer): Integer;
   var

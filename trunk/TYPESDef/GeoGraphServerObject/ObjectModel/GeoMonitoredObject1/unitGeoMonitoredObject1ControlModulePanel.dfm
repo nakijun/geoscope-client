@@ -1,8 +1,8 @@
 object GeoMonitoredObject1ControlModulePanel: TGeoMonitoredObject1ControlModulePanel
-  Left = 569
-  Top = 311
+  Left = 769
+  Top = 328
   Width = 385
-  Height = 327
+  Height = 361
   Caption = 'Control module panel'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -53,29 +53,38 @@ object GeoMonitoredObject1ControlModulePanel: TGeoMonitoredObject1ControlModuleP
   end
   object btnLANConnectionRepeater: TBitBtn
     Left = 8
-    Top = 176
+    Top = 208
     Width = 353
     Height = 25
     Caption = 'LAN connection repeater'
-    TabOrder = 4
+    TabOrder = 5
     OnClick = btnLANConnectionRepeaterClick
   end
   object btnLANUDPConnectionRepeater: TBitBtn
     Left = 8
-    Top = 208
+    Top = 240
     Width = 353
     Height = 25
     Caption = 'LAN UDP connection repeater'
-    TabOrder = 5
+    TabOrder = 6
     OnClick = btnLANUDPConnectionRepeaterClick
   end
   object btnLANRTSPServerClient: TBitBtn
     Left = 8
-    Top = 248
+    Top = 280
     Width = 353
     Height = 25
     Caption = 'LAN RTSP server client'
-    TabOrder = 6
+    TabOrder = 7
     OnClick = btnLANRTSPServerClientClick
+  end
+  object btnDeviceConnectionRepeater: TBitBtn
+    Left = 8
+    Top = 176
+    Width = 353
+    Height = 25
+    Caption = 'Device connection repeater'
+    TabOrder = 4
+    OnClick = btnDeviceConnectionRepeaterClick
   end
 end

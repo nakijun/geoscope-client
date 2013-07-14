@@ -147,7 +147,9 @@ end;
 
 Destructor TGeographProxyServerLANConnectionClient.Destroy();
 begin
+{$IFDEF Plugin}
 TerminateAndWaitForThread(Self);
+{$ENDIF}
 //.
 Inherited;
 if (ServerSocket <> nil)
@@ -189,8 +191,8 @@ end;
 
 procedure TGeographProxyServerLANConnectionClient.Connect();
 const
-  ReadTimeout = 100;
-  WriteTimeout = 100;
+  ReadTimeout = 1000;
+  WriteTimeout = 1000;
 const
   { Socks messages }
   RSSocksRequestFailed = 'Request rejected or failed.';
@@ -593,7 +595,8 @@ end;
 except
   On E: Exception do begin
     ExceptionMessage:=E.Message;
-    //. Synchronize(DoOnException);
+    //.
+    Synchronize(DoOnException);
     end;
   end;
 end;
@@ -689,8 +692,8 @@ end;
 procedure TGeographProxyServerLANConnectionRepeater.DoOnServerAccept(sender: TObject; ClientSocket: TCustomIpClient);
 const
   TransferBufferSize = 1024*1024;
-  ReadTimeout = 100;
-  WriteTimeout = 100;
+  ReadTimeout = 1000;
+  WriteTimeout = 1000;
 
   function ClientSocket_ReceiveBuf(var Buf; BufSize: Integer): Integer;
   var
