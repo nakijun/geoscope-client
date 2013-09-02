@@ -3505,6 +3505,12 @@ Type
     procedure GetParams(out oScale: Double; out oTranslate_X: Double; out oTranslate_Y: Double; out oTranslate_Z: Double; out oRotate_AngleX: Double; out oRotate_AngleY: Double; out oRotate_AngleZ: Double);
   end;
 
+Type
+      TDATAFileStorageType = (
+      dfstBlob = 0,
+      dfstFile = 1
+    );
+
 //. TTDATAFileFunctionality
 Type
   TTDATAFileFunctionalityRemoted = class(TFunctionality)
@@ -3548,10 +3554,13 @@ Type
     function getHint: string;
     function IsNull: boolean;
     procedure Empty;
+    function getDATASize: integer;
     procedure GetDATA(out Value: TByteArray);
     procedure SetDATA(Value: TByteArray);
     function getDATAType: string;
     procedure setDATAType(Value: string);
+    procedure SetDATAByFileName(const FileName: string);
+    function getStorageType: integer;
   end;
 
 //. TTCoComponentFunctionality

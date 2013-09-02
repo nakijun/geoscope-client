@@ -4,8 +4,8 @@ interface
 
 uses
   UnitProxySpace, Windows, ShellAPI, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Functionality, TypesDefines,TypesFunctionality,unitReflector,
-  Db, StdCtrls, Mask, DBCtrls, Buttons, ExtCtrls, SpaceObjInterpretation,
+  Functionality, TypesDefines,TypesFunctionality,unitReflector, Sockets,
+  Db, StdCtrls, Mask, DBCtrls, Buttons, ExtCtrls, SpaceObjInterpretation, unitSpaceDataServerClient,
   Menus;
 
 type
@@ -24,6 +24,7 @@ type
     procedure DisableControls;
     procedure Controls_ClearPropData; override;
     procedure WMDropFiles(var msg : TMessage); message WM_DROPFILES;
+    procedure DoOnReadProgress(const Size: Int64; const ReadSize: Int64);
   public
     { Public declarations }
     Constructor Create(pObjFunctionality: TComponentFunctionality; pflReadOnly: boolean; pidOwnerObjectProp: integer;pOwnerPanelsProps: TAbstractSpaceObjPanelsProps; const pProxyObject: TObjectDescr); override;
@@ -35,6 +36,8 @@ type
   end;
 
 implementation
+uses
+  unitComponentStreamLoadingProgressPanel;
 {$R *.DFM}
 
 
@@ -74,8 +77,38 @@ if NOT TDATAFileFunctionality(ObjFunctionality).IsNull
 end;
 
 procedure TDATAFilePanelProps.Activate;
+var
+  ServerAddress: string;
+  Idx: integer;
+  UserName,UserPassword: WideString;
+  FN: string;
 begin
-TDATAFileFunctionality(ObjFunctionality).Activate;
+case (TDATAFileStorageType(TDATAFileFunctionality(ObjFunctionality).StorageType)) of
+dfstFile: begin
+  ServerAddress:=ObjFunctionality.Space.SOAPServerURL;
+  UserName:=ObjFunctionality.Space.UserName;
+  UserPassword:=ObjFunctionality.Space.UserPassword;
+  SetLength(ServerAddress,Pos(ANSIUpperCase('SpaceSOAPServer.dll'),ANSIUpperCase(ServerAddress))-2);
+  Idx:=Pos('http://',ServerAddress);
+  if (Idx = 1) then ServerAddress:=Copy(ServerAddress,8,Length(ServerAddress)-7);
+  //.
+  with ObjFunctionality.Space do FN:=WorkLocale+'\'+PathContexts+'\'+IntToStr(ID)+'\'+UserName+'\'+ChangeFileExt(ContextFileName,'')+'\'+'TypesSystem'+'\'+'DATAFile';
+  ForceDirectories(FN);
+  FN:=FN+'\'+IntToStr(ObjFunctionality.idObj)+TDATAFileFunctionality(ObjFunctionality).DATAType;
+  //.
+  with TfmComponentStreamLoadingProgressPanel.Create(ServerAddress,0{to DefaultPort}, UserName,UserPassword, ObjFunctionality.idTObj,ObjFunctionality.idObj, IntToStr(ObjFunctionality.idObj), FN) do
+  try
+  if (Process())
+   then begin
+    ShellExecute(0,nil,PChar(FileName),nil,nil, 1);
+    end;
+  finally
+  Destroy();
+  end;
+  end;
+else
+  TDATAFileFunctionality(ObjFunctionality).Activate();
+end;
 end;
 
 procedure TDATAFilePanelProps.WMDropFiles(var Msg: TMessage);
@@ -134,9 +167,14 @@ begin
 TDATAFileFunctionality(ObjFunctionality).Empty;
 end;
 
+procedure TDATAFilePanelProps.DoOnReadProgress(const Size: Int64; const ReadSize: Int64);
+begin
+Application.Title:=IntToStr(ReadSize)+'/'+IntToStr(Size);
+end;
+
 procedure TDATAFilePanelProps.sbActivateClick(Sender: TObject);
 begin
-Activate;
+Activate();
 end;
 
 procedure TDATAFilePanelProps.NLoadFromFileClick(Sender: TObject);

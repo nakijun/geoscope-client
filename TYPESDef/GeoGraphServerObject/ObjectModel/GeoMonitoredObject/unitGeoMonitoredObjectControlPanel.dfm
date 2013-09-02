@@ -1,9 +1,9 @@
 object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
-  Left = 218
-  Top = 0
+  Left = 308
+  Top = 4
+  Width = 569
+  Height = 938
   BorderStyle = bsNone
-  ClientHeight = 813
-  ClientWidth = 556
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 556
-    Height = 813
+    Width = 553
+    Height = 900
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -28,8 +28,8 @@ object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
     PopupMenu = PopupMenu
     TabOrder = 0
     DesignSize = (
-      556
-      813)
+      553
+      900)
     object Label1: TLabel
       Left = 16
       Top = 80
@@ -147,10 +147,10 @@ object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
       OnClick = sbGeoSpaceClick
     end
     object GroupBox1: TGroupBox
-      Left = 208
+      Left = 205
       Top = 1
       Width = 347
-      Height = 811
+      Height = 898
       Align = alRight
       Caption = ' Device '
       Font.Charset = DEFAULT_CHARSET
@@ -515,7 +515,7 @@ object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
           OnKeyPress = edGPOModuleValueKeyPress
         end
       end
-      object GroupBox4: TGroupBox
+      object gbBatteryModule: TGroupBox
         Left = 8
         Top = 745
         Width = 329
@@ -701,6 +701,48 @@ object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
           TabOrder = 0
         end
       end
+      object gbTelemetryModule: TGroupBox
+        Left = 8
+        Top = 801
+        Width = 329
+        Height = 88
+        Caption = ' Telemetry '
+        TabOrder = 8
+        object Label36: TLabel
+          Left = 16
+          Top = 25
+          Width = 41
+          Height = 16
+          AutoSize = False
+          Caption = 'String'
+        end
+        object Label37: TLabel
+          Left = 12
+          Top = 57
+          Width = 45
+          Height = 16
+          AutoSize = False
+          Caption = 'Model'
+        end
+        object edTelemetryModuleTelemetryString: TEdit
+          Left = 56
+          Top = 22
+          Width = 265
+          Height = 24
+          AutoSize = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object edTelemetryModuleTelemetryModel: TEdit
+          Left = 56
+          Top = 54
+          Width = 265
+          Height = 24
+          AutoSize = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+      end
     end
     object edVisualizationType: TEdit
       Left = 72
@@ -740,7 +782,7 @@ object GeoMonitoredObjectControlPanel: TGeoMonitoredObjectControlPanel
     end
     object bbUpdatePanel: TBitBtn
       Left = 0
-      Top = 788
+      Top = 875
       Width = 121
       Height = 25
       Anchors = [akLeft, akBottom]

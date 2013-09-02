@@ -543,6 +543,9 @@ Type
 
     procedure FromByteArray(const BA: TByteArray; var Index: integer); override;
     function ToByteArray(): TByteArray; override;
+    procedure FromXMLNode(const Node: IXMLDOMNode); override;
+    procedure FromXMLNodeByAddress(const Address: TAddress; const AddressIndex: integer; const Node: IXMLDOMNode); override;
+    function ToTrackEvent(): pointer; override;
   end;
 
 
@@ -3530,6 +3533,58 @@ Double(Pointer(@Result[4])^):=Value.Timestamp;
 if (StringCounter > 0) then Move(Pointer(@Value.Value[1])^,Pointer(@Result[12])^,StringCounter);
 finally
 Owner.Schema.ObjectModel.Lock.Leave;
+end;
+end;
+
+procedure TComponentTimestampedANSIStringValue.FromXMLNode(const Node: IXMLDOMNode);
+var
+  ValueNode: IXMLDOMNode;
+  S: string;
+  SL: TStringList;
+begin
+ValueNode:=Node.SelectSingleNode(Name);
+Owner.Schema.ObjectModel.Lock.Enter();
+try
+S:=ValueNode.nodeTypedValue;
+if (SplitString(S,';',{out} SL))
+ then
+  try
+  if (SL.Count = 2)
+   then begin
+    Value.Timestamp:=StrToFloat(SL[0]);
+    Value.Value:=SL[1];
+    end;
+  finally
+  SL.Destroy();
+  end;
+finally
+Owner.Schema.ObjectModel.Lock.Leave();
+end;
+end;
+
+procedure TComponentTimestampedANSIStringValue.FromXMLNodeByAddress(const Address: TAddress; const AddressIndex: integer; const Node: IXMLDOMNode);
+begin
+if (AddressIndex >= Length(Address))
+ then FromXMLNode(Node)
+ else Inherited FromXMLNodeByAddress(Address,AddressIndex, Node);
+end;
+
+function TComponentTimestampedANSIStringValue.ToTrackEvent(): pointer;
+begin
+GetMem(Result,SizeOf(TObjectTrackEvent));
+FillChar(Result^,SizeOf(TObjectTrackEvent), 0);
+//.
+Owner.Schema.ObjectModel.Lock.Enter();
+try
+with TObjectTrackEvent(Result^) do begin
+Next:=nil;
+Timestamp:=Value.Timestamp;
+Severity:=otesInfo;
+EventMessage:=FullName();
+EventInfo:='Timestamp: '+FormatDateTime('DD/MM/YYYY HH:NN:SS',Value.Timestamp+TimeZoneDelta)+', Value: '+Value.Value;
+end;
+finally
+Owner.Schema.ObjectModel.Lock.Leave();
 end;
 end;
 

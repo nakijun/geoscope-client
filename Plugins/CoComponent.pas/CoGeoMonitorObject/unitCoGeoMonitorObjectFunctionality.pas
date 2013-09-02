@@ -525,7 +525,34 @@ if (DataType < ObjectModelDataTypeBase)
 end;
 
 function TCoGeoMonitorObjectFunctionality.TPropsPanel_Create: TForm;
+var
+  idGeoGraphServerObject: integer;
+  _GeoGraphServerID: integer;
+  _ObjectID: integer;
+  _ObjectType: integer;
+  _BusinessModel: integer;
+  BusinessModelClass: TBusinessModelClass;
 begin
+Result:=nil;
+with TCoGeoMonitorObjectFunctionality.Create(idCoComponent) do
+try
+if (GetGeoGraphServerObject({out} idGeoGraphServerObject))
+ then with TGeoGraphServerObjectFunctionality(TComponentFunctionality_Create(idTGeoGraphServerObject,idGeoGraphServerObject)) do
+  try
+  GetParams(_GeoGraphServerID,_ObjectID,_ObjectType,_BusinessModel);
+  //.
+  BusinessModelClass:=TBusinessModel.GetModelClass(_ObjectType,_BusinessModel);
+  if (BusinessModelClass <> nil)
+   then begin
+    Result:=BusinessModelClass.CreateCustomControlPanel(idCoComponent);
+    if (Result <> nil) then Exit; //. ->
+    end;
+  finally
+  Release();
+  end;
+finally
+Release();
+end;
 Result:=TCoGeoMonitorObjectPanelProps.Create(idCoComponent);
 end;
 

@@ -36,7 +36,8 @@ uses
   unitObjectDistanceNotifier,
   unitCoGeoMonitorObjectTreePanel,
   unitGMO1GeoLogAndroidBusinessModel,
-  unitProgramStartPanel;
+  unitProgramStartPanel,
+  Excel_TLB in 'DelphiSrs\Excel_TLB.pas';
 
 Type
   TPluginStatus = (psUnknown,psInitializing,psFinalizing,psEnabled,psDisabled);

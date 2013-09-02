@@ -12099,6 +12099,15 @@ TDATAFileFunctionality_Empty(ServerFunctionality());
 {$ENDIF}
 end;
 
+function TDATAFileFunctionalityRemoted.getDATASize: integer;
+begin
+{$IFNDEF EmbeddedServer}
+Result:=TDATAFileSOAPFunctionality.getDATASize(ComponentFunctionality.UserName,ComponentFunctionality.UserPassword, ComponentFunctionality.idObj);
+{$ELSE}
+Result:=TDATAFileFunctionality_getDATASize(ServerFunctionality());
+{$ENDIF}
+end;
+
 procedure TDATAFileFunctionalityRemoted.GetDATA(out Value: TByteArray);
 begin
 {$IFNDEF EmbeddedServer}
@@ -12132,6 +12141,24 @@ begin
 TDATAFileSOAPFunctionality.setDATAType(ComponentFunctionality.UserName,ComponentFunctionality.UserPassword, ComponentFunctionality.idObj,   Value);
 {$ELSE}
 TDATAFileFunctionality_setDATAType(ServerFunctionality(),   Value);
+{$ENDIF}
+end;
+
+procedure TDATAFileFunctionalityRemoted.SetDATAByFileName(const FileName: string);
+begin
+{$IFNDEF EmbeddedServer}
+TDATAFileSOAPFunctionality.SetDATAByFileName(ComponentFunctionality.UserName,ComponentFunctionality.UserPassword, ComponentFunctionality.idObj,   FileName);
+{$ELSE}
+TDATAFileFunctionality_SetDATAByFileName(ServerFunctionality(),   FileName);
+{$ENDIF}
+end;
+
+function TDATAFileFunctionalityRemoted.getStorageType: integer;
+begin
+{$IFNDEF EmbeddedServer}
+Result:=TDATAFileSOAPFunctionality.getStorageType(ComponentFunctionality.UserName,ComponentFunctionality.UserPassword, ComponentFunctionality.idObj);
+{$ELSE}
+Result:=TDATAFileFunctionality_getStorageType(ServerFunctionality());
 {$ENDIF}
 end;
 

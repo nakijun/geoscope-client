@@ -16,9 +16,12 @@ uses
   GlobalSpaceDefines;
 
 const
-  SERVICE_NONE          = 0;
-  SERVICE_TILESERVER    = 1;
-  //.
+  SERVICE_NONE                          = 0;
+  SERVICE_TILESERVER                    = 1;
+  SERVICE_TILESERVER_V1                 = 2;
+  SERVICE_COMPONENTSTREAMSERVER         = 3;
+  SERVICE_COMPONENTSTREAMSERVER_V1      = 4;
+  //. TileServer commands 
   SERVICE_TILESERVER_COMMAND_GETDATA = 0;
   SERVICE_TILESERVER_COMMAND_GETSERVERDATA = 1;
   SERVICE_TILESERVER_COMMAND_GETPROVIDERDATA = 2;
@@ -34,6 +37,8 @@ const
   SERVICE_TILESERVER_COMMAND_SETTILES = 12;
   SERVICE_TILESERVER_COMMAND_RESETTILES = 13;
   SERVICE_TILESERVER_COMMAND_RESETTILES_V1 = 14;
+  //. ComponentStreamServer commands
+  SERVICE_COMPONENTSTREAMSERVER_COMMAND_GETCOMPONENTSTREAM = 0;
   //.
   MESSAGE_DISCONNECT = 0;
   //. error messages
@@ -75,6 +80,8 @@ type
   TSegmentTimestampsV1 = array of TSegmentTimestampV1;
   TSegmentTimestampsV2 = array of TSegmentTimestampV2;
 
+  TDoOnReadProgress = procedure (const Size: Int64; const ReadSize: Int64) of object; 
+
   TSpaceDataServerClient = class
   private
     { Private declarations }
@@ -97,6 +104,7 @@ type
 
     Constructor Create(const pServerAddress: string; const pServerPort: integer; const pUserName: WideString; const pUserPassword: WideString);
     Destructor Destroy(); override;
+    //. TileServer
     procedure TileServer_GetData(out ServerData: TMemoryStream);
     procedure TileServer_GetServerData(idTileServerVisualization: Int64; out ServerData: TMemoryStream);
     procedure TileServer_GetProviderData(idTileServerVisualization: Int64; ProviderID: DWord; out ProviderData: TMemoryStream);
@@ -122,6 +130,10 @@ type
     procedure TileServer_SetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray; out Timestamp: double);
     procedure TileServer_ReSetTiles(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const Segments: TByteArray; out Timestamp: double);
     procedure TileServer_ReSetTilesV1(idTileServerVisualization: Int64; ProviderID: DWord; CompilationID: DWord; Level: DWord; const SecurityFileID: Int64; const ReSetInterval: double; const Segments: TByteArray; out Timestamp: double);
+    //. ComponentStreamServer
+    function  ComponentStreamServer_GetComponentStream_Begin(const idTComponent: integer; const idComponent: Int64; out ItemsCount: integer): TTcpClient;
+    procedure ComponentStreamServer_GetComponentStream_Read(const Connection: TTcpClient; var ComponentStreamDataID: string; const ComponentStream: TStream; const OnReadProgress: TDoOnReadProgress = nil);
+    procedure ComponentStreamServer_GetComponentStream_End(var Connection: TTcpClient);
   end;
 
 
@@ -1420,6 +1432,111 @@ if (ActualSize <> SizeOf(Timestamp)) then Raise Exception.Create('error of readi
 finally
 Disconnect({ref} Connection);
 end;
+end;
+
+
+function TSpaceDataServerClient.ComponentStreamServer_GetComponentStream_Begin(const idTComponent: integer; const idComponent: Int64; out ItemsCount: integer): TTcpClient;
+var
+  Connection: TTcpClient;
+  Params: array[0..11] of byte;
+  Descriptor: integer;
+  ActualSize: integer;
+begin
+Connection:=Connect(SERVICE_COMPONENTSTREAMSERVER,SERVICE_COMPONENTSTREAMSERVER_COMMAND_GETCOMPONENTSTREAM);
+try
+DWord(Pointer(@Params[0])^):=idTComponent;
+Int64(Pointer(@Params[4])^):=idComponent;
+ActualSize:=Connection.SendBuf(Pointer(@Params[0])^,Length(Params));
+if (ActualSize <> Length(Params)) then Raise Exception.Create('could not send Params'); //. =>
+//. check login
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('access is denied'); //. =>
+CheckMessage(Descriptor);
+//. get items count
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading ItemsCount'); //. =>
+CheckMessage(Descriptor);
+ItemsCount:=Descriptor;
+//.
+Result:=Connection;
+except
+  Disconnect({ref} Connection);
+  Raise; //. =>
+  end;
+end;
+
+procedure TSpaceDataServerClient.ComponentStreamServer_GetComponentStream_Read(const Connection: TTcpClient; var ComponentStreamDataID: string; const ComponentStream: TStream; const OnReadProgress: TDoOnReadProgress = nil);
+const
+  MinReadBufferSize = 8192; //. bytes
+  MaxReadBufferSize = (1024*1024)*1; //. megabytes
+var
+  ReadBufferSize: integer;
+  ReadBuffer: TByteArray;
+var
+  Descriptor: integer;
+  Portion: integer;
+  ActualSize: integer;
+  BytesRead: integer;
+  DataID: ANSIString;
+  DataSize: integer;
+  ActualDataSize: integer;
+begin
+//. DataID string
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading DataID string length'); //. =>
+SetLength(DataID,Descriptor);
+if (Descriptor > 0)
+ then begin
+  ActualSize:=ServerSocket_ReceiveBuf(Connection, Pointer(@DataID[1])^,Descriptor);
+  if (ActualSize <> Descriptor) then Raise Exception.Create('could not get DataID string'); //. =>
+  end;
+if (DataID <> ComponentStreamDataID)
+ then begin //. reset component stream
+  ComponentStreamDataID:=DataID; 
+  ComponentStream.Size:=0;
+  end;
+//. Data size
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading DataSize'); //. =>
+CheckMessage(Descriptor);
+DataSize:=Descriptor;
+//.
+if (ComponentStream.Position > DataSize) then Raise Exception.Create('incorrect Data offset'); //. =>
+//. send offset
+Descriptor:=ComponentStream.Position;
+ActualSize:=Connection.SendBuf(Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('could not send Data offset'); //. =>
+//. Data actual size
+ActualSize:=ServerSocket_ReceiveBuf(Connection, Descriptor,SizeOf(Descriptor));
+if (ActualSize <> SizeOf(Descriptor)) then Raise Exception.Create('error of reading actual DataSize'); //. =>
+CheckMessage(Descriptor);
+ActualDataSize:=Descriptor;
+//.
+ReadBufferSize:=(ActualDataSize DIV 100);
+if (ReadBufferSize > MaxReadBufferSize)
+ then ReadBufferSize:=MaxReadBufferSize
+ else
+  if (ReadBufferSize < MinReadBufferSize)
+   then ReadBufferSize:=MinReadBufferSize;
+//.
+SetLength(ReadBuffer,ReadBufferSize);
+Portion:=ReadBufferSize;
+while (ActualDataSize > 0) do begin
+  if (Portion > ActualDataSize) then Portion:=ActualDataSize;
+  BytesRead:=Connection.ReceiveBuf(Pointer(@ReadBuffer[0])^,Portion);
+  if (BytesRead <= 0) then Raise Exception.Create('error of reading Data'); //. =>
+  //.
+  ComponentStream.Write(Pointer(@ReadBuffer[0])^,BytesRead);
+  //.
+  Dec(ActualDataSize,BytesRead);
+  //.
+  if (Assigned(OnReadProgress)) then OnReadProgress(DataSize,ComponentStream.Position);
+  end;
+end;
+
+procedure TSpaceDataServerClient.ComponentStreamServer_GetComponentStream_End(var Connection: TTcpClient);
+begin
+Disconnect({ref} Connection);
 end;
 
 

@@ -252,6 +252,15 @@ Type
     Constructor Create(const pOwner: TSchemaComponent; const pID: integer);
   end;
 
+  TTelemetryModule = class(TSchemaComponent)
+  public
+    TelemetryData: TComponentTimestampedDataValue;
+    TelemetryString: TComponentTimestampedANSIStringValue;
+    //.
+    TelemetryModel: TComponentTimestampedANSIStringValue;
+
+    Constructor Create(const pOwner: TSchemaComponent; const pID: integer);
+  end;
 
   TDeviceConfigurationData = packed record
     CheckpointInterval: smallint;
@@ -325,6 +334,7 @@ Type
     DACModule:          TDACModule;
     BatteryModule:      TBatteryModule;
     DeviceDescriptor:   TDeviceDescriptor;
+    TelemetryModule:    TTelemetryModule;
     //. referenced values
     Configuration:      TDeviceConfigurationValue;
     Checkpoint1:        TDeviceCheckpointValue1;
@@ -951,6 +961,16 @@ SWVersion:=TComponentUInt32Value.Create(Self,6,'SWVersion');
 end;
 
 
+{TTelemetryModule}
+Constructor TTelemetryModule.Create(const pOwner: TSchemaComponent; const pID: integer);
+begin
+Inherited Create(pOwner,pID,'TelemetryModule');
+TelemetryData:=TComponentTimestampedDataValue.Create(Self,1,'TelemetryData');
+TelemetryString:=TComponentTimestampedANSIStringValue.Create(Self,2,'TelemetryString');
+TelemetryModel:=TComponentTimestampedANSIStringValue.Create(Self,3,'TelemetryModel');
+end;
+
+
 {TDeviceConfigurationValue}
 Constructor TDeviceConfigurationValue.Create(const pOwner: TSchemaComponent; const pID: integer);
 begin
@@ -1250,6 +1270,7 @@ ADCModule               :=TADCModule.Create                     (Self,5);
 DACModule               :=TDACModule.Create                     (Self,6);
 BatteryModule           :=TBatteryModule.Create                 (Self,7);
 DeviceDescriptor        :=TDeviceDescriptor.Create              (Self,8);
+TelemetryModule         :=TTelemetryModule.Create               (Self,9);
 //. referencing items
 Configuration           :=TDeviceConfigurationValue.Create      (Self,1000);
 Checkpoint1             :=TDeviceCheckpointValue1.Create        (Self,1100);
