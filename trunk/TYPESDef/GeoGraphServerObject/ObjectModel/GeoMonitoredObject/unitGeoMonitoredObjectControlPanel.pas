@@ -58,7 +58,7 @@ type
     edGPSModuleFixSpeed: TEdit;
     Label18: TLabel;
     edGPSModuleFixBearing: TEdit;
-    GroupBox4: TGroupBox;
+    gbBatteryModule: TGroupBox;
     Label20: TLabel;
     edBatteryModuleVoltage: TEdit;
     Label21: TLabel;
@@ -101,6 +101,11 @@ type
     gbDACModule: TGroupBox;
     edDACModuleValue: TEdit;
     sbGeoSpace: TSpeedButton;
+    gbTelemetryModule: TGroupBox;
+    Label36: TLabel;
+    edTelemetryModuleTelemetryString: TEdit;
+    Label37: TLabel;
+    edTelemetryModuleTelemetryModel: TEdit;
     procedure edGeoSpaceIDKeyPress(Sender: TObject; var Key: Char);
     procedure edVisualizationTypeKeyPress(Sender: TObject; var Key: Char);
     procedure edVisualizationIDKeyPress(Sender: TObject; var Key: Char);
@@ -304,6 +309,9 @@ edDACModuleValue.Text:=DeviceRootComponent.DACModule.Value.ToString();
 //.
 edBatteryModuleVoltage.Text:=IntToStr(DeviceRootComponent.BatteryModule.Voltage.Value);
 edBatteryModuleCharge.Text:=IntToStr(DeviceRootComponent.BatteryModule.Charge.Value);
+//.
+edTelemetryModuleTelemetryString.Text:=DeviceRootComponent.TelemetryModule.TelemetryString.Value.Value;
+edTelemetryModuleTelemetryModel.Text:=DeviceRootComponent.TelemetryModule.TelemetryModel.Value.Value;
 finally
 Model.Lock.Leave;
 end;

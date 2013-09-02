@@ -1824,10 +1824,13 @@ Type
     function getHint(const pUserName,pUserPassword: WideString; const pidObj: Int64): string; stdcall;
     function IsNull(const pUserName,pUserPassword: WideString; const pidObj: Int64): boolean; stdcall;
     procedure Empty(const pUserName,pUserPassword: WideString; const pidObj: Int64); stdcall;
+    function getDATASize(const pUserName,pUserPassword: WideString; const pidObj: Int64): integer; stdcall;
     procedure GetDATA(const pUserName,pUserPassword: WideString; const pidObj: Int64;  out Value: TByteArray); stdcall;
     procedure SetDATA(const pUserName,pUserPassword: WideString; const pidObj: Int64;  Value: TByteArray); stdcall;
     function getDATAType(const pUserName,pUserPassword: WideString; const pidObj: Int64): string; stdcall;
     procedure setDATAType(const pUserName,pUserPassword: WideString; const pidObj: Int64;  Value: string); stdcall;
+    procedure SetDATAByFileName(const pUserName,pUserPassword: WideString; const pidObj: Int64;  const FileName: string); stdcall;
+    function getStorageType(const pUserName,pUserPassword: WideString; const pidObj: Int64): integer; stdcall;
   end;
   //. "get interface" routine
   function GetITDATAFileSOAPFunctionality(const ServerURL: WideString): ITDATAFileSOAPFunctionality;

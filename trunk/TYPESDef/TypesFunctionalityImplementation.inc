@@ -9808,6 +9808,11 @@ begin
 Result:=RemotedFunctionality.IsNull;
 end;
 
+function TDATAFileFunctionality.getDATASize: integer;
+begin
+Result:=RemotedFunctionality.getDATASize;
+end;
+
 procedure TDATAFileFunctionality.Empty;
 begin
 RemotedFunctionality.Empty;
@@ -9884,6 +9889,13 @@ RemotedFunctionality.SetDATA(Value);
 Space.StayUpToDate;
 end;
 
+procedure TDATAFileFunctionality.SetDATAByFileName(const FileName: string);
+begin
+RemotedFunctionality.SetDATAByFileName(FileName);
+//. update local TypesSystem and representations
+Space.StayUpToDate;
+end;
+
 function TDATAFileFunctionality.getDATAType: string;
 begin
 Result:=RemotedFunctionality.getDATAType;
@@ -9894,6 +9906,11 @@ begin
 RemotedFunctionality.setDATAType(Value);
 //. update local TypesSystem and representations
 Space.StayUpToDate;
+end;
+
+function TDATAFileFunctionality.getStorageType: integer;
+begin
+Result:=RemotedFunctionality.getStorageType;
 end;
 
 
@@ -16122,6 +16139,17 @@ procedure TMODELServerFunctionality.CreateNewUserByDefaultPrototype1(const NewUs
 begin
 RemotedFunctionality.CreateNewUserByDefaultPrototype1(NewUserName,NewUserPassword,NewUserFullName,NewUserContactInfo,Signature,idNewUser);
 end;
+
+procedure TMODELServerFunctionality.GetCaptcha(const Version: integer; out Code: integer; out Data: TMemoryStream);
+begin
+Raise Exception.Create(SNotSupported); //. =>
+end
+;
+procedure TMODELServerFunctionality.CreateCaptcha(const Version: integer; out Data: TByteArray);
+begin
+Raise Exception.Create(SNotSupported); //. =>
+end
+;
 
 {TMODELUserFunctionality}
 procedure TMODELUserFunctionality.CheckDATASize(const pAddDATASize: integer);

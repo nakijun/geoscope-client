@@ -1604,6 +1604,8 @@ Type
     procedure _ToClone(out idClone: integer);override; 
     function Notify(const NotifyType: TComponentNotifyType;  const pidTObj,pidObj: integer): TComponentNotifyResult;override; 
     function TPanelProps_Create(pflReadOnly: boolean; pidOwnerObjectProp: integer;pOwnerPanelsProps: TAbstractSpaceObjPanelsProps; const pProxyObject: TObjectDescr): TAbstractSpaceObjPanelProps;override; 
+    procedure GetCaptcha(const Version: integer; out Code: integer; out Data: TMemoryStream);
+    procedure CreateCaptcha(const Version: integer; out Data: TByteArray);
     function getName: string;override; 
     procedure setName(Value: string);
     function getHint: string;override; 
@@ -3285,14 +3287,18 @@ Type
     function getHint: string;override; 
     function IsNull: boolean;
     procedure Empty;
+    function getDATASize: integer;overload; 
     procedure GetDATA(out Value: TByteArray);overload; 
     procedure GetDATA(out Value: TClientBlobStream);overload; 
     procedure SetDATA(Value: TByteArray);overload; 
     procedure SetDATA(Value: TMemoryStream);overload; 
     function getDATAType: string;
     procedure setDATAType(Value: string);
+    procedure SetDATAByFileName(const FileName: string);
+    function getStorageType: integer;
     property  Name: string read getName;
     property  DATAType: string read getDATAType write setDATAType;
+    property  StorageType: integer read getStorageType;
   end;
 
 Type

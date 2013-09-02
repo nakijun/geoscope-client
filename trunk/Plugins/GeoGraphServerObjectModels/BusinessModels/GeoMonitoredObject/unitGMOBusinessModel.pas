@@ -28,6 +28,7 @@ implementation
 uses
   unitGMOTrackLogger1BusinessModel,
   unitGMOGeoLogAndroidBusinessModel,
+  unitGMOHeatMeterBusinessModel,
   unitGMOBusinessModelDeviceInitializerPanel;
 
 
@@ -47,7 +48,9 @@ begin
 if (pModelID = TGMOTrackLogger1BusinessModel.ID)
  then Result:=TGMOTrackLogger1BusinessModel else
 if (pModelID = TGMOGeoLogAndroidBusinessModel.ID)
- then Result:=TGMOGeoLogAndroidBusinessModel
+ then Result:=TGMOGeoLogAndroidBusinessModel else
+if (pModelID = TGMOHeatMeterBusinessModel.ID)
+ then Result:=TGMOHeatMeterBusinessModel
  else Result:=nil;
 end;
 
@@ -56,17 +59,21 @@ begin
 if (pModelID = TGMOTrackLogger1BusinessModel.ID)
  then Result:=TGMOTrackLogger1BusinessModel.Create((pObjectModel as TGeoMonitoredObjectModel)) else
 if (pModelID = TGMOGeoLogAndroidBusinessModel.ID)
- then Result:=TGMOGeoLogAndroidBusinessModel.Create((pObjectModel as TGeoMonitoredObjectModel))
+ then Result:=TGMOGeoLogAndroidBusinessModel.Create((pObjectModel as TGeoMonitoredObjectModel)) else
+if (pModelID = TGMOHeatMeterBusinessModel.ID)
+ then Result:=TGMOHeatMeterBusinessModel.Create((pObjectModel as TGeoMonitoredObjectModel)) 
  else Result:=nil;
 end;
 
 class procedure TGMOBusinessModel.GetModels(out SL: TStringList);
 begin
-SL:=TStringList.Create;
+SL:=TStringList.Create();
 //. GMO TrackLogger1
 SL.AddObject(TGMOTrackLogger1BusinessModel.Name,Pointer(TGMOTrackLogger1BusinessModel));
 //. GMO GeoLogAndroid
 SL.AddObject(TGMOGeoLogAndroidBusinessModel.Name,Pointer(TGMOGeoLogAndroidBusinessModel));
+//. GMO HeatMeter
+SL.AddObject(TGMOHeatMeterBusinessModel.Name,Pointer(TGMOHeatMeterBusinessModel));
 end;
 
 function TGMOBusinessModel.CreateDeviceInitializerPanel: TBusinessModelDeviceInitializerPanel;

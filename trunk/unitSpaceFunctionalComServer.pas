@@ -1283,6 +1283,7 @@ if (unitProxySpace.ProxySpace = nil) then Raise Exception.Create('ProxySpace is 
 CoComponent_CheckCoType(pUserName,pUserPassword,idCoComponent,pidCoType);
 //.
 Space:=unitProxySpace.ProxySpace;
+try
 Space.Plugins__CoComponent_GetData(pUserName,pUserPassword, idCoComponent, pidCoType, DataType,{out} _Data);
 //.
 if (Length(_Data) > 0)
@@ -1298,6 +1299,9 @@ if (Length(_Data) > 0)
   end;
   end
  else Data:=nil;
+except
+  on E: Exception do Raise Exception.Create(E.Message); //. =>
+  end
 end;
 
 procedure TcoSpaceFunctionalServer.CoComponent_SetData(const pUserName: WideString; const pUserPassword: WideString; idCoComponent: Integer; pidCoType: Integer; DataType: Integer; Data: PSafeArray); safecall;
@@ -1321,7 +1325,11 @@ if (Data <> nil)
   end
  else _Data:=nil;
 Space:=unitProxySpace.ProxySpace;
+try
 Space.Plugins__CoComponent_SetData(pUserName,pUserPassword, idCoComponent, pidCoType, DataType, _Data);
+except
+  on E: Exception do Raise Exception.Create(E.Message); //. =>
+  end
 end;
 
 procedure TcoSpaceFunctionalServer.TCoGeoMonitorObjectFunctionality_Construct(pUserID: Integer; const pUserName: WideString; const pUserPassword: WideString; const pObjectBusinessModel: WideString; const pName: WideString; pGeoSpaceID: Integer; pSecurityIndex: Integer;  out oComponentID: Integer; out oGeographServerAddress: WideString; out oGeographServerObjectID: Integer); safecall;
@@ -1334,8 +1342,12 @@ SetThreadLocale(ProcessLocaleID);
 if (unitProxySpace.ProxySpace = nil) then Raise Exception.Create('ProxySpace is not initialized'); //. =>
 //.
 Space:=unitProxySpace.ProxySpace;
+try
 Space.Plugins__CoGeoMonitorObjects_Constructor_Construct(pUserID,pUserName,pUserPassword, pObjectBusinessModel,pName,pGeoSpaceID,pSecurityIndex, {out} oComponentID,{out} _GeographServerAddress,{out} oGeographServerObjectID);
 oGeographServerAddress:=_GeographServerAddress;
+except
+  on E: Exception do Raise Exception.Create(E.Message); //. =>
+  end
 end;
 
 procedure TcoSpaceFunctionalServer.CoGeoMonitorObjectFunctionality_GetTrackData(const pUserName: WideString; const pUserPassword: WideString; idCoGeoMonitorObject: Integer; GeoSpaceID: integer; BeginTime: Double; EndTime: Double; DataType: Integer; out Data: PSafeArray); safecall;
@@ -1350,6 +1362,7 @@ SetThreadLocale(ProcessLocaleID);
 if (unitProxySpace.ProxySpace = nil) then Raise Exception.Create('ProxySpace is not initialized'); //. =>
 //.
 Space:=unitProxySpace.ProxySpace;
+try
 Space.Plugins__CoGeoMonitorObject_GetTrackData(pUserName,pUserPassword, idCoGeoMonitorObject, GeoSpaceID, BeginTime,EndTime, DataType,{out} _Data); 
 //.
 if (Length(_Data) > 0)
@@ -1365,6 +1378,9 @@ if (Length(_Data) > 0)
   end;
   end
  else Data:=nil;
+except
+  on E: Exception do Raise Exception.Create(E.Message); //. =>
+  end
 end;
 
 
