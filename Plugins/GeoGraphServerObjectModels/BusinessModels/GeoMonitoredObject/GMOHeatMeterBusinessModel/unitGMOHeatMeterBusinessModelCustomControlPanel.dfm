@@ -13147,7 +13147,7 @@ object GMOHeatMeterBusinessModelCustomControlPanel: TGMOHeatMeterBusinessModelCu
           object Label11: TLabel
             Left = 344
             Top = 24
-            Width = 49
+            Width = 57
             Height = 16
             Alignment = taRightJustify
             AutoSize = False
@@ -13220,9 +13220,9 @@ object GMOHeatMeterBusinessModelCustomControlPanel: TGMOHeatMeterBusinessModelCu
             Text = '?'
           end
           object edObject: TEdit
-            Left = 400
+            Left = 408
             Top = 21
-            Width = 115
+            Width = 107
             Height = 24
             Font.Charset = DEFAULT_CHARSET
             Font.Color = 10485760

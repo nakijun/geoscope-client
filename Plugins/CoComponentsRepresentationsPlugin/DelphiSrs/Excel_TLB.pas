@@ -12,18 +12,18 @@ unit Excel_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 30.08.2013 16:27:21 from Type Library described below.
+// File generated on 04.09.2013 8:33:42 from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: E:\Program Files\Microsoft Office\OFFICE11\EXCEL.EXE (1)
+// Type Lib: C:\Program Files (x86)\Microsoft Office\Office12\EXCEL.EXE (1)
 // LIBID: {00020813-0000-0000-C000-000000000046}
 // LCID: 0
-// Helpfile: E:\Program Files\Microsoft Office\OFFICE11\VBAXL10.CHM
-// HelpString: Microsoft Excel 11.0 Object Library
+// Helpfile: C:\Program Files (x86)\Microsoft Office\Office12\VBAXL10.CHM
+// HelpString: Microsoft Excel 12.0 Object Library
 // DepndLst: 
-//   (1) v2.3 Office, (C:\Program Files\Common Files\Microsoft Shared\OFFICE11\MSO.DLL)
+//   (1) v2.4 Office, (C:\Program Files (x86)\Common Files\Microsoft Shared\OFFICE12\MSO.DLL)
 //   (2) v2.0 stdole, (C:\Windows\system32\stdole2.tlb)
-//   (3) v5.3 VBIDE, (C:\Program Files\Common Files\Microsoft Shared\VBA\VBA6\VBE6EXT.OLB)
+//   (3) v5.3 VBIDE, (C:\Program Files (x86)\Common Files\Microsoft Shared\VBA\VBA6\VBE6EXT.OLB)
 // Errors:
 //   Hint: Symbol 'IFont' renamed to 'ExcelIFont'
 //   Hint: Symbol 'Range' renamed to 'ExcelRange'
@@ -47,8 +47,9 @@ unit Excel_TLB;
 //   Hint: Parameter 'Type' of ShadowFormat.Type changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of FillFormat.Type changed to 'Type_'
-//   Hint: Parameter 'To' of IWindow.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of IWindow._PrintOut changed to 'To_'
 //   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'To' of IWindow.PrintOut changed to 'To_'
 //   Hint: Parameter 'String' of _Application.DDEExecute changed to 'String_'
 //   Hint: Parameter 'String' of _Application.ExecuteExcel4Macro changed to 'String_'
 //   Hint: Member 'Goto' of '_Application' changed to 'Goto_'
@@ -69,42 +70,56 @@ unit Excel_TLB;
 //   Hint: Parameter 'Type' of IRange.EditionOptions changed to 'Type_'
 //   Hint: Member 'End' of 'IRange' changed to 'End_'
 //   Hint: Parameter 'End' of IRange.Group changed to 'End_'
-//   Hint: Parameter 'To' of IRange._PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of IRange.__PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of IRange.Sort changed to 'Type_'
 //   Hint: Parameter 'Type' of IRange.SortSpecial changed to 'Type_'
 //   Hint: Parameter 'Type' of IRange.SpecialCells changed to 'Type_'
 //   Hint: Parameter 'Function' of IRange.Subtotal changed to 'Function_'
+//   Hint: Parameter 'To' of IRange._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IRange.PrintOut changed to 'To_'
-//   Hint: Parameter 'To' of _Chart._PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of IRange.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of IRange.ExportAsFixedFormat changed to 'To_'
+//   Hint: Parameter 'To' of _Chart.__PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of _Chart._ApplyDataLabels changed to 'Type_'
 //   Hint: Parameter 'Type' of _Chart.Axes changed to 'Type_'
 //   Hint: Parameter 'Type' of _Chart.Paste changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
-//   Hint: Parameter 'To' of _Chart.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of _Chart._PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of _Chart.ApplyDataLabels changed to 'Type_'
+//   Hint: Parameter 'To' of _Chart.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of _Chart.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of _Chart.ExportAsFixedFormat changed to 'To_'
 //   Hint: Parameter 'Type' of Sheets.Add changed to 'Type_'
 //   Hint: Parameter 'Type' of Sheets.FillAcrossSheets changed to 'Type_'
+//   Hint: Parameter 'To' of Sheets.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Sheets._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Sheets.PrintOut changed to 'To_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
-//   Hint: Parameter 'To' of _Worksheet._PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of _Worksheet.__PrintOut changed to 'To_'
 //   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'To' of _Worksheet._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of _Worksheet.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of _Worksheet.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of _Worksheet.ExportAsFixedFormat changed to 'To_'
 //   Hint: Parameter 'String' of _Global.DDEExecute changed to 'String_'
 //   Hint: Parameter 'String' of _Global.ExecuteExcel4Macro changed to 'String_'
 //   Hint: Parameter 'Type' of _Workbook.ChangeLink changed to 'Type_'
 //   Hint: Parameter 'Type' of _Workbook.LinkInfo changed to 'Type_'
 //   Hint: Parameter 'Type' of _Workbook.LinkSources changed to 'Type_'
 //   Hint: Parameter 'Type' of _Workbook.OpenLinks changed to 'Type_'
-//   Hint: Parameter 'To' of _Workbook._PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of _Workbook.__PrintOut changed to 'To_'
 //   Hint: Parameter 'Procedure' of _Workbook.SetLinkOnData changed to 'Procedure_'
 //   Hint: Parameter 'Type' of _Workbook.UpdateLink changed to 'Type_'
-//   Hint: Parameter 'To' of _Workbook.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of _Workbook._PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of _Workbook.BreakLink changed to 'Type_'
+//   Hint: Parameter 'To' of _Workbook.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of _Workbook.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of _Workbook.ExportAsFixedFormat changed to 'To_'
+//   Hint: Parameter 'To' of ICharts.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of ICharts._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of ICharts.PrintOut changed to 'To_'
 //   Hint: Parameter 'Function' of IPivotTable.AddDataField changed to 'Function_'
@@ -114,20 +129,31 @@ unit Excel_TLB;
 //   Hint: Parameter 'String' of ICharacters.Insert changed to 'String_'
 //   Hint: Member 'Record' of 'ISoundNote' changed to 'Record_'
 //   Hint: Member 'Object' of '_IOLEObject' changed to 'Object_'
+//   Hint: Parameter 'To' of IModule.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IModule._PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of IModule.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of IModules.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IModules._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IModules.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of IDialogSheet.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IDialogSheet._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IDialogSheet.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of IDialogSheet.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of IDialogSheet.ExportAsFixedFormat changed to 'To_'
+//   Hint: Parameter 'To' of IDialogSheets.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IDialogSheets._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IDialogSheets.PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of IWorksheets.Add changed to 'Type_'
 //   Hint: Parameter 'Type' of IWorksheets.FillAcrossSheets changed to 'Type_'
+//   Hint: Parameter 'To' of IWorksheets.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IWorksheets._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of IWorksheets.PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of IFormatConditions.Add changed to 'Type_'
-//   Hint: Parameter 'Type' of IFormatCondition.Modify changed to 'Type_'
+//   Hint: Parameter 'String' of IFormatConditions.Add changed to 'String_'
+//   Hint: Parameter 'Type' of IFormatCondition._Modify changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of IFormatCondition.Modify changed to 'Type_'
+//   Hint: Parameter 'String' of IFormatCondition.Modify changed to 'String_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of IParameter.SetParam changed to 'Type_'
 //   Hint: Parameter 'Type' of IValidation.Add changed to 'Type_'
@@ -142,6 +168,7 @@ unit Excel_TLB;
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of IAxes.Item changed to 'Type_'
+//   Hint: Parameter 'Type' of IAxes._Default changed to 'Type_'
 //   Hint: Parameter 'Type' of IPoint._ApplyDataLabels changed to 'Type_'
 //   Hint: Parameter 'Type' of IPoint.ApplyDataLabels changed to 'Type_'
 //   Hint: Parameter 'Type' of ISeries._ApplyDataLabels changed to 'Type_'
@@ -166,6 +193,7 @@ unit Excel_TLB;
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Member 'Object' of 'IOLEFormat' changed to 'Object_'
+//   Hint: Parameter 'Property' of CubeField._AddMemberPropertyField changed to 'Property_'
 //   Hint: Parameter 'Property' of CubeField.AddMemberPropertyField changed to 'Property_'
 //   Hint: Parameter 'Type' of ICalculatedMembers.Add changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
@@ -173,8 +201,23 @@ unit Excel_TLB;
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of IDiagram.Convert changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
-//   Hint: Parameter 'To' of Window.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of IPivotFilters.Add changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'To' of Window._PrintOut changed to 'To_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'To' of Window.PrintOut changed to 'To_'
 //   Hint: Member 'And' of 'WorksheetFunction' changed to 'And_'
 //   Hint: Member 'Or' of 'WorksheetFunction' changed to 'Or_'
 //   Hint: Member 'Var' of 'WorksheetFunction' changed to 'Var_'
@@ -185,16 +228,20 @@ unit Excel_TLB;
 //   Hint: Parameter 'Type' of Range.EditionOptions changed to 'Type_'
 //   Hint: Member 'End' of 'Range' changed to 'End_'
 //   Hint: Parameter 'End' of Range.Group changed to 'End_'
-//   Hint: Parameter 'To' of Range._PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of Range.__PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of Range.Sort changed to 'Type_'
 //   Hint: Parameter 'Type' of Range.SortSpecial changed to 'Type_'
 //   Hint: Parameter 'Type' of Range.SpecialCells changed to 'Type_'
 //   Hint: Parameter 'Function' of Range.Subtotal changed to 'Function_'
+//   Hint: Parameter 'To' of Range._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Range.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of Range.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of Range.ExportAsFixedFormat changed to 'To_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'To' of Charts.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Charts._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Charts.PrintOut changed to 'To_'
 //   Hint: Parameter 'Function' of PivotTable.AddDataField changed to 'Function_'
@@ -204,21 +251,32 @@ unit Excel_TLB;
 //   Hint: Parameter 'String' of Characters.Insert changed to 'String_'
 //   Hint: Member 'Record' of 'SoundNote' changed to 'Record_'
 //   Hint: Member 'Object' of '_OLEObject' changed to 'Object_'
+//   Hint: Parameter 'To' of Module.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Module._PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of Module.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of Modules.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Modules._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Modules.PrintOut changed to 'To_'
+//   Hint: Parameter 'To' of DialogSheet.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of DialogSheet._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of DialogSheet.PrintOut changed to 'To_'
+//   Hint: Parameter 'Type' of DialogSheet.ExportAsFixedFormat changed to 'Type_'
+//   Hint: Parameter 'To' of DialogSheet.ExportAsFixedFormat changed to 'To_'
+//   Hint: Parameter 'To' of DialogSheets.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of DialogSheets._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of DialogSheets.PrintOut changed to 'To_'
 //   Hint: Parameter 'Type' of Worksheets.Add changed to 'Type_'
 //   Hint: Parameter 'Type' of Worksheets.FillAcrossSheets changed to 'Type_'
+//   Hint: Parameter 'To' of Worksheets.__PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Worksheets._PrintOut changed to 'To_'
 //   Hint: Parameter 'To' of Worksheets.PrintOut changed to 'To_'
 //   Hint: Member 'Name' of 'Name' changed to 'Name_'
 //   Hint: Parameter 'Type' of FormatConditions.Add changed to 'Type_'
-//   Hint: Parameter 'Type' of FormatCondition.Modify changed to 'Type_'
+//   Hint: Parameter 'String' of FormatConditions.Add changed to 'String_'
+//   Hint: Parameter 'Type' of FormatCondition._Modify changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of FormatCondition.Modify changed to 'Type_'
+//   Hint: Parameter 'String' of FormatCondition.Modify changed to 'String_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of Parameter.SetParam changed to 'Type_'
 //   Hint: Parameter 'Type' of Validation.Add changed to 'Type_'
@@ -233,6 +291,7 @@ unit Excel_TLB;
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of Axes.Item changed to 'Type_'
+//   Hint: Parameter 'Type' of Axes._Default changed to 'Type_'
 //   Hint: Parameter 'Type' of Point._ApplyDataLabels changed to 'Type_'
 //   Hint: Parameter 'Type' of Point.ApplyDataLabels changed to 'Type_'
 //   Hint: Parameter 'Type' of Series._ApplyDataLabels changed to 'Type_'
@@ -262,6 +321,20 @@ unit Excel_TLB;
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of Diagram.Convert changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of PivotFilters.Add changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 // ************************************************************************ //
 // *************************************************************************//
@@ -294,7 +367,7 @@ VBIDE_TLB;
 const
   // TypeLibrary Major and minor versions
   ExcelMajorVersion = 1;
-  ExcelMinorVersion = 5;
+  ExcelMinorVersion = 6;
 
   LIBID_Excel: TGUID = '{00020813-0000-0000-C000-000000000046}';
 
@@ -314,6 +387,7 @@ const
   IID_DiagramNode: TGUID = '{000C0370-0000-0000-C000-000000000046}';
   IID_IRTDUpdateEvent: TGUID = '{A43788C1-D91B-11D3-8F39-00C04F3651B8}';
   IID_IRtdServer: TGUID = '{EC0E6191-DB51-11D3-8F3E-00C04F3651B8}';
+  IID_TextFrame2: TGUID = '{000C0398-0000-0000-C000-000000000046}';
   IID_ExcelIFont: TGUID = '{0002084D-0001-0000-C000-000000000046}';
   IID_IWindow: TGUID = '{00020893-0001-0000-C000-000000000046}';
   IID_IWindows: TGUID = '{00020892-0001-0000-C000-000000000046}';
@@ -554,6 +628,57 @@ const
   IID_IXmlMaps: TGUID = '{0002447C-0001-0000-C000-000000000046}';
   IID_IListDataFormat: TGUID = '{0002447D-0001-0000-C000-000000000046}';
   IID_IXPath: TGUID = '{0002447E-0001-0000-C000-000000000046}';
+  IID_IPivotLineCells: TGUID = '{0002447F-0001-0000-C000-000000000046}';
+  IID_IPivotLine: TGUID = '{00024480-0001-0000-C000-000000000046}';
+  IID_IPivotLines: TGUID = '{00024481-0001-0000-C000-000000000046}';
+  IID_IPivotAxis: TGUID = '{00024482-0001-0000-C000-000000000046}';
+  IID_IPivotFilter: TGUID = '{00024483-0001-0000-C000-000000000046}';
+  IID_IPivotFilters: TGUID = '{00024484-0001-0000-C000-000000000046}';
+  IID_IWorkbookConnection: TGUID = '{00024485-0001-0000-C000-000000000046}';
+  IID_IConnections: TGUID = '{00024486-0001-0000-C000-000000000046}';
+  IID_IWorksheetView: TGUID = '{00024487-0001-0000-C000-000000000046}';
+  IID_IChartView: TGUID = '{00024488-0001-0000-C000-000000000046}';
+  IID_IModuleView: TGUID = '{00024489-0001-0000-C000-000000000046}';
+  IID_IDialogSheetView: TGUID = '{0002448A-0001-0000-C000-000000000046}';
+  IID_ISheetViews: TGUID = '{0002448C-0001-0000-C000-000000000046}';
+  IID_IOLEDBConnection: TGUID = '{0002448D-0001-0000-C000-000000000046}';
+  IID_IODBCConnection: TGUID = '{0002448E-0001-0000-C000-000000000046}';
+  IID_IAction: TGUID = '{0002448F-0001-0000-C000-000000000046}';
+  IID_IActions: TGUID = '{00024490-0001-0000-C000-000000000046}';
+  IID_IFormatColor: TGUID = '{00024491-0001-0000-C000-000000000046}';
+  IID_IConditionValue: TGUID = '{00024492-0001-0000-C000-000000000046}';
+  IID_IColorScale: TGUID = '{00024493-0001-0000-C000-000000000046}';
+  IID_IColorScaleCriteria: TGUID = '{00024494-0001-0000-C000-000000000046}';
+  IID_IColorScaleCriterion: TGUID = '{00024495-0001-0000-C000-000000000046}';
+  IID_IDatabar: TGUID = '{00024496-0001-0000-C000-000000000046}';
+  IID_IIconSetCondition: TGUID = '{00024497-0001-0000-C000-000000000046}';
+  IID_IIconCriteria: TGUID = '{00024498-0001-0000-C000-000000000046}';
+  IID_IIconCriterion: TGUID = '{00024499-0001-0000-C000-000000000046}';
+  IID_IIcon: TGUID = '{0002449A-0001-0000-C000-000000000046}';
+  IID_IIconSet: TGUID = '{0002449B-0001-0000-C000-000000000046}';
+  IID_IIconSets: TGUID = '{0002449C-0001-0000-C000-000000000046}';
+  IID_ITop10: TGUID = '{0002449D-0001-0000-C000-000000000046}';
+  IID_IAboveAverage: TGUID = '{0002449E-0001-0000-C000-000000000046}';
+  IID_IUniqueValues: TGUID = '{0002449F-0001-0000-C000-000000000046}';
+  IID_IRanges: TGUID = '{000244A0-0001-0000-C000-000000000046}';
+  IID_IHeaderFooter: TGUID = '{000244A1-0001-0000-C000-000000000046}';
+  IID_IPage: TGUID = '{000244A2-0001-0000-C000-000000000046}';
+  IID_IPages: TGUID = '{000244A3-0001-0000-C000-000000000046}';
+  IID_IServerViewableItems: TGUID = '{000244A4-0001-0000-C000-000000000046}';
+  IID_ITableStyleElement: TGUID = '{000244A5-0001-0000-C000-000000000046}';
+  IID_ITableStyleElements: TGUID = '{000244A6-0001-0000-C000-000000000046}';
+  IID_ITableStyle: TGUID = '{000244A7-0001-0000-C000-000000000046}';
+  IID_ITableStyles: TGUID = '{000244A8-0001-0000-C000-000000000046}';
+  IID_ISortField: TGUID = '{000244A9-0001-0000-C000-000000000046}';
+  IID_ISortFields: TGUID = '{000244AA-0001-0000-C000-000000000046}';
+  IID_ISort: TGUID = '{000244AB-0001-0000-C000-000000000046}';
+  IID_IResearch: TGUID = '{000244AC-0001-0000-C000-000000000046}';
+  IID_IColorStop: TGUID = '{000244AD-0001-0000-C000-000000000046}';
+  IID_IColorStops: TGUID = '{000244AE-0001-0000-C000-000000000046}';
+  IID_ILinearGradient: TGUID = '{000244AF-0001-0000-C000-000000000046}';
+  IID_IRectangularGradient: TGUID = '{000244B0-0001-0000-C000-000000000046}';
+  IID_IMultiThreadedCalculation: TGUID = '{000244B1-0001-0000-C000-000000000046}';
+  IID_IChartFormat: TGUID = '{000244B2-0001-0000-C000-000000000046}';
   DIID_Font: TGUID = '{0002084D-0000-0000-C000-000000000046}';
   DIID_Window: TGUID = '{00020893-0000-0000-C000-000000000046}';
   DIID_Windows: TGUID = '{00020892-0000-0000-C000-000000000046}';
@@ -781,6 +906,57 @@ const
   DIID_XmlMaps: TGUID = '{0002447C-0000-0000-C000-000000000046}';
   DIID_ListDataFormat: TGUID = '{0002447D-0000-0000-C000-000000000046}';
   DIID_XPath: TGUID = '{0002447E-0000-0000-C000-000000000046}';
+  DIID_PivotLineCells: TGUID = '{0002447F-0000-0000-C000-000000000046}';
+  DIID_PivotLine: TGUID = '{00024480-0000-0000-C000-000000000046}';
+  DIID_PivotLines: TGUID = '{00024481-0000-0000-C000-000000000046}';
+  DIID_PivotAxis: TGUID = '{00024482-0000-0000-C000-000000000046}';
+  DIID_PivotFilter: TGUID = '{00024483-0000-0000-C000-000000000046}';
+  DIID_PivotFilters: TGUID = '{00024484-0000-0000-C000-000000000046}';
+  DIID_WorkbookConnection: TGUID = '{00024485-0000-0000-C000-000000000046}';
+  DIID_Connections: TGUID = '{00024486-0000-0000-C000-000000000046}';
+  DIID_WorksheetView: TGUID = '{00024487-0000-0000-C000-000000000046}';
+  DIID_ChartView: TGUID = '{00024488-0000-0000-C000-000000000046}';
+  DIID_ModuleView: TGUID = '{00024489-0000-0000-C000-000000000046}';
+  DIID_DialogSheetView: TGUID = '{0002448A-0000-0000-C000-000000000046}';
+  DIID_SheetViews: TGUID = '{0002448C-0000-0000-C000-000000000046}';
+  DIID_OLEDBConnection: TGUID = '{0002448D-0000-0000-C000-000000000046}';
+  DIID_ODBCConnection: TGUID = '{0002448E-0000-0000-C000-000000000046}';
+  DIID_Action: TGUID = '{0002448F-0000-0000-C000-000000000046}';
+  DIID_Actions: TGUID = '{00024490-0000-0000-C000-000000000046}';
+  DIID_FormatColor: TGUID = '{00024491-0000-0000-C000-000000000046}';
+  DIID_ConditionValue: TGUID = '{00024492-0000-0000-C000-000000000046}';
+  DIID_ColorScale: TGUID = '{00024493-0000-0000-C000-000000000046}';
+  DIID_ColorScaleCriteria: TGUID = '{00024494-0000-0000-C000-000000000046}';
+  DIID_ColorScaleCriterion: TGUID = '{00024495-0000-0000-C000-000000000046}';
+  DIID_Databar: TGUID = '{00024496-0000-0000-C000-000000000046}';
+  DIID_IconSetCondition: TGUID = '{00024497-0000-0000-C000-000000000046}';
+  DIID_IconCriteria: TGUID = '{00024498-0000-0000-C000-000000000046}';
+  DIID_IconCriterion: TGUID = '{00024499-0000-0000-C000-000000000046}';
+  DIID_Icon: TGUID = '{0002449A-0000-0000-C000-000000000046}';
+  DIID_IconSet: TGUID = '{0002449B-0000-0000-C000-000000000046}';
+  DIID_IconSets: TGUID = '{0002449C-0000-0000-C000-000000000046}';
+  DIID_Top10: TGUID = '{0002449D-0000-0000-C000-000000000046}';
+  DIID_AboveAverage: TGUID = '{0002449E-0000-0000-C000-000000000046}';
+  DIID_UniqueValues: TGUID = '{0002449F-0000-0000-C000-000000000046}';
+  DIID_Ranges: TGUID = '{000244A0-0000-0000-C000-000000000046}';
+  DIID_HeaderFooter: TGUID = '{000244A1-0000-0000-C000-000000000046}';
+  DIID_Page: TGUID = '{000244A2-0000-0000-C000-000000000046}';
+  DIID_Pages: TGUID = '{000244A3-0000-0000-C000-000000000046}';
+  DIID_ServerViewableItems: TGUID = '{000244A4-0000-0000-C000-000000000046}';
+  DIID_TableStyleElement: TGUID = '{000244A5-0000-0000-C000-000000000046}';
+  DIID_TableStyleElements: TGUID = '{000244A6-0000-0000-C000-000000000046}';
+  DIID_TableStyle: TGUID = '{000244A7-0000-0000-C000-000000000046}';
+  DIID_TableStyles: TGUID = '{000244A8-0000-0000-C000-000000000046}';
+  DIID_SortField: TGUID = '{000244A9-0000-0000-C000-000000000046}';
+  DIID_SortFields: TGUID = '{000244AA-0000-0000-C000-000000000046}';
+  DIID_Sort: TGUID = '{000244AB-0000-0000-C000-000000000046}';
+  DIID_Research: TGUID = '{000244AC-0000-0000-C000-000000000046}';
+  DIID_ColorStop: TGUID = '{000244AD-0000-0000-C000-000000000046}';
+  DIID_ColorStops: TGUID = '{000244AE-0000-0000-C000-000000000046}';
+  DIID_LinearGradient: TGUID = '{000244AF-0000-0000-C000-000000000046}';
+  DIID_RectangularGradient: TGUID = '{000244B0-0000-0000-C000-000000000046}';
+  DIID_MultiThreadedCalculation: TGUID = '{000244B1-0000-0000-C000-000000000046}';
+  DIID_ChartFormat: TGUID = '{000244B2-0000-0000-C000-000000000046}';
   IID_IDummy: TGUID = '{0002442E-0001-0000-C000-000000000046}';
   IID_ICanvasShapes: TGUID = '{0002444F-0001-0000-C000-000000000046}';
   CLASS_ExcelQueryTable: TGUID = '{59191DA1-EA47-11CE-A51F-00AA0061507F}';
@@ -1157,6 +1333,7 @@ const
   xlLegendPositionLeft = $FFFFEFDD;
   xlLegendPositionRight = $FFFFEFC8;
   xlLegendPositionTop = $FFFFEFC0;
+  xlLegendPositionCustom = $FFFFEFBF;
 
 // Constants for enum XlChartPictureType
 type
@@ -1329,6 +1506,8 @@ const
   xlPatternSolid = $00000001;
   xlPatternUp = $FFFFEFBE;
   xlPatternVertical = $FFFFEFBA;
+  xlPatternLinearGradient = $00000FA0;
+  xlPatternRectangularGradient = $00000FA1;
 
 // Constants for enum XlChartSplitType
 type
@@ -1904,11 +2083,20 @@ const
   xlOr = $00000002;
   xlTop10Items = $00000003;
   xlTop10Percent = $00000005;
+  xlFilterValues = $00000007;
+  xlFilterCellColor = $00000008;
+  xlFilterFontColor = $00000009;
+  xlFilterIcon = $0000000A;
+  xlFilterDynamic = $0000000B;
+  xlFilterNoFill = $0000000C;
+  xlFilterAutomaticFontColor = $0000000D;
+  xlFilterNoIcon = $0000000E;
 
 // Constants for enum XlClipboardFormat
 type
   XlClipboardFormat = TOleEnum;
 const
+  xlClipboardFormatBIFF12 = $0000003F;
   xlClipboardFormatBIFF = $00000008;
   xlClipboardFormatBIFF2 = $00000012;
   xlClipboardFormatBIFF3 = $00000014;
@@ -1990,6 +2178,16 @@ const
   xlHtml = $0000002C;
   xlWebArchive = $0000002D;
   xlXMLSpreadsheet = $0000002E;
+  xlExcel12 = $00000032;
+  xlOpenXMLWorkbook = $00000033;
+  xlOpenXMLWorkbookMacroEnabled = $00000034;
+  xlOpenXMLTemplateMacroEnabled = $00000035;
+  xlTemplate8 = $00000011;
+  xlOpenXMLTemplate = $00000036;
+  xlAddIn8 = $00000012;
+  xlOpenXMLAddIn = $00000037;
+  xlExcel8 = $00000038;
+  xlWorkbookDefault = $00000033;
 
 // Constants for enum XlApplicationInternational
 type
@@ -2087,6 +2285,18 @@ type
 const
   xlCellValue = $00000001;
   xlExpression = $00000002;
+  xlColorScale = $00000003;
+  xlDatabar = $00000004;
+  xlTop10 = $00000005;
+  xlIconSets = $00000006;
+  xlUniqueValues = $00000008;
+  xlTextString = $00000009;
+  xlBlanksCondition = $0000000A;
+  xlTimePeriod = $0000000B;
+  xlAboveAverageCondition = $0000000C;
+  xlNoBlanksCondition = $0000000D;
+  xlErrorsCondition = $00000010;
+  xlNoErrorsCondition = $00000011;
 
 // Constants for enum XlFormatConditionOperator
 type
@@ -2216,6 +2426,7 @@ type
   XlPasteType = TOleEnum;
 const
   xlPasteAll = $FFFFEFF8;
+  xlPasteAllUsingSourceTheme = $0000000D;
   xlPasteAllExceptBorders = $00000007;
   xlPasteFormats = $FFFFEFE6;
   xlPasteFormulas = $FFFFEFE5;
@@ -2561,6 +2772,7 @@ type
 const
   xlNormalView = $00000001;
   xlPageBreakPreview = $00000002;
+  xlPageLayoutView = $00000003;
 
 // Constants for enum XlXLMMacroType
 type
@@ -2849,6 +3061,9 @@ const
   xlDialogCreateList = $0000031C;
   xlDialogPermission = $00000340;
   xlDialogMyPermission = $00000342;
+  xlDialogDocumentInspector = $0000035E;
+  xlDialogNameManager = $000003D1;
+  xlDialogNewName = $000003D2;
 
 // Constants for enum XlParameterType
 type
@@ -3029,6 +3244,8 @@ type
 const
   xlPivotTableVersion2000 = $00000000;
   xlPivotTableVersion10 = $00000001;
+  xlPivotTableVersion11 = $00000002;
+  xlPivotTableVersion12 = $00000003;
   xlPivotTableVersionCurrent = $FFFFFFFF;
 
 // Constants for enum XlPrintErrors
@@ -3062,6 +3279,7 @@ const
   xlMissingItemsDefault = $FFFFFFFF;
   xlMissingItemsNone = $00000000;
   xlMissingItemsMax = $00007EF4;
+  xlMissingItemsMax2 = $00100000;
 
 // Constants for enum XlCalculationState
 type
@@ -3145,6 +3363,7 @@ const
   xlUnlockedFormulaCells = $00000006;
   xlEmptyCellReferences = $00000007;
   xlListDataValidation = $00000008;
+  xlInconsistentListFormula = $00000009;
 
 // Constants for enum XlDataLabelSeparator
 type
@@ -3197,6 +3416,7 @@ type
 const
   xlQueryTable = $00000000;
   xlPivotTableReport = $00000001;
+  xlTable = $00000002;
 
 // Constants for enum XlCalculatedMemberType
 type
@@ -3221,6 +3441,7 @@ const
   xlSrcExternal = $00000000;
   xlSrcRange = $00000001;
   xlSrcXml = $00000002;
+  xlSrcQuery = $00000003;
 
 // Constants for enum XlTextVisualLayoutType
 type
@@ -3260,6 +3481,7 @@ const
   xlTotalsCalculationMax = $00000006;
   xlTotalsCalculationStdDev = $00000007;
   xlTotalsCalculationVar = $00000008;
+  xlTotalsCalculationCustom = $00000009;
 
 // Constants for enum XlXmlLoadOption
 type
@@ -3313,6 +3535,619 @@ const
   xlXmlImportElementsTruncated = $00000001;
   xlXmlImportValidationFailed = $00000002;
 
+// Constants for enum XlRemoveDocInfoType
+type
+  XlRemoveDocInfoType = TOleEnum;
+const
+  xlRDIComments = $00000001;
+  xlRDIRemovePersonalInformation = $00000004;
+  xlRDIEmailHeader = $00000005;
+  xlRDIRoutingSlip = $00000006;
+  xlRDISendForReview = $00000007;
+  xlRDIDocumentProperties = $00000008;
+  xlRDIDocumentWorkspace = $0000000A;
+  xlRDIInkAnnotations = $0000000B;
+  xlRDIScenarioComments = $0000000C;
+  xlRDIPublishInfo = $0000000D;
+  xlRDIDocumentServerProperties = $0000000E;
+  xlRDIDocumentManagementPolicy = $0000000F;
+  xlRDIContentType = $00000010;
+  xlRDIDefinedNameComments = $00000012;
+  xlRDIInactiveDataConnections = $00000013;
+  xlRDIPrinterPath = $00000014;
+  xlRDIAll = $00000063;
+
+// Constants for enum XlRgbColor
+type
+  XlRgbColor = TOleEnum;
+const
+  rgbAliceBlue = $00FFF8F0;
+  rgbAntiqueWhite = $00D7EBFA;
+  rgbAqua = $00FFFF00;
+  rgbAquamarine = $00D4FF7F;
+  rgbAzure = $00FFFFF0;
+  rgbBeige = $00DCF5F5;
+  rgbBisque = $00C4E4FF;
+  rgbBlack = $00000000;
+  rgbBlanchedAlmond = $00CDEBFF;
+  rgbBlue = $00FF0000;
+  rgbBlueViolet = $00E22B8A;
+  rgbBrown = $002A2AA5;
+  rgbBurlyWood = $0087B8DE;
+  rgbCadetBlue = $00A09E5F;
+  rgbChartreuse = $0000FF7F;
+  rgbCoral = $00507FFF;
+  rgbCornflowerBlue = $00ED9564;
+  rgbCornsilk = $00DCF8FF;
+  rgbCrimson = $003C14DC;
+  rgbDarkBlue = $008B0000;
+  rgbDarkCyan = $008B8B00;
+  rgbDarkGoldenrod = $000B86B8;
+  rgbDarkGreen = $00006400;
+  rgbDarkGray = $00A9A9A9;
+  rgbDarkGrey = $00A9A9A9;
+  rgbDarkKhaki = $006BB7BD;
+  rgbDarkMagenta = $008B008B;
+  rgbDarkOliveGreen = $002F6B55;
+  rgbDarkOrange = $00008CFF;
+  rgbDarkOrchid = $00CC3299;
+  rgbDarkRed = $0000008B;
+  rgbDarkSalmon = $007A96E9;
+  rgbDarkSeaGreen = $008FBC8F;
+  rgbDarkSlateBlue = $008B3D48;
+  rgbDarkSlateGray = $004F4F2F;
+  rgbDarkSlateGrey = $004F4F2F;
+  rgbDarkTurquoise = $00D1CE00;
+  rgbDarkViolet = $00D30094;
+  rgbDeepPink = $009314FF;
+  rgbDeepSkyBlue = $00FFBF00;
+  rgbDimGray = $00696969;
+  rgbDimGrey = $00696969;
+  rgbDodgerBlue = $00FF901E;
+  rgbFireBrick = $002222B2;
+  rgbFloralWhite = $00F0FAFF;
+  rgbForestGreen = $00228B22;
+  rgbFuchsia = $00FF00FF;
+  rgbGainsboro = $00DCDCDC;
+  rgbGhostWhite = $00FFF8F8;
+  rgbGold = $0000D7FF;
+  rgbGoldenrod = $0020A5DA;
+  rgbGray = $00808080;
+  rgbGreen = $00008000;
+  rgbGrey = $00808080;
+  rgbGreenYellow = $002FFFAD;
+  rgbHoneydew = $00F0FFF0;
+  rgbHotPink = $00B469FF;
+  rgbIndianRed = $005C5CCD;
+  rgbIndigo = $0082004B;
+  rgbIvory = $00F0FFFF;
+  rgbKhaki = $008CE6F0;
+  rgbLavender = $00FAE6E6;
+  rgbLavenderBlush = $00F5F0FF;
+  rgbLawnGreen = $0000FC7C;
+  rgbLemonChiffon = $00CDFAFF;
+  rgbLightBlue = $00E6D8AD;
+  rgbLightCoral = $008080F0;
+  rgbLightCyan = $008B8B00;
+  rgbLightGoldenrodYellow = $00D2FAFA;
+  rgbLightGray = $00D3D3D3;
+  rgbLightGreen = $0090EE90;
+  rgbLightGrey = $00D3D3D3;
+  rgbLightPink = $00C1B6FF;
+  rgbLightSalmon = $007AA0FF;
+  rgbLightSeaGreen = $00AAB220;
+  rgbLightSkyBlue = $00FACE87;
+  rgbLightSlateGray = $00998877;
+  rgbLightSlateGrey = $00998877;
+  rgbLightSteelBlue = $00DEC4B0;
+  rgbLightYellow = $00E0FFFF;
+  rgbLime = $0000FF00;
+  rgbLimeGreen = $0032CD32;
+  rgbLinen = $00E6F0FA;
+  rgbMaroon = $00000080;
+  rgbMediumAquamarine = $00AAFF66;
+  rgbMediumBlue = $00CD0000;
+  rgbMediumOrchid = $00D355BA;
+  rgbMediumPurple = $00DB7093;
+  rgbMediumSeaGreen = $0071B33C;
+  rgbMediumSlateBlue = $00EE687B;
+  rgbMediumSpringGreen = $009AFA00;
+  rgbMediumTurquoise = $00CCD148;
+  rgbMediumVioletRed = $008515C7;
+  rgbMidnightBlue = $00701919;
+  rgbMintCream = $00FAFFF5;
+  rgbMistyRose = $00E1E4FF;
+  rgbMoccasin = $00B5E4FF;
+  rgbNavajoWhite = $00ADDEFF;
+  rgbNavy = $00800000;
+  rgbNavyBlue = $00800000;
+  rgbOldLace = $00E6F5FD;
+  rgbOlive = $00008080;
+  rgbOliveDrab = $00238E6B;
+  rgbOrange = $0000A5FF;
+  rgbOrangeRed = $000045FF;
+  rgbOrchid = $00D670DA;
+  rgbPaleGoldenrod = $006BE8EE;
+  rgbPaleGreen = $0098FB98;
+  rgbPaleTurquoise = $00EEEEAF;
+  rgbPaleVioletRed = $009370DB;
+  rgbPapayaWhip = $00D5EFFF;
+  rgbPeachPuff = $00B9DAFF;
+  rgbPeru = $003F85CD;
+  rgbPink = $00CBC0FF;
+  rgbPlum = $00DDA0DD;
+  rgbPowderBlue = $00E6E0B0;
+  rgbPurple = $00800080;
+  rgbRed = $000000FF;
+  rgbRosyBrown = $008F8FBC;
+  rgbRoyalBlue = $00E16941;
+  rgbSalmon = $007280FA;
+  rgbSandyBrown = $0060A4F4;
+  rgbSeaGreen = $00578B2E;
+  rgbSeashell = $00EEF5FF;
+  rgbSienna = $002D52A0;
+  rgbSilver = $00C0C0C0;
+  rgbSkyBlue = $00EBCE87;
+  rgbSlateBlue = $00CD5A6A;
+  rgbSlateGray = $00908070;
+  rgbSlateGrey = $00908070;
+  rgbSnow = $00FAFAFF;
+  rgbSpringGreen = $007FFF00;
+  rgbSteelBlue = $00B48246;
+  rgbTan = $008CB4D2;
+  rgbTeal = $00808000;
+  rgbThistle = $00D8BFD8;
+  rgbTomato = $004763FF;
+  rgbTurquoise = $00D0E040;
+  rgbYellow = $0000FFFF;
+  rgbYellowGreen = $0032CD9A;
+  rgbViolet = $00EE82EE;
+  rgbWheat = $00B3DEF5;
+  rgbWhite = $00FFFFFF;
+  rgbWhiteSmoke = $00F5F5F5;
+
+// Constants for enum XlStdColorScale
+type
+  XlStdColorScale = TOleEnum;
+const
+  xlColorScaleRYG = $00000001;
+  xlColorScaleGYR = $00000002;
+  xlColorScaleBlackWhite = $00000003;
+  xlColorScaleWhiteBlack = $00000004;
+
+// Constants for enum XlConditionValueTypes
+type
+  XlConditionValueTypes = TOleEnum;
+const
+  xlConditionValueNone = $FFFFFFFF;
+  xlConditionValueNumber = $00000000;
+  xlConditionValueLowestValue = $00000001;
+  xlConditionValueHighestValue = $00000002;
+  xlConditionValuePercent = $00000003;
+  xlConditionValueFormula = $00000004;
+  xlConditionValuePercentile = $00000005;
+
+// Constants for enum XlFormatFilterTypes
+type
+  XlFormatFilterTypes = TOleEnum;
+const
+  xlFilterBottom = $00000000;
+  xlFilterTop = $00000001;
+  xlFilterBottomPercent = $00000002;
+  xlFilterTopPercent = $00000003;
+
+// Constants for enum XlContainsOperator
+type
+  XlContainsOperator = TOleEnum;
+const
+  xlContains = $00000000;
+  xlDoesNotContain = $00000001;
+  xlBeginsWith = $00000002;
+  xlEndsWith = $00000003;
+
+// Constants for enum XlAboveBelow
+type
+  XlAboveBelow = TOleEnum;
+const
+  xlAboveAverage = $00000000;
+  xlBelowAverage = $00000001;
+  xlEqualAboveAverage = $00000002;
+  xlEqualBelowAverage = $00000003;
+  xlAboveStdDev = $00000004;
+  xlBelowStdDev = $00000005;
+
+// Constants for enum XlLookFor
+type
+  XlLookFor = TOleEnum;
+const
+  xlLookForBlanks = $00000000;
+  xlLookForErrors = $00000001;
+  xlLookForFormulas = $00000002;
+
+// Constants for enum XlTimePeriods
+type
+  XlTimePeriods = TOleEnum;
+const
+  xlToday = $00000000;
+  xlYesterday = $00000001;
+  xlLast7Days = $00000002;
+  xlThisWeek = $00000003;
+  xlLastWeek = $00000004;
+  xlLastMonth = $00000005;
+  xlTomorrow = $00000006;
+  xlNextWeek = $00000007;
+  xlNextMonth = $00000008;
+  xlThisMonth = $00000009;
+
+// Constants for enum XlDupeUnique
+type
+  XlDupeUnique = TOleEnum;
+const
+  xlUnique = $00000000;
+  xlDuplicate = $00000001;
+
+// Constants for enum XlTopBottom
+type
+  XlTopBottom = TOleEnum;
+const
+  xlTop10Top = $00000001;
+  xlTop10Bottom = $00000000;
+
+// Constants for enum XlIconSet
+type
+  XlIconSet = TOleEnum;
+const
+  xl3Arrows = $00000001;
+  xl3ArrowsGray = $00000002;
+  xl3Flags = $00000003;
+  xl3TrafficLights1 = $00000004;
+  xl3TrafficLights2 = $00000005;
+  xl3Signs = $00000006;
+  xl3Symbols = $00000007;
+  xl3Symbols2 = $00000008;
+  xl4Arrows = $00000009;
+  xl4ArrowsGray = $0000000A;
+  xl4RedToBlack = $0000000B;
+  xl4CRV = $0000000C;
+  xl4TrafficLights = $0000000D;
+  xl5Arrows = $0000000E;
+  xl5ArrowsGray = $0000000F;
+  xl5CRV = $00000010;
+  xl5Quarters = $00000011;
+
+// Constants for enum XlThemeFont
+type
+  XlThemeFont = TOleEnum;
+const
+  xlThemeFontNone = $00000000;
+  xlThemeFontMajor = $00000001;
+  xlThemeFontMinor = $00000002;
+
+// Constants for enum XlPivotLineType
+type
+  XlPivotLineType = TOleEnum;
+const
+  xlPivotLineRegular = $00000000;
+  xlPivotLineSubtotal = $00000001;
+  xlPivotLineGrandTotal = $00000002;
+  xlPivotLineBlank = $00000003;
+
+// Constants for enum XlCheckInVersionType
+type
+  XlCheckInVersionType = TOleEnum;
+const
+  xlCheckInMinorVersion = $00000000;
+  xlCheckInMajorVersion = $00000001;
+  xlCheckInOverwriteVersion = $00000002;
+
+// Constants for enum XlPropertyDisplayedIn
+type
+  XlPropertyDisplayedIn = TOleEnum;
+const
+  xlDisplayPropertyInPivotTable = $00000001;
+  xlDisplayPropertyInTooltip = $00000002;
+  xlDisplayPropertyInPivotTableAndTooltip = $00000003;
+
+// Constants for enum XlConnectionType
+type
+  XlConnectionType = TOleEnum;
+const
+  xlConnectionTypeOLEDB = $00000001;
+  xlConnectionTypeODBC = $00000002;
+  xlConnectionTypeXMLMAP = $00000003;
+  xlConnectionTypeTEXT = $00000004;
+  xlConnectionTypeWEB = $00000005;
+
+// Constants for enum XlActionType
+type
+  XlActionType = TOleEnum;
+const
+  xlActionTypeUrl = $00000001;
+  xlActionTypeRowset = $00000010;
+  xlActionTypeReport = $00000080;
+  xlActionTypeDrillthrough = $00000100;
+
+// Constants for enum XlLayoutRowType
+type
+  XlLayoutRowType = TOleEnum;
+const
+  xlCompactRow = $00000000;
+  xlTabularRow = $00000001;
+  xlOutlineRow = $00000002;
+
+// Constants for enum XlMeasurementUnits
+type
+  XlMeasurementUnits = TOleEnum;
+const
+  xlInches = $00000000;
+  xlCentimeters = $00000001;
+  xlMillimeters = $00000002;
+
+// Constants for enum XlPivotFilterType
+type
+  XlPivotFilterType = TOleEnum;
+const
+  xlTopCount = $00000001;
+  xlBottomCount = $00000002;
+  xlTopPercent = $00000003;
+  xlBottomPercent = $00000004;
+  xlTopSum = $00000005;
+  xlBottomSum = $00000006;
+  xlValueEquals = $00000007;
+  xlValueDoesNotEqual = $00000008;
+  xlValueIsGreaterThan = $00000009;
+  xlValueIsGreaterThanOrEqualTo = $0000000A;
+  xlValueIsLessThan = $0000000B;
+  xlValueIsLessThanOrEqualTo = $0000000C;
+  xlValueIsBetween = $0000000D;
+  xlValueIsNotBetween = $0000000E;
+  xlCaptionEquals = $0000000F;
+  xlCaptionDoesNotEqual = $00000010;
+  xlCaptionBeginsWith = $00000011;
+  xlCaptionDoesNotBeginWith = $00000012;
+  xlCaptionEndsWith = $00000013;
+  xlCaptionDoesNotEndWith = $00000014;
+  xlCaptionContains = $00000015;
+  xlCaptionDoesNotContain = $00000016;
+  xlCaptionIsGreaterThan = $00000017;
+  xlCaptionIsGreaterThanOrEqualTo = $00000018;
+  xlCaptionIsLessThan = $00000019;
+  xlCaptionIsLessThanOrEqualTo = $0000001A;
+  xlCaptionIsBetween = $0000001B;
+  xlCaptionIsNotBetween = $0000001C;
+  xlSpecificDate = $0000001D;
+  xlNotSpecificDate = $0000001E;
+  xlBefore = $0000001F;
+  xlBeforeOrEqualTo = $00000020;
+  xlAfter = $00000021;
+  xlAfterOrEqualTo = $00000022;
+  xlDateBetween = $00000023;
+  xlDateNotBetween = $00000024;
+  xlDateTomorrow = $00000025;
+  xlDateToday = $00000026;
+  xlDateYesterday = $00000027;
+  xlDateNextWeek = $00000028;
+  xlDateThisWeek = $00000029;
+  xlDateLastWeek = $0000002A;
+  xlDateNextMonth = $0000002B;
+  xlDateThisMonth = $0000002C;
+  xlDateLastMonth = $0000002D;
+  xlDateNextQuarter = $0000002E;
+  xlDateThisQuarter = $0000002F;
+  xlDateLastQuarter = $00000030;
+  xlDateNextYear = $00000031;
+  xlDateThisYear = $00000032;
+  xlDateLastYear = $00000033;
+  xlYearToDate = $00000034;
+  xlAllDatesInPeriodQuarter1 = $00000035;
+  xlAllDatesInPeriodQuarter2 = $00000036;
+  xlAllDatesInPeriodQuarter3 = $00000037;
+  xlAllDatesInPeriodQuarter4 = $00000038;
+  xlAllDatesInPeriodJanuary = $00000039;
+  xlAllDatesInPeriodFebruary = $0000003A;
+  xlAllDatesInPeriodMarch = $0000003B;
+  xlAllDatesInPeriodApril = $0000003C;
+  xlAllDatesInPeriodMay = $0000003D;
+  xlAllDatesInPeriodJune = $0000003E;
+  xlAllDatesInPeriodJuly = $0000003F;
+  xlAllDatesInPeriodAugust = $00000040;
+  xlAllDatesInPeriodSeptember = $00000041;
+  xlAllDatesInPeriodOctober = $00000042;
+  xlAllDatesInPeriodNovember = $00000043;
+  xlAllDatesInPeriodDecember = $00000044;
+
+// Constants for enum XlCredentialsMethod
+type
+  XlCredentialsMethod = TOleEnum;
+const
+  xlCredentialsMethodIntegrated = $00000000;
+  xlCredentialsMethodNone = $00000001;
+  xlCredentialsMethodStored = $00000002;
+
+// Constants for enum XlCubeFieldSubType
+type
+  XlCubeFieldSubType = TOleEnum;
+const
+  xlCubeHierarchy = $00000001;
+  xlCubeMeasure = $00000002;
+  xlCubeSet = $00000003;
+  xlCubeAttribute = $00000004;
+  xlCubeCalculatedMeasure = $00000005;
+  xlCubeKPIValue = $00000006;
+  xlCubeKPIGoal = $00000007;
+  xlCubeKPIStatus = $00000008;
+  xlCubeKPITrend = $00000009;
+  xlCubeKPIWeight = $0000000A;
+
+// Constants for enum XlSortOn
+type
+  XlSortOn = TOleEnum;
+const
+  xlSortOnValues = $00000000;
+  xlSortOnCellColor = $00000001;
+  xlSortOnFontColor = $00000002;
+  xlSortOnIcon = $00000003;
+
+// Constants for enum XlDynamicFilterCriteria
+type
+  XlDynamicFilterCriteria = TOleEnum;
+const
+  xlFilterToday = $00000001;
+  xlFilterYesterday = $00000002;
+  xlFilterTomorrow = $00000003;
+  xlFilterThisWeek = $00000004;
+  xlFilterLastWeek = $00000005;
+  xlFilterNextWeek = $00000006;
+  xlFilterThisMonth = $00000007;
+  xlFilterLastMonth = $00000008;
+  xlFilterNextMonth = $00000009;
+  xlFilterThisQuarter = $0000000A;
+  xlFilterLastQuarter = $0000000B;
+  xlFilterNextQuarter = $0000000C;
+  xlFilterThisYear = $0000000D;
+  xlFilterLastYear = $0000000E;
+  xlFilterNextYear = $0000000F;
+  xlFilterYearToDate = $00000010;
+  xlFilterAllDatesInPeriodQuarter1 = $00000011;
+  xlFilterAllDatesInPeriodQuarter2 = $00000012;
+  xlFilterAllDatesInPeriodQuarter3 = $00000013;
+  xlFilterAllDatesInPeriodQuarter4 = $00000014;
+  xlFilterAllDatesInPeriodJanuary = $00000015;
+  xlFilterAllDatesInPeriodFebruray = $00000016;
+  xlFilterAllDatesInPeriodMarch = $00000017;
+  xlFilterAllDatesInPeriodApril = $00000018;
+  xlFilterAllDatesInPeriodMay = $00000019;
+  xlFilterAllDatesInPeriodJune = $0000001A;
+  xlFilterAllDatesInPeriodJuly = $0000001B;
+  xlFilterAllDatesInPeriodAugust = $0000001C;
+  xlFilterAllDatesInPeriodSeptember = $0000001D;
+  xlFilterAllDatesInPeriodOctober = $0000001E;
+  xlFilterAllDatesInPeriodNovember = $0000001F;
+  xlFilterAllDatesInPeriodDecember = $00000020;
+  xlFilterAboveAverage = $00000021;
+  xlFilterBelowAverage = $00000022;
+
+// Constants for enum XlFilterAllDatesInPeriod
+type
+  XlFilterAllDatesInPeriod = TOleEnum;
+const
+  xlFilterAllDatesInPeriodYear = $00000000;
+  xlFilterAllDatesInPeriodMonth = $00000001;
+  xlFilterAllDatesInPeriodDay = $00000002;
+  xlFilterAllDatesInPeriodHour = $00000003;
+  xlFilterAllDatesInPeriodMinute = $00000004;
+  xlFilterAllDatesInPeriodSecond = $00000005;
+
+// Constants for enum XlTableStyleElementType
+type
+  XlTableStyleElementType = TOleEnum;
+const
+  xlWholeTable = $00000000;
+  xlHeaderRow = $00000001;
+  xlTotalRow = $00000002;
+  xlGrandTotalRow = $00000002;
+  xlFirstColumn = $00000003;
+  xlLastColumn = $00000004;
+  xlGrandTotalColumn = $00000004;
+  xlRowStripe1 = $00000005;
+  xlRowStripe2 = $00000006;
+  xlColumnStripe1 = $00000007;
+  xlColumnStripe2 = $00000008;
+  xlFirstHeaderCell = $00000009;
+  xlLastHeaderCell = $0000000A;
+  xlFirstTotalCell = $0000000B;
+  xlLastTotalCell = $0000000C;
+  xlSubtotalColumn1 = $0000000D;
+  xlSubtotalColumn2 = $0000000E;
+  xlSubtotalColumn3 = $0000000F;
+  xlSubtotalRow1 = $00000010;
+  xlSubtotalRow2 = $00000011;
+  xlSubtotalRow3 = $00000012;
+  xlBlankRow = $00000013;
+  xlColumnSubheading1 = $00000014;
+  xlColumnSubheading2 = $00000015;
+  xlColumnSubheading3 = $00000016;
+  xlRowSubheading1 = $00000017;
+  xlRowSubheading2 = $00000018;
+  xlRowSubheading3 = $00000019;
+  xlPageFieldLabels = $0000001A;
+  xlPageFieldValues = $0000001B;
+
+// Constants for enum XlPivotConditionScope
+type
+  XlPivotConditionScope = TOleEnum;
+const
+  xlSelectionScope = $00000000;
+  xlFieldsScope = $00000001;
+  xlDataFieldScope = $00000002;
+
+// Constants for enum XlCalcFor
+type
+  XlCalcFor = TOleEnum;
+const
+  xlAllValues = $00000000;
+  xlRowGroups = $00000001;
+  xlColGroups = $00000002;
+
+// Constants for enum XlThemeColor
+type
+  XlThemeColor = TOleEnum;
+const
+  xlThemeColorDark1 = $00000001;
+  xlThemeColorLight1 = $00000002;
+  xlThemeColorDark2 = $00000003;
+  xlThemeColorLight2 = $00000004;
+  xlThemeColorAccent1 = $00000005;
+  xlThemeColorAccent2 = $00000006;
+  xlThemeColorAccent3 = $00000007;
+  xlThemeColorAccent4 = $00000008;
+  xlThemeColorAccent5 = $00000009;
+  xlThemeColorAccent6 = $0000000A;
+  xlThemeColorHyperlink = $0000000B;
+  xlThemeColorFollowedHyperlink = $0000000C;
+
+// Constants for enum XlFixedFormatType
+type
+  XlFixedFormatType = TOleEnum;
+const
+  xlTypePDF = $00000000;
+  xlTypeXPS = $00000001;
+
+// Constants for enum XlFixedFormatQuality
+type
+  XlFixedFormatQuality = TOleEnum;
+const
+  xlQualityStandard = $00000000;
+  xlQualityMinimum = $00000001;
+
+// Constants for enum XlChartElementPosition
+type
+  XlChartElementPosition = TOleEnum;
+const
+  xlChartElementPositionAutomatic = $FFFFEFF7;
+  xlChartElementPositionCustom = $FFFFEFEE;
+
+// Constants for enum XlGenerateTableRefs
+type
+  XlGenerateTableRefs = TOleEnum;
+const
+  xlGenerateTableRefA1 = $00000000;
+  xlGenerateTableRefStruct = $00000001;
+
+// Constants for enum XlGradientFillType
+type
+  XlGradientFillType = TOleEnum;
+const
+  xlGradientFillLinear = $00000000;
+  xlGradientFillPath = $00000001;
+
+// Constants for enum XlThreadMode
+type
+  XlThreadMode = TOleEnum;
+const
+  xlThreadModeAutomatic = $00000000;
+  xlThreadModeManual = $00000001;
+
 type
 
 // *********************************************************************//
@@ -3350,6 +4185,8 @@ type
   IRTDUpdateEventDisp = dispinterface;
   IRtdServer = interface;
   IRtdServerDisp = dispinterface;
+  TextFrame2 = interface;
+  TextFrame2Disp = dispinterface;
   ExcelIFont = interface;
   IWindow = interface;
   IWindows = interface;
@@ -3603,6 +4440,57 @@ type
   IXmlMaps = interface;
   IListDataFormat = interface;
   IXPath = interface;
+  IPivotLineCells = interface;
+  IPivotLine = interface;
+  IPivotLines = interface;
+  IPivotAxis = interface;
+  IPivotFilter = interface;
+  IPivotFilters = interface;
+  IWorkbookConnection = interface;
+  IConnections = interface;
+  IWorksheetView = interface;
+  IChartView = interface;
+  IModuleView = interface;
+  IDialogSheetView = interface;
+  ISheetViews = interface;
+  IOLEDBConnection = interface;
+  IODBCConnection = interface;
+  IAction = interface;
+  IActions = interface;
+  IFormatColor = interface;
+  IConditionValue = interface;
+  IColorScale = interface;
+  IColorScaleCriteria = interface;
+  IColorScaleCriterion = interface;
+  IDatabar = interface;
+  IIconSetCondition = interface;
+  IIconCriteria = interface;
+  IIconCriterion = interface;
+  IIcon = interface;
+  IIconSet = interface;
+  IIconSets = interface;
+  ITop10 = interface;
+  IAboveAverage = interface;
+  IUniqueValues = interface;
+  IRanges = interface;
+  IHeaderFooter = interface;
+  IPage = interface;
+  IPages = interface;
+  IServerViewableItems = interface;
+  ITableStyleElement = interface;
+  ITableStyleElements = interface;
+  ITableStyle = interface;
+  ITableStyles = interface;
+  ISortField = interface;
+  ISortFields = interface;
+  ISort = interface;
+  IResearch = interface;
+  IColorStop = interface;
+  IColorStops = interface;
+  ILinearGradient = interface;
+  IRectangularGradient = interface;
+  IMultiThreadedCalculation = interface;
+  IChartFormat = interface;
   Font = dispinterface;
   Window = dispinterface;
   Windows = dispinterface;
@@ -3830,6 +4718,57 @@ type
   XmlMaps = dispinterface;
   ListDataFormat = dispinterface;
   XPath = dispinterface;
+  PivotLineCells = dispinterface;
+  PivotLine = dispinterface;
+  PivotLines = dispinterface;
+  PivotAxis = dispinterface;
+  PivotFilter = dispinterface;
+  PivotFilters = dispinterface;
+  WorkbookConnection = dispinterface;
+  Connections = dispinterface;
+  WorksheetView = dispinterface;
+  ChartView = dispinterface;
+  ModuleView = dispinterface;
+  DialogSheetView = dispinterface;
+  SheetViews = dispinterface;
+  OLEDBConnection = dispinterface;
+  ODBCConnection = dispinterface;
+  Action = dispinterface;
+  Actions = dispinterface;
+  FormatColor = dispinterface;
+  ConditionValue = dispinterface;
+  ColorScale = dispinterface;
+  ColorScaleCriteria = dispinterface;
+  ColorScaleCriterion = dispinterface;
+  Databar = dispinterface;
+  IconSetCondition = dispinterface;
+  IconCriteria = dispinterface;
+  IconCriterion = dispinterface;
+  Icon = dispinterface;
+  IconSet = dispinterface;
+  IconSets = dispinterface;
+  Top10 = dispinterface;
+  AboveAverage = dispinterface;
+  UniqueValues = dispinterface;
+  Ranges = dispinterface;
+  HeaderFooter = dispinterface;
+  Page = dispinterface;
+  Pages = dispinterface;
+  ServerViewableItems = dispinterface;
+  TableStyleElement = dispinterface;
+  TableStyleElements = dispinterface;
+  TableStyle = dispinterface;
+  TableStyles = dispinterface;
+  SortField = dispinterface;
+  SortFields = dispinterface;
+  Sort = dispinterface;
+  Research = dispinterface;
+  ColorStop = dispinterface;
+  ColorStops = dispinterface;
+  LinearGradient = dispinterface;
+  RectangularGradient = dispinterface;
+  MultiThreadedCalculation = dispinterface;
+  ChartFormat = dispinterface;
   IDummy = interface;
   ICanvasShapes = interface;
 
@@ -3969,11 +4908,14 @@ type
     function Get_type_: MsoColorType; safecall;
     function Get_TintAndShade: Single; safecall;
     procedure Set_TintAndShade(pValue: Single); safecall;
+    function Get_ObjectThemeColor: MsoThemeColorIndex; safecall;
+    procedure Set_ObjectThemeColor(ObjectThemeColor: MsoThemeColorIndex); safecall;
     property Parent: IDispatch read Get_Parent;
     property RGB: MsoRGBType read Get_RGB write Set_RGB;
     property SchemeColor: SYSINT read Get_SchemeColor write Set_SchemeColor;
     property type_: MsoColorType read Get_type_;
     property TintAndShade: Single read Get_TintAndShade write Set_TintAndShade;
+    property ObjectThemeColor: MsoThemeColorIndex read Get_ObjectThemeColor write Set_ObjectThemeColor;
   end;
 
 // *********************************************************************//
@@ -3988,6 +4930,7 @@ type
     property SchemeColor: SYSINT dispid 100;
     property type_: MsoColorType readonly dispid 101;
     property TintAndShade: Single dispid 102;
+    property ObjectThemeColor: MsoThemeColorIndex dispid 104;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4233,6 +5176,14 @@ type
     procedure Set_type_(Type_: MsoShadowType); safecall;
     function Get_Visible: MsoTriState; safecall;
     procedure Set_Visible(Visible: MsoTriState); safecall;
+    function Get_Style: MsoShadowStyle; safecall;
+    procedure Set_Style(ShadowStyle: MsoShadowStyle); safecall;
+    function Get_Blur: Single; safecall;
+    procedure Set_Blur(Blur: Single); safecall;
+    function Get_Size: Single; safecall;
+    procedure Set_Size(Size: Single); safecall;
+    function Get_RotateWithShape: MsoTriState; safecall;
+    procedure Set_RotateWithShape(RotateWithShape: MsoTriState); safecall;
     property Parent: IDispatch read Get_Parent;
     property ForeColor: ColorFormat read Get_ForeColor write Set_ForeColor;
     property Obscured: MsoTriState read Get_Obscured write Set_Obscured;
@@ -4241,6 +5192,10 @@ type
     property Transparency: Single read Get_Transparency write Set_Transparency;
     property type_: MsoShadowType read Get_type_ write Set_type_;
     property Visible: MsoTriState read Get_Visible write Set_Visible;
+    property Style: MsoShadowStyle read Get_Style write Set_Style;
+    property Blur: Single read Get_Blur write Set_Blur;
+    property Size: Single read Get_Size write Set_Size;
+    property RotateWithShape: MsoTriState read Get_RotateWithShape write Set_RotateWithShape;
   end;
 
 // *********************************************************************//
@@ -4260,6 +5215,10 @@ type
     property Transparency: Single dispid 104;
     property type_: MsoShadowType dispid 105;
     property Visible: MsoTriState dispid 106;
+    property Style: MsoShadowStyle dispid 107;
+    property Blur: Single dispid 108;
+    property Size: Single dispid 109;
+    property RotateWithShape: MsoTriState dispid 110;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4371,6 +5330,38 @@ type
     procedure Set_RotationY(RotationY: Single); safecall;
     function Get_Visible: MsoTriState; safecall;
     procedure Set_Visible(Visible: MsoTriState); safecall;
+    procedure SetPresetCamera(PresetCamera: MsoPresetCamera); safecall;
+    procedure IncrementRotationZ(Increment: Single); safecall;
+    procedure IncrementRotationHorizontal(Increment: Single); safecall;
+    procedure IncrementRotationVertical(Increment: Single); safecall;
+    function Get_PresetLighting: MsoLightRigType; safecall;
+    procedure Set_PresetLighting(PresetLightRigType: MsoLightRigType); safecall;
+    function Get_Z: Single; safecall;
+    procedure Set_Z(Z: Single); safecall;
+    function Get_BevelTopType: MsoBevelType; safecall;
+    procedure Set_BevelTopType(BevelTopType: MsoBevelType); safecall;
+    function Get_BevelTopInset: Single; safecall;
+    procedure Set_BevelTopInset(BevelTopInset: Single); safecall;
+    function Get_BevelTopDepth: Single; safecall;
+    procedure Set_BevelTopDepth(BevelTopDepth: Single); safecall;
+    function Get_BevelBottomType: MsoBevelType; safecall;
+    procedure Set_BevelBottomType(BevelBottomType: MsoBevelType); safecall;
+    function Get_BevelBottomInset: Single; safecall;
+    procedure Set_BevelBottomInset(BevelBottomInset: Single); safecall;
+    function Get_BevelBottomDepth: Single; safecall;
+    procedure Set_BevelBottomDepth(BevelBottomDepth: Single); safecall;
+    function Get_PresetCamera: MsoPresetCamera; safecall;
+    function Get_RotationZ: Single; safecall;
+    procedure Set_RotationZ(RotationZ: Single); safecall;
+    function Get_ContourWidth: Single; safecall;
+    procedure Set_ContourWidth(Width: Single); safecall;
+    function Get_ContourColor: ColorFormat; safecall;
+    function Get_FieldOfView: Single; safecall;
+    procedure Set_FieldOfView(FOV: Single); safecall;
+    function Get_ProjectText: MsoTriState; safecall;
+    procedure Set_ProjectText(ProjectText: MsoTriState); safecall;
+    function Get_LightAngle: Single; safecall;
+    procedure Set_LightAngle(LightAngle: Single); safecall;
     property Parent: IDispatch read Get_Parent;
     property Depth: Single read Get_Depth write Set_Depth;
     property ExtrusionColor: ColorFormat read Get_ExtrusionColor;
@@ -4384,6 +5375,21 @@ type
     property RotationX: Single read Get_RotationX write Set_RotationX;
     property RotationY: Single read Get_RotationY write Set_RotationY;
     property Visible: MsoTriState read Get_Visible write Set_Visible;
+    property PresetLighting: MsoLightRigType read Get_PresetLighting write Set_PresetLighting;
+    property Z: Single read Get_Z write Set_Z;
+    property BevelTopType: MsoBevelType read Get_BevelTopType write Set_BevelTopType;
+    property BevelTopInset: Single read Get_BevelTopInset write Set_BevelTopInset;
+    property BevelTopDepth: Single read Get_BevelTopDepth write Set_BevelTopDepth;
+    property BevelBottomType: MsoBevelType read Get_BevelBottomType write Set_BevelBottomType;
+    property BevelBottomInset: Single read Get_BevelBottomInset write Set_BevelBottomInset;
+    property BevelBottomDepth: Single read Get_BevelBottomDepth write Set_BevelBottomDepth;
+    property PresetCamera: MsoPresetCamera read Get_PresetCamera;
+    property RotationZ: Single read Get_RotationZ write Set_RotationZ;
+    property ContourWidth: Single read Get_ContourWidth write Set_ContourWidth;
+    property ContourColor: ColorFormat read Get_ContourColor;
+    property FieldOfView: Single read Get_FieldOfView write Set_FieldOfView;
+    property ProjectText: MsoTriState read Get_ProjectText write Set_ProjectText;
+    property LightAngle: Single read Get_LightAngle write Set_LightAngle;
   end;
 
 // *********************************************************************//
@@ -4411,6 +5417,25 @@ type
     property RotationX: Single dispid 109;
     property RotationY: Single dispid 110;
     property Visible: MsoTriState dispid 111;
+    procedure SetPresetCamera(PresetCamera: MsoPresetCamera); dispid 15;
+    procedure IncrementRotationZ(Increment: Single); dispid 16;
+    procedure IncrementRotationHorizontal(Increment: Single); dispid 17;
+    procedure IncrementRotationVertical(Increment: Single); dispid 18;
+    property PresetLighting: MsoLightRigType dispid 112;
+    property Z: Single dispid 113;
+    property BevelTopType: MsoBevelType dispid 114;
+    property BevelTopInset: Single dispid 115;
+    property BevelTopDepth: Single dispid 116;
+    property BevelBottomType: MsoBevelType dispid 117;
+    property BevelBottomInset: Single dispid 118;
+    property BevelBottomDepth: Single dispid 119;
+    property PresetCamera: MsoPresetCamera readonly dispid 120;
+    property RotationZ: Single dispid 121;
+    property ContourWidth: Single dispid 122;
+    property ContourColor: ColorFormat readonly dispid 123;
+    property FieldOfView: Single dispid 124;
+    property ProjectText: MsoTriState dispid 125;
+    property LightAngle: Single dispid 126;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4451,6 +5476,21 @@ type
     function Get_type_: MsoFillType; safecall;
     function Get_Visible: MsoTriState; safecall;
     procedure Set_Visible(Visible: MsoTriState); safecall;
+    function Get_GradientStops: GradientStops; safecall;
+    function Get_TextureOffsetX: Single; safecall;
+    procedure Set_TextureOffsetX(TextureOffsetX: Single); safecall;
+    function Get_TextureOffsetY: Single; safecall;
+    procedure Set_TextureOffsetY(TextureOffsetY: Single); safecall;
+    function Get_TextureAlignment: MsoTextureAlignment; safecall;
+    procedure Set_TextureAlignment(TextureAlignment: MsoTextureAlignment); safecall;
+    function Get_TextureHorizontalScale: Single; safecall;
+    procedure Set_TextureHorizontalScale(HorizontalScale: Single); safecall;
+    function Get_TextureVerticalScale: Single; safecall;
+    procedure Set_TextureVerticalScale(VerticalScale: Single); safecall;
+    function Get_TextureTile: MsoTriState; safecall;
+    procedure Set_TextureTile(TextureTile: MsoTriState); safecall;
+    function Get_RotateWithObject: MsoTriState; safecall;
+    procedure Set_RotateWithObject(RotateWithObject: MsoTriState); safecall;
     property Parent: IDispatch read Get_Parent;
     property BackColor: ColorFormat read Get_BackColor write Set_BackColor;
     property ForeColor: ColorFormat read Get_ForeColor write Set_ForeColor;
@@ -4466,6 +5506,14 @@ type
     property Transparency: Single read Get_Transparency write Set_Transparency;
     property type_: MsoFillType read Get_type_;
     property Visible: MsoTriState read Get_Visible write Set_Visible;
+    property GradientStops: GradientStops read Get_GradientStops;
+    property TextureOffsetX: Single read Get_TextureOffsetX write Set_TextureOffsetX;
+    property TextureOffsetY: Single read Get_TextureOffsetY write Set_TextureOffsetY;
+    property TextureAlignment: MsoTextureAlignment read Get_TextureAlignment write Set_TextureAlignment;
+    property TextureHorizontalScale: Single read Get_TextureHorizontalScale write Set_TextureHorizontalScale;
+    property TextureVerticalScale: Single read Get_TextureVerticalScale write Set_TextureVerticalScale;
+    property TextureTile: MsoTriState read Get_TextureTile write Set_TextureTile;
+    property RotateWithObject: MsoTriState read Get_RotateWithObject write Set_RotateWithObject;
   end;
 
 // *********************************************************************//
@@ -4500,13 +5548,21 @@ type
     property Transparency: Single dispid 111;
     property type_: MsoFillType readonly dispid 112;
     property Visible: MsoTriState dispid 113;
+    property GradientStops: GradientStops readonly dispid 114;
+    property TextureOffsetX: Single dispid 115;
+    property TextureOffsetY: Single dispid 116;
+    property TextureAlignment: MsoTextureAlignment dispid 117;
+    property TextureHorizontalScale: Single dispid 118;
+    property TextureVerticalScale: Single dispid 119;
+    property TextureTile: MsoTriState dispid 120;
+    property RotateWithObject: MsoTriState dispid 121;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
 
 // *********************************************************************//
 // Interface: DiagramNodes
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C036E-0000-0000-C000-000000000046}
 // *********************************************************************//
   DiagramNodes = interface(_IMsoDispObj)
@@ -4523,7 +5579,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  DiagramNodesDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C036E-0000-0000-C000-000000000046}
 // *********************************************************************//
   DiagramNodesDisp = dispinterface
@@ -4539,7 +5595,7 @@ type
 
 // *********************************************************************//
 // Interface: DiagramNodeChildren
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C036F-0000-0000-C000-000000000046}
 // *********************************************************************//
   DiagramNodeChildren = interface(_IMsoDispObj)
@@ -4561,7 +5617,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  DiagramNodeChildrenDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C036F-0000-0000-C000-000000000046}
 // *********************************************************************//
   DiagramNodeChildrenDisp = dispinterface
@@ -4580,7 +5636,7 @@ type
 
 // *********************************************************************//
 // Interface: DiagramNode
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0370-0000-0000-C000-000000000046}
 // *********************************************************************//
   DiagramNode = interface(_IMsoDispObj)
@@ -4614,7 +5670,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  DiagramNodeDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0370-0000-0000-C000-000000000046}
 // *********************************************************************//
   DiagramNodeDisp = dispinterface
@@ -4698,6 +5754,94 @@ type
   end;
 
 // *********************************************************************//
+// Interface: TextFrame2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0398-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextFrame2 = interface(_IMsoDispObj)
+    ['{000C0398-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_MarginBottom: Single; safecall;
+    procedure Set_MarginBottom(MarginBottom: Single); safecall;
+    function Get_MarginLeft: Single; safecall;
+    procedure Set_MarginLeft(MarginLeft: Single); safecall;
+    function Get_MarginRight: Single; safecall;
+    procedure Set_MarginRight(MarginRight: Single); safecall;
+    function Get_MarginTop: Single; safecall;
+    procedure Set_MarginTop(MarginTop: Single); safecall;
+    function Get_Orientation: MsoTextOrientation; safecall;
+    procedure Set_Orientation(Orientation: MsoTextOrientation); safecall;
+    function Get_HorizontalAnchor: MsoHorizontalAnchor; safecall;
+    procedure Set_HorizontalAnchor(HorizontalAnchor: MsoHorizontalAnchor); safecall;
+    function Get_VerticalAnchor: MsoVerticalAnchor; safecall;
+    procedure Set_VerticalAnchor(VerticalAnchor: MsoVerticalAnchor); safecall;
+    function Get_PathFormat: MsoPathFormat; safecall;
+    procedure Set_PathFormat(PathFormat: MsoPathFormat); safecall;
+    function Get_WarpFormat: MsoWarpFormat; safecall;
+    procedure Set_WarpFormat(WarpFormat: MsoWarpFormat); safecall;
+    function Get_WordArtformat: MsoPresetTextEffect; safecall;
+    procedure Set_WordArtformat(WordArtformat: MsoPresetTextEffect); safecall;
+    function Get_WordWrap: MsoTriState; safecall;
+    procedure Set_WordWrap(WordWrap: MsoTriState); safecall;
+    function Get_AutoSize: MsoAutoSize; safecall;
+    procedure Set_AutoSize(AutoSize: MsoAutoSize); safecall;
+    function Get_ThreeD: ThreeDFormat; safecall;
+    function Get_HasText: MsoTriState; safecall;
+    function Get_TextRange: TextRange2; safecall;
+    function Get_Column: TextColumn2; safecall;
+    function Get_Ruler: Ruler2; safecall;
+    procedure DeleteText; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property MarginBottom: Single read Get_MarginBottom write Set_MarginBottom;
+    property MarginLeft: Single read Get_MarginLeft write Set_MarginLeft;
+    property MarginRight: Single read Get_MarginRight write Set_MarginRight;
+    property MarginTop: Single read Get_MarginTop write Set_MarginTop;
+    property Orientation: MsoTextOrientation read Get_Orientation write Set_Orientation;
+    property HorizontalAnchor: MsoHorizontalAnchor read Get_HorizontalAnchor write Set_HorizontalAnchor;
+    property VerticalAnchor: MsoVerticalAnchor read Get_VerticalAnchor write Set_VerticalAnchor;
+    property PathFormat: MsoPathFormat read Get_PathFormat write Set_PathFormat;
+    property WarpFormat: MsoWarpFormat read Get_WarpFormat write Set_WarpFormat;
+    property WordArtformat: MsoPresetTextEffect read Get_WordArtformat write Set_WordArtformat;
+    property WordWrap: MsoTriState read Get_WordWrap write Set_WordWrap;
+    property AutoSize: MsoAutoSize read Get_AutoSize write Set_AutoSize;
+    property ThreeD: ThreeDFormat read Get_ThreeD;
+    property HasText: MsoTriState read Get_HasText;
+    property TextRange: TextRange2 read Get_TextRange;
+    property Column: TextColumn2 read Get_Column;
+    property Ruler: Ruler2 read Get_Ruler;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TextFrame2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0398-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextFrame2Disp = dispinterface
+    ['{000C0398-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property MarginBottom: Single dispid 100;
+    property MarginLeft: Single dispid 101;
+    property MarginRight: Single dispid 102;
+    property MarginTop: Single dispid 103;
+    property Orientation: MsoTextOrientation dispid 104;
+    property HorizontalAnchor: MsoHorizontalAnchor dispid 105;
+    property VerticalAnchor: MsoVerticalAnchor dispid 106;
+    property PathFormat: MsoPathFormat dispid 107;
+    property WarpFormat: MsoWarpFormat dispid 108;
+    property WordArtformat: MsoPresetTextEffect dispid 109;
+    property WordWrap: MsoTriState dispid 110;
+    property AutoSize: MsoAutoSize dispid 111;
+    property ThreeD: ThreeDFormat readonly dispid 112;
+    property HasText: MsoTriState readonly dispid 113;
+    property TextRange: TextRange2 readonly dispid 114;
+    property Column: TextColumn2 readonly dispid 115;
+    property Ruler: Ruler2 readonly dispid 116;
+    procedure DeleteText; dispid 117;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
 // Interface: ExcelIFont
 // Flags:     (4112) Hidden Dispatchable
 // GUID:      {0002084D-0001-0000-C000-000000000046}
@@ -4735,6 +5879,12 @@ type
     function Set_Superscript(RHS: OleVariant): HResult; stdcall;
     function Get_Underline(out RHS: OleVariant): HResult; stdcall;
     function Set_Underline(RHS: OleVariant): HResult; stdcall;
+    function Get_ThemeColor(out RHS: OleVariant): HResult; stdcall;
+    function Set_ThemeColor(RHS: OleVariant): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
+    function Get_ThemeFont(out RHS: XlThemeFont): HResult; stdcall;
+    function Set_ThemeFont(RHS: XlThemeFont): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -4795,9 +5945,9 @@ type
     function Get_OnWindow(out RHS: WideString): HResult; stdcall;
     function Set_OnWindow(const RHS: WideString): HResult; stdcall;
     function Get_Panes(out RHS: Panes): HResult; stdcall;
-    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; out RHS: OleVariant): HResult; stdcall;
     function PrintPreview(EnableChanges: OleVariant; out RHS: OleVariant): HResult; stdcall;
     function Get_RangeSelection(out RHS: ExcelRange): HResult; stdcall;
     function Get_ScrollColumn(out RHS: Integer): HResult; stdcall;
@@ -4845,6 +5995,17 @@ type
     function RangeFromPoint(x: Integer; y: Integer; out RHS: IDispatch): HResult; stdcall;
     function ScrollIntoView(Left: Integer; Top: Integer; Width: Integer; Height: Integer; 
                             Start: OleVariant): HResult; stdcall;
+    function Get_SheetViews(out RHS: SheetViews): HResult; stdcall;
+    function Get_ActiveSheetView(out RHS: IDispatch): HResult; stdcall;
+    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                      PrToFileName: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_DisplayRuler(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayRuler(RHS: WordBool): HResult; stdcall;
+    function Get_AutoFilterDateGrouping(out RHS: WordBool): HResult; stdcall;
+    function Set_AutoFilterDateGrouping(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayWhitespace(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayWhitespace(RHS: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -4913,6 +6074,9 @@ type
                                      const Url: WideString; var Cancel: WordBool): HResult; stdcall;
     function WorkbookAfterXmlExport(const Wb: ExcelWorkbook; const Map: XmlMap; 
                                     const Url: WideString; Result: XlXmlExportResult): HResult; stdcall;
+    function WorkbookRowsetComplete(const Wb: ExcelWorkbook; const Description: WideString; 
+                                    const Sheet: WideString; Success: WordBool): HResult; stdcall;
+    function AfterCalculate: HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -5357,6 +6521,42 @@ type
     procedure DisplayXMLSourcePane(XmlMap: OleVariant); safecall;
     function Get_ArbitraryXMLSupportAvailable: WordBool; safecall;
     function Support(const Object_: IDispatch; ID: Integer; arg: OleVariant): OleVariant; safecall;
+    function Dummy20(grfCompareFunctions: Integer): OleVariant; safecall;
+    function Get_MeasurementUnit: Integer; safecall;
+    procedure Set_MeasurementUnit(RHS: Integer); safecall;
+    function Get_ShowSelectionFloaties: WordBool; safecall;
+    procedure Set_ShowSelectionFloaties(RHS: WordBool); safecall;
+    function Get_ShowMenuFloaties: WordBool; safecall;
+    procedure Set_ShowMenuFloaties(RHS: WordBool); safecall;
+    function Get_ShowDevTools: WordBool; safecall;
+    procedure Set_ShowDevTools(RHS: WordBool); safecall;
+    function Get_EnableLivePreview: WordBool; safecall;
+    procedure Set_EnableLivePreview(RHS: WordBool); safecall;
+    function Get_DisplayDocumentInformationPanel: WordBool; safecall;
+    procedure Set_DisplayDocumentInformationPanel(RHS: WordBool); safecall;
+    function Get_AlwaysUseClearType: WordBool; safecall;
+    procedure Set_AlwaysUseClearType(RHS: WordBool); safecall;
+    function Get_WarnOnFunctionNameConflict: WordBool; safecall;
+    procedure Set_WarnOnFunctionNameConflict(RHS: WordBool); safecall;
+    function Get_FormulaBarHeight: Integer; safecall;
+    procedure Set_FormulaBarHeight(RHS: Integer); safecall;
+    function Get_DisplayFormulaAutoComplete: WordBool; safecall;
+    procedure Set_DisplayFormulaAutoComplete(RHS: WordBool); safecall;
+    function Get_GenerateTableRefs(lcid: Integer): XlGenerateTableRefs; safecall;
+    procedure Set_GenerateTableRefs(lcid: Integer; RHS: XlGenerateTableRefs); safecall;
+    function Get_Assistance: IAssistance; safecall;
+    procedure CalculateUntilAsyncQueriesDone; safecall;
+    function Get_EnableLargeOperationAlert: WordBool; safecall;
+    procedure Set_EnableLargeOperationAlert(RHS: WordBool); safecall;
+    function Get_LargeOperationCellThousandCount: Integer; safecall;
+    procedure Set_LargeOperationCellThousandCount(RHS: Integer); safecall;
+    function Get_DeferAsyncQueries: WordBool; safecall;
+    procedure Set_DeferAsyncQueries(RHS: WordBool); safecall;
+    function Get_MultiThreadedCalculation: MultiThreadedCalculation; safecall;
+    function SharePointVersion(const bstrUrl: WideString): Integer; safecall;
+    function Get_ActiveEncryptionSession: Integer; safecall;
+    function Get_HighQualityModeForGraphics: WordBool; safecall;
+    procedure Set_HighQualityModeForGraphics(RHS: WordBool); safecall;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: ExcelApplication read Get_Parent;
@@ -5555,6 +6755,24 @@ type
     property RTD: RTD read Get_RTD;
     property DisplayDocumentActionTaskPane: WordBool read Get_DisplayDocumentActionTaskPane write Set_DisplayDocumentActionTaskPane;
     property ArbitraryXMLSupportAvailable: WordBool read Get_ArbitraryXMLSupportAvailable;
+    property MeasurementUnit: Integer read Get_MeasurementUnit write Set_MeasurementUnit;
+    property ShowSelectionFloaties: WordBool read Get_ShowSelectionFloaties write Set_ShowSelectionFloaties;
+    property ShowMenuFloaties: WordBool read Get_ShowMenuFloaties write Set_ShowMenuFloaties;
+    property ShowDevTools: WordBool read Get_ShowDevTools write Set_ShowDevTools;
+    property EnableLivePreview: WordBool read Get_EnableLivePreview write Set_EnableLivePreview;
+    property DisplayDocumentInformationPanel: WordBool read Get_DisplayDocumentInformationPanel write Set_DisplayDocumentInformationPanel;
+    property AlwaysUseClearType: WordBool read Get_AlwaysUseClearType write Set_AlwaysUseClearType;
+    property WarnOnFunctionNameConflict: WordBool read Get_WarnOnFunctionNameConflict write Set_WarnOnFunctionNameConflict;
+    property FormulaBarHeight: Integer read Get_FormulaBarHeight write Set_FormulaBarHeight;
+    property DisplayFormulaAutoComplete: WordBool read Get_DisplayFormulaAutoComplete write Set_DisplayFormulaAutoComplete;
+    property GenerateTableRefs[lcid: Integer]: XlGenerateTableRefs read Get_GenerateTableRefs write Set_GenerateTableRefs;
+    property Assistance: IAssistance read Get_Assistance;
+    property EnableLargeOperationAlert: WordBool read Get_EnableLargeOperationAlert write Set_EnableLargeOperationAlert;
+    property LargeOperationCellThousandCount: Integer read Get_LargeOperationCellThousandCount write Set_LargeOperationCellThousandCount;
+    property DeferAsyncQueries: WordBool read Get_DeferAsyncQueries write Set_DeferAsyncQueries;
+    property MultiThreadedCalculation: MultiThreadedCalculation read Get_MultiThreadedCalculation;
+    property ActiveEncryptionSession: Integer read Get_ActiveEncryptionSession;
+    property HighQualityModeForGraphics: WordBool read Get_HighQualityModeForGraphics write Set_HighQualityModeForGraphics;
   end;
 
 // *********************************************************************//
@@ -5900,6 +7118,27 @@ type
     procedure DisplayXMLSourcePane(XmlMap: OleVariant); dispid 2252;
     property ArbitraryXMLSupportAvailable: WordBool readonly dispid 2254;
     function Support(const Object_: IDispatch; ID: Integer; arg: OleVariant): OleVariant; dispid 2255;
+    function Dummy20(grfCompareFunctions: Integer): OleVariant; dispid 2373;
+    property MeasurementUnit: Integer dispid 2375;
+    property ShowSelectionFloaties: WordBool dispid 2376;
+    property ShowMenuFloaties: WordBool dispid 2377;
+    property ShowDevTools: WordBool dispid 2378;
+    property EnableLivePreview: WordBool dispid 2379;
+    property DisplayDocumentInformationPanel: WordBool dispid 2380;
+    property AlwaysUseClearType: WordBool dispid 2381;
+    property WarnOnFunctionNameConflict: WordBool dispid 2382;
+    property FormulaBarHeight: Integer dispid 2383;
+    property DisplayFormulaAutoComplete: WordBool dispid 2384;
+    property GenerateTableRefs[lcid: Integer]: XlGenerateTableRefs dispid 2385;
+    property Assistance: IAssistance readonly dispid 2386;
+    procedure CalculateUntilAsyncQueriesDone; dispid 2387;
+    property EnableLargeOperationAlert: WordBool dispid 2388;
+    property LargeOperationCellThousandCount: Integer dispid 2389;
+    property DeferAsyncQueries: WordBool dispid 2390;
+    property MultiThreadedCalculation: MultiThreadedCalculation readonly dispid 2391;
+    function SharePointVersion(const bstrUrl: WideString): Integer; dispid 2392;
+    property ActiveEncryptionSession: Integer readonly dispid 2394;
+    property HighQualityModeForGraphics: WordBool dispid 2395;
   end;
 
 // *********************************************************************//
@@ -6324,6 +7563,191 @@ type
                  topic20: OleVariant; topic21: OleVariant; topic22: OleVariant; 
                  topic23: OleVariant; topic24: OleVariant; topic25: OleVariant; 
                  topic26: OleVariant; topic27: OleVariant; topic28: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Hex2Bin(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Hex2Dec(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Hex2Oct(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Dec2Bin(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Dec2Hex(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Dec2Oct(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Oct2Bin(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Oct2Hex(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Oct2Dec(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Bin2Dec(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Bin2Oct(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Bin2Hex(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImSub(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImDiv(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImPower(Arg1: OleVariant; Arg2: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImAbs(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImSqrt(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImLn(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImLog2(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImLog10(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImSin(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImCos(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImExp(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImArgument(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImConjugate(Arg1: OleVariant; out RHS: WideString): HResult; stdcall;
+    function Imaginary(Arg1: OleVariant; out RHS: Double): HResult; stdcall;
+    function ImReal(Arg1: OleVariant; out RHS: Double): HResult; stdcall;
+    function Complex(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImSum(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                   Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                   Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                   Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                   Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                   Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                   Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                   Arg29: OleVariant; Arg30: OleVariant; out RHS: WideString): HResult; stdcall;
+    function ImProduct(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                       Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                       Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                       Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                       Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                       Arg29: OleVariant; Arg30: OleVariant; out RHS: WideString): HResult; stdcall;
+    function SeriesSum(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       out RHS: Double): HResult; stdcall;
+    function FactDouble(Arg1: OleVariant; out RHS: Double): HResult; stdcall;
+    function SqrtPi(Arg1: OleVariant; out RHS: Double): HResult; stdcall;
+    function Quotient(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function Delta(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function GeStep(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function IsEven(Arg1: OleVariant; out RHS: WordBool): HResult; stdcall;
+    function IsOdd(Arg1: OleVariant; out RHS: WordBool): HResult; stdcall;
+    function MRound(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function Erf(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function ErfC(Arg1: OleVariant; out RHS: Double): HResult; stdcall;
+    function BesselJ(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function BesselK(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function BesselY(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function BesselI(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function Xirr(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function Xnpv(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function PriceMat(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; out RHS: Double): HResult; stdcall;
+    function YieldMat(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; out RHS: Double): HResult; stdcall;
+    function IntRate(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     Arg5: OleVariant; out RHS: Double): HResult; stdcall;
+    function Received(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; out RHS: Double): HResult; stdcall;
+    function Disc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                  Arg5: OleVariant; out RHS: Double): HResult; stdcall;
+    function PriceDisc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; out RHS: Double): HResult; stdcall;
+    function YieldDisc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; out RHS: Double): HResult; stdcall;
+    function TBillEq(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function TBillPrice(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function TBillYield(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function Price(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                   Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; out RHS: Double): HResult; stdcall;
+    function DollarDe(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function DollarFr(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function Nominal(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function Effect(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function CumPrinc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; out RHS: Double): HResult; stdcall;
+    function CumIPmt(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     Arg5: OleVariant; Arg6: OleVariant; out RHS: Double): HResult; stdcall;
+    function EDate(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function EoMonth(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function YearFrac(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function CoupDayBs(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       out RHS: Double): HResult; stdcall;
+    function CoupDays(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      out RHS: Double): HResult; stdcall;
+    function CoupDaysNc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                        out RHS: Double): HResult; stdcall;
+    function CoupNcd(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     out RHS: Double): HResult; stdcall;
+    function CoupNum(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     out RHS: Double): HResult; stdcall;
+    function CoupPcd(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     out RHS: Double): HResult; stdcall;
+    function Duration(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; out RHS: Double): HResult; stdcall;
+    function MDuration(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; out RHS: Double): HResult; stdcall;
+    function OddLPrice(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       out RHS: Double): HResult; stdcall;
+    function OddLYield(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       out RHS: Double): HResult; stdcall;
+    function OddFPrice(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       Arg9: OleVariant; out RHS: Double): HResult; stdcall;
+    function OddFYield(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       Arg9: OleVariant; out RHS: Double): HResult; stdcall;
+    function RandBetween(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function WeekNum(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function AmorDegrc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; out RHS: Double): HResult; stdcall;
+    function AmorLinc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; out RHS: Double): HResult; stdcall;
+    function Convert(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function AccrInt(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; out RHS: Double): HResult; stdcall;
+    function AccrIntM(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; out RHS: Double): HResult; stdcall;
+    function WorkDay(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function NetworkDays(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function Gcd(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                 Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                 Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                 Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                 Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                 Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                 Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                 Arg29: OleVariant; Arg30: OleVariant; out RHS: Double): HResult; stdcall;
+    function MultiNomial(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                         Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                         Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                         Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; 
+                         Arg16: OleVariant; Arg17: OleVariant; Arg18: OleVariant; 
+                         Arg19: OleVariant; Arg20: OleVariant; Arg21: OleVariant; 
+                         Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                         Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; 
+                         Arg28: OleVariant; Arg29: OleVariant; Arg30: OleVariant; out RHS: Double): HResult; stdcall;
+    function Lcm(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                 Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                 Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                 Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                 Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                 Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                 Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                 Arg29: OleVariant; Arg30: OleVariant; out RHS: Double): HResult; stdcall;
+    function FVSchedule(Arg1: OleVariant; Arg2: OleVariant; out RHS: Double): HResult; stdcall;
+    function SumIfs(const Arg1: ExcelRange; const Arg2: ExcelRange; Arg3: OleVariant; 
+                    Arg4: OleVariant; Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; 
+                    Arg8: OleVariant; Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; 
+                    Arg12: OleVariant; Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; 
+                    Arg16: OleVariant; Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; 
+                    Arg20: OleVariant; Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; 
+                    Arg24: OleVariant; Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; 
+                    Arg28: OleVariant; Arg29: OleVariant; out RHS: Double): HResult; stdcall;
+    function CountIfs(const Arg1: ExcelRange; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                      Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                      Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                      Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                      Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                      Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                      Arg29: OleVariant; Arg30: OleVariant; out RHS: Double): HResult; stdcall;
+    function AverageIf(const Arg1: ExcelRange; Arg2: OleVariant; Arg3: OleVariant; out RHS: Double): HResult; stdcall;
+    function AverageIfs(const Arg1: ExcelRange; const Arg2: ExcelRange; Arg3: OleVariant; 
+                        Arg4: OleVariant; Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; 
+                        Arg8: OleVariant; Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; 
+                        Arg12: OleVariant; Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; 
+                        Arg16: OleVariant; Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; 
+                        Arg20: OleVariant; Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; 
+                        Arg24: OleVariant; Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; 
+                        Arg28: OleVariant; Arg29: OleVariant; out RHS: Double): HResult; stdcall;
+    function IfError(Arg1: OleVariant; Arg2: OleVariant; out RHS: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -6495,9 +7919,9 @@ type
     function Get_Precedents(out RHS: ExcelRange): HResult; stdcall;
     function Get_PrefixCharacter(out RHS: OleVariant): HResult; stdcall;
     function Get_Previous(out RHS: ExcelRange): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       out RHS: OleVariant): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        out RHS: OleVariant): HResult; stdcall;
     function PrintPreview(EnableChanges: OleVariant; out RHS: OleVariant): HResult; stdcall;
     function Get_QueryTable(out RHS: ExcelQueryTable): HResult; stdcall;
     function Get_Range(Cell1: OleVariant; Cell2: OleVariant; out RHS: ExcelRange): HResult; stdcall;
@@ -6587,9 +8011,9 @@ type
     function SetPhonetic: HResult; stdcall;
     function Get_ID(out RHS: WideString): HResult; stdcall;
     function Set_ID(const RHS: WideString): HResult; stdcall;
-    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; out RHS: OleVariant): HResult; stdcall;
     function Get_PivotCell(out RHS: PivotCell): HResult; stdcall;
     function Dirty: HResult; stdcall;
     function Get_Errors(out RHS: Errors): HResult; stdcall;
@@ -6600,6 +8024,18 @@ type
     function Get_AllowEdit(out RHS: WordBool): HResult; stdcall;
     function Get_ListObject(out RHS: ListObject): HResult; stdcall;
     function Get_XPath(out RHS: XPath): HResult; stdcall;
+    function Get_ServerActions(out RHS: Actions): HResult; stdcall;
+    function RemoveDuplicates(Columns: OleVariant; Header: XlYesNoGuess): HResult; stdcall;
+    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                      PrToFileName: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_MDX(out RHS: WideString): HResult; stdcall;
+    function ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                 Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                 IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                 OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant): HResult; stdcall;
+    function Get_CountLarge(out RHS: OleVariant): HResult; stdcall;
+    function CalculateRowMajorOrder(out RHS: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -6654,9 +8090,9 @@ type
     procedure Set_OnSheetDeactivate(lcid: Integer; const RHS: WideString); safecall;
     function Get_PageSetup: PageSetup; safecall;
     function Get_Previous: IDispatch; safecall;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); safecall;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); safecall;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); safecall;
     procedure _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                        Scenarios: OleVariant; UserInterfaceOnly: OleVariant; lcid: Integer); safecall;
@@ -6803,9 +8239,9 @@ type
     function Get_HasPivotFields: WordBool; safecall;
     procedure Set_HasPivotFields(RHS: WordBool); safecall;
     function Get_Scripts: Scripts; safecall;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); safecall;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); safecall;
     function Get_Tab: Tab; safecall;
     function Get_MailEnvelope: MsoEnvelope; safecall;
     procedure ApplyDataLabels(Type_: XlDataLabelsType; LegendKey: OleVariant; AutoText: OleVariant; 
@@ -6819,6 +8255,25 @@ type
                      TextVisualLayout: OleVariant; Local: OleVariant); safecall;
     procedure Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                       Scenarios: OleVariant; UserInterfaceOnly: OleVariant); safecall;
+    procedure ApplyLayout(Layout: Integer; ChartType: OleVariant); safecall;
+    procedure SetElement(Element: MsoChartElementType); safecall;
+    function Get_ShowDataLabelsOverMaximum: WordBool; safecall;
+    procedure Set_ShowDataLabelsOverMaximum(RHS: WordBool); safecall;
+    function Get_SideWall: Walls; safecall;
+    function Get_BackWall: Walls; safecall;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer); safecall;
+    procedure ApplyChartTemplate(const Filename: WideString); safecall;
+    procedure SaveChartTemplate(const Filename: WideString); safecall;
+    procedure SetDefaultChart(Name: OleVariant); safecall;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); safecall;
+    function Get_ChartStyle: OleVariant; safecall;
+    procedure Set_ChartStyle(RHS: OleVariant); safecall;
+    procedure ClearToMatchStyle; safecall;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: IDispatch read Get_Parent;
@@ -6883,6 +8338,10 @@ type
     property Scripts: Scripts read Get_Scripts;
     property Tab: Tab read Get_Tab;
     property MailEnvelope: MsoEnvelope read Get_MailEnvelope;
+    property ShowDataLabelsOverMaximum: WordBool read Get_ShowDataLabelsOverMaximum write Set_ShowDataLabelsOverMaximum;
+    property SideWall: Walls read Get_SideWall;
+    property BackWall: Walls read Get_BackWall;
+    property ChartStyle: OleVariant read Get_ChartStyle write Set_ChartStyle;
   end;
 
 // *********************************************************************//
@@ -6909,9 +8368,9 @@ type
     property OnSheetDeactivate[lcid: Integer]: WideString dispid 1081;
     property PageSetup: PageSetup readonly dispid 998;
     property Previous: IDispatch readonly dispid 503;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); dispid 281;
     procedure _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                        Scenarios: OleVariant; UserInterfaceOnly: OleVariant; lcid: Integer); dispid 282;
@@ -7030,9 +8489,9 @@ type
     property PivotLayout: PivotLayout readonly dispid 1814;
     property HasPivotFields: WordBool dispid 1815;
     property Scripts: Scripts readonly dispid 1816;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); dispid 1772;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); dispid 1772;
     property Tab: Tab readonly dispid 1041;
     property MailEnvelope: MsoEnvelope readonly dispid 2021;
     procedure ApplyDataLabels(Type_: XlDataLabelsType; LegendKey: OleVariant; AutoText: OleVariant; 
@@ -7046,6 +8505,23 @@ type
                      TextVisualLayout: OleVariant; Local: OleVariant); dispid 1925;
     procedure Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                       Scenarios: OleVariant; UserInterfaceOnly: OleVariant); dispid 2029;
+    procedure ApplyLayout(Layout: Integer; ChartType: OleVariant); dispid 2500;
+    procedure SetElement(Element: MsoChartElementType); dispid 2502;
+    property ShowDataLabelsOverMaximum: WordBool dispid 2504;
+    property SideWall: Walls readonly dispid 2505;
+    property BackWall: Walls readonly dispid 2506;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer); dispid 2361;
+    procedure ApplyChartTemplate(const Filename: WideString); dispid 2507;
+    procedure SaveChartTemplate(const Filename: WideString); dispid 2508;
+    procedure SetDefaultChart(Name: OleVariant); dispid 219;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); dispid 2493;
+    property ChartStyle: OleVariant dispid 2509;
+    procedure ClearToMatchStyle; dispid 2510;
   end;
 
 // *********************************************************************//
@@ -7067,9 +8543,9 @@ type
     function Get_Item(Index: OleVariant): IDispatch; safecall;
     procedure Move(Before: OleVariant; After: OleVariant; lcid: Integer); safecall;
     function Get__NewEnum: IUnknown; safecall;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); safecall;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); safecall;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); safecall;
     procedure Select(Replace: OleVariant; lcid: Integer); safecall;
     function Get_HPageBreaks: HPageBreaks; safecall;
@@ -7077,9 +8553,12 @@ type
     function Get_Visible(lcid: Integer): OleVariant; safecall;
     procedure Set_Visible(lcid: Integer; RHS: OleVariant); safecall;
     function Get__Default(Index: OleVariant): IDispatch; safecall;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); safecall;
     procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); safecall;
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); safecall;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: IDispatch read Get_Parent;
@@ -7111,18 +8590,21 @@ type
     property Item[Index: OleVariant]: IDispatch readonly dispid 170;
     procedure Move(Before: OleVariant; After: OleVariant; lcid: Integer); dispid 637;
     property _NewEnum: IUnknown readonly dispid -4;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); dispid 281;
     procedure Select(Replace: OleVariant; lcid: Integer); dispid 235;
     property HPageBreaks: HPageBreaks readonly dispid 1418;
     property VPageBreaks: VPageBreaks readonly dispid 1419;
     property Visible[lcid: Integer]: OleVariant dispid 558;
     property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); dispid 1772;
     procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); dispid 1772;
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); dispid 2361;
   end;
 
 // *********************************************************************//
@@ -7280,9 +8762,9 @@ type
     procedure Set_OnSheetDeactivate(lcid: Integer; const RHS: WideString); safecall;
     function Get_PageSetup: PageSetup; safecall;
     function Get_Previous: IDispatch; safecall;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); safecall;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); safecall;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); safecall;
     procedure _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                        Scenarios: OleVariant; UserInterfaceOnly: OleVariant; lcid: Integer); safecall;
@@ -7400,9 +8882,9 @@ type
     function Get_DisplayRightToLeft(lcid: Integer): WordBool; safecall;
     procedure Set_DisplayRightToLeft(lcid: Integer; RHS: WordBool); safecall;
     function Get_Scripts: Scripts; safecall;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); safecall;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); safecall;
     procedure _CheckSpelling(CustomDictionary: OleVariant; IgnoreUppercase: OleVariant; 
                              AlwaysSuggest: OleVariant; SpellLang: OleVariant; 
                              IgnoreFinalYaa: OleVariant; SpellScript: OleVariant; lcid: Integer); safecall;
@@ -7429,6 +8911,16 @@ type
     function Get_ListObjects: ListObjects; safecall;
     function XmlDataQuery(const XPath: WideString; SelectionNamespaces: OleVariant; Map: OleVariant): ExcelRange; safecall;
     function XmlMapQuery(const XPath: WideString; SelectionNamespaces: OleVariant; Map: OleVariant): ExcelRange; safecall;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); safecall;
+    function Get_EnableFormatConditionsCalculation: WordBool; safecall;
+    procedure Set_EnableFormatConditionsCalculation(RHS: WordBool); safecall;
+    function Get_Sort: Sort; safecall;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); safecall;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: IDispatch read Get_Parent;
@@ -7492,6 +8984,8 @@ type
     property SmartTags: SmartTags read Get_SmartTags;
     property Protection: Protection read Get_Protection;
     property ListObjects: ListObjects read Get_ListObjects;
+    property EnableFormatConditionsCalculation: WordBool read Get_EnableFormatConditionsCalculation write Set_EnableFormatConditionsCalculation;
+    property Sort: Sort read Get_Sort;
   end;
 
 // *********************************************************************//
@@ -7518,9 +9012,9 @@ type
     property OnSheetDeactivate[lcid: Integer]: WideString dispid 1081;
     property PageSetup: PageSetup readonly dispid 998;
     property Previous: IDispatch readonly dispid 503;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); dispid 281;
     procedure _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                        Scenarios: OleVariant; UserInterfaceOnly: OleVariant; lcid: Integer); dispid 282;
@@ -7620,9 +9114,9 @@ type
     property AutoFilter: AutoFilter readonly dispid 793;
     property DisplayRightToLeft[lcid: Integer]: WordBool dispid 1774;
     property Scripts: Scripts readonly dispid 1816;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); dispid 1772;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); dispid 1772;
     procedure _CheckSpelling(CustomDictionary: OleVariant; IgnoreUppercase: OleVariant; 
                              AlwaysSuggest: OleVariant; SpellLang: OleVariant; 
                              IgnoreFinalYaa: OleVariant; SpellScript: OleVariant; lcid: Integer); dispid 1817;
@@ -7649,6 +9143,15 @@ type
     property ListObjects: ListObjects readonly dispid 2259;
     function XmlDataQuery(const XPath: WideString; SelectionNamespaces: OleVariant; Map: OleVariant): ExcelRange; dispid 2260;
     function XmlMapQuery(const XPath: WideString; SelectionNamespaces: OleVariant; Map: OleVariant): ExcelRange; dispid 2263;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); dispid 2361;
+    property EnableFormatConditionsCalculation: WordBool dispid 2511;
+    property Sort: Sort readonly dispid 880;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); dispid 2493;
   end;
 
 // *********************************************************************//
@@ -7752,6 +9255,10 @@ type
     function Get_Weight(out RHS: OleVariant): HResult; stdcall;
     function Set_Weight(RHS: OleVariant): HResult; stdcall;
     function Get__Default(Index: XlBordersIndex; out RHS: Border): HResult; stdcall;
+    function Get_ThemeColor(out RHS: OleVariant): HResult; stdcall;
+    function Set_ThemeColor(RHS: OleVariant): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -8164,6 +9671,8 @@ type
     function AfterXmlImport(const Map: XmlMap; IsRefresh: WordBool; Result: XlXmlImportResult): HResult; stdcall;
     function BeforeXmlExport(const Map: XmlMap; const Url: WideString; var Cancel: WordBool): HResult; stdcall;
     function AfterXmlExport(const Map: XmlMap; const Url: WideString; Result: XlXmlExportResult): HResult; stdcall;
+    function RowsetComplete(const Description: WideString; const Sheet: WideString; 
+                            Success: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -8256,14 +9765,14 @@ type
     procedure Post(DestName: OleVariant; lcid: Integer); safecall;
     function Get_PrecisionAsDisplayed(lcid: Integer): WordBool; safecall;
     procedure Set_PrecisionAsDisplayed(lcid: Integer; RHS: WordBool); safecall;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); safecall;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); safecall;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); safecall;
     procedure _Protect(Password: OleVariant; Structure: OleVariant; Windows: OleVariant); safecall;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
-                             CreateBackup: OleVariant; SharingPassword: OleVariant); safecall;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                              WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                              CreateBackup: OleVariant; SharingPassword: OleVariant); safecall;
     function Get_ProtectStructure: WordBool; safecall;
     function Get_ProtectWindows: WordBool; safecall;
     function Get_ReadOnly(lcid: Integer): WordBool; safecall;
@@ -8343,9 +9852,9 @@ type
                               Method: OleVariant; HeaderInfo: OleVariant); safecall;
     procedure AddToFavorites; safecall;
     function Get_IsInplace: WordBool; safecall;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); safecall;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); safecall;
     procedure WebPagePreview; safecall;
     function Get_PublishObjects: PublishObjects; safecall;
     function Get_WebOptions: WebOptions; safecall;
@@ -8416,6 +9925,55 @@ type
                           Destination: OleVariant): XlXmlImportResult; safecall;
     procedure SaveAsXMLData(const Filename: WideString; const Map: XmlMap); safecall;
     procedure ToggleFormsDesign; safecall;
+    function Get_ContentTypeProperties: MetaProperties; safecall;
+    function Get_Connections: Connections; safecall;
+    procedure RemoveDocumentInformation(RemoveDocInfoType: XlRemoveDocInfoType); safecall;
+    function Get_Signatures: SignatureSet; safecall;
+    procedure CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant; 
+                                 MakePublic: OleVariant; VersionType: OleVariant); safecall;
+    function Get_ServerPolicy: ServerPolicy; safecall;
+    procedure LockServerFile; safecall;
+    function Get_DocumentInspectors: DocumentInspectors; safecall;
+    function GetWorkflowTasks: WorkflowTasks; safecall;
+    function GetWorkflowTemplates: WorkflowTemplates; safecall;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); safecall;
+    function Get_ServerViewableItems: ServerViewableItems; safecall;
+    function Get_TableStyles: TableStyles; safecall;
+    function Get_DefaultTableStyle: OleVariant; safecall;
+    procedure Set_DefaultTableStyle(RHS: OleVariant); safecall;
+    function Get_DefaultPivotTableStyle: OleVariant; safecall;
+    procedure Set_DefaultPivotTableStyle(RHS: OleVariant); safecall;
+    function Get_CheckCompatibility: WordBool; safecall;
+    procedure Set_CheckCompatibility(RHS: WordBool); safecall;
+    function Get_HasVBProject: WordBool; safecall;
+    function Get_CustomXMLParts: CustomXMLParts; safecall;
+    function Get_Final: WordBool; safecall;
+    procedure Set_Final(RHS: WordBool); safecall;
+    function Get_Research: Research; safecall;
+    function Get_Theme: OfficeTheme; safecall;
+    procedure ApplyTheme(const Filename: WideString); safecall;
+    function Get_Excel8CompatibilityMode: WordBool; safecall;
+    function Get_ConnectionsDisabled: WordBool; safecall;
+    procedure EnableConnections; safecall;
+    function Get_ShowPivotChartActiveFields: WordBool; safecall;
+    procedure Set_ShowPivotChartActiveFields(RHS: WordBool); safecall;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); safecall;
+    function Get_IconSets: IconSets; safecall;
+    function Get_EncryptionProvider: WideString; safecall;
+    procedure Set_EncryptionProvider(const RHS: WideString); safecall;
+    function Get_DoNotPromptForConvert: WordBool; safecall;
+    procedure Set_DoNotPromptForConvert(RHS: WordBool); safecall;
+    function Get_ForceFullCalculation: WordBool; safecall;
+    procedure Set_ForceFullCalculation(RHS: WordBool); safecall;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                             CreateBackup: OleVariant; SharingPassword: OleVariant; 
+                             FileFormat: OleVariant); safecall;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: IDispatch read Get_Parent;
@@ -8517,6 +10075,28 @@ type
     property DocumentLibraryVersions: DocumentLibraryVersions read Get_DocumentLibraryVersions;
     property InactiveListBorderVisible: WordBool read Get_InactiveListBorderVisible write Set_InactiveListBorderVisible;
     property DisplayInkComments: WordBool read Get_DisplayInkComments write Set_DisplayInkComments;
+    property ContentTypeProperties: MetaProperties read Get_ContentTypeProperties;
+    property Connections: Connections read Get_Connections;
+    property Signatures: SignatureSet read Get_Signatures;
+    property ServerPolicy: ServerPolicy read Get_ServerPolicy;
+    property DocumentInspectors: DocumentInspectors read Get_DocumentInspectors;
+    property ServerViewableItems: ServerViewableItems read Get_ServerViewableItems;
+    property TableStyles: TableStyles read Get_TableStyles;
+    property DefaultTableStyle: OleVariant read Get_DefaultTableStyle write Set_DefaultTableStyle;
+    property DefaultPivotTableStyle: OleVariant read Get_DefaultPivotTableStyle write Set_DefaultPivotTableStyle;
+    property CheckCompatibility: WordBool read Get_CheckCompatibility write Set_CheckCompatibility;
+    property HasVBProject: WordBool read Get_HasVBProject;
+    property CustomXMLParts: CustomXMLParts read Get_CustomXMLParts;
+    property Final: WordBool read Get_Final write Set_Final;
+    property Research: Research read Get_Research;
+    property Theme: OfficeTheme read Get_Theme;
+    property Excel8CompatibilityMode: WordBool read Get_Excel8CompatibilityMode;
+    property ConnectionsDisabled: WordBool read Get_ConnectionsDisabled;
+    property ShowPivotChartActiveFields: WordBool read Get_ShowPivotChartActiveFields write Set_ShowPivotChartActiveFields;
+    property IconSets: IconSets read Get_IconSets;
+    property EncryptionProvider: WideString read Get_EncryptionProvider write Set_EncryptionProvider;
+    property DoNotPromptForConvert: WordBool read Get_DoNotPromptForConvert write Set_DoNotPromptForConvert;
+    property ForceFullCalculation: WordBool read Get_ForceFullCalculation write Set_ForceFullCalculation;
   end;
 
 // *********************************************************************//
@@ -8588,14 +10168,14 @@ type
     function PivotCaches: PivotCaches; dispid 1449;
     procedure Post(DestName: OleVariant; lcid: Integer); dispid 1166;
     property PrecisionAsDisplayed[lcid: Integer]: WordBool dispid 405;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); dispid 281;
     procedure _Protect(Password: OleVariant; Structure: OleVariant; Windows: OleVariant); dispid 282;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
-                             CreateBackup: OleVariant; SharingPassword: OleVariant); dispid 1450;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                              WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                              CreateBackup: OleVariant; SharingPassword: OleVariant); dispid 1450;
     property ProtectStructure: WordBool readonly dispid 588;
     property ProtectWindows: WordBool readonly dispid 295;
     property ReadOnly[lcid: Integer]: WordBool readonly dispid 296;
@@ -8664,9 +10244,9 @@ type
                               Method: OleVariant; HeaderInfo: OleVariant); dispid 1470;
     procedure AddToFavorites; dispid 1476;
     property IsInplace: WordBool readonly dispid 1769;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); dispid 1772;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); dispid 1772;
     procedure WebPagePreview; dispid 1818;
     property PublishObjects: PublishObjects readonly dispid 1819;
     property WebOptions: WebOptions readonly dispid 1820;
@@ -8727,6 +10307,47 @@ type
                           Destination: OleVariant): XlXmlImportResult; dispid 2277;
     procedure SaveAsXMLData(const Filename: WideString; const Map: XmlMap); dispid 2278;
     procedure ToggleFormsDesign; dispid 2279;
+    property ContentTypeProperties: MetaProperties readonly dispid 2512;
+    property Connections: Connections readonly dispid 2513;
+    procedure RemoveDocumentInformation(RemoveDocInfoType: XlRemoveDocInfoType); dispid 2514;
+    property Signatures: SignatureSet readonly dispid 2516;
+    procedure CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant; 
+                                 MakePublic: OleVariant; VersionType: OleVariant); dispid 2517;
+    property ServerPolicy: ServerPolicy readonly dispid 2519;
+    procedure LockServerFile; dispid 2520;
+    property DocumentInspectors: DocumentInspectors readonly dispid 2521;
+    function GetWorkflowTasks: WorkflowTasks; dispid 2522;
+    function GetWorkflowTemplates: WorkflowTemplates; dispid 2523;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); dispid 2361;
+    property ServerViewableItems: ServerViewableItems readonly dispid 2524;
+    property TableStyles: TableStyles readonly dispid 2525;
+    property DefaultTableStyle: OleVariant dispid 2526;
+    property DefaultPivotTableStyle: OleVariant dispid 2527;
+    property CheckCompatibility: WordBool dispid 2528;
+    property HasVBProject: WordBool readonly dispid 2529;
+    property CustomXMLParts: CustomXMLParts readonly dispid 2530;
+    property Final: WordBool dispid 2531;
+    property Research: Research readonly dispid 2532;
+    property Theme: OfficeTheme readonly dispid 2533;
+    procedure ApplyTheme(const Filename: WideString); dispid 2534;
+    property Excel8CompatibilityMode: WordBool readonly dispid 2535;
+    property ConnectionsDisabled: WordBool readonly dispid 2536;
+    procedure EnableConnections; dispid 2537;
+    property ShowPivotChartActiveFields: WordBool dispid 2538;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); dispid 2493;
+    property IconSets: IconSets readonly dispid 2539;
+    property EncryptionProvider: WideString dispid 2540;
+    property DoNotPromptForConvert: WordBool dispid 2541;
+    property ForceFullCalculation: WordBool dispid 2542;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                             CreateBackup: OleVariant; SharingPassword: OleVariant; 
+                             FileFormat: OleVariant); dispid 2543;
   end;
 
 // *********************************************************************//
@@ -8984,9 +10605,9 @@ type
     function Get_Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function Move(Before: OleVariant; After: OleVariant; lcid: Integer): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       lcid: Integer): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        lcid: Integer): HResult; stdcall;
     function PrintPreview(EnableChanges: OleVariant; lcid: Integer): HResult; stdcall;
     function Select(Replace: OleVariant; lcid: Integer): HResult; stdcall;
     function Get_HPageBreaks(out RHS: HPageBreaks): HResult; stdcall;
@@ -8994,9 +10615,12 @@ type
     function Get_Visible(lcid: Integer; out RHS: OleVariant): HResult; stdcall;
     function Set_Visible(lcid: Integer; RHS: OleVariant): HResult; stdcall;
     function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
     function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
+                      PrToFileName: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -9203,6 +10827,10 @@ type
     function Get_RobustConnect(out RHS: XlRobustConnect): HResult; stdcall;
     function Set_RobustConnect(RHS: XlRobustConnect): HResult; stdcall;
     function SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant): HResult; stdcall;
+    function Get_WorkbookConnection(out RHS: WorkbookConnection): HResult; stdcall;
+    function Get_Version(out RHS: XlPivotTableVersionList): HResult; stdcall;
+    function Get_UpgradeOnRefresh(out RHS: WordBool): HResult; stdcall;
+    function Set_UpgradeOnRefresh(RHS: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -9220,6 +10848,8 @@ type
     function Get__Default(Index: OleVariant; out RHS: PivotCache): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
     function Add(SourceType: XlPivotTableSourceType; SourceData: OleVariant; out RHS: PivotCache): HResult; stdcall;
+    function Create(SourceType: XlPivotTableSourceType; SourceData: OleVariant; 
+                    Version: OleVariant; out RHS: PivotCache): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -9427,6 +11057,56 @@ type
     function Set_DisplayEmptyColumn(RHS: WordBool): HResult; stdcall;
     function Get_ShowCellBackgroundFromOLAP(out RHS: WordBool): HResult; stdcall;
     function Set_ShowCellBackgroundFromOLAP(RHS: WordBool): HResult; stdcall;
+    function Get_PivotColumnAxis(out RHS: PivotAxis): HResult; stdcall;
+    function Get_PivotRowAxis(out RHS: PivotAxis): HResult; stdcall;
+    function Get_ShowDrillIndicators(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowDrillIndicators(RHS: WordBool): HResult; stdcall;
+    function Get_PrintDrillIndicators(out RHS: WordBool): HResult; stdcall;
+    function Set_PrintDrillIndicators(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayMemberPropertyTooltips(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayMemberPropertyTooltips(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayContextTooltips(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayContextTooltips(RHS: WordBool): HResult; stdcall;
+    function ClearTable: HResult; stdcall;
+    function Get_CompactRowIndent(out RHS: Integer): HResult; stdcall;
+    function Set_CompactRowIndent(RHS: Integer): HResult; stdcall;
+    function Get_LayoutRowDefault(out RHS: XlLayoutRowType): HResult; stdcall;
+    function Set_LayoutRowDefault(RHS: XlLayoutRowType): HResult; stdcall;
+    function Get_DisplayFieldCaptions(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayFieldCaptions(RHS: WordBool): HResult; stdcall;
+    function RowAxisLayout(RowLayout: XlLayoutRowType): HResult; stdcall;
+    function SubtotalLocation(Location: XlSubtototalLocationType): HResult; stdcall;
+    function Get_ActiveFilters(out RHS: PivotFilters): HResult; stdcall;
+    function Get_InGridDropZones(out RHS: WordBool): HResult; stdcall;
+    function Set_InGridDropZones(RHS: WordBool): HResult; stdcall;
+    function ClearAllFilters: HResult; stdcall;
+    function Get_TableStyle2(out RHS: OleVariant): HResult; stdcall;
+    function Set_TableStyle2(RHS: OleVariant): HResult; stdcall;
+    function Get_ShowTableStyleLastColumn(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleLastColumn(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleRowStripes(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleRowStripes(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleColumnStripes(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleColumnStripes(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleRowHeaders(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleRowHeaders(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleColumnHeaders(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleColumnHeaders(RHS: WordBool): HResult; stdcall;
+    function ConvertToFormulas(ConvertFilters: WordBool): HResult; stdcall;
+    function Get_AllowMultipleFilters(out RHS: WordBool): HResult; stdcall;
+    function Set_AllowMultipleFilters(RHS: WordBool): HResult; stdcall;
+    function Get_CompactLayoutRowHeader(out RHS: WideString): HResult; stdcall;
+    function Set_CompactLayoutRowHeader(const RHS: WideString): HResult; stdcall;
+    function Get_CompactLayoutColumnHeader(out RHS: WideString): HResult; stdcall;
+    function Set_CompactLayoutColumnHeader(const RHS: WideString): HResult; stdcall;
+    function Get_FieldListSortAscending(out RHS: WordBool): HResult; stdcall;
+    function Set_FieldListSortAscending(RHS: WordBool): HResult; stdcall;
+    function Get_SortUsingCustomLists(out RHS: WordBool): HResult; stdcall;
+    function Set_SortUsingCustomLists(RHS: WordBool): HResult; stdcall;
+    function ChangeConnection(const conn: WorkbookConnection): HResult; stdcall;
+    function ChangePivotCache(PivotCache: OleVariant): HResult; stdcall;
+    function Get_Location(out RHS: WideString): HResult; stdcall;
+    function Set_Location(const RHS: WideString): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -9513,7 +11193,7 @@ type
     function Get_MemoryUsed(out RHS: Integer): HResult; stdcall;
     function Get_ServerBased(out RHS: WordBool): HResult; stdcall;
     function Set_ServerBased(RHS: WordBool): HResult; stdcall;
-    function AutoSort(Order: Integer; const Field: WideString): HResult; stdcall;
+    function _AutoSort(Order: Integer; const Field: WideString): HResult; stdcall;
     function AutoShow(Type_: Integer; Range: Integer; Count: Integer; const Field: WideString): HResult; stdcall;
     function Get_AutoSortOrder(out RHS: Integer): HResult; stdcall;
     function Get_AutoSortField(out RHS: WideString): HResult; stdcall;
@@ -9553,6 +11233,40 @@ type
     function Get_CurrentPageList(out RHS: OleVariant): HResult; stdcall;
     function Set_CurrentPageList(RHS: OleVariant): HResult; stdcall;
     function AddPageItem(const Item: WideString; ClearList: OleVariant): HResult; stdcall;
+    function Get_Hidden(out RHS: WordBool): HResult; stdcall;
+    function Set_Hidden(RHS: WordBool): HResult; stdcall;
+    function DrillTo(const Field: WideString): HResult; stdcall;
+    function Get_UseMemberPropertyAsCaption(out RHS: WordBool): HResult; stdcall;
+    function Set_UseMemberPropertyAsCaption(RHS: WordBool): HResult; stdcall;
+    function Get_MemberPropertyCaption(out RHS: WideString): HResult; stdcall;
+    function Set_MemberPropertyCaption(const RHS: WideString): HResult; stdcall;
+    function Get_DisplayAsTooltip(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayAsTooltip(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayInReport(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayInReport(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayAsCaption(out RHS: WordBool): HResult; stdcall;
+    function Get_LayoutCompactRow(out RHS: WordBool): HResult; stdcall;
+    function Set_LayoutCompactRow(RHS: WordBool): HResult; stdcall;
+    function Get_IncludeNewItemsInFilter(out RHS: WordBool): HResult; stdcall;
+    function Set_IncludeNewItemsInFilter(RHS: WordBool): HResult; stdcall;
+    function Get_VisibleItemsList(out RHS: OleVariant): HResult; stdcall;
+    function Set_VisibleItemsList(RHS: OleVariant): HResult; stdcall;
+    function Get_PivotFilters(out RHS: PivotFilters): HResult; stdcall;
+    function Get_AutoSortPivotLine(out RHS: PivotLine): HResult; stdcall;
+    function Get_AutoSortCustomSubtotal(out RHS: Integer): HResult; stdcall;
+    function Get_ShowingInAxis(out RHS: WordBool): HResult; stdcall;
+    function Get_EnableMultiplePageItems(out RHS: WordBool): HResult; stdcall;
+    function Set_EnableMultiplePageItems(RHS: WordBool): HResult; stdcall;
+    function Get_AllItemsVisible(out RHS: WordBool): HResult; stdcall;
+    function ClearManualFilter: HResult; stdcall;
+    function ClearAllFilters: HResult; stdcall;
+    function ClearValueFilters: HResult; stdcall;
+    function ClearLabelFilters: HResult; stdcall;
+    function AutoSort(Order: Integer; const Field: WideString; PivotLine: OleVariant; 
+                      CustomSubtotal: OleVariant): HResult; stdcall;
+    function Get_SourceCaption(out RHS: WideString): HResult; stdcall;
+    function Get_ShowDetail(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowDetail(RHS: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -9629,6 +11343,7 @@ type
     function Get_StandardFormula(out RHS: WideString): HResult; stdcall;
     function Set_StandardFormula(const RHS: WideString): HResult; stdcall;
     function Get_SourceNameStandard(out RHS: WideString): HResult; stdcall;
+    function DrillTo(const Field: WideString): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -11260,6 +12975,8 @@ type
     function Get_VisibleRange(out RHS: ExcelRange): HResult; stdcall;
     function ScrollIntoView(Left: Integer; Top: Integer; Width: Integer; Height: Integer; 
                             Start: OleVariant): HResult; stdcall;
+    function PointsToScreenPixelsX(Points: Integer; out RHS: Integer): HResult; stdcall;
+    function PointsToScreenPixelsY(Points: Integer; out RHS: Integer): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -12807,9 +14524,9 @@ type
     function Set_OnSheetDeactivate(lcid: Integer; const RHS: WideString): HResult; stdcall;
     function Get_PageSetup(out RHS: PageSetup): HResult; stdcall;
     function Get_Previous(out RHS: IDispatch): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       lcid: Integer): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        lcid: Integer): HResult; stdcall;
     procedure _Dummy18; stdcall;
     function _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                       Scenarios: OleVariant; UserInterfaceOnly: OleVariant; lcid: Integer): HResult; stdcall;
@@ -12833,6 +14550,10 @@ type
                     TextVisualLayout: OleVariant): HResult; stdcall;
     function Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                      Scenarios: OleVariant; UserInterfaceOnly: OleVariant): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant): HResult; stdcall;
+    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -12853,9 +14574,9 @@ type
     function Get_Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function Move(Before: OleVariant; After: OleVariant; lcid: Integer): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       lcid: Integer): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        lcid: Integer): HResult; stdcall;
     procedure _Dummy12; stdcall;
     function Select(Replace: OleVariant; lcid: Integer): HResult; stdcall;
     function Get_HPageBreaks(out RHS: HPageBreaks): HResult; stdcall;
@@ -12863,9 +14584,12 @@ type
     function Get_Visible(lcid: Integer; out RHS: OleVariant): HResult; stdcall;
     function Set_Visible(lcid: Integer; RHS: OleVariant): HResult; stdcall;
     function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
     function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
+                      PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -12897,9 +14621,9 @@ type
     function Set_OnSheetDeactivate(lcid: Integer; const RHS: WideString): HResult; stdcall;
     function Get_PageSetup(out RHS: PageSetup): HResult; stdcall;
     function Get_Previous(out RHS: IDispatch): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       lcid: Integer): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        lcid: Integer): HResult; stdcall;
     function PrintPreview(EnableChanges: OleVariant; lcid: Integer): HResult; stdcall;
     function _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                       Scenarios: OleVariant; UserInterfaceOnly: OleVariant; lcid: Integer): HResult; stdcall;
@@ -13003,9 +14727,9 @@ type
     function Get_DisplayRightToLeft(lcid: Integer; out RHS: WordBool): HResult; stdcall;
     function Set_DisplayRightToLeft(lcid: Integer; RHS: WordBool): HResult; stdcall;
     function Get_Scripts(out RHS: Scripts): HResult; stdcall;
-    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
     function _CheckSpelling(CustomDictionary: OleVariant; IgnoreUppercase: OleVariant; 
                             AlwaysSuggest: OleVariant; SpellLang: OleVariant; 
                             IgnoreFinalYaa: OleVariant; SpellScript: OleVariant; lcid: Integer): HResult; stdcall;
@@ -13032,6 +14756,16 @@ type
     procedure _Dummy113; stdcall;
     procedure _Dummy114; stdcall;
     procedure _Dummy115; stdcall;
+    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                      PrToFileName: OleVariant): HResult; stdcall;
+    function Get_EnableFormatConditionsCalculation(out RHS: WordBool): HResult; stdcall;
+    function Set_EnableFormatConditionsCalculation(RHS: WordBool): HResult; stdcall;
+    function Get_Sort(out RHS: Sort): HResult; stdcall;
+    function ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                 Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                 IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                 OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant): HResult; stdcall;
     function Get_DefaultButton(out RHS: OleVariant): HResult; stdcall;
     function Set_DefaultButton(RHS: OleVariant): HResult; stdcall;
     function Get_DialogFrame(out RHS: DialogFrame): HResult; stdcall;
@@ -13060,9 +14794,9 @@ type
     function Get_Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function Move(Before: OleVariant; After: OleVariant; lcid: Integer): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       lcid: Integer): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        lcid: Integer): HResult; stdcall;
     function PrintPreview(EnableChanges: OleVariant; lcid: Integer): HResult; stdcall;
     function Select(Replace: OleVariant; lcid: Integer): HResult; stdcall;
     function Get_HPageBreaks(out RHS: HPageBreaks): HResult; stdcall;
@@ -13070,9 +14804,12 @@ type
     function Get_Visible(lcid: Integer; out RHS: OleVariant): HResult; stdcall;
     function Set_Visible(lcid: Integer; RHS: OleVariant): HResult; stdcall;
     function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
     function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
+                      PrToFileName: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13094,9 +14831,9 @@ type
     function Get_Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function Move(Before: OleVariant; After: OleVariant; lcid: Integer): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       lcid: Integer): HResult; stdcall;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        lcid: Integer): HResult; stdcall;
     function PrintPreview(EnableChanges: OleVariant; lcid: Integer): HResult; stdcall;
     function Select(Replace: OleVariant; lcid: Integer): HResult; stdcall;
     function Get_HPageBreaks(out RHS: HPageBreaks): HResult; stdcall;
@@ -13104,9 +14841,12 @@ type
     function Get_Visible(lcid: Integer; out RHS: OleVariant): HResult; stdcall;
     function Set_Visible(lcid: Integer; RHS: OleVariant): HResult; stdcall;
     function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
     function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant; lcid: Integer): HResult; stdcall;
+                      PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13191,6 +14931,17 @@ type
     function Get_LeftFooterPicture(out RHS: Graphic): HResult; stdcall;
     function Get_RightHeaderPicture(out RHS: Graphic): HResult; stdcall;
     function Get_RightFooterPicture(out RHS: Graphic): HResult; stdcall;
+    function Get_OddAndEvenPagesHeaderFooter(out RHS: WordBool): HResult; stdcall;
+    function Set_OddAndEvenPagesHeaderFooter(RHS: WordBool): HResult; stdcall;
+    function Get_DifferentFirstPageHeaderFooter(out RHS: WordBool): HResult; stdcall;
+    function Set_DifferentFirstPageHeaderFooter(RHS: WordBool): HResult; stdcall;
+    function Get_ScaleWithDocHeaderFooter(out RHS: WordBool): HResult; stdcall;
+    function Set_ScaleWithDocHeaderFooter(RHS: WordBool): HResult; stdcall;
+    function Get_AlignMarginsHeaderFooter(out RHS: WordBool): HResult; stdcall;
+    function Set_AlignMarginsHeaderFooter(RHS: WordBool): HResult; stdcall;
+    function Get_Pages(out RHS: Pages): HResult; stdcall;
+    function Get_EvenPage(out RHS: Page): HResult; stdcall;
+    function Get_FirstPage(out RHS: Page): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13253,6 +15004,11 @@ type
     function Get_RefersToR1C1Local(out RHS: OleVariant): HResult; stdcall;
     function Set_RefersToR1C1Local(RHS: OleVariant): HResult; stdcall;
     function Get_RefersToRange(out RHS: ExcelRange): HResult; stdcall;
+    function Get_Comment(out RHS: WideString): HResult; stdcall;
+    function Set_Comment(const RHS: WideString): HResult; stdcall;
+    function Get_WorkbookParameter(out RHS: WordBool): HResult; stdcall;
+    function Set_WorkbookParameter(RHS: WordBool): HResult; stdcall;
+    function Get_ValidWorkbookParameter(out RHS: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13267,7 +15023,7 @@ type
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
     function Get_BottomRightCell(out RHS: ExcelRange): HResult; stdcall;
     function BringToFront(out RHS: OleVariant): HResult; stdcall;
-    function Copy(out RHS: OleVariant): HResult; stdcall;
+    function _Copy(out RHS: OleVariant): HResult; stdcall;
     function CopyPicture(Appearance: XlPictureAppearance; Format: XlCopyPictureFormat; 
                          out RHS: OleVariant): HResult; stdcall;
     function Cut(out RHS: OleVariant): HResult; stdcall;
@@ -13311,6 +15067,7 @@ type
     function Get_Interior(out RHS: Interior): HResult; stdcall;
     function Get_Shadow(out RHS: WordBool): HResult; stdcall;
     function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Copy(out RHS: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13325,7 +15082,7 @@ type
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
     procedure _Dummy3; stdcall;
     function BringToFront(out RHS: OleVariant): HResult; stdcall;
-    function Copy(out RHS: OleVariant): HResult; stdcall;
+    function _Copy(out RHS: OleVariant): HResult; stdcall;
     function CopyPicture(Appearance: XlPictureAppearance; Format: XlCopyPictureFormat; 
                          out RHS: OleVariant): HResult; stdcall;
     function Cut(out RHS: OleVariant): HResult; stdcall;
@@ -13360,18 +15117,21 @@ type
     function Get_ShapeRange(out RHS: ShapeRange): HResult; stdcall;
     procedure _Dummy27; stdcall;
     procedure _Dummy28; stdcall;
-    procedure _Dummy29; stdcall;
+    function Get_ProtectChartObject(out RHS: WordBool): HResult; stdcall;
+    function Set_ProtectChartObject(RHS: WordBool): HResult; stdcall;
     function Get_RoundedCorners(out RHS: WordBool): HResult; stdcall;
     function Set_RoundedCorners(RHS: WordBool): HResult; stdcall;
     function Get_Border(out RHS: Border): HResult; stdcall;
     function Get_Interior(out RHS: Interior): HResult; stdcall;
     function Get_Shadow(out RHS: WordBool): HResult; stdcall;
     function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Copy(out RHS: OleVariant): HResult; stdcall;
     function Add(Left: Double; Top: Double; Width: Double; Height: Double; out RHS: ChartObject): HResult; stdcall;
     function Get_Count(out RHS: Integer): HResult; stdcall;
     function Group(out RHS: GroupObject): HResult; stdcall;
     function Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function _Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13447,12 +15207,19 @@ type
     function Get_Creator(out RHS: XlCreator): HResult; stdcall;
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
     function Get_Count(out RHS: Integer): HResult; stdcall;
-    function Item(Index: OleVariant; out RHS: FormatCondition): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function Add(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
-                 Formula2: OleVariant; out RHS: FormatCondition): HResult; stdcall;
-    function Get__Default(Index: OleVariant; out RHS: FormatCondition): HResult; stdcall;
+                 Formula2: OleVariant; String_: OleVariant; TextOperator: OleVariant; 
+                 DateOperator: OleVariant; ScopeType: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
     function Delete: HResult; stdcall;
+    function AddColorScale(ColorScaleType: Integer; out RHS: IDispatch): HResult; stdcall;
+    function AddDatabar(out RHS: IDispatch): HResult; stdcall;
+    function AddIconSetCondition(out RHS: IDispatch): HResult; stdcall;
+    function AddTop10(out RHS: IDispatch): HResult; stdcall;
+    function AddAboveAverage(out RHS: IDispatch): HResult; stdcall;
+    function AddUniqueValues(out RHS: IDispatch): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13465,8 +15232,8 @@ type
     function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
     function Get_Creator(out RHS: XlCreator): HResult; stdcall;
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
-    function Modify(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
-                    Formula2: OleVariant): HResult; stdcall;
+    function _Modify(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
+                     Formula2: OleVariant): HResult; stdcall;
     function Get_type_(out RHS: Integer): HResult; stdcall;
     function Get_Operator(out RHS: Integer): HResult; stdcall;
     function Get_Formula1(out RHS: WideString): HResult; stdcall;
@@ -13475,6 +15242,27 @@ type
     function Get_Borders(out RHS: Borders): HResult; stdcall;
     function Get_Font(out RHS: Font): HResult; stdcall;
     function Delete: HResult; stdcall;
+    function Modify(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
+                    Formula2: OleVariant; String_: OleVariant; Operator2: OleVariant): HResult; stdcall;
+    function Get_Text(out RHS: WideString): HResult; stdcall;
+    function Set_Text(const RHS: WideString): HResult; stdcall;
+    function Get_TextOperator(out RHS: XlContainsOperator): HResult; stdcall;
+    function Set_TextOperator(RHS: XlContainsOperator): HResult; stdcall;
+    function Get_DateOperator(out RHS: XlTimePeriods): HResult; stdcall;
+    function Set_DateOperator(RHS: XlTimePeriods): HResult; stdcall;
+    function Get_NumberFormat(out RHS: OleVariant): HResult; stdcall;
+    function Set_NumberFormat(RHS: OleVariant): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Set_StopIfTrue(RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13652,6 +15440,8 @@ type
     function Get_ListObject(out RHS: ListObject): HResult; stdcall;
     function Get_TextFileVisualLayout(out RHS: XlTextVisualLayoutType): HResult; stdcall;
     function Set_TextFileVisualLayout(RHS: XlTextVisualLayoutType): HResult; stdcall;
+    function Get_WorkbookConnection(out RHS: WorkbookConnection): HResult; stdcall;
+    function Get_Sort(out RHS: Sort): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13846,6 +15636,10 @@ type
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
     function Get_Range(out RHS: ExcelRange): HResult; stdcall;
     function Get_Filters(out RHS: Filters): HResult; stdcall;
+    function Get_FilterMode(out RHS: WordBool): HResult; stdcall;
+    function Get_Sort(out RHS: Sort): HResult; stdcall;
+    function ApplyFilter: HResult; stdcall;
+    function ShowAllData: HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13876,8 +15670,11 @@ type
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
     function Get_On_(out RHS: WordBool): HResult; stdcall;
     function Get_Criteria1(out RHS: OleVariant): HResult; stdcall;
-    function Get_Operator(out RHS: XlAutoFilterOperator): HResult; stdcall;
+    function Get__Operator(out RHS: XlAutoFilterOperator): HResult; stdcall;
     function Get_Criteria2(out RHS: OleVariant): HResult; stdcall;
+    function Get_Operator(out RHS: XlAutoFilterOperator): HResult; stdcall;
+    function Set_Operator(RHS: XlAutoFilterOperator): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13909,6 +15706,8 @@ type
     function Set_DisplayAutoCorrectOptions(RHS: WordBool): HResult; stdcall;
     function Get_AutoExpandListRange(out RHS: WordBool): HResult; stdcall;
     function Set_AutoExpandListRange(RHS: WordBool): HResult; stdcall;
+    function Get_AutoFillFormulasInLists(out RHS: WordBool): HResult; stdcall;
+    function Set_AutoFillFormulasInLists(RHS: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13929,6 +15728,10 @@ type
     function Set_LineStyle(RHS: OleVariant): HResult; stdcall;
     function Get_Weight(out RHS: OleVariant): HResult; stdcall;
     function Set_Weight(RHS: OleVariant): HResult; stdcall;
+    function Get_ThemeColor(out RHS: OleVariant): HResult; stdcall;
+    function Set_ThemeColor(RHS: OleVariant): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -13953,6 +15756,15 @@ type
     function Set_PatternColor(RHS: OleVariant): HResult; stdcall;
     function Get_PatternColorIndex(out RHS: OleVariant): HResult; stdcall;
     function Set_PatternColorIndex(RHS: OleVariant): HResult; stdcall;
+    function Get_ThemeColor(out RHS: OleVariant): HResult; stdcall;
+    function Set_ThemeColor(RHS: OleVariant): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
+    function Get_PatternThemeColor(out RHS: OleVariant): HResult; stdcall;
+    function Set_PatternThemeColor(RHS: OleVariant): HResult; stdcall;
+    function Get_PatternTintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_PatternTintAndShade(RHS: OleVariant): HResult; stdcall;
+    function Get_Gradient(out RHS: IDispatch): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14093,6 +15905,11 @@ type
     function Get_HasDisplayUnitLabel(out RHS: WordBool): HResult; stdcall;
     function Set_HasDisplayUnitLabel(RHS: WordBool): HResult; stdcall;
     function Get_DisplayUnitLabel(out RHS: DisplayUnitLabel): HResult; stdcall;
+    function Get_LogBase(out RHS: Double): HResult; stdcall;
+    function Set_LogBase(RHS: Double): HResult; stdcall;
+    function Get_TickLabelSpacingIsAuto(out RHS: WordBool): HResult; stdcall;
+    function Set_TickLabelSpacingIsAuto(RHS: WordBool): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14133,6 +15950,11 @@ type
     function Set_ReadingOrder(RHS: Integer): HResult; stdcall;
     function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
     function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_IncludeInLayout(out RHS: WordBool): HResult; stdcall;
+    function Set_IncludeInLayout(RHS: WordBool): HResult; stdcall;
+    function Get_Position(out RHS: XlChartElementPosition): HResult; stdcall;
+    function Set_Position(RHS: XlChartElementPosition): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14173,6 +15995,11 @@ type
     function Set_ReadingOrder(RHS: Integer): HResult; stdcall;
     function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
     function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_IncludeInLayout(out RHS: WordBool): HResult; stdcall;
+    function Set_IncludeInLayout(RHS: WordBool): HResult; stdcall;
+    function Get_Position(out RHS: XlChartElementPosition): HResult; stdcall;
+    function Set_Position(RHS: XlChartElementPosition): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14263,6 +16090,7 @@ type
     function Get_Count(out RHS: Integer): HResult; stdcall;
     function Item(Type_: XlAxisType; AxisGroup: XlAxisGroup; out RHS: Axis): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function _Default(Type_: XlAxisType; AxisGroup: XlAxisGroup; out RHS: Axis): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14278,6 +16106,7 @@ type
     function Get_Count(out RHS: Integer): HResult; stdcall;
     function Item(Index: Integer; out RHS: Point): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function _Default(Index: Integer; out RHS: Point): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14338,6 +16167,11 @@ type
                              ShowCategoryName: OleVariant; ShowValue: OleVariant; 
                              ShowPercentage: OleVariant; ShowBubbleSize: OleVariant; 
                              Separator: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_Has3DEffect(out RHS: WordBool): HResult; stdcall;
+    function Set_Has3DEffect(RHS: WordBool): HResult; stdcall;
+    function Get_PictureUnit2(out RHS: Double): HResult; stdcall;
+    function Set_PictureUnit2(RHS: Double): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14438,6 +16272,9 @@ type
                              ShowCategoryName: OleVariant; ShowValue: OleVariant; 
                              ShowPercentage: OleVariant; ShowBubbleSize: OleVariant; 
                              Separator: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_PictureUnit2(out RHS: Double): HResult; stdcall;
+    function Set_PictureUnit2(RHS: Double): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14460,6 +16297,7 @@ type
     function Paste(Rowcol: XlRowCol; SeriesLabels: OleVariant; CategoryLabels: OleVariant; 
                    Replace: OleVariant; NewSeries: OleVariant; out RHS: OleVariant): HResult; stdcall;
     function NewSeries(out RHS: Series): HResult; stdcall;
+    function _Default(Index: OleVariant; out RHS: Series): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14526,6 +16364,7 @@ type
     function Set_ShowBubbleSize(RHS: WordBool): HResult; stdcall;
     function Get_Separator(out RHS: OleVariant): HResult; stdcall;
     function Set_Separator(RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14591,6 +16430,8 @@ type
     function Get_Count(out RHS: Integer): HResult; stdcall;
     function Item(Index: OleVariant; out RHS: DataLabel): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function _Default(Index: OleVariant; out RHS: DataLabel): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14614,6 +16455,7 @@ type
     function Get_Top(out RHS: Double): HResult; stdcall;
     function Get_Width(out RHS: Double): HResult; stdcall;
     function Get_Height(out RHS: Double): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14629,6 +16471,7 @@ type
     function Get_Count(out RHS: Integer): HResult; stdcall;
     function Item(Index: OleVariant; out RHS: LegendEntry): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function _Default(Index: OleVariant; out RHS: LegendEntry): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14673,6 +16516,9 @@ type
     function Get_Height(out RHS: Double): HResult; stdcall;
     function Get_Shadow(out RHS: WordBool): HResult; stdcall;
     function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Get_PictureUnit2(out RHS: Double): HResult; stdcall;
+    function Set_PictureUnit2(RHS: Double): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14692,6 +16538,7 @@ type
     function Get_Count(out RHS: Integer): HResult; stdcall;
     function Item(Index: OleVariant; out RHS: Trendline): HResult; stdcall;
     function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function _Default(Index: OleVariant; out RHS: Trendline): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14732,6 +16579,11 @@ type
     function Select(out RHS: OleVariant): HResult; stdcall;
     function Get_type_(out RHS: XlTrendlineType): HResult; stdcall;
     function Set_type_(RHS: XlTrendlineType): HResult; stdcall;
+    function Get_Backward2(out RHS: Double): HResult; stdcall;
+    function Set_Backward2(RHS: Double): HResult; stdcall;
+    function Get_Forward2(out RHS: Double): HResult; stdcall;
+    function Set_Forward2(RHS: Double): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14762,6 +16614,7 @@ type
     function Select(out RHS: OleVariant): HResult; stdcall;
     function Get_Border(out RHS: Border): HResult; stdcall;
     function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14778,6 +16631,7 @@ type
     function Select(out RHS: OleVariant): HResult; stdcall;
     function Get_Border(out RHS: Border): HResult; stdcall;
     function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14794,6 +16648,7 @@ type
     function Select(out RHS: OleVariant): HResult; stdcall;
     function Get_Border(out RHS: Border): HResult; stdcall;
     function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14810,6 +16665,7 @@ type
     function Select(out RHS: OleVariant): HResult; stdcall;
     function Get_Border(out RHS: Border): HResult; stdcall;
     function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14825,6 +16681,7 @@ type
     function Get_Border(out RHS: Border): HResult; stdcall;
     function Delete: HResult; stdcall;
     function Select: HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14843,6 +16700,7 @@ type
     function Delete(out RHS: OleVariant): HResult; stdcall;
     function Get_Interior(out RHS: Interior): HResult; stdcall;
     function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14861,6 +16719,7 @@ type
     function Delete(out RHS: OleVariant): HResult; stdcall;
     function Get_Interior(out RHS: Interior): HResult; stdcall;
     function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14882,6 +16741,9 @@ type
     function Get_PictureType(out RHS: OleVariant): HResult; stdcall;
     function Set_PictureType(RHS: OleVariant): HResult; stdcall;
     function Paste: HResult; stdcall;
+    function Get_Thickness(out RHS: Integer): HResult; stdcall;
+    function Set_Thickness(RHS: Integer): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14905,6 +16767,9 @@ type
     function Paste: HResult; stdcall;
     function Get_PictureUnit(out RHS: OleVariant): HResult; stdcall;
     function Set_PictureUnit(RHS: OleVariant): HResult; stdcall;
+    function Get_Thickness(out RHS: Integer): HResult; stdcall;
+    function Set_Thickness(RHS: Integer): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14938,6 +16803,9 @@ type
     function Set_Offset(RHS: Integer): HResult; stdcall;
     function Get_Alignment(out RHS: Integer): HResult; stdcall;
     function Set_Alignment(RHS: Integer): HResult; stdcall;
+    function Get_MultiLevel(out RHS: WordBool): HResult; stdcall;
+    function Set_MultiLevel(RHS: WordBool): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -14964,10 +16832,21 @@ type
     function Set_Top(RHS: Double): HResult; stdcall;
     function Get_Width(out RHS: Double): HResult; stdcall;
     function Set_Width(RHS: Double): HResult; stdcall;
+    function Get__InsideLeft(out RHS: Double): HResult; stdcall;
+    function Get__InsideTop(out RHS: Double): HResult; stdcall;
+    function Get__InsideWidth(out RHS: Double): HResult; stdcall;
+    function Get__InsideHeight(out RHS: Double): HResult; stdcall;
     function Get_InsideLeft(out RHS: Double): HResult; stdcall;
+    function Set_InsideLeft(RHS: Double): HResult; stdcall;
     function Get_InsideTop(out RHS: Double): HResult; stdcall;
+    function Set_InsideTop(RHS: Double): HResult; stdcall;
     function Get_InsideWidth(out RHS: Double): HResult; stdcall;
+    function Set_InsideWidth(RHS: Double): HResult; stdcall;
     function Get_InsideHeight(out RHS: Double): HResult; stdcall;
+    function Set_InsideHeight(RHS: Double): HResult; stdcall;
+    function Get_Position(out RHS: XlChartElementPosition): HResult; stdcall;
+    function Set_Position(RHS: XlChartElementPosition): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15002,6 +16881,7 @@ type
     function Set_Width(RHS: Double): HResult; stdcall;
     function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
     function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15037,6 +16917,9 @@ type
     function Set_Width(RHS: Double): HResult; stdcall;
     function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
     function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_IncludeInLayout(out RHS: WordBool): HResult; stdcall;
+    function Set_IncludeInLayout(RHS: WordBool): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15056,6 +16939,7 @@ type
     function ClearFormats(out RHS: OleVariant): HResult; stdcall;
     function Get_EndStyle(out RHS: XlEndStyleCap): HResult; stdcall;
     function Set_EndStyle(RHS: XlEndStyleCap): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15082,6 +16966,7 @@ type
     function Delete: HResult; stdcall;
     function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
     function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15201,6 +17086,16 @@ type
     function CanvasCropTop(Increment: Single): HResult; stdcall;
     function CanvasCropRight(Increment: Single): HResult; stdcall;
     function CanvasCropBottom(Increment: Single): HResult; stdcall;
+    function Get_Chart(out RHS: ExcelChart): HResult; stdcall;
+    function Get_HasChart(out RHS: MsoTriState): HResult; stdcall;
+    function Get_TextFrame2(out RHS: TextFrame2): HResult; stdcall;
+    function Get_ShapeStyle(out RHS: MsoShapeStyleIndex): HResult; stdcall;
+    function Set_ShapeStyle(RHS: MsoShapeStyleIndex): HResult; stdcall;
+    function Get_BackgroundStyle(out RHS: MsoBackgroundStyleIndex): HResult; stdcall;
+    function Set_BackgroundStyle(RHS: MsoBackgroundStyleIndex): HResult; stdcall;
+    function Get_SoftEdge(out RHS: SoftEdgeFormat): HResult; stdcall;
+    function Get_Glow(out RHS: GlowFormat): HResult; stdcall;
+    function Get_Reflection(out RHS: ReflectionFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15249,6 +17144,8 @@ type
     function AddDiagram(Type_: MsoDiagramType; Left: Single; Top: Single; Width: Single; 
                         Height: Single; out RHS: Shape): HResult; stdcall;
     function AddCanvas(Left: Single; Top: Single; Width: Single; Height: Single; out RHS: Shape): HResult; stdcall;
+    function AddChart(XlChartType: OleVariant; Left: OleVariant; Top: OleVariant; 
+                      Width: OleVariant; Height: OleVariant; out RHS: Shape): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15337,6 +17234,16 @@ type
     function CanvasCropTop(Increment: Single): HResult; stdcall;
     function CanvasCropRight(Increment: Single): HResult; stdcall;
     function CanvasCropBottom(Increment: Single): HResult; stdcall;
+    function Get_Chart(out RHS: ExcelChart): HResult; stdcall;
+    function Get_HasChart(out RHS: MsoTriState): HResult; stdcall;
+    function Get_TextFrame2(out RHS: TextFrame2): HResult; stdcall;
+    function Get_ShapeStyle(out RHS: MsoShapeStyleIndex): HResult; stdcall;
+    function Set_ShapeStyle(RHS: MsoShapeStyleIndex): HResult; stdcall;
+    function Get_BackgroundStyle(out RHS: MsoBackgroundStyleIndex): HResult; stdcall;
+    function Set_BackgroundStyle(RHS: MsoBackgroundStyleIndex): HResult; stdcall;
+    function Get_SoftEdge(out RHS: SoftEdgeFormat): HResult; stdcall;
+    function Get_Glow(out RHS: GlowFormat): HResult; stdcall;
+    function Get_Reflection(out RHS: ReflectionFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -15898,7 +17805,7 @@ type
     function Get_Creator: XlCreator; safecall;
     function Get_Parent: IDispatch; safecall;
     function Get_CubeFieldType: XlCubeFieldType; safecall;
-    function Get_Caption: WideString; safecall;
+    function Get__Caption: WideString; safecall;
     function Get_Name: WideString; safecall;
     function Get_Value: WideString; safecall;
     function Get_Orientation: XlPivotFieldOrientation; safecall;
@@ -15922,7 +17829,7 @@ type
     function Get_LayoutForm: XlLayoutFormType; safecall;
     procedure Set_LayoutForm(RHS: XlLayoutFormType); safecall;
     function Get_PivotFields: PivotFields; safecall;
-    procedure AddMemberPropertyField(const Property_: WideString; PropertyOrder: OleVariant); safecall;
+    procedure _AddMemberPropertyField(const Property_: WideString; PropertyOrder: OleVariant); safecall;
     function Get_EnableMultiplePageItems: WordBool; safecall;
     procedure Set_EnableMultiplePageItems(RHS: WordBool); safecall;
     function Get_LayoutSubtotalLocation: XlSubtototalLocationType; safecall;
@@ -15930,11 +17837,24 @@ type
     function Get_ShowInFieldList: WordBool; safecall;
     procedure Set_ShowInFieldList(RHS: WordBool); safecall;
     procedure Delete; safecall;
+    procedure AddMemberPropertyField(const Property_: WideString; PropertyOrder: OleVariant; 
+                                     PropertyDisplayedIn: OleVariant); safecall;
+    function Get_IncludeNewItemsInFilter: WordBool; safecall;
+    procedure Set_IncludeNewItemsInFilter(RHS: WordBool); safecall;
+    function Get_CubeFieldSubType: XlCubeFieldSubType; safecall;
+    function Get_AllItemsVisible: WordBool; safecall;
+    procedure ClearManualFilter; safecall;
+    procedure CreatePivotFields; safecall;
+    function Get_CurrentPageName: WideString; safecall;
+    procedure Set_CurrentPageName(const RHS: WideString); safecall;
+    function Get_IsDate: WordBool; safecall;
+    function Get_Caption: WideString; safecall;
+    procedure Set_Caption(const RHS: WideString); safecall;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: IDispatch read Get_Parent;
     property CubeFieldType: XlCubeFieldType read Get_CubeFieldType;
-    property Caption: WideString read Get_Caption;
+    property _Caption: WideString read Get__Caption;
     property Name: WideString read Get_Name;
     property Value: WideString read Get_Value;
     property Orientation: XlPivotFieldOrientation read Get_Orientation write Set_Orientation;
@@ -15952,6 +17872,12 @@ type
     property EnableMultiplePageItems: WordBool read Get_EnableMultiplePageItems write Set_EnableMultiplePageItems;
     property LayoutSubtotalLocation: XlSubtototalLocationType read Get_LayoutSubtotalLocation write Set_LayoutSubtotalLocation;
     property ShowInFieldList: WordBool read Get_ShowInFieldList write Set_ShowInFieldList;
+    property IncludeNewItemsInFilter: WordBool read Get_IncludeNewItemsInFilter write Set_IncludeNewItemsInFilter;
+    property CubeFieldSubType: XlCubeFieldSubType read Get_CubeFieldSubType;
+    property AllItemsVisible: WordBool read Get_AllItemsVisible;
+    property CurrentPageName: WideString read Get_CurrentPageName write Set_CurrentPageName;
+    property IsDate: WordBool read Get_IsDate;
+    property Caption: WideString read Get_Caption write Set_Caption;
   end;
 
 // *********************************************************************//
@@ -15965,7 +17891,7 @@ type
     property Creator: XlCreator readonly dispid 149;
     property Parent: IDispatch readonly dispid 150;
     property CubeFieldType: XlCubeFieldType readonly dispid 1918;
-    property Caption: WideString readonly dispid 139;
+    property _Caption: WideString readonly dispid 2667;
     property Name: WideString readonly dispid 110;
     property Value: WideString readonly dispid 6;
     property Orientation: XlPivotFieldOrientation dispid 134;
@@ -15980,11 +17906,21 @@ type
     property HasMemberProperties: WordBool readonly dispid 2181;
     property LayoutForm: XlLayoutFormType dispid 1848;
     property PivotFields: PivotFields readonly dispid 718;
-    procedure AddMemberPropertyField(const Property_: WideString; PropertyOrder: OleVariant); dispid 2182;
+    procedure _AddMemberPropertyField(const Property_: WideString; PropertyOrder: OleVariant); dispid 2182;
     property EnableMultiplePageItems: WordBool dispid 2184;
     property LayoutSubtotalLocation: XlSubtototalLocationType dispid 1846;
     property ShowInFieldList: WordBool dispid 2185;
     procedure Delete; dispid 117;
+    procedure AddMemberPropertyField(const Property_: WideString; PropertyOrder: OleVariant; 
+                                     PropertyDisplayedIn: OleVariant); dispid 2668;
+    property IncludeNewItemsInFilter: WordBool dispid 2587;
+    property CubeFieldSubType: XlCubeFieldSubType readonly dispid 2670;
+    property AllItemsVisible: WordBool readonly dispid 2593;
+    procedure ClearManualFilter; dispid 2594;
+    procedure CreatePivotFields; dispid 2671;
+    property CurrentPageName: WideString dispid 1852;
+    property IsDate: WordBool readonly dispid 2672;
+    property Caption: WideString dispid 139;
   end;
 
 // *********************************************************************//
@@ -16066,6 +18002,10 @@ type
     function Set_ReadingOrder(RHS: Integer): HResult; stdcall;
     function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
     function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    procedure _Dummy21; stdcall;
+    function Get_Position(out RHS: XlChartElementPosition): HResult; stdcall;
+    function Set_Position(RHS: XlChartElementPosition): HResult; stdcall;
+    function Get_Format(out RHS: ChartFormat): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16252,6 +18192,8 @@ type
     function Get_Range(out RHS: ExcelRange): HResult; stdcall;
     function Get_Dummy18(out RHS: WideString): HResult; stdcall;
     function Get_CustomSubtotalFunction(out RHS: XlConsolidationFunction): HResult; stdcall;
+    function Get_PivotRowLine(out RHS: PivotLine): HResult; stdcall;
+    function Get_PivotColumnLine(out RHS: PivotLine): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16336,6 +18278,8 @@ type
     function Set_EmptyCellReferences(RHS: WordBool): HResult; stdcall;
     function Get_ListDataValidation(out RHS: WordBool): HResult; stdcall;
     function Set_ListDataValidation(RHS: WordBool): HResult; stdcall;
+    function Get_InconsistentTableFormula(out RHS: WordBool): HResult; stdcall;
+    function Set_InconsistentTableFormula(RHS: WordBool): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16597,6 +18541,10 @@ type
     function Set_Color(RHS: OleVariant): HResult; stdcall;
     function Get_ColorIndex(out RHS: XlColorIndex): HResult; stdcall;
     function Set_ColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_ThemeColor(out RHS: XlThemeColor): HResult; stdcall;
+    function Set_ThemeColor(RHS: XlThemeColor): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16704,12 +18652,15 @@ type
     function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
     function Get_Creator(out RHS: XlCreator): HResult; stdcall;
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
-    function Add(SourceType: XlListObjectSourceType; Source: OleVariant; LinkSource: OleVariant; 
-                 XlListObjectHasHeaders: XlYesNoGuess; Destination: OleVariant; out RHS: ListObject): HResult; stdcall;
+    function _Add(SourceType: XlListObjectSourceType; Source: OleVariant; LinkSource: OleVariant; 
+                  XlListObjectHasHeaders: XlYesNoGuess; Destination: OleVariant; out RHS: ListObject): HResult; stdcall;
     function Get__Default(Index: OleVariant; out RHS: ListObject): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
     function Get_Item(Index: OleVariant; out RHS: ListObject): HResult; stdcall;
     function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Add(SourceType: XlListObjectSourceType; Source: OleVariant; LinkSource: OleVariant; 
+                 XlListObjectHasHeaders: XlYesNoGuess; Destination: OleVariant; 
+                 TableStyleName: OleVariant; out RHS: ListObject): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16749,6 +18700,25 @@ type
     function Get_TotalsRowRange(out RHS: ExcelRange): HResult; stdcall;
     function Get_SharePointURL(out RHS: WideString): HResult; stdcall;
     function Get_XmlMap(out RHS: XmlMap): HResult; stdcall;
+    function Get_DisplayName(out RHS: WideString): HResult; stdcall;
+    function Set_DisplayName(const RHS: WideString): HResult; stdcall;
+    function Get_ShowHeaders(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowHeaders(RHS: WordBool): HResult; stdcall;
+    function Get_AutoFilter(out RHS: AutoFilter): HResult; stdcall;
+    function Get_TableStyle(out RHS: OleVariant): HResult; stdcall;
+    function Set_TableStyle(RHS: OleVariant): HResult; stdcall;
+    function Get_ShowTableStyleFirstColumn(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleFirstColumn(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleLastColumn(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleLastColumn(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleRowStripes(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleRowStripes(RHS: WordBool): HResult; stdcall;
+    function Get_ShowTableStyleColumnStripes(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowTableStyleColumnStripes(RHS: WordBool): HResult; stdcall;
+    function Get_Sort(out RHS: Sort): HResult; stdcall;
+    function Get_Comment(out RHS: WideString): HResult; stdcall;
+    function Set_Comment(const RHS: WideString): HResult; stdcall;
+    function ExportToVisio: HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16789,6 +18759,8 @@ type
     function Set_TotalsCalculation(RHS: XlTotalsCalculation): HResult; stdcall;
     function Get_XPath(out RHS: XPath): HResult; stdcall;
     function Get_SharePointFormula(out RHS: WideString): HResult; stdcall;
+    function Get_DataBodyRange(out RHS: ExcelRange): HResult; stdcall;
+    function Get_Total(out RHS: ExcelRange): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16801,11 +18773,12 @@ type
     function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
     function Get_Creator(out RHS: XlCreator): HResult; stdcall;
     function Get_Parent(out RHS: IDispatch): HResult; stdcall;
-    function Add(Position: OleVariant; out RHS: ListRow): HResult; stdcall;
+    function _Add(Position: OleVariant; out RHS: ListRow): HResult; stdcall;
     function Get__Default(Index: OleVariant; out RHS: ListRow): HResult; stdcall;
     function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
     function Get_Item(Index: OleVariant; out RHS: ListRow): HResult; stdcall;
     function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Add(Position: OleVariant; AlwaysInsert: OleVariant; out RHS: ListRow): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -16940,6 +18913,7 @@ type
     function ImportXml(const XmlData: WideString; Overwrite: OleVariant; out RHS: XlXmlImportResult): HResult; stdcall;
     function Export(const Url: WideString; Overwrite: OleVariant; out RHS: XlXmlExportResult): HResult; stdcall;
     function ExportXml(out Data: WideString; out RHS: XlXmlExportResult): HResult; stdcall;
+    function Get_WorkbookConnection(out RHS: WorkbookConnection): HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -17004,6 +18978,1071 @@ type
   end;
 
 // *********************************************************************//
+// Interface: IPivotLineCells
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002447F-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPivotLineCells = interface(IDispatch)
+    ['{0002447F-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: PivotCell): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: PivotCell): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPivotLine
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024480-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPivotLine = interface(IDispatch)
+    ['{00024480-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_LineType(out RHS: XlPivotLineType): HResult; stdcall;
+    function Get_Position(out RHS: Integer): HResult; stdcall;
+    function Get_PivotLineCells(out RHS: PivotLineCells): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPivotLines
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024481-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPivotLines = interface(IDispatch)
+    ['{00024481-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: PivotLine): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: PivotLine): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPivotAxis
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024482-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPivotAxis = interface(IDispatch)
+    ['{00024482-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_PivotLines(out RHS: PivotLines): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPivotFilter
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024483-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPivotFilter = interface(IDispatch)
+    ['{00024483-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Order(out RHS: Integer): HResult; stdcall;
+    function Set_Order(RHS: Integer): HResult; stdcall;
+    function Get_FilterType(out RHS: XlPivotFilterType): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Get_Description(out RHS: WideString): HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function Get_Active(out RHS: WordBool): HResult; stdcall;
+    function Get_PivotField(out RHS: PivotField): HResult; stdcall;
+    function Get_DataField(out RHS: PivotField): HResult; stdcall;
+    function Get_DataCubeField(out RHS: CubeField): HResult; stdcall;
+    function Get_Value1(out RHS: OleVariant): HResult; stdcall;
+    function Get_Value2(out RHS: OleVariant): HResult; stdcall;
+    function Get_MemberPropertyField(out RHS: PivotField): HResult; stdcall;
+    function Get_IsMemberPropertyFilter(out RHS: WordBool): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPivotFilters
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024484-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPivotFilters = interface(IDispatch)
+    ['{00024484-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: PivotFilter): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: PivotFilter): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Add(Type_: XlPivotFilterType; DataField: OleVariant; Value1: OleVariant; 
+                 Value2: OleVariant; Order: OleVariant; Name: OleVariant; Description: OleVariant; 
+                 MemberPropertyField: OleVariant; out RHS: PivotFilter): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IWorkbookConnection
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024485-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IWorkbookConnection = interface(IDispatch)
+    ['{00024485-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Set_Name(const RHS: WideString): HResult; stdcall;
+    function Get_Description(out RHS: WideString): HResult; stdcall;
+    function Set_Description(const RHS: WideString): HResult; stdcall;
+    function Get__Default(out RHS: WideString): HResult; stdcall;
+    function Set__Default(const RHS: WideString): HResult; stdcall;
+    function Get_type_(out RHS: XlConnectionType): HResult; stdcall;
+    function Get_OLEDBConnection(out RHS: OLEDBConnection): HResult; stdcall;
+    function Get_ODBCConnection(out RHS: ODBCConnection): HResult; stdcall;
+    function Get_Ranges(out RHS: Ranges): HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function Refresh: HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IConnections
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024486-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IConnections = interface(IDispatch)
+    ['{00024486-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function AddFromFile(const Filename: WideString; out RHS: WorkbookConnection): HResult; stdcall;
+    function Add(const Name: WideString; const Description: WideString; 
+                 ConnectionString: OleVariant; CommandText: OleVariant; lCmdtype: OleVariant; 
+                 out RHS: WorkbookConnection): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: WorkbookConnection): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: WorkbookConnection): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IWorksheetView
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024487-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IWorksheetView = interface(IDispatch)
+    ['{00024487-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Sheet(out RHS: IDispatch): HResult; stdcall;
+    function Get_DisplayGridlines(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayGridlines(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayFormulas(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayFormulas(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayHeadings(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayHeadings(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayOutline(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayOutline(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayZeros(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayZeros(RHS: WordBool): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IChartView
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024488-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IChartView = interface(IDispatch)
+    ['{00024488-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Sheet(out RHS: IDispatch): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IModuleView
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024489-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IModuleView = interface(IDispatch)
+    ['{00024489-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Sheet(out RHS: IDispatch): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IDialogSheetView
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002448A-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IDialogSheetView = interface(IDispatch)
+    ['{0002448A-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Sheet(out RHS: IDispatch): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ISheetViews
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002448C-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ISheetViews = interface(IDispatch)
+    ['{0002448C-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IOLEDBConnection
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002448D-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IOLEDBConnection = interface(IDispatch)
+    ['{0002448D-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_ADOConnection(out RHS: IDispatch): HResult; stdcall;
+    function Get_BackgroundQuery(out RHS: WordBool): HResult; stdcall;
+    function Set_BackgroundQuery(RHS: WordBool): HResult; stdcall;
+    function CancelRefresh: HResult; stdcall;
+    function Get_CommandText(out RHS: OleVariant): HResult; stdcall;
+    function Set_CommandText(RHS: OleVariant): HResult; stdcall;
+    function Get_CommandType(out RHS: XlCmdType): HResult; stdcall;
+    function Set_CommandType(RHS: XlCmdType): HResult; stdcall;
+    function Get_Connection(out RHS: OleVariant): HResult; stdcall;
+    function Set_Connection(RHS: OleVariant): HResult; stdcall;
+    function Get_EnableRefresh(out RHS: WordBool): HResult; stdcall;
+    function Set_EnableRefresh(RHS: WordBool): HResult; stdcall;
+    function Get_LocalConnection(out RHS: OleVariant): HResult; stdcall;
+    function Set_LocalConnection(RHS: OleVariant): HResult; stdcall;
+    function Get_MaintainConnection(out RHS: WordBool): HResult; stdcall;
+    function Set_MaintainConnection(RHS: WordBool): HResult; stdcall;
+    function MakeConnection: HResult; stdcall;
+    function Refresh: HResult; stdcall;
+    function Get_RefreshDate(out RHS: TDateTime): HResult; stdcall;
+    function Get_Refreshing(out RHS: WordBool): HResult; stdcall;
+    function Get_RefreshOnFileOpen(out RHS: WordBool): HResult; stdcall;
+    function Set_RefreshOnFileOpen(RHS: WordBool): HResult; stdcall;
+    function Get_RefreshPeriod(out RHS: Integer): HResult; stdcall;
+    function Set_RefreshPeriod(RHS: Integer): HResult; stdcall;
+    function Get_RobustConnect(out RHS: XlRobustConnect): HResult; stdcall;
+    function Set_RobustConnect(RHS: XlRobustConnect): HResult; stdcall;
+    function SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant): HResult; stdcall;
+    function Get_SavePassword(out RHS: WordBool): HResult; stdcall;
+    function Set_SavePassword(RHS: WordBool): HResult; stdcall;
+    function Get_SourceConnectionFile(out RHS: WideString): HResult; stdcall;
+    function Set_SourceConnectionFile(const RHS: WideString): HResult; stdcall;
+    function Get_SourceDataFile(out RHS: WideString): HResult; stdcall;
+    function Set_SourceDataFile(const RHS: WideString): HResult; stdcall;
+    function Get_OLAP(out RHS: WordBool): HResult; stdcall;
+    function Get_UseLocalConnection(out RHS: WordBool): HResult; stdcall;
+    function Set_UseLocalConnection(RHS: WordBool): HResult; stdcall;
+    function Get_MaxDrillthroughRecords(out RHS: Integer): HResult; stdcall;
+    function Set_MaxDrillthroughRecords(RHS: Integer): HResult; stdcall;
+    function Get_IsConnected(out RHS: WordBool): HResult; stdcall;
+    function Get_ServerCredentialsMethod(out RHS: XlCredentialsMethod): HResult; stdcall;
+    function Set_ServerCredentialsMethod(RHS: XlCredentialsMethod): HResult; stdcall;
+    function Get_ServerSSOApplicationID(out RHS: WideString): HResult; stdcall;
+    function Set_ServerSSOApplicationID(const RHS: WideString): HResult; stdcall;
+    function Get_AlwaysUseConnectionFile(out RHS: WordBool): HResult; stdcall;
+    function Set_AlwaysUseConnectionFile(RHS: WordBool): HResult; stdcall;
+    function Get_ServerFillColor(out RHS: WordBool): HResult; stdcall;
+    function Set_ServerFillColor(RHS: WordBool): HResult; stdcall;
+    function Get_ServerFontStyle(out RHS: WordBool): HResult; stdcall;
+    function Set_ServerFontStyle(RHS: WordBool): HResult; stdcall;
+    function Get_ServerNumberFormat(out RHS: WordBool): HResult; stdcall;
+    function Set_ServerNumberFormat(RHS: WordBool): HResult; stdcall;
+    function Get_ServerTextColor(out RHS: WordBool): HResult; stdcall;
+    function Set_ServerTextColor(RHS: WordBool): HResult; stdcall;
+    function Get_RetrieveInOfficeUILang(out RHS: WordBool): HResult; stdcall;
+    function Set_RetrieveInOfficeUILang(RHS: WordBool): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IODBCConnection
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002448E-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IODBCConnection = interface(IDispatch)
+    ['{0002448E-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_BackgroundQuery(out RHS: WordBool): HResult; stdcall;
+    function Set_BackgroundQuery(RHS: WordBool): HResult; stdcall;
+    function CancelRefresh: HResult; stdcall;
+    function Get_CommandText(out RHS: OleVariant): HResult; stdcall;
+    function Set_CommandText(RHS: OleVariant): HResult; stdcall;
+    function Get_CommandType(out RHS: XlCmdType): HResult; stdcall;
+    function Set_CommandType(RHS: XlCmdType): HResult; stdcall;
+    function Get_Connection(out RHS: OleVariant): HResult; stdcall;
+    function Set_Connection(RHS: OleVariant): HResult; stdcall;
+    function Get_EnableRefresh(out RHS: WordBool): HResult; stdcall;
+    function Set_EnableRefresh(RHS: WordBool): HResult; stdcall;
+    function Refresh: HResult; stdcall;
+    function Get_RefreshDate(out RHS: TDateTime): HResult; stdcall;
+    function Get_Refreshing(out RHS: WordBool): HResult; stdcall;
+    function Get_RefreshOnFileOpen(out RHS: WordBool): HResult; stdcall;
+    function Set_RefreshOnFileOpen(RHS: WordBool): HResult; stdcall;
+    function Get_RefreshPeriod(out RHS: Integer): HResult; stdcall;
+    function Set_RefreshPeriod(RHS: Integer): HResult; stdcall;
+    function Get_RobustConnect(out RHS: XlRobustConnect): HResult; stdcall;
+    function Set_RobustConnect(RHS: XlRobustConnect): HResult; stdcall;
+    function SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant): HResult; stdcall;
+    function Get_SavePassword(out RHS: WordBool): HResult; stdcall;
+    function Set_SavePassword(RHS: WordBool): HResult; stdcall;
+    function Get_SourceConnectionFile(out RHS: WideString): HResult; stdcall;
+    function Set_SourceConnectionFile(const RHS: WideString): HResult; stdcall;
+    function Get_SourceData(out RHS: OleVariant): HResult; stdcall;
+    function Set_SourceData(RHS: OleVariant): HResult; stdcall;
+    function Get_SourceDataFile(out RHS: WideString): HResult; stdcall;
+    function Set_SourceDataFile(const RHS: WideString): HResult; stdcall;
+    function Get_ServerCredentialsMethod(out RHS: XlCredentialsMethod): HResult; stdcall;
+    function Set_ServerCredentialsMethod(RHS: XlCredentialsMethod): HResult; stdcall;
+    function Get_ServerSSOApplicationID(out RHS: WideString): HResult; stdcall;
+    function Set_ServerSSOApplicationID(const RHS: WideString): HResult; stdcall;
+    function Get_AlwaysUseConnectionFile(out RHS: WordBool): HResult; stdcall;
+    function Set_AlwaysUseConnectionFile(RHS: WordBool): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IAction
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002448F-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IAction = interface(IDispatch)
+    ['{0002448F-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Get_Caption(out RHS: WideString): HResult; stdcall;
+    function Get_type_(out RHS: XlActionType): HResult; stdcall;
+    function Get_Coordinate(out RHS: WideString): HResult; stdcall;
+    function Get_Content(out RHS: WideString): HResult; stdcall;
+    function Execute: HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IActions
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024490-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IActions = interface(IDispatch)
+    ['{00024490-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: Action): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: Action): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IFormatColor
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024491-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IFormatColor = interface(IDispatch)
+    ['{00024491-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Color(out RHS: OleVariant): HResult; stdcall;
+    function Set_Color(RHS: OleVariant): HResult; stdcall;
+    function Get_ColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_ColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_ThemeColor(out RHS: OleVariant): HResult; stdcall;
+    function Set_ThemeColor(RHS: OleVariant): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IConditionValue
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024492-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IConditionValue = interface(IDispatch)
+    ['{00024492-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Modify(newtype: XlConditionValueTypes; newvalue: OleVariant): HResult; stdcall;
+    function Get_type_(out RHS: XlConditionValueTypes): HResult; stdcall;
+    function Get_Value(out RHS: OleVariant): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IColorScale
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024493-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IColorScale = interface(IDispatch)
+    ['{00024493-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function Get_Formula(out RHS: WideString): HResult; stdcall;
+    function Set_Formula(const RHS: WideString): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
+    function Get_ColorScaleCriteria(out RHS: ColorScaleCriteria): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IColorScaleCriteria
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024494-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IColorScaleCriteria = interface(IDispatch)
+    ['{00024494-0001-0000-C000-000000000046}']
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: ColorScaleCriterion): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: ColorScaleCriterion): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IColorScaleCriterion
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024495-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IColorScaleCriterion = interface(IDispatch)
+    ['{00024495-0001-0000-C000-000000000046}']
+    function Get_Index(out RHS: Integer): HResult; stdcall;
+    function Get_type_(out RHS: XlConditionValueTypes): HResult; stdcall;
+    function Set_type_(RHS: XlConditionValueTypes): HResult; stdcall;
+    function Get_Value(out RHS: OleVariant): HResult; stdcall;
+    function Set_Value(RHS: OleVariant): HResult; stdcall;
+    function Get_FormatColor(out RHS: FormatColor): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IDatabar
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024496-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IDatabar = interface(IDispatch)
+    ['{00024496-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function Get_MinPoint(out RHS: ConditionValue): HResult; stdcall;
+    function Get_MaxPoint(out RHS: ConditionValue): HResult; stdcall;
+    function Get_PercentMin(out RHS: Integer): HResult; stdcall;
+    function Set_PercentMin(RHS: Integer): HResult; stdcall;
+    function Get_PercentMax(out RHS: Integer): HResult; stdcall;
+    function Set_PercentMax(RHS: Integer): HResult; stdcall;
+    function Get_BarColor(out RHS: IDispatch): HResult; stdcall;
+    function Get_ShowValue(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowValue(RHS: WordBool): HResult; stdcall;
+    function Get_Formula(out RHS: WideString): HResult; stdcall;
+    function Set_Formula(const RHS: WideString): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IIconSetCondition
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024497-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IIconSetCondition = interface(IDispatch)
+    ['{00024497-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function Get_ReverseOrder(out RHS: WordBool): HResult; stdcall;
+    function Set_ReverseOrder(RHS: WordBool): HResult; stdcall;
+    function Get_PercentileValues(out RHS: WordBool): HResult; stdcall;
+    function Set_PercentileValues(RHS: WordBool): HResult; stdcall;
+    function Get_ShowIconOnly(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowIconOnly(RHS: WordBool): HResult; stdcall;
+    function Get_Formula(out RHS: WideString): HResult; stdcall;
+    function Set_Formula(const RHS: WideString): HResult; stdcall;
+    function Get_IconSet(out RHS: OleVariant): HResult; stdcall;
+    function Set_IconSet(RHS: OleVariant): HResult; stdcall;
+    function Get_IconCriteria(out RHS: IconCriteria): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IIconCriteria
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024498-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IIconCriteria = interface(IDispatch)
+    ['{00024498-0001-0000-C000-000000000046}']
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: IconCriterion): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: IconCriterion): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IIconCriterion
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {00024499-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IIconCriterion = interface(IDispatch)
+    ['{00024499-0001-0000-C000-000000000046}']
+    function Get_Index(out RHS: Integer): HResult; stdcall;
+    function Get_type_(out RHS: XlConditionValueTypes): HResult; stdcall;
+    function Set_type_(RHS: XlConditionValueTypes): HResult; stdcall;
+    function Get_Value(out RHS: OleVariant): HResult; stdcall;
+    function Set_Value(RHS: OleVariant): HResult; stdcall;
+    function Get_Operator(out RHS: Integer): HResult; stdcall;
+    function Set_Operator(RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IIcon
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002449A-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IIcon = interface(IDispatch)
+    ['{0002449A-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IconSet): HResult; stdcall;
+    function Get_Index(out RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IIconSet
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002449B-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IIconSet = interface(IDispatch)
+    ['{0002449B-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_ID(out RHS: XlIconSet): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: Icon): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: Icon): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IIconSets
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002449C-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IIconSets = interface(IDispatch)
+    ['{0002449C-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ITop10
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002449D-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ITop10 = interface(IDispatch)
+    ['{0002449D-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Set_StopIfTrue(RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function Get_TopBottom(out RHS: XlTopBottom): HResult; stdcall;
+    function Set_TopBottom(RHS: XlTopBottom): HResult; stdcall;
+    function Get_Rank(out RHS: Integer): HResult; stdcall;
+    function Set_Rank(RHS: Integer): HResult; stdcall;
+    function Get_Percent(out RHS: WordBool): HResult; stdcall;
+    function Set_Percent(RHS: WordBool): HResult; stdcall;
+    function Get_Interior(out RHS: Interior): HResult; stdcall;
+    function Get_Borders(out RHS: Borders): HResult; stdcall;
+    function Get_Font(out RHS: Font): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function Get_NumberFormat(out RHS: OleVariant): HResult; stdcall;
+    function Set_NumberFormat(RHS: OleVariant): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
+    function Get_CalcFor(out RHS: XlCalcFor): HResult; stdcall;
+    function Set_CalcFor(RHS: XlCalcFor): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IAboveAverage
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002449E-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IAboveAverage = interface(IDispatch)
+    ['{0002449E-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Set_StopIfTrue(RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function Get_AboveBelow(out RHS: XlAboveBelow): HResult; stdcall;
+    function Set_AboveBelow(RHS: XlAboveBelow): HResult; stdcall;
+    function Get_Interior(out RHS: Interior): HResult; stdcall;
+    function Get_Borders(out RHS: Borders): HResult; stdcall;
+    function Get_Font(out RHS: Font): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function Get_NumberFormat(out RHS: OleVariant): HResult; stdcall;
+    function Set_NumberFormat(RHS: OleVariant): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
+    function Get_CalcFor(out RHS: XlCalcFor): HResult; stdcall;
+    function Set_CalcFor(RHS: XlCalcFor): HResult; stdcall;
+    function Get_NumStdDev(out RHS: Integer): HResult; stdcall;
+    function Set_NumStdDev(RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IUniqueValues
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {0002449F-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IUniqueValues = interface(IDispatch)
+    ['{0002449F-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Get_StopIfTrue(out RHS: WordBool): HResult; stdcall;
+    function Set_StopIfTrue(RHS: WordBool): HResult; stdcall;
+    function Get_AppliesTo(out RHS: ExcelRange): HResult; stdcall;
+    function Get_DupeUnique(out RHS: XlDupeUnique): HResult; stdcall;
+    function Set_DupeUnique(RHS: XlDupeUnique): HResult; stdcall;
+    function Get_Interior(out RHS: Interior): HResult; stdcall;
+    function Get_Borders(out RHS: Borders): HResult; stdcall;
+    function Get_Font(out RHS: Font): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function Get_NumberFormat(out RHS: OleVariant): HResult; stdcall;
+    function Set_NumberFormat(RHS: OleVariant): HResult; stdcall;
+    function SetFirstPriority: HResult; stdcall;
+    function SetLastPriority: HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function ModifyAppliesToRange(const Range: ExcelRange): HResult; stdcall;
+    function Get_PTCondition(out RHS: WordBool): HResult; stdcall;
+    function Get_ScopeType(out RHS: XlPivotConditionScope): HResult; stdcall;
+    function Set_ScopeType(RHS: XlPivotConditionScope): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IRanges
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A0-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IRanges = interface(IDispatch)
+    ['{000244A0-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: ExcelRange): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: ExcelRange): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IHeaderFooter
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A1-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IHeaderFooter = interface(IDispatch)
+    ['{000244A1-0001-0000-C000-000000000046}']
+    function Get_Text(out RHS: WideString): HResult; stdcall;
+    function Set_Text(const RHS: WideString): HResult; stdcall;
+    function Get_Picture(out RHS: Graphic): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPage
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A2-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPage = interface(IDispatch)
+    ['{000244A2-0001-0000-C000-000000000046}']
+    function Get_LeftHeader(out RHS: HeaderFooter): HResult; stdcall;
+    function Get_CenterHeader(out RHS: HeaderFooter): HResult; stdcall;
+    function Get_RightHeader(out RHS: HeaderFooter): HResult; stdcall;
+    function Get_LeftFooter(out RHS: HeaderFooter): HResult; stdcall;
+    function Get_CenterFooter(out RHS: HeaderFooter): HResult; stdcall;
+    function Get_RightFooter(out RHS: HeaderFooter): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IPages
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A3-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IPages = interface(IDispatch)
+    ['{000244A3-0001-0000-C000-000000000046}']
+    function Get_Item(Index: OleVariant; out RHS: Page): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: Page): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IServerViewableItems
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A4-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IServerViewableItems = interface(IDispatch)
+    ['{000244A4-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Add(Obj: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Delete(Index: OleVariant): HResult; stdcall;
+    function DeleteAll: HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ITableStyleElement
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A5-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ITableStyleElement = interface(IDispatch)
+    ['{000244A5-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_HasFormat(out RHS: WordBool): HResult; stdcall;
+    function Get_Interior(out RHS: Interior): HResult; stdcall;
+    function Get_Borders(out RHS: Borders): HResult; stdcall;
+    function Get_Font(out RHS: Font): HResult; stdcall;
+    function Get_StripeSize(out RHS: Integer): HResult; stdcall;
+    function Set_StripeSize(RHS: Integer): HResult; stdcall;
+    function Clear: HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ITableStyleElements
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A6-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ITableStyleElements = interface(IDispatch)
+    ['{000244A6-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Item(Index: XlTableStyleElementType; out RHS: TableStyleElement): HResult; stdcall;
+    function Get__Default(Index: XlTableStyleElementType; out RHS: TableStyleElement): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ITableStyle
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A7-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ITableStyle = interface(IDispatch)
+    ['{000244A7-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get__Default(out RHS: WideString): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Get_NameLocal(out RHS: WideString): HResult; stdcall;
+    function Get_BuiltIn(out RHS: WordBool): HResult; stdcall;
+    function Get_TableStyleElements(out RHS: TableStyleElements): HResult; stdcall;
+    function Get_ShowAsAvailableTableStyle(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowAsAvailableTableStyle(RHS: WordBool): HResult; stdcall;
+    function Get_ShowAsAvailablePivotTableStyle(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowAsAvailablePivotTableStyle(RHS: WordBool): HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function Duplicate(NewTableStyleName: OleVariant; out RHS: TableStyle): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ITableStyles
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A8-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ITableStyles = interface(IDispatch)
+    ['{000244A8-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Add(const TableStyleName: WideString; out RHS: TableStyle): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: TableStyle): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: TableStyle): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ISortField
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244A9-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ISortField = interface(IDispatch)
+    ['{000244A9-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_SortOn(out RHS: XlSortOn): HResult; stdcall;
+    function Set_SortOn(RHS: XlSortOn): HResult; stdcall;
+    function Get_SortOnValue(out RHS: IDispatch): HResult; stdcall;
+    function Get_Key(out RHS: ExcelRange): HResult; stdcall;
+    function Get_Order(out RHS: XlSortOrder): HResult; stdcall;
+    function Set_Order(RHS: XlSortOrder): HResult; stdcall;
+    function Get_CustomOrder(out RHS: OleVariant): HResult; stdcall;
+    function Set_CustomOrder(RHS: OleVariant): HResult; stdcall;
+    function Get_DataOption(out RHS: XlSortDataOption): HResult; stdcall;
+    function Set_DataOption(RHS: XlSortDataOption): HResult; stdcall;
+    function Get_Priority(out RHS: Integer): HResult; stdcall;
+    function Set_Priority(RHS: Integer): HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function ModifyKey(const Key: ExcelRange): HResult; stdcall;
+    function SetIcon(const Icon: Icon): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ISortFields
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244AA-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ISortFields = interface(IDispatch)
+    ['{000244AA-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Add(const Key: ExcelRange; SortOn: OleVariant; Order: OleVariant; 
+                 CustomOrder: OleVariant; DataOption: OleVariant; out RHS: SortField): HResult; stdcall;
+    function Get_Item(Index: OleVariant; out RHS: SortField): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Clear: HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: SortField): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ISort
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244AB-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ISort = interface(IDispatch)
+    ['{000244AB-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Rng(out RHS: ExcelRange): HResult; stdcall;
+    function Get_Header(out RHS: XlYesNoGuess): HResult; stdcall;
+    function Set_Header(RHS: XlYesNoGuess): HResult; stdcall;
+    function Get_MatchCase(out RHS: WordBool): HResult; stdcall;
+    function Set_MatchCase(RHS: WordBool): HResult; stdcall;
+    function Get_Orientation(out RHS: XlSortOrientation): HResult; stdcall;
+    function Set_Orientation(RHS: XlSortOrientation): HResult; stdcall;
+    function Get_SortMethod(out RHS: XlSortMethod): HResult; stdcall;
+    function Set_SortMethod(RHS: XlSortMethod): HResult; stdcall;
+    function Get_SortFields(out RHS: SortFields): HResult; stdcall;
+    function SetRange(const Rng: ExcelRange): HResult; stdcall;
+    function Apply: HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IResearch
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244AC-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IResearch = interface(IDispatch)
+    ['{000244AC-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Query(const ServiceID: WideString; QueryString: OleVariant; QueryLanguage: OleVariant; 
+                   UseSelection: OleVariant; LaunchQuery: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function IsResearchService(const ServiceID: WideString; out RHS: WordBool): HResult; stdcall;
+    function SetLanguagePair(LanguageFrom: Integer; LanguageTo: Integer; out RHS: OleVariant): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IColorStop
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244AD-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IColorStop = interface(IDispatch)
+    ['{000244AD-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Delete: HResult; stdcall;
+    function Get_Color(out RHS: OleVariant): HResult; stdcall;
+    function Set_Color(RHS: OleVariant): HResult; stdcall;
+    function Get_ThemeColor(out RHS: Integer): HResult; stdcall;
+    function Set_ThemeColor(RHS: Integer): HResult; stdcall;
+    function Get_TintAndShade(out RHS: OleVariant): HResult; stdcall;
+    function Set_TintAndShade(RHS: OleVariant): HResult; stdcall;
+    function Get_Position(out RHS: Double): HResult; stdcall;
+    function Set_Position(RHS: Double): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IColorStops
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244AE-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IColorStops = interface(IDispatch)
+    ['{000244AE-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Add(Position: Double; out RHS: ColorStop): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: ColorStop): HResult; stdcall;
+    function Get__Default(Index: OleVariant; out RHS: ColorStop): HResult; stdcall;
+    function Get__NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Clear: HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ILinearGradient
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244AF-0001-0000-C000-000000000046}
+// *********************************************************************//
+  ILinearGradient = interface(IDispatch)
+    ['{000244AF-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_ColorStops(out RHS: ColorStops): HResult; stdcall;
+    function Get_Degree(out RHS: Double): HResult; stdcall;
+    function Set_Degree(RHS: Double): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IRectangularGradient
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244B0-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IRectangularGradient = interface(IDispatch)
+    ['{000244B0-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_ColorStops(out RHS: ColorStops): HResult; stdcall;
+    function Get_RectangleTop(out RHS: Double): HResult; stdcall;
+    function Set_RectangleTop(RHS: Double): HResult; stdcall;
+    function Get_RectangleBottom(out RHS: Double): HResult; stdcall;
+    function Set_RectangleBottom(RHS: Double): HResult; stdcall;
+    function Get_RectangleLeft(out RHS: Double): HResult; stdcall;
+    function Set_RectangleLeft(RHS: Double): HResult; stdcall;
+    function Get_RectangleRight(out RHS: Double): HResult; stdcall;
+    function Set_RectangleRight(RHS: Double): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMultiThreadedCalculation
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244B1-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IMultiThreadedCalculation = interface(IDispatch)
+    ['{000244B1-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Enabled(out RHS: WordBool): HResult; stdcall;
+    function Set_Enabled(RHS: WordBool): HResult; stdcall;
+    function Get_ThreadMode(out RHS: XlThreadMode): HResult; stdcall;
+    function Set_ThreadMode(RHS: XlThreadMode): HResult; stdcall;
+    function Get_ThreadCount(out RHS: Integer): HResult; stdcall;
+    function Set_ThreadCount(RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IChartFormat
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000244B2-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IChartFormat = interface(IDispatch)
+    ['{000244B2-0001-0000-C000-000000000046}']
+    function Get_Application(out RHS: ExcelApplication): HResult; stdcall;
+    function Get_Creator(out RHS: XlCreator): HResult; stdcall;
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Fill(out RHS: FillFormat): HResult; stdcall;
+    function Get_Glow(out RHS: GlowFormat): HResult; stdcall;
+    function Get_Line(out RHS: LineFormat): HResult; stdcall;
+    function Get_PictureFormat(out RHS: PictureFormat): HResult; stdcall;
+    function Get_Shadow(out RHS: ShadowFormat): HResult; stdcall;
+    function Get_SoftEdge(out RHS: SoftEdgeFormat): HResult; stdcall;
+    function Get_TextFrame2(out RHS: TextFrame2): HResult; stdcall;
+    function Get_ThreeD(out RHS: ThreeDFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
 // DispIntf:  Font
 // Flags:     (4096) Dispatchable
 // GUID:      {0002084D-0000-0000-C000-000000000046}
@@ -17027,6 +20066,9 @@ type
     property Subscript: OleVariant dispid 179;
     property Superscript: OleVariant dispid 178;
     property Underline: OleVariant dispid 106;
+    property ThemeColor: OleVariant dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
+    property ThemeFont: XlThemeFont dispid 2367;
   end;
 
 // *********************************************************************//
@@ -17068,9 +20110,9 @@ type
     function NewWindow: Window; dispid 280;
     property OnWindow: WideString dispid 623;
     property Panes: Panes readonly dispid 653;
-    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant): OleVariant; dispid 1772;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant): OleVariant; dispid 1772;
     function PrintPreview(EnableChanges: OleVariant): OleVariant; dispid 281;
     property RangeSelection: ExcelRange readonly dispid 1189;
     property ScrollColumn: Integer dispid 654;
@@ -17102,6 +20144,14 @@ type
     function RangeFromPoint(x: Integer; y: Integer): IDispatch; dispid 1778;
     procedure ScrollIntoView(Left: Integer; Top: Integer; Width: Integer; Height: Integer; 
                              Start: OleVariant); dispid 1781;
+    property SheetViews: SheetViews readonly dispid 2368;
+    property ActiveSheetView: IDispatch readonly dispid 2369;
+    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                      PrToFileName: OleVariant): OleVariant; dispid 2361;
+    property DisplayRuler: WordBool dispid 2370;
+    property AutoFilterDateGrouping: WordBool dispid 2371;
+    property DisplayWhitespace: WordBool dispid 2372;
   end;
 
 // *********************************************************************//
@@ -17169,6 +20219,9 @@ type
                                       const Url: WideString; var Cancel: WordBool); dispid 2292;
     procedure WorkbookAfterXmlExport(const Wb: ExcelWorkbook; const Map: XmlMap; 
                                      const Url: WideString; Result: XlXmlExportResult); dispid 2293;
+    procedure WorkbookRowsetComplete(const Wb: ExcelWorkbook; const Description: WideString; 
+                                     const Sheet: WideString; Success: WordBool); dispid 2611;
+    procedure AfterCalculate; dispid 2612;
   end;
 
 // *********************************************************************//
@@ -17572,6 +20625,182 @@ type
                  topic20: OleVariant; topic21: OleVariant; topic22: OleVariant; 
                  topic23: OleVariant; topic24: OleVariant; topic25: OleVariant; 
                  topic26: OleVariant; topic27: OleVariant; topic28: OleVariant): OleVariant; dispid 16763;
+    function Hex2Bin(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16768;
+    function Hex2Dec(Arg1: OleVariant): WideString; dispid 16769;
+    function Hex2Oct(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16770;
+    function Dec2Bin(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16771;
+    function Dec2Hex(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16772;
+    function Dec2Oct(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16773;
+    function Oct2Bin(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16774;
+    function Oct2Hex(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16775;
+    function Oct2Dec(Arg1: OleVariant): WideString; dispid 16776;
+    function Bin2Dec(Arg1: OleVariant): WideString; dispid 16777;
+    function Bin2Oct(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16778;
+    function Bin2Hex(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16779;
+    function ImSub(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16780;
+    function ImDiv(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16781;
+    function ImPower(Arg1: OleVariant; Arg2: OleVariant): WideString; dispid 16782;
+    function ImAbs(Arg1: OleVariant): WideString; dispid 16783;
+    function ImSqrt(Arg1: OleVariant): WideString; dispid 16784;
+    function ImLn(Arg1: OleVariant): WideString; dispid 16785;
+    function ImLog2(Arg1: OleVariant): WideString; dispid 16786;
+    function ImLog10(Arg1: OleVariant): WideString; dispid 16787;
+    function ImSin(Arg1: OleVariant): WideString; dispid 16788;
+    function ImCos(Arg1: OleVariant): WideString; dispid 16789;
+    function ImExp(Arg1: OleVariant): WideString; dispid 16790;
+    function ImArgument(Arg1: OleVariant): WideString; dispid 16791;
+    function ImConjugate(Arg1: OleVariant): WideString; dispid 16792;
+    function Imaginary(Arg1: OleVariant): Double; dispid 16793;
+    function ImReal(Arg1: OleVariant): Double; dispid 16794;
+    function Complex(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): WideString; dispid 16795;
+    function ImSum(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                   Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                   Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                   Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                   Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                   Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                   Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                   Arg29: OleVariant; Arg30: OleVariant): WideString; dispid 16796;
+    function ImProduct(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                       Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                       Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                       Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                       Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                       Arg29: OleVariant; Arg30: OleVariant): WideString; dispid 16797;
+    function SeriesSum(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16798;
+    function FactDouble(Arg1: OleVariant): Double; dispid 16799;
+    function SqrtPi(Arg1: OleVariant): Double; dispid 16800;
+    function Quotient(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16801;
+    function Delta(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16802;
+    function GeStep(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16803;
+    function IsEven(Arg1: OleVariant): WordBool; dispid 16804;
+    function IsOdd(Arg1: OleVariant): WordBool; dispid 16805;
+    function MRound(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16806;
+    function Erf(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16807;
+    function ErfC(Arg1: OleVariant): Double; dispid 16808;
+    function BesselJ(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16809;
+    function BesselK(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16810;
+    function BesselY(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16811;
+    function BesselI(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16812;
+    function Xirr(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16813;
+    function Xnpv(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16814;
+    function PriceMat(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant): Double; dispid 16815;
+    function YieldMat(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant): Double; dispid 16816;
+    function IntRate(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     Arg5: OleVariant): Double; dispid 16817;
+    function Received(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant): Double; dispid 16818;
+    function Disc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                  Arg5: OleVariant): Double; dispid 16819;
+    function PriceDisc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant): Double; dispid 16820;
+    function YieldDisc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant): Double; dispid 16821;
+    function TBillEq(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16822;
+    function TBillPrice(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16823;
+    function TBillYield(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16824;
+    function Price(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                   Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant): Double; dispid 16825;
+    function DollarDe(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16827;
+    function DollarFr(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16828;
+    function Nominal(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16829;
+    function Effect(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16830;
+    function CumPrinc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant): Double; dispid 16831;
+    function CumIPmt(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     Arg5: OleVariant; Arg6: OleVariant): Double; dispid 16832;
+    function EDate(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16833;
+    function EoMonth(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16834;
+    function YearFrac(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16835;
+    function CoupDayBs(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16836;
+    function CoupDays(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16837;
+    function CoupDaysNc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16838;
+    function CoupNcd(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16839;
+    function CoupNum(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16840;
+    function CoupPcd(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant): Double; dispid 16841;
+    function Duration(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant): Double; dispid 16842;
+    function MDuration(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant): Double; dispid 16843;
+    function OddLPrice(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant): Double; dispid 16844;
+    function OddLYield(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant): Double; dispid 16845;
+    function OddFPrice(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       Arg9: OleVariant): Double; dispid 16846;
+    function OddFYield(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                       Arg9: OleVariant): Double; dispid 16847;
+    function RandBetween(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16848;
+    function WeekNum(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16849;
+    function AmorDegrc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                       Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant): Double; dispid 16850;
+    function AmorLinc(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant): Double; dispid 16851;
+    function Convert(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16852;
+    function AccrInt(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                     Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant): Double; dispid 16853;
+    function AccrIntM(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant): Double; dispid 16854;
+    function WorkDay(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16855;
+    function NetworkDays(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16856;
+    function Gcd(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                 Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                 Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                 Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                 Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                 Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                 Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                 Arg29: OleVariant; Arg30: OleVariant): Double; dispid 16857;
+    function MultiNomial(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                         Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                         Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                         Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; 
+                         Arg16: OleVariant; Arg17: OleVariant; Arg18: OleVariant; 
+                         Arg19: OleVariant; Arg20: OleVariant; Arg21: OleVariant; 
+                         Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                         Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; 
+                         Arg28: OleVariant; Arg29: OleVariant; Arg30: OleVariant): Double; dispid 16858;
+    function Lcm(Arg1: OleVariant; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                 Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                 Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                 Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                 Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                 Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                 Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                 Arg29: OleVariant; Arg30: OleVariant): Double; dispid 16859;
+    function FVSchedule(Arg1: OleVariant; Arg2: OleVariant): Double; dispid 16860;
+    function SumIfs(const Arg1: ExcelRange; const Arg2: ExcelRange; Arg3: OleVariant; 
+                    Arg4: OleVariant; Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; 
+                    Arg8: OleVariant; Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; 
+                    Arg12: OleVariant; Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; 
+                    Arg16: OleVariant; Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; 
+                    Arg20: OleVariant; Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; 
+                    Arg24: OleVariant; Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; 
+                    Arg28: OleVariant; Arg29: OleVariant): Double; dispid 16866;
+    function CountIfs(const Arg1: ExcelRange; Arg2: OleVariant; Arg3: OleVariant; Arg4: OleVariant; 
+                      Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; Arg8: OleVariant; 
+                      Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; Arg12: OleVariant; 
+                      Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; Arg16: OleVariant; 
+                      Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; Arg20: OleVariant; 
+                      Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; Arg24: OleVariant; 
+                      Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; Arg28: OleVariant; 
+                      Arg29: OleVariant; Arg30: OleVariant): Double; dispid 16865;
+    function AverageIf(const Arg1: ExcelRange; Arg2: OleVariant; Arg3: OleVariant): Double; dispid 16867;
+    function AverageIfs(const Arg1: ExcelRange; const Arg2: ExcelRange; Arg3: OleVariant; 
+                        Arg4: OleVariant; Arg5: OleVariant; Arg6: OleVariant; Arg7: OleVariant; 
+                        Arg8: OleVariant; Arg9: OleVariant; Arg10: OleVariant; Arg11: OleVariant; 
+                        Arg12: OleVariant; Arg13: OleVariant; Arg14: OleVariant; Arg15: OleVariant; 
+                        Arg16: OleVariant; Arg17: OleVariant; Arg18: OleVariant; Arg19: OleVariant; 
+                        Arg20: OleVariant; Arg21: OleVariant; Arg22: OleVariant; Arg23: OleVariant; 
+                        Arg24: OleVariant; Arg25: OleVariant; Arg26: OleVariant; Arg27: OleVariant; 
+                        Arg28: OleVariant; Arg29: OleVariant): Double; dispid 16868;
+    function IfError(Arg1: OleVariant; Arg2: OleVariant): OleVariant; dispid 16864;
   end;
 
 // *********************************************************************//
@@ -17712,8 +20941,8 @@ type
     property Precedents: ExcelRange readonly dispid 544;
     property PrefixCharacter: OleVariant readonly dispid 504;
     property Previous: ExcelRange readonly dispid 503;
-    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant): OleVariant; dispid 905;
+    function __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant): OleVariant; dispid 905;
     function PrintPreview(EnableChanges: OleVariant): OleVariant; dispid 281;
     property QueryTable: ExcelQueryTable readonly dispid 1386;
     property Range[Cell1: OleVariant; Cell2: OleVariant]: ExcelRange readonly dispid 197;
@@ -17788,9 +21017,9 @@ type
     property Phonetics: Phonetics readonly dispid 1811;
     procedure SetPhonetic; dispid 1812;
     property ID: WideString dispid 1813;
-    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                      PrToFileName: OleVariant): OleVariant; dispid 1772;
+    function _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant): OleVariant; dispid 1772;
     property PivotCell: PivotCell readonly dispid 2013;
     procedure Dirty; dispid 2014;
     property Errors: Errors readonly dispid 2015;
@@ -17801,6 +21030,18 @@ type
     property AllowEdit: WordBool readonly dispid 2020;
     property ListObject: ListObject readonly dispid 2257;
     property XPath: XPath readonly dispid 2258;
+    property ServerActions: Actions readonly dispid 2491;
+    procedure RemoveDuplicates(Columns: OleVariant; Header: XlYesNoGuess); dispid 2492;
+    function PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                      ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                      PrToFileName: OleVariant): OleVariant; dispid 2361;
+    property MDX: WideString readonly dispid 2123;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); dispid 2493;
+    property CountLarge: OleVariant readonly dispid 2499;
+    function CalculateRowMajorOrder: OleVariant; dispid 2364;
   end;
 
 // *********************************************************************//
@@ -18024,6 +21265,8 @@ type
     property Value: OleVariant dispid 6;
     property Weight: OleVariant dispid 120;
     property _Default[Index: XlBordersIndex]: Border readonly dispid 0; default;
+    property ThemeColor: OleVariant dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
   end;
 
 // *********************************************************************//
@@ -18211,6 +21454,8 @@ type
     procedure AfterXmlImport(const Map: XmlMap; IsRefresh: WordBool; Result: XlXmlImportResult); dispid 2285;
     procedure BeforeXmlExport(const Map: XmlMap; const Url: WideString; var Cancel: WordBool); dispid 2287;
     procedure AfterXmlExport(const Map: XmlMap; const Url: WideString; Result: XlXmlExportResult); dispid 2288;
+    procedure RowsetComplete(const Description: WideString; const Sheet: WideString; 
+                             Success: WordBool); dispid 2610;
   end;
 
 // *********************************************************************//
@@ -18342,17 +21587,21 @@ type
     property Item[Index: OleVariant]: IDispatch readonly dispid 170;
     procedure Move(Before: OleVariant; After: OleVariant); dispid 637;
     property _NewEnum: IUnknown readonly dispid -4;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant); dispid 281;
     procedure Select(Replace: OleVariant); dispid 235;
     property HPageBreaks: HPageBreaks readonly dispid 1418;
     property VPageBreaks: VPageBreaks readonly dispid 1419;
     property Visible: OleVariant dispid 558;
     property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); dispid 1772;
     procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); dispid 1772;
+                       PrToFileName: OleVariant); dispid 2361;
   end;
 
 // *********************************************************************//
@@ -18494,6 +21743,9 @@ type
     property SourceDataFile: WideString readonly dispid 2080;
     property RobustConnect: XlRobustConnect dispid 2081;
     procedure SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant); dispid 2082;
+    property WorkbookConnection: WorkbookConnection readonly dispid 2544;
+    property Version: XlPivotTableVersionList readonly dispid 392;
+    property UpgradeOnRefresh: WordBool dispid 2545;
   end;
 
 // *********************************************************************//
@@ -18511,6 +21763,7 @@ type
     property _Default[Index: OleVariant]: PivotCache readonly dispid 0; default;
     function _NewEnum: IUnknown; dispid -4;
     function Add(SourceType: XlPivotTableSourceType; SourceData: OleVariant): PivotCache; dispid 181;
+    function Create(SourceType: XlPivotTableSourceType; SourceData: OleVariant; Version: OleVariant): PivotCache; dispid 1896;
   end;
 
 // *********************************************************************//
@@ -18668,6 +21921,36 @@ type
     property DisplayEmptyRow: WordBool dispid 2136;
     property DisplayEmptyColumn: WordBool dispid 2137;
     property ShowCellBackgroundFromOLAP: WordBool dispid 2138;
+    property PivotColumnAxis: PivotAxis readonly dispid 2546;
+    property PivotRowAxis: PivotAxis readonly dispid 2547;
+    property ShowDrillIndicators: WordBool dispid 2548;
+    property PrintDrillIndicators: WordBool dispid 2549;
+    property DisplayMemberPropertyTooltips: WordBool dispid 2550;
+    property DisplayContextTooltips: WordBool dispid 2551;
+    procedure ClearTable; dispid 2552;
+    property CompactRowIndent: Integer dispid 2553;
+    property LayoutRowDefault: XlLayoutRowType dispid 2554;
+    property DisplayFieldCaptions: WordBool dispid 2555;
+    procedure RowAxisLayout(RowLayout: XlLayoutRowType); dispid 2556;
+    procedure SubtotalLocation(Location: XlSubtototalLocationType); dispid 2558;
+    property ActiveFilters: PivotFilters readonly dispid 2559;
+    property InGridDropZones: WordBool dispid 2560;
+    procedure ClearAllFilters; dispid 2561;
+    property TableStyle2: OleVariant dispid 2562;
+    property ShowTableStyleLastColumn: WordBool dispid 2563;
+    property ShowTableStyleRowStripes: WordBool dispid 2564;
+    property ShowTableStyleColumnStripes: WordBool dispid 2565;
+    property ShowTableStyleRowHeaders: WordBool dispid 2566;
+    property ShowTableStyleColumnHeaders: WordBool dispid 2567;
+    procedure ConvertToFormulas(ConvertFilters: WordBool); dispid 2568;
+    property AllowMultipleFilters: WordBool dispid 2570;
+    property CompactLayoutRowHeader: WideString dispid 2571;
+    property CompactLayoutColumnHeader: WideString dispid 2572;
+    property FieldListSortAscending: WordBool dispid 2573;
+    property SortUsingCustomLists: WordBool dispid 2574;
+    procedure ChangeConnection(const conn: WorkbookConnection); dispid 2575;
+    procedure ChangePivotCache(PivotCache: OleVariant); dispid 2577;
+    property Location: WideString dispid 1397;
   end;
 
 // *********************************************************************//
@@ -18734,7 +22017,7 @@ type
     property IsCalculated: WordBool readonly dispid 1512;
     property MemoryUsed: Integer readonly dispid 372;
     property ServerBased: WordBool dispid 1513;
-    procedure AutoSort(Order: Integer; const Field: WideString); dispid 1514;
+    procedure _AutoSort(Order: Integer; const Field: WideString); dispid 2579;
     procedure AutoShow(Type_: Integer; Range: Integer; Count: Integer; const Field: WideString); dispid 1515;
     property AutoSortOrder: Integer readonly dispid 1516;
     property AutoSortField: WideString readonly dispid 1517;
@@ -18760,6 +22043,30 @@ type
     property EnableItemSelection: WordBool dispid 2144;
     property CurrentPageList: OleVariant dispid 2145;
     procedure AddPageItem(const Item: WideString; ClearList: OleVariant); dispid 2146;
+    property Hidden: WordBool dispid 268;
+    procedure DrillTo(const Field: WideString); dispid 2580;
+    property UseMemberPropertyAsCaption: WordBool dispid 2581;
+    property MemberPropertyCaption: WideString dispid 2582;
+    property DisplayAsTooltip: WordBool dispid 2583;
+    property DisplayInReport: WordBool dispid 2584;
+    property DisplayAsCaption: WordBool readonly dispid 2585;
+    property LayoutCompactRow: WordBool dispid 2586;
+    property IncludeNewItemsInFilter: WordBool dispid 2587;
+    property VisibleItemsList: OleVariant dispid 2588;
+    property PivotFilters: PivotFilters readonly dispid 2589;
+    property AutoSortPivotLine: PivotLine readonly dispid 2590;
+    property AutoSortCustomSubtotal: Integer readonly dispid 2591;
+    property ShowingInAxis: WordBool readonly dispid 2592;
+    property EnableMultiplePageItems: WordBool dispid 2184;
+    property AllItemsVisible: WordBool readonly dispid 2593;
+    procedure ClearManualFilter; dispid 2594;
+    procedure ClearAllFilters; dispid 2561;
+    procedure ClearValueFilters; dispid 2595;
+    procedure ClearLabelFilters; dispid 2596;
+    procedure AutoSort(Order: Integer; const Field: WideString; PivotLine: OleVariant; 
+                       CustomSubtotal: OleVariant); dispid 1514;
+    property SourceCaption: WideString readonly dispid 2599;
+    property ShowDetail: WordBool dispid 585;
   end;
 
 // *********************************************************************//
@@ -18825,6 +22132,7 @@ type
     property DrilledDown: WordBool dispid 1850;
     property StandardFormula: WideString dispid 2084;
     property SourceNameStandard: WideString readonly dispid 2148;
+    procedure DrillTo(const Field: WideString); dispid 2580;
   end;
 
 // *********************************************************************//
@@ -20030,6 +23338,8 @@ type
     property VisibleRange: ExcelRange readonly dispid 1118;
     procedure ScrollIntoView(Left: Integer; Top: Integer; Width: Integer; Height: Integer; 
                              Start: OleVariant); dispid 1781;
+    function PointsToScreenPixelsX(Points: Integer): Integer; dispid 1776;
+    function PointsToScreenPixelsY(Points: Integer): Integer; dispid 1777;
   end;
 
 // *********************************************************************//
@@ -21183,8 +24493,9 @@ type
     property OnSheetDeactivate: WideString dispid 1081;
     property PageSetup: PageSetup readonly dispid 998;
     property Previous: IDispatch readonly dispid 503;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); dispid 905;
     procedure _Dummy18; dispid 65554;
     procedure _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                        Scenarios: OleVariant; UserInterfaceOnly: OleVariant); dispid 282;
@@ -21207,6 +24518,10 @@ type
                      TextVisualLayout: OleVariant); dispid 1925;
     procedure Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                       Scenarios: OleVariant; UserInterfaceOnly: OleVariant); dispid 2029;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 1772;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 2361;
   end;
 
 // *********************************************************************//
@@ -21227,17 +24542,21 @@ type
     property Item[Index: OleVariant]: IDispatch readonly dispid 170;
     procedure Move(Before: OleVariant; After: OleVariant); dispid 637;
     property _NewEnum: IUnknown readonly dispid -4;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); dispid 905;
     procedure _Dummy12; dispid 65548;
     procedure Select(Replace: OleVariant); dispid 235;
     property HPageBreaks: HPageBreaks readonly dispid 1418;
     property VPageBreaks: VPageBreaks readonly dispid 1419;
     property Visible: OleVariant dispid 558;
     property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); dispid 1772;
     procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); dispid 1772;
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant); dispid 2361;
   end;
 
 // *********************************************************************//
@@ -21264,8 +24583,9 @@ type
     property OnSheetDeactivate: WideString dispid 1081;
     property PageSetup: PageSetup readonly dispid 998;
     property Previous: IDispatch readonly dispid 503;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant); dispid 281;
     procedure _Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                        Scenarios: OleVariant; UserInterfaceOnly: OleVariant); dispid 282;
@@ -21357,9 +24677,9 @@ type
     property AutoFilter: AutoFilter readonly dispid 793;
     property DisplayRightToLeft: WordBool dispid 1774;
     property Scripts: Scripts readonly dispid 1816;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); dispid 1772;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); dispid 1772;
     procedure _CheckSpelling(CustomDictionary: OleVariant; IgnoreUppercase: OleVariant; 
                              AlwaysSuggest: OleVariant; SpellLang: OleVariant; 
                              IgnoreFinalYaa: OleVariant; SpellScript: OleVariant); dispid 1817;
@@ -21386,6 +24706,15 @@ type
     procedure _Dummy113; dispid 65649;
     procedure _Dummy114; dispid 65650;
     procedure _Dummy115; dispid 65651;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant); dispid 2361;
+    property EnableFormatConditionsCalculation: WordBool dispid 2511;
+    property Sort: Sort readonly dispid 880;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); dispid 2493;
     property DefaultButton: OleVariant dispid 857;
     property DialogFrame: DialogFrame readonly dispid 839;
     function EditBoxes(Index: OleVariant): IDispatch; dispid 828;
@@ -21412,17 +24741,21 @@ type
     property Item[Index: OleVariant]: IDispatch readonly dispid 170;
     procedure Move(Before: OleVariant; After: OleVariant); dispid 637;
     property _NewEnum: IUnknown readonly dispid -4;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant); dispid 281;
     procedure Select(Replace: OleVariant); dispid 235;
     property HPageBreaks: HPageBreaks readonly dispid 1418;
     property VPageBreaks: VPageBreaks readonly dispid 1419;
     property Visible: OleVariant dispid 558;
     property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); dispid 1772;
     procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); dispid 1772;
+                       PrToFileName: OleVariant); dispid 2361;
   end;
 
 // *********************************************************************//
@@ -21443,17 +24776,21 @@ type
     property Item[Index: OleVariant]: IDispatch readonly dispid 170;
     procedure Move(Before: OleVariant; After: OleVariant); dispid 637;
     property _NewEnum: IUnknown readonly dispid -4;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); dispid 905;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); dispid 905;
     procedure PrintPreview(EnableChanges: OleVariant); dispid 281;
     procedure Select(Replace: OleVariant); dispid 235;
     property HPageBreaks: HPageBreaks readonly dispid 1418;
     property VPageBreaks: VPageBreaks readonly dispid 1419;
     property Visible: OleVariant dispid 558;
     property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); dispid 1772;
     procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); dispid 1772;
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant); dispid 2361;
   end;
 
 // *********************************************************************//
@@ -21505,6 +24842,13 @@ type
     property LeftFooterPicture: Graphic readonly dispid 2153;
     property RightHeaderPicture: Graphic readonly dispid 2154;
     property RightFooterPicture: Graphic readonly dispid 2155;
+    property OddAndEvenPagesHeaderFooter: WordBool dispid 2600;
+    property DifferentFirstPageHeaderFooter: WordBool dispid 2601;
+    property ScaleWithDocHeaderFooter: WordBool dispid 2602;
+    property AlignMarginsHeaderFooter: WordBool dispid 2603;
+    property Pages: Pages readonly dispid 2604;
+    property EvenPage: Page readonly dispid 2605;
+    property FirstPage: Page readonly dispid 2606;
   end;
 
 // *********************************************************************//
@@ -21553,6 +24897,9 @@ type
     property RefersToR1C1: OleVariant dispid 940;
     property RefersToR1C1Local: OleVariant dispid 941;
     property RefersToRange: ExcelRange readonly dispid 1160;
+    property Comment: WideString dispid 910;
+    property WorkbookParameter: WordBool dispid 2607;
+    property ValidWorkbookParameter: WordBool readonly dispid 2608;
   end;
 
 // *********************************************************************//
@@ -21567,7 +24914,7 @@ type
     property Parent: IDispatch readonly dispid 150;
     property BottomRightCell: ExcelRange readonly dispid 615;
     function BringToFront: OleVariant; dispid 602;
-    function Copy: OleVariant; dispid 551;
+    function _Copy: OleVariant; dispid 2609;
     function CopyPicture(Appearance: XlPictureAppearance; Format: XlCopyPictureFormat): OleVariant; dispid 213;
     function Cut: OleVariant; dispid 565;
     function Delete: OleVariant; dispid 117;
@@ -21596,6 +24943,7 @@ type
     property Border: Border readonly dispid 128;
     property Interior: Interior readonly dispid 129;
     property Shadow: WordBool dispid 103;
+    function Copy: OleVariant; dispid 551;
   end;
 
 // *********************************************************************//
@@ -21610,7 +24958,7 @@ type
     property Parent: IDispatch readonly dispid 150;
     procedure _Dummy3; dispid 65539;
     function BringToFront: OleVariant; dispid 602;
-    function Copy: OleVariant; dispid 551;
+    function _Copy: OleVariant; dispid 2609;
     function CopyPicture(Appearance: XlPictureAppearance; Format: XlCopyPictureFormat): OleVariant; dispid 213;
     function Cut: OleVariant; dispid 565;
     function Delete: OleVariant; dispid 117;
@@ -21634,16 +24982,18 @@ type
     property ShapeRange: ShapeRange readonly dispid 1528;
     procedure _Dummy27; dispid 65563;
     procedure _Dummy28; dispid 65564;
-    procedure _Dummy29; dispid 65565;
+    property ProtectChartObject: WordBool dispid 1529;
     property RoundedCorners: WordBool dispid 619;
     property Border: Border readonly dispid 128;
     property Interior: Interior readonly dispid 129;
     property Shadow: WordBool dispid 103;
+    function Copy: OleVariant; dispid 551;
     function Add(Left: Double; Top: Double; Width: Double; Height: Double): ChartObject; dispid 181;
     property Count: Integer readonly dispid 118;
     function Group: GroupObject; dispid 46;
     function Item(Index: OleVariant): IDispatch; dispid 170;
     function _NewEnum: IUnknown; dispid -4;
+    function _Default(Index: OleVariant): IDispatch; dispid 0;
   end;
 
 // *********************************************************************//
@@ -21712,12 +25062,19 @@ type
     property Creator: XlCreator readonly dispid 149;
     property Parent: IDispatch readonly dispid 150;
     property Count: Integer readonly dispid 118;
-    function Item(Index: OleVariant): FormatCondition; dispid 170;
+    function Item(Index: OleVariant): IDispatch; dispid 170;
     function Add(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
-                 Formula2: OleVariant): FormatCondition; dispid 181;
-    property _Default[Index: OleVariant]: FormatCondition readonly dispid 0; default;
+                 Formula2: OleVariant; String_: OleVariant; TextOperator: OleVariant; 
+                 DateOperator: OleVariant; ScopeType: OleVariant): IDispatch; dispid 181;
+    property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
     property _NewEnum: IUnknown readonly dispid -4;
     procedure Delete; dispid 117;
+    function AddColorScale(ColorScaleType: Integer): IDispatch; dispid 2616;
+    function AddDatabar: IDispatch; dispid 2618;
+    function AddIconSetCondition: IDispatch; dispid 2619;
+    function AddTop10: IDispatch; dispid 2620;
+    function AddAboveAverage: IDispatch; dispid 2621;
+    function AddUniqueValues: IDispatch; dispid 2622;
   end;
 
 // *********************************************************************//
@@ -21730,8 +25087,8 @@ type
     property Application: ExcelApplication readonly dispid 148;
     property Creator: XlCreator readonly dispid 149;
     property Parent: IDispatch readonly dispid 150;
-    procedure Modify(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
-                     Formula2: OleVariant); dispid 1581;
+    procedure _Modify(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
+                      Formula2: OleVariant); dispid 2623;
     property type_: Integer readonly dispid 108;
     property Operator: Integer readonly dispid 797;
     property Formula1: WideString readonly dispid 1579;
@@ -21740,6 +25097,20 @@ type
     property Borders: Borders readonly dispid 435;
     property Font: Font readonly dispid 146;
     procedure Delete; dispid 117;
+    procedure Modify(Type_: XlFormatConditionType; Operator: OleVariant; Formula1: OleVariant; 
+                     Formula2: OleVariant; String_: OleVariant; Operator2: OleVariant); dispid 1581;
+    property Text: WideString dispid 138;
+    property TextOperator: XlContainsOperator dispid 2613;
+    property DateOperator: XlTimePeriods dispid 2614;
+    property NumberFormat: OleVariant dispid 193;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
   end;
 
 // *********************************************************************//
@@ -21863,6 +25234,8 @@ type
     procedure SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant); dispid 2082;
     property ListObject: ListObject readonly dispid 2257;
     property TextFileVisualLayout: XlTextVisualLayoutType dispid 2245;
+    property WorkbookConnection: WorkbookConnection readonly dispid 2544;
+    property Sort: Sort readonly dispid 880;
   end;
 
 // *********************************************************************//
@@ -22039,6 +25412,10 @@ type
     property Parent: IDispatch readonly dispid 150;
     property Range: ExcelRange readonly dispid 197;
     property Filters: Filters readonly dispid 1617;
+    property FilterMode: WordBool readonly dispid 800;
+    property Sort: Sort readonly dispid 880;
+    procedure ApplyFilter; dispid 2640;
+    procedure ShowAllData; dispid 794;
   end;
 
 // *********************************************************************//
@@ -22069,8 +25446,10 @@ type
     property Parent: IDispatch readonly dispid 150;
     property On_: WordBool readonly dispid 1618;
     property Criteria1: OleVariant readonly dispid 796;
-    property Operator: XlAutoFilterOperator readonly dispid 797;
+    property _Operator: XlAutoFilterOperator readonly dispid 2641;
     property Criteria2: OleVariant readonly dispid 798;
+    property Operator: XlAutoFilterOperator dispid 797;
+    property Count: Integer readonly dispid 118;
   end;
 
 // *********************************************************************//
@@ -22093,6 +25472,7 @@ type
     property CorrectCapsLock: WordBool dispid 1620;
     property DisplayAutoCorrectOptions: WordBool dispid 1926;
     property AutoExpandListRange: WordBool dispid 2294;
+    property AutoFillFormulasInLists: WordBool dispid 2642;
   end;
 
 // *********************************************************************//
@@ -22109,6 +25489,8 @@ type
     property ColorIndex: OleVariant dispid 97;
     property LineStyle: OleVariant dispid 119;
     property Weight: OleVariant dispid 120;
+    property ThemeColor: OleVariant dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
   end;
 
 // *********************************************************************//
@@ -22127,11 +25509,16 @@ type
     property Pattern: OleVariant dispid 95;
     property PatternColor: OleVariant dispid 100;
     property PatternColorIndex: OleVariant dispid 98;
+    property ThemeColor: OleVariant dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
+    property PatternThemeColor: OleVariant dispid 2643;
+    property PatternTintAndShade: OleVariant dispid 2644;
+    property Gradient: IDispatch readonly dispid 2645;
   end;
 
 // *********************************************************************//
 // DispIntf:  ChartFillFormat
-// Flags:     (4096) Dispatchable
+// Flags:     (4112) Hidden Dispatchable
 // GUID:      {00024435-0000-0000-C000-000000000046}
 // *********************************************************************//
   ChartFillFormat = dispinterface
@@ -22166,7 +25553,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  ChartColorFormat
-// Flags:     (4096) Dispatchable
+// Flags:     (4112) Hidden Dispatchable
 // GUID:      {00024436-0000-0000-C000-000000000046}
 // *********************************************************************//
   ChartColorFormat = dispinterface
@@ -22234,6 +25621,9 @@ type
     property DisplayUnitCustom: Double dispid 1887;
     property HasDisplayUnitLabel: WordBool dispid 1888;
     property DisplayUnitLabel: DisplayUnitLabel readonly dispid 1889;
+    property LogBase: Double dispid 2646;
+    property TickLabelSpacingIsAuto: WordBool dispid 2647;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22264,6 +25654,9 @@ type
     property VerticalAlignment: OleVariant dispid 137;
     property ReadingOrder: Integer dispid 975;
     property AutoScaleFont: OleVariant dispid 1525;
+    property IncludeInLayout: WordBool dispid 2648;
+    property Position: XlChartElementPosition dispid 133;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22294,6 +25687,9 @@ type
     property VerticalAlignment: OleVariant dispid 137;
     property ReadingOrder: Integer dispid 975;
     property AutoScaleFont: OleVariant dispid 1525;
+    property IncludeInLayout: WordBool dispid 2648;
+    property Position: XlChartElementPosition dispid 133;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22364,6 +25760,7 @@ type
     property Count: Integer readonly dispid 118;
     function Item(Type_: XlAxisType; AxisGroup: XlAxisGroup): Axis; dispid 170;
     function _NewEnum: IUnknown; dispid -4;
+    function _Default(Type_: XlAxisType; AxisGroup: XlAxisGroup): Axis; dispid 0;
   end;
 
 // *********************************************************************//
@@ -22379,6 +25776,7 @@ type
     property Count: Integer readonly dispid 118;
     function Item(Index: Integer): Point; dispid 170;
     function _NewEnum: IUnknown; dispid -4;
+    function _Default(Index: Integer): Point; dispid 0;
   end;
 
 // *********************************************************************//
@@ -22423,6 +25821,9 @@ type
                              ShowCategoryName: OleVariant; ShowValue: OleVariant; 
                              ShowPercentage: OleVariant; ShowBubbleSize: OleVariant; 
                              Separator: OleVariant): OleVariant; dispid 1922;
+    property Has3DEffect: WordBool dispid 1665;
+    property PictureUnit2: Double dispid 2649;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22490,6 +25891,8 @@ type
                              ShowCategoryName: OleVariant; ShowValue: OleVariant; 
                              ShowPercentage: OleVariant; ShowBubbleSize: OleVariant; 
                              Separator: OleVariant): OleVariant; dispid 1922;
+    property PictureUnit2: Double dispid 2649;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22511,6 +25914,7 @@ type
     function Paste(Rowcol: XlRowCol; SeriesLabels: OleVariant; CategoryLabels: OleVariant; 
                    Replace: OleVariant; NewSeries: OleVariant): OleVariant; dispid 211;
     function NewSeries: Series; dispid 1117;
+    function _Default(Index: OleVariant): Series; dispid 0;
   end;
 
 // *********************************************************************//
@@ -22554,6 +25958,7 @@ type
     property ShowPercentage: WordBool dispid 2025;
     property ShowBubbleSize: WordBool dispid 2026;
     property Separator: OleVariant dispid 2027;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22600,6 +26005,8 @@ type
     property Count: Integer readonly dispid 118;
     function Item(Index: OleVariant): DataLabel; dispid 170;
     function _NewEnum: IUnknown; dispid -4;
+    function _Default(Index: OleVariant): DataLabel; dispid 0;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22622,6 +26029,7 @@ type
     property Top: Double readonly dispid 126;
     property Width: Double readonly dispid 122;
     property Height: Double readonly dispid 123;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22637,6 +26045,7 @@ type
     property Count: Integer readonly dispid 118;
     function Item(Index: OleVariant): LegendEntry; dispid 170;
     function _NewEnum: IUnknown; dispid -4;
+    function _Default(Index: OleVariant): LegendEntry; dispid 0;
   end;
 
 // *********************************************************************//
@@ -22670,6 +26079,8 @@ type
     property Width: Double readonly dispid 122;
     property Height: Double readonly dispid 123;
     property Shadow: WordBool dispid 103;
+    property PictureUnit2: Double dispid 2649;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22688,6 +26099,7 @@ type
     property Count: Integer readonly dispid 118;
     function Item(Index: OleVariant): Trendline; dispid 170;
     function _NewEnum: IUnknown; dispid -4;
+    function _Default(Index: OleVariant): Trendline; dispid 0;
   end;
 
 // *********************************************************************//
@@ -22717,11 +26129,14 @@ type
     property Period: Integer dispid 184;
     function Select: OleVariant; dispid 235;
     property type_: XlTrendlineType dispid 108;
+    property Backward2: Double dispid 2650;
+    property Forward2: Double dispid 2651;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
 // DispIntf:  Corners
-// Flags:     (4096) Dispatchable
+// Flags:     (4112) Hidden Dispatchable
 // GUID:      {000208C0-0000-0000-C000-000000000046}
 // *********************************************************************//
   Corners = dispinterface
@@ -22747,6 +26162,7 @@ type
     function Select: OleVariant; dispid 235;
     property Border: Border readonly dispid 128;
     function Delete: OleVariant; dispid 117;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22763,6 +26179,7 @@ type
     function Select: OleVariant; dispid 235;
     property Border: Border readonly dispid 128;
     function Delete: OleVariant; dispid 117;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22779,6 +26196,7 @@ type
     function Select: OleVariant; dispid 235;
     property Border: Border readonly dispid 128;
     function Delete: OleVariant; dispid 117;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22795,6 +26213,7 @@ type
     function Select: OleVariant; dispid 235;
     property Border: Border readonly dispid 128;
     function Delete: OleVariant; dispid 117;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22810,6 +26229,7 @@ type
     property Border: Border readonly dispid 128;
     procedure Delete; dispid 117;
     procedure Select; dispid 235;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22828,6 +26248,7 @@ type
     function Delete: OleVariant; dispid 117;
     property Interior: Interior readonly dispid 129;
     property Fill: ChartFillFormat readonly dispid 1663;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22846,6 +26267,7 @@ type
     function Delete: OleVariant; dispid 117;
     property Interior: Interior readonly dispid 129;
     property Fill: ChartFillFormat readonly dispid 1663;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22866,6 +26288,8 @@ type
     property Fill: ChartFillFormat readonly dispid 1663;
     property PictureType: OleVariant dispid 161;
     procedure Paste; dispid 211;
+    property Thickness: Integer dispid 2652;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22887,6 +26311,8 @@ type
     property PictureType: OleVariant dispid 161;
     procedure Paste; dispid 211;
     property PictureUnit: OleVariant dispid 162;
+    property Thickness: Integer dispid 2652;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22912,6 +26338,8 @@ type
     property Depth: Integer readonly dispid 1890;
     property Offset: Integer dispid 254;
     property Alignment: Integer dispid 453;
+    property MultiLevel: WordBool dispid 2653;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22934,10 +26362,16 @@ type
     property Left: Double dispid 127;
     property Top: Double dispid 126;
     property Width: Double dispid 122;
-    property InsideLeft: Double readonly dispid 1667;
-    property InsideTop: Double readonly dispid 1668;
-    property InsideWidth: Double readonly dispid 1669;
-    property InsideHeight: Double readonly dispid 1670;
+    property _InsideLeft: Double readonly dispid 2654;
+    property _InsideTop: Double readonly dispid 2655;
+    property _InsideWidth: Double readonly dispid 2656;
+    property _InsideHeight: Double readonly dispid 2657;
+    property InsideLeft: Double dispid 1667;
+    property InsideTop: Double dispid 1668;
+    property InsideWidth: Double dispid 1669;
+    property InsideHeight: Double dispid 1670;
+    property Position: XlChartElementPosition dispid 133;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22966,6 +26400,7 @@ type
     property Top: Double dispid 126;
     property Width: Double dispid 122;
     property AutoScaleFont: OleVariant dispid 1525;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -22994,6 +26429,8 @@ type
     property Top: Double dispid 126;
     property Width: Double dispid 122;
     property AutoScaleFont: OleVariant dispid 1525;
+    property IncludeInLayout: WordBool dispid 2648;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -23012,6 +26449,7 @@ type
     function Delete: OleVariant; dispid 117;
     function ClearFormats: OleVariant; dispid 112;
     property EndStyle: XlEndStyleCap dispid 1124;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -23033,6 +26471,7 @@ type
     procedure Select; dispid 235;
     procedure Delete; dispid 117;
     property AutoScaleFont: OleVariant dispid 1525;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -23134,6 +26573,14 @@ type
     procedure CanvasCropTop(Increment: Single); dispid 2173;
     procedure CanvasCropRight(Increment: Single); dispid 2174;
     procedure CanvasCropBottom(Increment: Single); dispid 2175;
+    property Chart: ExcelChart readonly dispid 7;
+    property HasChart: MsoTriState readonly dispid 2658;
+    property TextFrame2: TextFrame2 readonly dispid 2659;
+    property ShapeStyle: MsoShapeStyleIndex dispid 2660;
+    property BackgroundStyle: MsoBackgroundStyleIndex dispid 2661;
+    property SoftEdge: SoftEdgeFormat readonly dispid 2662;
+    property Glow: GlowFormat readonly dispid 2663;
+    property Reflection: ReflectionFormat readonly dispid 2664;
   end;
 
 // *********************************************************************//
@@ -23181,6 +26628,8 @@ type
     function AddDiagram(Type_: MsoDiagramType; Left: Single; Top: Single; Width: Single; 
                         Height: Single): Shape; dispid 2176;
     function AddCanvas(Left: Single; Top: Single; Width: Single; Height: Single): Shape; dispid 2177;
+    function AddChart(XlChartType: OleVariant; Left: OleVariant; Top: OleVariant; 
+                      Width: OleVariant; Height: OleVariant): Shape; dispid 2665;
   end;
 
 // *********************************************************************//
@@ -23258,6 +26707,14 @@ type
     procedure CanvasCropTop(Increment: Single); dispid 2173;
     procedure CanvasCropRight(Increment: Single); dispid 2174;
     procedure CanvasCropBottom(Increment: Single); dispid 2175;
+    property Chart: ExcelChart readonly dispid 7;
+    property HasChart: MsoTriState readonly dispid 2658;
+    property TextFrame2: TextFrame2 readonly dispid 2659;
+    property ShapeStyle: MsoShapeStyleIndex dispid 2660;
+    property BackgroundStyle: MsoBackgroundStyleIndex dispid 2661;
+    property SoftEdge: SoftEdgeFormat readonly dispid 2662;
+    property Glow: GlowFormat readonly dispid 2663;
+    property Reflection: ReflectionFormat readonly dispid 2664;
   end;
 
 // *********************************************************************//
@@ -23531,6 +26988,9 @@ type
     property VerticalAlignment: OleVariant dispid 137;
     property ReadingOrder: Integer dispid 975;
     property AutoScaleFont: OleVariant dispid 1525;
+    procedure _Dummy21; dispid 65557;
+    property Position: XlChartElementPosition dispid 133;
+    property Format: ChartFormat readonly dispid 116;
   end;
 
 // *********************************************************************//
@@ -23700,6 +27160,8 @@ type
     property Range: ExcelRange readonly dispid 197;
     property Dummy18: WideString readonly dispid 2295;
     property CustomSubtotalFunction: XlConsolidationFunction readonly dispid 2193;
+    property PivotRowLine: PivotLine readonly dispid 2673;
+    property PivotColumnLine: PivotLine readonly dispid 2674;
   end;
 
 // *********************************************************************//
@@ -23760,6 +27222,7 @@ type
     property UnlockedFormulaCells: WordBool dispid 2208;
     property EmptyCellReferences: WordBool dispid 2209;
     property ListDataValidation: WordBool dispid 2296;
+    property InconsistentTableFormula: WordBool dispid 2675;
   end;
 
 // *********************************************************************//
@@ -23995,6 +27458,8 @@ type
     property Parent: IDispatch readonly dispid 150;
     property Color: OleVariant dispid 99;
     property ColorIndex: XlColorIndex dispid 97;
+    property ThemeColor: XlThemeColor dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
   end;
 
 // *********************************************************************//
@@ -24067,7 +27532,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  Diagram
-// Flags:     (4096) Dispatchable
+// Flags:     (4112) Hidden Dispatchable
 // GUID:      {0002446F-0000-0000-C000-000000000046}
 // *********************************************************************//
   Diagram = dispinterface
@@ -24094,12 +27559,15 @@ type
     property Application: ExcelApplication readonly dispid 148;
     property Creator: XlCreator readonly dispid 149;
     property Parent: IDispatch readonly dispid 150;
-    function Add(SourceType: XlListObjectSourceType; Source: OleVariant; LinkSource: OleVariant; 
-                 XlListObjectHasHeaders: XlYesNoGuess; Destination: OleVariant): ListObject; dispid 181;
+    function _Add(SourceType: XlListObjectSourceType; Source: OleVariant; LinkSource: OleVariant; 
+                  XlListObjectHasHeaders: XlYesNoGuess; Destination: OleVariant): ListObject; dispid 2085;
     property _Default[Index: OleVariant]: ListObject readonly dispid 0; default;
     property _NewEnum: IUnknown readonly dispid -4;
     property Item[Index: OleVariant]: ListObject readonly dispid 170;
     property Count: Integer readonly dispid 118;
+    function Add(SourceType: XlListObjectSourceType; Source: OleVariant; LinkSource: OleVariant; 
+                 XlListObjectHasHeaders: XlYesNoGuess; Destination: OleVariant; 
+                 TableStyleName: OleVariant): ListObject; dispid 181;
   end;
 
 // *********************************************************************//
@@ -24136,6 +27604,17 @@ type
     property TotalsRowRange: ExcelRange readonly dispid 2319;
     property SharePointURL: WideString readonly dispid 2320;
     property XmlMap: XmlMap readonly dispid 2253;
+    property DisplayName: WideString dispid 2677;
+    property ShowHeaders: WordBool dispid 2678;
+    property AutoFilter: AutoFilter readonly dispid 793;
+    property TableStyle: OleVariant dispid 1504;
+    property ShowTableStyleFirstColumn: WordBool dispid 2679;
+    property ShowTableStyleLastColumn: WordBool dispid 2563;
+    property ShowTableStyleRowStripes: WordBool dispid 2564;
+    property ShowTableStyleColumnStripes: WordBool dispid 2565;
+    property Sort: Sort readonly dispid 880;
+    property Comment: WideString dispid 910;
+    procedure ExportToVisio; dispid 2680;
   end;
 
 // *********************************************************************//
@@ -24174,6 +27653,8 @@ type
     property TotalsCalculation: XlTotalsCalculation dispid 2322;
     property XPath: XPath readonly dispid 2258;
     property SharePointFormula: WideString readonly dispid 2323;
+    property DataBodyRange: ExcelRange readonly dispid 705;
+    property Total: ExcelRange readonly dispid 2681;
   end;
 
 // *********************************************************************//
@@ -24186,11 +27667,12 @@ type
     property Application: ExcelApplication readonly dispid 148;
     property Creator: XlCreator readonly dispid 149;
     property Parent: IDispatch readonly dispid 150;
-    function Add(Position: OleVariant): ListRow; dispid 181;
+    function _Add(Position: OleVariant): ListRow; dispid 2085;
     property _Default[Index: OleVariant]: ListRow readonly dispid 0; default;
     property _NewEnum: IUnknown readonly dispid -4;
     property Item[Index: OleVariant]: ListRow readonly dispid 170;
     property Count: Integer readonly dispid 118;
+    function Add(Position: OleVariant; AlwaysInsert: OleVariant): ListRow; dispid 181;
   end;
 
 // *********************************************************************//
@@ -24318,6 +27800,7 @@ type
     function ImportXml(const XmlData: WideString; Overwrite: OleVariant): XlXmlImportResult; dispid 2344;
     function Export(const Url: WideString; Overwrite: OleVariant): XlXmlExportResult; dispid 1414;
     function ExportXml(out Data: WideString): XlXmlExportResult; dispid 2346;
+    property WorkbookConnection: WorkbookConnection readonly dispid 2544;
   end;
 
 // *********************************************************************//
@@ -24382,6 +27865,953 @@ type
   end;
 
 // *********************************************************************//
+// DispIntf:  PivotLineCells
+// Flags:     (4096) Dispatchable
+// GUID:      {0002447F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PivotLineCells = dispinterface
+    ['{0002447F-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property _Default[Index: OleVariant]: PivotCell readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: PivotCell readonly dispid 170;
+    property Count: Integer readonly dispid 118;
+  end;
+
+// *********************************************************************//
+// DispIntf:  PivotLine
+// Flags:     (4096) Dispatchable
+// GUID:      {00024480-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PivotLine = dispinterface
+    ['{00024480-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property LineType: XlPivotLineType readonly dispid 2683;
+    property Position: Integer readonly dispid 133;
+    property PivotLineCells: PivotLineCells readonly dispid 2684;
+  end;
+
+// *********************************************************************//
+// DispIntf:  PivotLines
+// Flags:     (4096) Dispatchable
+// GUID:      {00024481-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PivotLines = dispinterface
+    ['{00024481-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property _Default[Index: OleVariant]: PivotLine readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: PivotLine readonly dispid 170;
+    property Count: Integer readonly dispid 118;
+  end;
+
+// *********************************************************************//
+// DispIntf:  PivotAxis
+// Flags:     (4096) Dispatchable
+// GUID:      {00024482-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PivotAxis = dispinterface
+    ['{00024482-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property PivotLines: PivotLines readonly dispid 2685;
+  end;
+
+// *********************************************************************//
+// DispIntf:  PivotFilter
+// Flags:     (4096) Dispatchable
+// GUID:      {00024483-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PivotFilter = dispinterface
+    ['{00024483-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Order: Integer dispid 192;
+    property FilterType: XlPivotFilterType readonly dispid 2686;
+    property Name: WideString readonly dispid 110;
+    property Description: WideString readonly dispid 218;
+    procedure Delete; dispid 117;
+    property Active: WordBool readonly dispid 2312;
+    property PivotField: PivotField readonly dispid 731;
+    property DataField: PivotField readonly dispid 2091;
+    property DataCubeField: CubeField readonly dispid 2687;
+    property Value1: OleVariant readonly dispid 2688;
+    property Value2: OleVariant readonly dispid 1388;
+    property MemberPropertyField: PivotField readonly dispid 2689;
+    property IsMemberPropertyFilter: WordBool readonly dispid 2690;
+  end;
+
+// *********************************************************************//
+// DispIntf:  PivotFilters
+// Flags:     (4096) Dispatchable
+// GUID:      {00024484-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PivotFilters = dispinterface
+    ['{00024484-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property _Default[Index: OleVariant]: PivotFilter readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: PivotFilter readonly dispid 170;
+    property Count: Integer readonly dispid 118;
+    function Add(Type_: XlPivotFilterType; DataField: OleVariant; Value1: OleVariant; 
+                 Value2: OleVariant; Order: OleVariant; Name: OleVariant; Description: OleVariant; 
+                 MemberPropertyField: OleVariant): PivotFilter; dispid 181;
+  end;
+
+// *********************************************************************//
+// DispIntf:  WorkbookConnection
+// Flags:     (4096) Dispatchable
+// GUID:      {00024485-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkbookConnection = dispinterface
+    ['{00024485-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Name: WideString dispid 110;
+    property Description: WideString dispid 218;
+    property _Default: WideString dispid 0;
+    property type_: XlConnectionType readonly dispid 108;
+    property OLEDBConnection: OLEDBConnection readonly dispid 2697;
+    property ODBCConnection: ODBCConnection readonly dispid 2698;
+    property Ranges: Ranges readonly dispid 2699;
+    procedure Delete; dispid 117;
+    procedure Refresh; dispid 1417;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Connections
+// Flags:     (4096) Dispatchable
+// GUID:      {00024486-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Connections = dispinterface
+    ['{00024486-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function AddFromFile(const Filename: WideString): WorkbookConnection; dispid 2700;
+    function Add(const Name: WideString; const Description: WideString; 
+                 ConnectionString: OleVariant; CommandText: OleVariant; lCmdtype: OleVariant): WorkbookConnection; dispid 181;
+    function Item(Index: OleVariant): WorkbookConnection; dispid 170;
+    property _Default[Index: OleVariant]: WorkbookConnection readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+  end;
+
+// *********************************************************************//
+// DispIntf:  WorksheetView
+// Flags:     (4096) Dispatchable
+// GUID:      {00024487-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorksheetView = dispinterface
+    ['{00024487-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Sheet: IDispatch readonly dispid 751;
+    property DisplayGridlines: WordBool dispid 645;
+    property DisplayFormulas: WordBool dispid 644;
+    property DisplayHeadings: WordBool dispid 646;
+    property DisplayOutline: WordBool dispid 647;
+    property DisplayZeros: WordBool dispid 649;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ChartView
+// Flags:     (4096) Dispatchable
+// GUID:      {00024488-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartView = dispinterface
+    ['{00024488-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Sheet: IDispatch readonly dispid 751;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ModuleView
+// Flags:     (4096) Dispatchable
+// GUID:      {00024489-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ModuleView = dispinterface
+    ['{00024489-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Sheet: IDispatch readonly dispid 751;
+  end;
+
+// *********************************************************************//
+// DispIntf:  DialogSheetView
+// Flags:     (4096) Dispatchable
+// GUID:      {0002448A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  DialogSheetView = dispinterface
+    ['{0002448A-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Sheet: IDispatch readonly dispid 751;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SheetViews
+// Flags:     (4096) Dispatchable
+// GUID:      {0002448C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SheetViews = dispinterface
+    ['{0002448C-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function _NewEnum: IUnknown; dispid -4;
+    property Item[Index: OleVariant]: IDispatch readonly dispid 170;
+    property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+  end;
+
+// *********************************************************************//
+// DispIntf:  OLEDBConnection
+// Flags:     (4096) Dispatchable
+// GUID:      {0002448D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  OLEDBConnection = dispinterface
+    ['{0002448D-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property ADOConnection: IDispatch readonly dispid 2074;
+    property BackgroundQuery: WordBool dispid 1427;
+    procedure CancelRefresh; dispid 1589;
+    property CommandText: OleVariant dispid 1829;
+    property CommandType: XlCmdType dispid 1830;
+    property Connection: OleVariant dispid 1432;
+    property EnableRefresh: WordBool dispid 1477;
+    property LocalConnection: OleVariant dispid 1835;
+    property MaintainConnection: WordBool dispid 1832;
+    procedure MakeConnection; dispid 2076;
+    procedure Refresh; dispid 1417;
+    property RefreshDate: TDateTime readonly dispid 696;
+    property Refreshing: WordBool readonly dispid 1587;
+    property RefreshOnFileOpen: WordBool dispid 1479;
+    property RefreshPeriod: Integer dispid 1833;
+    property RobustConnect: XlRobustConnect dispid 2081;
+    procedure SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant); dispid 2082;
+    property SavePassword: WordBool dispid 1481;
+    property SourceConnectionFile: WideString dispid 2079;
+    property SourceDataFile: WideString dispid 2080;
+    property OLAP: WordBool readonly dispid 2077;
+    property UseLocalConnection: WordBool dispid 1837;
+    property MaxDrillthroughRecords: Integer dispid 2703;
+    property IsConnected: WordBool readonly dispid 2075;
+    property ServerCredentialsMethod: XlCredentialsMethod dispid 2704;
+    property ServerSSOApplicationID: WideString dispid 2705;
+    property AlwaysUseConnectionFile: WordBool dispid 2706;
+    property ServerFillColor: WordBool dispid 2707;
+    property ServerFontStyle: WordBool dispid 2708;
+    property ServerNumberFormat: WordBool dispid 2709;
+    property ServerTextColor: WordBool dispid 2710;
+    property RetrieveInOfficeUILang: WordBool dispid 2711;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ODBCConnection
+// Flags:     (4096) Dispatchable
+// GUID:      {0002448E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ODBCConnection = dispinterface
+    ['{0002448E-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property BackgroundQuery: WordBool dispid 1427;
+    procedure CancelRefresh; dispid 1589;
+    property CommandText: OleVariant dispid 1829;
+    property CommandType: XlCmdType dispid 1830;
+    property Connection: OleVariant dispid 1432;
+    property EnableRefresh: WordBool dispid 1477;
+    procedure Refresh; dispid 1417;
+    property RefreshDate: TDateTime readonly dispid 696;
+    property Refreshing: WordBool readonly dispid 1587;
+    property RefreshOnFileOpen: WordBool dispid 1479;
+    property RefreshPeriod: Integer dispid 1833;
+    property RobustConnect: XlRobustConnect dispid 2081;
+    procedure SaveAsODC(const ODCFileName: WideString; Description: OleVariant; Keywords: OleVariant); dispid 2082;
+    property SavePassword: WordBool dispid 1481;
+    property SourceConnectionFile: WideString dispid 2079;
+    property SourceData: OleVariant dispid 686;
+    property SourceDataFile: WideString dispid 2080;
+    property ServerCredentialsMethod: XlCredentialsMethod dispid 2704;
+    property ServerSSOApplicationID: WideString dispid 2705;
+    property AlwaysUseConnectionFile: WordBool dispid 2706;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Action
+// Flags:     (4096) Dispatchable
+// GUID:      {0002448F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Action = dispinterface
+    ['{0002448F-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Name: WideString readonly dispid 110;
+    property Caption: WideString readonly dispid 139;
+    property type_: XlActionType readonly dispid 108;
+    property Coordinate: WideString readonly dispid 2712;
+    property Content: WideString readonly dispid 2713;
+    procedure Execute; dispid 2211;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Actions
+// Flags:     (4096) Dispatchable
+// GUID:      {00024490-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Actions = dispinterface
+    ['{00024490-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property _Default[Index: OleVariant]: Action readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: Action readonly dispid 170;
+    property Count: Integer readonly dispid 118;
+  end;
+
+// *********************************************************************//
+// DispIntf:  FormatColor
+// Flags:     (4096) Dispatchable
+// GUID:      {00024491-0000-0000-C000-000000000046}
+// *********************************************************************//
+  FormatColor = dispinterface
+    ['{00024491-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Color: OleVariant dispid 99;
+    property ColorIndex: XlColorIndex dispid 97;
+    property ThemeColor: OleVariant dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ConditionValue
+// Flags:     (4096) Dispatchable
+// GUID:      {00024492-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ConditionValue = dispinterface
+    ['{00024492-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    procedure Modify(newtype: XlConditionValueTypes; newvalue: OleVariant); dispid 1581;
+    property type_: XlConditionValueTypes readonly dispid 108;
+    property Value: OleVariant readonly dispid 6;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ColorScale
+// Flags:     (4096) Dispatchable
+// GUID:      {00024493-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ColorScale = dispinterface
+    ['{00024493-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool readonly dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    property Formula: WideString dispid 261;
+    property type_: Integer readonly dispid 108;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    procedure Delete; dispid 117;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
+    property ColorScaleCriteria: ColorScaleCriteria readonly dispid 2716;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ColorScaleCriteria
+// Flags:     (4096) Dispatchable
+// GUID:      {00024494-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ColorScaleCriteria = dispinterface
+    ['{00024494-0000-0000-C000-000000000046}']
+    property Count: Integer readonly dispid 118;
+    property _Default[Index: OleVariant]: ColorScaleCriterion readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: ColorScaleCriterion readonly dispid 170;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ColorScaleCriterion
+// Flags:     (4096) Dispatchable
+// GUID:      {00024495-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ColorScaleCriterion = dispinterface
+    ['{00024495-0000-0000-C000-000000000046}']
+    property Index: Integer readonly dispid 486;
+    property type_: XlConditionValueTypes dispid 108;
+    property Value: OleVariant dispid 6;
+    property FormatColor: FormatColor readonly dispid 2717;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Databar
+// Flags:     (4096) Dispatchable
+// GUID:      {00024496-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Databar = dispinterface
+    ['{00024496-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool readonly dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    property MinPoint: ConditionValue readonly dispid 2718;
+    property MaxPoint: ConditionValue readonly dispid 2719;
+    property PercentMin: Integer dispid 2720;
+    property PercentMax: Integer dispid 2721;
+    property BarColor: IDispatch readonly dispid 2722;
+    property ShowValue: WordBool dispid 2024;
+    property Formula: WideString dispid 261;
+    property type_: Integer readonly dispid 108;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    procedure Delete; dispid 117;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IconSetCondition
+// Flags:     (4096) Dispatchable
+// GUID:      {00024497-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IconSetCondition = dispinterface
+    ['{00024497-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool readonly dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    property type_: Integer readonly dispid 108;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    procedure Delete; dispid 117;
+    property ReverseOrder: WordBool dispid 2723;
+    property PercentileValues: WordBool dispid 2724;
+    property ShowIconOnly: WordBool dispid 2725;
+    property Formula: WideString dispid 261;
+    property IconSet: OleVariant dispid 2726;
+    property IconCriteria: IconCriteria readonly dispid 2727;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IconCriteria
+// Flags:     (4096) Dispatchable
+// GUID:      {00024498-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IconCriteria = dispinterface
+    ['{00024498-0000-0000-C000-000000000046}']
+    property Count: Integer readonly dispid 118;
+    property _Default[Index: OleVariant]: IconCriterion readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: IconCriterion readonly dispid 170;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IconCriterion
+// Flags:     (4096) Dispatchable
+// GUID:      {00024499-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IconCriterion = dispinterface
+    ['{00024499-0000-0000-C000-000000000046}']
+    property Index: Integer readonly dispid 486;
+    property type_: XlConditionValueTypes dispid 108;
+    property Value: OleVariant dispid 6;
+    property Operator: Integer dispid 797;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Icon
+// Flags:     (4096) Dispatchable
+// GUID:      {0002449A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Icon = dispinterface
+    ['{0002449A-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IconSet readonly dispid 150;
+    property Index: Integer readonly dispid 486;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IconSet
+// Flags:     (4096) Dispatchable
+// GUID:      {0002449B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IconSet = dispinterface
+    ['{0002449B-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property ID: XlIconSet readonly dispid 570;
+    property Count: Integer readonly dispid 118;
+    property _Default[Index: OleVariant]: Icon readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: Icon readonly dispid 170;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IconSets
+// Flags:     (4096) Dispatchable
+// GUID:      {0002449C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IconSets = dispinterface
+    ['{0002449C-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: IDispatch readonly dispid 170;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Top10
+// Flags:     (4096) Dispatchable
+// GUID:      {0002449D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Top10 = dispinterface
+    ['{0002449D-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    property TopBottom: XlTopBottom dispid 2728;
+    property Rank: Integer dispid 1290;
+    property Percent: WordBool dispid 2729;
+    property Interior: Interior readonly dispid 129;
+    property Borders: Borders readonly dispid 435;
+    property Font: Font readonly dispid 146;
+    property type_: Integer readonly dispid 108;
+    property NumberFormat: OleVariant dispid 193;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    procedure Delete; dispid 117;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
+    property CalcFor: XlCalcFor dispid 2730;
+  end;
+
+// *********************************************************************//
+// DispIntf:  AboveAverage
+// Flags:     (4096) Dispatchable
+// GUID:      {0002449E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  AboveAverage = dispinterface
+    ['{0002449E-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    property AboveBelow: XlAboveBelow dispid 2731;
+    property Interior: Interior readonly dispid 129;
+    property Borders: Borders readonly dispid 435;
+    property Font: Font readonly dispid 146;
+    property type_: Integer readonly dispid 108;
+    property NumberFormat: OleVariant dispid 193;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    procedure Delete; dispid 117;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
+    property CalcFor: XlCalcFor dispid 2730;
+    property NumStdDev: Integer dispid 2732;
+  end;
+
+// *********************************************************************//
+// DispIntf:  UniqueValues
+// Flags:     (4096) Dispatchable
+// GUID:      {0002449F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  UniqueValues = dispinterface
+    ['{0002449F-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Priority: Integer dispid 985;
+    property StopIfTrue: WordBool dispid 2625;
+    property AppliesTo: ExcelRange readonly dispid 2626;
+    property DupeUnique: XlDupeUnique dispid 2733;
+    property Interior: Interior readonly dispid 129;
+    property Borders: Borders readonly dispid 435;
+    property Font: Font readonly dispid 146;
+    property type_: Integer readonly dispid 108;
+    property NumberFormat: OleVariant dispid 193;
+    procedure SetFirstPriority; dispid 2629;
+    procedure SetLastPriority; dispid 2630;
+    procedure Delete; dispid 117;
+    procedure ModifyAppliesToRange(const Range: ExcelRange); dispid 2627;
+    property PTCondition: WordBool readonly dispid 2631;
+    property ScopeType: XlPivotConditionScope dispid 2615;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Ranges
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A0-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Ranges = dispinterface
+    ['{000244A0-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property _Default[Index: OleVariant]: ExcelRange readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: OleVariant]: ExcelRange readonly dispid 170;
+    property Count: Integer readonly dispid 118;
+  end;
+
+// *********************************************************************//
+// DispIntf:  HeaderFooter
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  HeaderFooter = dispinterface
+    ['{000244A1-0000-0000-C000-000000000046}']
+    property Text: WideString dispid 138;
+    property Picture: Graphic readonly dispid 479;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Page
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Page = dispinterface
+    ['{000244A2-0000-0000-C000-000000000046}']
+    property LeftHeader: HeaderFooter readonly dispid 1018;
+    property CenterHeader: HeaderFooter readonly dispid 1011;
+    property RightHeader: HeaderFooter readonly dispid 1026;
+    property LeftFooter: HeaderFooter readonly dispid 1017;
+    property CenterFooter: HeaderFooter readonly dispid 1010;
+    property RightFooter: HeaderFooter readonly dispid 1025;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Pages
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Pages = dispinterface
+    ['{000244A3-0000-0000-C000-000000000046}']
+    property Item[Index: OleVariant]: Page readonly dispid 170;
+    property _Default[Index: OleVariant]: Page readonly dispid 0; default;
+    property Count: Integer readonly dispid 118;
+    property _NewEnum: IUnknown readonly dispid -4;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ServerViewableItems
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A4-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ServerViewableItems = dispinterface
+    ['{000244A4-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function Add(Obj: OleVariant): IDispatch; dispid 181;
+    procedure Delete(Index: OleVariant); dispid 117;
+    procedure DeleteAll; dispid 2239;
+    function Item(Index: OleVariant): IDispatch; dispid 170;
+    property _Default[Index: OleVariant]: IDispatch readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TableStyleElement
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A5-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TableStyleElement = dispinterface
+    ['{000244A5-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property HasFormat: WordBool readonly dispid 2735;
+    property Interior: Interior readonly dispid 129;
+    property Borders: Borders readonly dispid 435;
+    property Font: Font readonly dispid 146;
+    property StripeSize: Integer dispid 2736;
+    procedure Clear; dispid 111;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TableStyleElements
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A6-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TableStyleElements = dispinterface
+    ['{000244A6-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function Item(Index: XlTableStyleElementType): TableStyleElement; dispid 170;
+    property _Default[Index: XlTableStyleElementType]: TableStyleElement readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TableStyle
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A7-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TableStyle = dispinterface
+    ['{000244A7-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property _Default: WideString readonly dispid 0;
+    property Name: WideString readonly dispid 110;
+    property NameLocal: WideString readonly dispid 937;
+    property BuiltIn: WordBool readonly dispid 553;
+    property TableStyleElements: TableStyleElements readonly dispid 2737;
+    property ShowAsAvailableTableStyle: WordBool dispid 2738;
+    property ShowAsAvailablePivotTableStyle: WordBool dispid 2739;
+    procedure Delete; dispid 117;
+    function Duplicate(NewTableStyleName: OleVariant): TableStyle; dispid 1039;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TableStyles
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A8-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TableStyles = dispinterface
+    ['{000244A8-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function Add(const TableStyleName: WideString): TableStyle; dispid 181;
+    function Item(Index: OleVariant): TableStyle; dispid 170;
+    property _Default[Index: OleVariant]: TableStyle readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SortField
+// Flags:     (4096) Dispatchable
+// GUID:      {000244A9-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SortField = dispinterface
+    ['{000244A9-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property SortOn: XlSortOn dispid 2741;
+    property SortOnValue: IDispatch readonly dispid 2742;
+    property Key: ExcelRange readonly dispid 155;
+    property Order: XlSortOrder dispid 192;
+    property CustomOrder: OleVariant dispid 2743;
+    property DataOption: XlSortDataOption dispid 2744;
+    property Priority: Integer dispid 985;
+    procedure Delete; dispid 117;
+    procedure ModifyKey(const Key: ExcelRange); dispid 2745;
+    procedure SetIcon(const Icon: Icon); dispid 2746;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SortFields
+// Flags:     (4096) Dispatchable
+// GUID:      {000244AA-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SortFields = dispinterface
+    ['{000244AA-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    function Add(const Key: ExcelRange; SortOn: OleVariant; Order: OleVariant; 
+                 CustomOrder: OleVariant; DataOption: OleVariant): SortField; dispid 181;
+    property Item[Index: OleVariant]: SortField readonly dispid 170;
+    property Count: Integer readonly dispid 118;
+    procedure Clear; dispid 111;
+    property _Default[Index: OleVariant]: SortField readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Sort
+// Flags:     (4096) Dispatchable
+// GUID:      {000244AB-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Sort = dispinterface
+    ['{000244AB-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Rng: ExcelRange readonly dispid 2748;
+    property Header: XlYesNoGuess dispid 895;
+    property MatchCase: WordBool dispid 426;
+    property Orientation: XlSortOrientation dispid 134;
+    property SortMethod: XlSortMethod dispid 897;
+    property SortFields: SortFields readonly dispid 2749;
+    procedure SetRange(const Rng: ExcelRange); dispid 2750;
+    procedure Apply; dispid 1675;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Research
+// Flags:     (4096) Dispatchable
+// GUID:      {000244AC-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Research = dispinterface
+    ['{000244AC-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    function Query(const ServiceID: WideString; QueryString: OleVariant; QueryLanguage: OleVariant; 
+                   UseSelection: OleVariant; LaunchQuery: OleVariant): OleVariant; dispid 2751;
+    function IsResearchService(const ServiceID: WideString): WordBool; dispid 2757;
+    function SetLanguagePair(LanguageFrom: Integer; LanguageTo: Integer): OleVariant; dispid 2758;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ColorStop
+// Flags:     (4096) Dispatchable
+// GUID:      {000244AD-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ColorStop = dispinterface
+    ['{000244AD-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    procedure Delete; dispid 117;
+    property Color: OleVariant dispid 99;
+    property ThemeColor: Integer dispid 2365;
+    property TintAndShade: OleVariant dispid 2366;
+    property Position: Double dispid 133;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ColorStops
+// Flags:     (4096) Dispatchable
+// GUID:      {000244AE-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ColorStops = dispinterface
+    ['{000244AE-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function Add(Position: Double): ColorStop; dispid 181;
+    function Item(Index: OleVariant): ColorStop; dispid 170;
+    property _Default[Index: OleVariant]: ColorStop readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    procedure Clear; dispid 111;
+  end;
+
+// *********************************************************************//
+// DispIntf:  LinearGradient
+// Flags:     (4096) Dispatchable
+// GUID:      {000244AF-0000-0000-C000-000000000046}
+// *********************************************************************//
+  LinearGradient = dispinterface
+    ['{000244AF-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property ColorStops: ColorStops readonly dispid 2761;
+    property Degree: Double dispid 1623;
+  end;
+
+// *********************************************************************//
+// DispIntf:  RectangularGradient
+// Flags:     (4096) Dispatchable
+// GUID:      {000244B0-0000-0000-C000-000000000046}
+// *********************************************************************//
+  RectangularGradient = dispinterface
+    ['{000244B0-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property ColorStops: ColorStops readonly dispid 2761;
+    property RectangleTop: Double dispid 2762;
+    property RectangleBottom: Double dispid 2763;
+    property RectangleLeft: Double dispid 2764;
+    property RectangleRight: Double dispid 2765;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MultiThreadedCalculation
+// Flags:     (4096) Dispatchable
+// GUID:      {000244B1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MultiThreadedCalculation = dispinterface
+    ['{000244B1-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Enabled: WordBool dispid 600;
+    property ThreadMode: XlThreadMode dispid 2766;
+    property ThreadCount: Integer dispid 2767;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ChartFormat
+// Flags:     (4096) Dispatchable
+// GUID:      {000244B2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartFormat = dispinterface
+    ['{000244B2-0000-0000-C000-000000000046}']
+    property Application: ExcelApplication readonly dispid 148;
+    property Creator: XlCreator readonly dispid 149;
+    property Parent: IDispatch readonly dispid 150;
+    property Fill: FillFormat readonly dispid 1663;
+    property Glow: GlowFormat readonly dispid 2663;
+    property Line: LineFormat readonly dispid 817;
+    property PictureFormat: PictureFormat readonly dispid 1631;
+    property Shadow: ShadowFormat readonly dispid 103;
+    property SoftEdge: SoftEdgeFormat readonly dispid 2662;
+    property TextFrame2: TextFrame2 readonly dispid 2659;
+    property ThreeD: ThreeDFormat readonly dispid 1703;
+  end;
+
+// *********************************************************************//
 // Interface: IDummy
 // Flags:     (4112) Hidden Dispatchable
 // GUID:      {0002442E-0001-0000-C000-000000000046}
@@ -24394,6 +28824,14 @@ type
     function DoScript: HResult; stdcall;
     function DirectObject: HResult; stdcall;
     function RefreshDocument: HResult; stdcall;
+    function AddSignatureLine(SigProv: OleVariant; out RHS: Signature): HResult; stdcall;
+    function AddNonVisibleSignature(SigProv: OleVariant; out RHS: Signature): HResult; stdcall;
+    function Get_ShowSignaturesPane(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowSignaturesPane(RHS: WordBool): HResult; stdcall;
+    function ThemeFontScheme: HResult; stdcall;
+    function ThemeColorScheme: HResult; stdcall;
+    function ThemeEffectScheme: HResult; stdcall;
+    function Load: HResult; stdcall;
   end;
 
 // *********************************************************************//
@@ -24562,6 +29000,8 @@ type
     function Get_ListObject: ListObject;
     function Get_TextFileVisualLayout: XlTextVisualLayoutType;
     procedure Set_TextFileVisualLayout(Param1: XlTextVisualLayoutType);
+    function Get_WorkbookConnection: WorkbookConnection;
+    function Get_Sort: Sort;
   public
     constructor Create(AOwner: TComponent); override;
     destructor  Destroy; override;
@@ -24596,6 +29036,8 @@ type
     property QueryType: XlQueryType read Get_QueryType;
     property EditWebPage: OleVariant read Get_EditWebPage write Set_EditWebPage;
     property ListObject: ListObject read Get_ListObject;
+    property WorkbookConnection: WorkbookConnection read Get_WorkbookConnection;
+    property Sort: Sort read Get_Sort;
     property Name: WideString read Get_Name write Set_Name;
     property FieldNames: WordBool read Get_FieldNames write Set_FieldNames;
     property RowNumbers: WordBool read Get_RowNumbers write Set_RowNumbers;
@@ -24777,6 +29219,8 @@ type
     function Get_ListObject: ListObject;
     function Get_TextFileVisualLayout: XlTextVisualLayoutType;
     procedure Set_TextFileVisualLayout(Param1: XlTextVisualLayoutType);
+    function Get_WorkbookConnection: WorkbookConnection;
+    function Get_Sort: Sort;
   public
     property DefaultInterface: _QueryTable read GetDefaultInterface;
   published
@@ -24901,6 +29345,10 @@ type
                                                                         const Map: XmlMap; 
                                                                         const Url: WideString; 
                                                                         Result: XlXmlExportResult) of object;
+  TExcelApplicationWorkbookRowsetComplete = procedure(ASender: TObject; const Wb: ExcelWorkbook; 
+                                                                        const Description: WideString; 
+                                                                        const Sheet: WideString; 
+                                                                        Success: WordBool) of object;
 
 
 // *********************************************************************//
@@ -24946,6 +29394,8 @@ type
     FOnWorkbookAfterXmlImport: TExcelApplicationWorkbookAfterXmlImport;
     FOnWorkbookBeforeXmlExport: TExcelApplicationWorkbookBeforeXmlExport;
     FOnWorkbookAfterXmlExport: TExcelApplicationWorkbookAfterXmlExport;
+    FOnWorkbookRowsetComplete: TExcelApplicationWorkbookRowsetComplete;
+    FOnAfterCalculate: TNotifyEvent;
     FAutoQuit:    Boolean;
     FIntf:        _Application;
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -25253,6 +29703,39 @@ type
     function Get_DisplayDocumentActionTaskPane: WordBool;
     procedure Set_DisplayDocumentActionTaskPane(RHS: WordBool);
     function Get_ArbitraryXMLSupportAvailable: WordBool;
+    function Get_MeasurementUnit: Integer;
+    procedure Set_MeasurementUnit(RHS: Integer);
+    function Get_ShowSelectionFloaties: WordBool;
+    procedure Set_ShowSelectionFloaties(RHS: WordBool);
+    function Get_ShowMenuFloaties: WordBool;
+    procedure Set_ShowMenuFloaties(RHS: WordBool);
+    function Get_ShowDevTools: WordBool;
+    procedure Set_ShowDevTools(RHS: WordBool);
+    function Get_EnableLivePreview: WordBool;
+    procedure Set_EnableLivePreview(RHS: WordBool);
+    function Get_DisplayDocumentInformationPanel: WordBool;
+    procedure Set_DisplayDocumentInformationPanel(RHS: WordBool);
+    function Get_AlwaysUseClearType: WordBool;
+    procedure Set_AlwaysUseClearType(RHS: WordBool);
+    function Get_WarnOnFunctionNameConflict: WordBool;
+    procedure Set_WarnOnFunctionNameConflict(RHS: WordBool);
+    function Get_FormulaBarHeight: Integer;
+    procedure Set_FormulaBarHeight(RHS: Integer);
+    function Get_DisplayFormulaAutoComplete: WordBool;
+    procedure Set_DisplayFormulaAutoComplete(RHS: WordBool);
+    function Get_GenerateTableRefs(lcid: Integer): XlGenerateTableRefs;
+    procedure Set_GenerateTableRefs(lcid: Integer; RHS: XlGenerateTableRefs);
+    function Get_Assistance: IAssistance;
+    function Get_EnableLargeOperationAlert: WordBool;
+    procedure Set_EnableLargeOperationAlert(RHS: WordBool);
+    function Get_LargeOperationCellThousandCount: Integer;
+    procedure Set_LargeOperationCellThousandCount(RHS: Integer);
+    function Get_DeferAsyncQueries: WordBool;
+    procedure Set_DeferAsyncQueries(RHS: WordBool);
+    function Get_MultiThreadedCalculation: MultiThreadedCalculation;
+    function Get_ActiveEncryptionSession: Integer;
+    function Get_HighQualityModeForGraphics: WordBool;
+    procedure Set_HighQualityModeForGraphics(RHS: WordBool);
   public
     constructor Create(AOwner: TComponent); override;
     destructor  Destroy; override;
@@ -26397,6 +30880,9 @@ type
     procedure DisplayXMLSourcePane(XmlMap: OleVariant); overload;
     function Support(const Object_: IDispatch; ID: Integer): OleVariant; overload;
     function Support(const Object_: IDispatch; ID: Integer; arg: OleVariant): OleVariant; overload;
+    function Dummy20(grfCompareFunctions: Integer): OleVariant;
+    procedure CalculateUntilAsyncQueriesDone;
+    function SharePointVersion(const bstrUrl: WideString): Integer;
     property DefaultInterface: _Application read GetDefaultInterface;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
@@ -26564,6 +31050,10 @@ type
     property ThisCell: ExcelRange read Get_ThisCell;
     property RTD: RTD read Get_RTD;
     property ArbitraryXMLSupportAvailable: WordBool read Get_ArbitraryXMLSupportAvailable;
+    property GenerateTableRefs[lcid: Integer]: XlGenerateTableRefs read Get_GenerateTableRefs write Set_GenerateTableRefs;
+    property Assistance: IAssistance read Get_Assistance;
+    property MultiThreadedCalculation: MultiThreadedCalculation read Get_MultiThreadedCalculation;
+    property ActiveEncryptionSession: Integer read Get_ActiveEncryptionSession;
     property Caption: WideString read Get_Caption write Set_Caption;
     property DisplayNoteIndicator: WordBool read Get_DisplayNoteIndicator write Set_DisplayNoteIndicator;
     property DisplayCommentIndicator: XlCommentDisplayMode read Get_DisplayCommentIndicator write Set_DisplayCommentIndicator;
@@ -26596,6 +31086,20 @@ type
     property ThousandsSeparator: WideString read Get_ThousandsSeparator write Set_ThousandsSeparator;
     property UseSystemSeparators: WordBool read Get_UseSystemSeparators write Set_UseSystemSeparators;
     property DisplayDocumentActionTaskPane: WordBool read Get_DisplayDocumentActionTaskPane write Set_DisplayDocumentActionTaskPane;
+    property MeasurementUnit: Integer read Get_MeasurementUnit write Set_MeasurementUnit;
+    property ShowSelectionFloaties: WordBool read Get_ShowSelectionFloaties write Set_ShowSelectionFloaties;
+    property ShowMenuFloaties: WordBool read Get_ShowMenuFloaties write Set_ShowMenuFloaties;
+    property ShowDevTools: WordBool read Get_ShowDevTools write Set_ShowDevTools;
+    property EnableLivePreview: WordBool read Get_EnableLivePreview write Set_EnableLivePreview;
+    property DisplayDocumentInformationPanel: WordBool read Get_DisplayDocumentInformationPanel write Set_DisplayDocumentInformationPanel;
+    property AlwaysUseClearType: WordBool read Get_AlwaysUseClearType write Set_AlwaysUseClearType;
+    property WarnOnFunctionNameConflict: WordBool read Get_WarnOnFunctionNameConflict write Set_WarnOnFunctionNameConflict;
+    property FormulaBarHeight: Integer read Get_FormulaBarHeight write Set_FormulaBarHeight;
+    property DisplayFormulaAutoComplete: WordBool read Get_DisplayFormulaAutoComplete write Set_DisplayFormulaAutoComplete;
+    property EnableLargeOperationAlert: WordBool read Get_EnableLargeOperationAlert write Set_EnableLargeOperationAlert;
+    property LargeOperationCellThousandCount: Integer read Get_LargeOperationCellThousandCount write Set_LargeOperationCellThousandCount;
+    property DeferAsyncQueries: WordBool read Get_DeferAsyncQueries write Set_DeferAsyncQueries;
+    property HighQualityModeForGraphics: WordBool read Get_HighQualityModeForGraphics write Set_HighQualityModeForGraphics;
   published
     property AutoQuit: Boolean read FAutoQuit write FAutoQuit; 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -26630,6 +31134,8 @@ type
     property OnWorkbookAfterXmlImport: TExcelApplicationWorkbookAfterXmlImport read FOnWorkbookAfterXmlImport write FOnWorkbookAfterXmlImport;
     property OnWorkbookBeforeXmlExport: TExcelApplicationWorkbookBeforeXmlExport read FOnWorkbookBeforeXmlExport write FOnWorkbookBeforeXmlExport;
     property OnWorkbookAfterXmlExport: TExcelApplicationWorkbookAfterXmlExport read FOnWorkbookAfterXmlExport write FOnWorkbookAfterXmlExport;
+    property OnWorkbookRowsetComplete: TExcelApplicationWorkbookRowsetComplete read FOnWorkbookRowsetComplete write FOnWorkbookRowsetComplete;
+    property OnAfterCalculate: TNotifyEvent read FOnAfterCalculate write FOnAfterCalculate;
   end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -26942,6 +31448,39 @@ type
     function Get_DisplayDocumentActionTaskPane: WordBool;
     procedure Set_DisplayDocumentActionTaskPane(RHS: WordBool);
     function Get_ArbitraryXMLSupportAvailable: WordBool;
+    function Get_MeasurementUnit: Integer;
+    procedure Set_MeasurementUnit(RHS: Integer);
+    function Get_ShowSelectionFloaties: WordBool;
+    procedure Set_ShowSelectionFloaties(RHS: WordBool);
+    function Get_ShowMenuFloaties: WordBool;
+    procedure Set_ShowMenuFloaties(RHS: WordBool);
+    function Get_ShowDevTools: WordBool;
+    procedure Set_ShowDevTools(RHS: WordBool);
+    function Get_EnableLivePreview: WordBool;
+    procedure Set_EnableLivePreview(RHS: WordBool);
+    function Get_DisplayDocumentInformationPanel: WordBool;
+    procedure Set_DisplayDocumentInformationPanel(RHS: WordBool);
+    function Get_AlwaysUseClearType: WordBool;
+    procedure Set_AlwaysUseClearType(RHS: WordBool);
+    function Get_WarnOnFunctionNameConflict: WordBool;
+    procedure Set_WarnOnFunctionNameConflict(RHS: WordBool);
+    function Get_FormulaBarHeight: Integer;
+    procedure Set_FormulaBarHeight(RHS: Integer);
+    function Get_DisplayFormulaAutoComplete: WordBool;
+    procedure Set_DisplayFormulaAutoComplete(RHS: WordBool);
+    function Get_GenerateTableRefs(lcid: Integer): XlGenerateTableRefs;
+    procedure Set_GenerateTableRefs(lcid: Integer; RHS: XlGenerateTableRefs);
+    function Get_Assistance: IAssistance;
+    function Get_EnableLargeOperationAlert: WordBool;
+    procedure Set_EnableLargeOperationAlert(RHS: WordBool);
+    function Get_LargeOperationCellThousandCount: Integer;
+    procedure Set_LargeOperationCellThousandCount(RHS: Integer);
+    function Get_DeferAsyncQueries: WordBool;
+    procedure Set_DeferAsyncQueries(RHS: WordBool);
+    function Get_MultiThreadedCalculation: MultiThreadedCalculation;
+    function Get_ActiveEncryptionSession: Integer;
+    function Get_HighQualityModeForGraphics: WordBool;
+    procedure Set_HighQualityModeForGraphics(RHS: WordBool);
   public
     property DefaultInterface: _Application read GetDefaultInterface;
   published
@@ -26977,6 +31516,20 @@ type
     property ThousandsSeparator: WideString read Get_ThousandsSeparator write Set_ThousandsSeparator;
     property UseSystemSeparators: WordBool read Get_UseSystemSeparators write Set_UseSystemSeparators;
     property DisplayDocumentActionTaskPane: WordBool read Get_DisplayDocumentActionTaskPane write Set_DisplayDocumentActionTaskPane;
+    property MeasurementUnit: Integer read Get_MeasurementUnit write Set_MeasurementUnit;
+    property ShowSelectionFloaties: WordBool read Get_ShowSelectionFloaties write Set_ShowSelectionFloaties;
+    property ShowMenuFloaties: WordBool read Get_ShowMenuFloaties write Set_ShowMenuFloaties;
+    property ShowDevTools: WordBool read Get_ShowDevTools write Set_ShowDevTools;
+    property EnableLivePreview: WordBool read Get_EnableLivePreview write Set_EnableLivePreview;
+    property DisplayDocumentInformationPanel: WordBool read Get_DisplayDocumentInformationPanel write Set_DisplayDocumentInformationPanel;
+    property AlwaysUseClearType: WordBool read Get_AlwaysUseClearType write Set_AlwaysUseClearType;
+    property WarnOnFunctionNameConflict: WordBool read Get_WarnOnFunctionNameConflict write Set_WarnOnFunctionNameConflict;
+    property FormulaBarHeight: Integer read Get_FormulaBarHeight write Set_FormulaBarHeight;
+    property DisplayFormulaAutoComplete: WordBool read Get_DisplayFormulaAutoComplete write Set_DisplayFormulaAutoComplete;
+    property EnableLargeOperationAlert: WordBool read Get_EnableLargeOperationAlert write Set_EnableLargeOperationAlert;
+    property LargeOperationCellThousandCount: Integer read Get_LargeOperationCellThousandCount write Set_LargeOperationCellThousandCount;
+    property DeferAsyncQueries: WordBool read Get_DeferAsyncQueries write Set_DeferAsyncQueries;
+    property HighQualityModeForGraphics: WordBool read Get_HighQualityModeForGraphics write Set_HighQualityModeForGraphics;
   end;
 {$ENDIF}
 
@@ -27139,6 +31692,12 @@ type
     function Get_Scripts: Scripts;
     function Get_Tab: Tab;
     function Get_MailEnvelope: MsoEnvelope;
+    function Get_ShowDataLabelsOverMaximum: WordBool;
+    procedure Set_ShowDataLabelsOverMaximum(RHS: WordBool);
+    function Get_SideWall: Walls;
+    function Get_BackWall: Walls;
+    function Get_ChartStyle: OleVariant;
+    procedure Set_ChartStyle(RHS: OleVariant);
   public
     constructor Create(AOwner: TComponent); override;
     destructor  Destroy; override;
@@ -27157,20 +31716,21 @@ type
     procedure Move(Before: OleVariant); overload;
     procedure Move(Before: OleVariant; After: OleVariant); overload;
     procedure Move(Before: OleVariant; After: OleVariant; lcid: Integer); overload;
-    procedure _PrintOut; overload;
-    procedure _PrintOut(From: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); overload;
+    procedure __PrintOut; overload;
+    procedure __PrintOut(From: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); overload;
     procedure PrintPreview; overload;
     procedure PrintPreview(EnableChanges: OleVariant); overload;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); overload;
@@ -27385,23 +31945,23 @@ type
     function Export(const Filename: WideString; FilterName: OleVariant): WordBool; overload;
     function Export(const Filename: WideString; FilterName: OleVariant; Interactive: OleVariant): WordBool; overload;
     procedure Refresh;
-    procedure PrintOut; overload;
-    procedure PrintOut(From: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); overload;
+    procedure _PrintOut; overload;
+    procedure _PrintOut(From: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); overload;
     procedure ApplyDataLabels(Type_: XlDataLabelsType); overload;
     procedure ApplyDataLabels(Type_: XlDataLabelsType; LegendKey: OleVariant); overload;
     procedure ApplyDataLabels(Type_: XlDataLabelsType; LegendKey: OleVariant; AutoText: OleVariant); overload;
@@ -27465,6 +32025,53 @@ type
                       Scenarios: OleVariant); overload;
     procedure Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
                       Scenarios: OleVariant; UserInterfaceOnly: OleVariant); overload;
+    procedure ApplyLayout(Layout: Integer); overload;
+    procedure ApplyLayout(Layout: Integer; ChartType: OleVariant); overload;
+    procedure SetElement(Element: MsoChartElementType);
+    procedure PrintOut; overload;
+    procedure PrintOut(From: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; lcid: Integer); overload;
+    procedure ApplyChartTemplate(const Filename: WideString);
+    procedure SaveChartTemplate(const Filename: WideString);
+    procedure SetDefaultChart(Name: OleVariant);
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); overload;
+    procedure ClearToMatchStyle;
     property DefaultInterface: _Chart read GetDefaultInterface;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
@@ -27509,27 +32116,31 @@ type
     property RightAngleAxes[lcid: Integer]: OleVariant read Get_RightAngleAxes write Set_RightAngleAxes;
     property Rotation[lcid: Integer]: OleVariant read Get_Rotation write Set_Rotation;
     property SizeWithWindow[lcid: Integer]: WordBool read Get_SizeWithWindow write Set_SizeWithWindow;
+    property ShowWindow: WordBool read Get_ShowWindow write Set_ShowWindow;
     property SubType[lcid: Integer]: Integer read Get_SubType write Set_SubType;
     property SurfaceGroup[lcid: Integer]: ChartGroup read Get_SurfaceGroup;
     property type_[lcid: Integer]: Integer read Get_type_ write Set_type_;
     property Walls[lcid: Integer]: Walls read Get_Walls;
     property WallsAndGridlines2D[lcid: Integer]: WordBool read Get_WallsAndGridlines2D write Set_WallsAndGridlines2D;
+    property ProtectGoalSeek: WordBool read Get_ProtectGoalSeek write Set_ProtectGoalSeek;
     property PivotLayout: PivotLayout read Get_PivotLayout;
+    property HasPivotFields: WordBool read Get_HasPivotFields write Set_HasPivotFields;
     property Scripts: Scripts read Get_Scripts;
     property Tab: Tab read Get_Tab;
     property MailEnvelope: MsoEnvelope read Get_MailEnvelope;
+    property SideWall: Walls read Get_SideWall;
+    property BackWall: Walls read Get_BackWall;
+    property ChartStyle: OleVariant read Get_ChartStyle write Set_ChartStyle;
     property _CodeName: WideString read Get__CodeName write Set__CodeName;
     property Name: WideString read Get_Name write Set_Name;
     property HasDataTable: WordBool read Get_HasDataTable write Set_HasDataTable;
-    property ShowWindow: WordBool read Get_ShowWindow write Set_ShowWindow;
     property ChartType: XlChartType read Get_ChartType write Set_ChartType;
     property BarShape: XlBarShape read Get_BarShape write Set_BarShape;
     property PlotBy: XlRowCol read Get_PlotBy write Set_PlotBy;
     property ProtectFormatting: WordBool read Get_ProtectFormatting write Set_ProtectFormatting;
     property ProtectData: WordBool read Get_ProtectData write Set_ProtectData;
-    property ProtectGoalSeek: WordBool read Get_ProtectGoalSeek write Set_ProtectGoalSeek;
     property ProtectSelection: WordBool read Get_ProtectSelection write Set_ProtectSelection;
-    property HasPivotFields: WordBool read Get_HasPivotFields write Set_HasPivotFields;
+    property ShowDataLabelsOverMaximum: WordBool read Get_ShowDataLabelsOverMaximum write Set_ShowDataLabelsOverMaximum;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TExcelChartProperties read GetServerProperties;
@@ -27659,21 +32270,25 @@ type
     function Get_Scripts: Scripts;
     function Get_Tab: Tab;
     function Get_MailEnvelope: MsoEnvelope;
+    function Get_ShowDataLabelsOverMaximum: WordBool;
+    procedure Set_ShowDataLabelsOverMaximum(RHS: WordBool);
+    function Get_SideWall: Walls;
+    function Get_BackWall: Walls;
+    function Get_ChartStyle: OleVariant;
+    procedure Set_ChartStyle(RHS: OleVariant);
   public
     property DefaultInterface: _Chart read GetDefaultInterface;
   published
     property _CodeName: WideString read Get__CodeName write Set__CodeName;
     property Name: WideString read Get_Name write Set_Name;
     property HasDataTable: WordBool read Get_HasDataTable write Set_HasDataTable;
-    property ShowWindow: WordBool read Get_ShowWindow write Set_ShowWindow;
     property ChartType: XlChartType read Get_ChartType write Set_ChartType;
     property BarShape: XlBarShape read Get_BarShape write Set_BarShape;
     property PlotBy: XlRowCol read Get_PlotBy write Set_PlotBy;
     property ProtectFormatting: WordBool read Get_ProtectFormatting write Set_ProtectFormatting;
     property ProtectData: WordBool read Get_ProtectData write Set_ProtectData;
-    property ProtectGoalSeek: WordBool read Get_ProtectGoalSeek write Set_ProtectGoalSeek;
     property ProtectSelection: WordBool read Get_ProtectSelection write Set_ProtectSelection;
-    property HasPivotFields: WordBool read Get_HasPivotFields write Set_HasPivotFields;
+    property ShowDataLabelsOverMaximum: WordBool read Get_ShowDataLabelsOverMaximum write Set_ShowDataLabelsOverMaximum;
   end;
 {$ENDIF}
 
@@ -27818,6 +32433,9 @@ type
     function Get_SmartTags: SmartTags;
     function Get_Protection: Protection;
     function Get_ListObjects: ListObjects;
+    function Get_EnableFormatConditionsCalculation: WordBool;
+    procedure Set_EnableFormatConditionsCalculation(RHS: WordBool);
+    function Get_Sort: Sort;
   public
     constructor Create(AOwner: TComponent); override;
     destructor  Destroy; override;
@@ -27836,20 +32454,21 @@ type
     procedure Move(Before: OleVariant); overload;
     procedure Move(Before: OleVariant; After: OleVariant); overload;
     procedure Move(Before: OleVariant; After: OleVariant; lcid: Integer); overload;
-    procedure _PrintOut; overload;
-    procedure _PrintOut(From: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); overload;
+    procedure __PrintOut; overload;
+    procedure __PrintOut(From: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); overload;
     procedure PrintPreview; overload;
     procedure PrintPreview(EnableChanges: OleVariant); overload;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); overload;
@@ -28076,23 +32695,23 @@ type
     function TextBoxes(Index: OleVariant; lcid: Integer): IDispatch; overload;
     procedure ClearCircles;
     procedure CircleInvalid;
-    procedure PrintOut; overload;
-    procedure PrintOut(From: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); overload;
+    procedure _PrintOut; overload;
+    procedure _PrintOut(From: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); overload;
     procedure _CheckSpelling; overload;
     procedure _CheckSpelling(CustomDictionary: OleVariant); overload;
     procedure _CheckSpelling(CustomDictionary: OleVariant; IgnoreUppercase: OleVariant); overload;
@@ -28221,6 +32840,49 @@ type
     function XmlMapQuery(const XPath: WideString): ExcelRange; overload;
     function XmlMapQuery(const XPath: WideString; SelectionNamespaces: OleVariant): ExcelRange; overload;
     function XmlMapQuery(const XPath: WideString; SelectionNamespaces: OleVariant; Map: OleVariant): ExcelRange; overload;
+    procedure PrintOut; overload;
+    procedure PrintOut(From: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); overload;
     property DefaultInterface: _Worksheet read GetDefaultInterface;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
@@ -28279,12 +32941,14 @@ type
     property SmartTags: SmartTags read Get_SmartTags;
     property Protection: Protection read Get_Protection;
     property ListObjects: ListObjects read Get_ListObjects;
+    property Sort: Sort read Get_Sort;
     property _CodeName: WideString read Get__CodeName write Set__CodeName;
     property Name: WideString read Get_Name write Set_Name;
     property EnableCalculation: WordBool read Get_EnableCalculation write Set_EnableCalculation;
     property EnableSelection: XlEnableSelection read Get_EnableSelection write Set_EnableSelection;
     property ScrollArea: WideString read Get_ScrollArea write Set_ScrollArea;
     property DisplayPageBreaks: WordBool read Get_DisplayPageBreaks write Set_DisplayPageBreaks;
+    property EnableFormatConditionsCalculation: WordBool read Get_EnableFormatConditionsCalculation write Set_EnableFormatConditionsCalculation;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TExcelWorksheetProperties read GetServerProperties;
@@ -28399,6 +33063,9 @@ type
     function Get_SmartTags: SmartTags;
     function Get_Protection: Protection;
     function Get_ListObjects: ListObjects;
+    function Get_EnableFormatConditionsCalculation: WordBool;
+    procedure Set_EnableFormatConditionsCalculation(RHS: WordBool);
+    function Get_Sort: Sort;
   public
     property DefaultInterface: _Worksheet read GetDefaultInterface;
   published
@@ -28408,6 +33075,7 @@ type
     property EnableSelection: XlEnableSelection read Get_EnableSelection write Set_EnableSelection;
     property ScrollArea: WideString read Get_ScrollArea write Set_ScrollArea;
     property DisplayPageBreaks: WordBool read Get_DisplayPageBreaks write Set_DisplayPageBreaks;
+    property EnableFormatConditionsCalculation: WordBool read Get_EnableFormatConditionsCalculation write Set_EnableFormatConditionsCalculation;
   end;
 {$ENDIF}
 
@@ -28476,6 +33144,9 @@ type
   TExcelWorkbookAfterXmlExport = procedure(ASender: TObject; const Map: XmlMap; 
                                                              const Url: WideString; 
                                                              Result: XlXmlExportResult) of object;
+  TExcelWorkbookRowsetComplete = procedure(ASender: TObject; const Description: WideString; 
+                                                             const Sheet: WideString; 
+                                                             Success: WordBool) of object;
 
 
 // *********************************************************************//
@@ -28520,6 +33191,7 @@ type
     FOnAfterXmlImport: TExcelWorkbookAfterXmlImport;
     FOnBeforeXmlExport: TExcelWorkbookBeforeXmlExport;
     FOnAfterXmlExport: TExcelWorkbookAfterXmlExport;
+    FOnRowsetComplete: TExcelWorkbookRowsetComplete;
     FIntf:        _Workbook;
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     FProps:       TExcelWorkbookProperties;
@@ -28672,6 +33344,36 @@ type
     procedure Set_InactiveListBorderVisible(RHS: WordBool);
     function Get_DisplayInkComments: WordBool;
     procedure Set_DisplayInkComments(RHS: WordBool);
+    function Get_ContentTypeProperties: MetaProperties;
+    function Get_Connections: Connections;
+    function Get_Signatures: SignatureSet;
+    function Get_ServerPolicy: ServerPolicy;
+    function Get_DocumentInspectors: DocumentInspectors;
+    function Get_ServerViewableItems: ServerViewableItems;
+    function Get_TableStyles: TableStyles;
+    function Get_DefaultTableStyle: OleVariant;
+    procedure Set_DefaultTableStyle(RHS: OleVariant);
+    function Get_DefaultPivotTableStyle: OleVariant;
+    procedure Set_DefaultPivotTableStyle(RHS: OleVariant);
+    function Get_CheckCompatibility: WordBool;
+    procedure Set_CheckCompatibility(RHS: WordBool);
+    function Get_HasVBProject: WordBool;
+    function Get_CustomXMLParts: CustomXMLParts;
+    function Get_Final: WordBool;
+    procedure Set_Final(RHS: WordBool);
+    function Get_Research: Research;
+    function Get_Theme: OfficeTheme;
+    function Get_Excel8CompatibilityMode: WordBool;
+    function Get_ConnectionsDisabled: WordBool;
+    function Get_ShowPivotChartActiveFields: WordBool;
+    procedure Set_ShowPivotChartActiveFields(RHS: WordBool);
+    function Get_IconSets: IconSets;
+    function Get_EncryptionProvider: WideString;
+    procedure Set_EncryptionProvider(const RHS: WideString);
+    function Get_DoNotPromptForConvert: WordBool;
+    procedure Set_DoNotPromptForConvert(RHS: WordBool);
+    function Get_ForceFullCalculation: WordBool;
+    procedure Set_ForceFullCalculation(RHS: WordBool);
   public
     constructor Create(AOwner: TComponent); override;
     destructor  Destroy; override;
@@ -28721,20 +33423,21 @@ type
     procedure Post; overload;
     procedure Post(DestName: OleVariant); overload;
     procedure Post(DestName: OleVariant; lcid: Integer); overload;
-    procedure _PrintOut; overload;
-    procedure _PrintOut(From: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
-    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                        lcid: Integer); overload;
+    procedure __PrintOut; overload;
+    procedure __PrintOut(From: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant); overload;
+    procedure __PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                         Preview: OleVariant; ActivePrinter: OleVariant; PrintToFile: OleVariant; 
+                         Collate: OleVariant; lcid: Integer); overload;
     procedure PrintPreview; overload;
     procedure PrintPreview(EnableChanges: OleVariant); overload;
     procedure PrintPreview(EnableChanges: OleVariant; lcid: Integer); overload;
@@ -28742,19 +33445,19 @@ type
     procedure _Protect(Password: OleVariant); overload;
     procedure _Protect(Password: OleVariant; Structure: OleVariant); overload;
     procedure _Protect(Password: OleVariant; Structure: OleVariant; Windows: OleVariant); overload;
-    procedure ProtectSharing; overload;
-    procedure ProtectSharing(Filename: OleVariant); overload;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant); overload;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                             WriteResPassword: OleVariant); overload;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant); overload;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
-                             CreateBackup: OleVariant); overload;
-    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
-                             CreateBackup: OleVariant; SharingPassword: OleVariant); overload;
+    procedure _ProtectSharing; overload;
+    procedure _ProtectSharing(Filename: OleVariant); overload;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant); overload;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                              WriteResPassword: OleVariant); overload;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                              WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant); overload;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                              WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                              CreateBackup: OleVariant); overload;
+    procedure _ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                              WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                              CreateBackup: OleVariant; SharingPassword: OleVariant); overload;
     procedure RefreshAll;
     procedure Reply; overload;
     procedure Reply(lcid: Integer); overload;
@@ -28900,23 +33603,23 @@ type
                               NewWindow: OleVariant; AddHistory: OleVariant; ExtraInfo: OleVariant; 
                               Method: OleVariant; HeaderInfo: OleVariant); overload;
     procedure AddToFavorites;
-    procedure PrintOut; overload;
-    procedure PrintOut(From: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant); overload;
-    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
-                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
-                       PrToFileName: OleVariant; lcid: Integer); overload;
+    procedure _PrintOut; overload;
+    procedure _PrintOut(From: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant); overload;
+    procedure _PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                        ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                        PrToFileName: OleVariant; lcid: Integer); overload;
     procedure WebPagePreview;
     procedure ReloadAs(Encoding: MsoEncoding);
     procedure Dummy17(calcid: Integer);
@@ -28974,10 +33677,84 @@ type
                           Destination: OleVariant): XlXmlImportResult; overload;
     procedure SaveAsXMLData(const Filename: WideString; const Map: XmlMap);
     procedure ToggleFormsDesign;
+    procedure RemoveDocumentInformation(RemoveDocInfoType: XlRemoveDocInfoType);
+    procedure CheckInWithVersion; overload;
+    procedure CheckInWithVersion(SaveChanges: OleVariant); overload;
+    procedure CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant); overload;
+    procedure CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant; 
+                                 MakePublic: OleVariant); overload;
+    procedure CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant; 
+                                 MakePublic: OleVariant; VersionType: OleVariant); overload;
+    procedure LockServerFile;
+    function GetWorkflowTasks: WorkflowTasks;
+    function GetWorkflowTemplates: WorkflowTemplates;
+    procedure PrintOut; overload;
+    procedure PrintOut(From: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant); overload;
+    procedure PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; Preview: OleVariant; 
+                       ActivePrinter: OleVariant; PrintToFile: OleVariant; Collate: OleVariant; 
+                       PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; lcid: Integer); overload;
+    procedure ApplyTheme(const Filename: WideString);
+    procedure EnableConnections;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant); overload;
+    procedure ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                  Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                  IgnorePrintAreas: OleVariant; From: OleVariant; To_: OleVariant; 
+                                  OpenAfterPublish: OleVariant; FixedFormatExtClassPtr: OleVariant); overload;
+    procedure ProtectSharing; overload;
+    procedure ProtectSharing(Filename: OleVariant); overload;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant); overload;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant); overload;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant); overload;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                             CreateBackup: OleVariant); overload;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                             CreateBackup: OleVariant; SharingPassword: OleVariant); overload;
+    procedure ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                             WriteResPassword: OleVariant; ReadOnlyRecommended: OleVariant; 
+                             CreateBackup: OleVariant; SharingPassword: OleVariant; 
+                             FileFormat: OleVariant); overload;
     property DefaultInterface: _Workbook read GetDefaultInterface;
     property Application: ExcelApplication read Get_Application;
     property Creator: XlCreator read Get_Creator;
     property Parent: IDispatch read Get_Parent;
+    property AcceptLabelsInFormulas: WordBool read Get_AcceptLabelsInFormulas write Set_AcceptLabelsInFormulas;
     property ActiveChart: ExcelChart read Get_ActiveChart;
     property ActiveSheet: IDispatch read Get_ActiveSheet;
     property Author[lcid: Integer]: WideString read Get_Author write Set_Author;
@@ -29053,7 +33830,22 @@ type
     property XmlMaps: XmlMaps read Get_XmlMaps;
     property SmartDocument: SmartDocument read Get_SmartDocument;
     property DocumentLibraryVersions: DocumentLibraryVersions read Get_DocumentLibraryVersions;
-    property AcceptLabelsInFormulas: WordBool read Get_AcceptLabelsInFormulas write Set_AcceptLabelsInFormulas;
+    property ContentTypeProperties: MetaProperties read Get_ContentTypeProperties;
+    property Connections: Connections read Get_Connections;
+    property Signatures: SignatureSet read Get_Signatures;
+    property ServerPolicy: ServerPolicy read Get_ServerPolicy;
+    property DocumentInspectors: DocumentInspectors read Get_DocumentInspectors;
+    property ServerViewableItems: ServerViewableItems read Get_ServerViewableItems;
+    property TableStyles: TableStyles read Get_TableStyles;
+    property DefaultTableStyle: OleVariant read Get_DefaultTableStyle write Set_DefaultTableStyle;
+    property DefaultPivotTableStyle: OleVariant read Get_DefaultPivotTableStyle write Set_DefaultPivotTableStyle;
+    property HasVBProject: WordBool read Get_HasVBProject;
+    property CustomXMLParts: CustomXMLParts read Get_CustomXMLParts;
+    property Research: Research read Get_Research;
+    property Theme: OfficeTheme read Get_Theme;
+    property Excel8CompatibilityMode: WordBool read Get_Excel8CompatibilityMode;
+    property ConnectionsDisabled: WordBool read Get_ConnectionsDisabled;
+    property IconSets: IconSets read Get_IconSets;
     property AutoUpdateFrequency: Integer read Get_AutoUpdateFrequency write Set_AutoUpdateFrequency;
     property AutoUpdateSaveChanges: WordBool read Get_AutoUpdateSaveChanges write Set_AutoUpdateSaveChanges;
     property ChangeHistoryDuration: Integer read Get_ChangeHistoryDuration write Set_ChangeHistoryDuration;
@@ -29076,6 +33868,12 @@ type
     property ReadOnlyRecommended: WordBool read Get_ReadOnlyRecommended write Set_ReadOnlyRecommended;
     property InactiveListBorderVisible: WordBool read Get_InactiveListBorderVisible write Set_InactiveListBorderVisible;
     property DisplayInkComments: WordBool read Get_DisplayInkComments write Set_DisplayInkComments;
+    property CheckCompatibility: WordBool read Get_CheckCompatibility write Set_CheckCompatibility;
+    property Final: WordBool read Get_Final write Set_Final;
+    property ShowPivotChartActiveFields: WordBool read Get_ShowPivotChartActiveFields write Set_ShowPivotChartActiveFields;
+    property EncryptionProvider: WideString read Get_EncryptionProvider write Set_EncryptionProvider;
+    property DoNotPromptForConvert: WordBool read Get_DoNotPromptForConvert write Set_DoNotPromptForConvert;
+    property ForceFullCalculation: WordBool read Get_ForceFullCalculation write Set_ForceFullCalculation;
   published
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
     property Server: TExcelWorkbookProperties read GetServerProperties;
@@ -29108,6 +33906,7 @@ type
     property OnAfterXmlImport: TExcelWorkbookAfterXmlImport read FOnAfterXmlImport write FOnAfterXmlImport;
     property OnBeforeXmlExport: TExcelWorkbookBeforeXmlExport read FOnBeforeXmlExport write FOnBeforeXmlExport;
     property OnAfterXmlExport: TExcelWorkbookAfterXmlExport read FOnAfterXmlExport write FOnAfterXmlExport;
+    property OnRowsetComplete: TExcelWorkbookRowsetComplete read FOnRowsetComplete write FOnRowsetComplete;
   end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -29266,10 +34065,39 @@ type
     procedure Set_InactiveListBorderVisible(RHS: WordBool);
     function Get_DisplayInkComments: WordBool;
     procedure Set_DisplayInkComments(RHS: WordBool);
+    function Get_ContentTypeProperties: MetaProperties;
+    function Get_Connections: Connections;
+    function Get_Signatures: SignatureSet;
+    function Get_ServerPolicy: ServerPolicy;
+    function Get_DocumentInspectors: DocumentInspectors;
+    function Get_ServerViewableItems: ServerViewableItems;
+    function Get_TableStyles: TableStyles;
+    function Get_DefaultTableStyle: OleVariant;
+    procedure Set_DefaultTableStyle(RHS: OleVariant);
+    function Get_DefaultPivotTableStyle: OleVariant;
+    procedure Set_DefaultPivotTableStyle(RHS: OleVariant);
+    function Get_CheckCompatibility: WordBool;
+    procedure Set_CheckCompatibility(RHS: WordBool);
+    function Get_HasVBProject: WordBool;
+    function Get_CustomXMLParts: CustomXMLParts;
+    function Get_Final: WordBool;
+    procedure Set_Final(RHS: WordBool);
+    function Get_Research: Research;
+    function Get_Theme: OfficeTheme;
+    function Get_Excel8CompatibilityMode: WordBool;
+    function Get_ConnectionsDisabled: WordBool;
+    function Get_ShowPivotChartActiveFields: WordBool;
+    procedure Set_ShowPivotChartActiveFields(RHS: WordBool);
+    function Get_IconSets: IconSets;
+    function Get_EncryptionProvider: WideString;
+    procedure Set_EncryptionProvider(const RHS: WideString);
+    function Get_DoNotPromptForConvert: WordBool;
+    procedure Set_DoNotPromptForConvert(RHS: WordBool);
+    function Get_ForceFullCalculation: WordBool;
+    procedure Set_ForceFullCalculation(RHS: WordBool);
   public
     property DefaultInterface: _Workbook read GetDefaultInterface;
   published
-    property AcceptLabelsInFormulas: WordBool read Get_AcceptLabelsInFormulas write Set_AcceptLabelsInFormulas;
     property AutoUpdateFrequency: Integer read Get_AutoUpdateFrequency write Set_AutoUpdateFrequency;
     property AutoUpdateSaveChanges: WordBool read Get_AutoUpdateSaveChanges write Set_AutoUpdateSaveChanges;
     property ChangeHistoryDuration: Integer read Get_ChangeHistoryDuration write Set_ChangeHistoryDuration;
@@ -29292,6 +34120,12 @@ type
     property ReadOnlyRecommended: WordBool read Get_ReadOnlyRecommended write Set_ReadOnlyRecommended;
     property InactiveListBorderVisible: WordBool read Get_InactiveListBorderVisible write Set_InactiveListBorderVisible;
     property DisplayInkComments: WordBool read Get_DisplayInkComments write Set_DisplayInkComments;
+    property CheckCompatibility: WordBool read Get_CheckCompatibility write Set_CheckCompatibility;
+    property Final: WordBool read Get_Final write Set_Final;
+    property ShowPivotChartActiveFields: WordBool read Get_ShowPivotChartActiveFields write Set_ShowPivotChartActiveFields;
+    property EncryptionProvider: WideString read Get_EncryptionProvider write Set_EncryptionProvider;
+    property DoNotPromptForConvert: WordBool read Get_DoNotPromptForConvert write Set_DoNotPromptForConvert;
+    property ForceFullCalculation: WordBool read Get_ForceFullCalculation write Set_ForceFullCalculation;
   end;
 {$ENDIF}
 
@@ -30280,6 +35114,16 @@ begin
   DefaultInterface.TextFileVisualLayout := Param1 {TKIND_DISPATCH};
 end;
 
+function TExcelQueryTable.Get_WorkbookConnection: WorkbookConnection;
+begin
+    Result := DefaultInterface.WorkbookConnection;
+end;
+
+function TExcelQueryTable.Get_Sort: Sort;
+begin
+    Result := DefaultInterface.Sort;
+end;
+
 procedure TExcelQueryTable.CancelRefresh;
 begin
   DefaultInterface.CancelRefresh;
@@ -30985,6 +35829,16 @@ begin
   DefaultInterface.TextFileVisualLayout := Param1 {TKIND_DISPATCH};
 end;
 
+function TExcelQueryTableProperties.Get_WorkbookConnection: WorkbookConnection;
+begin
+    Result := DefaultInterface.WorkbookConnection;
+end;
+
+function TExcelQueryTableProperties.Get_Sort: Sort;
+begin
+    Result := DefaultInterface.Sort;
+end;
+
 {$ENDIF}
 
 class function CoExcelApplication.Create: _Application;
@@ -31184,6 +36038,14 @@ begin
                                    IUnknown(TVarData(Params[1]).VPointer) as XmlMap {const XmlMap},
                                    Params[2] {const WideString},
                                    Params[3] {XlXmlExportResult});
+    2611: if Assigned(FOnWorkbookRowsetComplete) then
+         FOnWorkbookRowsetComplete(Self,
+                                   IUnknown(TVarData(Params[0]).VPointer) as ExcelWorkbook {const ExcelWorkbook},
+                                   Params[1] {const WideString},
+                                   Params[2] {const WideString},
+                                   Params[3] {WordBool});
+    2612: if Assigned(FOnAfterCalculate) then
+         FOnAfterCalculate(Self);
   end; {case DispID}
 end;
 
@@ -32803,6 +37665,171 @@ end;
 function TExcelApplication.Get_ArbitraryXMLSupportAvailable: WordBool;
 begin
     Result := DefaultInterface.ArbitraryXMLSupportAvailable;
+end;
+
+function TExcelApplication.Get_MeasurementUnit: Integer;
+begin
+    Result := DefaultInterface.MeasurementUnit;
+end;
+
+procedure TExcelApplication.Set_MeasurementUnit(RHS: Integer);
+begin
+  DefaultInterface.Set_MeasurementUnit(RHS);
+end;
+
+function TExcelApplication.Get_ShowSelectionFloaties: WordBool;
+begin
+    Result := DefaultInterface.ShowSelectionFloaties;
+end;
+
+procedure TExcelApplication.Set_ShowSelectionFloaties(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowSelectionFloaties(RHS);
+end;
+
+function TExcelApplication.Get_ShowMenuFloaties: WordBool;
+begin
+    Result := DefaultInterface.ShowMenuFloaties;
+end;
+
+procedure TExcelApplication.Set_ShowMenuFloaties(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowMenuFloaties(RHS);
+end;
+
+function TExcelApplication.Get_ShowDevTools: WordBool;
+begin
+    Result := DefaultInterface.ShowDevTools;
+end;
+
+procedure TExcelApplication.Set_ShowDevTools(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowDevTools(RHS);
+end;
+
+function TExcelApplication.Get_EnableLivePreview: WordBool;
+begin
+    Result := DefaultInterface.EnableLivePreview;
+end;
+
+procedure TExcelApplication.Set_EnableLivePreview(RHS: WordBool);
+begin
+  DefaultInterface.Set_EnableLivePreview(RHS);
+end;
+
+function TExcelApplication.Get_DisplayDocumentInformationPanel: WordBool;
+begin
+    Result := DefaultInterface.DisplayDocumentInformationPanel;
+end;
+
+procedure TExcelApplication.Set_DisplayDocumentInformationPanel(RHS: WordBool);
+begin
+  DefaultInterface.Set_DisplayDocumentInformationPanel(RHS);
+end;
+
+function TExcelApplication.Get_AlwaysUseClearType: WordBool;
+begin
+    Result := DefaultInterface.AlwaysUseClearType;
+end;
+
+procedure TExcelApplication.Set_AlwaysUseClearType(RHS: WordBool);
+begin
+  DefaultInterface.Set_AlwaysUseClearType(RHS);
+end;
+
+function TExcelApplication.Get_WarnOnFunctionNameConflict: WordBool;
+begin
+    Result := DefaultInterface.WarnOnFunctionNameConflict;
+end;
+
+procedure TExcelApplication.Set_WarnOnFunctionNameConflict(RHS: WordBool);
+begin
+  DefaultInterface.Set_WarnOnFunctionNameConflict(RHS);
+end;
+
+function TExcelApplication.Get_FormulaBarHeight: Integer;
+begin
+    Result := DefaultInterface.FormulaBarHeight;
+end;
+
+procedure TExcelApplication.Set_FormulaBarHeight(RHS: Integer);
+begin
+  DefaultInterface.Set_FormulaBarHeight(RHS);
+end;
+
+function TExcelApplication.Get_DisplayFormulaAutoComplete: WordBool;
+begin
+    Result := DefaultInterface.DisplayFormulaAutoComplete;
+end;
+
+procedure TExcelApplication.Set_DisplayFormulaAutoComplete(RHS: WordBool);
+begin
+  DefaultInterface.Set_DisplayFormulaAutoComplete(RHS);
+end;
+
+function TExcelApplication.Get_GenerateTableRefs(lcid: Integer): XlGenerateTableRefs;
+begin
+    Result := DefaultInterface.GenerateTableRefs[lcid];
+end;
+
+procedure TExcelApplication.Set_GenerateTableRefs(lcid: Integer; RHS: XlGenerateTableRefs);
+begin
+  DefaultInterface.GenerateTableRefs[lcid] := RHS;
+end;
+
+function TExcelApplication.Get_Assistance: IAssistance;
+begin
+    Result := DefaultInterface.Assistance;
+end;
+
+function TExcelApplication.Get_EnableLargeOperationAlert: WordBool;
+begin
+    Result := DefaultInterface.EnableLargeOperationAlert;
+end;
+
+procedure TExcelApplication.Set_EnableLargeOperationAlert(RHS: WordBool);
+begin
+  DefaultInterface.Set_EnableLargeOperationAlert(RHS);
+end;
+
+function TExcelApplication.Get_LargeOperationCellThousandCount: Integer;
+begin
+    Result := DefaultInterface.LargeOperationCellThousandCount;
+end;
+
+procedure TExcelApplication.Set_LargeOperationCellThousandCount(RHS: Integer);
+begin
+  DefaultInterface.Set_LargeOperationCellThousandCount(RHS);
+end;
+
+function TExcelApplication.Get_DeferAsyncQueries: WordBool;
+begin
+    Result := DefaultInterface.DeferAsyncQueries;
+end;
+
+procedure TExcelApplication.Set_DeferAsyncQueries(RHS: WordBool);
+begin
+  DefaultInterface.Set_DeferAsyncQueries(RHS);
+end;
+
+function TExcelApplication.Get_MultiThreadedCalculation: MultiThreadedCalculation;
+begin
+    Result := DefaultInterface.MultiThreadedCalculation;
+end;
+
+function TExcelApplication.Get_ActiveEncryptionSession: Integer;
+begin
+    Result := DefaultInterface.ActiveEncryptionSession;
+end;
+
+function TExcelApplication.Get_HighQualityModeForGraphics: WordBool;
+begin
+    Result := DefaultInterface.HighQualityModeForGraphics;
+end;
+
+procedure TExcelApplication.Set_HighQualityModeForGraphics(RHS: WordBool);
+begin
+  DefaultInterface.Set_HighQualityModeForGraphics(RHS);
 end;
 
 procedure TExcelApplication.Calculate;
@@ -36682,6 +41709,21 @@ begin
   Result := DefaultInterface.Support(Object_, ID, arg);
 end;
 
+function TExcelApplication.Dummy20(grfCompareFunctions: Integer): OleVariant;
+begin
+  Result := DefaultInterface.Dummy20(grfCompareFunctions);
+end;
+
+procedure TExcelApplication.CalculateUntilAsyncQueriesDone;
+begin
+  DefaultInterface.CalculateUntilAsyncQueriesDone;
+end;
+
+function TExcelApplication.SharePointVersion(const bstrUrl: WideString): Integer;
+begin
+  Result := DefaultInterface.SharePointVersion(bstrUrl);
+end;
+
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
 constructor TExcelApplicationProperties.Create(AServer: TExcelApplication);
 begin
@@ -38313,6 +43355,171 @@ begin
     Result := DefaultInterface.ArbitraryXMLSupportAvailable;
 end;
 
+function TExcelApplicationProperties.Get_MeasurementUnit: Integer;
+begin
+    Result := DefaultInterface.MeasurementUnit;
+end;
+
+procedure TExcelApplicationProperties.Set_MeasurementUnit(RHS: Integer);
+begin
+  DefaultInterface.Set_MeasurementUnit(RHS);
+end;
+
+function TExcelApplicationProperties.Get_ShowSelectionFloaties: WordBool;
+begin
+    Result := DefaultInterface.ShowSelectionFloaties;
+end;
+
+procedure TExcelApplicationProperties.Set_ShowSelectionFloaties(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowSelectionFloaties(RHS);
+end;
+
+function TExcelApplicationProperties.Get_ShowMenuFloaties: WordBool;
+begin
+    Result := DefaultInterface.ShowMenuFloaties;
+end;
+
+procedure TExcelApplicationProperties.Set_ShowMenuFloaties(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowMenuFloaties(RHS);
+end;
+
+function TExcelApplicationProperties.Get_ShowDevTools: WordBool;
+begin
+    Result := DefaultInterface.ShowDevTools;
+end;
+
+procedure TExcelApplicationProperties.Set_ShowDevTools(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowDevTools(RHS);
+end;
+
+function TExcelApplicationProperties.Get_EnableLivePreview: WordBool;
+begin
+    Result := DefaultInterface.EnableLivePreview;
+end;
+
+procedure TExcelApplicationProperties.Set_EnableLivePreview(RHS: WordBool);
+begin
+  DefaultInterface.Set_EnableLivePreview(RHS);
+end;
+
+function TExcelApplicationProperties.Get_DisplayDocumentInformationPanel: WordBool;
+begin
+    Result := DefaultInterface.DisplayDocumentInformationPanel;
+end;
+
+procedure TExcelApplicationProperties.Set_DisplayDocumentInformationPanel(RHS: WordBool);
+begin
+  DefaultInterface.Set_DisplayDocumentInformationPanel(RHS);
+end;
+
+function TExcelApplicationProperties.Get_AlwaysUseClearType: WordBool;
+begin
+    Result := DefaultInterface.AlwaysUseClearType;
+end;
+
+procedure TExcelApplicationProperties.Set_AlwaysUseClearType(RHS: WordBool);
+begin
+  DefaultInterface.Set_AlwaysUseClearType(RHS);
+end;
+
+function TExcelApplicationProperties.Get_WarnOnFunctionNameConflict: WordBool;
+begin
+    Result := DefaultInterface.WarnOnFunctionNameConflict;
+end;
+
+procedure TExcelApplicationProperties.Set_WarnOnFunctionNameConflict(RHS: WordBool);
+begin
+  DefaultInterface.Set_WarnOnFunctionNameConflict(RHS);
+end;
+
+function TExcelApplicationProperties.Get_FormulaBarHeight: Integer;
+begin
+    Result := DefaultInterface.FormulaBarHeight;
+end;
+
+procedure TExcelApplicationProperties.Set_FormulaBarHeight(RHS: Integer);
+begin
+  DefaultInterface.Set_FormulaBarHeight(RHS);
+end;
+
+function TExcelApplicationProperties.Get_DisplayFormulaAutoComplete: WordBool;
+begin
+    Result := DefaultInterface.DisplayFormulaAutoComplete;
+end;
+
+procedure TExcelApplicationProperties.Set_DisplayFormulaAutoComplete(RHS: WordBool);
+begin
+  DefaultInterface.Set_DisplayFormulaAutoComplete(RHS);
+end;
+
+function TExcelApplicationProperties.Get_GenerateTableRefs(lcid: Integer): XlGenerateTableRefs;
+begin
+    Result := DefaultInterface.GenerateTableRefs[lcid];
+end;
+
+procedure TExcelApplicationProperties.Set_GenerateTableRefs(lcid: Integer; RHS: XlGenerateTableRefs);
+begin
+  DefaultInterface.GenerateTableRefs[lcid] := RHS;
+end;
+
+function TExcelApplicationProperties.Get_Assistance: IAssistance;
+begin
+    Result := DefaultInterface.Assistance;
+end;
+
+function TExcelApplicationProperties.Get_EnableLargeOperationAlert: WordBool;
+begin
+    Result := DefaultInterface.EnableLargeOperationAlert;
+end;
+
+procedure TExcelApplicationProperties.Set_EnableLargeOperationAlert(RHS: WordBool);
+begin
+  DefaultInterface.Set_EnableLargeOperationAlert(RHS);
+end;
+
+function TExcelApplicationProperties.Get_LargeOperationCellThousandCount: Integer;
+begin
+    Result := DefaultInterface.LargeOperationCellThousandCount;
+end;
+
+procedure TExcelApplicationProperties.Set_LargeOperationCellThousandCount(RHS: Integer);
+begin
+  DefaultInterface.Set_LargeOperationCellThousandCount(RHS);
+end;
+
+function TExcelApplicationProperties.Get_DeferAsyncQueries: WordBool;
+begin
+    Result := DefaultInterface.DeferAsyncQueries;
+end;
+
+procedure TExcelApplicationProperties.Set_DeferAsyncQueries(RHS: WordBool);
+begin
+  DefaultInterface.Set_DeferAsyncQueries(RHS);
+end;
+
+function TExcelApplicationProperties.Get_MultiThreadedCalculation: MultiThreadedCalculation;
+begin
+    Result := DefaultInterface.MultiThreadedCalculation;
+end;
+
+function TExcelApplicationProperties.Get_ActiveEncryptionSession: Integer;
+begin
+    Result := DefaultInterface.ActiveEncryptionSession;
+end;
+
+function TExcelApplicationProperties.Get_HighQualityModeForGraphics: WordBool;
+begin
+    Result := DefaultInterface.HighQualityModeForGraphics;
+end;
+
+procedure TExcelApplicationProperties.Set_HighQualityModeForGraphics(RHS: WordBool);
+begin
+  DefaultInterface.Set_HighQualityModeForGraphics(RHS);
+end;
+
 {$ENDIF}
 
 class function CoExcelChart.Create: _Chart;
@@ -38975,6 +44182,39 @@ begin
     Result := DefaultInterface.MailEnvelope;
 end;
 
+function TExcelChart.Get_ShowDataLabelsOverMaximum: WordBool;
+begin
+    Result := DefaultInterface.ShowDataLabelsOverMaximum;
+end;
+
+procedure TExcelChart.Set_ShowDataLabelsOverMaximum(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowDataLabelsOverMaximum(RHS);
+end;
+
+function TExcelChart.Get_SideWall: Walls;
+begin
+    Result := DefaultInterface.SideWall;
+end;
+
+function TExcelChart.Get_BackWall: Walls;
+begin
+    Result := DefaultInterface.BackWall;
+end;
+
+function TExcelChart.Get_ChartStyle: OleVariant;
+var
+  InterfaceVariant : OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  Result := InterfaceVariant.ChartStyle;
+end;
+
+procedure TExcelChart.Set_ChartStyle(RHS: OleVariant);
+begin
+  DefaultInterface.Set_ChartStyle(RHS);
+end;
+
 procedure TExcelChart.Activate;
 begin
   DefaultInterface.Activate(0);
@@ -39035,60 +44275,60 @@ begin
   DefaultInterface.Move(Before, After, lcid);
 end;
 
-procedure TExcelChart._PrintOut;
+procedure TExcelChart.__PrintOut;
 begin
-  DefaultInterface._PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             0);
+  DefaultInterface.__PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                Preview: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                 Preview: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                Preview: OleVariant; ActivePrinter: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                 Preview: OleVariant; ActivePrinter: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                Preview: OleVariant; ActivePrinter: OleVariant; 
-                                PrintToFile: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                 Preview: OleVariant; ActivePrinter: OleVariant; 
+                                 PrintToFile: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                Preview: OleVariant; ActivePrinter: OleVariant; 
-                                PrintToFile: OleVariant; Collate: OleVariant);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                 Preview: OleVariant; ActivePrinter: OleVariant; 
+                                 PrintToFile: OleVariant; Collate: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 0);
 end;
 
-procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                Preview: OleVariant; ActivePrinter: OleVariant; 
-                                PrintToFile: OleVariant; Collate: OleVariant; lcid: Integer);
+procedure TExcelChart.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                 Preview: OleVariant; ActivePrinter: OleVariant; 
+                                 PrintToFile: OleVariant; Collate: OleVariant; lcid: Integer);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, lcid);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, lcid);
 end;
 
 procedure TExcelChart.PrintPreview;
@@ -40019,76 +45259,76 @@ begin
   DefaultInterface.Refresh;
 end;
 
-procedure TExcelChart.PrintOut;
+procedure TExcelChart._PrintOut;
 begin
-  DefaultInterface.PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, EmptyParam, 0);
+  DefaultInterface._PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, EmptyParam, 0);
+  DefaultInterface._PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                               Preview: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                Preview: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                               Preview: OleVariant; ActivePrinter: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                Preview: OleVariant; ActivePrinter: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                               Preview: OleVariant; ActivePrinter: OleVariant; 
-                               PrintToFile: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                Preview: OleVariant; ActivePrinter: OleVariant; 
+                                PrintToFile: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                               Preview: OleVariant; ActivePrinter: OleVariant; 
-                               PrintToFile: OleVariant; Collate: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                Preview: OleVariant; ActivePrinter: OleVariant; 
+                                PrintToFile: OleVariant; Collate: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                               Preview: OleVariant; ActivePrinter: OleVariant; 
-                               PrintToFile: OleVariant; Collate: OleVariant; 
-                               PrToFileName: OleVariant);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                Preview: OleVariant; ActivePrinter: OleVariant; 
+                                PrintToFile: OleVariant; Collate: OleVariant; 
+                                PrToFileName: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            PrToFileName, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             PrToFileName, 0);
 end;
 
-procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                               Preview: OleVariant; ActivePrinter: OleVariant; 
-                               PrintToFile: OleVariant; Collate: OleVariant; 
-                               PrToFileName: OleVariant; lcid: Integer);
+procedure TExcelChart._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                Preview: OleVariant; ActivePrinter: OleVariant; 
+                                PrintToFile: OleVariant; Collate: OleVariant; 
+                                PrToFileName: OleVariant; lcid: Integer);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            PrToFileName, lcid);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             PrToFileName, lcid);
 end;
 
 procedure TExcelChart.ApplyDataLabels(Type_: XlDataLabelsType);
@@ -40299,6 +45539,185 @@ procedure TExcelChart.Protect(Password: OleVariant; DrawingObjects: OleVariant;
                               UserInterfaceOnly: OleVariant);
 begin
   DefaultInterface.Protect(Password, DrawingObjects, Contents, Scenarios, UserInterfaceOnly);
+end;
+
+procedure TExcelChart.ApplyLayout(Layout: Integer);
+begin
+  DefaultInterface.ApplyLayout(Layout, EmptyParam);
+end;
+
+procedure TExcelChart.ApplyLayout(Layout: Integer; ChartType: OleVariant);
+begin
+  DefaultInterface.ApplyLayout(Layout, ChartType);
+end;
+
+procedure TExcelChart.SetElement(Element: MsoChartElementType);
+begin
+  DefaultInterface.SetElement(Element);
+end;
+
+procedure TExcelChart.PrintOut;
+begin
+  DefaultInterface.PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                               Preview: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                               Preview: OleVariant; ActivePrinter: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
+                            EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                               Preview: OleVariant; ActivePrinter: OleVariant; 
+                               PrintToFile: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
+                            EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                               Preview: OleVariant; ActivePrinter: OleVariant; 
+                               PrintToFile: OleVariant; Collate: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            EmptyParam, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                               Preview: OleVariant; ActivePrinter: OleVariant; 
+                               PrintToFile: OleVariant; Collate: OleVariant; 
+                               PrToFileName: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, 0);
+end;
+
+procedure TExcelChart.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                               Preview: OleVariant; ActivePrinter: OleVariant; 
+                               PrintToFile: OleVariant; Collate: OleVariant; 
+                               PrToFileName: OleVariant; lcid: Integer);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, lcid);
+end;
+
+procedure TExcelChart.ApplyChartTemplate(const Filename: WideString);
+begin
+  DefaultInterface.ApplyChartTemplate(Filename);
+end;
+
+procedure TExcelChart.SaveChartTemplate(const Filename: WideString);
+begin
+  DefaultInterface.SaveChartTemplate(Filename);
+end;
+
+procedure TExcelChart.SetDefaultChart(Name: OleVariant);
+begin
+  DefaultInterface.SetDefaultChart(Name);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant; IncludeDocProperties: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                          IgnorePrintAreas: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                          IgnorePrintAreas: OleVariant; From: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                          IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                          To_: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                          IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                          To_: OleVariant; OpenAfterPublish: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, OpenAfterPublish, EmptyParam);
+end;
+
+procedure TExcelChart.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                          Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                          IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                          To_: OleVariant; OpenAfterPublish: OleVariant; 
+                                          FixedFormatExtClassPtr: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, OpenAfterPublish, 
+                                       FixedFormatExtClassPtr);
+end;
+
+procedure TExcelChart.ClearToMatchStyle;
+begin
+  DefaultInterface.ClearToMatchStyle;
 end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -40836,6 +46255,39 @@ end;
 function TExcelChartProperties.Get_MailEnvelope: MsoEnvelope;
 begin
     Result := DefaultInterface.MailEnvelope;
+end;
+
+function TExcelChartProperties.Get_ShowDataLabelsOverMaximum: WordBool;
+begin
+    Result := DefaultInterface.ShowDataLabelsOverMaximum;
+end;
+
+procedure TExcelChartProperties.Set_ShowDataLabelsOverMaximum(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowDataLabelsOverMaximum(RHS);
+end;
+
+function TExcelChartProperties.Get_SideWall: Walls;
+begin
+    Result := DefaultInterface.SideWall;
+end;
+
+function TExcelChartProperties.Get_BackWall: Walls;
+begin
+    Result := DefaultInterface.BackWall;
+end;
+
+function TExcelChartProperties.Get_ChartStyle: OleVariant;
+var
+  InterfaceVariant : OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  Result := InterfaceVariant.ChartStyle;
+end;
+
+procedure TExcelChartProperties.Set_ChartStyle(RHS: OleVariant);
+begin
+  DefaultInterface.Set_ChartStyle(RHS);
 end;
 
 {$ENDIF}
@@ -41440,6 +46892,21 @@ begin
     Result := DefaultInterface.ListObjects;
 end;
 
+function TExcelWorksheet.Get_EnableFormatConditionsCalculation: WordBool;
+begin
+    Result := DefaultInterface.EnableFormatConditionsCalculation;
+end;
+
+procedure TExcelWorksheet.Set_EnableFormatConditionsCalculation(RHS: WordBool);
+begin
+  DefaultInterface.Set_EnableFormatConditionsCalculation(RHS);
+end;
+
+function TExcelWorksheet.Get_Sort: Sort;
+begin
+    Result := DefaultInterface.Sort;
+end;
+
 procedure TExcelWorksheet.Activate;
 begin
   DefaultInterface.Activate(0);
@@ -41500,60 +46967,60 @@ begin
   DefaultInterface.Move(Before, After, lcid);
 end;
 
-procedure TExcelWorksheet._PrintOut;
+procedure TExcelWorksheet.__PrintOut;
 begin
-  DefaultInterface._PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             0);
+  DefaultInterface.__PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                    Preview: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                     Preview: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                    Preview: OleVariant; ActivePrinter: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                     Preview: OleVariant; ActivePrinter: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                    Preview: OleVariant; ActivePrinter: OleVariant; 
-                                    PrintToFile: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                     Preview: OleVariant; ActivePrinter: OleVariant; 
+                                     PrintToFile: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                    Preview: OleVariant; ActivePrinter: OleVariant; 
-                                    PrintToFile: OleVariant; Collate: OleVariant);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                     Preview: OleVariant; ActivePrinter: OleVariant; 
+                                     PrintToFile: OleVariant; Collate: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 0);
 end;
 
-procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                    Preview: OleVariant; ActivePrinter: OleVariant; 
-                                    PrintToFile: OleVariant; Collate: OleVariant; lcid: Integer);
+procedure TExcelWorksheet.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                     Preview: OleVariant; ActivePrinter: OleVariant; 
+                                     PrintToFile: OleVariant; Collate: OleVariant; lcid: Integer);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, lcid);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, lcid);
 end;
 
 procedure TExcelWorksheet.PrintPreview;
@@ -42451,76 +47918,76 @@ begin
   DefaultInterface.CircleInvalid;
 end;
 
-procedure TExcelWorksheet.PrintOut;
+procedure TExcelWorksheet._PrintOut;
 begin
-  DefaultInterface.PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, EmptyParam, 0);
+  DefaultInterface._PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, EmptyParam, 0);
+  DefaultInterface._PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant; Collate: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant; Collate: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant; Collate: OleVariant; 
-                                   PrToFileName: OleVariant);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant; Collate: OleVariant; 
+                                    PrToFileName: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            PrToFileName, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             PrToFileName, 0);
 end;
 
-procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant; Collate: OleVariant; 
-                                   PrToFileName: OleVariant; lcid: Integer);
+procedure TExcelWorksheet._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant; Collate: OleVariant; 
+                                    PrToFileName: OleVariant; lcid: Integer);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            PrToFileName, lcid);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             PrToFileName, lcid);
 end;
 
 procedure TExcelWorksheet._CheckSpelling;
@@ -42962,6 +48429,165 @@ function TExcelWorksheet.XmlMapQuery(const XPath: WideString; SelectionNamespace
                                      Map: OleVariant): ExcelRange;
 begin
   Result := DefaultInterface.XmlMapQuery(XPath, SelectionNamespaces, Map);
+end;
+
+procedure TExcelWorksheet.PrintOut;
+begin
+  DefaultInterface.PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant; 
+                                   PrToFileName: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, EmptyParam, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant; 
+                                   PrToFileName: OleVariant; IgnorePrintAreas: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, IgnorePrintAreas, 0);
+end;
+
+procedure TExcelWorksheet.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant; 
+                                   PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; 
+                                   lcid: Integer);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, IgnorePrintAreas, lcid);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant; IncludeDocProperties: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant; 
+                                              IncludeDocProperties: OleVariant; 
+                                              IgnorePrintAreas: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant; 
+                                              IncludeDocProperties: OleVariant; 
+                                              IgnorePrintAreas: OleVariant; From: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant; 
+                                              IncludeDocProperties: OleVariant; 
+                                              IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                              To_: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant; 
+                                              IncludeDocProperties: OleVariant; 
+                                              IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                              To_: OleVariant; OpenAfterPublish: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, OpenAfterPublish, EmptyParam);
+end;
+
+procedure TExcelWorksheet.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                              Quality: OleVariant; 
+                                              IncludeDocProperties: OleVariant; 
+                                              IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                              To_: OleVariant; OpenAfterPublish: OleVariant; 
+                                              FixedFormatExtClassPtr: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, OpenAfterPublish, 
+                                       FixedFormatExtClassPtr);
 end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -43466,6 +49092,21 @@ begin
     Result := DefaultInterface.ListObjects;
 end;
 
+function TExcelWorksheetProperties.Get_EnableFormatConditionsCalculation: WordBool;
+begin
+    Result := DefaultInterface.EnableFormatConditionsCalculation;
+end;
+
+procedure TExcelWorksheetProperties.Set_EnableFormatConditionsCalculation(RHS: WordBool);
+begin
+  DefaultInterface.Set_EnableFormatConditionsCalculation(RHS);
+end;
+
+function TExcelWorksheetProperties.Get_Sort: Sort;
+begin
+    Result := DefaultInterface.Sort;
+end;
+
 {$ENDIF}
 
 class function CoExcelGlobal.Create: _Global;
@@ -43648,6 +49289,11 @@ begin
                            IUnknown(TVarData(Params[0]).VPointer) as XmlMap {const XmlMap},
                            Params[1] {const WideString},
                            Params[2] {XlXmlExportResult});
+    2610: if Assigned(FOnRowsetComplete) then
+         FOnRowsetComplete(Self,
+                           Params[0] {const WideString},
+                           Params[1] {const WideString},
+                           Params[2] {WordBool});
   end; {case DispID}
 end;
 
@@ -44438,6 +50084,168 @@ begin
   DefaultInterface.Set_DisplayInkComments(RHS);
 end;
 
+function TExcelWorkbook.Get_ContentTypeProperties: MetaProperties;
+begin
+    Result := DefaultInterface.ContentTypeProperties;
+end;
+
+function TExcelWorkbook.Get_Connections: Connections;
+begin
+    Result := DefaultInterface.Connections;
+end;
+
+function TExcelWorkbook.Get_Signatures: SignatureSet;
+begin
+    Result := DefaultInterface.Signatures;
+end;
+
+function TExcelWorkbook.Get_ServerPolicy: ServerPolicy;
+begin
+    Result := DefaultInterface.ServerPolicy;
+end;
+
+function TExcelWorkbook.Get_DocumentInspectors: DocumentInspectors;
+begin
+    Result := DefaultInterface.DocumentInspectors;
+end;
+
+function TExcelWorkbook.Get_ServerViewableItems: ServerViewableItems;
+begin
+    Result := DefaultInterface.ServerViewableItems;
+end;
+
+function TExcelWorkbook.Get_TableStyles: TableStyles;
+begin
+    Result := DefaultInterface.TableStyles;
+end;
+
+function TExcelWorkbook.Get_DefaultTableStyle: OleVariant;
+var
+  InterfaceVariant : OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  Result := InterfaceVariant.DefaultTableStyle;
+end;
+
+procedure TExcelWorkbook.Set_DefaultTableStyle(RHS: OleVariant);
+begin
+  DefaultInterface.Set_DefaultTableStyle(RHS);
+end;
+
+function TExcelWorkbook.Get_DefaultPivotTableStyle: OleVariant;
+var
+  InterfaceVariant : OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  Result := InterfaceVariant.DefaultPivotTableStyle;
+end;
+
+procedure TExcelWorkbook.Set_DefaultPivotTableStyle(RHS: OleVariant);
+begin
+  DefaultInterface.Set_DefaultPivotTableStyle(RHS);
+end;
+
+function TExcelWorkbook.Get_CheckCompatibility: WordBool;
+begin
+    Result := DefaultInterface.CheckCompatibility;
+end;
+
+procedure TExcelWorkbook.Set_CheckCompatibility(RHS: WordBool);
+begin
+  DefaultInterface.Set_CheckCompatibility(RHS);
+end;
+
+function TExcelWorkbook.Get_HasVBProject: WordBool;
+begin
+    Result := DefaultInterface.HasVBProject;
+end;
+
+function TExcelWorkbook.Get_CustomXMLParts: CustomXMLParts;
+begin
+    Result := DefaultInterface.CustomXMLParts;
+end;
+
+function TExcelWorkbook.Get_Final: WordBool;
+begin
+    Result := DefaultInterface.Final;
+end;
+
+procedure TExcelWorkbook.Set_Final(RHS: WordBool);
+begin
+  DefaultInterface.Set_Final(RHS);
+end;
+
+function TExcelWorkbook.Get_Research: Research;
+begin
+    Result := DefaultInterface.Research;
+end;
+
+function TExcelWorkbook.Get_Theme: OfficeTheme;
+begin
+    Result := DefaultInterface.Theme;
+end;
+
+function TExcelWorkbook.Get_Excel8CompatibilityMode: WordBool;
+begin
+    Result := DefaultInterface.Excel8CompatibilityMode;
+end;
+
+function TExcelWorkbook.Get_ConnectionsDisabled: WordBool;
+begin
+    Result := DefaultInterface.ConnectionsDisabled;
+end;
+
+function TExcelWorkbook.Get_ShowPivotChartActiveFields: WordBool;
+begin
+    Result := DefaultInterface.ShowPivotChartActiveFields;
+end;
+
+procedure TExcelWorkbook.Set_ShowPivotChartActiveFields(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowPivotChartActiveFields(RHS);
+end;
+
+function TExcelWorkbook.Get_IconSets: IconSets;
+begin
+    Result := DefaultInterface.IconSets;
+end;
+
+function TExcelWorkbook.Get_EncryptionProvider: WideString;
+begin
+    Result := DefaultInterface.EncryptionProvider;
+end;
+
+procedure TExcelWorkbook.Set_EncryptionProvider(const RHS: WideString);
+  { Warning: The property EncryptionProvider has a setter and a getter whose
+    types do not match. Delphi was unable to generate a property of
+    this sort and so is using a Variant as a passthrough. }
+var
+  InterfaceVariant: OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  InterfaceVariant.EncryptionProvider := RHS;
+end;
+
+function TExcelWorkbook.Get_DoNotPromptForConvert: WordBool;
+begin
+    Result := DefaultInterface.DoNotPromptForConvert;
+end;
+
+procedure TExcelWorkbook.Set_DoNotPromptForConvert(RHS: WordBool);
+begin
+  DefaultInterface.Set_DoNotPromptForConvert(RHS);
+end;
+
+function TExcelWorkbook.Get_ForceFullCalculation: WordBool;
+begin
+    Result := DefaultInterface.ForceFullCalculation;
+end;
+
+procedure TExcelWorkbook.Set_ForceFullCalculation(RHS: WordBool);
+begin
+  DefaultInterface.Set_ForceFullCalculation(RHS);
+end;
+
 procedure TExcelWorkbook.Activate;
 begin
   DefaultInterface.Activate(0);
@@ -44632,60 +50440,60 @@ begin
   DefaultInterface.Post(DestName, lcid);
 end;
 
-procedure TExcelWorkbook._PrintOut;
+procedure TExcelWorkbook.__PrintOut;
 begin
-  DefaultInterface._PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                             0);
+  DefaultInterface.__PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                              EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant; Collate: OleVariant);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant; Collate: OleVariant);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 0);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 0);
 end;
 
-procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                   Preview: OleVariant; ActivePrinter: OleVariant; 
-                                   PrintToFile: OleVariant; Collate: OleVariant; lcid: Integer);
+procedure TExcelWorkbook.__PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                    Preview: OleVariant; ActivePrinter: OleVariant; 
+                                    PrintToFile: OleVariant; Collate: OleVariant; lcid: Integer);
 begin
-  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, lcid);
+  DefaultInterface.__PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, lcid);
 end;
 
 procedure TExcelWorkbook.PrintPreview;
@@ -44723,53 +50531,54 @@ begin
   DefaultInterface._Protect(Password, Structure, Windows);
 end;
 
-procedure TExcelWorkbook.ProtectSharing;
+procedure TExcelWorkbook._ProtectSharing;
 begin
-  DefaultInterface.ProtectSharing(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                                  EmptyParam);
+  DefaultInterface._ProtectSharing(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                   EmptyParam);
 end;
 
-procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant);
+procedure TExcelWorkbook._ProtectSharing(Filename: OleVariant);
 begin
-  DefaultInterface.ProtectSharing(Filename, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                                  EmptyParam);
+  DefaultInterface._ProtectSharing(Filename, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                   EmptyParam);
 end;
 
-procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant);
+procedure TExcelWorkbook._ProtectSharing(Filename: OleVariant; Password: OleVariant);
 begin
-  DefaultInterface.ProtectSharing(Filename, Password, EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+  DefaultInterface._ProtectSharing(Filename, Password, EmptyParam, EmptyParam, EmptyParam, 
+                                   EmptyParam);
 end;
 
-procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                                        WriteResPassword: OleVariant);
+procedure TExcelWorkbook._ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                         WriteResPassword: OleVariant);
 begin
-  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, EmptyParam, EmptyParam, 
-                                  EmptyParam);
+  DefaultInterface._ProtectSharing(Filename, Password, WriteResPassword, EmptyParam, EmptyParam, 
+                                   EmptyParam);
 end;
 
-procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                                        WriteResPassword: OleVariant; 
-                                        ReadOnlyRecommended: OleVariant);
+procedure TExcelWorkbook._ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                         WriteResPassword: OleVariant; 
+                                         ReadOnlyRecommended: OleVariant);
 begin
-  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
-                                  EmptyParam, EmptyParam);
+  DefaultInterface._ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                   EmptyParam, EmptyParam);
 end;
 
-procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                                        WriteResPassword: OleVariant; 
-                                        ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant);
+procedure TExcelWorkbook._ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                         WriteResPassword: OleVariant; 
+                                         ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant);
 begin
-  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
-                                  CreateBackup, EmptyParam);
+  DefaultInterface._ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                   CreateBackup, EmptyParam);
 end;
 
-procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
-                                        WriteResPassword: OleVariant; 
-                                        ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant; 
-                                        SharingPassword: OleVariant);
+procedure TExcelWorkbook._ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                         WriteResPassword: OleVariant; 
+                                         ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant; 
+                                         SharingPassword: OleVariant);
 begin
-  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
-                                  CreateBackup, SharingPassword);
+  DefaultInterface._ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                   CreateBackup, SharingPassword);
 end;
 
 procedure TExcelWorkbook.RefreshAll;
@@ -45297,76 +51106,76 @@ begin
   DefaultInterface.AddToFavorites;
 end;
 
-procedure TExcelWorkbook.PrintOut;
+procedure TExcelWorkbook._PrintOut;
 begin
-  DefaultInterface.PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, EmptyParam, 0);
+  DefaultInterface._PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, EmptyParam, 0);
+  DefaultInterface._PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                  Preview: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                  Preview: OleVariant; ActivePrinter: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                  Preview: OleVariant; ActivePrinter: OleVariant; 
-                                  PrintToFile: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                  Preview: OleVariant; ActivePrinter: OleVariant; 
-                                  PrintToFile: OleVariant; Collate: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            EmptyParam, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             EmptyParam, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                  Preview: OleVariant; ActivePrinter: OleVariant; 
-                                  PrintToFile: OleVariant; Collate: OleVariant; 
-                                  PrToFileName: OleVariant);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant; 
+                                   PrToFileName: OleVariant);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            PrToFileName, 0);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             PrToFileName, 0);
 end;
 
-procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
-                                  Preview: OleVariant; ActivePrinter: OleVariant; 
-                                  PrintToFile: OleVariant; Collate: OleVariant; 
-                                  PrToFileName: OleVariant; lcid: Integer);
+procedure TExcelWorkbook._PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                   Preview: OleVariant; ActivePrinter: OleVariant; 
+                                   PrintToFile: OleVariant; Collate: OleVariant; 
+                                   PrToFileName: OleVariant; lcid: Integer);
 begin
-  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
-                            PrToFileName, lcid);
+  DefaultInterface._PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                             PrToFileName, lcid);
 end;
 
 procedure TExcelWorkbook.WebPagePreview;
@@ -45605,6 +51414,276 @@ end;
 procedure TExcelWorkbook.ToggleFormsDesign;
 begin
   DefaultInterface.ToggleFormsDesign;
+end;
+
+procedure TExcelWorkbook.RemoveDocumentInformation(RemoveDocInfoType: XlRemoveDocInfoType);
+begin
+  DefaultInterface.RemoveDocumentInformation(RemoveDocInfoType);
+end;
+
+procedure TExcelWorkbook.CheckInWithVersion;
+begin
+  DefaultInterface.CheckInWithVersion(EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.CheckInWithVersion(SaveChanges: OleVariant);
+begin
+  DefaultInterface.CheckInWithVersion(SaveChanges, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant);
+begin
+  DefaultInterface.CheckInWithVersion(SaveChanges, Comments, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant; 
+                                            MakePublic: OleVariant);
+begin
+  DefaultInterface.CheckInWithVersion(SaveChanges, Comments, MakePublic, EmptyParam);
+end;
+
+procedure TExcelWorkbook.CheckInWithVersion(SaveChanges: OleVariant; Comments: OleVariant; 
+                                            MakePublic: OleVariant; VersionType: OleVariant);
+begin
+  DefaultInterface.CheckInWithVersion(SaveChanges, Comments, MakePublic, VersionType);
+end;
+
+procedure TExcelWorkbook.LockServerFile;
+begin
+  DefaultInterface.LockServerFile;
+end;
+
+function TExcelWorkbook.GetWorkflowTasks: WorkflowTasks;
+begin
+  Result := DefaultInterface.GetWorkflowTasks;
+end;
+
+function TExcelWorkbook.GetWorkflowTemplates: WorkflowTemplates;
+begin
+  Result := DefaultInterface.GetWorkflowTemplates;
+end;
+
+procedure TExcelWorkbook.PrintOut;
+begin
+  DefaultInterface.PrintOut(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, EmptyParam, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant; ActivePrinter: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, EmptyParam, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant; ActivePrinter: OleVariant; 
+                                  PrintToFile: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, EmptyParam, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant; ActivePrinter: OleVariant; 
+                                  PrintToFile: OleVariant; Collate: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            EmptyParam, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant; ActivePrinter: OleVariant; 
+                                  PrintToFile: OleVariant; Collate: OleVariant; 
+                                  PrToFileName: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, EmptyParam, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant; ActivePrinter: OleVariant; 
+                                  PrintToFile: OleVariant; Collate: OleVariant; 
+                                  PrToFileName: OleVariant; IgnorePrintAreas: OleVariant);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, IgnorePrintAreas, 0);
+end;
+
+procedure TExcelWorkbook.PrintOut(From: OleVariant; To_: OleVariant; Copies: OleVariant; 
+                                  Preview: OleVariant; ActivePrinter: OleVariant; 
+                                  PrintToFile: OleVariant; Collate: OleVariant; 
+                                  PrToFileName: OleVariant; IgnorePrintAreas: OleVariant; 
+                                  lcid: Integer);
+begin
+  DefaultInterface.PrintOut(From, To_, Copies, Preview, ActivePrinter, PrintToFile, Collate, 
+                            PrToFileName, IgnorePrintAreas, lcid);
+end;
+
+procedure TExcelWorkbook.ApplyTheme(const Filename: WideString);
+begin
+  DefaultInterface.ApplyTheme(Filename);
+end;
+
+procedure TExcelWorkbook.EnableConnections;
+begin
+  DefaultInterface.EnableConnections;
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, EmptyParam, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant; IncludeDocProperties: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, EmptyParam, 
+                                       EmptyParam, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                             IgnorePrintAreas: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, EmptyParam, EmptyParam, EmptyParam, 
+                                       EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                             IgnorePrintAreas: OleVariant; From: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                             IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                             To_: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                             IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                             To_: OleVariant; OpenAfterPublish: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, OpenAfterPublish, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ExportAsFixedFormat(Type_: XlFixedFormatType; Filename: OleVariant; 
+                                             Quality: OleVariant; IncludeDocProperties: OleVariant; 
+                                             IgnorePrintAreas: OleVariant; From: OleVariant; 
+                                             To_: OleVariant; OpenAfterPublish: OleVariant; 
+                                             FixedFormatExtClassPtr: OleVariant);
+begin
+  DefaultInterface.ExportAsFixedFormat(Type_, Filename, Quality, IncludeDocProperties, 
+                                       IgnorePrintAreas, From, To_, OpenAfterPublish, 
+                                       FixedFormatExtClassPtr);
+end;
+
+procedure TExcelWorkbook.ProtectSharing;
+begin
+  DefaultInterface.ProtectSharing(EmptyParam, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                  EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, EmptyParam, EmptyParam, EmptyParam, EmptyParam, 
+                                  EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, Password, EmptyParam, EmptyParam, EmptyParam, 
+                                  EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                        WriteResPassword: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, EmptyParam, EmptyParam, 
+                                  EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                        WriteResPassword: OleVariant; 
+                                        ReadOnlyRecommended: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                  EmptyParam, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                        WriteResPassword: OleVariant; 
+                                        ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                  CreateBackup, EmptyParam, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                        WriteResPassword: OleVariant; 
+                                        ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant; 
+                                        SharingPassword: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                  CreateBackup, SharingPassword, EmptyParam);
+end;
+
+procedure TExcelWorkbook.ProtectSharing(Filename: OleVariant; Password: OleVariant; 
+                                        WriteResPassword: OleVariant; 
+                                        ReadOnlyRecommended: OleVariant; CreateBackup: OleVariant; 
+                                        SharingPassword: OleVariant; FileFormat: OleVariant);
+begin
+  DefaultInterface.ProtectSharing(Filename, Password, WriteResPassword, ReadOnlyRecommended, 
+                                  CreateBackup, SharingPassword, FileFormat);
 end;
 
 {$IFDEF LIVE_SERVER_AT_DESIGN_TIME}
@@ -46405,6 +52484,168 @@ end;
 procedure TExcelWorkbookProperties.Set_DisplayInkComments(RHS: WordBool);
 begin
   DefaultInterface.Set_DisplayInkComments(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_ContentTypeProperties: MetaProperties;
+begin
+    Result := DefaultInterface.ContentTypeProperties;
+end;
+
+function TExcelWorkbookProperties.Get_Connections: Connections;
+begin
+    Result := DefaultInterface.Connections;
+end;
+
+function TExcelWorkbookProperties.Get_Signatures: SignatureSet;
+begin
+    Result := DefaultInterface.Signatures;
+end;
+
+function TExcelWorkbookProperties.Get_ServerPolicy: ServerPolicy;
+begin
+    Result := DefaultInterface.ServerPolicy;
+end;
+
+function TExcelWorkbookProperties.Get_DocumentInspectors: DocumentInspectors;
+begin
+    Result := DefaultInterface.DocumentInspectors;
+end;
+
+function TExcelWorkbookProperties.Get_ServerViewableItems: ServerViewableItems;
+begin
+    Result := DefaultInterface.ServerViewableItems;
+end;
+
+function TExcelWorkbookProperties.Get_TableStyles: TableStyles;
+begin
+    Result := DefaultInterface.TableStyles;
+end;
+
+function TExcelWorkbookProperties.Get_DefaultTableStyle: OleVariant;
+var
+  InterfaceVariant : OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  Result := InterfaceVariant.DefaultTableStyle;
+end;
+
+procedure TExcelWorkbookProperties.Set_DefaultTableStyle(RHS: OleVariant);
+begin
+  DefaultInterface.Set_DefaultTableStyle(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_DefaultPivotTableStyle: OleVariant;
+var
+  InterfaceVariant : OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  Result := InterfaceVariant.DefaultPivotTableStyle;
+end;
+
+procedure TExcelWorkbookProperties.Set_DefaultPivotTableStyle(RHS: OleVariant);
+begin
+  DefaultInterface.Set_DefaultPivotTableStyle(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_CheckCompatibility: WordBool;
+begin
+    Result := DefaultInterface.CheckCompatibility;
+end;
+
+procedure TExcelWorkbookProperties.Set_CheckCompatibility(RHS: WordBool);
+begin
+  DefaultInterface.Set_CheckCompatibility(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_HasVBProject: WordBool;
+begin
+    Result := DefaultInterface.HasVBProject;
+end;
+
+function TExcelWorkbookProperties.Get_CustomXMLParts: CustomXMLParts;
+begin
+    Result := DefaultInterface.CustomXMLParts;
+end;
+
+function TExcelWorkbookProperties.Get_Final: WordBool;
+begin
+    Result := DefaultInterface.Final;
+end;
+
+procedure TExcelWorkbookProperties.Set_Final(RHS: WordBool);
+begin
+  DefaultInterface.Set_Final(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_Research: Research;
+begin
+    Result := DefaultInterface.Research;
+end;
+
+function TExcelWorkbookProperties.Get_Theme: OfficeTheme;
+begin
+    Result := DefaultInterface.Theme;
+end;
+
+function TExcelWorkbookProperties.Get_Excel8CompatibilityMode: WordBool;
+begin
+    Result := DefaultInterface.Excel8CompatibilityMode;
+end;
+
+function TExcelWorkbookProperties.Get_ConnectionsDisabled: WordBool;
+begin
+    Result := DefaultInterface.ConnectionsDisabled;
+end;
+
+function TExcelWorkbookProperties.Get_ShowPivotChartActiveFields: WordBool;
+begin
+    Result := DefaultInterface.ShowPivotChartActiveFields;
+end;
+
+procedure TExcelWorkbookProperties.Set_ShowPivotChartActiveFields(RHS: WordBool);
+begin
+  DefaultInterface.Set_ShowPivotChartActiveFields(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_IconSets: IconSets;
+begin
+    Result := DefaultInterface.IconSets;
+end;
+
+function TExcelWorkbookProperties.Get_EncryptionProvider: WideString;
+begin
+    Result := DefaultInterface.EncryptionProvider;
+end;
+
+procedure TExcelWorkbookProperties.Set_EncryptionProvider(const RHS: WideString);
+  { Warning: The property EncryptionProvider has a setter and a getter whose
+    types do not match. Delphi was unable to generate a property of
+    this sort and so is using a Variant as a passthrough. }
+var
+  InterfaceVariant: OleVariant;
+begin
+  InterfaceVariant := DefaultInterface;
+  InterfaceVariant.EncryptionProvider := RHS;
+end;
+
+function TExcelWorkbookProperties.Get_DoNotPromptForConvert: WordBool;
+begin
+    Result := DefaultInterface.DoNotPromptForConvert;
+end;
+
+procedure TExcelWorkbookProperties.Set_DoNotPromptForConvert(RHS: WordBool);
+begin
+  DefaultInterface.Set_DoNotPromptForConvert(RHS);
+end;
+
+function TExcelWorkbookProperties.Get_ForceFullCalculation: WordBool;
+begin
+    Result := DefaultInterface.ForceFullCalculation;
+end;
+
+procedure TExcelWorkbookProperties.Set_ForceFullCalculation(RHS: WordBool);
+begin
+  DefaultInterface.Set_ForceFullCalculation(RHS);
 end;
 
 {$ENDIF}
