@@ -331,10 +331,10 @@ var
     Canvas.LineTo(IV,Rect.Bottom);
     end;
   case PI of
-  0: Title:='P';
-  1: Title:='T';
-  2: Title:='MassFlow';
-  3: Title:='Heat';
+  0: Title:=' P ';
+  1: Title:=' T ';
+  2: Title:=' MassFlow ';
+  3: Title:=' Heat ';
   end;
   Canvas.Font.Color:=clWhite;
   Canvas.Font.Style:=[fsBold];
@@ -495,6 +495,8 @@ if (CheckParameter(3, Classes.Rect(R.Left,Trunc(R.Top+3.0*GW),R.Right,Trunc(R.To
 end;
 
 function TAnalysisEventAnalysis.CreateXLSReport(const ReportStyle: TReportStyle; const ReportFileName: string): boolean;
+const
+  StartRow = 10;
 
   procedure Report_WriteHeader(const Sheet: _Worksheet);
   begin
@@ -645,6 +647,162 @@ function TAnalysisEventAnalysis.CreateXLSReport(const ReportStyle: TReportStyle;
   end;
   end;
 
+  procedure Report_WriteFooter(const Sheet: _Worksheet; RowLastIndex: integer);
+  var
+    I,Cnt: integer;
+    V: double;
+    Field: string;
+  begin
+  Cnt:=RowLastIndex-StartRow;
+  if (Cnt > 0)
+   then begin
+    with Sheet.Range['A'+IntToStr(RowLastIndex),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:='Среднее:';
+    end;
+    Field:='E';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    V:=V/Cnt;
+    with Sheet.Range[Field+IntToStr(RowLastIndex),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='F';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    V:=V/Cnt;
+    with Sheet.Range[Field+IntToStr(RowLastIndex),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='I';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    V:=V/Cnt;
+    with Sheet.Range[Field+IntToStr(RowLastIndex),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='J';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    V:=V/Cnt;
+    with Sheet.Range[Field+IntToStr(RowLastIndex),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='M';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    V:=V/Cnt;
+    with Sheet.Range[Field+IntToStr(RowLastIndex),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    //.
+    with Sheet.Range['A'+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:='Всего:';
+    end;
+    Field:='C';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='D';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='G';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='H';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='K';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='L';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='N';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='O';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    Field:='P';
+    V:=0.0;
+    for I:=StartRow to RowLastIndex-1 do V:=V+Sheet.Range[Field+IntToStr(I),EmptyParam].Value2;
+    with Sheet.Range[Field+IntToStr(RowLastIndex+1),EmptyParam] do begin
+    Font.Name:='Arial Cyr';
+    Font.Size:=8;
+    Font.FontStyle:='';
+    Value2:=FormatFloat('0.000',V);
+    end;
+    end;
+  end;
+
   procedure Report_WriteHourRow(const Sheet: _Worksheet; const Row: integer; const T,dT: double; const AverageEvent: TAnalysisEventV1; const AverageEventCount: integer);
   begin
   with Sheet.Range['A'+IntToStr(Row),EmptyParam] do begin
@@ -762,7 +920,7 @@ function TAnalysisEventAnalysis.CreateXLSReport(const ReportStyle: TReportStyle;
   Font.Name:='Arial Cyr';
   Font.Size:=8;
   Font.FontStyle:='';
-  Value2:=FormatDateTime('DD.MM.YY',(T-dT)+TimeZoneDelta);
+  Value2:=FormatDateTime('DD.MM.YY',AverageDayEvent.Timestamp+TimeZoneDelta);
   end;
   if (AverageDayEventCount > 0)
    then begin
@@ -922,7 +1080,7 @@ rsDay: begin
   HourIndex:=0;
   end;
 end;
-Row:=10;
+Row:=StartRow;
 Events.Position:=0;
 for I:=0 to Count-1 do begin
   Events.Read(Event,SizeOf(Event));
@@ -1026,9 +1184,12 @@ rsDay: begin
         end;
     //.
     Report_WriteDayRow(Sheet,Row,T,dT,AverageDayEvent,AverageDayEventCount);
+    //.
+    Inc(Row);
     end;
   end;
 end;
+Report_WriteFooter(Sheet,Row);
 //.
 ForceDirectories(ExtractFilePath(ReportFileName));
 WB.SaveAs(ReportFileName,xlWorkbookNormal,'','',False,False,xlNoChange,xlLocalSessionChanges,True,0,0,EmptyParam,LCID);

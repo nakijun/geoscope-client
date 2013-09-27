@@ -12,21 +12,22 @@ unit Office_TLB;
 // ************************************************************************ //
 
 // PASTLWTR : 1.2
-// File generated on 30.08.2013 16:27:20 from Type Library described below.
+// File generated on 04.09.2013 8:33:41 from Type Library described below.
 
 // ************************************************************************  //
-// Type Lib: C:\Program Files\Common Files\Microsoft Shared\OFFICE11\MSO.DLL (2)
+// Type Lib: C:\Program Files (x86)\Common Files\Microsoft Shared\OFFICE12\MSO.DLL (2)
 // LIBID: {2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}
 // LCID: 0
-// Helpfile: C:\Program Files\Common Files\Microsoft Shared\OFFICE11\vbaof11.chm
-// HelpString: Microsoft Office 11.0 Object Library
+// Helpfile: C:\Program Files (x86)\Common Files\Microsoft Shared\OFFICE12\vbaof11.chm
+// HelpString: Microsoft Office 12.0 Object Library
 // DepndLst: 
 //   (1) v2.0 stdole, (C:\Windows\system32\stdole2.tlb)
 // Parent TypeLibrary:
-//   (0) v1.5 Excel, (E:\Program Files\Microsoft Office\OFFICE11\EXCEL.EXE)
+//   (0) v1.6 Excel, (C:\Program Files (x86)\Microsoft Office\Office12\EXCEL.EXE)
 // Errors:
 //   Hint: Parameter 'Type' of _CommandBars.FindControl changed to 'Type_'
 //   Hint: Parameter 'Type' of _CommandBars.FindControls changed to 'Type_'
+//   Hint: Parameter 'Label' of _CommandBars.GetLabelMso changed to 'Label_'
 //   Hint: Parameter 'Type' of CommandBar.FindControl changed to 'Type_'
 //   Hint: Symbol 'Type' renamed to 'type_'
 //   Hint: Parameter 'Type' of CommandBarControls.Add changed to 'Type_'
@@ -57,6 +58,7 @@ unit Office_TLB;
 //   Hint: Parameter 'Label' of Shapes.AddLabel changed to 'Label_'
 //   Hint: Parameter 'Type' of Shapes.AddShape changed to 'Type_'
 //   Hint: Parameter 'Type' of Shapes.AddDiagram changed to 'Type_'
+//   Hint: Parameter 'Type' of Shapes.AddChart changed to 'Type_'
 //   Hint: Member 'Private' of 'Balloon' changed to 'Private_'
 //   Hint: Parameter 'On' of Assistant.StartWizard changed to 'On_'
 //   Hint: Member 'On' of 'Assistant' changed to 'On_'
@@ -74,6 +76,52 @@ unit Office_TLB;
 //   Hint: Parameter 'Type' of CanvasShapes.AddConnector changed to 'Type_'
 //   Hint: Parameter 'Label' of CanvasShapes.AddLabel changed to 'Label_'
 //   Hint: Parameter 'Type' of CanvasShapes.AddShape changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of SoftEdgeFormat.Type changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of SoftEdgeFormat.Type changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of ReflectionFormat.Type changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of ReflectionFormat.Type changed to 'Type_'
+//   Hint: Parameter 'Type' of TextRange2.ChangeCase changed to 'Type_'
+//   Hint: Parameter 'Type' of IMsoChart._ApplyDataLabels changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of IMsoChart.ApplyDataLabels changed to 'Type_'
+//   Hint: Parameter 'Type' of IMsoChart.Axes changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of IMsoSeries._ApplyDataLabels changed to 'Type_'
+//   Hint: Parameter 'Type' of IMsoSeries.ErrorBar changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of IMsoSeries.ApplyDataLabels changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of Trendlines.Add changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of ChartPoint._ApplyDataLabels changed to 'Type_'
+//   Hint: Parameter 'Type' of ChartPoint.ApplyDataLabels changed to 'Type_'
+//   Hint: Parameter 'Type' of Axes.Item changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of BulletFormat2.Type changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of BulletFormat2.Type changed to 'Type_'
+//   Hint: Parameter 'Type' of TabStops2.Add changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of TabStop2.Type changed to 'Type_'
+//   Hint: Symbol 'Type' renamed to 'type_'
+//   Hint: Parameter 'Type' of TabStop2.Type changed to 'Type_'
 // ************************************************************************ //
 // *************************************************************************//
 // NOTE:                                                                      
@@ -104,7 +152,7 @@ uses Windows, ActiveX, Classes, Graphics, OleServer, StdVCL, Variants;
 const
   // TypeLibrary Major and minor versions
   OfficeMajorVersion = 2;
-  OfficeMinorVersion = 3;
+  OfficeMinorVersion = 4;
 
   LIBID_Office: TGUID = '{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}';
 
@@ -225,6 +273,121 @@ const
   IID_DocumentLibraryVersions: TGUID = '{000C0388-0000-0000-C000-000000000046}';
   IID_UserPermission: TGUID = '{000C0375-0000-0000-C000-000000000046}';
   IID_Permission: TGUID = '{000C0376-0000-0000-C000-000000000046}';
+  IID_MsoDebugOptions_UTRunResult: TGUID = '{000C038C-0000-0000-C000-000000000046}';
+  IID_MsoDebugOptions_UT: TGUID = '{000C038B-0000-0000-C000-000000000046}';
+  IID_MsoDebugOptions_UTs: TGUID = '{000C038A-0000-0000-C000-000000000046}';
+  IID_MsoDebugOptions_UTManager: TGUID = '{000C0389-0000-0000-C000-000000000046}';
+  IID_MetaProperty: TGUID = '{000C038F-0000-0000-C000-000000000046}';
+  IID_MetaProperties: TGUID = '{000C038E-0000-0000-C000-000000000046}';
+  IID_PolicyItem: TGUID = '{000C0391-0000-0000-C000-000000000046}';
+  IID_ServerPolicy: TGUID = '{000C0390-0000-0000-C000-000000000046}';
+  IID_DocumentInspector: TGUID = '{000C0393-0000-0000-C000-000000000046}';
+  IID_DocumentInspectors: TGUID = '{000C0392-0000-0000-C000-000000000046}';
+  IID_WorkflowTask: TGUID = '{000CD900-0000-0000-C000-000000000046}';
+  IID_WorkflowTasks: TGUID = '{000CD901-0000-0000-C000-000000000046}';
+  IID_WorkflowTemplate: TGUID = '{000CD902-0000-0000-C000-000000000046}';
+  IID_WorkflowTemplates: TGUID = '{000CD903-0000-0000-C000-000000000046}';
+  IID_IDocumentInspector: TGUID = '{000CD706-0000-0000-C000-000000000046}';
+  IID_SignatureSetup: TGUID = '{000CD6A1-0000-0000-C000-000000000046}';
+  IID_SignatureInfo: TGUID = '{000CD6A2-0000-0000-C000-000000000046}';
+  IID_SignatureProvider: TGUID = '{000CD6A3-0000-0000-C000-000000000046}';
+  IID_CustomXMLPrefixMapping: TGUID = '{000CDB10-0000-0000-C000-000000000046}';
+  IID_CustomXMLPrefixMappings: TGUID = '{000CDB00-0000-0000-C000-000000000046}';
+  IID_CustomXMLSchema: TGUID = '{000CDB01-0000-0000-C000-000000000046}';
+  IID__CustomXMLSchemaCollection: TGUID = '{000CDB02-0000-0000-C000-000000000046}';
+  CLASS_CustomXMLSchemaCollection: TGUID = '{000CDB0D-0000-0000-C000-000000000046}';
+  IID_CustomXMLNodes: TGUID = '{000CDB03-0000-0000-C000-000000000046}';
+  IID_CustomXMLNode: TGUID = '{000CDB04-0000-0000-C000-000000000046}';
+  IID_CustomXMLValidationError: TGUID = '{000CDB0E-0000-0000-C000-000000000046}';
+  IID_CustomXMLValidationErrors: TGUID = '{000CDB0F-0000-0000-C000-000000000046}';
+  IID__CustomXMLPart: TGUID = '{000CDB05-0000-0000-C000-000000000046}';
+  IID_ICustomXMLPartEvents: TGUID = '{000CDB06-0000-0000-C000-000000000046}';
+  DIID__CustomXMLPartEvents: TGUID = '{000CDB07-0000-0000-C000-000000000046}';
+  CLASS_CustomXMLPart: TGUID = '{000CDB08-0000-0000-C000-000000000046}';
+  IID__CustomXMLParts: TGUID = '{000CDB09-0000-0000-C000-000000000046}';
+  IID_ICustomXMLPartsEvents: TGUID = '{000CDB0A-0000-0000-C000-000000000046}';
+  DIID__CustomXMLPartsEvents: TGUID = '{000CDB0B-0000-0000-C000-000000000046}';
+  CLASS_CustomXMLParts: TGUID = '{000CDB0C-0000-0000-C000-000000000046}';
+  IID_GradientStop: TGUID = '{000C03BF-0000-0000-C000-000000000046}';
+  IID_GradientStops: TGUID = '{000C03C0-0000-0000-C000-000000000046}';
+  IID_SoftEdgeFormat: TGUID = '{000C03BC-0000-0000-C000-000000000046}';
+  IID_GlowFormat: TGUID = '{000C03BD-0000-0000-C000-000000000046}';
+  IID_ReflectionFormat: TGUID = '{000C03BE-0000-0000-C000-000000000046}';
+  IID_ParagraphFormat2: TGUID = '{000C0399-0000-0000-C000-000000000046}';
+  IID_Font2: TGUID = '{000C039A-0000-0000-C000-000000000046}';
+  IID_TextColumn2: TGUID = '{000C03B2-0000-0000-C000-000000000046}';
+  IID_TextRange2: TGUID = '{000C0397-0000-0000-C000-000000000046}';
+  IID_TextFrame2: TGUID = '{000C0398-0000-0000-C000-000000000046}';
+  IID_ThemeColor: TGUID = '{000C03A1-0000-0000-C000-000000000046}';
+  IID_ThemeColorScheme: TGUID = '{000C03A2-0000-0000-C000-000000000046}';
+  IID_ThemeFont: TGUID = '{000C03A3-0000-0000-C000-000000000046}';
+  IID_ThemeFonts: TGUID = '{000C03A4-0000-0000-C000-000000000046}';
+  IID_ThemeFontScheme: TGUID = '{000C03A5-0000-0000-C000-000000000046}';
+  IID_ThemeEffectScheme: TGUID = '{000C03A6-0000-0000-C000-000000000046}';
+  IID_OfficeTheme: TGUID = '{000C03A0-0000-0000-C000-000000000046}';
+  IID__CustomTaskPane: TGUID = '{000C033B-0000-0000-C000-000000000046}';
+  IID_CustomTaskPaneEvents: TGUID = '{8A64A872-FC6B-4D4A-926E-3A3689562C1C}';
+  DIID__CustomTaskPaneEvents: TGUID = '{000C033C-0000-0000-C000-000000000046}';
+  CLASS_CustomTaskPane: TGUID = '{C5771BE5-A188-466B-AB31-00A6A32B1B1C}';
+  IID_ICTPFactory: TGUID = '{000C033D-0000-0000-C000-000000000046}';
+  IID_ICustomTaskPaneConsumer: TGUID = '{000C033E-0000-0000-C000-000000000046}';
+  IID_IRibbonUI: TGUID = '{000C03A7-0000-0000-C000-000000000046}';
+  IID_IRibbonControl: TGUID = '{000C0395-0000-0000-C000-000000000046}';
+  IID_IRibbonExtensibility: TGUID = '{000C0396-0000-0000-C000-000000000046}';
+  IID_IAssistance: TGUID = '{4291224C-DEFE-485B-8E69-6CF8AA85CB76}';
+  IID_IMsoChartData: TGUID = '{000C172F-0000-0000-C000-000000000046}';
+  IID_IMsoChart: TGUID = '{000C1709-0000-0000-C000-000000000046}';
+  IID_IMsoCorners: TGUID = '{000C1714-0000-0000-C000-000000000046}';
+  IID_IMsoLegend: TGUID = '{000C1710-0000-0000-C000-000000000046}';
+  IID_IMsoBorder: TGUID = '{000C1717-0000-0000-C000-000000000046}';
+  IID_IMsoWalls: TGUID = '{000C1715-0000-0000-C000-000000000046}';
+  IID_IMsoFloor: TGUID = '{000C1716-0000-0000-C000-000000000046}';
+  IID_IMsoPlotArea: TGUID = '{000C1724-0000-0000-C000-000000000046}';
+  IID_IMsoChartArea: TGUID = '{000C1728-0000-0000-C000-000000000046}';
+  IID_IMsoSeriesLines: TGUID = '{000C1729-0000-0000-C000-000000000046}';
+  IID_IMsoLeaderLines: TGUID = '{000C1723-0000-0000-C000-000000000046}';
+  IID_GridLines: TGUID = '{000C1725-0000-0000-C000-000000000046}';
+  IID_IMsoUpBars: TGUID = '{000C172A-0000-0000-C000-000000000046}';
+  IID_IMsoDownBars: TGUID = '{000C172D-0000-0000-C000-000000000046}';
+  IID_IMsoInterior: TGUID = '{000C171B-0000-0000-C000-000000000046}';
+  IID_ChartFillFormat: TGUID = '{000C171C-0000-0000-C000-000000000046}';
+  IID_LegendEntries: TGUID = '{000C1719-0000-0000-C000-000000000046}';
+  IID_ChartFont: TGUID = '{000C1718-0000-0000-C000-000000000046}';
+  IID_ChartColorFormat: TGUID = '{000C171D-0000-0000-C000-000000000046}';
+  IID_LegendEntry: TGUID = '{000C171A-0000-0000-C000-000000000046}';
+  IID_IMsoLegendKey: TGUID = '{000C171E-0000-0000-C000-000000000046}';
+  IID_SeriesCollection: TGUID = '{000C170A-0000-0000-C000-000000000046}';
+  IID_IMsoSeries: TGUID = '{000C170B-0000-0000-C000-000000000046}';
+  IID_IMsoErrorBars: TGUID = '{000C1721-0000-0000-C000-000000000046}';
+  IID_IMsoTrendline: TGUID = '{000C170E-0000-0000-C000-000000000046}';
+  IID_Trendlines: TGUID = '{000C1722-0000-0000-C000-000000000046}';
+  IID_IMsoDataLabels: TGUID = '{000C171F-0000-0000-C000-000000000046}';
+  IID_IMsoDataLabel: TGUID = '{000C1720-0000-0000-C000-000000000046}';
+  IID_Points: TGUID = '{000C170D-0000-0000-C000-000000000046}';
+  IID_ChartPoint: TGUID = '{000C170C-0000-0000-C000-000000000046}';
+  IID_Axes: TGUID = '{000C1712-0000-0000-C000-000000000046}';
+  IID_IMsoAxis: TGUID = '{000C1713-0000-0000-C000-000000000046}';
+  IID_IMsoDataTable: TGUID = '{000C1711-0000-0000-C000-000000000046}';
+  IID_IMsoChartTitle: TGUID = '{000C170F-0000-0000-C000-000000000046}';
+  IID_IMsoAxisTitle: TGUID = '{ABFA087C-F703-4D53-946E-37FF82B2C994}';
+  IID_IMsoDisplayUnitLabel: TGUID = '{6EA00553-9439-4D5A-B1E6-DC15A54DA8B2}';
+  IID_IMsoTickLabels: TGUID = '{000C1726-0000-0000-C000-000000000046}';
+  IID_IMsoHyperlinks: TGUID = '{A98639A1-CB0C-4A5C-A511-96547F752ACD}';
+  IID_IMsoDropLines: TGUID = '{000C172C-0001-0000-C000-000000000046}';
+  IID_IMsoHiLoLines: TGUID = '{000C172E-0000-0000-C000-000000000046}';
+  IID_IMsoChartGroup: TGUID = '{000C1727-0000-0000-C000-000000000046}';
+  IID_ChartGroups: TGUID = '{000C172B-0000-0000-C000-000000000046}';
+  IID_IMsoCharacters: TGUID = '{000C1731-0000-0000-C000-000000000046}';
+  IID_IMsoChartFormat: TGUID = '{000C1730-0000-0000-C000-000000000046}';
+  IID_BulletFormat2: TGUID = '{000C03B9-0000-0000-C000-000000000046}';
+  IID_TabStops2: TGUID = '{000C03BA-0000-0000-C000-000000000046}';
+  IID_TabStop2: TGUID = '{000C03BB-0000-0000-C000-000000000046}';
+  IID_Ruler2: TGUID = '{000C03C1-0000-0000-C000-000000000046}';
+  IID_RulerLevels2: TGUID = '{000C03C2-0000-0000-C000-000000000046}';
+  IID_RulerLevel2: TGUID = '{000C03C3-0000-0000-C000-000000000046}';
+  IID_EncryptionProvider: TGUID = '{000CD809-0000-0000-C000-000000000046}';
+  IID_IBlogExtensibility: TGUID = '{000C03C4-0000-0000-C000-000000000046}';
+  IID_IBlogPictureExtensibility: TGUID = '{000C03C5-0000-0000-C000-000000000046}';
 
 // *********************************************************************//
 // Declaration of Enumerations defined in Type Library                    
@@ -242,6 +405,10 @@ const
   msoLineDashDotDot = $00000006;
   msoLineLongDash = $00000007;
   msoLineLongDashDot = $00000008;
+  msoLineLongDashDotDot = $00000009;
+  msoLineSysDash = $0000000A;
+  msoLineSysDot = $0000000B;
+  msoLineSysDashDot = $0000000C;
 
 // Constants for enum MsoLineStyle
 type
@@ -317,6 +484,7 @@ const
   msoGradientOneColor = $00000001;
   msoGradientTwoColors = $00000002;
   msoGradientPresetColors = $00000003;
+  msoGradientMultiColor = $00000004;
 
 // Constants for enum MsoTextureType
 type
@@ -409,6 +577,12 @@ const
   msoPatternDivot = $0000002E;
   msoPatternShingle = $0000002F;
   msoPatternWave = $00000030;
+  msoPatternHorizontal = $00000031;
+  msoPatternVertical = $00000032;
+  msoPatternCross = $00000033;
+  msoPatternDownwardDiagonal = $00000034;
+  msoPatternUpwardDiagonal = $00000035;
+  msoPatternDiagonalCross = $00000036;
 
 // Constants for enum MsoPresetGradientType
 type
@@ -593,6 +767,17 @@ const
   msoMaterialPlastic = $00000002;
   msoMaterialMetal = $00000003;
   msoMaterialWireFrame = $00000004;
+  msoMaterialMatte2 = $00000005;
+  msoMaterialPlastic2 = $00000006;
+  msoMaterialMetal2 = $00000007;
+  msoMaterialWarmMatte = $00000008;
+  msoMaterialTranslucentPowder = $00000009;
+  msoMaterialPowder = $0000000A;
+  msoMaterialDarkEdge = $0000000B;
+  msoMaterialSoftEdge = $0000000C;
+  msoMaterialClear = $0000000D;
+  msoMaterialFlat = $0000000E;
+  msoMaterialSoftMetal = $0000000F;
 
 // Constants for enum MsoPresetExtrusionDirection
 type
@@ -867,6 +1052,51 @@ const
   msoShapeActionButtonMovie = $00000088;
   msoShapeBalloon = $00000089;
   msoShapeNotPrimitive = $0000008A;
+  msoShapeFlowchartOfflineStorage = $0000008B;
+  msoShapeLeftRightRibbon = $0000008C;
+  msoShapeDiagonalStripe = $0000008D;
+  msoShapePie = $0000008E;
+  msoShapeNonIsoscelesTrapezoid = $0000008F;
+  msoShapeDecagon = $00000090;
+  msoShapeHeptagon = $00000091;
+  msoShapeDodecagon = $00000092;
+  msoShape6pointStar = $00000093;
+  msoShape7pointStar = $00000094;
+  msoShape10pointStar = $00000095;
+  msoShape12pointStar = $00000096;
+  msoShapeRound1Rectangle = $00000097;
+  msoShapeRound2SameRectangle = $00000098;
+  msoShapeRound2DiagRectangle = $00000099;
+  msoShapeSnipRoundRectangle = $0000009A;
+  msoShapeSnip1Rectangle = $0000009B;
+  msoShapeSnip2SameRectangle = $0000009C;
+  msoShapeSnip2DiagRectangle = $0000009D;
+  msoShapeFrame = $0000009E;
+  msoShapeHalfFrame = $0000009F;
+  msoShapeTear = $000000A0;
+  msoShapeChord = $000000A1;
+  msoShapeCorner = $000000A2;
+  msoShapeMathPlus = $000000A3;
+  msoShapeMathMinus = $000000A4;
+  msoShapeMathMultiply = $000000A5;
+  msoShapeMathDivide = $000000A6;
+  msoShapeMathEqual = $000000A7;
+  msoShapeMathNotEqual = $000000A8;
+  msoShapeCornerTabs = $000000A9;
+  msoShapeSquareTabs = $000000AA;
+  msoShapePlaqueTabs = $000000AB;
+  msoShapeGear6 = $000000AC;
+  msoShapeGear9 = $000000AD;
+  msoShapeFunnel = $000000AE;
+  msoShapePieWedge = $000000AF;
+  msoShapeLeftCircularArrow = $000000B0;
+  msoShapeLeftRightCircularArrow = $000000B1;
+  msoShapeSwooshArrow = $000000B2;
+  msoShapeCloud = $000000B3;
+  msoShapeChartX = $000000B4;
+  msoShapeChartStar = $000000B5;
+  msoShapeChartPlus = $000000B6;
+  msoShapeLineInverse = $000000B7;
 
 // Constants for enum MsoShapeType
 type
@@ -896,6 +1126,7 @@ const
   msoDiagram = $00000015;
   msoInk = $00000016;
   msoInkComment = $00000017;
+  msoSmartArt = $00000018;
 
 // Constants for enum MsoFlipCmd
 type
@@ -1588,6 +1819,8 @@ const
   msoLanguageIDByelorussian = $00000423;
   msoLanguageIDBengali = $00000445;
   msoLanguageIDBosnian = $0000101A;
+  msoLanguageIDBosnianBosniaHerzegovinaCyrillic = $0000201A;
+  msoLanguageIDBosnianBosniaHerzegovinaLatin = $0000141A;
   msoLanguageIDBulgarian = $00000402;
   msoLanguageIDBurmese = $00000455;
   msoLanguageIDCatalan = $00000403;
@@ -1639,6 +1872,7 @@ const
   msoLanguageIDSwissFrench = $0000100C;
   msoLanguageIDFrenchWestIndies = $00001C0C;
   msoLanguageIDFrenchZaire = $0000240C;
+  msoLanguageIDFrenchCongoDRC = $0000240C;
   msoLanguageIDFrisianNetherlands = $00000462;
   msoLanguageIDFulfulde = $00000467;
   msoLanguageIDGaelicIreland = $0000083C;
@@ -1681,6 +1915,7 @@ const
   msoLanguageIDLatvian = $00000426;
   msoLanguageIDLithuanian = $00000427;
   msoLanguageIDMacedonian = $0000042F;
+  msoLanguageIDMacedonianFYROM = $0000042F;
   msoLanguageIDMalaysian = $0000043E;
   msoLanguageIDMalayBruneiDarussalam = $0000083E;
   msoLanguageIDMalayalam = $0000044C;
@@ -1710,6 +1945,8 @@ const
   msoLanguageIDSamiLappish = $0000043B;
   msoLanguageIDSanskrit = $0000044F;
   msoLanguageIDSepedi = $0000046C;
+  msoLanguageIDSerbianBosniaHerzegovinaCyrillic = $00001C1A;
+  msoLanguageIDSerbianBosniaHerzegovinaLatin = $0000181A;
   msoLanguageIDSerbianCyrillic = $00000C1A;
   msoLanguageIDSerbianLatin = $0000081A;
   msoLanguageIDSesotho = $00000430;
@@ -2253,6 +2490,7 @@ type
   MsoSyncStatusType = TOleEnum;
 const
   msoSyncStatusNoSharedWorkspace = $00000000;
+  msoSyncStatusNotRoaming = $00000000;
   msoSyncStatusLatest = $00000001;
   msoSyncStatusNewerAvailable = $00000002;
   msoSyncStatusLocalChanges = $00000003;
@@ -2273,6 +2511,1387 @@ const
   msoPermissionPrint = $00000010;
   msoPermissionObjModel = $00000020;
   msoPermissionFullControl = $00000040;
+  msoPermissionAllCommon = $0000007F;
+
+// Constants for enum MsoMetaPropertyType
+type
+  MsoMetaPropertyType = TOleEnum;
+const
+  msoMetaPropertyTypeUnknown = $00000000;
+  msoMetaPropertyTypeBoolean = $00000001;
+  msoMetaPropertyTypeChoice = $00000002;
+  msoMetaPropertyTypeCalculated = $00000003;
+  msoMetaPropertyTypeComputed = $00000004;
+  msoMetaPropertyTypeCurrency = $00000005;
+  msoMetaPropertyTypeDateTime = $00000006;
+  msoMetaPropertyTypeFillInChoice = $00000007;
+  msoMetaPropertyTypeGuid = $00000008;
+  msoMetaPropertyTypeInteger = $00000009;
+  msoMetaPropertyTypeLookup = $0000000A;
+  msoMetaPropertyTypeMultiChoiceLookup = $0000000B;
+  msoMetaPropertyTypeMultiChoice = $0000000C;
+  msoMetaPropertyTypeMultiChoiceFillIn = $0000000D;
+  msoMetaPropertyTypeNote = $0000000E;
+  msoMetaPropertyTypeNumber = $0000000F;
+  msoMetaPropertyTypeText = $00000010;
+  msoMetaPropertyTypeUrl = $00000011;
+  msoMetaPropertyTypeUser = $00000012;
+  msoMetaPropertyTypeUserMulti = $00000013;
+  msoMetaPropertyTypeBusinessData = $00000014;
+  msoMetaPropertyTypeMax = $00000015;
+
+// Constants for enum MsoSignatureSubset
+type
+  MsoSignatureSubset = TOleEnum;
+const
+  msoSignatureSubsetSignaturesAllSigs = $00000000;
+  msoSignatureSubsetSignaturesNonVisible = $00000001;
+  msoSignatureSubsetSignatureLines = $00000002;
+  msoSignatureSubsetSignatureLinesSigned = $00000003;
+  msoSignatureSubsetSignatureLinesUnsigned = $00000004;
+  msoSignatureSubsetAll = $00000005;
+
+// Constants for enum MsoDocInspectorStatus
+type
+  MsoDocInspectorStatus = TOleEnum;
+const
+  msoDocInspectorStatusDocOk = $00000000;
+  msoDocInspectorStatusIssueFound = $00000001;
+  msoDocInspectorStatusError = $00000002;
+
+// Constants for enum SignatureDetail
+type
+  SignatureDetail = TOleEnum;
+const
+  sigdetLocalSigningTime = $00000000;
+  sigdetApplicationName = $00000001;
+  sigdetApplicationVersion = $00000002;
+  sigdetOfficeVersion = $00000003;
+  sigdetWindowsVersion = $00000004;
+  sigdetNumberOfMonitors = $00000005;
+  sigdetHorizResolution = $00000006;
+  sigdetVertResolution = $00000007;
+  sigdetColorDepth = $00000008;
+  sigdetSignedData = $00000009;
+  sigdetDocPreviewImg = $0000000A;
+  sigdetIPFormHash = $0000000B;
+  sigdetIPCurrentView = $0000000C;
+  sigdetSignatureType = $0000000D;
+  sigdetHashAlgorithm = $0000000E;
+  sigdetShouldShowViewWarning = $0000000F;
+  sigdetDelSuggSigner = $00000010;
+  sigdetDelSuggSignerSet = $00000011;
+  sigdetDelSuggSignerLine2 = $00000012;
+  sigdetDelSuggSignerLine2Set = $00000013;
+  sigdetDelSuggSignerEmail = $00000014;
+  sigdetDelSuggSignerEmailSet = $00000015;
+
+// Constants for enum CertificateDetail
+type
+  CertificateDetail = TOleEnum;
+const
+  certdetAvailable = $00000000;
+  certdetSubject = $00000001;
+  certdetIssuer = $00000002;
+  certdetExpirationDate = $00000003;
+  certdetThumbprint = $00000004;
+
+// Constants for enum ContentVerificationResults
+type
+  ContentVerificationResults = TOleEnum;
+const
+  contverresError = $00000000;
+  contverresVerifying = $00000001;
+  contverresUnverified = $00000002;
+  contverresValid = $00000003;
+  contverresModified = $00000004;
+
+// Constants for enum CertificateVerificationResults
+type
+  CertificateVerificationResults = TOleEnum;
+const
+  certverresError = $00000000;
+  certverresVerifying = $00000001;
+  certverresUnverified = $00000002;
+  certverresValid = $00000003;
+  certverresInvalid = $00000004;
+  certverresExpired = $00000005;
+  certverresRevoked = $00000006;
+  certverresUntrusted = $00000007;
+
+// Constants for enum SignatureLineImage
+type
+  SignatureLineImage = TOleEnum;
+const
+  siglnimgSoftwareRequired = $00000000;
+  siglnimgUnsigned = $00000001;
+  siglnimgSignedValid = $00000002;
+  siglnimgSignedInvalid = $00000003;
+  siglnimgSigned = $00000004;
+
+// Constants for enum SignatureProviderDetail
+type
+  SignatureProviderDetail = TOleEnum;
+const
+  sigprovdetUrl = $00000000;
+  sigprovdetHashAlgorithm = $00000001;
+  sigprovdetUIOnly = $00000002;
+  sigprovdetUseOfficeUI = $00000003;
+  sigprovdetUseOfficeStampUI = $00000004;
+
+// Constants for enum SignatureType
+type
+  SignatureType = TOleEnum;
+const
+  sigtypeUnknown = $00000000;
+  sigtypeNonVisible = $00000001;
+  sigtypeSignatureLine = $00000002;
+  sigtypeMax = $00000003;
+
+// Constants for enum MsoCustomXMLNodeType
+type
+  MsoCustomXMLNodeType = TOleEnum;
+const
+  msoCustomXMLNodeElement = $00000001;
+  msoCustomXMLNodeAttribute = $00000002;
+  msoCustomXMLNodeText = $00000003;
+  msoCustomXMLNodeCData = $00000004;
+  msoCustomXMLNodeProcessingInstruction = $00000007;
+  msoCustomXMLNodeComment = $00000008;
+  msoCustomXMLNodeDocument = $00000009;
+
+// Constants for enum MsoCustomXMLValidationErrorType
+type
+  MsoCustomXMLValidationErrorType = TOleEnum;
+const
+  msoCustomXMLValidationErrorSchemaGenerated = $00000000;
+  msoCustomXMLValidationErrorAutomaticallyCleared = $00000001;
+  msoCustomXMLValidationErrorManual = $00000002;
+
+// Constants for enum MsoTextureAlignment
+type
+  MsoTextureAlignment = TOleEnum;
+const
+  msoTextureAlignmentMixed = $FFFFFFFE;
+  msoTextureTopLeft = $00000000;
+  msoTextureTop = $00000001;
+  msoTextureTopRight = $00000002;
+  msoTextureLeft = $00000003;
+  msoTextureCenter = $00000004;
+  msoTextureRight = $00000005;
+  msoTextureBottomLeft = $00000006;
+  msoTextureBottom = $00000007;
+  msoTextureBottomRight = $00000008;
+
+// Constants for enum MsoSoftEdgeType
+type
+  MsoSoftEdgeType = TOleEnum;
+const
+  msoSoftEdgeTypeMixed = $FFFFFFFE;
+  msoSoftEdgeTypeNone = $00000000;
+  msoSoftEdgeType1 = $00000001;
+  msoSoftEdgeType2 = $00000002;
+  msoSoftEdgeType3 = $00000003;
+  msoSoftEdgeType4 = $00000004;
+  msoSoftEdgeType5 = $00000005;
+  msoSoftEdgeType6 = $00000006;
+
+// Constants for enum MsoReflectionType
+type
+  MsoReflectionType = TOleEnum;
+const
+  msoReflectionTypeMixed = $FFFFFFFE;
+  msoReflectionTypeNone = $00000000;
+  msoReflectionType1 = $00000001;
+  msoReflectionType2 = $00000002;
+  msoReflectionType3 = $00000003;
+  msoReflectionType4 = $00000004;
+  msoReflectionType5 = $00000005;
+  msoReflectionType6 = $00000006;
+  msoReflectionType7 = $00000007;
+  msoReflectionType8 = $00000008;
+  msoReflectionType9 = $00000009;
+
+// Constants for enum MsoPresetCamera
+type
+  MsoPresetCamera = TOleEnum;
+const
+  msoPresetCameraMixed = $FFFFFFFE;
+  msoCameraLegacyObliqueTopLeft = $00000001;
+  msoCameraLegacyObliqueTop = $00000002;
+  msoCameraLegacyObliqueTopRight = $00000003;
+  msoCameraLegacyObliqueLeft = $00000004;
+  msoCameraLegacyObliqueFront = $00000005;
+  msoCameraLegacyObliqueRight = $00000006;
+  msoCameraLegacyObliqueBottomLeft = $00000007;
+  msoCameraLegacyObliqueBottom = $00000008;
+  msoCameraLegacyObliqueBottomRight = $00000009;
+  msoCameraLegacyPerspectiveTopLeft = $0000000A;
+  msoCameraLegacyPerspectiveTop = $0000000B;
+  msoCameraLegacyPerspectiveTopRight = $0000000C;
+  msoCameraLegacyPerspectiveLeft = $0000000D;
+  msoCameraLegacyPerspectiveFront = $0000000E;
+  msoCameraLegacyPerspectiveRight = $0000000F;
+  msoCameraLegacyPerspectiveBottomLeft = $00000010;
+  msoCameraLegacyPerspectiveBottom = $00000011;
+  msoCameraLegacyPerspectiveBottomRight = $00000012;
+  msoCameraOrthographicFront = $00000013;
+  msoCameraIsometricTopUp = $00000014;
+  msoCameraIsometricTopDown = $00000015;
+  msoCameraIsometricBottomUp = $00000016;
+  msoCameraIsometricBottomDown = $00000017;
+  msoCameraIsometricLeftUp = $00000018;
+  msoCameraIsometricLeftDown = $00000019;
+  msoCameraIsometricRightUp = $0000001A;
+  msoCameraIsometricRightDown = $0000001B;
+  msoCameraIsometricOffAxis1Left = $0000001C;
+  msoCameraIsometricOffAxis1Right = $0000001D;
+  msoCameraIsometricOffAxis1Top = $0000001E;
+  msoCameraIsometricOffAxis2Left = $0000001F;
+  msoCameraIsometricOffAxis2Right = $00000020;
+  msoCameraIsometricOffAxis2Top = $00000021;
+  msoCameraIsometricOffAxis3Left = $00000022;
+  msoCameraIsometricOffAxis3Right = $00000023;
+  msoCameraIsometricOffAxis3Bottom = $00000024;
+  msoCameraIsometricOffAxis4Left = $00000025;
+  msoCameraIsometricOffAxis4Right = $00000026;
+  msoCameraIsometricOffAxis4Bottom = $00000027;
+  msoCameraObliqueTopLeft = $00000028;
+  msoCameraObliqueTop = $00000029;
+  msoCameraObliqueTopRight = $0000002A;
+  msoCameraObliqueLeft = $0000002B;
+  msoCameraObliqueRight = $0000002C;
+  msoCameraObliqueBottomLeft = $0000002D;
+  msoCameraObliqueBottom = $0000002E;
+  msoCameraObliqueBottomRight = $0000002F;
+  msoCameraPerspectiveFront = $00000030;
+  msoCameraPerspectiveLeft = $00000031;
+  msoCameraPerspectiveRight = $00000032;
+  msoCameraPerspectiveAbove = $00000033;
+  msoCameraPerspectiveBelow = $00000034;
+  msoCameraPerspectiveAboveLeftFacing = $00000035;
+  msoCameraPerspectiveAboveRightFacing = $00000036;
+  msoCameraPerspectiveContrastingLeftFacing = $00000037;
+  msoCameraPerspectiveContrastingRightFacing = $00000038;
+  msoCameraPerspectiveHeroicLeftFacing = $00000039;
+  msoCameraPerspectiveHeroicRightFacing = $0000003A;
+  msoCameraPerspectiveHeroicExtremeLeftFacing = $0000003B;
+  msoCameraPerspectiveHeroicExtremeRightFacing = $0000003C;
+  msoCameraPerspectiveRelaxed = $0000003D;
+  msoCameraPerspectiveRelaxedModerately = $0000003E;
+
+// Constants for enum MsoBevelType
+type
+  MsoBevelType = TOleEnum;
+const
+  msoBevelTypeMixed = $FFFFFFFE;
+  msoBevelNone = $00000001;
+  msoBevelRelaxedInset = $00000002;
+  msoBevelCircle = $00000003;
+  msoBevelSlope = $00000004;
+  msoBevelCross = $00000005;
+  msoBevelAngle = $00000006;
+  msoBevelSoftRound = $00000007;
+  msoBevelConvex = $00000008;
+  msoBevelCoolSlant = $00000009;
+  msoBevelDivot = $0000000A;
+  msoBevelRiblet = $0000000B;
+  msoBevelHardEdge = $0000000C;
+  msoBevelArtDeco = $0000000D;
+
+// Constants for enum MsoLightRigType
+type
+  MsoLightRigType = TOleEnum;
+const
+  msoLightRigMixed = $FFFFFFFE;
+  msoLightRigLegacyFlat1 = $00000001;
+  msoLightRigLegacyFlat2 = $00000002;
+  msoLightRigLegacyFlat3 = $00000003;
+  msoLightRigLegacyFlat4 = $00000004;
+  msoLightRigLegacyNormal1 = $00000005;
+  msoLightRigLegacyNormal2 = $00000006;
+  msoLightRigLegacyNormal3 = $00000007;
+  msoLightRigLegacyNormal4 = $00000008;
+  msoLightRigLegacyHarsh1 = $00000009;
+  msoLightRigLegacyHarsh2 = $0000000A;
+  msoLightRigLegacyHarsh3 = $0000000B;
+  msoLightRigLegacyHarsh4 = $0000000C;
+  msoLightRigThreePoint = $0000000D;
+  msoLightRigBalanced = $0000000E;
+  msoLightRigSoft = $0000000F;
+  msoLightRigHarsh = $00000010;
+  msoLightRigFlood = $00000011;
+  msoLightRigContrasting = $00000012;
+  msoLightRigMorning = $00000013;
+  msoLightRigSunrise = $00000014;
+  msoLightRigSunset = $00000015;
+  msoLightRigChilly = $00000016;
+  msoLightRigFreezing = $00000017;
+  msoLightRigFlat = $00000018;
+  msoLightRigTwoPoint = $00000019;
+  msoLightRigGlow = $0000001A;
+  msoLightRigBrightRoom = $0000001B;
+
+// Constants for enum MsoParagraphAlignment
+type
+  MsoParagraphAlignment = TOleEnum;
+const
+  msoAlignMixed = $FFFFFFFE;
+  msoAlignLeft = $00000001;
+  msoAlignCenter = $00000002;
+  msoAlignRight = $00000003;
+  msoAlignJustify = $00000004;
+  msoAlignDistribute = $00000005;
+  msoAlignThaiDistribute = $00000006;
+  msoAlignJustifyLow = $00000007;
+
+// Constants for enum MsoTextStrike
+type
+  MsoTextStrike = TOleEnum;
+const
+  msoStrikeMixed = $FFFFFFFE;
+  msoNoStrike = $00000000;
+  msoSingleStrike = $00000001;
+  msoDoubleStrike = $00000002;
+
+// Constants for enum MsoTextCaps
+type
+  MsoTextCaps = TOleEnum;
+const
+  msoCapsMixed = $FFFFFFFE;
+  msoNoCaps = $00000000;
+  msoSmallCaps = $00000001;
+  msoAllCaps = $00000002;
+
+// Constants for enum MsoTextUnderlineType
+type
+  MsoTextUnderlineType = TOleEnum;
+const
+  msoUnderlineMixed = $FFFFFFFE;
+  msoNoUnderline = $00000000;
+  msoUnderlineWords = $00000001;
+  msoUnderlineSingleLine = $00000002;
+  msoUnderlineDoubleLine = $00000003;
+  msoUnderlineHeavyLine = $00000004;
+  msoUnderlineDottedLine = $00000005;
+  msoUnderlineDottedHeavyLine = $00000006;
+  msoUnderlineDashLine = $00000007;
+  msoUnderlineDashHeavyLine = $00000008;
+  msoUnderlineDashLongLine = $00000009;
+  msoUnderlineDashLongHeavyLine = $0000000A;
+  msoUnderlineDotDashLine = $0000000B;
+  msoUnderlineDotDashHeavyLine = $0000000C;
+  msoUnderlineDotDotDashLine = $0000000D;
+  msoUnderlineDotDotDashHeavyLine = $0000000E;
+  msoUnderlineWavyLine = $0000000F;
+  msoUnderlineWavyHeavyLine = $00000010;
+  msoUnderlineWavyDoubleLine = $00000011;
+
+// Constants for enum MsoTextTabAlign
+type
+  MsoTextTabAlign = TOleEnum;
+const
+  msoTabAlignMixed = $FFFFFFFE;
+  msoTabAlignLeft = $00000000;
+  msoTabAlignCenter = $00000001;
+  msoTabAlignRight = $00000002;
+  msoTabAlignDecimal = $00000003;
+
+// Constants for enum MsoTextCharWrap
+type
+  MsoTextCharWrap = TOleEnum;
+const
+  msoCharWrapMixed = $FFFFFFFE;
+  msoNoCharWrap = $00000000;
+  msoStandardCharWrap = $00000001;
+  msoStrictCharWrap = $00000002;
+  msoCustomCharWrap = $00000003;
+
+// Constants for enum MsoTextFontAlign
+type
+  MsoTextFontAlign = TOleEnum;
+const
+  msoFontAlignMixed = $FFFFFFFE;
+  msoFontAlignAuto = $00000000;
+  msoFontAlignTop = $00000001;
+  msoFontAlignCenter = $00000002;
+  msoFontAlignBaseline = $00000003;
+  msoFontAlignBottom = $00000004;
+
+// Constants for enum MsoAutoSize
+type
+  MsoAutoSize = TOleEnum;
+const
+  msoAutoSizeMixed = $FFFFFFFE;
+  msoAutoSizeNone = $00000000;
+  msoAutoSizeShapeToFitText = $00000001;
+  msoAutoSizeTextToFitShape = $00000002;
+
+// Constants for enum MsoPathFormat
+type
+  MsoPathFormat = TOleEnum;
+const
+  msoPathTypeMixed = $FFFFFFFE;
+  msoPathTypeNone = $00000000;
+  msoPathType1 = $00000001;
+  msoPathType2 = $00000002;
+  msoPathType3 = $00000003;
+  msoPathType4 = $00000004;
+
+// Constants for enum MsoWarpFormat
+type
+  MsoWarpFormat = TOleEnum;
+const
+  msoWarpFormatMixed = $FFFFFFFE;
+  msoWarpFormat1 = $00000000;
+  msoWarpFormat2 = $00000001;
+  msoWarpFormat3 = $00000002;
+  msoWarpFormat4 = $00000003;
+  msoWarpFormat5 = $00000004;
+  msoWarpFormat6 = $00000005;
+  msoWarpFormat7 = $00000006;
+  msoWarpFormat8 = $00000007;
+  msoWarpFormat9 = $00000008;
+  msoWarpFormat10 = $00000009;
+  msoWarpFormat11 = $0000000A;
+  msoWarpFormat12 = $0000000B;
+  msoWarpFormat13 = $0000000C;
+  msoWarpFormat14 = $0000000D;
+  msoWarpFormat15 = $0000000E;
+  msoWarpFormat16 = $0000000F;
+  msoWarpFormat17 = $00000010;
+  msoWarpFormat18 = $00000011;
+  msoWarpFormat19 = $00000012;
+  msoWarpFormat20 = $00000013;
+  msoWarpFormat21 = $00000014;
+  msoWarpFormat22 = $00000015;
+  msoWarpFormat23 = $00000016;
+  msoWarpFormat24 = $00000017;
+  msoWarpFormat25 = $00000018;
+  msoWarpFormat26 = $00000019;
+  msoWarpFormat27 = $0000001A;
+  msoWarpFormat28 = $0000001B;
+  msoWarpFormat29 = $0000001C;
+  msoWarpFormat30 = $0000001D;
+  msoWarpFormat31 = $0000001E;
+  msoWarpFormat32 = $0000001F;
+  msoWarpFormat33 = $00000020;
+  msoWarpFormat34 = $00000021;
+  msoWarpFormat35 = $00000022;
+  msoWarpFormat36 = $00000023;
+
+// Constants for enum MsoTextChangeCase
+type
+  MsoTextChangeCase = TOleEnum;
+const
+  msoCaseSentence = $00000001;
+  msoCaseLower = $00000002;
+  msoCaseUpper = $00000003;
+  msoCaseTitle = $00000004;
+  msoCaseToggle = $00000005;
+
+// Constants for enum MsoDateTimeFormat
+type
+  MsoDateTimeFormat = TOleEnum;
+const
+  msoDateTimeFormatMixed = $FFFFFFFE;
+  msoDateTimeMdyy = $00000001;
+  msoDateTimeddddMMMMddyyyy = $00000002;
+  msoDateTimedMMMMyyyy = $00000003;
+  msoDateTimeMMMMdyyyy = $00000004;
+  msoDateTimedMMMyy = $00000005;
+  msoDateTimeMMMMyy = $00000006;
+  msoDateTimeMMyy = $00000007;
+  msoDateTimeMMddyyHmm = $00000008;
+  msoDateTimeMMddyyhmmAMPM = $00000009;
+  msoDateTimeHmm = $0000000A;
+  msoDateTimeHmmss = $0000000B;
+  msoDateTimehmmAMPM = $0000000C;
+  msoDateTimehmmssAMPM = $0000000D;
+  msoDateTimeFigureOut = $0000000E;
+
+// Constants for enum MsoThemeColorSchemeIndex
+type
+  MsoThemeColorSchemeIndex = TOleEnum;
+const
+  msoThemeDark1 = $00000001;
+  msoThemeLight1 = $00000002;
+  msoThemeDark2 = $00000003;
+  msoThemeLight2 = $00000004;
+  msoThemeAccent1 = $00000005;
+  msoThemeAccent2 = $00000006;
+  msoThemeAccent3 = $00000007;
+  msoThemeAccent4 = $00000008;
+  msoThemeAccent5 = $00000009;
+  msoThemeAccent6 = $0000000A;
+  msoThemeHyperlink = $0000000B;
+  msoThemeFollowedHyperlink = $0000000C;
+
+// Constants for enum MsoThemeColorIndex
+type
+  MsoThemeColorIndex = TOleEnum;
+const
+  msoThemeColorMixed = $FFFFFFFE;
+  msoNotThemeColor = $00000000;
+  msoThemeColorDark1 = $00000001;
+  msoThemeColorLight1 = $00000002;
+  msoThemeColorDark2 = $00000003;
+  msoThemeColorLight2 = $00000004;
+  msoThemeColorAccent1 = $00000005;
+  msoThemeColorAccent2 = $00000006;
+  msoThemeColorAccent3 = $00000007;
+  msoThemeColorAccent4 = $00000008;
+  msoThemeColorAccent5 = $00000009;
+  msoThemeColorAccent6 = $0000000A;
+  msoThemeColorHyperlink = $0000000B;
+  msoThemeColorFollowedHyperlink = $0000000C;
+  msoThemeColorText1 = $0000000D;
+  msoThemeColorBackground1 = $0000000E;
+  msoThemeColorText2 = $0000000F;
+  msoThemeColorBackground2 = $00000010;
+
+// Constants for enum MsoFontLanguageIndex
+type
+  MsoFontLanguageIndex = TOleEnum;
+const
+  msoThemeLatin = $00000001;
+  msoThemeComplexScript = $00000002;
+  msoThemeEastAsian = $00000003;
+
+// Constants for enum MsoShapeStyleIndex
+type
+  MsoShapeStyleIndex = TOleEnum;
+const
+  msoShapeStyleMixed = $FFFFFFFE;
+  msoShapeStyleNotAPreset = $00000000;
+  msoShapeStylePreset1 = $00000001;
+  msoShapeStylePreset2 = $00000002;
+  msoShapeStylePreset3 = $00000003;
+  msoShapeStylePreset4 = $00000004;
+  msoShapeStylePreset5 = $00000005;
+  msoShapeStylePreset6 = $00000006;
+  msoShapeStylePreset7 = $00000007;
+  msoShapeStylePreset8 = $00000008;
+  msoShapeStylePreset9 = $00000009;
+  msoShapeStylePreset10 = $0000000A;
+  msoShapeStylePreset11 = $0000000B;
+  msoShapeStylePreset12 = $0000000C;
+  msoShapeStylePreset13 = $0000000D;
+  msoShapeStylePreset14 = $0000000E;
+  msoShapeStylePreset15 = $0000000F;
+  msoShapeStylePreset16 = $00000010;
+  msoShapeStylePreset17 = $00000011;
+  msoShapeStylePreset18 = $00000012;
+  msoShapeStylePreset19 = $00000013;
+  msoShapeStylePreset20 = $00000014;
+  msoShapeStylePreset21 = $00000015;
+  msoShapeStylePreset22 = $00000016;
+  msoShapeStylePreset23 = $00000017;
+  msoShapeStylePreset24 = $00000018;
+  msoShapeStylePreset25 = $00000019;
+  msoShapeStylePreset26 = $0000001A;
+  msoShapeStylePreset27 = $0000001B;
+  msoShapeStylePreset28 = $0000001C;
+  msoShapeStylePreset29 = $0000001D;
+  msoShapeStylePreset30 = $0000001E;
+  msoShapeStylePreset31 = $0000001F;
+  msoShapeStylePreset32 = $00000020;
+  msoShapeStylePreset33 = $00000021;
+  msoShapeStylePreset34 = $00000022;
+  msoShapeStylePreset35 = $00000023;
+  msoShapeStylePreset36 = $00000024;
+  msoShapeStylePreset37 = $00000025;
+  msoShapeStylePreset38 = $00000026;
+  msoShapeStylePreset39 = $00000027;
+  msoShapeStylePreset40 = $00000028;
+  msoShapeStylePreset41 = $00000029;
+  msoShapeStylePreset42 = $0000002A;
+  msoLineStylePreset1 = $00002711;
+  msoLineStylePreset2 = $00002712;
+  msoLineStylePreset3 = $00002713;
+  msoLineStylePreset4 = $00002714;
+  msoLineStylePreset5 = $00002715;
+  msoLineStylePreset6 = $00002716;
+  msoLineStylePreset7 = $00002717;
+  msoLineStylePreset8 = $00002718;
+  msoLineStylePreset9 = $00002719;
+  msoLineStylePreset10 = $0000271A;
+  msoLineStylePreset11 = $0000271B;
+  msoLineStylePreset12 = $0000271C;
+  msoLineStylePreset13 = $0000271D;
+  msoLineStylePreset14 = $0000271E;
+  msoLineStylePreset15 = $0000271F;
+  msoLineStylePreset16 = $00002720;
+  msoLineStylePreset17 = $00002721;
+  msoLineStylePreset18 = $00002722;
+  msoLineStylePreset19 = $00002723;
+  msoLineStylePreset20 = $00002724;
+  msoLineStylePreset21 = $00002725;
+
+// Constants for enum MsoBackgroundStyleIndex
+type
+  MsoBackgroundStyleIndex = TOleEnum;
+const
+  msoBackgroundStyleMixed = $FFFFFFFE;
+  msoBackgroundStyleNotAPreset = $00000000;
+  msoBackgroundStylePreset1 = $00000001;
+  msoBackgroundStylePreset2 = $00000002;
+  msoBackgroundStylePreset3 = $00000003;
+  msoBackgroundStylePreset4 = $00000004;
+  msoBackgroundStylePreset5 = $00000005;
+  msoBackgroundStylePreset6 = $00000006;
+  msoBackgroundStylePreset7 = $00000007;
+  msoBackgroundStylePreset8 = $00000008;
+  msoBackgroundStylePreset9 = $00000009;
+  msoBackgroundStylePreset10 = $0000000A;
+  msoBackgroundStylePreset11 = $0000000B;
+  msoBackgroundStylePreset12 = $0000000C;
+
+// Constants for enum MsoCTPDockPosition
+type
+  MsoCTPDockPosition = TOleEnum;
+const
+  msoCTPDockPositionLeft = $00000000;
+  msoCTPDockPositionTop = $00000001;
+  msoCTPDockPositionRight = $00000002;
+  msoCTPDockPositionBottom = $00000003;
+  msoCTPDockPositionFloating = $00000004;
+
+// Constants for enum MsoCTPDockPositionRestrict
+type
+  MsoCTPDockPositionRestrict = TOleEnum;
+const
+  msoCTPDockPositionRestrictNone = $00000000;
+  msoCTPDockPositionRestrictNoChange = $00000001;
+  msoCTPDockPositionRestrictNoHorizontal = $00000002;
+  msoCTPDockPositionRestrictNoVertical = $00000003;
+
+// Constants for enum RibbonControlSize
+type
+  RibbonControlSize = TOleEnum;
+const
+  RibbonControlSizeRegular = $00000000;
+  RibbonControlSizeLarge = $00000001;
+
+// Constants for enum MsoShadowStyle
+type
+  MsoShadowStyle = TOleEnum;
+const
+  msoShadowStyleMixed = $FFFFFFFE;
+  msoShadowStyleInnerShadow = $00000001;
+  msoShadowStyleOuterShadow = $00000002;
+
+// Constants for enum MsoTextDirection
+type
+  MsoTextDirection = TOleEnum;
+const
+  msoTextDirectionMixed = $FFFFFFFE;
+  msoTextDirectionLeftToRight = $00000001;
+  msoTextDirectionRightToLeft = $00000002;
+
+// Constants for enum XlChartType
+type
+  XlChartType = TOleEnum;
+const
+  xlColumnClustered = $00000033;
+  xlColumnStacked = $00000034;
+  xlColumnStacked100 = $00000035;
+  xl3DColumnClustered = $00000036;
+  xl3DColumnStacked = $00000037;
+  xl3DColumnStacked100 = $00000038;
+  xlBarClustered = $00000039;
+  xlBarStacked = $0000003A;
+  xlBarStacked100 = $0000003B;
+  xl3DBarClustered = $0000003C;
+  xl3DBarStacked = $0000003D;
+  xl3DBarStacked100 = $0000003E;
+  xlLineStacked = $0000003F;
+  xlLineStacked100 = $00000040;
+  xlLineMarkers = $00000041;
+  xlLineMarkersStacked = $00000042;
+  xlLineMarkersStacked100 = $00000043;
+  xlPieOfPie = $00000044;
+  xlPieExploded = $00000045;
+  xl3DPieExploded = $00000046;
+  xlBarOfPie = $00000047;
+  xlXYScatterSmooth = $00000048;
+  xlXYScatterSmoothNoMarkers = $00000049;
+  xlXYScatterLines = $0000004A;
+  xlXYScatterLinesNoMarkers = $0000004B;
+  xlAreaStacked = $0000004C;
+  xlAreaStacked100 = $0000004D;
+  xl3DAreaStacked = $0000004E;
+  xl3DAreaStacked100 = $0000004F;
+  xlDoughnutExploded = $00000050;
+  xlRadarMarkers = $00000051;
+  xlRadarFilled = $00000052;
+  xlSurface = $00000053;
+  xlSurfaceWireframe = $00000054;
+  xlSurfaceTopView = $00000055;
+  xlSurfaceTopViewWireframe = $00000056;
+  xlBubble = $0000000F;
+  xlBubble3DEffect = $00000057;
+  xlStockHLC = $00000058;
+  xlStockOHLC = $00000059;
+  xlStockVHLC = $0000005A;
+  xlStockVOHLC = $0000005B;
+  xlCylinderColClustered = $0000005C;
+  xlCylinderColStacked = $0000005D;
+  xlCylinderColStacked100 = $0000005E;
+  xlCylinderBarClustered = $0000005F;
+  xlCylinderBarStacked = $00000060;
+  xlCylinderBarStacked100 = $00000061;
+  xlCylinderCol = $00000062;
+  xlConeColClustered = $00000063;
+  xlConeColStacked = $00000064;
+  xlConeColStacked100 = $00000065;
+  xlConeBarClustered = $00000066;
+  xlConeBarStacked = $00000067;
+  xlConeBarStacked100 = $00000068;
+  xlConeCol = $00000069;
+  xlPyramidColClustered = $0000006A;
+  xlPyramidColStacked = $0000006B;
+  xlPyramidColStacked100 = $0000006C;
+  xlPyramidBarClustered = $0000006D;
+  xlPyramidBarStacked = $0000006E;
+  xlPyramidBarStacked100 = $0000006F;
+  xlPyramidCol = $00000070;
+  xl3DColumn = $FFFFEFFC;
+  xlLine = $00000004;
+  xl3DLine = $FFFFEFFB;
+  xl3DPie = $FFFFEFFA;
+  xlPie = $00000005;
+  xlXYScatter = $FFFFEFB7;
+  xl3DArea = $FFFFEFFE;
+  xlArea = $00000001;
+  xlDoughnut = $FFFFEFE8;
+  xlRadar = $FFFFEFC9;
+
+// Constants for enum XlChartSplitType
+type
+  XlChartSplitType = TOleEnum;
+const
+  xlSplitByPosition = $00000001;
+  xlSplitByPercentValue = $00000003;
+  xlSplitByCustomSplit = $00000004;
+  xlSplitByValue = $00000002;
+
+// Constants for enum XlSizeRepresents
+type
+  XlSizeRepresents = TOleEnum;
+const
+  xlSizeIsWidth = $00000002;
+  xlSizeIsArea = $00000001;
+
+// Constants for enum XlAxisGroup
+type
+  XlAxisGroup = TOleEnum;
+const
+  xlPrimary = $00000001;
+  xlSecondary = $00000002;
+
+// Constants for enum XlConstants
+type
+  XlConstants = TOleEnum;
+const
+  xlAutomatic = $FFFFEFF7;
+  xlCombination = $FFFFEFF1;
+  xlCustom = $FFFFEFEE;
+  xlBar = $00000002;
+  xlColumn = $00000003;
+  xl3DBar = $FFFFEFFD;
+  xl3DSurface = $FFFFEFF9;
+  xlDefaultAutoFormat = $FFFFFFFF;
+  xlNone = $FFFFEFD2;
+
+// Constants for enum XlReadingOrder
+type
+  XlReadingOrder = TOleEnum;
+const
+  xlContext = $FFFFEC76;
+  xlLTR = $FFFFEC75;
+  xlRTL = $FFFFEC74;
+
+// Constants for enum XlBorderWeight
+type
+  XlBorderWeight = TOleEnum;
+const
+  xlHairline = $00000001;
+  xlMedium = $FFFFEFD6;
+  xlThick = $00000004;
+  xlThin = $00000002;
+
+// Constants for enum XlLegendPosition
+type
+  XlLegendPosition = TOleEnum;
+const
+  xlLegendPositionBottom = $FFFFEFF5;
+  xlLegendPositionCorner = $00000002;
+  xlLegendPositionLeft = $FFFFEFDD;
+  xlLegendPositionRight = $FFFFEFC8;
+  xlLegendPositionTop = $FFFFEFC0;
+  xlLegendPositionCustom = $FFFFEFBF;
+
+// Constants for enum XlUnderlineStyle
+type
+  XlUnderlineStyle = TOleEnum;
+const
+  xlUnderlineStyleDouble = $FFFFEFE9;
+  xlUnderlineStyleDoubleAccounting = $00000005;
+  xlUnderlineStyleNone = $FFFFEFD2;
+  xlUnderlineStyleSingle = $00000002;
+  xlUnderlineStyleSingleAccounting = $00000004;
+
+// Constants for enum XlColorIndex
+type
+  XlColorIndex = TOleEnum;
+const
+  xlColorIndexAutomatic = $FFFFEFF7;
+  xlColorIndexNone = $FFFFEFD2;
+
+// Constants for enum XlMarkerStyle
+type
+  XlMarkerStyle = TOleEnum;
+const
+  xlMarkerStyleAutomatic = $FFFFEFF7;
+  xlMarkerStyleCircle = $00000008;
+  xlMarkerStyleDash = $FFFFEFED;
+  xlMarkerStyleDiamond = $00000002;
+  xlMarkerStyleDot = $FFFFEFEA;
+  xlMarkerStyleNone = $FFFFEFD2;
+  xlMarkerStylePicture = $FFFFEFCD;
+  xlMarkerStylePlus = $00000009;
+  xlMarkerStyleSquare = $00000001;
+  xlMarkerStyleStar = $00000005;
+  xlMarkerStyleTriangle = $00000003;
+  xlMarkerStyleX = $FFFFEFB8;
+
+// Constants for enum XlRowCol
+type
+  XlRowCol = TOleEnum;
+const
+  xlColumns = $00000002;
+  xlRows = $00000001;
+
+// Constants for enum XlDataLabelsType
+type
+  XlDataLabelsType = TOleEnum;
+const
+  xlDataLabelsShowNone = $FFFFEFD2;
+  xlDataLabelsShowValue = $00000002;
+  xlDataLabelsShowPercent = $00000003;
+  xlDataLabelsShowLabel = $00000004;
+  xlDataLabelsShowLabelAndPercent = $00000005;
+  xlDataLabelsShowBubbleSizes = $00000006;
+
+// Constants for enum XlErrorBarInclude
+type
+  XlErrorBarInclude = TOleEnum;
+const
+  xlErrorBarIncludeBoth = $00000001;
+  xlErrorBarIncludeMinusValues = $00000003;
+  xlErrorBarIncludeNone = $FFFFEFD2;
+  xlErrorBarIncludePlusValues = $00000002;
+
+// Constants for enum XlErrorBarType
+type
+  XlErrorBarType = TOleEnum;
+const
+  xlErrorBarTypeCustom = $FFFFEFEE;
+  xlErrorBarTypeFixedValue = $00000001;
+  xlErrorBarTypePercent = $00000002;
+  xlErrorBarTypeStDev = $FFFFEFC5;
+  xlErrorBarTypeStError = $00000004;
+
+// Constants for enum XlErrorBarDirection
+type
+  XlErrorBarDirection = TOleEnum;
+const
+  xlChartX = $FFFFEFB8;
+  xlChartY = $00000001;
+
+// Constants for enum XlChartPictureType
+type
+  XlChartPictureType = TOleEnum;
+const
+  xlStackScale = $00000003;
+  xlStack = $00000002;
+  xlStretch = $00000001;
+
+// Constants for enum XlChartItem
+type
+  XlChartItem = TOleEnum;
+const
+  xlDataLabel = $00000000;
+  xlChartArea = $00000002;
+  xlSeries = $00000003;
+  xlChartTitle = $00000004;
+  xlWalls = $00000005;
+  xlCorners = $00000006;
+  xlDataTable = $00000007;
+  xlTrendline = $00000008;
+  xlErrorBars = $00000009;
+  xlXErrorBars = $0000000A;
+  xlYErrorBars = $0000000B;
+  xlLegendEntry = $0000000C;
+  xlLegendKey = $0000000D;
+  xlShape = $0000000E;
+  xlMajorGridlines = $0000000F;
+  xlMinorGridlines = $00000010;
+  xlAxisTitle = $00000011;
+  xlUpBars = $00000012;
+  xlPlotArea = $00000013;
+  xlDownBars = $00000014;
+  xlAxis = $00000015;
+  xlSeriesLines = $00000016;
+  xlFloor = $00000017;
+  xlLegend = $00000018;
+  xlHiLoLines = $00000019;
+  xlDropLines = $0000001A;
+  xlRadarAxisLabels = $0000001B;
+  xlNothing = $0000001C;
+  xlLeaderLines = $0000001D;
+  xlDisplayUnitLabel = $0000001E;
+  xlPivotChartFieldButton = $0000001F;
+  xlPivotChartDropZone = $00000020;
+
+// Constants for enum XlBarShape
+type
+  XlBarShape = TOleEnum;
+const
+  xlBox = $00000000;
+  xlPyramidToPoint = $00000001;
+  xlPyramidToMax = $00000002;
+  xlCylinder = $00000003;
+  xlConeToPoint = $00000004;
+  xlConeToMax = $00000005;
+
+// Constants for enum XlEndStyleCap
+type
+  XlEndStyleCap = TOleEnum;
+const
+  xlCap = $00000001;
+  xlNoCap = $00000002;
+
+// Constants for enum XlTrendlineType
+type
+  XlTrendlineType = TOleEnum;
+const
+  xlExponential = $00000005;
+  xlLinear = $FFFFEFDC;
+  xlLogarithmic = $FFFFEFDB;
+  xlMovingAvg = $00000006;
+  xlPolynomial = $00000003;
+  xlPower = $00000004;
+
+// Constants for enum XlAxisType
+type
+  XlAxisType = TOleEnum;
+const
+  xlCategory = $00000001;
+  xlSeriesAxis = $00000003;
+  xlValue = $00000002;
+
+// Constants for enum XlAxisCrosses
+type
+  XlAxisCrosses = TOleEnum;
+const
+  xlAxisCrossesAutomatic = $FFFFEFF7;
+  xlAxisCrossesCustom = $FFFFEFEE;
+  xlAxisCrossesMaximum = $00000002;
+  xlAxisCrossesMinimum = $00000004;
+
+// Constants for enum XlTickMark
+type
+  XlTickMark = TOleEnum;
+const
+  xlTickMarkCross = $00000004;
+  xlTickMarkInside = $00000002;
+  xlTickMarkNone = $FFFFEFD2;
+  xlTickMarkOutside = $00000003;
+
+// Constants for enum XlScaleType
+type
+  XlScaleType = TOleEnum;
+const
+  xlScaleLinear = $FFFFEFDC;
+  xlScaleLogarithmic = $FFFFEFDB;
+
+// Constants for enum XlTickLabelPosition
+type
+  XlTickLabelPosition = TOleEnum;
+const
+  xlTickLabelPositionHigh = $FFFFEFE1;
+  xlTickLabelPositionLow = $FFFFEFDA;
+  xlTickLabelPositionNextToAxis = $00000004;
+  xlTickLabelPositionNone = $FFFFEFD2;
+
+// Constants for enum XlTimeUnit
+type
+  XlTimeUnit = TOleEnum;
+const
+  xlDays = $00000000;
+  xlMonths = $00000001;
+  xlYears = $00000002;
+
+// Constants for enum XlCategoryType
+type
+  XlCategoryType = TOleEnum;
+const
+  xlCategoryScale = $00000002;
+  xlTimeScale = $00000003;
+  xlAutomaticScale = $FFFFEFF7;
+
+// Constants for enum XlDisplayUnit
+type
+  XlDisplayUnit = TOleEnum;
+const
+  xlHundreds = $FFFFFFFE;
+  xlThousands = $FFFFFFFD;
+  xlTenThousands = $FFFFFFFC;
+  xlHundredThousands = $FFFFFFFB;
+  xlMillions = $FFFFFFFA;
+  xlTenMillions = $FFFFFFF9;
+  xlHundredMillions = $FFFFFFF8;
+  xlThousandMillions = $FFFFFFF7;
+  xlMillionMillions = $FFFFFFF6;
+  xlDisplayUnitCustom = $FFFFEFEE;
+  xlDisplayUnitNone = $FFFFEFD2;
+
+// Constants for enum XlChartOrientation
+type
+  XlChartOrientation = TOleEnum;
+const
+  xlDownward = $FFFFEFB6;
+  xlHorizontal = $FFFFEFE0;
+  xlUpward = $FFFFEFB5;
+  xlVertical = $FFFFEFBA;
+
+// Constants for enum XlTickLabelOrientation
+type
+  XlTickLabelOrientation = TOleEnum;
+const
+  xlTickLabelOrientationAutomatic = $FFFFEFF7;
+  xlTickLabelOrientationDownward = $FFFFEFB6;
+  xlTickLabelOrientationHorizontal = $FFFFEFE0;
+  xlTickLabelOrientationUpward = $FFFFEFB5;
+  xlTickLabelOrientationVertical = $FFFFEFBA;
+
+// Constants for enum XlDisplayBlanksAs
+type
+  XlDisplayBlanksAs = TOleEnum;
+const
+  xlInterpolated = $00000003;
+  xlNotPlotted = $00000001;
+  xlZero = $00000002;
+
+// Constants for enum XlDataLabelPosition
+type
+  XlDataLabelPosition = TOleEnum;
+const
+  xlLabelPositionCenter = $FFFFEFF4;
+  xlLabelPositionAbove = $00000000;
+  xlLabelPositionBelow = $00000001;
+  xlLabelPositionLeft = $FFFFEFDD;
+  xlLabelPositionRight = $FFFFEFC8;
+  xlLabelPositionOutsideEnd = $00000002;
+  xlLabelPositionInsideEnd = $00000003;
+  xlLabelPositionInsideBase = $00000004;
+  xlLabelPositionBestFit = $00000005;
+  xlLabelPositionMixed = $00000006;
+  xlLabelPositionCustom = $00000007;
+
+// Constants for enum XlPivotFieldOrientation
+type
+  XlPivotFieldOrientation = TOleEnum;
+const
+  xlColumnField = $00000002;
+  xlDataField = $00000004;
+  xlHidden = $00000000;
+  xlPageField = $00000003;
+  xlRowField = $00000001;
+
+// Constants for enum XlHAlign
+type
+  XlHAlign = TOleEnum;
+const
+  xlHAlignCenter = $FFFFEFF4;
+  xlHAlignCenterAcrossSelection = $00000007;
+  xlHAlignDistributed = $FFFFEFEB;
+  xlHAlignFill = $00000005;
+  xlHAlignGeneral = $00000001;
+  xlHAlignJustify = $FFFFEFDE;
+  xlHAlignLeft = $FFFFEFDD;
+  xlHAlignRight = $FFFFEFC8;
+
+// Constants for enum XlVAlign
+type
+  XlVAlign = TOleEnum;
+const
+  xlVAlignBottom = $FFFFEFF5;
+  xlVAlignCenter = $FFFFEFF4;
+  xlVAlignDistributed = $FFFFEFEB;
+  xlVAlignJustify = $FFFFEFDE;
+  xlVAlignTop = $FFFFEFC0;
+
+// Constants for enum XlChartElementPosition
+type
+  XlChartElementPosition = TOleEnum;
+const
+  xlChartElementPositionAutomatic = $FFFFEFF7;
+  xlChartElementPositionCustom = $FFFFEFEE;
+
+// Constants for enum MsoChartElementType
+type
+  MsoChartElementType = TOleEnum;
+const
+  msoElementChartTitleNone = $00000000;
+  msoElementChartTitleCenteredOverlay = $00000001;
+  msoElementChartTitleAboveChart = $00000002;
+  msoElementLegendNone = $00000064;
+  msoElementLegendRight = $00000065;
+  msoElementLegendTop = $00000066;
+  msoElementLegendLeft = $00000067;
+  msoElementLegendBottom = $00000068;
+  msoElementLegendRightOverlay = $00000069;
+  msoElementLegendLeftOverlay = $0000006A;
+  msoElementDataLabelNone = $000000C8;
+  msoElementDataLabelShow = $000000C9;
+  msoElementDataLabelCenter = $000000CA;
+  msoElementDataLabelInsideEnd = $000000CB;
+  msoElementDataLabelInsideBase = $000000CC;
+  msoElementDataLabelOutSideEnd = $000000CD;
+  msoElementDataLabelLeft = $000000CE;
+  msoElementDataLabelRight = $000000CF;
+  msoElementDataLabelTop = $000000D0;
+  msoElementDataLabelBottom = $000000D1;
+  msoElementDataLabelBestFit = $000000D2;
+  msoElementPrimaryCategoryAxisTitleNone = $0000012C;
+  msoElementPrimaryCategoryAxisTitleAdjacentToAxis = $0000012D;
+  msoElementPrimaryCategoryAxisTitleBelowAxis = $0000012E;
+  msoElementPrimaryCategoryAxisTitleRotated = $0000012F;
+  msoElementPrimaryCategoryAxisTitleVertical = $00000130;
+  msoElementPrimaryCategoryAxisTitleHorizontal = $00000131;
+  msoElementPrimaryValueAxisTitleNone = $00000132;
+  msoElementPrimaryValueAxisTitleAdjacentToAxis = $00000132;
+  msoElementPrimaryValueAxisTitleBelowAxis = $00000134;
+  msoElementPrimaryValueAxisTitleRotated = $00000135;
+  msoElementPrimaryValueAxisTitleVertical = $00000136;
+  msoElementPrimaryValueAxisTitleHorizontal = $00000137;
+  msoElementSecondaryCategoryAxisTitleNone = $00000138;
+  msoElementSecondaryCategoryAxisTitleAdjacentToAxis = $00000139;
+  msoElementSecondaryCategoryAxisTitleBelowAxis = $0000013A;
+  msoElementSecondaryCategoryAxisTitleRotated = $0000013B;
+  msoElementSecondaryCategoryAxisTitleVertical = $0000013C;
+  msoElementSecondaryCategoryAxisTitleHorizontal = $0000013D;
+  msoElementSecondaryValueAxisTitleNone = $0000013E;
+  msoElementSecondaryValueAxisTitleAdjacentToAxis = $0000013F;
+  msoElementSecondaryValueAxisTitleBelowAxis = $00000140;
+  msoElementSecondaryValueAxisTitleRotated = $00000141;
+  msoElementSecondaryValueAxisTitleVertical = $00000142;
+  msoElementSecondaryValueAxisTitleHorizontal = $00000143;
+  msoElementSeriesAxisTitleNone = $00000144;
+  msoElementSeriesAxisTitleRotated = $00000145;
+  msoElementSeriesAxisTitleVertical = $00000146;
+  msoElementSeriesAxisTitleHorizontal = $00000147;
+  msoElementPrimaryValueGridLinesNone = $00000148;
+  msoElementPrimaryValueGridLinesMinor = $00000149;
+  msoElementPrimaryValueGridLinesMajor = $0000014A;
+  msoElementPrimaryValueGridLinesMinorMajor = $0000014B;
+  msoElementPrimaryCategoryGridLinesNone = $0000014C;
+  msoElementPrimaryCategoryGridLinesMinor = $0000014D;
+  msoElementPrimaryCategoryGridLinesMajor = $0000014E;
+  msoElementPrimaryCategoryGridLinesMinorMajor = $0000014F;
+  msoElementSecondaryValueGridLinesNone = $00000150;
+  msoElementSecondaryValueGridLinesMinor = $00000151;
+  msoElementSecondaryValueGridLinesMajor = $00000152;
+  msoElementSecondaryValueGridLinesMinorMajor = $00000153;
+  msoElementSecondaryCategoryGridLinesNone = $00000154;
+  msoElementSecondaryCategoryGridLinesMinor = $00000155;
+  msoElementSecondaryCategoryGridLinesMajor = $00000156;
+  msoElementSecondaryCategoryGridLinesMinorMajor = $00000157;
+  msoElementSeriesAxisGridLinesNone = $00000158;
+  msoElementSeriesAxisGridLinesMinor = $00000159;
+  msoElementSeriesAxisGridLinesMajor = $0000015A;
+  msoElementSeriesAxisGridLinesMinorMajor = $0000015B;
+  msoElementPrimaryCategoryAxisNone = $0000015C;
+  msoElementPrimaryCategoryAxisShow = $0000015D;
+  msoElementPrimaryCategoryAxisWithoutLabels = $0000015E;
+  msoElementPrimaryCategoryAxisReverse = $0000015F;
+  msoElementPrimaryValueAxisNone = $00000160;
+  msoElementPrimaryValueAxisShow = $00000161;
+  msoElementPrimaryValueAxisThousands = $00000162;
+  msoElementPrimaryValueAxisMillions = $00000163;
+  msoElementPrimaryValueAxisBillions = $00000164;
+  msoElementPrimaryValueAxisLogScale = $00000165;
+  msoElementSecondaryCategoryAxisNone = $00000166;
+  msoElementSecondaryCategoryAxisShow = $00000167;
+  msoElementSecondaryCategoryAxisWithoutLabels = $00000168;
+  msoElementSecondaryCategoryAxisReverse = $00000169;
+  msoElementSecondaryValueAxisNone = $0000016A;
+  msoElementSecondaryValueAxisShow = $0000016B;
+  msoElementSecondaryValueAxisThousands = $0000016C;
+  msoElementSecondaryValueAxisMillions = $0000016D;
+  msoElementSecondaryValueAxisBillions = $0000016E;
+  msoElementSecondaryValueAxisLogScale = $0000016F;
+  msoElementSeriesAxisNone = $00000170;
+  msoElementSeriesAxisShow = $00000171;
+  msoElementSeriesAxisWithoutLabeling = $00000172;
+  msoElementSeriesAxisReverse = $00000173;
+  msoElementPrimaryCategoryAxisThousands = $00000174;
+  msoElementPrimaryCategoryAxisMillions = $00000175;
+  msoElementPrimaryCategoryAxisBillions = $00000176;
+  msoElementPrimaryCategoryAxisLogScale = $00000177;
+  msoElementSecondaryCategoryAxisThousands = $00000178;
+  msoElementSecondaryCategoryAxisMillions = $00000179;
+  msoElementSecondaryCategoryAxisBillions = $0000017A;
+  msoElementSecondaryCategoryAxisLogScale = $0000017B;
+  msoElementDataTableNone = $000001F4;
+  msoElementDataTableShow = $000001F5;
+  msoElementDataTableWithLegendKeys = $000001F6;
+  msoElementTrendlineNone = $00000258;
+  msoElementTrendlineAddLinear = $00000259;
+  msoElementTrendlineAddExponential = $0000025A;
+  msoElementTrendlineAddLinearForecast = $0000025B;
+  msoElementTrendlineAddTwoPeriodMovingAverage = $0000025C;
+  msoElementErrorBarNone = $000002BC;
+  msoElementErrorBarStandardError = $000002BD;
+  msoElementErrorBarPercentage = $000002BE;
+  msoElementErrorBarStandardDeviation = $000002BF;
+  msoElementLineNone = $00000320;
+  msoElementLineDropLine = $00000321;
+  msoElementLineHiLoLine = $00000322;
+  msoElementLineSeriesLine = $00000323;
+  msoElementLineDropHiLoLine = $00000324;
+  msoElementUpDownBarsNone = $00000384;
+  msoElementUpDownBarsShow = $00000385;
+  msoElementPlotAreaNone = $000003E8;
+  msoElementPlotAreaShow = $000003E9;
+  msoElementChartWallNone = $0000044C;
+  msoElementChartWallShow = $0000044D;
+  msoElementChartFloorNone = $000004B0;
+  msoElementChartFloorShow = $000004B1;
+
+// Constants for enum MsoBulletType
+type
+  MsoBulletType = TOleEnum;
+const
+  msoBulletMixed = $FFFFFFFE;
+  msoBulletNone = $00000000;
+  msoBulletUnnumbered = $00000001;
+  msoBulletNumbered = $00000002;
+  msoBulletPicture = $00000003;
+
+// Constants for enum MsoNumberedBulletStyle
+type
+  MsoNumberedBulletStyle = TOleEnum;
+const
+  msoBulletStyleMixed = $FFFFFFFE;
+  msoBulletAlphaLCPeriod = $00000000;
+  msoBulletAlphaUCPeriod = $00000001;
+  msoBulletArabicParenRight = $00000002;
+  msoBulletArabicPeriod = $00000003;
+  msoBulletRomanLCParenBoth = $00000004;
+  msoBulletRomanLCParenRight = $00000005;
+  msoBulletRomanLCPeriod = $00000006;
+  msoBulletRomanUCPeriod = $00000007;
+  msoBulletAlphaLCParenBoth = $00000008;
+  msoBulletAlphaLCParenRight = $00000009;
+  msoBulletAlphaUCParenBoth = $0000000A;
+  msoBulletAlphaUCParenRight = $0000000B;
+  msoBulletArabicParenBoth = $0000000C;
+  msoBulletArabicPlain = $0000000D;
+  msoBulletRomanUCParenBoth = $0000000E;
+  msoBulletRomanUCParenRight = $0000000F;
+  msoBulletSimpChinPlain = $00000010;
+  msoBulletSimpChinPeriod = $00000011;
+  msoBulletCircleNumDBPlain = $00000012;
+  msoBulletCircleNumWDWhitePlain = $00000013;
+  msoBulletCircleNumWDBlackPlain = $00000014;
+  msoBulletTradChinPlain = $00000015;
+  msoBulletTradChinPeriod = $00000016;
+  msoBulletArabicAlphaDash = $00000017;
+  msoBulletArabicAbjadDash = $00000018;
+  msoBulletHebrewAlphaDash = $00000019;
+  msoBulletKanjiKoreanPlain = $0000001A;
+  msoBulletKanjiKoreanPeriod = $0000001B;
+  msoBulletArabicDBPlain = $0000001C;
+  msoBulletArabicDBPeriod = $0000001D;
+  msoBulletThaiAlphaPeriod = $0000001E;
+  msoBulletThaiAlphaParenRight = $0000001F;
+  msoBulletThaiAlphaParenBoth = $00000020;
+  msoBulletThaiNumPeriod = $00000021;
+  msoBulletThaiNumParenRight = $00000022;
+  msoBulletThaiNumParenBoth = $00000023;
+  msoBulletHindiAlphaPeriod = $00000024;
+  msoBulletHindiNumPeriod = $00000025;
+  msoBulletKanjiSimpChinDBPeriod = $00000026;
+  msoBulletHindiNumParenRight = $00000027;
+  msoBulletHindiAlpha1Period = $00000028;
+
+// Constants for enum MsoTabStopType
+type
+  MsoTabStopType = TOleEnum;
+const
+  msoTabStopMixed = $FFFFFFFE;
+  msoTabStopLeft = $00000001;
+  msoTabStopCenter = $00000002;
+  msoTabStopRight = $00000003;
+  msoTabStopDecimal = $00000004;
+
+// Constants for enum MsoBaselineAlignment
+type
+  MsoBaselineAlignment = TOleEnum;
+const
+  msoBaselineAlignMixed = $FFFFFFFE;
+  msoBaselineAlignBaseline = $00000001;
+  msoBaselineAlignTop = $00000002;
+  msoBaselineAlignCenter = $00000003;
+  msoBaselineAlignFarEast50 = $00000004;
+  msoBaselineAlignAuto = $00000005;
+
+// Constants for enum EncryptionProviderDetail
+type
+  EncryptionProviderDetail = TOleEnum;
+const
+  encprovdetUrl = $00000000;
+  encprovdetAlgorithm = $00000001;
+  encprovdetBlockCipher = $00000002;
+  encprovdetCipherBlockSize = $00000003;
+  encprovdetCipherMode = $00000004;
+
+// Constants for enum EncryptionCipherMode
+type
+  EncryptionCipherMode = TOleEnum;
+const
+  cipherModeECB = $00000000;
+  cipherModeCBC = $00000001;
+
+// Constants for enum MsoClipboardFormat
+type
+  MsoClipboardFormat = TOleEnum;
+const
+  msoClipboardFormatMixed = $FFFFFFFE;
+  msoClipboardFormatNative = $00000001;
+  msoClipboardFormatHTML = $00000002;
+  msoClipboardFormatRTF = $00000003;
+  msoClipboardFormatPlainText = $00000004;
+
+// Constants for enum MsoBlogCategorySupport
+type
+  MsoBlogCategorySupport = TOleEnum;
+const
+  msoBlogNoCategories = $00000000;
+  msoBlogOneCategory = $00000001;
+  msoBlogMultipleCategories = $00000002;
+
+// Constants for enum MsoBlogImageType
+type
+  MsoBlogImageType = TOleEnum;
+const
+  msoblogImageTypeJPEG = $00000001;
+  msoblogImageTypeGIF = $00000002;
+  msoblogImageTypePNG = $00000003;
 
 type
 
@@ -2499,6 +4118,211 @@ type
   UserPermissionDisp = dispinterface;
   Permission = interface;
   PermissionDisp = dispinterface;
+  MsoDebugOptions_UTRunResult = interface;
+  MsoDebugOptions_UTRunResultDisp = dispinterface;
+  MsoDebugOptions_UT = interface;
+  MsoDebugOptions_UTDisp = dispinterface;
+  MsoDebugOptions_UTs = interface;
+  MsoDebugOptions_UTsDisp = dispinterface;
+  MsoDebugOptions_UTManager = interface;
+  MsoDebugOptions_UTManagerDisp = dispinterface;
+  MetaProperty = interface;
+  MetaPropertyDisp = dispinterface;
+  MetaProperties = interface;
+  MetaPropertiesDisp = dispinterface;
+  PolicyItem = interface;
+  PolicyItemDisp = dispinterface;
+  ServerPolicy = interface;
+  ServerPolicyDisp = dispinterface;
+  DocumentInspector = interface;
+  DocumentInspectorDisp = dispinterface;
+  DocumentInspectors = interface;
+  DocumentInspectorsDisp = dispinterface;
+  WorkflowTask = interface;
+  WorkflowTaskDisp = dispinterface;
+  WorkflowTasks = interface;
+  WorkflowTasksDisp = dispinterface;
+  WorkflowTemplate = interface;
+  WorkflowTemplateDisp = dispinterface;
+  WorkflowTemplates = interface;
+  WorkflowTemplatesDisp = dispinterface;
+  IDocumentInspector = interface;
+  SignatureSetup = interface;
+  SignatureSetupDisp = dispinterface;
+  SignatureInfo = interface;
+  SignatureInfoDisp = dispinterface;
+  SignatureProvider = interface;
+  SignatureProviderDisp = dispinterface;
+  CustomXMLPrefixMapping = interface;
+  CustomXMLPrefixMappingDisp = dispinterface;
+  CustomXMLPrefixMappings = interface;
+  CustomXMLPrefixMappingsDisp = dispinterface;
+  CustomXMLSchema = interface;
+  CustomXMLSchemaDisp = dispinterface;
+  _CustomXMLSchemaCollection = interface;
+  _CustomXMLSchemaCollectionDisp = dispinterface;
+  CustomXMLNodes = interface;
+  CustomXMLNodesDisp = dispinterface;
+  CustomXMLNode = interface;
+  CustomXMLNodeDisp = dispinterface;
+  CustomXMLValidationError = interface;
+  CustomXMLValidationErrorDisp = dispinterface;
+  CustomXMLValidationErrors = interface;
+  CustomXMLValidationErrorsDisp = dispinterface;
+  _CustomXMLPart = interface;
+  _CustomXMLPartDisp = dispinterface;
+  ICustomXMLPartEvents = interface;
+  ICustomXMLPartEventsDisp = dispinterface;
+  _CustomXMLPartEvents = dispinterface;
+  _CustomXMLParts = interface;
+  _CustomXMLPartsDisp = dispinterface;
+  ICustomXMLPartsEvents = interface;
+  ICustomXMLPartsEventsDisp = dispinterface;
+  _CustomXMLPartsEvents = dispinterface;
+  GradientStop = interface;
+  GradientStopDisp = dispinterface;
+  GradientStops = interface;
+  GradientStopsDisp = dispinterface;
+  SoftEdgeFormat = interface;
+  SoftEdgeFormatDisp = dispinterface;
+  GlowFormat = interface;
+  GlowFormatDisp = dispinterface;
+  ReflectionFormat = interface;
+  ReflectionFormatDisp = dispinterface;
+  ParagraphFormat2 = interface;
+  ParagraphFormat2Disp = dispinterface;
+  Font2 = interface;
+  Font2Disp = dispinterface;
+  TextColumn2 = interface;
+  TextColumn2Disp = dispinterface;
+  TextRange2 = interface;
+  TextRange2Disp = dispinterface;
+  TextFrame2 = interface;
+  TextFrame2Disp = dispinterface;
+  ThemeColor = interface;
+  ThemeColorDisp = dispinterface;
+  ThemeColorScheme = interface;
+  ThemeColorSchemeDisp = dispinterface;
+  ThemeFont = interface;
+  ThemeFontDisp = dispinterface;
+  ThemeFonts = interface;
+  ThemeFontsDisp = dispinterface;
+  ThemeFontScheme = interface;
+  ThemeFontSchemeDisp = dispinterface;
+  ThemeEffectScheme = interface;
+  ThemeEffectSchemeDisp = dispinterface;
+  OfficeTheme = interface;
+  OfficeThemeDisp = dispinterface;
+  _CustomTaskPane = interface;
+  _CustomTaskPaneDisp = dispinterface;
+  CustomTaskPaneEvents = interface;
+  CustomTaskPaneEventsDisp = dispinterface;
+  _CustomTaskPaneEvents = dispinterface;
+  ICTPFactory = interface;
+  ICTPFactoryDisp = dispinterface;
+  ICustomTaskPaneConsumer = interface;
+  ICustomTaskPaneConsumerDisp = dispinterface;
+  IRibbonUI = interface;
+  IRibbonUIDisp = dispinterface;
+  IRibbonControl = interface;
+  IRibbonControlDisp = dispinterface;
+  IRibbonExtensibility = interface;
+  IRibbonExtensibilityDisp = dispinterface;
+  IAssistance = interface;
+  IAssistanceDisp = dispinterface;
+  IMsoChartData = interface;
+  IMsoChartDataDisp = dispinterface;
+  IMsoChart = interface;
+  IMsoChartDisp = dispinterface;
+  IMsoCorners = interface;
+  IMsoCornersDisp = dispinterface;
+  IMsoLegend = interface;
+  IMsoLegendDisp = dispinterface;
+  IMsoBorder = interface;
+  IMsoBorderDisp = dispinterface;
+  IMsoWalls = interface;
+  IMsoWallsDisp = dispinterface;
+  IMsoFloor = interface;
+  IMsoFloorDisp = dispinterface;
+  IMsoPlotArea = interface;
+  IMsoPlotAreaDisp = dispinterface;
+  IMsoChartArea = interface;
+  IMsoChartAreaDisp = dispinterface;
+  IMsoSeriesLines = interface;
+  IMsoSeriesLinesDisp = dispinterface;
+  IMsoLeaderLines = interface;
+  IMsoLeaderLinesDisp = dispinterface;
+  GridLines = interface;
+  GridLinesDisp = dispinterface;
+  IMsoUpBars = interface;
+  IMsoUpBarsDisp = dispinterface;
+  IMsoDownBars = interface;
+  IMsoDownBarsDisp = dispinterface;
+  IMsoInterior = interface;
+  IMsoInteriorDisp = dispinterface;
+  ChartFillFormat = interface;
+  ChartFillFormatDisp = dispinterface;
+  LegendEntries = interface;
+  ChartFont = interface;
+  ChartFontDisp = dispinterface;
+  ChartColorFormat = interface;
+  LegendEntry = interface;
+  IMsoLegendKey = interface;
+  SeriesCollection = interface;
+  IMsoSeries = interface;
+  IMsoErrorBars = interface;
+  IMsoTrendline = interface;
+  Trendlines = interface;
+  IMsoDataLabels = interface;
+  IMsoDataLabel = interface;
+  Points = interface;
+  ChartPoint = interface;
+  Axes = interface;
+  AxesDisp = dispinterface;
+  IMsoAxis = interface;
+  IMsoAxisDisp = dispinterface;
+  IMsoDataTable = interface;
+  IMsoDataTableDisp = dispinterface;
+  IMsoChartTitle = interface;
+  IMsoChartTitleDisp = dispinterface;
+  IMsoAxisTitle = interface;
+  IMsoAxisTitleDisp = dispinterface;
+  IMsoDisplayUnitLabel = interface;
+  IMsoDisplayUnitLabelDisp = dispinterface;
+  IMsoTickLabels = interface;
+  IMsoTickLabelsDisp = dispinterface;
+  IMsoHyperlinks = interface;
+  IMsoHyperlinksDisp = dispinterface;
+  IMsoDropLines = interface;
+  IMsoDropLinesDisp = dispinterface;
+  IMsoHiLoLines = interface;
+  IMsoHiLoLinesDisp = dispinterface;
+  IMsoChartGroup = interface;
+  IMsoChartGroupDisp = dispinterface;
+  ChartGroups = interface;
+  ChartGroupsDisp = dispinterface;
+  IMsoCharacters = interface;
+  IMsoCharactersDisp = dispinterface;
+  IMsoChartFormat = interface;
+  IMsoChartFormatDisp = dispinterface;
+  BulletFormat2 = interface;
+  BulletFormat2Disp = dispinterface;
+  TabStops2 = interface;
+  TabStops2Disp = dispinterface;
+  TabStop2 = interface;
+  TabStop2Disp = dispinterface;
+  Ruler2 = interface;
+  Ruler2Disp = dispinterface;
+  RulerLevels2 = interface;
+  RulerLevels2Disp = dispinterface;
+  RulerLevel2 = interface;
+  RulerLevel2Disp = dispinterface;
+  EncryptionProvider = interface;
+  EncryptionProviderDisp = dispinterface;
+  IBlogExtensibility = interface;
+  IBlogExtensibilityDisp = dispinterface;
+  IBlogPictureExtensibility = interface;
+  IBlogPictureExtensibilityDisp = dispinterface;
 
 // *********************************************************************//
 // Declaration of CoClasses defined in Type Library                       
@@ -2508,6 +4332,10 @@ type
   CommandBarComboBox = _CommandBarComboBox;
   CommandBarButton = _CommandBarButton;
   MsoEnvelope = IMsoEnvelopeVB;
+  CustomXMLSchemaCollection = _CustomXMLSchemaCollection;
+  CustomXMLPart = _CustomXMLPart;
+  CustomXMLParts = _CustomXMLParts;
+  CustomTaskPane = _CustomTaskPane;
 
 
 // *********************************************************************//
@@ -2700,6 +4528,14 @@ type
     procedure Set_DisableCustomize(pvarfDisableCustomize: WordBool); safecall;
     function Get_DisableAskAQuestionDropdown: WordBool; safecall;
     procedure Set_DisableAskAQuestionDropdown(pvarfDisableAskAQuestionDropdown: WordBool); safecall;
+    procedure ExecuteMso(const idMso: WideString); safecall;
+    function GetEnabledMso(const idMso: WideString): WordBool; safecall;
+    function GetVisibleMso(const idMso: WideString): WordBool; safecall;
+    function GetPressedMso(const idMso: WideString): WordBool; safecall;
+    function GetLabelMso(const idMso: WideString): WideString; safecall;
+    function GetScreentipMso(const idMso: WideString): WideString; safecall;
+    function GetSupertipMso(const idMso: WideString): WideString; safecall;
+    function GetImageMso(const idMso: WideString; Width: SYSINT; Height: SYSINT): IPictureDisp; safecall;
     property ActionControl: CommandBarControl read Get_ActionControl;
     property ActiveMenuBar: CommandBar read Get_ActiveMenuBar;
     property Count: SYSINT read Get_Count;
@@ -2747,6 +4583,14 @@ type
     property DisplayFonts: WordBool dispid 1610809367;
     property DisableCustomize: WordBool dispid 1610809369;
     property DisableAskAQuestionDropdown: WordBool dispid 1610809371;
+    procedure ExecuteMso(const idMso: WideString); dispid 1610809373;
+    function GetEnabledMso(const idMso: WideString): WordBool; dispid 1610809374;
+    function GetVisibleMso(const idMso: WideString): WordBool; dispid 1610809375;
+    function GetPressedMso(const idMso: WideString): WordBool; dispid 1610809376;
+    function GetLabelMso(const idMso: WideString): WideString; dispid 1610809377;
+    function GetScreentipMso(const idMso: WideString): WideString; dispid 1610809378;
+    function GetSupertipMso(const idMso: WideString): WideString; dispid 1610809379;
+    function GetImageMso(const idMso: WideString; Width: SYSINT; Height: SYSINT): IPictureDisp; dispid 1610809380;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -3587,11 +5431,14 @@ type
     function Get_type_: MsoColorType; safecall;
     function Get_TintAndShade: Single; safecall;
     procedure Set_TintAndShade(pValue: Single); safecall;
+    function Get_ObjectThemeColor: MsoThemeColorIndex; safecall;
+    procedure Set_ObjectThemeColor(ObjectThemeColor: MsoThemeColorIndex); safecall;
     property Parent: IDispatch read Get_Parent;
     property RGB: MsoRGBType read Get_RGB write Set_RGB;
     property SchemeColor: SYSINT read Get_SchemeColor write Set_SchemeColor;
     property type_: MsoColorType read Get_type_;
     property TintAndShade: Single read Get_TintAndShade write Set_TintAndShade;
+    property ObjectThemeColor: MsoThemeColorIndex read Get_ObjectThemeColor write Set_ObjectThemeColor;
   end;
 
 // *********************************************************************//
@@ -3606,6 +5453,7 @@ type
     property SchemeColor: SYSINT dispid 100;
     property type_: MsoColorType readonly dispid 101;
     property TintAndShade: Single dispid 103;
+    property ObjectThemeColor: MsoThemeColorIndex dispid 104;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -3699,6 +5547,21 @@ type
     function Get_type_: MsoFillType; safecall;
     function Get_Visible: MsoTriState; safecall;
     procedure Set_Visible(Visible: MsoTriState); safecall;
+    function Get_GradientStops: GradientStops; safecall;
+    function Get_TextureOffsetX: Single; safecall;
+    procedure Set_TextureOffsetX(TextureOffsetX: Single); safecall;
+    function Get_TextureOffsetY: Single; safecall;
+    procedure Set_TextureOffsetY(TextureOffsetY: Single); safecall;
+    function Get_TextureAlignment: MsoTextureAlignment; safecall;
+    procedure Set_TextureAlignment(TextureAlignment: MsoTextureAlignment); safecall;
+    function Get_TextureHorizontalScale: Single; safecall;
+    procedure Set_TextureHorizontalScale(HorizontalScale: Single); safecall;
+    function Get_TextureVerticalScale: Single; safecall;
+    procedure Set_TextureVerticalScale(VerticalScale: Single); safecall;
+    function Get_TextureTile: MsoTriState; safecall;
+    procedure Set_TextureTile(TextureTile: MsoTriState); safecall;
+    function Get_RotateWithObject: MsoTriState; safecall;
+    procedure Set_RotateWithObject(RotateWithObject: MsoTriState); safecall;
     property Parent: IDispatch read Get_Parent;
     property BackColor: ColorFormat read Get_BackColor write Set_BackColor;
     property ForeColor: ColorFormat read Get_ForeColor write Set_ForeColor;
@@ -3714,6 +5577,14 @@ type
     property Transparency: Single read Get_Transparency write Set_Transparency;
     property type_: MsoFillType read Get_type_;
     property Visible: MsoTriState read Get_Visible write Set_Visible;
+    property GradientStops: GradientStops read Get_GradientStops;
+    property TextureOffsetX: Single read Get_TextureOffsetX write Set_TextureOffsetX;
+    property TextureOffsetY: Single read Get_TextureOffsetY write Set_TextureOffsetY;
+    property TextureAlignment: MsoTextureAlignment read Get_TextureAlignment write Set_TextureAlignment;
+    property TextureHorizontalScale: Single read Get_TextureHorizontalScale write Set_TextureHorizontalScale;
+    property TextureVerticalScale: Single read Get_TextureVerticalScale write Set_TextureVerticalScale;
+    property TextureTile: MsoTriState read Get_TextureTile write Set_TextureTile;
+    property RotateWithObject: MsoTriState read Get_RotateWithObject write Set_RotateWithObject;
   end;
 
 // *********************************************************************//
@@ -3748,6 +5619,14 @@ type
     property Transparency: Single dispid 111;
     property type_: MsoFillType readonly dispid 112;
     property Visible: MsoTriState dispid 113;
+    property GradientStops: GradientStops readonly dispid 114;
+    property TextureOffsetX: Single dispid 115;
+    property TextureOffsetY: Single dispid 116;
+    property TextureAlignment: MsoTextureAlignment dispid 117;
+    property TextureHorizontalScale: Single dispid 118;
+    property TextureVerticalScale: Single dispid 119;
+    property TextureTile: MsoTriState dispid 120;
+    property RotateWithObject: MsoTriState dispid 121;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4059,6 +5938,14 @@ type
     procedure Set_type_(Type_: MsoShadowType); safecall;
     function Get_Visible: MsoTriState; safecall;
     procedure Set_Visible(Visible: MsoTriState); safecall;
+    function Get_Style: MsoShadowStyle; safecall;
+    procedure Set_Style(ShadowStyle: MsoShadowStyle); safecall;
+    function Get_Blur: Single; safecall;
+    procedure Set_Blur(Blur: Single); safecall;
+    function Get_Size: Single; safecall;
+    procedure Set_Size(Size: Single); safecall;
+    function Get_RotateWithShape: MsoTriState; safecall;
+    procedure Set_RotateWithShape(RotateWithShape: MsoTriState); safecall;
     property Parent: IDispatch read Get_Parent;
     property ForeColor: ColorFormat read Get_ForeColor write Set_ForeColor;
     property Obscured: MsoTriState read Get_Obscured write Set_Obscured;
@@ -4067,6 +5954,10 @@ type
     property Transparency: Single read Get_Transparency write Set_Transparency;
     property type_: MsoShadowType read Get_type_ write Set_type_;
     property Visible: MsoTriState read Get_Visible write Set_Visible;
+    property Style: MsoShadowStyle read Get_Style write Set_Style;
+    property Blur: Single read Get_Blur write Set_Blur;
+    property Size: Single read Get_Size write Set_Size;
+    property RotateWithShape: MsoTriState read Get_RotateWithShape write Set_RotateWithShape;
   end;
 
 // *********************************************************************//
@@ -4086,13 +5977,17 @@ type
     property Transparency: Single dispid 104;
     property type_: MsoShadowType dispid 105;
     property Visible: MsoTriState dispid 106;
+    property Style: MsoShadowStyle dispid 107;
+    property Blur: Single dispid 108;
+    property Size: Single dispid 109;
+    property RotateWithShape: MsoTriState dispid 110;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
 
 // *********************************************************************//
 // Interface: Script
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0341-0000-0000-C000-000000000046}
 // *********************************************************************//
   Script = interface(_IMsoDispObj)
@@ -4120,7 +6015,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  ScriptDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0341-0000-0000-C000-000000000046}
 // *********************************************************************//
   ScriptDisp = dispinterface
@@ -4139,7 +6034,7 @@ type
 
 // *********************************************************************//
 // Interface: Scripts
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0340-0000-0000-C000-000000000046}
 // *********************************************************************//
   Scripts = interface(_IMsoDispObj)
@@ -4158,7 +6053,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  ScriptsDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0340-0000-0000-C000-000000000046}
 // *********************************************************************//
   ScriptsDisp = dispinterface
@@ -4252,6 +6147,18 @@ type
     procedure CanvasCropRight(Increment: Single); safecall;
     procedure CanvasCropBottom(Increment: Single); safecall;
     procedure Set_RTF(const Param1: WideString); safecall;
+    function Get_TextFrame2: TextFrame2; safecall;
+    procedure Cut; safecall;
+    procedure Copy; safecall;
+    function Get_HasChart: MsoTriState; safecall;
+    function Get_Chart: IMsoChart; safecall;
+    function Get_ShapeStyle: MsoShapeStyleIndex; safecall;
+    procedure Set_ShapeStyle(ShapeStyle: MsoShapeStyleIndex); safecall;
+    function Get_BackgroundStyle: MsoBackgroundStyleIndex; safecall;
+    procedure Set_BackgroundStyle(BackgroundStyle: MsoBackgroundStyleIndex); safecall;
+    function Get_SoftEdge: SoftEdgeFormat; safecall;
+    function Get_Glow: GlowFormat; safecall;
+    function Get_Reflection: ReflectionFormat; safecall;
     property Parent: IDispatch read Get_Parent;
     property Adjustments: Adjustments read Get_Adjustments;
     property AutoShapeType: MsoAutoShapeType read Get_AutoShapeType write Set_AutoShapeType;
@@ -4293,6 +6200,14 @@ type
     property CanvasItems: CanvasShapes read Get_CanvasItems;
     property Id: SYSINT read Get_Id;
     property RTF: WideString write Set_RTF;
+    property TextFrame2: TextFrame2 read Get_TextFrame2;
+    property HasChart: MsoTriState read Get_HasChart;
+    property Chart: IMsoChart read Get_Chart;
+    property ShapeStyle: MsoShapeStyleIndex read Get_ShapeStyle write Set_ShapeStyle;
+    property BackgroundStyle: MsoBackgroundStyleIndex read Get_BackgroundStyle write Set_BackgroundStyle;
+    property SoftEdge: SoftEdgeFormat read Get_SoftEdge;
+    property Glow: GlowFormat read Get_Glow;
+    property Reflection: ReflectionFormat read Get_Reflection;
   end;
 
 // *********************************************************************//
@@ -4362,6 +6277,16 @@ type
     procedure CanvasCropRight(Increment: Single); dispid 142;
     procedure CanvasCropBottom(Increment: Single); dispid 143;
     property RTF: WideString writeonly dispid 144;
+    property TextFrame2: TextFrame2 readonly dispid 145;
+    procedure Cut; dispid 146;
+    procedure Copy; dispid 147;
+    property HasChart: MsoTriState readonly dispid 148;
+    property Chart: IMsoChart readonly dispid 149;
+    property ShapeStyle: MsoShapeStyleIndex dispid 150;
+    property BackgroundStyle: MsoBackgroundStyleIndex dispid 151;
+    property SoftEdge: SoftEdgeFormat readonly dispid 152;
+    property Glow: GlowFormat readonly dispid 153;
+    property Reflection: ReflectionFormat readonly dispid 154;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4451,6 +6376,18 @@ type
     procedure CanvasCropRight(Increment: Single); safecall;
     procedure CanvasCropBottom(Increment: Single); safecall;
     procedure Set_RTF(const Param1: WideString); safecall;
+    function Get_TextFrame2: TextFrame2; safecall;
+    procedure Cut; safecall;
+    procedure Copy; safecall;
+    function Get_HasChart: MsoTriState; safecall;
+    function Get_Chart: IMsoChart; safecall;
+    function Get_ShapeStyle: MsoShapeStyleIndex; safecall;
+    procedure Set_ShapeStyle(ShapeStyle: MsoShapeStyleIndex); safecall;
+    function Get_BackgroundStyle: MsoBackgroundStyleIndex; safecall;
+    procedure Set_BackgroundStyle(BackgroundStyle: MsoBackgroundStyleIndex); safecall;
+    function Get_SoftEdge: SoftEdgeFormat; safecall;
+    function Get_Glow: GlowFormat; safecall;
+    function Get_Reflection: ReflectionFormat; safecall;
     property Parent: IDispatch read Get_Parent;
     property Count: SYSINT read Get_Count;
     property _NewEnum: IUnknown read Get__NewEnum;
@@ -4494,6 +6431,14 @@ type
     property CanvasItems: CanvasShapes read Get_CanvasItems;
     property Id: SYSINT read Get_Id;
     property RTF: WideString write Set_RTF;
+    property TextFrame2: TextFrame2 read Get_TextFrame2;
+    property HasChart: MsoTriState read Get_HasChart;
+    property Chart: IMsoChart read Get_Chart;
+    property ShapeStyle: MsoShapeStyleIndex read Get_ShapeStyle write Set_ShapeStyle;
+    property BackgroundStyle: MsoBackgroundStyleIndex read Get_BackgroundStyle write Set_BackgroundStyle;
+    property SoftEdge: SoftEdgeFormat read Get_SoftEdge;
+    property Glow: GlowFormat read Get_Glow;
+    property Reflection: ReflectionFormat read Get_Reflection;
   end;
 
 // *********************************************************************//
@@ -4570,6 +6515,16 @@ type
     procedure CanvasCropRight(Increment: Single); dispid 142;
     procedure CanvasCropBottom(Increment: Single); dispid 143;
     property RTF: WideString writeonly dispid 144;
+    property TextFrame2: TextFrame2 readonly dispid 145;
+    procedure Cut; dispid 146;
+    procedure Copy; dispid 147;
+    property HasChart: MsoTriState readonly dispid 148;
+    property Chart: IMsoChart readonly dispid 149;
+    property ShapeStyle: MsoShapeStyleIndex dispid 150;
+    property BackgroundStyle: MsoBackgroundStyleIndex dispid 151;
+    property SoftEdge: SoftEdgeFormat readonly dispid 152;
+    property Glow: GlowFormat readonly dispid 153;
+    property Reflection: ReflectionFormat readonly dispid 154;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4612,6 +6567,9 @@ type
     function AddDiagram(Type_: MsoDiagramType; Left: Single; Top: Single; Width: Single; 
                         Height: Single): Shape; safecall;
     function AddCanvas(Left: Single; Top: Single; Width: Single; Height: Single): Shape; safecall;
+    function AddChart(Type_: XlChartType; Left: Single; Top: Single; Width: Single; Height: Single): Shape; safecall;
+    function AddTable(NumRows: SYSINT; NumColumns: SYSINT; Left: Single; Top: Single; 
+                      Width: Single; Height: Single): Shape; safecall;
     property Parent: IDispatch read Get_Parent;
     property Count: SYSINT read Get_Count;
     property _NewEnum: IUnknown read Get__NewEnum;
@@ -4657,6 +6615,9 @@ type
     function AddDiagram(Type_: MsoDiagramType; Left: Single; Top: Single; Width: Single; 
                         Height: Single): Shape; dispid 23;
     function AddCanvas(Left: Single; Top: Single; Width: Single; Height: Single): Shape; dispid 25;
+    function AddChart(Type_: XlChartType; Left: Single; Top: Single; Width: Single; Height: Single): Shape; dispid 26;
+    function AddTable(NumRows: SYSINT; NumColumns: SYSINT; Left: Single; Top: Single; 
+                      Width: Single; Height: Single): Shape; dispid 27;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4811,6 +6772,38 @@ type
     procedure Set_RotationY(RotationY: Single); safecall;
     function Get_Visible: MsoTriState; safecall;
     procedure Set_Visible(Visible: MsoTriState); safecall;
+    procedure SetPresetCamera(PresetCamera: MsoPresetCamera); safecall;
+    procedure IncrementRotationZ(Increment: Single); safecall;
+    procedure IncrementRotationHorizontal(Increment: Single); safecall;
+    procedure IncrementRotationVertical(Increment: Single); safecall;
+    function Get_PresetLighting: MsoLightRigType; safecall;
+    procedure Set_PresetLighting(PresetLightRigType: MsoLightRigType); safecall;
+    function Get_Z: Single; safecall;
+    procedure Set_Z(Z: Single); safecall;
+    function Get_BevelTopType: MsoBevelType; safecall;
+    procedure Set_BevelTopType(BevelTopType: MsoBevelType); safecall;
+    function Get_BevelTopInset: Single; safecall;
+    procedure Set_BevelTopInset(BevelTopInset: Single); safecall;
+    function Get_BevelTopDepth: Single; safecall;
+    procedure Set_BevelTopDepth(BevelTopDepth: Single); safecall;
+    function Get_BevelBottomType: MsoBevelType; safecall;
+    procedure Set_BevelBottomType(BevelBottomType: MsoBevelType); safecall;
+    function Get_BevelBottomInset: Single; safecall;
+    procedure Set_BevelBottomInset(BevelBottomInset: Single); safecall;
+    function Get_BevelBottomDepth: Single; safecall;
+    procedure Set_BevelBottomDepth(BevelBottomDepth: Single); safecall;
+    function Get_PresetCamera: MsoPresetCamera; safecall;
+    function Get_RotationZ: Single; safecall;
+    procedure Set_RotationZ(RotationZ: Single); safecall;
+    function Get_ContourWidth: Single; safecall;
+    procedure Set_ContourWidth(Width: Single); safecall;
+    function Get_ContourColor: ColorFormat; safecall;
+    function Get_FieldOfView: Single; safecall;
+    procedure Set_FieldOfView(FOV: Single); safecall;
+    function Get_ProjectText: MsoTriState; safecall;
+    procedure Set_ProjectText(ProjectText: MsoTriState); safecall;
+    function Get_LightAngle: Single; safecall;
+    procedure Set_LightAngle(LightAngle: Single); safecall;
     property Parent: IDispatch read Get_Parent;
     property Depth: Single read Get_Depth write Set_Depth;
     property ExtrusionColor: ColorFormat read Get_ExtrusionColor;
@@ -4824,6 +6817,21 @@ type
     property RotationX: Single read Get_RotationX write Set_RotationX;
     property RotationY: Single read Get_RotationY write Set_RotationY;
     property Visible: MsoTriState read Get_Visible write Set_Visible;
+    property PresetLighting: MsoLightRigType read Get_PresetLighting write Set_PresetLighting;
+    property Z: Single read Get_Z write Set_Z;
+    property BevelTopType: MsoBevelType read Get_BevelTopType write Set_BevelTopType;
+    property BevelTopInset: Single read Get_BevelTopInset write Set_BevelTopInset;
+    property BevelTopDepth: Single read Get_BevelTopDepth write Set_BevelTopDepth;
+    property BevelBottomType: MsoBevelType read Get_BevelBottomType write Set_BevelBottomType;
+    property BevelBottomInset: Single read Get_BevelBottomInset write Set_BevelBottomInset;
+    property BevelBottomDepth: Single read Get_BevelBottomDepth write Set_BevelBottomDepth;
+    property PresetCamera: MsoPresetCamera read Get_PresetCamera;
+    property RotationZ: Single read Get_RotationZ write Set_RotationZ;
+    property ContourWidth: Single read Get_ContourWidth write Set_ContourWidth;
+    property ContourColor: ColorFormat read Get_ContourColor;
+    property FieldOfView: Single read Get_FieldOfView write Set_FieldOfView;
+    property ProjectText: MsoTriState read Get_ProjectText write Set_ProjectText;
+    property LightAngle: Single read Get_LightAngle write Set_LightAngle;
   end;
 
 // *********************************************************************//
@@ -4851,6 +6859,25 @@ type
     property RotationX: Single dispid 109;
     property RotationY: Single dispid 110;
     property Visible: MsoTriState dispid 111;
+    procedure SetPresetCamera(PresetCamera: MsoPresetCamera); dispid 15;
+    procedure IncrementRotationZ(Increment: Single); dispid 16;
+    procedure IncrementRotationHorizontal(Increment: Single); dispid 17;
+    procedure IncrementRotationVertical(Increment: Single); dispid 18;
+    property PresetLighting: MsoLightRigType dispid 112;
+    property Z: Single dispid 113;
+    property BevelTopType: MsoBevelType dispid 114;
+    property BevelTopInset: Single dispid 115;
+    property BevelTopDepth: Single dispid 116;
+    property BevelBottomType: MsoBevelType dispid 117;
+    property BevelBottomInset: Single dispid 118;
+    property BevelBottomDepth: Single dispid 119;
+    property PresetCamera: MsoPresetCamera readonly dispid 120;
+    property RotationZ: Single dispid 121;
+    property ContourWidth: Single dispid 122;
+    property ContourColor: ColorFormat readonly dispid 123;
+    property FieldOfView: Single dispid 124;
+    property ProjectText: MsoTriState dispid 125;
+    property LightAngle: Single dispid 126;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -4879,7 +6906,7 @@ type
 
 // *********************************************************************//
 // Interface: Balloon
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0324-0000-0000-C000-000000000046}
 // *********************************************************************//
   Balloon = interface(_IMsoDispObj)
@@ -4926,7 +6953,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  BalloonDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0324-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonDisp = dispinterface
@@ -4953,7 +6980,7 @@ type
 
 // *********************************************************************//
 // Interface: BalloonCheckboxes
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0326-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonCheckboxes = interface(_IMsoDispObj)
@@ -4973,7 +7000,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  BalloonCheckboxesDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0326-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonCheckboxesDisp = dispinterface
@@ -4989,7 +7016,7 @@ type
 
 // *********************************************************************//
 // Interface: BalloonCheckbox
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0328-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonCheckbox = interface(_IMsoDispObj)
@@ -5010,7 +7037,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  BalloonCheckboxDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0328-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonCheckboxDisp = dispinterface
@@ -5026,7 +7053,7 @@ type
 
 // *********************************************************************//
 // Interface: BalloonLabels
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C032E-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonLabels = interface(_IMsoDispObj)
@@ -5046,7 +7073,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  BalloonLabelsDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C032E-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonLabelsDisp = dispinterface
@@ -5062,7 +7089,7 @@ type
 
 // *********************************************************************//
 // Interface: BalloonLabel
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0330-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonLabel = interface(_IMsoDispObj)
@@ -5080,7 +7107,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  BalloonLabelDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0330-0000-0000-C000-000000000046}
 // *********************************************************************//
   BalloonLabelDisp = dispinterface
@@ -5095,7 +7122,7 @@ type
 
 // *********************************************************************//
 // Interface: AnswerWizardFiles
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0361-0000-0000-C000-000000000046}
 // *********************************************************************//
   AnswerWizardFiles = interface(_IMsoDispObj)
@@ -5112,7 +7139,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  AnswerWizardFilesDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0361-0000-0000-C000-000000000046}
 // *********************************************************************//
   AnswerWizardFilesDisp = dispinterface
@@ -5128,7 +7155,7 @@ type
 
 // *********************************************************************//
 // Interface: AnswerWizard
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0360-0000-0000-C000-000000000046}
 // *********************************************************************//
   AnswerWizard = interface(_IMsoDispObj)
@@ -5143,7 +7170,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  AnswerWizardDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0360-0000-0000-C000-000000000046}
 // *********************************************************************//
   AnswerWizardDisp = dispinterface
@@ -5158,7 +7185,7 @@ type
 
 // *********************************************************************//
 // Interface: Assistant
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0322-0000-0000-C000-000000000046}
 // *********************************************************************//
   Assistant = interface(_IMsoDispObj)
@@ -5245,7 +7272,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  AssistantDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0322-0000-0000-C000-000000000046}
 // *********************************************************************//
   AssistantDisp = dispinterface
@@ -5332,7 +7359,7 @@ type
 
 // *********************************************************************//
 // Interface: IFoundFiles
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0338-0000-0000-C000-000000000046}
 // *********************************************************************//
   IFoundFiles = interface(IDispatch)
@@ -5347,7 +7374,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  IFoundFilesDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0338-0000-0000-C000-000000000046}
 // *********************************************************************//
   IFoundFilesDisp = dispinterface
@@ -5359,7 +7386,7 @@ type
 
 // *********************************************************************//
 // Interface: IFind
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0337-0000-0000-C000-000000000046}
 // *********************************************************************//
   IFind = interface(IDispatch)
@@ -5438,7 +7465,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  IFindDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0337-0000-0000-C000-000000000046}
 // *********************************************************************//
   IFindDisp = dispinterface
@@ -5474,7 +7501,7 @@ type
 
 // *********************************************************************//
 // Interface: FoundFiles
-// Flags:     (4416) Dual OleAutomation Dispatchable
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
 // GUID:      {000C0331-0000-0000-C000-000000000046}
 // *********************************************************************//
   FoundFiles = interface(_IMsoDispObj)
@@ -5489,7 +7516,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  FoundFilesDisp
-// Flags:     (4416) Dual OleAutomation Dispatchable
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
 // GUID:      {000C0331-0000-0000-C000-000000000046}
 // *********************************************************************//
   FoundFilesDisp = dispinterface
@@ -5503,7 +7530,7 @@ type
 
 // *********************************************************************//
 // Interface: PropertyTest
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0333-0000-0000-C000-000000000046}
 // *********************************************************************//
   PropertyTest = interface(_IMsoDispObj)
@@ -5522,7 +7549,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  PropertyTestDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0333-0000-0000-C000-000000000046}
 // *********************************************************************//
   PropertyTestDisp = dispinterface
@@ -5538,7 +7565,7 @@ type
 
 // *********************************************************************//
 // Interface: PropertyTests
-// Flags:     (4416) Dual OleAutomation Dispatchable
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
 // GUID:      {000C0334-0000-0000-C000-000000000046}
 // *********************************************************************//
   PropertyTests = interface(_IMsoDispObj)
@@ -5556,7 +7583,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  PropertyTestsDisp
-// Flags:     (4416) Dual OleAutomation Dispatchable
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
 // GUID:      {000C0334-0000-0000-C000-000000000046}
 // *********************************************************************//
   PropertyTestsDisp = dispinterface
@@ -5573,7 +7600,7 @@ type
 
 // *********************************************************************//
 // Interface: FileSearch
-// Flags:     (4416) Dual OleAutomation Dispatchable
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
 // GUID:      {000C0332-0000-0000-C000-000000000046}
 // *********************************************************************//
   FileSearch = interface(_IMsoDispObj)
@@ -5619,7 +7646,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  FileSearchDisp
-// Flags:     (4416) Dual OleAutomation Dispatchable
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
 // GUID:      {000C0332-0000-0000-C000-000000000046}
 // *********************************************************************//
   FileSearchDisp = dispinterface
@@ -5906,7 +7933,7 @@ type
 
 // *********************************************************************//
 // Interface: HTMLProjectItem
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0358-0000-0000-C000-000000000046}
 // *********************************************************************//
   HTMLProjectItem = interface(_IMsoDispObj)
@@ -5927,7 +7954,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  HTMLProjectItemDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0358-0000-0000-C000-000000000046}
 // *********************************************************************//
   HTMLProjectItemDisp = dispinterface
@@ -5945,7 +7972,7 @@ type
 
 // *********************************************************************//
 // Interface: HTMLProjectItems
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0357-0000-0000-C000-000000000046}
 // *********************************************************************//
   HTMLProjectItems = interface(_IMsoDispObj)
@@ -5961,7 +7988,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  HTMLProjectItemsDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0357-0000-0000-C000-000000000046}
 // *********************************************************************//
   HTMLProjectItemsDisp = dispinterface
@@ -5976,7 +8003,7 @@ type
 
 // *********************************************************************//
 // Interface: HTMLProject
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0356-0000-0000-C000-000000000046}
 // *********************************************************************//
   HTMLProject = interface(_IMsoDispObj)
@@ -5994,7 +8021,7 @@ type
 
 // *********************************************************************//
 // DispIntf:  HTMLProjectDisp
-// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
 // GUID:      {000C0356-0000-0000-C000-000000000046}
 // *********************************************************************//
   HTMLProjectDisp = dispinterface
@@ -6024,10 +8051,12 @@ type
     procedure Set_OutputToFile(pvarfOutputToFile: WordBool); safecall;
     function Get_OutputToMessageBox: WordBool; safecall;
     procedure Set_OutputToMessageBox(pvarfOutputToMessageBox: WordBool); safecall;
+    function Get_UnitTestManager: IUnknown; safecall;
     property FeatureReports: SYSINT read Get_FeatureReports write Set_FeatureReports;
     property OutputToDebugger: WordBool read Get_OutputToDebugger write Set_OutputToDebugger;
     property OutputToFile: WordBool read Get_OutputToFile write Set_OutputToFile;
     property OutputToMessageBox: WordBool read Get_OutputToMessageBox write Set_OutputToMessageBox;
+    property UnitTestManager: IUnknown read Get_UnitTestManager;
   end;
 
 // *********************************************************************//
@@ -6041,6 +8070,7 @@ type
     property OutputToDebugger: WordBool dispid 5;
     property OutputToFile: WordBool dispid 6;
     property OutputToMessageBox: WordBool dispid 7;
+    property UnitTestManager: IUnknown readonly dispid 8;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -6218,10 +8248,19 @@ type
     function Add: Signature; safecall;
     procedure Commit; safecall;
     function Get_Parent: IDispatch; safecall;
+    function AddNonVisibleSignature(varSigProv: OleVariant): Signature; safecall;
+    function Get_CanAddSignatureLine: WordBool; safecall;
+    function AddSignatureLine(varSigProv: OleVariant): Signature; safecall;
+    function Get_Subset: MsoSignatureSubset; safecall;
+    procedure Set_Subset(psubset: MsoSignatureSubset); safecall;
+    procedure Set_ShowSignaturesPane(Param1: WordBool); safecall;
     property _NewEnum: IUnknown read Get__NewEnum;
     property Count: SYSINT read Get_Count;
     property Item[iSig: SYSINT]: Signature read Get_Item; default;
     property Parent: IDispatch read Get_Parent;
+    property CanAddSignatureLine: WordBool read Get_CanAddSignatureLine;
+    property Subset: MsoSignatureSubset read Get_Subset write Set_Subset;
+    property ShowSignaturesPane: WordBool write Set_ShowSignaturesPane;
   end;
 
 // *********************************************************************//
@@ -6237,6 +8276,11 @@ type
     function Add: Signature; dispid 1610809347;
     procedure Commit; dispid 1610809348;
     property Parent: IDispatch readonly dispid 1610809349;
+    function AddNonVisibleSignature(varSigProv: OleVariant): Signature; dispid 1610809350;
+    property CanAddSignatureLine: WordBool readonly dispid 1610809351;
+    function AddSignatureLine(varSigProv: OleVariant): Signature; dispid 1610809352;
+    property Subset: MsoSignatureSubset dispid 1610809353;
+    property ShowSignaturesPane: WordBool writeonly dispid 1610809355;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -6253,12 +8297,22 @@ type
     function Get_ExpireDate: OleVariant; safecall;
     function Get_IsValid: WordBool; safecall;
     function Get_AttachCertificate: WordBool; safecall;
-    procedure Set_AttachCertificate(pfAttach: WordBool); safecall;
+    procedure Set_AttachCertificate(pvarfAttach: WordBool); safecall;
     procedure Delete; safecall;
     function Get_Parent: IDispatch; safecall;
     function Get_IsCertificateExpired: WordBool; safecall;
     function Get_IsCertificateRevoked: WordBool; safecall;
     function Get_SignDate: OleVariant; safecall;
+    function Get_IsSigned: WordBool; safecall;
+    procedure Sign(varSigImg: OleVariant; varDelSuggSigner: OleVariant; 
+                   varDelSuggSignerLine2: OleVariant; varDelSuggSignerEmail: OleVariant); safecall;
+    function Get_Details: SignatureInfo; safecall;
+    procedure ShowDetails; safecall;
+    function Get_CanSetup: WordBool; safecall;
+    function Get_Setup: SignatureSetup; safecall;
+    function Get_IsSignatureLine: WordBool; safecall;
+    function Get_SignatureLineShape: IDispatch; safecall;
+    function Get_SortHint: Integer; safecall;
     property Signer: WideString read Get_Signer;
     property Issuer: WideString read Get_Issuer;
     property ExpireDate: OleVariant read Get_ExpireDate;
@@ -6268,6 +8322,13 @@ type
     property IsCertificateExpired: WordBool read Get_IsCertificateExpired;
     property IsCertificateRevoked: WordBool read Get_IsCertificateRevoked;
     property SignDate: OleVariant read Get_SignDate;
+    property IsSigned: WordBool read Get_IsSigned;
+    property Details: SignatureInfo read Get_Details;
+    property CanSetup: WordBool read Get_CanSetup;
+    property Setup: SignatureSetup read Get_Setup;
+    property IsSignatureLine: WordBool read Get_IsSignatureLine;
+    property SignatureLineShape: IDispatch read Get_SignatureLineShape;
+    property SortHint: Integer read Get_SortHint;
   end;
 
 // *********************************************************************//
@@ -6287,6 +8348,16 @@ type
     property IsCertificateExpired: WordBool readonly dispid 1610809352;
     property IsCertificateRevoked: WordBool readonly dispid 1610809353;
     property SignDate: OleVariant readonly dispid 1610809354;
+    property IsSigned: WordBool readonly dispid 1610809355;
+    procedure Sign(varSigImg: OleVariant; varDelSuggSigner: OleVariant; 
+                   varDelSuggSignerLine2: OleVariant; varDelSuggSignerEmail: OleVariant); dispid 1610809356;
+    property Details: SignatureInfo readonly dispid 1610809357;
+    procedure ShowDetails; dispid 1610809358;
+    property CanSetup: WordBool readonly dispid 1610809359;
+    property Setup: SignatureSetup readonly dispid 1610809360;
+    property IsSignatureLine: WordBool readonly dispid 1610809361;
+    property SignatureLineShape: IDispatch readonly dispid 1610809362;
+    property SortHint: Integer readonly dispid 1610809363;
     property Application: IDispatch readonly dispid 1610743808;
     property Creator: Integer readonly dispid 1610743809;
   end;
@@ -8267,6 +10338,5041 @@ type
   end;
 
 // *********************************************************************//
+// Interface: MsoDebugOptions_UTRunResult
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C038C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTRunResult = interface(_IMsoDispObj)
+    ['{000C038C-0000-0000-C000-000000000046}']
+    function Get_Passed: WordBool; safecall;
+    function Get_ErrorString: WideString; safecall;
+    property Passed: WordBool read Get_Passed;
+    property ErrorString: WideString read Get_ErrorString;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MsoDebugOptions_UTRunResultDisp
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C038C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTRunResultDisp = dispinterface
+    ['{000C038C-0000-0000-C000-000000000046}']
+    property Passed: WordBool readonly dispid 0;
+    property ErrorString: WideString readonly dispid 1;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: MsoDebugOptions_UT
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C038B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UT = interface(_IMsoDispObj)
+    ['{000C038B-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Get_CollectionName: WideString; safecall;
+    function Run: MsoDebugOptions_UTRunResult; safecall;
+    property Name: WideString read Get_Name;
+    property CollectionName: WideString read Get_CollectionName;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MsoDebugOptions_UTDisp
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C038B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTDisp = dispinterface
+    ['{000C038B-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 0;
+    property CollectionName: WideString readonly dispid 1;
+    function Run: MsoDebugOptions_UTRunResult; dispid 2;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: MsoDebugOptions_UTs
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C038A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTs = interface(_IMsoDispObj)
+    ['{000C038A-0000-0000-C000-000000000046}']
+    function Get_Item(Index: SYSINT): MsoDebugOptions_UT; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    function GetUnitTestsInCollection(const bstrCollectionName: WideString): MsoDebugOptions_UTs; safecall;
+    function GetUnitTest(const bstrCollectionName: WideString; const bstrUnitTestName: WideString): MsoDebugOptions_UT; safecall;
+    function GetMatchingUnitTestsInCollection(const bstrCollectionName: WideString; 
+                                              const bstrUnitTestNameFilter: WideString): MsoDebugOptions_UTs; safecall;
+    property Item[Index: SYSINT]: MsoDebugOptions_UT read Get_Item; default;
+    property Count: SYSINT read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MsoDebugOptions_UTsDisp
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C038A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTsDisp = dispinterface
+    ['{000C038A-0000-0000-C000-000000000046}']
+    property Item[Index: SYSINT]: MsoDebugOptions_UT readonly dispid 0; default;
+    property Count: SYSINT readonly dispid 1;
+    property _NewEnum: IUnknown readonly dispid -4;
+    function GetUnitTestsInCollection(const bstrCollectionName: WideString): MsoDebugOptions_UTs; dispid 2;
+    function GetUnitTest(const bstrCollectionName: WideString; const bstrUnitTestName: WideString): MsoDebugOptions_UT; dispid 3;
+    function GetMatchingUnitTestsInCollection(const bstrCollectionName: WideString; 
+                                              const bstrUnitTestNameFilter: WideString): MsoDebugOptions_UTs; dispid 4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: MsoDebugOptions_UTManager
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C0389-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTManager = interface(_IMsoDispObj)
+    ['{000C0389-0000-0000-C000-000000000046}']
+    function Get_UnitTests: MsoDebugOptions_UTs; safecall;
+    procedure NotifyStartOfTestSuiteRun; safecall;
+    procedure NotifyEndOfTestSuiteRun; safecall;
+    function Get_ReportErrors: WordBool; safecall;
+    procedure Set_ReportErrors(pfReportErrors: WordBool); safecall;
+    property UnitTests: MsoDebugOptions_UTs read Get_UnitTests;
+    property ReportErrors: WordBool read Get_ReportErrors write Set_ReportErrors;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MsoDebugOptions_UTManagerDisp
+// Flags:     (4432) Hidden Dual OleAutomation Dispatchable
+// GUID:      {000C0389-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MsoDebugOptions_UTManagerDisp = dispinterface
+    ['{000C0389-0000-0000-C000-000000000046}']
+    property UnitTests: MsoDebugOptions_UTs readonly dispid 0;
+    procedure NotifyStartOfTestSuiteRun; dispid 1;
+    procedure NotifyEndOfTestSuiteRun; dispid 2;
+    property ReportErrors: WordBool dispid 3;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: MetaProperty
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C038F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MetaProperty = interface(_IMsoDispObj)
+    ['{000C038F-0000-0000-C000-000000000046}']
+    function Get_Value: OleVariant; safecall;
+    procedure Set_Value(pvarValue: OleVariant); safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Id: WideString; safecall;
+    function Get_IsReadOnly: WordBool; safecall;
+    function Get_IsRequired: WordBool; safecall;
+    function Get_type_: MsoMetaPropertyType; safecall;
+    function Validate: WideString; safecall;
+    function Get_ValidationError: WideString; safecall;
+    function Get_Parent: IDispatch; safecall;
+    property Value: OleVariant read Get_Value write Set_Value;
+    property Name: WideString read Get_Name;
+    property Id: WideString read Get_Id;
+    property IsReadOnly: WordBool read Get_IsReadOnly;
+    property IsRequired: WordBool read Get_IsRequired;
+    property type_: MsoMetaPropertyType read Get_type_;
+    property ValidationError: WideString read Get_ValidationError;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MetaPropertyDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C038F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MetaPropertyDisp = dispinterface
+    ['{000C038F-0000-0000-C000-000000000046}']
+    property Value: OleVariant dispid 0;
+    property Name: WideString readonly dispid 1;
+    property Id: WideString readonly dispid 2;
+    property IsReadOnly: WordBool readonly dispid 3;
+    property IsRequired: WordBool readonly dispid 4;
+    property type_: MsoMetaPropertyType readonly dispid 5;
+    function Validate: WideString; dispid 6;
+    property ValidationError: WideString readonly dispid 7;
+    property Parent: IDispatch readonly dispid 8;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: MetaProperties
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C038E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MetaProperties = interface(_IMsoDispObj)
+    ['{000C038E-0000-0000-C000-000000000046}']
+    function Get_Item(Index: OleVariant): MetaProperty; safecall;
+    function GetItemByInternalName(const InternalName: WideString): MetaProperty; safecall;
+    function Get_Count: Integer; safecall;
+    function Validate: WideString; safecall;
+    function Get_ValidationError: WideString; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_SchemaXml: WideString; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Item[Index: OleVariant]: MetaProperty read Get_Item; default;
+    property Count: Integer read Get_Count;
+    property ValidationError: WideString read Get_ValidationError;
+    property Parent: IDispatch read Get_Parent;
+    property SchemaXml: WideString read Get_SchemaXml;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  MetaPropertiesDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C038E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  MetaPropertiesDisp = dispinterface
+    ['{000C038E-0000-0000-C000-000000000046}']
+    property Item[Index: OleVariant]: MetaProperty readonly dispid 0; default;
+    function GetItemByInternalName(const InternalName: WideString): MetaProperty; dispid 1;
+    property Count: Integer readonly dispid 2;
+    function Validate: WideString; dispid 3;
+    property ValidationError: WideString readonly dispid 4;
+    property Parent: IDispatch readonly dispid 5;
+    property SchemaXml: WideString readonly dispid 6;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: PolicyItem
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0391-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PolicyItem = interface(_IMsoDispObj)
+    ['{000C0391-0000-0000-C000-000000000046}']
+    function Get_Id: WideString; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Description: WideString; safecall;
+    function Get_Data: WideString; safecall;
+    function Get_Parent: IDispatch; safecall;
+    property Id: WideString read Get_Id;
+    property Name: WideString read Get_Name;
+    property Description: WideString read Get_Description;
+    property Data: WideString read Get_Data;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  PolicyItemDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0391-0000-0000-C000-000000000046}
+// *********************************************************************//
+  PolicyItemDisp = dispinterface
+    ['{000C0391-0000-0000-C000-000000000046}']
+    property Id: WideString readonly dispid 0;
+    property Name: WideString readonly dispid 1;
+    property Description: WideString readonly dispid 2;
+    property Data: WideString readonly dispid 3;
+    property Parent: IDispatch readonly dispid 4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ServerPolicy
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0390-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ServerPolicy = interface(_IMsoDispObj)
+    ['{000C0390-0000-0000-C000-000000000046}']
+    function Get_Item(Index: OleVariant): PolicyItem; safecall;
+    function Get_Id: WideString; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Description: WideString; safecall;
+    function Get_Statement: WideString; safecall;
+    function Get_Count: Integer; safecall;
+    function Get_BlockPreview: WordBool; safecall;
+    function Get_Parent: IDispatch; safecall;
+    property Item[Index: OleVariant]: PolicyItem read Get_Item; default;
+    property Id: WideString read Get_Id;
+    property Name: WideString read Get_Name;
+    property Description: WideString read Get_Description;
+    property Statement: WideString read Get_Statement;
+    property Count: Integer read Get_Count;
+    property BlockPreview: WordBool read Get_BlockPreview;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ServerPolicyDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0390-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ServerPolicyDisp = dispinterface
+    ['{000C0390-0000-0000-C000-000000000046}']
+    property Item[Index: OleVariant]: PolicyItem readonly dispid 0; default;
+    property Id: WideString readonly dispid 1;
+    property Name: WideString readonly dispid 2;
+    property Description: WideString readonly dispid 3;
+    property Statement: WideString readonly dispid 4;
+    property Count: Integer readonly dispid 5;
+    property BlockPreview: WordBool readonly dispid 6;
+    property Parent: IDispatch readonly dispid 7;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: DocumentInspector
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0393-0000-0000-C000-000000000046}
+// *********************************************************************//
+  DocumentInspector = interface(_IMsoDispObj)
+    ['{000C0393-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Get_Description: WideString; safecall;
+    procedure Inspect(out Status: MsoDocInspectorStatus; out Results: WideString); safecall;
+    procedure Fix(out Status: MsoDocInspectorStatus; out Results: WideString); safecall;
+    function Get_Parent: IDispatch; safecall;
+    property Name: WideString read Get_Name;
+    property Description: WideString read Get_Description;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  DocumentInspectorDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0393-0000-0000-C000-000000000046}
+// *********************************************************************//
+  DocumentInspectorDisp = dispinterface
+    ['{000C0393-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 0;
+    property Description: WideString readonly dispid 1;
+    procedure Inspect(out Status: MsoDocInspectorStatus; out Results: WideString); dispid 2;
+    procedure Fix(out Status: MsoDocInspectorStatus; out Results: WideString); dispid 3;
+    property Parent: IDispatch readonly dispid 4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: DocumentInspectors
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0392-0000-0000-C000-000000000046}
+// *********************************************************************//
+  DocumentInspectors = interface(_IMsoDispObj)
+    ['{000C0392-0000-0000-C000-000000000046}']
+    function Get__NewEnum: IUnknown; safecall;
+    function Get_Item(Index: SYSINT): DocumentInspector; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Get_Parent: IDispatch; safecall;
+    property _NewEnum: IUnknown read Get__NewEnum;
+    property Item[Index: SYSINT]: DocumentInspector read Get_Item; default;
+    property Count: SYSINT read Get_Count;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  DocumentInspectorsDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0392-0000-0000-C000-000000000046}
+// *********************************************************************//
+  DocumentInspectorsDisp = dispinterface
+    ['{000C0392-0000-0000-C000-000000000046}']
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Item[Index: SYSINT]: DocumentInspector readonly dispid 0; default;
+    property Count: SYSINT readonly dispid 1;
+    property Parent: IDispatch readonly dispid 2;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: WorkflowTask
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD900-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTask = interface(_IMsoDispObj)
+    ['{000CD900-0000-0000-C000-000000000046}']
+    function Get_Id: WideString; safecall;
+    function Get_ListID: WideString; safecall;
+    function Get_WorkflowID: WideString; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Description: WideString; safecall;
+    function Get_AssignedTo: WideString; safecall;
+    function Get_CreatedBy: WideString; safecall;
+    function Get_DueDate: TDateTime; safecall;
+    function Get_CreatedDate: TDateTime; safecall;
+    function Show: SYSINT; safecall;
+    property Id: WideString read Get_Id;
+    property ListID: WideString read Get_ListID;
+    property WorkflowID: WideString read Get_WorkflowID;
+    property Name: WideString read Get_Name;
+    property Description: WideString read Get_Description;
+    property AssignedTo: WideString read Get_AssignedTo;
+    property CreatedBy: WideString read Get_CreatedBy;
+    property DueDate: TDateTime read Get_DueDate;
+    property CreatedDate: TDateTime read Get_CreatedDate;
+  end;
+
+// *********************************************************************//
+// DispIntf:  WorkflowTaskDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD900-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTaskDisp = dispinterface
+    ['{000CD900-0000-0000-C000-000000000046}']
+    property Id: WideString readonly dispid 1;
+    property ListID: WideString readonly dispid 2;
+    property WorkflowID: WideString readonly dispid 3;
+    property Name: WideString readonly dispid 4;
+    property Description: WideString readonly dispid 5;
+    property AssignedTo: WideString readonly dispid 6;
+    property CreatedBy: WideString readonly dispid 7;
+    property DueDate: TDateTime readonly dispid 8;
+    property CreatedDate: TDateTime readonly dispid 9;
+    function Show: SYSINT; dispid 10;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: WorkflowTasks
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD901-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTasks = interface(_IMsoDispObj)
+    ['{000CD901-0000-0000-C000-000000000046}']
+    function Get_Item(Index: Integer): WorkflowTask; safecall;
+    function Get_Count: Integer; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Item[Index: Integer]: WorkflowTask read Get_Item; default;
+    property Count: Integer read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  WorkflowTasksDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD901-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTasksDisp = dispinterface
+    ['{000CD901-0000-0000-C000-000000000046}']
+    property Item[Index: Integer]: WorkflowTask readonly dispid 0; default;
+    property Count: Integer readonly dispid 1;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: WorkflowTemplate
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD902-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTemplate = interface(_IMsoDispObj)
+    ['{000CD902-0000-0000-C000-000000000046}']
+    function Get_Id: WideString; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Description: WideString; safecall;
+    function Get_DocumentLibraryName: WideString; safecall;
+    function Get_DocumentLibraryURL: WideString; safecall;
+    function Show: SYSINT; safecall;
+    property Id: WideString read Get_Id;
+    property Name: WideString read Get_Name;
+    property Description: WideString read Get_Description;
+    property DocumentLibraryName: WideString read Get_DocumentLibraryName;
+    property DocumentLibraryURL: WideString read Get_DocumentLibraryURL;
+  end;
+
+// *********************************************************************//
+// DispIntf:  WorkflowTemplateDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD902-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTemplateDisp = dispinterface
+    ['{000CD902-0000-0000-C000-000000000046}']
+    property Id: WideString readonly dispid 1;
+    property Name: WideString readonly dispid 2;
+    property Description: WideString readonly dispid 3;
+    property DocumentLibraryName: WideString readonly dispid 4;
+    property DocumentLibraryURL: WideString readonly dispid 5;
+    function Show: SYSINT; dispid 6;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: WorkflowTemplates
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD903-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTemplates = interface(_IMsoDispObj)
+    ['{000CD903-0000-0000-C000-000000000046}']
+    function Get_Item(Index: Integer): WorkflowTemplate; safecall;
+    function Get_Count: Integer; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Item[Index: Integer]: WorkflowTemplate read Get_Item; default;
+    property Count: Integer read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  WorkflowTemplatesDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD903-0000-0000-C000-000000000046}
+// *********************************************************************//
+  WorkflowTemplatesDisp = dispinterface
+    ['{000CD903-0000-0000-C000-000000000046}']
+    property Item[Index: Integer]: WorkflowTemplate readonly dispid 0; default;
+    property Count: Integer readonly dispid 1;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: IDocumentInspector
+// Flags:     (256) OleAutomation
+// GUID:      {000CD706-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IDocumentInspector = interface(IUnknown)
+    ['{000CD706-0000-0000-C000-000000000046}']
+    function GetInfo(out Name: WideString; out Desc: WideString): HResult; stdcall;
+    function Inspect(const Doc: IDispatch; out Status: MsoDocInspectorStatus; 
+                     out Result: WideString; out Action: WideString): HResult; stdcall;
+    function Fix(const Doc: IDispatch; Hwnd: Integer; out Status: MsoDocInspectorStatus; 
+                 out Result: WideString): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: SignatureSetup
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD6A1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SignatureSetup = interface(_IMsoDispObj)
+    ['{000CD6A1-0000-0000-C000-000000000046}']
+    function Get_ReadOnly: WordBool; safecall;
+    function Get_Id: WideString; safecall;
+    function Get_SignatureProvider: WideString; safecall;
+    function Get_SuggestedSigner: WideString; safecall;
+    procedure Set_SuggestedSigner(const pbstr: WideString); safecall;
+    function Get_SuggestedSignerLine2: WideString; safecall;
+    procedure Set_SuggestedSignerLine2(const pbstr: WideString); safecall;
+    function Get_SuggestedSignerEmail: WideString; safecall;
+    procedure Set_SuggestedSignerEmail(const pbstr: WideString); safecall;
+    function Get_SigningInstructions: WideString; safecall;
+    procedure Set_SigningInstructions(const pbstr: WideString); safecall;
+    function Get_AllowComments: WordBool; safecall;
+    procedure Set_AllowComments(pvarf: WordBool); safecall;
+    function Get_ShowSignDate: WordBool; safecall;
+    procedure Set_ShowSignDate(pvarf: WordBool); safecall;
+    function Get_AdditionalXml: WideString; safecall;
+    procedure Set_AdditionalXml(const pbstr: WideString); safecall;
+    property ReadOnly: WordBool read Get_ReadOnly;
+    property Id: WideString read Get_Id;
+    property SignatureProvider: WideString read Get_SignatureProvider;
+    property SuggestedSigner: WideString read Get_SuggestedSigner write Set_SuggestedSigner;
+    property SuggestedSignerLine2: WideString read Get_SuggestedSignerLine2 write Set_SuggestedSignerLine2;
+    property SuggestedSignerEmail: WideString read Get_SuggestedSignerEmail write Set_SuggestedSignerEmail;
+    property SigningInstructions: WideString read Get_SigningInstructions write Set_SigningInstructions;
+    property AllowComments: WordBool read Get_AllowComments write Set_AllowComments;
+    property ShowSignDate: WordBool read Get_ShowSignDate write Set_ShowSignDate;
+    property AdditionalXml: WideString read Get_AdditionalXml write Set_AdditionalXml;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SignatureSetupDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CD6A1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SignatureSetupDisp = dispinterface
+    ['{000CD6A1-0000-0000-C000-000000000046}']
+    property ReadOnly: WordBool readonly dispid 1;
+    property Id: WideString readonly dispid 2;
+    property SignatureProvider: WideString readonly dispid 3;
+    property SuggestedSigner: WideString dispid 4;
+    property SuggestedSignerLine2: WideString dispid 5;
+    property SuggestedSignerEmail: WideString dispid 6;
+    property SigningInstructions: WideString dispid 7;
+    property AllowComments: WordBool dispid 8;
+    property ShowSignDate: WordBool dispid 9;
+    property AdditionalXml: WideString dispid 10;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: SignatureInfo
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000CD6A2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SignatureInfo = interface(_IMsoDispObj)
+    ['{000CD6A2-0000-0000-C000-000000000046}']
+    function Get_ReadOnly: WordBool; safecall;
+    function Get_SignatureProvider: WideString; safecall;
+    function Get_SignatureText: WideString; safecall;
+    procedure Set_SignatureText(const pbstr: WideString); safecall;
+    function Get_SignatureImage: IPictureDisp; safecall;
+    procedure Set_SignatureImage(const ppipictdisp: IPictureDisp); safecall;
+    function Get_SignatureComment: WideString; safecall;
+    procedure Set_SignatureComment(const pbstr: WideString); safecall;
+    function GetSignatureDetail(sigdet: SignatureDetail): OleVariant; safecall;
+    function GetCertificateDetail(certdet: CertificateDetail): OleVariant; safecall;
+    function Get_ContentVerificationResults: ContentVerificationResults; safecall;
+    function Get_CertificateVerificationResults: CertificateVerificationResults; safecall;
+    function Get_IsValid: WordBool; safecall;
+    function Get_IsCertificateExpired: WordBool; safecall;
+    function Get_IsCertificateRevoked: WordBool; safecall;
+    function Get_IsCertificateUntrusted: WordBool; safecall;
+    procedure ShowSignatureCertificate(const ParentWindow: IUnknown); safecall;
+    procedure SelectSignatureCertificate(const ParentWindow: IUnknown); safecall;
+    procedure SelectCertificateDetailByThumbprint(const bstrThumbprint: WideString); safecall;
+    property ReadOnly: WordBool read Get_ReadOnly;
+    property SignatureProvider: WideString read Get_SignatureProvider;
+    property SignatureText: WideString read Get_SignatureText write Set_SignatureText;
+    property SignatureImage: IPictureDisp read Get_SignatureImage write Set_SignatureImage;
+    property SignatureComment: WideString read Get_SignatureComment write Set_SignatureComment;
+    property ContentVerificationResults: ContentVerificationResults read Get_ContentVerificationResults;
+    property CertificateVerificationResults: CertificateVerificationResults read Get_CertificateVerificationResults;
+    property IsValid: WordBool read Get_IsValid;
+    property IsCertificateExpired: WordBool read Get_IsCertificateExpired;
+    property IsCertificateRevoked: WordBool read Get_IsCertificateRevoked;
+    property IsCertificateUntrusted: WordBool read Get_IsCertificateUntrusted;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SignatureInfoDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000CD6A2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SignatureInfoDisp = dispinterface
+    ['{000CD6A2-0000-0000-C000-000000000046}']
+    property ReadOnly: WordBool readonly dispid 1;
+    property SignatureProvider: WideString readonly dispid 2;
+    property SignatureText: WideString dispid 3;
+    property SignatureImage: IPictureDisp dispid 4;
+    property SignatureComment: WideString dispid 5;
+    function GetSignatureDetail(sigdet: SignatureDetail): OleVariant; dispid 6;
+    function GetCertificateDetail(certdet: CertificateDetail): OleVariant; dispid 7;
+    property ContentVerificationResults: ContentVerificationResults readonly dispid 8;
+    property CertificateVerificationResults: CertificateVerificationResults readonly dispid 9;
+    property IsValid: WordBool readonly dispid 10;
+    property IsCertificateExpired: WordBool readonly dispid 11;
+    property IsCertificateRevoked: WordBool readonly dispid 12;
+    property IsCertificateUntrusted: WordBool readonly dispid 13;
+    procedure ShowSignatureCertificate(const ParentWindow: IUnknown); dispid 14;
+    procedure SelectSignatureCertificate(const ParentWindow: IUnknown); dispid 15;
+    procedure SelectCertificateDetailByThumbprint(const bstrThumbprint: WideString); dispid 16;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: SignatureProvider
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000CD6A3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SignatureProvider = interface(IDispatch)
+    ['{000CD6A3-0000-0000-C000-000000000046}']
+    function GenerateSignatureLineImage(siglnimg: SignatureLineImage; 
+                                        const psigsetup: SignatureSetup; 
+                                        const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown): IPictureDisp; safecall;
+    procedure ShowSignatureSetup(const ParentWindow: IUnknown; const psigsetup: SignatureSetup); safecall;
+    procedure ShowSigningCeremony(const ParentWindow: IUnknown; const psigsetup: SignatureSetup; 
+                                  const psiginfo: SignatureInfo); safecall;
+    procedure SignXmlDsig(const QueryContinue: IUnknown; const psigsetup: SignatureSetup; 
+                          const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown); safecall;
+    procedure NotifySignatureAdded(const ParentWindow: IUnknown; const psigsetup: SignatureSetup; 
+                                   const psiginfo: SignatureInfo); safecall;
+    procedure VerifyXmlDsig(const QueryContinue: IUnknown; const psigsetup: SignatureSetup; 
+                            const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown; 
+                            var pcontverres: ContentVerificationResults; 
+                            var pcertverres: CertificateVerificationResults); safecall;
+    procedure ShowSignatureDetails(const ParentWindow: IUnknown; const psigsetup: SignatureSetup; 
+                                   const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown; 
+                                   var pcontverres: ContentVerificationResults; 
+                                   var pcertverres: CertificateVerificationResults); safecall;
+    function GetProviderDetail(sigprovdet: SignatureProviderDetail): OleVariant; safecall;
+    function HashStream(const QueryContinue: IUnknown; const Stream: IUnknown): PSafeArray; safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SignatureProviderDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000CD6A3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SignatureProviderDisp = dispinterface
+    ['{000CD6A3-0000-0000-C000-000000000046}']
+    function GenerateSignatureLineImage(siglnimg: SignatureLineImage; 
+                                        const psigsetup: SignatureSetup; 
+                                        const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown): IPictureDisp; dispid 1610743808;
+    procedure ShowSignatureSetup(const ParentWindow: IUnknown; const psigsetup: SignatureSetup); dispid 1610743809;
+    procedure ShowSigningCeremony(const ParentWindow: IUnknown; const psigsetup: SignatureSetup; 
+                                  const psiginfo: SignatureInfo); dispid 1610743810;
+    procedure SignXmlDsig(const QueryContinue: IUnknown; const psigsetup: SignatureSetup; 
+                          const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown); dispid 1610743811;
+    procedure NotifySignatureAdded(const ParentWindow: IUnknown; const psigsetup: SignatureSetup; 
+                                   const psiginfo: SignatureInfo); dispid 1610743812;
+    procedure VerifyXmlDsig(const QueryContinue: IUnknown; const psigsetup: SignatureSetup; 
+                            const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown; 
+                            var pcontverres: ContentVerificationResults; 
+                            var pcertverres: CertificateVerificationResults); dispid 1610743813;
+    procedure ShowSignatureDetails(const ParentWindow: IUnknown; const psigsetup: SignatureSetup; 
+                                   const psiginfo: SignatureInfo; const XmlDsigStream: IUnknown; 
+                                   var pcontverres: ContentVerificationResults; 
+                                   var pcertverres: CertificateVerificationResults); dispid 1610743814;
+    function GetProviderDetail(sigprovdet: SignatureProviderDetail): OleVariant; dispid 1610743815;
+    function HashStream(const QueryContinue: IUnknown; const Stream: IUnknown): {??PSafeArray}OleVariant; dispid 1610743816;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLPrefixMapping
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB10-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLPrefixMapping = interface(_IMsoDispObj)
+    ['{000CDB10-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Prefix: WideString; safecall;
+    function Get_NamespaceURI: WideString; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Prefix: WideString read Get_Prefix;
+    property NamespaceURI: WideString read Get_NamespaceURI;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLPrefixMappingDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB10-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLPrefixMappingDisp = dispinterface
+    ['{000CDB10-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Prefix: WideString readonly dispid 1610809345;
+    property NamespaceURI: WideString readonly dispid 1610809346;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLPrefixMappings
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB00-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLPrefixMappings = interface(_IMsoDispObj)
+    ['{000CDB00-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: Integer; safecall;
+    function Get_Item(Index: OleVariant): CustomXMLPrefixMapping; safecall;
+    procedure AddNamespace(const Prefix: WideString; const NamespaceURI: WideString); safecall;
+    function LookupNamespace(const Prefix: WideString): WideString; safecall;
+    function LookupPrefix(const NamespaceURI: WideString): WideString; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: Integer read Get_Count;
+    property Item[Index: OleVariant]: CustomXMLPrefixMapping read Get_Item; default;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLPrefixMappingsDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB00-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLPrefixMappingsDisp = dispinterface
+    ['{000CDB00-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Count: Integer readonly dispid 1610809345;
+    property Item[Index: OleVariant]: CustomXMLPrefixMapping readonly dispid 0; default;
+    procedure AddNamespace(const Prefix: WideString; const NamespaceURI: WideString); dispid 1610809347;
+    function LookupNamespace(const Prefix: WideString): WideString; dispid 1610809348;
+    function LookupPrefix(const NamespaceURI: WideString): WideString; dispid 1610809349;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLSchema
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB01-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLSchema = interface(_IMsoDispObj)
+    ['{000CDB01-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Location: WideString; safecall;
+    function Get_NamespaceURI: WideString; safecall;
+    procedure Delete; safecall;
+    procedure Reload; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Location: WideString read Get_Location;
+    property NamespaceURI: WideString read Get_NamespaceURI;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLSchemaDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB01-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLSchemaDisp = dispinterface
+    ['{000CDB01-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Location: WideString readonly dispid 1610809345;
+    property NamespaceURI: WideString readonly dispid 1610809346;
+    procedure Delete; dispid 1610809347;
+    procedure Reload; dispid 1610809348;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: _CustomXMLSchemaCollection
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB02-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLSchemaCollection = interface(_IMsoDispObj)
+    ['{000CDB02-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: Integer; safecall;
+    function Get_Item(Index: OleVariant): CustomXMLSchema; safecall;
+    function Get_NamespaceURI(Index: Integer): WideString; safecall;
+    function Add(const NamespaceURI: WideString; const Alias: WideString; 
+                 const FileName: WideString; InstallForAllUsers: WordBool): CustomXMLSchema; safecall;
+    procedure AddCollection(const SchemaCollection: CustomXMLSchemaCollection); safecall;
+    function Validate: WordBool; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: Integer read Get_Count;
+    property Item[Index: OleVariant]: CustomXMLSchema read Get_Item; default;
+    property NamespaceURI[Index: Integer]: WideString read Get_NamespaceURI;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomXMLSchemaCollectionDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB02-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLSchemaCollectionDisp = dispinterface
+    ['{000CDB02-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Count: Integer readonly dispid 1610809345;
+    property Item[Index: OleVariant]: CustomXMLSchema readonly dispid 0; default;
+    property NamespaceURI[Index: Integer]: WideString readonly dispid 1610809347;
+    function Add(const NamespaceURI: WideString; const Alias: WideString; 
+                 const FileName: WideString; InstallForAllUsers: WordBool): CustomXMLSchema; dispid 1610809348;
+    procedure AddCollection(const SchemaCollection: CustomXMLSchemaCollection); dispid 1610809349;
+    function Validate: WordBool; dispid 1610809350;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLNodes
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB03-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLNodes = interface(_IMsoDispObj)
+    ['{000CDB03-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: Integer; safecall;
+    function Get_Item(Index: Integer): CustomXMLNode; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: Integer read Get_Count;
+    property Item[Index: Integer]: CustomXMLNode read Get_Item; default;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLNodesDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB03-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLNodesDisp = dispinterface
+    ['{000CDB03-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Count: Integer readonly dispid 1610809345;
+    property Item[Index: Integer]: CustomXMLNode readonly dispid 0; default;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLNode
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB04-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLNode = interface(_IMsoDispObj)
+    ['{000CDB04-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Attributes: CustomXMLNodes; safecall;
+    function Get_BaseName: WideString; safecall;
+    function Get_ChildNodes: CustomXMLNodes; safecall;
+    function Get_FirstChild: CustomXMLNode; safecall;
+    function Get_LastChild: CustomXMLNode; safecall;
+    function Get_NamespaceURI: WideString; safecall;
+    function Get_NextSibling: CustomXMLNode; safecall;
+    function Get_NodeType: MsoCustomXMLNodeType; safecall;
+    function Get_NodeValue: WideString; safecall;
+    procedure Set_NodeValue(const pbstrNodeValue: WideString); safecall;
+    function Get_OwnerDocument: IDispatch; safecall;
+    function Get_OwnerPart: CustomXMLPart; safecall;
+    function Get_PreviousSibling: CustomXMLNode; safecall;
+    function Get_ParentNode: CustomXMLNode; safecall;
+    function Get_Text: WideString; safecall;
+    procedure Set_Text(const pbstrText: WideString); safecall;
+    function Get_XPath: WideString; safecall;
+    function Get_XML: WideString; safecall;
+    procedure AppendChildNode(const Name: WideString; const NamespaceURI: WideString; 
+                              NodeType: MsoCustomXMLNodeType; const NodeValue: WideString); safecall;
+    procedure AppendChildSubtree(const XML: WideString); safecall;
+    procedure Delete; safecall;
+    function HasChildNodes: WordBool; safecall;
+    procedure InsertNodeBefore(const Name: WideString; const NamespaceURI: WideString; 
+                               NodeType: MsoCustomXMLNodeType; const NodeValue: WideString; 
+                               const NextSibling: CustomXMLNode); safecall;
+    procedure InsertSubtreeBefore(const XML: WideString; const NextSibling: CustomXMLNode); safecall;
+    procedure RemoveChild(const Child: CustomXMLNode); safecall;
+    procedure ReplaceChildNode(const OldNode: CustomXMLNode; const Name: WideString; 
+                               const NamespaceURI: WideString; NodeType: MsoCustomXMLNodeType; 
+                               const NodeValue: WideString); safecall;
+    procedure ReplaceChildSubtree(const XML: WideString; const OldNode: CustomXMLNode); safecall;
+    function SelectNodes(const XPath: WideString): CustomXMLNodes; safecall;
+    function SelectSingleNode(const XPath: WideString): CustomXMLNode; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Attributes: CustomXMLNodes read Get_Attributes;
+    property BaseName: WideString read Get_BaseName;
+    property ChildNodes: CustomXMLNodes read Get_ChildNodes;
+    property FirstChild: CustomXMLNode read Get_FirstChild;
+    property LastChild: CustomXMLNode read Get_LastChild;
+    property NamespaceURI: WideString read Get_NamespaceURI;
+    property NextSibling: CustomXMLNode read Get_NextSibling;
+    property NodeType: MsoCustomXMLNodeType read Get_NodeType;
+    property NodeValue: WideString read Get_NodeValue write Set_NodeValue;
+    property OwnerDocument: IDispatch read Get_OwnerDocument;
+    property OwnerPart: CustomXMLPart read Get_OwnerPart;
+    property PreviousSibling: CustomXMLNode read Get_PreviousSibling;
+    property ParentNode: CustomXMLNode read Get_ParentNode;
+    property Text: WideString read Get_Text write Set_Text;
+    property XPath: WideString read Get_XPath;
+    property XML: WideString read Get_XML;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLNodeDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB04-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLNodeDisp = dispinterface
+    ['{000CDB04-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Attributes: CustomXMLNodes readonly dispid 1610809345;
+    property BaseName: WideString readonly dispid 1610809346;
+    property ChildNodes: CustomXMLNodes readonly dispid 1610809347;
+    property FirstChild: CustomXMLNode readonly dispid 1610809348;
+    property LastChild: CustomXMLNode readonly dispid 1610809349;
+    property NamespaceURI: WideString readonly dispid 1610809350;
+    property NextSibling: CustomXMLNode readonly dispid 1610809351;
+    property NodeType: MsoCustomXMLNodeType readonly dispid 1610809352;
+    property NodeValue: WideString dispid 1610809353;
+    property OwnerDocument: IDispatch readonly dispid 1610809355;
+    property OwnerPart: CustomXMLPart readonly dispid 1610809356;
+    property PreviousSibling: CustomXMLNode readonly dispid 1610809357;
+    property ParentNode: CustomXMLNode readonly dispid 1610809358;
+    property Text: WideString dispid 1610809359;
+    property XPath: WideString readonly dispid 1610809361;
+    property XML: WideString readonly dispid 1610809362;
+    procedure AppendChildNode(const Name: WideString; const NamespaceURI: WideString; 
+                              NodeType: MsoCustomXMLNodeType; const NodeValue: WideString); dispid 1610809363;
+    procedure AppendChildSubtree(const XML: WideString); dispid 1610809364;
+    procedure Delete; dispid 1610809365;
+    function HasChildNodes: WordBool; dispid 1610809366;
+    procedure InsertNodeBefore(const Name: WideString; const NamespaceURI: WideString; 
+                               NodeType: MsoCustomXMLNodeType; const NodeValue: WideString; 
+                               const NextSibling: CustomXMLNode); dispid 1610809367;
+    procedure InsertSubtreeBefore(const XML: WideString; const NextSibling: CustomXMLNode); dispid 1610809368;
+    procedure RemoveChild(const Child: CustomXMLNode); dispid 1610809369;
+    procedure ReplaceChildNode(const OldNode: CustomXMLNode; const Name: WideString; 
+                               const NamespaceURI: WideString; NodeType: MsoCustomXMLNodeType; 
+                               const NodeValue: WideString); dispid 1610809370;
+    procedure ReplaceChildSubtree(const XML: WideString; const OldNode: CustomXMLNode); dispid 1610809371;
+    function SelectNodes(const XPath: WideString): CustomXMLNodes; dispid 1610809372;
+    function SelectSingleNode(const XPath: WideString): CustomXMLNode; dispid 1610809373;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLValidationError
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB0E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLValidationError = interface(_IMsoDispObj)
+    ['{000CDB0E-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Node: CustomXMLNode; safecall;
+    function Get_Text: WideString; safecall;
+    function Get_type_: MsoCustomXMLValidationErrorType; safecall;
+    procedure Delete; safecall;
+    function Get_ErrorCode: Integer; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Name: WideString read Get_Name;
+    property Node: CustomXMLNode read Get_Node;
+    property Text: WideString read Get_Text;
+    property type_: MsoCustomXMLValidationErrorType read Get_type_;
+    property ErrorCode: Integer read Get_ErrorCode;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLValidationErrorDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB0E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLValidationErrorDisp = dispinterface
+    ['{000CDB0E-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Name: WideString readonly dispid 1610809345;
+    property Node: CustomXMLNode readonly dispid 1610809346;
+    property Text: WideString readonly dispid 1610809347;
+    property type_: MsoCustomXMLValidationErrorType readonly dispid 1610809348;
+    procedure Delete; dispid 1610809349;
+    property ErrorCode: Integer readonly dispid 1610809350;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: CustomXMLValidationErrors
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB0F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLValidationErrors = interface(_IMsoDispObj)
+    ['{000CDB0F-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: Integer; safecall;
+    function Get_Item(Index: Integer): CustomXMLValidationError; safecall;
+    procedure Add(const Node: CustomXMLNode; const ErrorName: WideString; 
+                  const ErrorText: WideString; ClearedOnUpdate: WordBool); safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: Integer read Get_Count;
+    property Item[Index: Integer]: CustomXMLValidationError read Get_Item; default;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomXMLValidationErrorsDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB0F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  CustomXMLValidationErrorsDisp = dispinterface
+    ['{000CDB0F-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Count: Integer readonly dispid 1610809345;
+    property Item[Index: Integer]: CustomXMLValidationError readonly dispid 0; default;
+    procedure Add(const Node: CustomXMLNode; const ErrorName: WideString; 
+                  const ErrorText: WideString; ClearedOnUpdate: WordBool); dispid 1610809347;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: _CustomXMLPart
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB05-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLPart = interface(_IMsoDispObj)
+    ['{000CDB05-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_DocumentElement: CustomXMLNode; safecall;
+    function Get_Id: WideString; safecall;
+    function Get_NamespaceURI: WideString; safecall;
+    function Get_SchemaCollection: CustomXMLSchemaCollection; safecall;
+    procedure Set_SchemaCollection(const ppSchemaCollection: CustomXMLSchemaCollection); safecall;
+    function Get_NamespaceManager: CustomXMLPrefixMappings; safecall;
+    function Get_XML: WideString; safecall;
+    procedure AddNode(const Parent: CustomXMLNode; const Name: WideString; 
+                      const NamespaceURI: WideString; const NextSibling: CustomXMLNode; 
+                      NodeType: MsoCustomXMLNodeType; const NodeValue: WideString); safecall;
+    procedure Delete; safecall;
+    function Load(const FilePath: WideString): WordBool; safecall;
+    function LoadXML(const XML: WideString): WordBool; safecall;
+    function SelectNodes(const XPath: WideString): CustomXMLNodes; safecall;
+    function SelectSingleNode(const XPath: WideString): CustomXMLNode; safecall;
+    function Get_Errors: CustomXMLValidationErrors; safecall;
+    function Get_BuiltIn: WordBool; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property DocumentElement: CustomXMLNode read Get_DocumentElement;
+    property Id: WideString read Get_Id;
+    property NamespaceURI: WideString read Get_NamespaceURI;
+    property SchemaCollection: CustomXMLSchemaCollection read Get_SchemaCollection write Set_SchemaCollection;
+    property NamespaceManager: CustomXMLPrefixMappings read Get_NamespaceManager;
+    property XML: WideString read Get_XML;
+    property Errors: CustomXMLValidationErrors read Get_Errors;
+    property BuiltIn: WordBool read Get_BuiltIn;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomXMLPartDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB05-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLPartDisp = dispinterface
+    ['{000CDB05-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property DocumentElement: CustomXMLNode readonly dispid 1610809345;
+    property Id: WideString readonly dispid 1610809346;
+    property NamespaceURI: WideString readonly dispid 1610809347;
+    property SchemaCollection: CustomXMLSchemaCollection dispid 1610809348;
+    property NamespaceManager: CustomXMLPrefixMappings readonly dispid 1610809350;
+    property XML: WideString readonly dispid 1610809351;
+    procedure AddNode(const Parent: CustomXMLNode; const Name: WideString; 
+                      const NamespaceURI: WideString; const NextSibling: CustomXMLNode; 
+                      NodeType: MsoCustomXMLNodeType; const NodeValue: WideString); dispid 1610809352;
+    procedure Delete; dispid 1610809353;
+    function Load(const FilePath: WideString): WordBool; dispid 1610809354;
+    function LoadXML(const XML: WideString): WordBool; dispid 1610809355;
+    function SelectNodes(const XPath: WideString): CustomXMLNodes; dispid 1610809356;
+    function SelectSingleNode(const XPath: WideString): CustomXMLNode; dispid 1610809357;
+    property Errors: CustomXMLValidationErrors readonly dispid 1610809358;
+    property BuiltIn: WordBool readonly dispid 1610809359;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ICustomXMLPartEvents
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB06-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICustomXMLPartEvents = interface(IDispatch)
+    ['{000CDB06-0000-0000-C000-000000000046}']
+    procedure NodeAfterInsert(const NewNode: CustomXMLNode; InUndoRedo: WordBool); stdcall;
+    procedure NodeAfterDelete(const OldNode: CustomXMLNode; const OldParentNode: CustomXMLNode; 
+                              const OldNextSibling: CustomXMLNode; InUndoRedo: WordBool); stdcall;
+    procedure NodeAfterReplace(const OldNode: CustomXMLNode; const NewNode: CustomXMLNode; 
+                               InUndoRedo: WordBool); stdcall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ICustomXMLPartEventsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB06-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICustomXMLPartEventsDisp = dispinterface
+    ['{000CDB06-0000-0000-C000-000000000046}']
+    procedure NodeAfterInsert(const NewNode: CustomXMLNode; InUndoRedo: WordBool); dispid 1;
+    procedure NodeAfterDelete(const OldNode: CustomXMLNode; const OldParentNode: CustomXMLNode; 
+                              const OldNextSibling: CustomXMLNode; InUndoRedo: WordBool); dispid 2;
+    procedure NodeAfterReplace(const OldNode: CustomXMLNode; const NewNode: CustomXMLNode; 
+                               InUndoRedo: WordBool); dispid 3;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomXMLPartEvents
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000CDB07-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLPartEvents = dispinterface
+    ['{000CDB07-0000-0000-C000-000000000046}']
+    procedure NodeAfterInsert(const NewNode: CustomXMLNode; InUndoRedo: WordBool); dispid 1;
+    procedure NodeAfterDelete(const OldNode: CustomXMLNode; const OldParentNode: CustomXMLNode; 
+                              const OldNextSibling: CustomXMLNode; InUndoRedo: WordBool); dispid 2;
+    procedure NodeAfterReplace(const OldNode: CustomXMLNode; const NewNode: CustomXMLNode; 
+                               InUndoRedo: WordBool); dispid 3;
+  end;
+
+// *********************************************************************//
+// Interface: _CustomXMLParts
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB09-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLParts = interface(_IMsoDispObj)
+    ['{000CDB09-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: Integer; safecall;
+    function Get_Item(Index: OleVariant): CustomXMLPart; safecall;
+    function Add(const XML: WideString; SchemaCollection: OleVariant): CustomXMLPart; safecall;
+    function SelectByID(const Id: WideString): CustomXMLPart; safecall;
+    function SelectByNamespace(const NamespaceURI: WideString): CustomXMLParts; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: Integer read Get_Count;
+    property Item[Index: OleVariant]: CustomXMLPart read Get_Item; default;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomXMLPartsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB09-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLPartsDisp = dispinterface
+    ['{000CDB09-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610809344;
+    property Count: Integer readonly dispid 1610809345;
+    property Item[Index: OleVariant]: CustomXMLPart readonly dispid 0; default;
+    function Add(const XML: WideString; SchemaCollection: OleVariant): CustomXMLPart; dispid 1610809347;
+    function SelectByID(const Id: WideString): CustomXMLPart; dispid 1610809348;
+    function SelectByNamespace(const NamespaceURI: WideString): CustomXMLParts; dispid 1610809349;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ICustomXMLPartsEvents
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB0A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICustomXMLPartsEvents = interface(IDispatch)
+    ['{000CDB0A-0000-0000-C000-000000000046}']
+    procedure PartAfterAdd(const NewPart: CustomXMLPart); stdcall;
+    procedure PartBeforeDelete(const OldPart: CustomXMLPart); stdcall;
+    procedure PartAfterLoad(const Part: CustomXMLPart); stdcall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ICustomXMLPartsEventsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000CDB0A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICustomXMLPartsEventsDisp = dispinterface
+    ['{000CDB0A-0000-0000-C000-000000000046}']
+    procedure PartAfterAdd(const NewPart: CustomXMLPart); dispid 1;
+    procedure PartBeforeDelete(const OldPart: CustomXMLPart); dispid 2;
+    procedure PartAfterLoad(const Part: CustomXMLPart); dispid 3;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomXMLPartsEvents
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000CDB0B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomXMLPartsEvents = dispinterface
+    ['{000CDB0B-0000-0000-C000-000000000046}']
+    procedure PartAfterAdd(const NewPart: CustomXMLPart); dispid 1;
+    procedure PartBeforeDelete(const OldPart: CustomXMLPart); dispid 2;
+    procedure PartAfterLoad(const Part: CustomXMLPart); dispid 3;
+  end;
+
+// *********************************************************************//
+// Interface: GradientStop
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BF-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GradientStop = interface(_IMsoDispObj)
+    ['{000C03BF-0000-0000-C000-000000000046}']
+    function Get_Color: ColorFormat; safecall;
+    function Get_Position: Single; safecall;
+    procedure Set_Position(Position: Single); safecall;
+    function Get_Transparency: Single; safecall;
+    procedure Set_Transparency(Transparency: Single); safecall;
+    property Color: ColorFormat read Get_Color;
+    property Position: Single read Get_Position write Set_Position;
+    property Transparency: Single read Get_Transparency write Set_Transparency;
+  end;
+
+// *********************************************************************//
+// DispIntf:  GradientStopDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BF-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GradientStopDisp = dispinterface
+    ['{000C03BF-0000-0000-C000-000000000046}']
+    property Color: ColorFormat readonly dispid 1;
+    property Position: Single dispid 2;
+    property Transparency: Single dispid 3;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: GradientStops
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C0-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GradientStops = interface(_IMsoDispObj)
+    ['{000C03C0-0000-0000-C000-000000000046}']
+    function Get_Item(Index: SYSINT): GradientStop; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    procedure Delete(Index: SYSINT); safecall;
+    procedure Insert(RGB: MsoRGBType; Position: Single; Transparency: Single; Index: SYSINT); safecall;
+    property Item[Index: SYSINT]: GradientStop read Get_Item; default;
+    property Count: SYSINT read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  GradientStopsDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C0-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GradientStopsDisp = dispinterface
+    ['{000C03C0-0000-0000-C000-000000000046}']
+    property Item[Index: SYSINT]: GradientStop readonly dispid 0; default;
+    property Count: SYSINT readonly dispid 2;
+    property _NewEnum: IUnknown readonly dispid -4;
+    procedure Delete(Index: SYSINT); dispid 10;
+    procedure Insert(RGB: MsoRGBType; Position: Single; Transparency: Single; Index: SYSINT); dispid 11;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: SoftEdgeFormat
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BC-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SoftEdgeFormat = interface(_IMsoDispObj)
+    ['{000C03BC-0000-0000-C000-000000000046}']
+    function Get_type_: MsoSoftEdgeType; safecall;
+    procedure Set_type_(Type_: MsoSoftEdgeType); safecall;
+    property type_: MsoSoftEdgeType read Get_type_ write Set_type_;
+  end;
+
+// *********************************************************************//
+// DispIntf:  SoftEdgeFormatDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BC-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SoftEdgeFormatDisp = dispinterface
+    ['{000C03BC-0000-0000-C000-000000000046}']
+    property type_: MsoSoftEdgeType dispid 1;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: GlowFormat
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BD-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GlowFormat = interface(_IMsoDispObj)
+    ['{000C03BD-0000-0000-C000-000000000046}']
+    function Get_Radius: Single; safecall;
+    procedure Set_Radius(Radius: Single); safecall;
+    function Get_Color: ColorFormat; safecall;
+    property Radius: Single read Get_Radius write Set_Radius;
+    property Color: ColorFormat read Get_Color;
+  end;
+
+// *********************************************************************//
+// DispIntf:  GlowFormatDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BD-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GlowFormatDisp = dispinterface
+    ['{000C03BD-0000-0000-C000-000000000046}']
+    property Radius: Single dispid 1;
+    property Color: ColorFormat readonly dispid 2;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ReflectionFormat
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BE-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ReflectionFormat = interface(_IMsoDispObj)
+    ['{000C03BE-0000-0000-C000-000000000046}']
+    function Get_type_: MsoReflectionType; safecall;
+    procedure Set_type_(Type_: MsoReflectionType); safecall;
+    property type_: MsoReflectionType read Get_type_ write Set_type_;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ReflectionFormatDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BE-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ReflectionFormatDisp = dispinterface
+    ['{000C03BE-0000-0000-C000-000000000046}']
+    property type_: MsoReflectionType dispid 1;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ParagraphFormat2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0399-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ParagraphFormat2 = interface(_IMsoDispObj)
+    ['{000C0399-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Alignment: MsoParagraphAlignment; safecall;
+    procedure Set_Alignment(Alignment: MsoParagraphAlignment); safecall;
+    function Get_BaselineAlignment: MsoBaselineAlignment; safecall;
+    procedure Set_BaselineAlignment(BaselineAlignment: MsoBaselineAlignment); safecall;
+    function Get_Bullet: BulletFormat2; safecall;
+    function Get_FarEastLineBreakLevel: MsoTriState; safecall;
+    procedure Set_FarEastLineBreakLevel(Break: MsoTriState); safecall;
+    function Get_FirstLineIndent: Single; safecall;
+    procedure Set_FirstLineIndent(Indent: Single); safecall;
+    function Get_HangingPunctuation: MsoTriState; safecall;
+    procedure Set_HangingPunctuation(Hanging: MsoTriState); safecall;
+    function Get_IndentLevel: SYSINT; safecall;
+    procedure Set_IndentLevel(Level: SYSINT); safecall;
+    function Get_LeftIndent: Single; safecall;
+    procedure Set_LeftIndent(Indent: Single); safecall;
+    function Get_LineRuleAfter: MsoTriState; safecall;
+    procedure Set_LineRuleAfter(LineRule: MsoTriState); safecall;
+    function Get_LineRuleBefore: MsoTriState; safecall;
+    procedure Set_LineRuleBefore(LineRule: MsoTriState); safecall;
+    function Get_LineRuleWithin: MsoTriState; safecall;
+    procedure Set_LineRuleWithin(LineRule: MsoTriState); safecall;
+    function Get_RightIndent: Single; safecall;
+    procedure Set_RightIndent(Indent: Single); safecall;
+    function Get_SpaceAfter: Single; safecall;
+    procedure Set_SpaceAfter(Space: Single); safecall;
+    function Get_SpaceBefore: Single; safecall;
+    procedure Set_SpaceBefore(Space: Single); safecall;
+    function Get_SpaceWithin: Single; safecall;
+    procedure Set_SpaceWithin(Space: Single); safecall;
+    function Get_TabStops: TabStops2; safecall;
+    function Get_TextDirection: MsoTextDirection; safecall;
+    procedure Set_TextDirection(Direction: MsoTextDirection); safecall;
+    function Get_WordWrap: MsoTriState; safecall;
+    procedure Set_WordWrap(WordWrap: MsoTriState); safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Alignment: MsoParagraphAlignment read Get_Alignment write Set_Alignment;
+    property BaselineAlignment: MsoBaselineAlignment read Get_BaselineAlignment write Set_BaselineAlignment;
+    property Bullet: BulletFormat2 read Get_Bullet;
+    property FarEastLineBreakLevel: MsoTriState read Get_FarEastLineBreakLevel write Set_FarEastLineBreakLevel;
+    property FirstLineIndent: Single read Get_FirstLineIndent write Set_FirstLineIndent;
+    property HangingPunctuation: MsoTriState read Get_HangingPunctuation write Set_HangingPunctuation;
+    property IndentLevel: SYSINT read Get_IndentLevel write Set_IndentLevel;
+    property LeftIndent: Single read Get_LeftIndent write Set_LeftIndent;
+    property LineRuleAfter: MsoTriState read Get_LineRuleAfter write Set_LineRuleAfter;
+    property LineRuleBefore: MsoTriState read Get_LineRuleBefore write Set_LineRuleBefore;
+    property LineRuleWithin: MsoTriState read Get_LineRuleWithin write Set_LineRuleWithin;
+    property RightIndent: Single read Get_RightIndent write Set_RightIndent;
+    property SpaceAfter: Single read Get_SpaceAfter write Set_SpaceAfter;
+    property SpaceBefore: Single read Get_SpaceBefore write Set_SpaceBefore;
+    property SpaceWithin: Single read Get_SpaceWithin write Set_SpaceWithin;
+    property TabStops: TabStops2 read Get_TabStops;
+    property TextDirection: MsoTextDirection read Get_TextDirection write Set_TextDirection;
+    property WordWrap: MsoTriState read Get_WordWrap write Set_WordWrap;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ParagraphFormat2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0399-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ParagraphFormat2Disp = dispinterface
+    ['{000C0399-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Alignment: MsoParagraphAlignment dispid 2;
+    property BaselineAlignment: MsoBaselineAlignment dispid 3;
+    property Bullet: BulletFormat2 readonly dispid 4;
+    property FarEastLineBreakLevel: MsoTriState dispid 5;
+    property FirstLineIndent: Single dispid 6;
+    property HangingPunctuation: MsoTriState dispid 7;
+    property IndentLevel: SYSINT dispid 8;
+    property LeftIndent: Single dispid 9;
+    property LineRuleAfter: MsoTriState dispid 10;
+    property LineRuleBefore: MsoTriState dispid 11;
+    property LineRuleWithin: MsoTriState dispid 12;
+    property RightIndent: Single dispid 13;
+    property SpaceAfter: Single dispid 14;
+    property SpaceBefore: Single dispid 15;
+    property SpaceWithin: Single dispid 16;
+    property TabStops: TabStops2 readonly dispid 17;
+    property TextDirection: MsoTextDirection dispid 18;
+    property WordWrap: MsoTriState dispid 19;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: Font2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C039A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Font2 = interface(_IMsoDispObj)
+    ['{000C039A-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Bold: MsoTriState; safecall;
+    procedure Set_Bold(Bold: MsoTriState); safecall;
+    function Get_Italic: MsoTriState; safecall;
+    procedure Set_Italic(Italic: MsoTriState); safecall;
+    function Get_Strike: MsoTextStrike; safecall;
+    procedure Set_Strike(Strike: MsoTextStrike); safecall;
+    function Get_Caps: MsoTextCaps; safecall;
+    procedure Set_Caps(Caps: MsoTextCaps); safecall;
+    function Get_AutorotateNumbers: MsoTriState; safecall;
+    procedure Set_AutorotateNumbers(RotateNumbers: MsoTriState); safecall;
+    function Get_BaselineOffset: Single; safecall;
+    procedure Set_BaselineOffset(Offset: Single); safecall;
+    function Get_Kerning: Single; safecall;
+    procedure Set_Kerning(KerningSize: Single); safecall;
+    function Get_Size: Single; safecall;
+    procedure Set_Size(Size: Single); safecall;
+    function Get_Spacing: Single; safecall;
+    procedure Set_Spacing(Spacing: Single); safecall;
+    function Get_UnderlineStyle: MsoTextUnderlineType; safecall;
+    procedure Set_UnderlineStyle(Style: MsoTextUnderlineType); safecall;
+    function Get_Allcaps: MsoTriState; safecall;
+    procedure Set_Allcaps(Allcaps: MsoTriState); safecall;
+    function Get_DoubleStrikeThrough: MsoTriState; safecall;
+    procedure Set_DoubleStrikeThrough(DoubleStrikeThrough: MsoTriState); safecall;
+    function Get_Equalize: MsoTriState; safecall;
+    procedure Set_Equalize(Equalize: MsoTriState); safecall;
+    function Get_Fill: FillFormat; safecall;
+    function Get_Glow: GlowFormat; safecall;
+    function Get_Reflection: ReflectionFormat; safecall;
+    function Get_Line: LineFormat; safecall;
+    function Get_Shadow: ShadowFormat; safecall;
+    function Get_Highlight: ColorFormat; safecall;
+    function Get_UnderlineColor: ColorFormat; safecall;
+    function Get_Smallcaps: MsoTriState; safecall;
+    procedure Set_Smallcaps(Smallcaps: MsoTriState); safecall;
+    function Get_SoftEdgeFormat: MsoSoftEdgeType; safecall;
+    procedure Set_SoftEdgeFormat(SoftEdgeFormat: MsoSoftEdgeType); safecall;
+    function Get_StrikeThrough: MsoTriState; safecall;
+    procedure Set_StrikeThrough(StrikeThrough: MsoTriState); safecall;
+    function Get_Subscript: MsoTriState; safecall;
+    procedure Set_Subscript(Subscript: MsoTriState); safecall;
+    function Get_Superscript: MsoTriState; safecall;
+    procedure Set_Superscript(Superscript: MsoTriState); safecall;
+    function Get_WordArtformat: MsoPresetTextEffect; safecall;
+    procedure Set_WordArtformat(WordArtformat: MsoPresetTextEffect); safecall;
+    function Get_Embeddable: MsoTriState; safecall;
+    function Get_Embedded: MsoTriState; safecall;
+    function Get_Name: WideString; safecall;
+    procedure Set_Name(const Name: WideString); safecall;
+    function Get_NameAscii: WideString; safecall;
+    procedure Set_NameAscii(const NameAscii: WideString); safecall;
+    function Get_NameComplexScript: WideString; safecall;
+    procedure Set_NameComplexScript(const NameComplexScript: WideString); safecall;
+    function Get_NameFarEast: WideString; safecall;
+    procedure Set_NameFarEast(const NameFarEast: WideString); safecall;
+    function Get_NameOther: WideString; safecall;
+    procedure Set_NameOther(const NameOther: WideString); safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Bold: MsoTriState read Get_Bold write Set_Bold;
+    property Italic: MsoTriState read Get_Italic write Set_Italic;
+    property Strike: MsoTextStrike read Get_Strike write Set_Strike;
+    property Caps: MsoTextCaps read Get_Caps write Set_Caps;
+    property AutorotateNumbers: MsoTriState read Get_AutorotateNumbers write Set_AutorotateNumbers;
+    property BaselineOffset: Single read Get_BaselineOffset write Set_BaselineOffset;
+    property Kerning: Single read Get_Kerning write Set_Kerning;
+    property Size: Single read Get_Size write Set_Size;
+    property Spacing: Single read Get_Spacing write Set_Spacing;
+    property UnderlineStyle: MsoTextUnderlineType read Get_UnderlineStyle write Set_UnderlineStyle;
+    property Allcaps: MsoTriState read Get_Allcaps write Set_Allcaps;
+    property DoubleStrikeThrough: MsoTriState read Get_DoubleStrikeThrough write Set_DoubleStrikeThrough;
+    property Equalize: MsoTriState read Get_Equalize write Set_Equalize;
+    property Fill: FillFormat read Get_Fill;
+    property Glow: GlowFormat read Get_Glow;
+    property Reflection: ReflectionFormat read Get_Reflection;
+    property Line: LineFormat read Get_Line;
+    property Shadow: ShadowFormat read Get_Shadow;
+    property Highlight: ColorFormat read Get_Highlight;
+    property UnderlineColor: ColorFormat read Get_UnderlineColor;
+    property Smallcaps: MsoTriState read Get_Smallcaps write Set_Smallcaps;
+    property SoftEdgeFormat: MsoSoftEdgeType read Get_SoftEdgeFormat write Set_SoftEdgeFormat;
+    property StrikeThrough: MsoTriState read Get_StrikeThrough write Set_StrikeThrough;
+    property Subscript: MsoTriState read Get_Subscript write Set_Subscript;
+    property Superscript: MsoTriState read Get_Superscript write Set_Superscript;
+    property WordArtformat: MsoPresetTextEffect read Get_WordArtformat write Set_WordArtformat;
+    property Embeddable: MsoTriState read Get_Embeddable;
+    property Embedded: MsoTriState read Get_Embedded;
+    property Name: WideString read Get_Name write Set_Name;
+    property NameAscii: WideString read Get_NameAscii write Set_NameAscii;
+    property NameComplexScript: WideString read Get_NameComplexScript write Set_NameComplexScript;
+    property NameFarEast: WideString read Get_NameFarEast write Set_NameFarEast;
+    property NameOther: WideString read Get_NameOther write Set_NameOther;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Font2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C039A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Font2Disp = dispinterface
+    ['{000C039A-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Bold: MsoTriState dispid 2;
+    property Italic: MsoTriState dispid 3;
+    property Strike: MsoTextStrike dispid 4;
+    property Caps: MsoTextCaps dispid 5;
+    property AutorotateNumbers: MsoTriState dispid 6;
+    property BaselineOffset: Single dispid 7;
+    property Kerning: Single dispid 8;
+    property Size: Single dispid 9;
+    property Spacing: Single dispid 10;
+    property UnderlineStyle: MsoTextUnderlineType dispid 11;
+    property Allcaps: MsoTriState dispid 12;
+    property DoubleStrikeThrough: MsoTriState dispid 13;
+    property Equalize: MsoTriState dispid 14;
+    property Fill: FillFormat readonly dispid 15;
+    property Glow: GlowFormat readonly dispid 16;
+    property Reflection: ReflectionFormat readonly dispid 17;
+    property Line: LineFormat readonly dispid 18;
+    property Shadow: ShadowFormat readonly dispid 19;
+    property Highlight: ColorFormat readonly dispid 20;
+    property UnderlineColor: ColorFormat readonly dispid 21;
+    property Smallcaps: MsoTriState dispid 22;
+    property SoftEdgeFormat: MsoSoftEdgeType dispid 23;
+    property StrikeThrough: MsoTriState dispid 24;
+    property Subscript: MsoTriState dispid 25;
+    property Superscript: MsoTriState dispid 26;
+    property WordArtformat: MsoPresetTextEffect dispid 27;
+    property Embeddable: MsoTriState readonly dispid 28;
+    property Embedded: MsoTriState readonly dispid 29;
+    property Name: WideString dispid 30;
+    property NameAscii: WideString dispid 31;
+    property NameComplexScript: WideString dispid 32;
+    property NameFarEast: WideString dispid 33;
+    property NameOther: WideString dispid 34;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: TextColumn2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03B2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextColumn2 = interface(_IMsoDispObj)
+    ['{000C03B2-0000-0000-C000-000000000046}']
+    function Get_Number: SYSINT; safecall;
+    procedure Set_Number(Number: SYSINT); safecall;
+    function Get_Spacing: Single; safecall;
+    procedure Set_Spacing(Spacing: Single); safecall;
+    function Get_TextDirection: MsoTextDirection; safecall;
+    procedure Set_TextDirection(Direction: MsoTextDirection); safecall;
+    property Number: SYSINT read Get_Number write Set_Number;
+    property Spacing: Single read Get_Spacing write Set_Spacing;
+    property TextDirection: MsoTextDirection read Get_TextDirection write Set_TextDirection;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TextColumn2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03B2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextColumn2Disp = dispinterface
+    ['{000C03B2-0000-0000-C000-000000000046}']
+    property Number: SYSINT dispid 1;
+    property Spacing: Single dispid 2;
+    property TextDirection: MsoTextDirection dispid 3;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: TextRange2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0397-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextRange2 = interface(_IMsoDispObj)
+    ['{000C0397-0000-0000-C000-000000000046}']
+    function Get_Text: WideString; safecall;
+    procedure Set_Text(const pbstrText: WideString); safecall;
+    function Get_Count: SYSINT; safecall;
+    function Item(Index: OleVariant): TextRange2; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Paragraphs(Start: SYSINT; Length: SYSINT): TextRange2; safecall;
+    function Get_Sentences(Start: SYSINT; Length: SYSINT): TextRange2; safecall;
+    function Get_Words(Start: SYSINT; Length: SYSINT): TextRange2; safecall;
+    function Get_Characters(Start: SYSINT; Length: SYSINT): TextRange2; safecall;
+    function Get_Lines(Start: SYSINT; Length: SYSINT): TextRange2; safecall;
+    function Get_Runs(Start: SYSINT; Length: SYSINT): TextRange2; safecall;
+    function Get_ParagraphFormat: ParagraphFormat2; safecall;
+    function Get_Font: Font2; safecall;
+    function Get_Length: SYSINT; safecall;
+    function Get_Start: SYSINT; safecall;
+    function Get_BoundLeft: Single; safecall;
+    function Get_BoundTop: Single; safecall;
+    function Get_BoundWidth: Single; safecall;
+    function Get_BoundHeight: Single; safecall;
+    function TrimText: TextRange2; safecall;
+    function InsertAfter(const NewText: WideString): TextRange2; safecall;
+    function InsertBefore(const NewText: WideString): TextRange2; safecall;
+    function InsertSymbol(const FontName: WideString; CharNumber: SYSINT; Unicode: MsoTriState): TextRange2; safecall;
+    procedure Select; safecall;
+    procedure Cut; safecall;
+    procedure Copy; safecall;
+    procedure Delete; safecall;
+    function Paste: TextRange2; safecall;
+    function PasteSpecial(Format: MsoClipboardFormat): TextRange2; safecall;
+    procedure ChangeCase(Type_: MsoTextChangeCase); safecall;
+    procedure AddPeriods; safecall;
+    procedure RemovePeriods; safecall;
+    function Find(const FindWhat: WideString; After: SYSINT; MatchCase: MsoTriState; 
+                  WholeWords: MsoTriState): TextRange2; safecall;
+    function Replace(const FindWhat: WideString; const ReplaceWhat: WideString; After: SYSINT; 
+                     MatchCase: MsoTriState; WholeWords: MsoTriState): TextRange2; safecall;
+    procedure RotatedBounds(out X1: Single; out Y1: Single; out X2: Single; out Y2: Single; 
+                            out X3: Single; out Y3: Single; out x4: Single; out y4: Single); safecall;
+    function Get_LanguageID: MsoLanguageID; safecall;
+    procedure Set_LanguageID(LanguageID: MsoLanguageID); safecall;
+    procedure RtlRun; safecall;
+    procedure LtrRun; safecall;
+    property Text: WideString read Get_Text write Set_Text;
+    property Count: SYSINT read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+    property Parent: IDispatch read Get_Parent;
+    property Paragraphs[Start: SYSINT; Length: SYSINT]: TextRange2 read Get_Paragraphs;
+    property Sentences[Start: SYSINT; Length: SYSINT]: TextRange2 read Get_Sentences;
+    property Words[Start: SYSINT; Length: SYSINT]: TextRange2 read Get_Words;
+    property Characters[Start: SYSINT; Length: SYSINT]: TextRange2 read Get_Characters;
+    property Lines[Start: SYSINT; Length: SYSINT]: TextRange2 read Get_Lines;
+    property Runs[Start: SYSINT; Length: SYSINT]: TextRange2 read Get_Runs;
+    property ParagraphFormat: ParagraphFormat2 read Get_ParagraphFormat;
+    property Font: Font2 read Get_Font;
+    property Length: SYSINT read Get_Length;
+    property Start: SYSINT read Get_Start;
+    property BoundLeft: Single read Get_BoundLeft;
+    property BoundTop: Single read Get_BoundTop;
+    property BoundWidth: Single read Get_BoundWidth;
+    property BoundHeight: Single read Get_BoundHeight;
+    property LanguageID: MsoLanguageID read Get_LanguageID write Set_LanguageID;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TextRange2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0397-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextRange2Disp = dispinterface
+    ['{000C0397-0000-0000-C000-000000000046}']
+    property Text: WideString dispid 0;
+    property Count: SYSINT readonly dispid 1;
+    function Item(Index: OleVariant): TextRange2; dispid 2;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Parent: IDispatch readonly dispid 3;
+    property Paragraphs[Start: SYSINT; Length: SYSINT]: TextRange2 readonly dispid 4;
+    property Sentences[Start: SYSINT; Length: SYSINT]: TextRange2 readonly dispid 5;
+    property Words[Start: SYSINT; Length: SYSINT]: TextRange2 readonly dispid 6;
+    property Characters[Start: SYSINT; Length: SYSINT]: TextRange2 readonly dispid 7;
+    property Lines[Start: SYSINT; Length: SYSINT]: TextRange2 readonly dispid 8;
+    property Runs[Start: SYSINT; Length: SYSINT]: TextRange2 readonly dispid 9;
+    property ParagraphFormat: ParagraphFormat2 readonly dispid 10;
+    property Font: Font2 readonly dispid 11;
+    property Length: SYSINT readonly dispid 12;
+    property Start: SYSINT readonly dispid 13;
+    property BoundLeft: Single readonly dispid 14;
+    property BoundTop: Single readonly dispid 15;
+    property BoundWidth: Single readonly dispid 16;
+    property BoundHeight: Single readonly dispid 17;
+    function TrimText: TextRange2; dispid 18;
+    function InsertAfter(const NewText: WideString): TextRange2; dispid 19;
+    function InsertBefore(const NewText: WideString): TextRange2; dispid 20;
+    function InsertSymbol(const FontName: WideString; CharNumber: SYSINT; Unicode: MsoTriState): TextRange2; dispid 21;
+    procedure Select; dispid 22;
+    procedure Cut; dispid 23;
+    procedure Copy; dispid 24;
+    procedure Delete; dispid 25;
+    function Paste: TextRange2; dispid 26;
+    function PasteSpecial(Format: MsoClipboardFormat): TextRange2; dispid 27;
+    procedure ChangeCase(Type_: MsoTextChangeCase); dispid 28;
+    procedure AddPeriods; dispid 29;
+    procedure RemovePeriods; dispid 30;
+    function Find(const FindWhat: WideString; After: SYSINT; MatchCase: MsoTriState; 
+                  WholeWords: MsoTriState): TextRange2; dispid 31;
+    function Replace(const FindWhat: WideString; const ReplaceWhat: WideString; After: SYSINT; 
+                     MatchCase: MsoTriState; WholeWords: MsoTriState): TextRange2; dispid 32;
+    procedure RotatedBounds(out X1: Single; out Y1: Single; out X2: Single; out Y2: Single; 
+                            out X3: Single; out Y3: Single; out x4: Single; out y4: Single); dispid 33;
+    property LanguageID: MsoLanguageID dispid 34;
+    procedure RtlRun; dispid 35;
+    procedure LtrRun; dispid 36;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: TextFrame2
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0398-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextFrame2 = interface(_IMsoDispObj)
+    ['{000C0398-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_MarginBottom: Single; safecall;
+    procedure Set_MarginBottom(MarginBottom: Single); safecall;
+    function Get_MarginLeft: Single; safecall;
+    procedure Set_MarginLeft(MarginLeft: Single); safecall;
+    function Get_MarginRight: Single; safecall;
+    procedure Set_MarginRight(MarginRight: Single); safecall;
+    function Get_MarginTop: Single; safecall;
+    procedure Set_MarginTop(MarginTop: Single); safecall;
+    function Get_Orientation: MsoTextOrientation; safecall;
+    procedure Set_Orientation(Orientation: MsoTextOrientation); safecall;
+    function Get_HorizontalAnchor: MsoHorizontalAnchor; safecall;
+    procedure Set_HorizontalAnchor(HorizontalAnchor: MsoHorizontalAnchor); safecall;
+    function Get_VerticalAnchor: MsoVerticalAnchor; safecall;
+    procedure Set_VerticalAnchor(VerticalAnchor: MsoVerticalAnchor); safecall;
+    function Get_PathFormat: MsoPathFormat; safecall;
+    procedure Set_PathFormat(PathFormat: MsoPathFormat); safecall;
+    function Get_WarpFormat: MsoWarpFormat; safecall;
+    procedure Set_WarpFormat(WarpFormat: MsoWarpFormat); safecall;
+    function Get_WordArtformat: MsoPresetTextEffect; safecall;
+    procedure Set_WordArtformat(WordArtformat: MsoPresetTextEffect); safecall;
+    function Get_WordWrap: MsoTriState; safecall;
+    procedure Set_WordWrap(WordWrap: MsoTriState); safecall;
+    function Get_AutoSize: MsoAutoSize; safecall;
+    procedure Set_AutoSize(AutoSize: MsoAutoSize); safecall;
+    function Get_ThreeD: ThreeDFormat; safecall;
+    function Get_HasText: MsoTriState; safecall;
+    function Get_TextRange: TextRange2; safecall;
+    function Get_Column: TextColumn2; safecall;
+    function Get_Ruler: Ruler2; safecall;
+    procedure DeleteText; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property MarginBottom: Single read Get_MarginBottom write Set_MarginBottom;
+    property MarginLeft: Single read Get_MarginLeft write Set_MarginLeft;
+    property MarginRight: Single read Get_MarginRight write Set_MarginRight;
+    property MarginTop: Single read Get_MarginTop write Set_MarginTop;
+    property Orientation: MsoTextOrientation read Get_Orientation write Set_Orientation;
+    property HorizontalAnchor: MsoHorizontalAnchor read Get_HorizontalAnchor write Set_HorizontalAnchor;
+    property VerticalAnchor: MsoVerticalAnchor read Get_VerticalAnchor write Set_VerticalAnchor;
+    property PathFormat: MsoPathFormat read Get_PathFormat write Set_PathFormat;
+    property WarpFormat: MsoWarpFormat read Get_WarpFormat write Set_WarpFormat;
+    property WordArtformat: MsoPresetTextEffect read Get_WordArtformat write Set_WordArtformat;
+    property WordWrap: MsoTriState read Get_WordWrap write Set_WordWrap;
+    property AutoSize: MsoAutoSize read Get_AutoSize write Set_AutoSize;
+    property ThreeD: ThreeDFormat read Get_ThreeD;
+    property HasText: MsoTriState read Get_HasText;
+    property TextRange: TextRange2 read Get_TextRange;
+    property Column: TextColumn2 read Get_Column;
+    property Ruler: Ruler2 read Get_Ruler;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TextFrame2Disp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C0398-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TextFrame2Disp = dispinterface
+    ['{000C0398-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property MarginBottom: Single dispid 100;
+    property MarginLeft: Single dispid 101;
+    property MarginRight: Single dispid 102;
+    property MarginTop: Single dispid 103;
+    property Orientation: MsoTextOrientation dispid 104;
+    property HorizontalAnchor: MsoHorizontalAnchor dispid 105;
+    property VerticalAnchor: MsoVerticalAnchor dispid 106;
+    property PathFormat: MsoPathFormat dispid 107;
+    property WarpFormat: MsoWarpFormat dispid 108;
+    property WordArtformat: MsoPresetTextEffect dispid 109;
+    property WordWrap: MsoTriState dispid 110;
+    property AutoSize: MsoAutoSize dispid 111;
+    property ThreeD: ThreeDFormat readonly dispid 112;
+    property HasText: MsoTriState readonly dispid 113;
+    property TextRange: TextRange2 readonly dispid 114;
+    property Column: TextColumn2 readonly dispid 115;
+    property Ruler: Ruler2 readonly dispid 116;
+    procedure DeleteText; dispid 117;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ThemeColor
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeColor = interface(_IMsoDispObj)
+    ['{000C03A1-0000-0000-C000-000000000046}']
+    function Get_RGB: MsoRGBType; safecall;
+    procedure Set_RGB(RGB: MsoRGBType); safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_ThemeColorSchemeIndex: MsoThemeColorSchemeIndex; safecall;
+    property RGB: MsoRGBType read Get_RGB write Set_RGB;
+    property Parent: IDispatch read Get_Parent;
+    property ThemeColorSchemeIndex: MsoThemeColorSchemeIndex read Get_ThemeColorSchemeIndex;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ThemeColorDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeColorDisp = dispinterface
+    ['{000C03A1-0000-0000-C000-000000000046}']
+    property RGB: MsoRGBType dispid 0;
+    property Parent: IDispatch readonly dispid 1;
+    property ThemeColorSchemeIndex: MsoThemeColorSchemeIndex readonly dispid 1610809347;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ThemeColorScheme
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeColorScheme = interface(_IMsoDispObj)
+    ['{000C03A2-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Colors(Index: MsoThemeColorSchemeIndex): ThemeColor; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    procedure Load(const FileName: WideString); safecall;
+    procedure Save(const FileName: WideString); safecall;
+    function GetCustomColor(const Name: WideString): MsoRGBType; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: SYSINT read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ThemeColorSchemeDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeColorSchemeDisp = dispinterface
+    ['{000C03A2-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Count: SYSINT readonly dispid 2;
+    function Colors(Index: MsoThemeColorSchemeIndex): ThemeColor; dispid 0;
+    property _NewEnum: IUnknown readonly dispid -4;
+    procedure Load(const FileName: WideString); dispid 3;
+    procedure Save(const FileName: WideString); dispid 4;
+    function GetCustomColor(const Name: WideString): MsoRGBType; dispid 5;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ThemeFont
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeFont = interface(_IMsoDispObj)
+    ['{000C03A3-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    procedure Set_Name(const Val: WideString); safecall;
+    function Get_Parent: IDispatch; safecall;
+    property Name: WideString read Get_Name write Set_Name;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ThemeFontDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeFontDisp = dispinterface
+    ['{000C03A3-0000-0000-C000-000000000046}']
+    property Name: WideString dispid 0;
+    property Parent: IDispatch readonly dispid 1;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ThemeFonts
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A4-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeFonts = interface(_IMsoDispObj)
+    ['{000C03A4-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Item(Index: MsoFontLanguageIndex): ThemeFont; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: SYSINT read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ThemeFontsDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A4-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeFontsDisp = dispinterface
+    ['{000C03A4-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Count: SYSINT readonly dispid 2;
+    function Item(Index: MsoFontLanguageIndex): ThemeFont; dispid 0;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ThemeFontScheme
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A5-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeFontScheme = interface(_IMsoDispObj)
+    ['{000C03A5-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    procedure Load(const FileName: WideString); safecall;
+    procedure Save(const FileName: WideString); safecall;
+    function Get_MinorFont: ThemeFonts; safecall;
+    function Get_MajorFont: ThemeFonts; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property MinorFont: ThemeFonts read Get_MinorFont;
+    property MajorFont: ThemeFonts read Get_MajorFont;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ThemeFontSchemeDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A5-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeFontSchemeDisp = dispinterface
+    ['{000C03A5-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    procedure Load(const FileName: WideString); dispid 2;
+    procedure Save(const FileName: WideString); dispid 3;
+    property MinorFont: ThemeFonts readonly dispid 4;
+    property MajorFont: ThemeFonts readonly dispid 5;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: ThemeEffectScheme
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A6-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeEffectScheme = interface(_IMsoDispObj)
+    ['{000C03A6-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    procedure Load(const FileName: WideString); safecall;
+    property Parent: IDispatch read Get_Parent;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ThemeEffectSchemeDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A6-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ThemeEffectSchemeDisp = dispinterface
+    ['{000C03A6-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    procedure Load(const FileName: WideString); dispid 2;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: OfficeTheme
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A0-0000-0000-C000-000000000046}
+// *********************************************************************//
+  OfficeTheme = interface(_IMsoDispObj)
+    ['{000C03A0-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_ThemeColorScheme: ThemeColorScheme; safecall;
+    function Get_ThemeFontScheme: ThemeFontScheme; safecall;
+    function Get_ThemeEffectScheme: ThemeEffectScheme; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property ThemeColorScheme: ThemeColorScheme read Get_ThemeColorScheme;
+    property ThemeFontScheme: ThemeFontScheme read Get_ThemeFontScheme;
+    property ThemeEffectScheme: ThemeEffectScheme read Get_ThemeEffectScheme;
+  end;
+
+// *********************************************************************//
+// DispIntf:  OfficeThemeDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A0-0000-0000-C000-000000000046}
+// *********************************************************************//
+  OfficeThemeDisp = dispinterface
+    ['{000C03A0-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property ThemeColorScheme: ThemeColorScheme readonly dispid 2;
+    property ThemeFontScheme: ThemeFontScheme readonly dispid 3;
+    property ThemeEffectScheme: ThemeEffectScheme readonly dispid 4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: _CustomTaskPane
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C033B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomTaskPane = interface(IDispatch)
+    ['{000C033B-0000-0000-C000-000000000046}']
+    function Get_Title: WideString; safecall;
+    function Get_Application: IDispatch; safecall;
+    function Get_Window: IDispatch; safecall;
+    function Get_Visible: WordBool; safecall;
+    procedure Set_Visible(prop: WordBool); safecall;
+    function Get_ContentControl: IDispatch; safecall;
+    function Get_Height: SYSINT; safecall;
+    procedure Set_Height(prop: SYSINT); safecall;
+    function Get_Width: SYSINT; safecall;
+    procedure Set_Width(prop: SYSINT); safecall;
+    function Get_DockPosition: MsoCTPDockPosition; safecall;
+    procedure Set_DockPosition(prop: MsoCTPDockPosition); safecall;
+    function Get_DockPositionRestrict: MsoCTPDockPositionRestrict; safecall;
+    procedure Set_DockPositionRestrict(prop: MsoCTPDockPositionRestrict); safecall;
+    procedure Delete; safecall;
+    property Title: WideString read Get_Title;
+    property Application: IDispatch read Get_Application;
+    property Window: IDispatch read Get_Window;
+    property Visible: WordBool read Get_Visible write Set_Visible;
+    property ContentControl: IDispatch read Get_ContentControl;
+    property Height: SYSINT read Get_Height write Set_Height;
+    property Width: SYSINT read Get_Width write Set_Width;
+    property DockPosition: MsoCTPDockPosition read Get_DockPosition write Set_DockPosition;
+    property DockPositionRestrict: MsoCTPDockPositionRestrict read Get_DockPositionRestrict write Set_DockPositionRestrict;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomTaskPaneDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C033B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomTaskPaneDisp = dispinterface
+    ['{000C033B-0000-0000-C000-000000000046}']
+    property Title: WideString readonly dispid 0;
+    property Application: IDispatch readonly dispid 1;
+    property Window: IDispatch readonly dispid 2;
+    property Visible: WordBool dispid 3;
+    property ContentControl: IDispatch readonly dispid 4;
+    property Height: SYSINT dispid 5;
+    property Width: SYSINT dispid 6;
+    property DockPosition: MsoCTPDockPosition dispid 7;
+    property DockPositionRestrict: MsoCTPDockPositionRestrict dispid 8;
+    procedure Delete; dispid 9;
+  end;
+
+// *********************************************************************//
+// Interface: CustomTaskPaneEvents
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {8A64A872-FC6B-4D4A-926E-3A3689562C1C}
+// *********************************************************************//
+  CustomTaskPaneEvents = interface(IDispatch)
+    ['{8A64A872-FC6B-4D4A-926E-3A3689562C1C}']
+    procedure VisibleStateChange(const CustomTaskPaneInst: _CustomTaskPane); stdcall;
+    procedure DockPositionStateChange(const CustomTaskPaneInst: _CustomTaskPane); stdcall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  CustomTaskPaneEventsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {8A64A872-FC6B-4D4A-926E-3A3689562C1C}
+// *********************************************************************//
+  CustomTaskPaneEventsDisp = dispinterface
+    ['{8A64A872-FC6B-4D4A-926E-3A3689562C1C}']
+    procedure VisibleStateChange(const CustomTaskPaneInst: _CustomTaskPane); dispid 1;
+    procedure DockPositionStateChange(const CustomTaskPaneInst: _CustomTaskPane); dispid 2;
+  end;
+
+// *********************************************************************//
+// DispIntf:  _CustomTaskPaneEvents
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C033C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  _CustomTaskPaneEvents = dispinterface
+    ['{000C033C-0000-0000-C000-000000000046}']
+    procedure VisibleStateChange(const CustomTaskPaneInst: _CustomTaskPane); dispid 1;
+    procedure DockPositionStateChange(const CustomTaskPaneInst: _CustomTaskPane); dispid 2;
+  end;
+
+// *********************************************************************//
+// Interface: ICTPFactory
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C033D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICTPFactory = interface(IDispatch)
+    ['{000C033D-0000-0000-C000-000000000046}']
+    function CreateCTP(const CTPAxID: WideString; const CTPTitle: WideString; 
+                       CTPParentWindow: OleVariant): _CustomTaskPane; safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ICTPFactoryDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C033D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICTPFactoryDisp = dispinterface
+    ['{000C033D-0000-0000-C000-000000000046}']
+    function CreateCTP(const CTPAxID: WideString; const CTPTitle: WideString; 
+                       CTPParentWindow: OleVariant): _CustomTaskPane; dispid 1;
+  end;
+
+// *********************************************************************//
+// Interface: ICustomTaskPaneConsumer
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C033E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICustomTaskPaneConsumer = interface(IDispatch)
+    ['{000C033E-0000-0000-C000-000000000046}']
+    procedure CTPFactoryAvailable(const CTPFactoryInst: ICTPFactory); safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ICustomTaskPaneConsumerDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C033E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ICustomTaskPaneConsumerDisp = dispinterface
+    ['{000C033E-0000-0000-C000-000000000046}']
+    procedure CTPFactoryAvailable(const CTPFactoryInst: ICTPFactory); dispid 1;
+  end;
+
+// *********************************************************************//
+// Interface: IRibbonUI
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A7-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IRibbonUI = interface(IDispatch)
+    ['{000C03A7-0000-0000-C000-000000000046}']
+    procedure Invalidate; safecall;
+    procedure InvalidateControl(const ControlID: WideString); safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IRibbonUIDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C03A7-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IRibbonUIDisp = dispinterface
+    ['{000C03A7-0000-0000-C000-000000000046}']
+    procedure Invalidate; dispid 1;
+    procedure InvalidateControl(const ControlID: WideString); dispid 2;
+  end;
+
+// *********************************************************************//
+// Interface: IRibbonControl
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C0395-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IRibbonControl = interface(IDispatch)
+    ['{000C0395-0000-0000-C000-000000000046}']
+    function Get_Id: WideString; safecall;
+    function Get_Context: IDispatch; safecall;
+    function Get_Tag: WideString; safecall;
+    property Id: WideString read Get_Id;
+    property Context: IDispatch read Get_Context;
+    property Tag: WideString read Get_Tag;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IRibbonControlDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C0395-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IRibbonControlDisp = dispinterface
+    ['{000C0395-0000-0000-C000-000000000046}']
+    property Id: WideString readonly dispid 1;
+    property Context: IDispatch readonly dispid 2;
+    property Tag: WideString readonly dispid 3;
+  end;
+
+// *********************************************************************//
+// Interface: IRibbonExtensibility
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C0396-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IRibbonExtensibility = interface(IDispatch)
+    ['{000C0396-0000-0000-C000-000000000046}']
+    function GetCustomUI(const RibbonID: WideString): WideString; safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IRibbonExtensibilityDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000C0396-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IRibbonExtensibilityDisp = dispinterface
+    ['{000C0396-0000-0000-C000-000000000046}']
+    function GetCustomUI(const RibbonID: WideString): WideString; dispid 1;
+  end;
+
+// *********************************************************************//
+// Interface: IAssistance
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {4291224C-DEFE-485B-8E69-6CF8AA85CB76}
+// *********************************************************************//
+  IAssistance = interface(IDispatch)
+    ['{4291224C-DEFE-485B-8E69-6CF8AA85CB76}']
+    procedure ShowHelp(const HelpId: WideString; const Scope: WideString); safecall;
+    procedure SearchHelp(const Query: WideString; const Scope: WideString); safecall;
+    procedure SetDefaultContext(const HelpId: WideString); safecall;
+    procedure ClearDefaultContext(const HelpId: WideString); safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IAssistanceDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {4291224C-DEFE-485B-8E69-6CF8AA85CB76}
+// *********************************************************************//
+  IAssistanceDisp = dispinterface
+    ['{4291224C-DEFE-485B-8E69-6CF8AA85CB76}']
+    procedure ShowHelp(const HelpId: WideString; const Scope: WideString); dispid 1610743808;
+    procedure SearchHelp(const Query: WideString; const Scope: WideString); dispid 1610743809;
+    procedure SetDefaultContext(const HelpId: WideString); dispid 1610743810;
+    procedure ClearDefaultContext(const HelpId: WideString); dispid 1610743811;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoChartData
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartData = interface(IDispatch)
+    ['{000C172F-0000-0000-C000-000000000046}']
+    function Get_Workbook: IDispatch; safecall;
+    procedure Activate; safecall;
+    function Get_IsLinked: WordBool; safecall;
+    procedure BreakLink; safecall;
+    property Workbook: IDispatch read Get_Workbook;
+    property IsLinked: WordBool read Get_IsLinked;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoChartDataDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartDataDisp = dispinterface
+    ['{000C172F-0000-0000-C000-000000000046}']
+    property Workbook: IDispatch readonly dispid 1610743808;
+    procedure Activate; dispid 1610743809;
+    property IsLinked: WordBool readonly dispid 1610743810;
+    procedure BreakLink; dispid 1610743811;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoChart
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1709-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChart = interface(IDispatch)
+    ['{000C1709-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    procedure Set_HasTitle(fTitle: WordBool); safecall;
+    function Get_HasTitle: WordBool; safecall;
+    function Get_ChartTitle: IMsoChartTitle; safecall;
+    function Get_DepthPercent: SYSINT; safecall;
+    procedure Set_DepthPercent(pwDepthPercent: SYSINT); safecall;
+    function Get_Elevation: SYSINT; safecall;
+    procedure Set_Elevation(pwElevation: SYSINT); safecall;
+    function Get_GapDepth: SYSINT; safecall;
+    procedure Set_GapDepth(pwGapDepth: SYSINT); safecall;
+    function Get_HeightPercent: SYSINT; safecall;
+    procedure Set_HeightPercent(pwHeightPercent: SYSINT); safecall;
+    function Get_Perspective: SYSINT; safecall;
+    procedure Set_Perspective(pwPerspective: SYSINT); safecall;
+    function Get_RightAngleAxes: OleVariant; safecall;
+    procedure Set_RightAngleAxes(pvarRightAngleAxes: OleVariant); safecall;
+    function Get_Rotation: OleVariant; safecall;
+    procedure Set_Rotation(pvarRotation: OleVariant); safecall;
+    procedure Set_DisplayBlanksAs(pres: XlDisplayBlanksAs); safecall;
+    function Get_DisplayBlanksAs: XlDisplayBlanksAs; safecall;
+    procedure Set_ProtectData(pres: WordBool); safecall;
+    function Get_ProtectData: WordBool; safecall;
+    procedure Set_ProtectFormatting(pres: WordBool); safecall;
+    function Get_ProtectFormatting: WordBool; safecall;
+    procedure Set_ProtectGoalSeek(pres: WordBool); safecall;
+    function Get_ProtectGoalSeek: WordBool; safecall;
+    procedure Set_ProtectSelection(pres: WordBool); safecall;
+    function Get_ProtectSelection: WordBool; safecall;
+    procedure Set_ProtectChartObjects(pres: WordBool); safecall;
+    function Get_ProtectChartObjects: WordBool; safecall;
+    procedure UnProtect(Password: OleVariant); safecall;
+    procedure Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
+                      Scenarios: OleVariant; UserInterfaceOnly: OleVariant); safecall;
+    function Get_ChartGroups(var pvarIndex: OleVariant; varIgallery: OleVariant; lcid: Integer): IDispatch; safecall;
+    function SeriesCollection(Index: OleVariant): IDispatch; safecall;
+    procedure _ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                               AutoText: OleVariant; HasLeaderLines: OleVariant); safecall;
+    function Get_SubType: Integer; safecall;
+    procedure Set_SubType(RHS: Integer); safecall;
+    function Get_type_: Integer; safecall;
+    procedure Set_type_(RHS: Integer); safecall;
+    function Get_Corners: IMsoCorners; safecall;
+    procedure ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                              AutoText: OleVariant; HasLeaderLines: OleVariant; 
+                              ShowSeriesName: OleVariant; ShowCategoryName: OleVariant; 
+                              ShowValue: OleVariant; ShowPercentage: OleVariant; 
+                              ShowBubbleSize: OleVariant; Separator: OleVariant); safecall;
+    function Get_ChartType: XlChartType; safecall;
+    procedure Set_ChartType(RHS: XlChartType); safecall;
+    function Get_HasDataTable: WordBool; safecall;
+    procedure Set_HasDataTable(RHS: WordBool); safecall;
+    procedure ApplyCustomType(ChartType: XlChartType; TypeName: OleVariant); safecall;
+    procedure GetChartElement(x: Integer; y: Integer; var ElementID: Integer; var Arg1: Integer; 
+                              var Arg2: Integer); safecall;
+    procedure SetSourceData(const Source: WideString; PlotBy: OleVariant); safecall;
+    function Get_PlotBy: XlRowCol; safecall;
+    procedure Set_PlotBy(PlotBy: XlRowCol); safecall;
+    function Get_HasLegend: WordBool; safecall;
+    procedure Set_HasLegend(RHS: WordBool); safecall;
+    function Get_Legend: IMsoLegend; safecall;
+    function Axes(Type_: OleVariant; AxisGroup: XlAxisGroup): IDispatch; safecall;
+    procedure Set_HasAxis(axisType: OleVariant; AxisGroup: OleVariant; pval: OleVariant); safecall;
+    function Get_HasAxis(axisType: OleVariant; AxisGroup: OleVariant): OleVariant; safecall;
+    function Get_Walls(fBackWall: WordBool): IMsoWalls; safecall;
+    function Get_Floor: IMsoFloor; safecall;
+    function Get_PlotArea: IMsoPlotArea; safecall;
+    function Get_PlotVisibleOnly: WordBool; safecall;
+    procedure Set_PlotVisibleOnly(RHS: WordBool); safecall;
+    function Get_ChartArea: IMsoChartArea; safecall;
+    procedure AutoFormat(rGallery: Integer; varFormat: OleVariant); safecall;
+    function Get_AutoScaling: WordBool; safecall;
+    procedure Set_AutoScaling(f: WordBool); safecall;
+    procedure SetBackgroundPicture(const bstr: WideString); safecall;
+    procedure ChartWizard(varSource: OleVariant; varGallery: OleVariant; varFormat: OleVariant; 
+                          varPlotBy: OleVariant; varCategoryLabels: OleVariant; 
+                          varSeriesLabels: OleVariant; varHasLegend: OleVariant; 
+                          varTitle: OleVariant; varCategoryTitle: OleVariant; 
+                          varValueTitle: OleVariant; varExtraTitle: OleVariant; LocaleID: Integer); safecall;
+    procedure CopyPicture(Appearance: SYSINT; Format: SYSINT; Size: SYSINT; LocaleID: Integer); safecall;
+    function Get_DataTable: IMsoDataTable; safecall;
+    function Evaluate(varName: OleVariant; LocaleID: Integer; out ObjType: Integer): OleVariant; safecall;
+    function _Evaluate(varName: OleVariant; LocaleID: Integer): OleVariant; safecall;
+    procedure Paste(varType: OleVariant; LocaleID: Integer); safecall;
+    function Get_BarShape: XlBarShape; safecall;
+    procedure Set_BarShape(pShape: XlBarShape); safecall;
+    function Export(const bstr: WideString; varFilterName: OleVariant; varInteractive: OleVariant): WordBool; safecall;
+    procedure SetDefaultChart(varName: OleVariant); safecall;
+    procedure ApplyChartTemplate(const bstrFileName: WideString); safecall;
+    procedure SaveChartTemplate(const bstrFileName: WideString); safecall;
+    function Get_SideWall: IMsoWalls; safecall;
+    function Get_BackWall: IMsoWalls; safecall;
+    function Get_ChartStyle: OleVariant; safecall;
+    procedure Set_ChartStyle(RHS: OleVariant); safecall;
+    procedure ClearToMatchStyle; safecall;
+    function Get_PivotLayout: IDispatch; safecall;
+    function Get_HasPivotFields: WordBool; safecall;
+    procedure Set_HasPivotFields(RHS: WordBool); safecall;
+    procedure RefreshPivotTable; safecall;
+    procedure Set_ShowDataLabelsOverMaximum(pRHS: WordBool); safecall;
+    function Get_ShowDataLabelsOverMaximum: WordBool; safecall;
+    procedure ApplyLayout(Layout: Integer; varChartType: OleVariant); safecall;
+    function Get_Selection: IDispatch; safecall;
+    procedure Refresh; safecall;
+    procedure SetElement(RHS: MsoChartElementType); safecall;
+    function Get_ChartData: IMsoChartData; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    function Get_Shapes: Shapes; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property HasTitle: WordBool read Get_HasTitle write Set_HasTitle;
+    property ChartTitle: IMsoChartTitle read Get_ChartTitle;
+    property DepthPercent: SYSINT read Get_DepthPercent write Set_DepthPercent;
+    property Elevation: SYSINT read Get_Elevation write Set_Elevation;
+    property GapDepth: SYSINT read Get_GapDepth write Set_GapDepth;
+    property HeightPercent: SYSINT read Get_HeightPercent write Set_HeightPercent;
+    property Perspective: SYSINT read Get_Perspective write Set_Perspective;
+    property RightAngleAxes: OleVariant read Get_RightAngleAxes write Set_RightAngleAxes;
+    property Rotation: OleVariant read Get_Rotation write Set_Rotation;
+    property DisplayBlanksAs: XlDisplayBlanksAs read Get_DisplayBlanksAs write Set_DisplayBlanksAs;
+    property ProtectData: WordBool read Get_ProtectData write Set_ProtectData;
+    property ProtectFormatting: WordBool read Get_ProtectFormatting write Set_ProtectFormatting;
+    property ProtectGoalSeek: WordBool read Get_ProtectGoalSeek write Set_ProtectGoalSeek;
+    property ProtectSelection: WordBool read Get_ProtectSelection write Set_ProtectSelection;
+    property ProtectChartObjects: WordBool read Get_ProtectChartObjects write Set_ProtectChartObjects;
+    property ChartGroups[var pvarIndex: OleVariant; varIgallery: OleVariant; lcid: Integer]: IDispatch read Get_ChartGroups;
+    property SubType: Integer read Get_SubType write Set_SubType;
+    property type_: Integer read Get_type_ write Set_type_;
+    property Corners: IMsoCorners read Get_Corners;
+    property ChartType: XlChartType read Get_ChartType write Set_ChartType;
+    property HasDataTable: WordBool read Get_HasDataTable write Set_HasDataTable;
+    property PlotBy: XlRowCol read Get_PlotBy write Set_PlotBy;
+    property HasLegend: WordBool read Get_HasLegend write Set_HasLegend;
+    property Legend: IMsoLegend read Get_Legend;
+    property HasAxis[axisType: OleVariant; AxisGroup: OleVariant]: OleVariant read Get_HasAxis write Set_HasAxis;
+    property Walls[fBackWall: WordBool]: IMsoWalls read Get_Walls;
+    property Floor: IMsoFloor read Get_Floor;
+    property PlotArea: IMsoPlotArea read Get_PlotArea;
+    property PlotVisibleOnly: WordBool read Get_PlotVisibleOnly write Set_PlotVisibleOnly;
+    property ChartArea: IMsoChartArea read Get_ChartArea;
+    property AutoScaling: WordBool read Get_AutoScaling write Set_AutoScaling;
+    property DataTable: IMsoDataTable read Get_DataTable;
+    property BarShape: XlBarShape read Get_BarShape write Set_BarShape;
+    property SideWall: IMsoWalls read Get_SideWall;
+    property BackWall: IMsoWalls read Get_BackWall;
+    property ChartStyle: OleVariant read Get_ChartStyle write Set_ChartStyle;
+    property PivotLayout: IDispatch read Get_PivotLayout;
+    property HasPivotFields: WordBool read Get_HasPivotFields write Set_HasPivotFields;
+    property ShowDataLabelsOverMaximum: WordBool read Get_ShowDataLabelsOverMaximum write Set_ShowDataLabelsOverMaximum;
+    property Selection: IDispatch read Get_Selection;
+    property ChartData: IMsoChartData read Get_ChartData;
+    property Format: IMsoChartFormat read Get_Format;
+    property Shapes: Shapes read Get_Shapes;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoChartDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1709-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartDisp = dispinterface
+    ['{000C1709-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 150;
+    property HasTitle: WordBool dispid 1610743809;
+    property ChartTitle: IMsoChartTitle readonly dispid 1610743811;
+    property DepthPercent: SYSINT dispid 1610743812;
+    property Elevation: SYSINT dispid 1610743814;
+    property GapDepth: SYSINT dispid 1610743816;
+    property HeightPercent: SYSINT dispid 1610743818;
+    property Perspective: SYSINT dispid 1610743820;
+    property RightAngleAxes: OleVariant dispid 1610743822;
+    property Rotation: OleVariant dispid 1610743824;
+    property DisplayBlanksAs: XlDisplayBlanksAs dispid 1610743826;
+    property ProtectData: WordBool dispid 1610743828;
+    property ProtectFormatting: WordBool dispid 1610743830;
+    property ProtectGoalSeek: WordBool dispid 1610743832;
+    property ProtectSelection: WordBool dispid 1610743834;
+    property ProtectChartObjects: WordBool dispid 1610743836;
+    procedure UnProtect(Password: OleVariant); dispid 1610743838;
+    procedure Protect(Password: OleVariant; DrawingObjects: OleVariant; Contents: OleVariant; 
+                      Scenarios: OleVariant; UserInterfaceOnly: OleVariant); dispid 1610743839;
+    property ChartGroups[var pvarIndex: OleVariant; varIgallery: OleVariant; lcid: Integer]: IDispatch readonly dispid 8;
+    function SeriesCollection(Index: OleVariant): IDispatch; dispid 68;
+    procedure _ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                               AutoText: OleVariant; HasLeaderLines: OleVariant); dispid 151;
+    property SubType: Integer dispid 109;
+    property type_: Integer dispid 108;
+    property Corners: IMsoCorners readonly dispid 79;
+    procedure ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                              AutoText: OleVariant; HasLeaderLines: OleVariant; 
+                              ShowSeriesName: OleVariant; ShowCategoryName: OleVariant; 
+                              ShowValue: OleVariant; ShowPercentage: OleVariant; 
+                              ShowBubbleSize: OleVariant; Separator: OleVariant); dispid 1922;
+    property ChartType: XlChartType dispid 1400;
+    property HasDataTable: WordBool dispid 1396;
+    procedure ApplyCustomType(ChartType: XlChartType; TypeName: OleVariant); dispid 1401;
+    procedure GetChartElement(x: Integer; y: Integer; var ElementID: Integer; var Arg1: Integer; 
+                              var Arg2: Integer); dispid 1409;
+    procedure SetSourceData(const Source: WideString; PlotBy: OleVariant); dispid 1413;
+    property PlotBy: XlRowCol dispid 202;
+    property HasLegend: WordBool dispid 53;
+    property Legend: IMsoLegend readonly dispid 84;
+    function Axes(Type_: OleVariant; AxisGroup: XlAxisGroup): IDispatch; dispid 1610743861;
+    property HasAxis[axisType: OleVariant; AxisGroup: OleVariant]: OleVariant dispid 1610743862;
+    property Walls[fBackWall: WordBool]: IMsoWalls readonly dispid 1610743864;
+    property Floor: IMsoFloor readonly dispid 1610743865;
+    property PlotArea: IMsoPlotArea readonly dispid 1610743866;
+    property PlotVisibleOnly: WordBool dispid 92;
+    property ChartArea: IMsoChartArea readonly dispid 1610743869;
+    procedure AutoFormat(rGallery: Integer; varFormat: OleVariant); dispid 1610743870;
+    property AutoScaling: WordBool dispid 1610743871;
+    procedure SetBackgroundPicture(const bstr: WideString); dispid 1610743873;
+    procedure ChartWizard(varSource: OleVariant; varGallery: OleVariant; varFormat: OleVariant; 
+                          varPlotBy: OleVariant; varCategoryLabels: OleVariant; 
+                          varSeriesLabels: OleVariant; varHasLegend: OleVariant; 
+                          varTitle: OleVariant; varCategoryTitle: OleVariant; 
+                          varValueTitle: OleVariant; varExtraTitle: OleVariant; LocaleID: Integer); dispid 1610743874;
+    procedure CopyPicture(Appearance: SYSINT; Format: SYSINT; Size: SYSINT; LocaleID: Integer); dispid 1610743875;
+    property DataTable: IMsoDataTable readonly dispid 1610743876;
+    function Evaluate(varName: OleVariant; LocaleID: Integer; out ObjType: Integer): OleVariant; dispid 1610743877;
+    function _Evaluate(varName: OleVariant; LocaleID: Integer): OleVariant; dispid 1610743878;
+    procedure Paste(varType: OleVariant; LocaleID: Integer); dispid 1610743879;
+    property BarShape: XlBarShape dispid 1610743880;
+    function Export(const bstr: WideString; varFilterName: OleVariant; varInteractive: OleVariant): WordBool; dispid 1610743882;
+    procedure SetDefaultChart(varName: OleVariant); dispid 1610743883;
+    procedure ApplyChartTemplate(const bstrFileName: WideString); dispid 1610743884;
+    procedure SaveChartTemplate(const bstrFileName: WideString); dispid 1610743885;
+    property SideWall: IMsoWalls readonly dispid 2377;
+    property BackWall: IMsoWalls readonly dispid 2378;
+    property ChartStyle: OleVariant dispid 2465;
+    procedure ClearToMatchStyle; dispid 2466;
+    property PivotLayout: IDispatch readonly dispid 1814;
+    property HasPivotFields: WordBool dispid 1815;
+    procedure RefreshPivotTable; dispid 1610743894;
+    property ShowDataLabelsOverMaximum: WordBool dispid 1610743895;
+    procedure ApplyLayout(Layout: Integer; varChartType: OleVariant); dispid 2468;
+    property Selection: IDispatch readonly dispid 1610743898;
+    procedure Refresh; dispid 1610743899;
+    procedure SetElement(RHS: MsoChartElementType); dispid 1610743900;
+    property ChartData: IMsoChartData readonly dispid 1610743901;
+    property Format: IMsoChartFormat readonly dispid 1610743902;
+    property Shapes: Shapes readonly dispid 1610743903;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoCorners
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1714-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoCorners = interface(IDispatch)
+    ['{000C1714-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Name: WideString read Get_Name;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoCornersDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1714-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoCornersDisp = dispinterface
+    ['{000C1714-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 150;
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoLegend
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1710-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoLegend = interface(IDispatch)
+    ['{000C1710-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Font: ChartFont; safecall;
+    function LegendEntries(Index: OleVariant): IDispatch; safecall;
+    function Get_Position: XlLegendPosition; safecall;
+    procedure Set_Position(RHS: XlLegendPosition); safecall;
+    function Get_Shadow: WordBool; safecall;
+    procedure Set_Shadow(RHS: WordBool); safecall;
+    function Clear: OleVariant; safecall;
+    function Get_Height: Double; safecall;
+    procedure Set_Height(RHS: Double); safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_Left: Double; safecall;
+    procedure Set_Left(RHS: Double); safecall;
+    function Get_Top: Double; safecall;
+    procedure Set_Top(RHS: Double); safecall;
+    function Get_Width: Double; safecall;
+    procedure Set_Width(RHS: Double); safecall;
+    function Get_AutoScaleFont: OleVariant; safecall;
+    procedure Set_AutoScaleFont(RHS: OleVariant); safecall;
+    function Get_IncludeInLayout: WordBool; safecall;
+    procedure Set_IncludeInLayout(RHS: WordBool); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Name: WideString read Get_Name;
+    property Border: IMsoBorder read Get_Border;
+    property Font: ChartFont read Get_Font;
+    property Position: XlLegendPosition read Get_Position write Set_Position;
+    property Shadow: WordBool read Get_Shadow write Set_Shadow;
+    property Height: Double read Get_Height write Set_Height;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property Left: Double read Get_Left write Set_Left;
+    property Top: Double read Get_Top write Set_Top;
+    property Width: Double read Get_Width write Set_Width;
+    property AutoScaleFont: OleVariant read Get_AutoScaleFont write Set_AutoScaleFont;
+    property IncludeInLayout: WordBool read Get_IncludeInLayout write Set_IncludeInLayout;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoLegendDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1710-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoLegendDisp = dispinterface
+    ['{000C1710-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 150;
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Border: IMsoBorder readonly dispid 128;
+    function Delete: OleVariant; dispid 117;
+    property Font: ChartFont readonly dispid 146;
+    function LegendEntries(Index: OleVariant): IDispatch; dispid 173;
+    property Position: XlLegendPosition dispid 133;
+    property Shadow: WordBool dispid 103;
+    function Clear: OleVariant; dispid 111;
+    property Height: Double dispid 123;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property Left: Double dispid 127;
+    property Top: Double dispid 126;
+    property Width: Double dispid 122;
+    property AutoScaleFont: OleVariant dispid 1525;
+    property IncludeInLayout: WordBool dispid 2418;
+    property Format: IMsoChartFormat readonly dispid 1610743834;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoBorder
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1717-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoBorder = interface(IDispatch)
+    ['{000C1717-0000-0000-C000-000000000046}']
+    procedure Set_Color(pval: OleVariant); safecall;
+    function Get_Color: OleVariant; safecall;
+    procedure Set_ColorIndex(pval: OleVariant); safecall;
+    function Get_ColorIndex: OleVariant; safecall;
+    procedure Set_LineStyle(pval: OleVariant); safecall;
+    function Get_LineStyle: OleVariant; safecall;
+    procedure Set_Weight(pval: OleVariant); safecall;
+    function Get_Weight: OleVariant; safecall;
+    property Color: OleVariant read Get_Color write Set_Color;
+    property ColorIndex: OleVariant read Get_ColorIndex write Set_ColorIndex;
+    property LineStyle: OleVariant read Get_LineStyle write Set_LineStyle;
+    property Weight: OleVariant read Get_Weight write Set_Weight;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoBorderDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1717-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoBorderDisp = dispinterface
+    ['{000C1717-0000-0000-C000-000000000046}']
+    property Color: OleVariant dispid 1610743808;
+    property ColorIndex: OleVariant dispid 1610743810;
+    property LineStyle: OleVariant dispid 1610743812;
+    property Weight: OleVariant dispid 1610743814;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoWalls
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1715-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoWalls = interface(IDispatch)
+    ['{000C1715-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function ClearFormats: OleVariant; safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_PictureType: OleVariant; safecall;
+    procedure Set_PictureType(pvar: OleVariant); safecall;
+    procedure Paste; safecall;
+    function Get_PictureUnit: OleVariant; safecall;
+    procedure Set_PictureUnit(pvar: OleVariant); safecall;
+    function Get_Thickness: Integer; safecall;
+    procedure Set_Thickness(RHS: Integer); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property PictureType: OleVariant read Get_PictureType write Set_PictureType;
+    property PictureUnit: OleVariant read Get_PictureUnit write Set_PictureUnit;
+    property Thickness: Integer read Get_Thickness write Set_Thickness;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoWallsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1715-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoWallsDisp = dispinterface
+    ['{000C1715-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function ClearFormats: OleVariant; dispid 112;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property PictureType: OleVariant dispid 161;
+    procedure Paste; dispid 211;
+    property PictureUnit: OleVariant dispid 162;
+    property Thickness: Integer dispid 2419;
+    property Format: IMsoChartFormat readonly dispid 1610743822;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoFloor
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1716-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoFloor = interface(IDispatch)
+    ['{000C1716-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function ClearFormats: OleVariant; safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_PictureType: OleVariant; safecall;
+    procedure Set_PictureType(pvar: OleVariant); safecall;
+    procedure Paste; safecall;
+    function Get_Thickness: Integer; safecall;
+    procedure Set_Thickness(RHS: Integer); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property PictureType: OleVariant read Get_PictureType write Set_PictureType;
+    property Thickness: Integer read Get_Thickness write Set_Thickness;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoFloorDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1716-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoFloorDisp = dispinterface
+    ['{000C1716-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function ClearFormats: OleVariant; dispid 112;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property PictureType: OleVariant dispid 161;
+    procedure Paste; dispid 211;
+    property Thickness: Integer dispid 2419;
+    property Format: IMsoChartFormat readonly dispid 1610743820;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoPlotArea
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1724-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoPlotArea = interface(IDispatch)
+    ['{000C1724-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function ClearFormats: OleVariant; safecall;
+    function Get_Height: Double; safecall;
+    procedure Set_Height(pd: Double); safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_Left: Double; safecall;
+    procedure Set_Left(pd: Double); safecall;
+    function Get_Top: Double; safecall;
+    procedure Set_Top(pd: Double); safecall;
+    function Get_Width: Double; safecall;
+    procedure Set_Width(pd: Double); safecall;
+    function Get_InsideLeft: Double; safecall;
+    procedure Set_InsideLeft(pd: Double); safecall;
+    function Get_InsideTop: Double; safecall;
+    procedure Set_InsideTop(pd: Double); safecall;
+    function Get_InsideWidth: Double; safecall;
+    procedure Set_InsideWidth(pd: Double); safecall;
+    function Get_InsideHeight: Double; safecall;
+    procedure Set_InsideHeight(pd: Double); safecall;
+    function Get_Position: XlChartElementPosition; safecall;
+    procedure Set_Position(pval: XlChartElementPosition); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Height: Double read Get_Height write Set_Height;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property Left: Double read Get_Left write Set_Left;
+    property Top: Double read Get_Top write Set_Top;
+    property Width: Double read Get_Width write Set_Width;
+    property InsideLeft: Double read Get_InsideLeft write Set_InsideLeft;
+    property InsideTop: Double read Get_InsideTop write Set_InsideTop;
+    property InsideWidth: Double read Get_InsideWidth write Set_InsideWidth;
+    property InsideHeight: Double read Get_InsideHeight write Set_InsideHeight;
+    property Position: XlChartElementPosition read Get_Position write Set_Position;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoPlotAreaDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1724-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoPlotAreaDisp = dispinterface
+    ['{000C1724-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function ClearFormats: OleVariant; dispid 112;
+    property Height: Double dispid 123;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property Left: Double dispid 127;
+    property Top: Double dispid 126;
+    property Width: Double dispid 122;
+    property InsideLeft: Double dispid 1667;
+    property InsideTop: Double dispid 1668;
+    property InsideWidth: Double dispid 1669;
+    property InsideHeight: Double dispid 1670;
+    property Position: XlChartElementPosition dispid 1671;
+    property Format: IMsoChartFormat readonly dispid 1610743833;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoChartArea
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1728-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartArea = interface(IDispatch)
+    ['{000C1728-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Clear: OleVariant; safecall;
+    function ClearContents: OleVariant; safecall;
+    function Copy: OleVariant; safecall;
+    function Get_Font: ChartFont; safecall;
+    function Get_Shadow: WordBool; safecall;
+    procedure Set_Shadow(pf: WordBool); safecall;
+    function ClearFormats: OleVariant; safecall;
+    function Get_Height: Double; safecall;
+    procedure Set_Height(pd: Double); safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_Left: Double; safecall;
+    procedure Set_Left(pd: Double); safecall;
+    function Get_Top: Double; safecall;
+    procedure Set_Top(pd: Double); safecall;
+    function Get_Width: Double; safecall;
+    procedure Set_Width(pd: Double); safecall;
+    function Get_AutoScaleFont: OleVariant; safecall;
+    procedure Set_AutoScaleFont(pvar: OleVariant); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Font: ChartFont read Get_Font;
+    property Shadow: WordBool read Get_Shadow write Set_Shadow;
+    property Height: Double read Get_Height write Set_Height;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property Left: Double read Get_Left write Set_Left;
+    property Top: Double read Get_Top write Set_Top;
+    property Width: Double read Get_Width write Set_Width;
+    property AutoScaleFont: OleVariant read Get_AutoScaleFont write Set_AutoScaleFont;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoChartAreaDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1728-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartAreaDisp = dispinterface
+    ['{000C1728-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function Clear: OleVariant; dispid 111;
+    function ClearContents: OleVariant; dispid 113;
+    function Copy: OleVariant; dispid 551;
+    property Font: ChartFont readonly dispid 146;
+    property Shadow: WordBool dispid 103;
+    function ClearFormats: OleVariant; dispid 112;
+    property Height: Double dispid 123;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property Left: Double dispid 127;
+    property Top: Double dispid 126;
+    property Width: Double dispid 122;
+    property AutoScaleFont: OleVariant dispid 1525;
+    property Format: IMsoChartFormat readonly dispid 1610743831;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoSeriesLines
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1729-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoSeriesLines = interface(IDispatch)
+    ['{000C1729-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoSeriesLinesDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1729-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoSeriesLinesDisp = dispinterface
+    ['{000C1729-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function Delete: OleVariant; dispid 117;
+    property Format: IMsoChartFormat readonly dispid 1610743813;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoLeaderLines
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1723-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoLeaderLines = interface(IDispatch)
+    ['{000C1723-0000-0000-C000-000000000046}']
+    procedure Select; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    procedure Delete; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Border: IMsoBorder read Get_Border;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoLeaderLinesDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1723-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoLeaderLinesDisp = dispinterface
+    ['{000C1723-0000-0000-C000-000000000046}']
+    procedure Select; dispid 235;
+    property Border: IMsoBorder readonly dispid 128;
+    procedure Delete; dispid 117;
+    property Format: IMsoChartFormat readonly dispid 1610743811;
+  end;
+
+// *********************************************************************//
+// Interface: GridLines
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1725-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GridLines = interface(IDispatch)
+    ['{000C1725-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  GridLinesDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1725-0000-0000-C000-000000000046}
+// *********************************************************************//
+  GridLinesDisp = dispinterface
+    ['{000C1725-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function Delete: OleVariant; dispid 117;
+    property Format: IMsoChartFormat readonly dispid 1610743813;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoUpBars
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoUpBars = interface(IDispatch)
+    ['{000C172A-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoUpBarsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoUpBarsDisp = dispinterface
+    ['{000C172A-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function Delete: OleVariant; dispid 117;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property Format: IMsoChartFormat readonly dispid 1610743815;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoDownBars
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDownBars = interface(IDispatch)
+    ['{000C172D-0000-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    function Select: OleVariant; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoDownBarsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDownBarsDisp = dispinterface
+    ['{000C172D-0000-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 110;
+    function Select: OleVariant; dispid 235;
+    property Parent: IDispatch readonly dispid 150;
+    property Border: IMsoBorder readonly dispid 128;
+    function Delete: OleVariant; dispid 117;
+    property Interior: IMsoInterior readonly dispid 129;
+    property Fill: ChartFillFormat readonly dispid 1663;
+    property Format: IMsoChartFormat readonly dispid 1610743815;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoInterior
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C171B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoInterior = interface(IDispatch)
+    ['{000C171B-0000-0000-C000-000000000046}']
+    procedure Set_Color(pval: OleVariant); safecall;
+    function Get_Color: OleVariant; safecall;
+    procedure Set_ColorIndex(pval: OleVariant); safecall;
+    function Get_ColorIndex: OleVariant; safecall;
+    procedure Set_InvertIfNegative(pval: OleVariant); safecall;
+    function Get_InvertIfNegative: OleVariant; safecall;
+    procedure Set_Pattern(pval: OleVariant); safecall;
+    function Get_Pattern: OleVariant; safecall;
+    procedure Set_PatternColor(pval: OleVariant); safecall;
+    function Get_PatternColor: OleVariant; safecall;
+    procedure Set_PatternColorIndex(pval: OleVariant); safecall;
+    function Get_PatternColorIndex: OleVariant; safecall;
+    property Color: OleVariant read Get_Color write Set_Color;
+    property ColorIndex: OleVariant read Get_ColorIndex write Set_ColorIndex;
+    property InvertIfNegative: OleVariant read Get_InvertIfNegative write Set_InvertIfNegative;
+    property Pattern: OleVariant read Get_Pattern write Set_Pattern;
+    property PatternColor: OleVariant read Get_PatternColor write Set_PatternColor;
+    property PatternColorIndex: OleVariant read Get_PatternColorIndex write Set_PatternColorIndex;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoInteriorDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C171B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoInteriorDisp = dispinterface
+    ['{000C171B-0000-0000-C000-000000000046}']
+    property Color: OleVariant dispid 1610743808;
+    property ColorIndex: OleVariant dispid 1610743810;
+    property InvertIfNegative: OleVariant dispid 1610743812;
+    property Pattern: OleVariant dispid 1610743814;
+    property PatternColor: OleVariant dispid 1610743816;
+    property PatternColorIndex: OleVariant dispid 1610743818;
+  end;
+
+// *********************************************************************//
+// Interface: ChartFillFormat
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C171C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartFillFormat = interface(IDispatch)
+    ['{000C171C-0000-0000-C000-000000000046}']
+    procedure OneColorGradient(Style: SYSINT; Variant: SYSINT; Degree: Single); safecall;
+    procedure TwoColorGradient(Style: SYSINT; Variant: SYSINT); safecall;
+    procedure PresetTextured(PresetTexture: SYSINT); safecall;
+    procedure Solid; safecall;
+    procedure Patterned(Pattern: SYSINT); safecall;
+    procedure UserPicture(PictureFile: OleVariant; PictureFormat: OleVariant; 
+                          PictureStackUnit: OleVariant; PicturePlacement: OleVariant); safecall;
+    procedure UserTextured(const TextureFile: WideString); safecall;
+    procedure PresetGradient(Style: SYSINT; Variant: SYSINT; PresetGradientType: SYSINT); safecall;
+    function Get_BackColor: ChartColorFormat; safecall;
+    function Get_ForeColor: ChartColorFormat; safecall;
+    function Get_GradientColorType: SYSINT; safecall;
+    function Get_GradientDegree: Single; safecall;
+    function Get_GradientStyle: SYSINT; safecall;
+    function Get_GradientVariant: SYSINT; safecall;
+    function Get_Pattern: SYSINT; safecall;
+    function Get_PresetGradientType: SYSINT; safecall;
+    function Get_PresetTexture: SYSINT; safecall;
+    function Get_TextureName: WideString; safecall;
+    function Get_TextureType: SYSINT; safecall;
+    function Get_type_: SYSINT; safecall;
+    procedure Set_Visible(pval: SYSINT); safecall;
+    function Get_Visible: SYSINT; safecall;
+    property BackColor: ChartColorFormat read Get_BackColor;
+    property ForeColor: ChartColorFormat read Get_ForeColor;
+    property GradientColorType: SYSINT read Get_GradientColorType;
+    property GradientDegree: Single read Get_GradientDegree;
+    property GradientStyle: SYSINT read Get_GradientStyle;
+    property GradientVariant: SYSINT read Get_GradientVariant;
+    property Pattern: SYSINT read Get_Pattern;
+    property PresetGradientType: SYSINT read Get_PresetGradientType;
+    property PresetTexture: SYSINT read Get_PresetTexture;
+    property TextureName: WideString read Get_TextureName;
+    property TextureType: SYSINT read Get_TextureType;
+    property type_: SYSINT read Get_type_;
+    property Visible: SYSINT read Get_Visible write Set_Visible;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ChartFillFormatDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C171C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartFillFormatDisp = dispinterface
+    ['{000C171C-0000-0000-C000-000000000046}']
+    procedure OneColorGradient(Style: SYSINT; Variant: SYSINT; Degree: Single); dispid 1610743808;
+    procedure TwoColorGradient(Style: SYSINT; Variant: SYSINT); dispid 1610743809;
+    procedure PresetTextured(PresetTexture: SYSINT); dispid 1610743810;
+    procedure Solid; dispid 1610743811;
+    procedure Patterned(Pattern: SYSINT); dispid 1610743812;
+    procedure UserPicture(PictureFile: OleVariant; PictureFormat: OleVariant; 
+                          PictureStackUnit: OleVariant; PicturePlacement: OleVariant); dispid 1610743813;
+    procedure UserTextured(const TextureFile: WideString); dispid 1610743814;
+    procedure PresetGradient(Style: SYSINT; Variant: SYSINT; PresetGradientType: SYSINT); dispid 1610743815;
+    property BackColor: ChartColorFormat readonly dispid 1610743816;
+    property ForeColor: ChartColorFormat readonly dispid 1610743817;
+    property GradientColorType: SYSINT readonly dispid 1610743818;
+    property GradientDegree: Single readonly dispid 1610743819;
+    property GradientStyle: SYSINT readonly dispid 1610743820;
+    property GradientVariant: SYSINT readonly dispid 1610743821;
+    property Pattern: SYSINT readonly dispid 1610743822;
+    property PresetGradientType: SYSINT readonly dispid 1610743823;
+    property PresetTexture: SYSINT readonly dispid 1610743824;
+    property TextureName: WideString readonly dispid 1610743825;
+    property TextureType: SYSINT readonly dispid 1610743826;
+    property type_: SYSINT readonly dispid 1610743827;
+    property Visible: SYSINT dispid 1610743828;
+  end;
+
+// *********************************************************************//
+// Interface: LegendEntries
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C1719-0000-0000-C000-000000000046}
+// *********************************************************************//
+  LegendEntries = interface(IDispatch)
+    ['{000C1719-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: LegendEntry): HResult; stdcall;
+    function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ChartFont
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1718-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartFont = interface(IDispatch)
+    ['{000C1718-0000-0000-C000-000000000046}']
+    procedure Set_Background(pval: OleVariant); safecall;
+    function Get_Background: OleVariant; safecall;
+    procedure Set_Bold(pval: OleVariant); safecall;
+    function Get_Bold: OleVariant; safecall;
+    procedure Set_Color(pval: OleVariant); safecall;
+    function Get_Color: OleVariant; safecall;
+    procedure Set_ColorIndex(pval: OleVariant); safecall;
+    function Get_ColorIndex: OleVariant; safecall;
+    procedure Set_FontStyle(pval: OleVariant); safecall;
+    function Get_FontStyle: OleVariant; safecall;
+    procedure Set_Italic(pval: OleVariant); safecall;
+    function Get_Italic: OleVariant; safecall;
+    procedure Set_Name(pval: OleVariant); safecall;
+    function Get_Name: OleVariant; safecall;
+    procedure Set_OutlineFont(pval: OleVariant); safecall;
+    function Get_OutlineFont: OleVariant; safecall;
+    procedure Set_Shadow(pval: OleVariant); safecall;
+    function Get_Shadow: OleVariant; safecall;
+    procedure Set_Size(pval: OleVariant); safecall;
+    function Get_Size: OleVariant; safecall;
+    procedure Set_StrikeThrough(pval: OleVariant); safecall;
+    function Get_StrikeThrough: OleVariant; safecall;
+    procedure Set_Subscript(pval: OleVariant); safecall;
+    function Get_Subscript: OleVariant; safecall;
+    procedure Set_Superscript(pval: OleVariant); safecall;
+    function Get_Superscript: OleVariant; safecall;
+    procedure Set_Underline(pval: OleVariant); safecall;
+    function Get_Underline: OleVariant; safecall;
+    property Background: OleVariant read Get_Background write Set_Background;
+    property Bold: OleVariant read Get_Bold write Set_Bold;
+    property Color: OleVariant read Get_Color write Set_Color;
+    property ColorIndex: OleVariant read Get_ColorIndex write Set_ColorIndex;
+    property FontStyle: OleVariant read Get_FontStyle write Set_FontStyle;
+    property Italic: OleVariant read Get_Italic write Set_Italic;
+    property Name: OleVariant read Get_Name write Set_Name;
+    property OutlineFont: OleVariant read Get_OutlineFont write Set_OutlineFont;
+    property Shadow: OleVariant read Get_Shadow write Set_Shadow;
+    property Size: OleVariant read Get_Size write Set_Size;
+    property StrikeThrough: OleVariant read Get_StrikeThrough write Set_StrikeThrough;
+    property Subscript: OleVariant read Get_Subscript write Set_Subscript;
+    property Superscript: OleVariant read Get_Superscript write Set_Superscript;
+    property Underline: OleVariant read Get_Underline write Set_Underline;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ChartFontDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1718-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartFontDisp = dispinterface
+    ['{000C1718-0000-0000-C000-000000000046}']
+    property Background: OleVariant dispid 1610743808;
+    property Bold: OleVariant dispid 1610743810;
+    property Color: OleVariant dispid 1610743812;
+    property ColorIndex: OleVariant dispid 1610743814;
+    property FontStyle: OleVariant dispid 1610743816;
+    property Italic: OleVariant dispid 1610743818;
+    property Name: OleVariant dispid 1610743820;
+    property OutlineFont: OleVariant dispid 1610743822;
+    property Shadow: OleVariant dispid 1610743824;
+    property Size: OleVariant dispid 1610743826;
+    property StrikeThrough: OleVariant dispid 1610743828;
+    property Subscript: OleVariant dispid 1610743830;
+    property Superscript: OleVariant dispid 1610743832;
+    property Underline: OleVariant dispid 1610743834;
+  end;
+
+// *********************************************************************//
+// Interface: ChartColorFormat
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C171D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartColorFormat = interface(IDispatch)
+    ['{000C171D-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_SchemeColor(out RHS: Integer): HResult; stdcall;
+    function Set_SchemeColor(RHS: Integer): HResult; stdcall;
+    function Get_RGB(out RHS: Integer): HResult; stdcall;
+    function Set_RGB(RHS: Integer): HResult; stdcall;
+    function Get__Default(out RHS: Integer): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: LegendEntry
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C171A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  LegendEntry = interface(IDispatch)
+    ['{000C171A-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Font(out RHS: ChartFont): HResult; stdcall;
+    function Get_Index(out RHS: Integer): HResult; stdcall;
+    function Get_LegendKey(out RHS: IMsoLegendKey): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
+    function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_Left(out RHS: Double): HResult; stdcall;
+    function Get_Top(out RHS: Double): HResult; stdcall;
+    function Get_Width(out RHS: Double): HResult; stdcall;
+    function Get_Height(out RHS: Double): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoLegendKey
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C171E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoLegendKey = interface(IDispatch)
+    ['{000C171E-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function ClearFormats(out RHS: OleVariant): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Interior(out RHS: IMsoInterior): HResult; stdcall;
+    function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function Get_InvertIfNegative(out RHS: WordBool): HResult; stdcall;
+    function Set_InvertIfNegative(RHS: WordBool): HResult; stdcall;
+    function Get_MarkerBackgroundColor(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerBackgroundColor(RHS: Integer): HResult; stdcall;
+    function Get_MarkerBackgroundColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_MarkerBackgroundColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_MarkerForegroundColor(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerForegroundColor(RHS: Integer): HResult; stdcall;
+    function Get_MarkerForegroundColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_MarkerForegroundColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_MarkerSize(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerSize(RHS: Integer): HResult; stdcall;
+    function Get_MarkerStyle(out RHS: XlMarkerStyle): HResult; stdcall;
+    function Set_MarkerStyle(RHS: XlMarkerStyle): HResult; stdcall;
+    function Get_PictureType(out RHS: Integer): HResult; stdcall;
+    function Set_PictureType(RHS: Integer): HResult; stdcall;
+    function Get_PictureUnit(out RHS: Double): HResult; stdcall;
+    function Set_PictureUnit(RHS: Double): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_Smooth(out RHS: WordBool): HResult; stdcall;
+    function Set_Smooth(RHS: WordBool): HResult; stdcall;
+    function Get_Left(out RHS: Double): HResult; stdcall;
+    function Get_Top(out RHS: Double): HResult; stdcall;
+    function Get_Width(out RHS: Double): HResult; stdcall;
+    function Get_Height(out RHS: Double): HResult; stdcall;
+    function Get_Shadow(out RHS: WordBool): HResult; stdcall;
+    function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: SeriesCollection
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C170A-0000-0000-C000-000000000046}
+// *********************************************************************//
+  SeriesCollection = interface(IDispatch)
+    ['{000C170A-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Add(Source: OleVariant; Rowcol: XlRowCol; SeriesLabels: OleVariant; 
+                 CategoryLabels: OleVariant; Replace: OleVariant; out RHS: IMsoSeries): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Extend(Source: OleVariant; Rowcol: OleVariant; CategoryLabels: OleVariant; 
+                    out RHS: OleVariant): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: IMsoSeries): HResult; stdcall;
+    function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Paste(Rowcol: XlRowCol; SeriesLabels: OleVariant; CategoryLabels: OleVariant; 
+                   Replace: OleVariant; NewSeries: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function NewSeries(out RHS: IMsoSeries): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoSeries
+// Flags:     (4368) Hidden OleAutomation Dispatchable
+// GUID:      {000C170B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoSeries = interface(IDispatch)
+    ['{000C170B-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function _ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                              AutoText: OleVariant; HasLeaderLines: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_AxisGroup(out RHS: XlAxisGroup): HResult; stdcall;
+    function Set_AxisGroup(RHS: XlAxisGroup): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function ClearFormats(out RHS: OleVariant): HResult; stdcall;
+    function Copy(out RHS: OleVariant): HResult; stdcall;
+    function DataLabels(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function ErrorBar(Direction: XlErrorBarDirection; Include: XlErrorBarInclude; 
+                      Type_: XlErrorBarType; Amount: OleVariant; MinusValues: OleVariant; 
+                      out RHS: OleVariant): HResult; stdcall;
+    function Get_ErrorBars(out RHS: IMsoErrorBars): HResult; stdcall;
+    function Get_Explosion(out RHS: Integer): HResult; stdcall;
+    function Set_Explosion(RHS: Integer): HResult; stdcall;
+    function Get_Formula(out RHS: WideString): HResult; stdcall;
+    function Set_Formula(const RHS: WideString): HResult; stdcall;
+    function Get_FormulaLocal(out RHS: WideString): HResult; stdcall;
+    function Set_FormulaLocal(const RHS: WideString): HResult; stdcall;
+    function Get_FormulaR1C1(out RHS: WideString): HResult; stdcall;
+    function Set_FormulaR1C1(const RHS: WideString): HResult; stdcall;
+    function Get_FormulaR1C1Local(out RHS: WideString): HResult; stdcall;
+    function Set_FormulaR1C1Local(const RHS: WideString): HResult; stdcall;
+    function Get_HasDataLabels(out RHS: WordBool): HResult; stdcall;
+    function Set_HasDataLabels(RHS: WordBool): HResult; stdcall;
+    function Get_HasErrorBars(out RHS: WordBool): HResult; stdcall;
+    function Set_HasErrorBars(RHS: WordBool): HResult; stdcall;
+    function Get_Interior(out RHS: IMsoInterior): HResult; stdcall;
+    function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function Get_InvertIfNegative(out RHS: WordBool): HResult; stdcall;
+    function Set_InvertIfNegative(RHS: WordBool): HResult; stdcall;
+    function Get_MarkerBackgroundColor(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerBackgroundColor(RHS: Integer): HResult; stdcall;
+    function Get_MarkerBackgroundColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_MarkerBackgroundColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_MarkerForegroundColor(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerForegroundColor(RHS: Integer): HResult; stdcall;
+    function Get_MarkerForegroundColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_MarkerForegroundColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_MarkerSize(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerSize(RHS: Integer): HResult; stdcall;
+    function Get_MarkerStyle(out RHS: XlMarkerStyle): HResult; stdcall;
+    function Set_MarkerStyle(RHS: XlMarkerStyle): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Set_Name(const RHS: WideString): HResult; stdcall;
+    function Paste(out RHS: OleVariant): HResult; stdcall;
+    function Get_PictureType(out RHS: XlChartPictureType): HResult; stdcall;
+    function Set_PictureType(RHS: XlChartPictureType): HResult; stdcall;
+    function Get_PictureUnit(out RHS: Double): HResult; stdcall;
+    function Set_PictureUnit(RHS: Double): HResult; stdcall;
+    function Get_PlotOrder(out RHS: Integer): HResult; stdcall;
+    function Set_PlotOrder(RHS: Integer): HResult; stdcall;
+    function Points(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_Smooth(out RHS: WordBool): HResult; stdcall;
+    function Set_Smooth(RHS: WordBool): HResult; stdcall;
+    function Trendlines(Index: OleVariant; out RHS: IDispatch): HResult; stdcall;
+    function Get_type_(out RHS: Integer): HResult; stdcall;
+    function Set_type_(RHS: Integer): HResult; stdcall;
+    function Get_ChartType(out RHS: XlChartType): HResult; stdcall;
+    function Set_ChartType(RHS: XlChartType): HResult; stdcall;
+    function ApplyCustomType(ChartType: XlChartType): HResult; stdcall;
+    function Get_Values(out RHS: OleVariant): HResult; stdcall;
+    function Set_Values(RHS: OleVariant): HResult; stdcall;
+    function Get_XValues(out RHS: OleVariant): HResult; stdcall;
+    function Set_XValues(RHS: OleVariant): HResult; stdcall;
+    function Get_BubbleSizes(out RHS: OleVariant): HResult; stdcall;
+    function Set_BubbleSizes(RHS: OleVariant): HResult; stdcall;
+    function Get_BarShape(out RHS: XlBarShape): HResult; stdcall;
+    function Set_BarShape(RHS: XlBarShape): HResult; stdcall;
+    function Get_ApplyPictToSides(out RHS: WordBool): HResult; stdcall;
+    function Set_ApplyPictToSides(RHS: WordBool): HResult; stdcall;
+    function Get_ApplyPictToFront(out RHS: WordBool): HResult; stdcall;
+    function Set_ApplyPictToFront(RHS: WordBool): HResult; stdcall;
+    function Get_ApplyPictToEnd(out RHS: WordBool): HResult; stdcall;
+    function Set_ApplyPictToEnd(RHS: WordBool): HResult; stdcall;
+    function Get_Has3DEffect(out RHS: WordBool): HResult; stdcall;
+    function Set_Has3DEffect(RHS: WordBool): HResult; stdcall;
+    function Get_Shadow(out RHS: WordBool): HResult; stdcall;
+    function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Get_HasLeaderLines(out RHS: WordBool): HResult; stdcall;
+    function Set_HasLeaderLines(RHS: WordBool): HResult; stdcall;
+    function Get_LeaderLines(out RHS: IMsoLeaderLines): HResult; stdcall;
+    function ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                             AutoText: OleVariant; HasLeaderLines: OleVariant; 
+                             ShowSeriesName: OleVariant; ShowCategoryName: OleVariant; 
+                             ShowValue: OleVariant; ShowPercentage: OleVariant; 
+                             ShowBubbleSize: OleVariant; Separator: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoErrorBars
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C1721-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoErrorBars = interface(IDispatch)
+    ['{000C1721-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function ClearFormats(out RHS: OleVariant): HResult; stdcall;
+    function Get_EndStyle(out RHS: XlEndStyleCap): HResult; stdcall;
+    function Set_EndStyle(RHS: XlEndStyleCap): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoTrendline
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C170E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoTrendline = interface(IDispatch)
+    ['{000C170E-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Backward(out RHS: Double): HResult; stdcall;
+    function Set_Backward(RHS: Double): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function ClearFormats(out RHS: OleVariant): HResult; stdcall;
+    function Get_DataLabel(out RHS: IMsoDataLabel): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_DisplayEquation(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayEquation(RHS: WordBool): HResult; stdcall;
+    function Get_DisplayRSquared(out RHS: WordBool): HResult; stdcall;
+    function Set_DisplayRSquared(RHS: WordBool): HResult; stdcall;
+    function Get_Forward(out RHS: Double): HResult; stdcall;
+    function Set_Forward(RHS: Double): HResult; stdcall;
+    function Get_Index(out RHS: Integer): HResult; stdcall;
+    function Get_Intercept(out RHS: Double): HResult; stdcall;
+    function Set_Intercept(RHS: Double): HResult; stdcall;
+    function Get_InterceptIsAuto(out RHS: WordBool): HResult; stdcall;
+    function Set_InterceptIsAuto(RHS: WordBool): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Set_Name(const RHS: WideString): HResult; stdcall;
+    function Get_NameIsAuto(out RHS: WordBool): HResult; stdcall;
+    function Set_NameIsAuto(RHS: WordBool): HResult; stdcall;
+    function Get_Order(out RHS: Integer): HResult; stdcall;
+    function Set_Order(RHS: Integer): HResult; stdcall;
+    function Get_Period(out RHS: Integer): HResult; stdcall;
+    function Set_Period(RHS: Integer): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_type_(out RHS: XlTrendlineType): HResult; stdcall;
+    function Set_type_(RHS: XlTrendlineType): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: Trendlines
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C1722-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Trendlines = interface(IDispatch)
+    ['{000C1722-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Add(Type_: XlTrendlineType; Order: OleVariant; Period: OleVariant; 
+                 Forward: OleVariant; Backward: OleVariant; Intercept: OleVariant; 
+                 DisplayEquation: OleVariant; DisplayRSquared: OleVariant; Name: OleVariant; 
+                 out RHS: IMsoTrendline): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: IMsoTrendline): HResult; stdcall;
+    function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoDataLabels
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C171F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDataLabels = interface(IDispatch)
+    ['{000C171F-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Interior(out RHS: IMsoInterior): HResult; stdcall;
+    function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function Get_Characters(Start: OleVariant; Length: OleVariant; out RHS: IMsoCharacters): HResult; stdcall;
+    function Get_Font(out RHS: ChartFont): HResult; stdcall;
+    function Get_HorizontalAlignment(out RHS: OleVariant): HResult; stdcall;
+    function Set_HorizontalAlignment(RHS: OleVariant): HResult; stdcall;
+    function Get_Orientation(out RHS: OleVariant): HResult; stdcall;
+    function Set_Orientation(RHS: OleVariant): HResult; stdcall;
+    function Get_Shadow(out RHS: WordBool): HResult; stdcall;
+    function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Get_VerticalAlignment(out RHS: OleVariant): HResult; stdcall;
+    function Set_VerticalAlignment(RHS: OleVariant): HResult; stdcall;
+    function Get_ReadingOrder(out RHS: Integer): HResult; stdcall;
+    function Set_ReadingOrder(RHS: Integer): HResult; stdcall;
+    function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
+    function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_AutoText(out RHS: WordBool): HResult; stdcall;
+    function Set_AutoText(RHS: WordBool): HResult; stdcall;
+    function Get_NumberFormat(out RHS: WideString): HResult; stdcall;
+    function Set_NumberFormat(const RHS: WideString): HResult; stdcall;
+    function Get_NumberFormatLinked(out RHS: WordBool): HResult; stdcall;
+    function Set_NumberFormatLinked(RHS: WordBool): HResult; stdcall;
+    function Get_NumberFormatLocal(out RHS: OleVariant): HResult; stdcall;
+    function Set_NumberFormatLocal(RHS: OleVariant): HResult; stdcall;
+    function Get_ShowLegendKey(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowLegendKey(RHS: WordBool): HResult; stdcall;
+    function Get_type_(out RHS: OleVariant): HResult; stdcall;
+    function Set_type_(RHS: OleVariant): HResult; stdcall;
+    function Get_Position(out RHS: XlDataLabelPosition): HResult; stdcall;
+    function Set_Position(RHS: XlDataLabelPosition): HResult; stdcall;
+    function Get_ShowSeriesName(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowSeriesName(RHS: WordBool): HResult; stdcall;
+    function Get_ShowCategoryName(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowCategoryName(RHS: WordBool): HResult; stdcall;
+    function Get_ShowValue(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowValue(RHS: WordBool): HResult; stdcall;
+    function Get_ShowPercentage(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowPercentage(RHS: WordBool): HResult; stdcall;
+    function Get_ShowBubbleSize(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowBubbleSize(RHS: WordBool): HResult; stdcall;
+    function Get_Separator(out RHS: OleVariant): HResult; stdcall;
+    function Set_Separator(RHS: OleVariant): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Item(Index: OleVariant; out RHS: IMsoDataLabel): HResult; stdcall;
+    function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoDataLabel
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C1720-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDataLabel = interface(IDispatch)
+    ['{000C1720-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Name(out RHS: WideString): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Interior(out RHS: IMsoInterior): HResult; stdcall;
+    function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function Get_Caption(out RHS: WideString): HResult; stdcall;
+    function Set_Caption(const RHS: WideString): HResult; stdcall;
+    function Get_Characters(Start: OleVariant; Length: OleVariant; out RHS: IMsoCharacters): HResult; stdcall;
+    function Get_Font(out RHS: ChartFont): HResult; stdcall;
+    function Get_HorizontalAlignment(out RHS: OleVariant): HResult; stdcall;
+    function Set_HorizontalAlignment(RHS: OleVariant): HResult; stdcall;
+    function Get_Left(out RHS: Double): HResult; stdcall;
+    function Set_Left(RHS: Double): HResult; stdcall;
+    function Get_Orientation(out RHS: OleVariant): HResult; stdcall;
+    function Set_Orientation(RHS: OleVariant): HResult; stdcall;
+    function Get_Shadow(out RHS: WordBool): HResult; stdcall;
+    function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Get_Text(out RHS: WideString): HResult; stdcall;
+    function Set_Text(const RHS: WideString): HResult; stdcall;
+    function Get_Top(out RHS: Double): HResult; stdcall;
+    function Set_Top(RHS: Double): HResult; stdcall;
+    function Get_VerticalAlignment(out RHS: OleVariant): HResult; stdcall;
+    function Set_VerticalAlignment(RHS: OleVariant): HResult; stdcall;
+    function Get_ReadingOrder(out RHS: Integer): HResult; stdcall;
+    function Set_ReadingOrder(RHS: Integer): HResult; stdcall;
+    function Get_AutoScaleFont(out RHS: OleVariant): HResult; stdcall;
+    function Set_AutoScaleFont(RHS: OleVariant): HResult; stdcall;
+    function Get_AutoText(out RHS: WordBool): HResult; stdcall;
+    function Set_AutoText(RHS: WordBool): HResult; stdcall;
+    function Get_NumberFormat(out RHS: WideString): HResult; stdcall;
+    function Set_NumberFormat(const RHS: WideString): HResult; stdcall;
+    function Get_NumberFormatLinked(out RHS: WordBool): HResult; stdcall;
+    function Set_NumberFormatLinked(RHS: WordBool): HResult; stdcall;
+    function Get_NumberFormatLocal(out RHS: OleVariant): HResult; stdcall;
+    function Set_NumberFormatLocal(RHS: OleVariant): HResult; stdcall;
+    function Get_ShowLegendKey(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowLegendKey(RHS: WordBool): HResult; stdcall;
+    function Get_type_(out RHS: OleVariant): HResult; stdcall;
+    function Set_type_(RHS: OleVariant): HResult; stdcall;
+    function Get_Position(out RHS: XlDataLabelPosition): HResult; stdcall;
+    function Set_Position(RHS: XlDataLabelPosition): HResult; stdcall;
+    function Get_ShowSeriesName(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowSeriesName(RHS: WordBool): HResult; stdcall;
+    function Get_ShowCategoryName(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowCategoryName(RHS: WordBool): HResult; stdcall;
+    function Get_ShowValue(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowValue(RHS: WordBool): HResult; stdcall;
+    function Get_ShowPercentage(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowPercentage(RHS: WordBool): HResult; stdcall;
+    function Get_ShowBubbleSize(out RHS: WordBool): HResult; stdcall;
+    function Set_ShowBubbleSize(RHS: WordBool): HResult; stdcall;
+    function Get_Separator(out RHS: OleVariant): HResult; stdcall;
+    function Set_Separator(RHS: OleVariant): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+    function Get_Height(out pval: Double): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: Points
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C170D-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Points = interface(IDispatch)
+    ['{000C170D-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function Get_Count(out RHS: Integer): HResult; stdcall;
+    function Item(Index: Integer; out RHS: ChartPoint): HResult; stdcall;
+    function _NewEnum(out RHS: IUnknown): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: ChartPoint
+// Flags:     (4112) Hidden Dispatchable
+// GUID:      {000C170C-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartPoint = interface(IDispatch)
+    ['{000C170C-0000-0000-C000-000000000046}']
+    function Get_Parent(out RHS: IDispatch): HResult; stdcall;
+    function _ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                              AutoText: OleVariant; HasLeaderLines: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_Border(out RHS: IMsoBorder): HResult; stdcall;
+    function ClearFormats(out RHS: OleVariant): HResult; stdcall;
+    function Copy(out RHS: OleVariant): HResult; stdcall;
+    function Get_DataLabel(out RHS: IMsoDataLabel): HResult; stdcall;
+    function Delete(out RHS: OleVariant): HResult; stdcall;
+    function Get_Explosion(out RHS: Integer): HResult; stdcall;
+    function Set_Explosion(RHS: Integer): HResult; stdcall;
+    function Get_HasDataLabel(out RHS: WordBool): HResult; stdcall;
+    function Set_HasDataLabel(RHS: WordBool): HResult; stdcall;
+    function Get_Interior(out RHS: IMsoInterior): HResult; stdcall;
+    function Get_InvertIfNegative(out RHS: WordBool): HResult; stdcall;
+    function Set_InvertIfNegative(RHS: WordBool): HResult; stdcall;
+    function Get_MarkerBackgroundColor(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerBackgroundColor(RHS: Integer): HResult; stdcall;
+    function Get_MarkerBackgroundColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_MarkerBackgroundColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_MarkerForegroundColor(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerForegroundColor(RHS: Integer): HResult; stdcall;
+    function Get_MarkerForegroundColorIndex(out RHS: XlColorIndex): HResult; stdcall;
+    function Set_MarkerForegroundColorIndex(RHS: XlColorIndex): HResult; stdcall;
+    function Get_MarkerSize(out RHS: Integer): HResult; stdcall;
+    function Set_MarkerSize(RHS: Integer): HResult; stdcall;
+    function Get_MarkerStyle(out RHS: XlMarkerStyle): HResult; stdcall;
+    function Set_MarkerStyle(RHS: XlMarkerStyle): HResult; stdcall;
+    function Paste(out RHS: OleVariant): HResult; stdcall;
+    function Get_PictureType(out RHS: XlChartPictureType): HResult; stdcall;
+    function Set_PictureType(RHS: XlChartPictureType): HResult; stdcall;
+    function Get_PictureUnit(out RHS: Double): HResult; stdcall;
+    function Set_PictureUnit(RHS: Double): HResult; stdcall;
+    function Select(out RHS: OleVariant): HResult; stdcall;
+    function Get_ApplyPictToSides(out RHS: WordBool): HResult; stdcall;
+    function Set_ApplyPictToSides(RHS: WordBool): HResult; stdcall;
+    function Get_ApplyPictToFront(out RHS: WordBool): HResult; stdcall;
+    function Set_ApplyPictToFront(RHS: WordBool): HResult; stdcall;
+    function Get_ApplyPictToEnd(out RHS: WordBool): HResult; stdcall;
+    function Set_ApplyPictToEnd(RHS: WordBool): HResult; stdcall;
+    function Get_Shadow(out RHS: WordBool): HResult; stdcall;
+    function Set_Shadow(RHS: WordBool): HResult; stdcall;
+    function Get_SecondaryPlot(out RHS: WordBool): HResult; stdcall;
+    function Set_SecondaryPlot(RHS: WordBool): HResult; stdcall;
+    function Get_Fill(out RHS: ChartFillFormat): HResult; stdcall;
+    function ApplyDataLabels(Type_: XlDataLabelsType; IMsoLegendKey: OleVariant; 
+                             AutoText: OleVariant; HasLeaderLines: OleVariant; 
+                             ShowSeriesName: OleVariant; ShowCategoryName: OleVariant; 
+                             ShowValue: OleVariant; ShowPercentage: OleVariant; 
+                             ShowBubbleSize: OleVariant; Separator: OleVariant; out RHS: OleVariant): HResult; stdcall;
+    function Get_Has3DEffect(out RHS: WordBool): HResult; stdcall;
+    function Set_Has3DEffect(RHS: WordBool): HResult; stdcall;
+    function Get_Format(out ppChartFormat: IMsoChartFormat): HResult; stdcall;
+  end;
+
+// *********************************************************************//
+// Interface: Axes
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1712-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Axes = interface(IDispatch)
+    ['{000C1712-0000-0000-C000-000000000046}']
+    function Get_Count: Integer; safecall;
+    function Get_Item(Type_: XlAxisType; AxisGroup: XlAxisGroup): IMsoAxis; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Count: Integer read Get_Count;
+    property Item[Type_: XlAxisType; AxisGroup: XlAxisGroup]: IMsoAxis read Get_Item;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  AxesDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1712-0000-0000-C000-000000000046}
+// *********************************************************************//
+  AxesDisp = dispinterface
+    ['{000C1712-0000-0000-C000-000000000046}']
+    property Count: Integer readonly dispid 1610743808;
+    property Item[Type_: XlAxisType; AxisGroup: XlAxisGroup]: IMsoAxis readonly dispid 1610743809;
+    property _NewEnum: IUnknown readonly dispid 1610743810;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoAxis
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1713-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoAxis = interface(IDispatch)
+    ['{000C1713-0000-0000-C000-000000000046}']
+    function Get_AxisBetweenCategories: WordBool; safecall;
+    procedure Set_AxisBetweenCategories(pval: WordBool); safecall;
+    function Get_AxisGroup: XlAxisGroup; safecall;
+    function Get_AxisTitle: IMsoAxisTitle; safecall;
+    function Get_CategoryNames: OleVariant; safecall;
+    procedure Set_CategoryNames(pval: OleVariant); safecall;
+    function Get_Crosses: XlAxisCrosses; safecall;
+    procedure Set_Crosses(pval: XlAxisCrosses); safecall;
+    function Get_CrossesAt: Double; safecall;
+    procedure Set_CrossesAt(pval: Double); safecall;
+    function Delete: OleVariant; safecall;
+    function Get_HasMajorGridlines: WordBool; safecall;
+    procedure Set_HasMajorGridlines(pval: WordBool); safecall;
+    function Get_HasMinorGridlines: WordBool; safecall;
+    procedure Set_HasMinorGridlines(pval: WordBool); safecall;
+    function Get_HasTitle: WordBool; safecall;
+    procedure Set_HasTitle(pval: WordBool); safecall;
+    function Get_MajorGridlines: GridLines; safecall;
+    function Get_MajorTickMark: XlTickMark; safecall;
+    procedure Set_MajorTickMark(pval: XlTickMark); safecall;
+    function Get_MajorUnit: Double; safecall;
+    procedure Set_MajorUnit(pval: Double); safecall;
+    function Get_LogBase: Double; safecall;
+    procedure Set_LogBase(pval: Double); safecall;
+    function Get_TickLabelSpacingIsAuto: WordBool; safecall;
+    procedure Set_TickLabelSpacingIsAuto(pval: WordBool); safecall;
+    function Get_MajorUnitIsAuto: WordBool; safecall;
+    procedure Set_MajorUnitIsAuto(pval: WordBool); safecall;
+    function Get_MaximumScale: Double; safecall;
+    procedure Set_MaximumScale(pval: Double); safecall;
+    function Get_MaximumScaleIsAuto: WordBool; safecall;
+    procedure Set_MaximumScaleIsAuto(pval: WordBool); safecall;
+    function Get_MinimumScale: Double; safecall;
+    procedure Set_MinimumScale(pval: Double); safecall;
+    function Get_MinimumScaleIsAuto: WordBool; safecall;
+    procedure Set_MinimumScaleIsAuto(pval: WordBool); safecall;
+    function Get_MinorGridlines: GridLines; safecall;
+    function Get_MinorTickMark: XlTickMark; safecall;
+    procedure Set_MinorTickMark(pval: XlTickMark); safecall;
+    function Get_MinorUnit: Double; safecall;
+    procedure Set_MinorUnit(pval: Double); safecall;
+    function Get_MinorUnitIsAuto: WordBool; safecall;
+    procedure Set_MinorUnitIsAuto(pval: WordBool); safecall;
+    function Get_ReversePlotOrder: WordBool; safecall;
+    procedure Set_ReversePlotOrder(pval: WordBool); safecall;
+    function Get_ScaleType: XlScaleType; safecall;
+    procedure Set_ScaleType(pval: XlScaleType); safecall;
+    function Select: OleVariant; safecall;
+    function Get_TickLabelPosition: XlTickLabelPosition; safecall;
+    procedure Set_TickLabelPosition(pval: XlTickLabelPosition); safecall;
+    function Get_TickLabels: IMsoTickLabels; safecall;
+    function Get_TickLabelSpacing: SYSINT; safecall;
+    procedure Set_TickLabelSpacing(pval: SYSINT); safecall;
+    function Get_TickMarkSpacing: SYSINT; safecall;
+    procedure Set_TickMarkSpacing(pval: SYSINT); safecall;
+    function Get_type_: XlAxisType; safecall;
+    procedure Set_type_(pval: XlAxisType); safecall;
+    function Get_BaseUnit: XlTimeUnit; safecall;
+    procedure Set_BaseUnit(pval: XlTimeUnit); safecall;
+    function Get_BaseUnitIsAuto: WordBool; safecall;
+    procedure Set_BaseUnitIsAuto(pval: WordBool); safecall;
+    function Get_MajorUnitScale: XlTimeUnit; safecall;
+    procedure Set_MajorUnitScale(pval: XlTimeUnit); safecall;
+    function Get_MinorUnitScale: XlTimeUnit; safecall;
+    procedure Set_MinorUnitScale(pval: XlTimeUnit); safecall;
+    function Get_CategoryType: XlCategoryType; safecall;
+    procedure Set_CategoryType(pval: XlCategoryType); safecall;
+    function Get_Left: Double; safecall;
+    function Get_Top: Double; safecall;
+    function Get_Width: Double; safecall;
+    function Get_Height: Double; safecall;
+    function Get_DisplayUnit: XlDisplayUnit; safecall;
+    procedure Set_DisplayUnit(pval: XlDisplayUnit); safecall;
+    function Get_DisplayUnitCustom: Double; safecall;
+    procedure Set_DisplayUnitCustom(pval: Double); safecall;
+    function Get_HasDisplayUnitLabel: WordBool; safecall;
+    procedure Set_HasDisplayUnitLabel(pval: WordBool); safecall;
+    function Get_DisplayUnitLabel: IMsoDisplayUnitLabel; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property AxisBetweenCategories: WordBool read Get_AxisBetweenCategories write Set_AxisBetweenCategories;
+    property AxisGroup: XlAxisGroup read Get_AxisGroup;
+    property AxisTitle: IMsoAxisTitle read Get_AxisTitle;
+    property CategoryNames: OleVariant read Get_CategoryNames write Set_CategoryNames;
+    property Crosses: XlAxisCrosses read Get_Crosses write Set_Crosses;
+    property CrossesAt: Double read Get_CrossesAt write Set_CrossesAt;
+    property HasMajorGridlines: WordBool read Get_HasMajorGridlines write Set_HasMajorGridlines;
+    property HasMinorGridlines: WordBool read Get_HasMinorGridlines write Set_HasMinorGridlines;
+    property HasTitle: WordBool read Get_HasTitle write Set_HasTitle;
+    property MajorGridlines: GridLines read Get_MajorGridlines;
+    property MajorTickMark: XlTickMark read Get_MajorTickMark write Set_MajorTickMark;
+    property MajorUnit: Double read Get_MajorUnit write Set_MajorUnit;
+    property LogBase: Double read Get_LogBase write Set_LogBase;
+    property TickLabelSpacingIsAuto: WordBool read Get_TickLabelSpacingIsAuto write Set_TickLabelSpacingIsAuto;
+    property MajorUnitIsAuto: WordBool read Get_MajorUnitIsAuto write Set_MajorUnitIsAuto;
+    property MaximumScale: Double read Get_MaximumScale write Set_MaximumScale;
+    property MaximumScaleIsAuto: WordBool read Get_MaximumScaleIsAuto write Set_MaximumScaleIsAuto;
+    property MinimumScale: Double read Get_MinimumScale write Set_MinimumScale;
+    property MinimumScaleIsAuto: WordBool read Get_MinimumScaleIsAuto write Set_MinimumScaleIsAuto;
+    property MinorGridlines: GridLines read Get_MinorGridlines;
+    property MinorTickMark: XlTickMark read Get_MinorTickMark write Set_MinorTickMark;
+    property MinorUnit: Double read Get_MinorUnit write Set_MinorUnit;
+    property MinorUnitIsAuto: WordBool read Get_MinorUnitIsAuto write Set_MinorUnitIsAuto;
+    property ReversePlotOrder: WordBool read Get_ReversePlotOrder write Set_ReversePlotOrder;
+    property ScaleType: XlScaleType read Get_ScaleType write Set_ScaleType;
+    property TickLabelPosition: XlTickLabelPosition read Get_TickLabelPosition write Set_TickLabelPosition;
+    property TickLabels: IMsoTickLabels read Get_TickLabels;
+    property TickLabelSpacing: SYSINT read Get_TickLabelSpacing write Set_TickLabelSpacing;
+    property TickMarkSpacing: SYSINT read Get_TickMarkSpacing write Set_TickMarkSpacing;
+    property type_: XlAxisType read Get_type_ write Set_type_;
+    property BaseUnit: XlTimeUnit read Get_BaseUnit write Set_BaseUnit;
+    property BaseUnitIsAuto: WordBool read Get_BaseUnitIsAuto write Set_BaseUnitIsAuto;
+    property MajorUnitScale: XlTimeUnit read Get_MajorUnitScale write Set_MajorUnitScale;
+    property MinorUnitScale: XlTimeUnit read Get_MinorUnitScale write Set_MinorUnitScale;
+    property CategoryType: XlCategoryType read Get_CategoryType write Set_CategoryType;
+    property Left: Double read Get_Left;
+    property Top: Double read Get_Top;
+    property Width: Double read Get_Width;
+    property Height: Double read Get_Height;
+    property DisplayUnit: XlDisplayUnit read Get_DisplayUnit write Set_DisplayUnit;
+    property DisplayUnitCustom: Double read Get_DisplayUnitCustom write Set_DisplayUnitCustom;
+    property HasDisplayUnitLabel: WordBool read Get_HasDisplayUnitLabel write Set_HasDisplayUnitLabel;
+    property DisplayUnitLabel: IMsoDisplayUnitLabel read Get_DisplayUnitLabel;
+    property Border: IMsoBorder read Get_Border;
+    property Name: WideString read Get_Name;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoAxisDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1713-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoAxisDisp = dispinterface
+    ['{000C1713-0000-0000-C000-000000000046}']
+    property AxisBetweenCategories: WordBool dispid 1610743808;
+    property AxisGroup: XlAxisGroup readonly dispid 1610743810;
+    property AxisTitle: IMsoAxisTitle readonly dispid 1610743811;
+    property CategoryNames: OleVariant dispid 1610743812;
+    property Crosses: XlAxisCrosses dispid 1610743814;
+    property CrossesAt: Double dispid 1610743816;
+    function Delete: OleVariant; dispid 1610743818;
+    property HasMajorGridlines: WordBool dispid 1610743819;
+    property HasMinorGridlines: WordBool dispid 1610743821;
+    property HasTitle: WordBool dispid 1610743823;
+    property MajorGridlines: GridLines readonly dispid 1610743825;
+    property MajorTickMark: XlTickMark dispid 1610743826;
+    property MajorUnit: Double dispid 1610743828;
+    property LogBase: Double dispid 1610743830;
+    property TickLabelSpacingIsAuto: WordBool dispid 1610743832;
+    property MajorUnitIsAuto: WordBool dispid 1610743834;
+    property MaximumScale: Double dispid 1610743836;
+    property MaximumScaleIsAuto: WordBool dispid 1610743838;
+    property MinimumScale: Double dispid 1610743840;
+    property MinimumScaleIsAuto: WordBool dispid 1610743842;
+    property MinorGridlines: GridLines readonly dispid 1610743844;
+    property MinorTickMark: XlTickMark dispid 1610743845;
+    property MinorUnit: Double dispid 1610743847;
+    property MinorUnitIsAuto: WordBool dispid 1610743849;
+    property ReversePlotOrder: WordBool dispid 1610743851;
+    property ScaleType: XlScaleType dispid 1610743853;
+    function Select: OleVariant; dispid 1610743855;
+    property TickLabelPosition: XlTickLabelPosition dispid 1610743856;
+    property TickLabels: IMsoTickLabels readonly dispid 1610743858;
+    property TickLabelSpacing: SYSINT dispid 1610743859;
+    property TickMarkSpacing: SYSINT dispid 1610743861;
+    property type_: XlAxisType dispid 1610743863;
+    property BaseUnit: XlTimeUnit dispid 1610743865;
+    property BaseUnitIsAuto: WordBool dispid 1610743867;
+    property MajorUnitScale: XlTimeUnit dispid 1610743869;
+    property MinorUnitScale: XlTimeUnit dispid 1610743871;
+    property CategoryType: XlCategoryType dispid 1610743873;
+    property Left: Double readonly dispid 1610743875;
+    property Top: Double readonly dispid 1610743876;
+    property Width: Double readonly dispid 1610743877;
+    property Height: Double readonly dispid 1610743878;
+    property DisplayUnit: XlDisplayUnit dispid 1610743879;
+    property DisplayUnitCustom: Double dispid 1610743881;
+    property HasDisplayUnitLabel: WordBool dispid 1610743883;
+    property DisplayUnitLabel: IMsoDisplayUnitLabel readonly dispid 1610743885;
+    property Border: IMsoBorder readonly dispid 1610743886;
+    property Name: WideString readonly dispid 1610743887;
+    property Format: IMsoChartFormat readonly dispid 1610743888;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoDataTable
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1711-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDataTable = interface(IDispatch)
+    ['{000C1711-0000-0000-C000-000000000046}']
+    procedure Set_ShowLegendKey(pfVisible: WordBool); safecall;
+    function Get_ShowLegendKey: WordBool; safecall;
+    procedure Set_HasBorderHorizontal(pfVisible: WordBool); safecall;
+    function Get_HasBorderHorizontal: WordBool; safecall;
+    procedure Set_HasBorderVertical(pfVisible: WordBool); safecall;
+    function Get_HasBorderVertical: WordBool; safecall;
+    procedure Set_HasBorderOutline(pfVisible: WordBool); safecall;
+    function Get_HasBorderOutline: WordBool; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Get_Font: ChartFont; safecall;
+    procedure Select; safecall;
+    procedure Delete; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_AutoScaleFont: OleVariant; safecall;
+    procedure Set_AutoScaleFont(RHS: OleVariant); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property ShowLegendKey: WordBool read Get_ShowLegendKey write Set_ShowLegendKey;
+    property HasBorderHorizontal: WordBool read Get_HasBorderHorizontal write Set_HasBorderHorizontal;
+    property HasBorderVertical: WordBool read Get_HasBorderVertical write Set_HasBorderVertical;
+    property HasBorderOutline: WordBool read Get_HasBorderOutline write Set_HasBorderOutline;
+    property Border: IMsoBorder read Get_Border;
+    property Font: ChartFont read Get_Font;
+    property Parent: IDispatch read Get_Parent;
+    property AutoScaleFont: OleVariant read Get_AutoScaleFont write Set_AutoScaleFont;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoDataTableDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1711-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDataTableDisp = dispinterface
+    ['{000C1711-0000-0000-C000-000000000046}']
+    property ShowLegendKey: WordBool dispid 1610743808;
+    property HasBorderHorizontal: WordBool dispid 1610743810;
+    property HasBorderVertical: WordBool dispid 1610743812;
+    property HasBorderOutline: WordBool dispid 1610743814;
+    property Border: IMsoBorder readonly dispid 1610743816;
+    property Font: ChartFont readonly dispid 1610743817;
+    procedure Select; dispid 1610743818;
+    procedure Delete; dispid 1610743819;
+    property Parent: IDispatch readonly dispid 1610743820;
+    property AutoScaleFont: OleVariant dispid 1610743821;
+    property Format: IMsoChartFormat readonly dispid 1610743823;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoChartTitle
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C170F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartTitle = interface(IDispatch)
+    ['{000C170F-0000-0000-C000-000000000046}']
+    procedure Set_Caption(const pbstr: WideString); safecall;
+    function Get_Caption: WideString; safecall;
+    function Get_Characters(Start: OleVariant; Length: OleVariant): IMsoCharacters; safecall;
+    function Get_Font: ChartFont; safecall;
+    procedure Set_HorizontalAlignment(Val: OleVariant); safecall;
+    function Get_HorizontalAlignment: OleVariant; safecall;
+    function Get_Left: Double; safecall;
+    procedure Set_Left(pval: Double); safecall;
+    procedure Set_Orientation(Val: OleVariant); safecall;
+    function Get_Orientation: OleVariant; safecall;
+    function Get_Shadow: WordBool; safecall;
+    procedure Set_Shadow(pval: WordBool); safecall;
+    procedure Set_Text(const pbstr: WideString); safecall;
+    function Get_Text: WideString; safecall;
+    function Get_Top: Double; safecall;
+    procedure Set_Top(pval: Double); safecall;
+    procedure Set_VerticalAlignment(Val: OleVariant); safecall;
+    function Get_VerticalAlignment: OleVariant; safecall;
+    function Get_ReadingOrder: SYSINT; safecall;
+    procedure Set_ReadingOrder(pval: SYSINT); safecall;
+    procedure Set_AutoScaleFont(Val: OleVariant); safecall;
+    function Get_AutoScaleFont: OleVariant; safecall;
+    function Get_Interior: IMsoInterior; safecall;
+    function Get_Fill: ChartFillFormat; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Select: OleVariant; safecall;
+    function Get_IncludeInLayout: WordBool; safecall;
+    procedure Set_IncludeInLayout(RHS: WordBool); safecall;
+    function Get_Position: XlChartElementPosition; safecall;
+    procedure Set_Position(pval: XlChartElementPosition); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    function Get_Height: Double; safecall;
+    property Caption: WideString read Get_Caption write Set_Caption;
+    property Characters[Start: OleVariant; Length: OleVariant]: IMsoCharacters read Get_Characters;
+    property Font: ChartFont read Get_Font;
+    property HorizontalAlignment: OleVariant read Get_HorizontalAlignment write Set_HorizontalAlignment;
+    property Left: Double read Get_Left write Set_Left;
+    property Orientation: OleVariant read Get_Orientation write Set_Orientation;
+    property Shadow: WordBool read Get_Shadow write Set_Shadow;
+    property Text: WideString read Get_Text write Set_Text;
+    property Top: Double read Get_Top write Set_Top;
+    property VerticalAlignment: OleVariant read Get_VerticalAlignment write Set_VerticalAlignment;
+    property ReadingOrder: SYSINT read Get_ReadingOrder write Set_ReadingOrder;
+    property AutoScaleFont: OleVariant read Get_AutoScaleFont write Set_AutoScaleFont;
+    property Interior: IMsoInterior read Get_Interior;
+    property Fill: ChartFillFormat read Get_Fill;
+    property Border: IMsoBorder read Get_Border;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property IncludeInLayout: WordBool read Get_IncludeInLayout write Set_IncludeInLayout;
+    property Position: XlChartElementPosition read Get_Position write Set_Position;
+    property Format: IMsoChartFormat read Get_Format;
+    property Height: Double read Get_Height;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoChartTitleDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C170F-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartTitleDisp = dispinterface
+    ['{000C170F-0000-0000-C000-000000000046}']
+    property Caption: WideString dispid 1610743808;
+    property Characters[Start: OleVariant; Length: OleVariant]: IMsoCharacters readonly dispid 1610743810;
+    property Font: ChartFont readonly dispid 1610743811;
+    property HorizontalAlignment: OleVariant dispid 1610743812;
+    property Left: Double dispid 1610743814;
+    property Orientation: OleVariant dispid 1610743816;
+    property Shadow: WordBool dispid 1610743818;
+    property Text: WideString dispid 1610743820;
+    property Top: Double dispid 1610743822;
+    property VerticalAlignment: OleVariant dispid 1610743824;
+    property ReadingOrder: SYSINT dispid 1610743826;
+    property AutoScaleFont: OleVariant dispid 1610743828;
+    property Interior: IMsoInterior readonly dispid 1610743830;
+    property Fill: ChartFillFormat readonly dispid 1610743831;
+    function Delete: OleVariant; dispid 1610743832;
+    property Border: IMsoBorder readonly dispid 1610743833;
+    property Name: WideString readonly dispid 1610743834;
+    property Parent: IDispatch readonly dispid 1610743835;
+    function Select: OleVariant; dispid 1610743836;
+    property IncludeInLayout: WordBool dispid 2418;
+    property Position: XlChartElementPosition dispid 1671;
+    property Format: IMsoChartFormat readonly dispid 1610743841;
+    property Height: Double readonly dispid 1610743842;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoAxisTitle
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {ABFA087C-F703-4D53-946E-37FF82B2C994}
+// *********************************************************************//
+  IMsoAxisTitle = interface(IMsoChartTitle)
+    ['{ABFA087C-F703-4D53-946E-37FF82B2C994}']
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoAxisTitleDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {ABFA087C-F703-4D53-946E-37FF82B2C994}
+// *********************************************************************//
+  IMsoAxisTitleDisp = dispinterface
+    ['{ABFA087C-F703-4D53-946E-37FF82B2C994}']
+    property Caption: WideString dispid 1610743808;
+    property Characters[Start: OleVariant; Length: OleVariant]: IMsoCharacters readonly dispid 1610743810;
+    property Font: ChartFont readonly dispid 1610743811;
+    property HorizontalAlignment: OleVariant dispid 1610743812;
+    property Left: Double dispid 1610743814;
+    property Orientation: OleVariant dispid 1610743816;
+    property Shadow: WordBool dispid 1610743818;
+    property Text: WideString dispid 1610743820;
+    property Top: Double dispid 1610743822;
+    property VerticalAlignment: OleVariant dispid 1610743824;
+    property ReadingOrder: SYSINT dispid 1610743826;
+    property AutoScaleFont: OleVariant dispid 1610743828;
+    property Interior: IMsoInterior readonly dispid 1610743830;
+    property Fill: ChartFillFormat readonly dispid 1610743831;
+    function Delete: OleVariant; dispid 1610743832;
+    property Border: IMsoBorder readonly dispid 1610743833;
+    property Name: WideString readonly dispid 1610743834;
+    property Parent: IDispatch readonly dispid 1610743835;
+    function Select: OleVariant; dispid 1610743836;
+    property IncludeInLayout: WordBool dispid 2418;
+    property Position: XlChartElementPosition dispid 1671;
+    property Format: IMsoChartFormat readonly dispid 1610743841;
+    property Height: Double readonly dispid 1610743842;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoDisplayUnitLabel
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {6EA00553-9439-4D5A-B1E6-DC15A54DA8B2}
+// *********************************************************************//
+  IMsoDisplayUnitLabel = interface(IMsoChartTitle)
+    ['{6EA00553-9439-4D5A-B1E6-DC15A54DA8B2}']
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoDisplayUnitLabelDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {6EA00553-9439-4D5A-B1E6-DC15A54DA8B2}
+// *********************************************************************//
+  IMsoDisplayUnitLabelDisp = dispinterface
+    ['{6EA00553-9439-4D5A-B1E6-DC15A54DA8B2}']
+    property Caption: WideString dispid 1610743808;
+    property Characters[Start: OleVariant; Length: OleVariant]: IMsoCharacters readonly dispid 1610743810;
+    property Font: ChartFont readonly dispid 1610743811;
+    property HorizontalAlignment: OleVariant dispid 1610743812;
+    property Left: Double dispid 1610743814;
+    property Orientation: OleVariant dispid 1610743816;
+    property Shadow: WordBool dispid 1610743818;
+    property Text: WideString dispid 1610743820;
+    property Top: Double dispid 1610743822;
+    property VerticalAlignment: OleVariant dispid 1610743824;
+    property ReadingOrder: SYSINT dispid 1610743826;
+    property AutoScaleFont: OleVariant dispid 1610743828;
+    property Interior: IMsoInterior readonly dispid 1610743830;
+    property Fill: ChartFillFormat readonly dispid 1610743831;
+    function Delete: OleVariant; dispid 1610743832;
+    property Border: IMsoBorder readonly dispid 1610743833;
+    property Name: WideString readonly dispid 1610743834;
+    property Parent: IDispatch readonly dispid 1610743835;
+    function Select: OleVariant; dispid 1610743836;
+    property IncludeInLayout: WordBool dispid 2418;
+    property Position: XlChartElementPosition dispid 1671;
+    property Format: IMsoChartFormat readonly dispid 1610743841;
+    property Height: Double readonly dispid 1610743842;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoTickLabels
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1726-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoTickLabels = interface(IDispatch)
+    ['{000C1726-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Font: ChartFont; safecall;
+    function Get_Name: WideString; safecall;
+    function Get_NumberFormat: WideString; safecall;
+    procedure Set_NumberFormat(const pval: WideString); safecall;
+    function Get_NumberFormatLinked: WordBool; safecall;
+    procedure Set_NumberFormatLinked(pval: WordBool); safecall;
+    function Get_NumberFormatLocal: OleVariant; safecall;
+    procedure Set_NumberFormatLocal(pval: OleVariant); safecall;
+    function Get_Orientation: XlTickLabelOrientation; safecall;
+    procedure Set_Orientation(pval: XlTickLabelOrientation); safecall;
+    function Select: OleVariant; safecall;
+    function Get_ReadingOrder: SYSINT; safecall;
+    procedure Set_ReadingOrder(pval: SYSINT); safecall;
+    function Get_AutoScaleFont: OleVariant; safecall;
+    procedure Set_AutoScaleFont(pval: OleVariant); safecall;
+    function Get_Depth: SYSINT; safecall;
+    function Get_Offset: SYSINT; safecall;
+    procedure Set_Offset(pval: SYSINT); safecall;
+    function Get_Alignment: SYSINT; safecall;
+    procedure Set_Alignment(pval: SYSINT); safecall;
+    function Get_MultiLevel: WordBool; safecall;
+    procedure Set_MultiLevel(pval: WordBool); safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Font: ChartFont read Get_Font;
+    property Name: WideString read Get_Name;
+    property NumberFormat: WideString read Get_NumberFormat write Set_NumberFormat;
+    property NumberFormatLinked: WordBool read Get_NumberFormatLinked write Set_NumberFormatLinked;
+    property NumberFormatLocal: OleVariant read Get_NumberFormatLocal write Set_NumberFormatLocal;
+    property Orientation: XlTickLabelOrientation read Get_Orientation write Set_Orientation;
+    property ReadingOrder: SYSINT read Get_ReadingOrder write Set_ReadingOrder;
+    property AutoScaleFont: OleVariant read Get_AutoScaleFont write Set_AutoScaleFont;
+    property Depth: SYSINT read Get_Depth;
+    property Offset: SYSINT read Get_Offset write Set_Offset;
+    property Alignment: SYSINT read Get_Alignment write Set_Alignment;
+    property MultiLevel: WordBool read Get_MultiLevel write Set_MultiLevel;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoTickLabelsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1726-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoTickLabelsDisp = dispinterface
+    ['{000C1726-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610743808;
+    function Delete: OleVariant; dispid 1610743809;
+    property Font: ChartFont readonly dispid 1610743810;
+    property Name: WideString readonly dispid 1610743811;
+    property NumberFormat: WideString dispid 1610743812;
+    property NumberFormatLinked: WordBool dispid 1610743814;
+    property NumberFormatLocal: OleVariant dispid 1610743816;
+    property Orientation: XlTickLabelOrientation dispid 1610743818;
+    function Select: OleVariant; dispid 1610743820;
+    property ReadingOrder: SYSINT dispid 1610743821;
+    property AutoScaleFont: OleVariant dispid 1610743823;
+    property Depth: SYSINT readonly dispid 1610743825;
+    property Offset: SYSINT dispid 1610743826;
+    property Alignment: SYSINT dispid 1610743828;
+    property MultiLevel: WordBool dispid 1610743830;
+    property Format: IMsoChartFormat readonly dispid 1610743832;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoHyperlinks
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {A98639A1-CB0C-4A5C-A511-96547F752ACD}
+// *********************************************************************//
+  IMsoHyperlinks = interface(IDispatch)
+    ['{A98639A1-CB0C-4A5C-A511-96547F752ACD}']
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoHyperlinksDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {A98639A1-CB0C-4A5C-A511-96547F752ACD}
+// *********************************************************************//
+  IMsoHyperlinksDisp = dispinterface
+    ['{A98639A1-CB0C-4A5C-A511-96547F752ACD}']
+  end;
+
+// *********************************************************************//
+// Interface: IMsoDropLines
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172C-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDropLines = interface(IDispatch)
+    ['{000C172C-0001-0000-C000-000000000046}']
+    function Get_Name: WideString; safecall;
+    procedure Select; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    procedure Delete; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Name: WideString read Get_Name;
+    property Parent: IDispatch read Get_Parent;
+    property Border: IMsoBorder read Get_Border;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoDropLinesDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172C-0001-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoDropLinesDisp = dispinterface
+    ['{000C172C-0001-0000-C000-000000000046}']
+    property Name: WideString readonly dispid 1610743808;
+    procedure Select; dispid 1610743809;
+    property Parent: IDispatch readonly dispid 1610743810;
+    property Border: IMsoBorder readonly dispid 1610743811;
+    procedure Delete; dispid 1610743812;
+    property Format: IMsoChartFormat readonly dispid 1610743813;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoHiLoLines
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoHiLoLines = interface(IDispatch)
+    ['{000C172E-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Name: WideString; safecall;
+    procedure Select; safecall;
+    function Get_Border: IMsoBorder; safecall;
+    procedure Delete; safecall;
+    function Get_Format: IMsoChartFormat; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Name: WideString read Get_Name;
+    property Border: IMsoBorder read Get_Border;
+    property Format: IMsoChartFormat read Get_Format;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoHiLoLinesDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172E-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoHiLoLinesDisp = dispinterface
+    ['{000C172E-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1610743808;
+    property Name: WideString readonly dispid 1610743809;
+    procedure Select; dispid 1610743810;
+    property Border: IMsoBorder readonly dispid 1610743811;
+    procedure Delete; dispid 1610743812;
+    property Format: IMsoChartFormat readonly dispid 1610743813;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoChartGroup
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1727-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartGroup = interface(IDispatch)
+    ['{000C1727-0000-0000-C000-000000000046}']
+    procedure Set_AxisGroup(piGroup: SYSINT); safecall;
+    function Get_AxisGroup: SYSINT; safecall;
+    procedure Set_DoughnutHoleSize(pDoughnutHoleSize: SYSINT); safecall;
+    function Get_DoughnutHoleSize: SYSINT; safecall;
+    function Get_DownBars: IMsoDownBars; safecall;
+    function Get_DropLines: IMsoDropLines; safecall;
+    procedure Set_FirstSliceAngle(pFirstSliceAngle: SYSINT); safecall;
+    function Get_FirstSliceAngle: SYSINT; safecall;
+    procedure Set_GapWidth(pGapWidth: SYSINT); safecall;
+    function Get_GapWidth: SYSINT; safecall;
+    procedure Set_HasDropLines(pfHasDropLines: WordBool); safecall;
+    function Get_HasDropLines: WordBool; safecall;
+    procedure Set_HasHiLoLines(pfHasHiLoLines: WordBool); safecall;
+    function Get_HasHiLoLines: WordBool; safecall;
+    procedure Set_HasRadarAxisLabels(pfHasRadarAxisLabels: WordBool); safecall;
+    function Get_HasRadarAxisLabels: WordBool; safecall;
+    procedure Set_HasSeriesLines(pfHasSeriesLines: WordBool); safecall;
+    function Get_HasSeriesLines: WordBool; safecall;
+    procedure Set_HasUpDownBars(pfHasUpDownBars: WordBool); safecall;
+    function Get_HasUpDownBars: WordBool; safecall;
+    function Get_HiLoLines: IMsoHiLoLines; safecall;
+    function Get_Index: SYSINT; safecall;
+    procedure Set_Overlap(pOverlap: SYSINT); safecall;
+    function Get_Overlap: SYSINT; safecall;
+    function Get_RadarAxisLabels: IDispatch; safecall;
+    function SeriesCollection(Index: OleVariant): IDispatch; safecall;
+    function Get_SeriesLines: IMsoSeriesLines; safecall;
+    procedure Set_SubType(pSubType: SYSINT); safecall;
+    function Get_SubType: SYSINT; safecall;
+    procedure Set_type_(ptype: SYSINT); safecall;
+    function Get_type_: SYSINT; safecall;
+    function Get_UpBars: IMsoUpBars; safecall;
+    procedure Set_VaryByCategories(pfVaryByCategories: WordBool); safecall;
+    function Get_VaryByCategories: WordBool; safecall;
+    function Get_SizeRepresents: XlSizeRepresents; safecall;
+    procedure Set_SizeRepresents(pXlSizeRepresents: XlSizeRepresents); safecall;
+    procedure Set_BubbleScale(pbubblescale: SYSINT); safecall;
+    function Get_BubbleScale: SYSINT; safecall;
+    procedure Set_ShowNegativeBubbles(pfShowNegativeBubbles: WordBool); safecall;
+    function Get_ShowNegativeBubbles: WordBool; safecall;
+    procedure Set_SplitType(pChartSplitType: XlChartSplitType); safecall;
+    function Get_SplitType: XlChartSplitType; safecall;
+    function Get_SplitValue: OleVariant; safecall;
+    procedure Set_SplitValue(pSplitValue: OleVariant); safecall;
+    function Get_SecondPlotSize: SYSINT; safecall;
+    procedure Set_SecondPlotSize(pSecondPlotSize: SYSINT); safecall;
+    function Get_Has3DShading: WordBool; safecall;
+    procedure Set_Has3DShading(RHS: WordBool); safecall;
+    property AxisGroup: SYSINT read Get_AxisGroup write Set_AxisGroup;
+    property DoughnutHoleSize: SYSINT read Get_DoughnutHoleSize write Set_DoughnutHoleSize;
+    property DownBars: IMsoDownBars read Get_DownBars;
+    property DropLines: IMsoDropLines read Get_DropLines;
+    property FirstSliceAngle: SYSINT read Get_FirstSliceAngle write Set_FirstSliceAngle;
+    property GapWidth: SYSINT read Get_GapWidth write Set_GapWidth;
+    property HasDropLines: WordBool read Get_HasDropLines write Set_HasDropLines;
+    property HasHiLoLines: WordBool read Get_HasHiLoLines write Set_HasHiLoLines;
+    property HasRadarAxisLabels: WordBool read Get_HasRadarAxisLabels write Set_HasRadarAxisLabels;
+    property HasSeriesLines: WordBool read Get_HasSeriesLines write Set_HasSeriesLines;
+    property HasUpDownBars: WordBool read Get_HasUpDownBars write Set_HasUpDownBars;
+    property HiLoLines: IMsoHiLoLines read Get_HiLoLines;
+    property Index: SYSINT read Get_Index;
+    property Overlap: SYSINT read Get_Overlap write Set_Overlap;
+    property RadarAxisLabels: IDispatch read Get_RadarAxisLabels;
+    property SeriesLines: IMsoSeriesLines read Get_SeriesLines;
+    property SubType: SYSINT read Get_SubType write Set_SubType;
+    property type_: SYSINT read Get_type_ write Set_type_;
+    property UpBars: IMsoUpBars read Get_UpBars;
+    property VaryByCategories: WordBool read Get_VaryByCategories write Set_VaryByCategories;
+    property SizeRepresents: XlSizeRepresents read Get_SizeRepresents write Set_SizeRepresents;
+    property BubbleScale: SYSINT read Get_BubbleScale write Set_BubbleScale;
+    property ShowNegativeBubbles: WordBool read Get_ShowNegativeBubbles write Set_ShowNegativeBubbles;
+    property SplitType: XlChartSplitType read Get_SplitType write Set_SplitType;
+    property SplitValue: OleVariant read Get_SplitValue write Set_SplitValue;
+    property SecondPlotSize: SYSINT read Get_SecondPlotSize write Set_SecondPlotSize;
+    property Has3DShading: WordBool read Get_Has3DShading write Set_Has3DShading;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoChartGroupDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1727-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartGroupDisp = dispinterface
+    ['{000C1727-0000-0000-C000-000000000046}']
+    property AxisGroup: SYSINT dispid 1610743808;
+    property DoughnutHoleSize: SYSINT dispid 1610743810;
+    property DownBars: IMsoDownBars readonly dispid 1610743812;
+    property DropLines: IMsoDropLines readonly dispid 1610743813;
+    property FirstSliceAngle: SYSINT dispid 1610743814;
+    property GapWidth: SYSINT dispid 1610743816;
+    property HasDropLines: WordBool dispid 1610743818;
+    property HasHiLoLines: WordBool dispid 1610743820;
+    property HasRadarAxisLabels: WordBool dispid 1610743822;
+    property HasSeriesLines: WordBool dispid 1610743824;
+    property HasUpDownBars: WordBool dispid 1610743826;
+    property HiLoLines: IMsoHiLoLines readonly dispid 1610743828;
+    property Index: SYSINT readonly dispid 1610743829;
+    property Overlap: SYSINT dispid 1610743830;
+    property RadarAxisLabels: IDispatch readonly dispid 1610743832;
+    function SeriesCollection(Index: OleVariant): IDispatch; dispid 1610743833;
+    property SeriesLines: IMsoSeriesLines readonly dispid 1610743834;
+    property SubType: SYSINT dispid 1610743835;
+    property type_: SYSINT dispid 1610743837;
+    property UpBars: IMsoUpBars readonly dispid 1610743839;
+    property VaryByCategories: WordBool dispid 1610743840;
+    property SizeRepresents: XlSizeRepresents dispid 1610743842;
+    property BubbleScale: SYSINT dispid 1610743844;
+    property ShowNegativeBubbles: WordBool dispid 1610743846;
+    property SplitType: XlChartSplitType dispid 1610743848;
+    property SplitValue: OleVariant dispid 1610743850;
+    property SecondPlotSize: SYSINT dispid 1610743852;
+    property Has3DShading: WordBool dispid 1610743854;
+  end;
+
+// *********************************************************************//
+// Interface: ChartGroups
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartGroups = interface(IDispatch)
+    ['{000C172B-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: Integer; safecall;
+    function Item(Index: OleVariant): IMsoChartGroup; safecall;
+    function _NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: Integer read Get_Count;
+  end;
+
+// *********************************************************************//
+// DispIntf:  ChartGroupsDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C172B-0000-0000-C000-000000000046}
+// *********************************************************************//
+  ChartGroupsDisp = dispinterface
+    ['{000C172B-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 150;
+    property Count: Integer readonly dispid 118;
+    function Item(Index: OleVariant): IMsoChartGroup; dispid 170;
+    function _NewEnum: IUnknown; dispid -4;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoCharacters
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1731-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoCharacters = interface(IDispatch)
+    ['{000C1731-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Caption: WideString; safecall;
+    procedure Set_Caption(const RHS: WideString); safecall;
+    function Get_Count: Integer; safecall;
+    function Delete: OleVariant; safecall;
+    function Get_Font: ChartFont; safecall;
+    function Insert(const bstr: WideString): OleVariant; safecall;
+    function Get_Text: WideString; safecall;
+    procedure Set_Text(const RHS: WideString); safecall;
+    function Get_PhoneticCharacters: WideString; safecall;
+    procedure Set_PhoneticCharacters(const RHS: WideString); safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Caption: WideString read Get_Caption write Set_Caption;
+    property Count: Integer read Get_Count;
+    property Font: ChartFont read Get_Font;
+    property Text: WideString read Get_Text write Set_Text;
+    property PhoneticCharacters: WideString read Get_PhoneticCharacters write Set_PhoneticCharacters;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoCharactersDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1731-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoCharactersDisp = dispinterface
+    ['{000C1731-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 150;
+    property Caption: WideString dispid 139;
+    property Count: Integer readonly dispid 118;
+    function Delete: OleVariant; dispid 117;
+    property Font: ChartFont readonly dispid 146;
+    function Insert(const bstr: WideString): OleVariant; dispid 252;
+    property Text: WideString dispid 138;
+    property PhoneticCharacters: WideString dispid 1522;
+  end;
+
+// *********************************************************************//
+// Interface: IMsoChartFormat
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1730-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartFormat = interface(IDispatch)
+    ['{000C1730-0000-0000-C000-000000000046}']
+    function Get_Fill: FillFormat; safecall;
+    function Get_Glow: GlowFormat; safecall;
+    function Get_Line: LineFormat; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Get_PictureFormat: PictureFormat; safecall;
+    function Get_Shadow: ShadowFormat; safecall;
+    function Get_SoftEdge: SoftEdgeFormat; safecall;
+    function Get_TextFrame2: TextFrame2; safecall;
+    function Get_ThreeD: ThreeDFormat; safecall;
+    property Fill: FillFormat read Get_Fill;
+    property Glow: GlowFormat read Get_Glow;
+    property Line: LineFormat read Get_Line;
+    property Parent: IDispatch read Get_Parent;
+    property PictureFormat: PictureFormat read Get_PictureFormat;
+    property Shadow: ShadowFormat read Get_Shadow;
+    property SoftEdge: SoftEdgeFormat read Get_SoftEdge;
+    property TextFrame2: TextFrame2 read Get_TextFrame2;
+    property ThreeD: ThreeDFormat read Get_ThreeD;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IMsoChartFormatDisp
+// Flags:     (4560) Hidden Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C1730-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IMsoChartFormatDisp = dispinterface
+    ['{000C1730-0000-0000-C000-000000000046}']
+    property Fill: FillFormat readonly dispid 1610743808;
+    property Glow: GlowFormat readonly dispid 1610743809;
+    property Line: LineFormat readonly dispid 1610743810;
+    property Parent: IDispatch readonly dispid 1610743811;
+    property PictureFormat: PictureFormat readonly dispid 1610743812;
+    property Shadow: ShadowFormat readonly dispid 1610743813;
+    property SoftEdge: SoftEdgeFormat readonly dispid 1610743814;
+    property TextFrame2: TextFrame2 readonly dispid 1610743815;
+    property ThreeD: ThreeDFormat readonly dispid 1610743816;
+  end;
+
+// *********************************************************************//
+// Interface: BulletFormat2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03B9-0000-0000-C000-000000000046}
+// *********************************************************************//
+  BulletFormat2 = interface(_IMsoDispObj)
+    ['{000C03B9-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Character: SYSINT; safecall;
+    procedure Set_Character(Character: SYSINT); safecall;
+    function Get_Font: Font2; safecall;
+    function Get_Number: SYSINT; safecall;
+    procedure Picture(const FileName: WideString); safecall;
+    function Get_RelativeSize: Single; safecall;
+    procedure Set_RelativeSize(Size: Single); safecall;
+    function Get_StartValue: SYSINT; safecall;
+    procedure Set_StartValue(Start: SYSINT); safecall;
+    function Get_Style: MsoNumberedBulletStyle; safecall;
+    procedure Set_Style(Style: MsoNumberedBulletStyle); safecall;
+    function Get_type_: MsoBulletType; safecall;
+    procedure Set_type_(Type_: MsoBulletType); safecall;
+    function Get_UseTextColor: MsoTriState; safecall;
+    procedure Set_UseTextColor(UseTextColor: MsoTriState); safecall;
+    function Get_UseTextFont: MsoTriState; safecall;
+    procedure Set_UseTextFont(UseTextFont: MsoTriState); safecall;
+    function Get_Visible: MsoTriState; safecall;
+    procedure Set_Visible(Visible: MsoTriState); safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Character: SYSINT read Get_Character write Set_Character;
+    property Font: Font2 read Get_Font;
+    property Number: SYSINT read Get_Number;
+    property RelativeSize: Single read Get_RelativeSize write Set_RelativeSize;
+    property StartValue: SYSINT read Get_StartValue write Set_StartValue;
+    property Style: MsoNumberedBulletStyle read Get_Style write Set_Style;
+    property type_: MsoBulletType read Get_type_ write Set_type_;
+    property UseTextColor: MsoTriState read Get_UseTextColor write Set_UseTextColor;
+    property UseTextFont: MsoTriState read Get_UseTextFont write Set_UseTextFont;
+    property Visible: MsoTriState read Get_Visible write Set_Visible;
+  end;
+
+// *********************************************************************//
+// DispIntf:  BulletFormat2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03B9-0000-0000-C000-000000000046}
+// *********************************************************************//
+  BulletFormat2Disp = dispinterface
+    ['{000C03B9-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Character: SYSINT dispid 2;
+    property Font: Font2 readonly dispid 3;
+    property Number: SYSINT readonly dispid 4;
+    procedure Picture(const FileName: WideString); dispid 5;
+    property RelativeSize: Single dispid 6;
+    property StartValue: SYSINT dispid 7;
+    property Style: MsoNumberedBulletStyle dispid 8;
+    property type_: MsoBulletType dispid 9;
+    property UseTextColor: MsoTriState dispid 10;
+    property UseTextFont: MsoTriState dispid 11;
+    property Visible: MsoTriState dispid 12;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: TabStops2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BA-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TabStops2 = interface(_IMsoDispObj)
+    ['{000C03BA-0000-0000-C000-000000000046}']
+    function Item(Index: OleVariant): TabStop2; safecall;
+    function Get_Parent: IDispatch; safecall;
+    function Add(Type_: MsoTabStopType; Position: Single): TabStop2; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Get_DefaultSpacing: Single; safecall;
+    procedure Set_DefaultSpacing(Spacing: Single); safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: SYSINT read Get_Count;
+    property DefaultSpacing: Single read Get_DefaultSpacing write Set_DefaultSpacing;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TabStops2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BA-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TabStops2Disp = dispinterface
+    ['{000C03BA-0000-0000-C000-000000000046}']
+    function Item(Index: OleVariant): TabStop2; dispid 0;
+    property Parent: IDispatch readonly dispid 1;
+    function Add(Type_: MsoTabStopType; Position: Single): TabStop2; dispid 2;
+    property Count: SYSINT readonly dispid 3;
+    property DefaultSpacing: Single dispid 4;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: TabStop2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BB-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TabStop2 = interface(_IMsoDispObj)
+    ['{000C03BB-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    procedure Clear; safecall;
+    function Get_Position: Single; safecall;
+    procedure Set_Position(Position: Single); safecall;
+    function Get_type_: MsoTabStopType; safecall;
+    procedure Set_type_(Type_: MsoTabStopType); safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Position: Single read Get_Position write Set_Position;
+    property type_: MsoTabStopType read Get_type_ write Set_type_;
+  end;
+
+// *********************************************************************//
+// DispIntf:  TabStop2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03BB-0000-0000-C000-000000000046}
+// *********************************************************************//
+  TabStop2Disp = dispinterface
+    ['{000C03BB-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    procedure Clear; dispid 2;
+    property Position: Single dispid 3;
+    property type_: MsoTabStopType dispid 4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: Ruler2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Ruler2 = interface(_IMsoDispObj)
+    ['{000C03C1-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Levels: RulerLevels2; safecall;
+    function Get_TabStops: TabStops2; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Levels: RulerLevels2 read Get_Levels;
+    property TabStops: TabStops2 read Get_TabStops;
+  end;
+
+// *********************************************************************//
+// DispIntf:  Ruler2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C1-0000-0000-C000-000000000046}
+// *********************************************************************//
+  Ruler2Disp = dispinterface
+    ['{000C03C1-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Levels: RulerLevels2 readonly dispid 2;
+    property TabStops: TabStops2 readonly dispid 3;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: RulerLevels2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  RulerLevels2 = interface(_IMsoDispObj)
+    ['{000C03C2-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_Count: SYSINT; safecall;
+    function Item(Index: OleVariant): RulerLevel2; safecall;
+    function Get__NewEnum: IUnknown; safecall;
+    property Parent: IDispatch read Get_Parent;
+    property Count: SYSINT read Get_Count;
+    property _NewEnum: IUnknown read Get__NewEnum;
+  end;
+
+// *********************************************************************//
+// DispIntf:  RulerLevels2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C2-0000-0000-C000-000000000046}
+// *********************************************************************//
+  RulerLevels2Disp = dispinterface
+    ['{000C03C2-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property Count: SYSINT readonly dispid 2;
+    function Item(Index: OleVariant): RulerLevel2; dispid 0;
+    property _NewEnum: IUnknown readonly dispid -4;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: RulerLevel2
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  RulerLevel2 = interface(_IMsoDispObj)
+    ['{000C03C3-0000-0000-C000-000000000046}']
+    function Get_Parent: IDispatch; safecall;
+    function Get_FirstMargin: Single; safecall;
+    procedure Set_FirstMargin(FirstMargin: Single); safecall;
+    function Get_LeftMargin: Single; safecall;
+    procedure Set_LeftMargin(LeftMargin: Single); safecall;
+    property Parent: IDispatch read Get_Parent;
+    property FirstMargin: Single read Get_FirstMargin write Set_FirstMargin;
+    property LeftMargin: Single read Get_LeftMargin write Set_LeftMargin;
+  end;
+
+// *********************************************************************//
+// DispIntf:  RulerLevel2Disp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C3-0000-0000-C000-000000000046}
+// *********************************************************************//
+  RulerLevel2Disp = dispinterface
+    ['{000C03C3-0000-0000-C000-000000000046}']
+    property Parent: IDispatch readonly dispid 1;
+    property FirstMargin: Single dispid 2;
+    property LeftMargin: Single dispid 3;
+    property Application: IDispatch readonly dispid 1610743808;
+    property Creator: Integer readonly dispid 1610743809;
+  end;
+
+// *********************************************************************//
+// Interface: EncryptionProvider
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000CD809-0000-0000-C000-000000000046}
+// *********************************************************************//
+  EncryptionProvider = interface(IDispatch)
+    ['{000CD809-0000-0000-C000-000000000046}']
+    function GetProviderDetail(encprovdet: EncryptionProviderDetail): OleVariant; safecall;
+    function NewSession(const ParentWindow: IUnknown): SYSINT; safecall;
+    function Authenticate(const ParentWindow: IUnknown; const EncryptionData: IUnknown; 
+                          out PermissionsMask: SYSUINT): SYSINT; safecall;
+    function CloneSession(SessionHandle: SYSINT): SYSINT; safecall;
+    procedure EndSession(SessionHandle: SYSINT); safecall;
+    function Save(SessionHandle: SYSINT; const EncryptionData: IUnknown): SYSINT; safecall;
+    procedure EncryptStream(SessionHandle: SYSINT; const StreamName: WideString; 
+                            const UnencryptedStream: IUnknown; const EncryptedStream: IUnknown); safecall;
+    procedure DecryptStream(SessionHandle: SYSINT; const StreamName: WideString; 
+                            const EncryptedStream: IUnknown; const UnencryptedStream: IUnknown); safecall;
+    procedure ShowSettings(SessionHandle: SYSINT; const ParentWindow: IUnknown; ReadOnly: WordBool; 
+                           out Remove: WordBool); safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  EncryptionProviderDisp
+// Flags:     (4416) Dual OleAutomation Dispatchable
+// GUID:      {000CD809-0000-0000-C000-000000000046}
+// *********************************************************************//
+  EncryptionProviderDisp = dispinterface
+    ['{000CD809-0000-0000-C000-000000000046}']
+    function GetProviderDetail(encprovdet: EncryptionProviderDetail): OleVariant; dispid 1610743808;
+    function NewSession(const ParentWindow: IUnknown): SYSINT; dispid 1610743809;
+    function Authenticate(const ParentWindow: IUnknown; const EncryptionData: IUnknown; 
+                          out PermissionsMask: SYSUINT): SYSINT; dispid 1610743810;
+    function CloneSession(SessionHandle: SYSINT): SYSINT; dispid 1610743811;
+    procedure EndSession(SessionHandle: SYSINT); dispid 1610743812;
+    function Save(SessionHandle: SYSINT; const EncryptionData: IUnknown): SYSINT; dispid 1610743813;
+    procedure EncryptStream(SessionHandle: SYSINT; const StreamName: WideString; 
+                            const UnencryptedStream: IUnknown; const EncryptedStream: IUnknown); dispid 1610743814;
+    procedure DecryptStream(SessionHandle: SYSINT; const StreamName: WideString; 
+                            const EncryptedStream: IUnknown; const UnencryptedStream: IUnknown); dispid 1610743815;
+    procedure ShowSettings(SessionHandle: SYSINT; const ParentWindow: IUnknown; ReadOnly: WordBool; 
+                           out Remove: WordBool); dispid 1610743816;
+  end;
+
+// *********************************************************************//
+// Interface: IBlogExtensibility
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C4-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IBlogExtensibility = interface(IDispatch)
+    ['{000C03C4-0000-0000-C000-000000000046}']
+    procedure BlogProviderProperties(out BlogProvider: WideString; out FriendlyName: WideString; 
+                                     out CategorySupport: MsoBlogCategorySupport; 
+                                     out Padding: WordBool); safecall;
+    procedure SetupBlogAccount(const Account: WideString; ParentWindow: Integer; 
+                               const Document: IDispatch; NewAccount: WordBool; 
+                               out ShowPictureUI: WordBool); safecall;
+    procedure GetUserBlogs(const Account: WideString; ParentWindow: Integer; 
+                           const Document: IDispatch; out BlogNames: PSafeArray; 
+                           out BlogIDs: PSafeArray; out BlogURLs: PSafeArray); safecall;
+    procedure GetRecentPosts(const Account: WideString; ParentWindow: Integer; 
+                             const Document: IDispatch; out PostTitles: PSafeArray; 
+                             out PostDates: PSafeArray; out PostIDs: PSafeArray); safecall;
+    procedure Open(const Account: WideString; const PostID: WideString; ParentWindow: Integer; 
+                   out xHTML: WideString; out Title: WideString; out DatePosted: WideString; 
+                   out Categories: PSafeArray); safecall;
+    procedure PublishPost(const Account: WideString; ParentWindow: Integer; 
+                          const Document: IDispatch; const xHTML: WideString; 
+                          const Title: WideString; const DateTime: WideString; 
+                          Categories: PSafeArray; Draft: WordBool; out PostID: WideString; 
+                          out PublishMessage: WideString); safecall;
+    procedure RepublishPost(const Account: WideString; ParentWindow: Integer; 
+                            const Document: IDispatch; const PostID: WideString; 
+                            const xHTML: WideString; const Title: WideString; 
+                            const DateTime: WideString; Categories: PSafeArray; Draft: WordBool; 
+                            out PublishMessage: WideString); safecall;
+    procedure GetCategories(const Account: WideString; ParentWindow: Integer; 
+                            const Document: IDispatch; out Categories: PSafeArray); safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IBlogExtensibilityDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C4-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IBlogExtensibilityDisp = dispinterface
+    ['{000C03C4-0000-0000-C000-000000000046}']
+    procedure BlogProviderProperties(out BlogProvider: WideString; out FriendlyName: WideString; 
+                                     out CategorySupport: MsoBlogCategorySupport; 
+                                     out Padding: WordBool); dispid 1;
+    procedure SetupBlogAccount(const Account: WideString; ParentWindow: Integer; 
+                               const Document: IDispatch; NewAccount: WordBool; 
+                               out ShowPictureUI: WordBool); dispid 2;
+    procedure GetUserBlogs(const Account: WideString; ParentWindow: Integer; 
+                           const Document: IDispatch; out BlogNames: {??PSafeArray}OleVariant; 
+                           out BlogIDs: {??PSafeArray}OleVariant; 
+                           out BlogURLs: {??PSafeArray}OleVariant); dispid 3;
+    procedure GetRecentPosts(const Account: WideString; ParentWindow: Integer; 
+                             const Document: IDispatch; out PostTitles: {??PSafeArray}OleVariant; 
+                             out PostDates: {??PSafeArray}OleVariant; 
+                             out PostIDs: {??PSafeArray}OleVariant); dispid 4;
+    procedure Open(const Account: WideString; const PostID: WideString; ParentWindow: Integer; 
+                   out xHTML: WideString; out Title: WideString; out DatePosted: WideString; 
+                   out Categories: {??PSafeArray}OleVariant); dispid 5;
+    procedure PublishPost(const Account: WideString; ParentWindow: Integer; 
+                          const Document: IDispatch; const xHTML: WideString; 
+                          const Title: WideString; const DateTime: WideString; 
+                          Categories: {??PSafeArray}OleVariant; Draft: WordBool; 
+                          out PostID: WideString; out PublishMessage: WideString); dispid 6;
+    procedure RepublishPost(const Account: WideString; ParentWindow: Integer; 
+                            const Document: IDispatch; const PostID: WideString; 
+                            const xHTML: WideString; const Title: WideString; 
+                            const DateTime: WideString; Categories: {??PSafeArray}OleVariant; 
+                            Draft: WordBool; out PublishMessage: WideString); dispid 7;
+    procedure GetCategories(const Account: WideString; ParentWindow: Integer; 
+                            const Document: IDispatch; out Categories: {??PSafeArray}OleVariant); dispid 8;
+  end;
+
+// *********************************************************************//
+// Interface: IBlogPictureExtensibility
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C5-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IBlogPictureExtensibility = interface(IDispatch)
+    ['{000C03C5-0000-0000-C000-000000000046}']
+    procedure BlogPictureProviderProperties(out BlogPictureProvider: WideString; 
+                                            out FriendlyName: WideString); safecall;
+    procedure CreatePictureAccount(const Account: WideString; const BlogProvider: WideString; 
+                                   ParentWindow: Integer; const Document: IDispatch); safecall;
+    procedure PublishPicture(const Account: WideString; ParentWindow: Integer; 
+                             const Document: IDispatch; const Image: IUnknown; 
+                             out PictureURI: WideString; ImageType: Integer); safecall;
+  end;
+
+// *********************************************************************//
+// DispIntf:  IBlogPictureExtensibilityDisp
+// Flags:     (4544) Dual NonExtensible OleAutomation Dispatchable
+// GUID:      {000C03C5-0000-0000-C000-000000000046}
+// *********************************************************************//
+  IBlogPictureExtensibilityDisp = dispinterface
+    ['{000C03C5-0000-0000-C000-000000000046}']
+    procedure BlogPictureProviderProperties(out BlogPictureProvider: WideString; 
+                                            out FriendlyName: WideString); dispid 1;
+    procedure CreatePictureAccount(const Account: WideString; const BlogProvider: WideString; 
+                                   ParentWindow: Integer; const Document: IDispatch); dispid 2;
+    procedure PublishPicture(const Account: WideString; ParentWindow: Integer; 
+                             const Document: IDispatch; const Image: IUnknown; 
+                             out PictureURI: WideString; ImageType: Integer); dispid 3;
+  end;
+
+// *********************************************************************//
 // The Class CoCommandBars provides a Create and CreateRemote method to          
 // create instances of the default interface _CommandBars exposed by              
 // the CoClass CommandBars. The functions are intended to be used by             
@@ -8314,6 +15420,54 @@ type
     class function CreateRemote(const MachineName: string): IMsoEnvelopeVB;
   end;
 
+// *********************************************************************//
+// The Class CoCustomXMLSchemaCollection provides a Create and CreateRemote method to          
+// create instances of the default interface _CustomXMLSchemaCollection exposed by              
+// the CoClass CustomXMLSchemaCollection. The functions are intended to be used by             
+// clients wishing to automate the CoClass objects exposed by the         
+// server of this typelibrary.                                            
+// *********************************************************************//
+  CoCustomXMLSchemaCollection = class
+    class function Create: _CustomXMLSchemaCollection;
+    class function CreateRemote(const MachineName: string): _CustomXMLSchemaCollection;
+  end;
+
+// *********************************************************************//
+// The Class CoCustomXMLPart provides a Create and CreateRemote method to          
+// create instances of the default interface _CustomXMLPart exposed by              
+// the CoClass CustomXMLPart. The functions are intended to be used by             
+// clients wishing to automate the CoClass objects exposed by the         
+// server of this typelibrary.                                            
+// *********************************************************************//
+  CoCustomXMLPart = class
+    class function Create: _CustomXMLPart;
+    class function CreateRemote(const MachineName: string): _CustomXMLPart;
+  end;
+
+// *********************************************************************//
+// The Class CoCustomXMLParts provides a Create and CreateRemote method to          
+// create instances of the default interface _CustomXMLParts exposed by              
+// the CoClass CustomXMLParts. The functions are intended to be used by             
+// clients wishing to automate the CoClass objects exposed by the         
+// server of this typelibrary.                                            
+// *********************************************************************//
+  CoCustomXMLParts = class
+    class function Create: _CustomXMLParts;
+    class function CreateRemote(const MachineName: string): _CustomXMLParts;
+  end;
+
+// *********************************************************************//
+// The Class CoCustomTaskPane provides a Create and CreateRemote method to          
+// create instances of the default interface _CustomTaskPane exposed by              
+// the CoClass CustomTaskPane. The functions are intended to be used by             
+// clients wishing to automate the CoClass objects exposed by the         
+// server of this typelibrary.                                            
+// *********************************************************************//
+  CoCustomTaskPane = class
+    class function Create: _CustomTaskPane;
+    class function CreateRemote(const MachineName: string): _CustomTaskPane;
+  end;
+
 implementation
 
 uses ComObj;
@@ -8356,6 +15510,46 @@ end;
 class function CoMsoEnvelope.CreateRemote(const MachineName: string): IMsoEnvelopeVB;
 begin
   Result := CreateRemoteComObject(MachineName, CLASS_MsoEnvelope) as IMsoEnvelopeVB;
+end;
+
+class function CoCustomXMLSchemaCollection.Create: _CustomXMLSchemaCollection;
+begin
+  Result := CreateComObject(CLASS_CustomXMLSchemaCollection) as _CustomXMLSchemaCollection;
+end;
+
+class function CoCustomXMLSchemaCollection.CreateRemote(const MachineName: string): _CustomXMLSchemaCollection;
+begin
+  Result := CreateRemoteComObject(MachineName, CLASS_CustomXMLSchemaCollection) as _CustomXMLSchemaCollection;
+end;
+
+class function CoCustomXMLPart.Create: _CustomXMLPart;
+begin
+  Result := CreateComObject(CLASS_CustomXMLPart) as _CustomXMLPart;
+end;
+
+class function CoCustomXMLPart.CreateRemote(const MachineName: string): _CustomXMLPart;
+begin
+  Result := CreateRemoteComObject(MachineName, CLASS_CustomXMLPart) as _CustomXMLPart;
+end;
+
+class function CoCustomXMLParts.Create: _CustomXMLParts;
+begin
+  Result := CreateComObject(CLASS_CustomXMLParts) as _CustomXMLParts;
+end;
+
+class function CoCustomXMLParts.CreateRemote(const MachineName: string): _CustomXMLParts;
+begin
+  Result := CreateRemoteComObject(MachineName, CLASS_CustomXMLParts) as _CustomXMLParts;
+end;
+
+class function CoCustomTaskPane.Create: _CustomTaskPane;
+begin
+  Result := CreateComObject(CLASS_CustomTaskPane) as _CustomTaskPane;
+end;
+
+class function CoCustomTaskPane.CreateRemote(const MachineName: string): _CustomTaskPane;
+begin
+  Result := CreateRemoteComObject(MachineName, CLASS_CustomTaskPane) as _CustomTaskPane;
 end;
 
 end.
